@@ -57,6 +57,12 @@ for r in rows:
             e.update(title=x["title"], meta=x["meta"], h2=x["h2"], paras=x["paras"], faqs=x["faqs"], kind="deep")
             if p in CTR:  # keep the C1-C15 related links too
                 e["links"] = CTR[p].get("links", []) + e["links"]; e["hubs"] = list(dict.fromkeys(CTR[p].get("hubs", []) + e["hubs"]))
+        tw = re.match(r"^/pages/(?:keywords/[a-z0-9-]+|[a-z0-9-]+)/([a-z0-9-]+)$", p)
+        if tw and not p.startswith("/pages/services/") and not p.startswith("/pages/jobs/"): e["town"] = g["tname"](tw.group(1))
+        if e.get("town") and e["town"].lower() not in e["title"].lower() and p not in PRIORITY and p not in DEEP:
+            nm = e["h2"].split(" in ")[0]; fr = " from £160" if "eicr" in p else (" from £350" if "fire-risk-assessment" in p else "")
+            for c in (f"{nm} {e['town']}{fr} | iComply", f"{nm} {e['town']}{fr}", f"{nm} {e['town']} | iComply", f"{nm} {e['town']}"):
+                if len(c) <= 60: e["title"] = c; break
         check(e, p)
         pages[p] = e
     # inbound: keyword hub, service hub, town area page link to the upgraded page
@@ -76,7 +82,7 @@ for r in rows:
         if parts[2] == "keywords": srcs.append("/pages/keywords")
         if len(parts) > 3 and parts[3] in LOCAL: srcs.append(f"/pages/areas/{parts[3]}")
     for s in srcs:
-        if s != p: inbound.setdefault(s, []).append([p, label])
+        if s != p and [p, label] not in inbound.setdefault(s, []): inbound[s].append([p, label])
 out = {"note": __doc__.strip().splitlines()[0], "brief": BRIEF, "pages": pages,
        "inbound": {k: v for k, v in sorted(inbound.items())}}
 (ROOT / "website/data/gsc-upgrade-2026-10-22.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")

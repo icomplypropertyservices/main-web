@@ -95,6 +95,11 @@ jobs:
           MONEY_CTR_DATA: website/data/gsc-upgrade-2026-10-21.json
         run: node website/bin/check-money-ctr.mjs dist
 
+      - name: GSC rankings 22 Oct queue (keyword-first titles/metas, CTA under H1, FAQ+Service, >=800 words, >=80 links, hub inbound links)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: node website/bin/render-rank-pages.mjs dist /tmp/rank-render && python3 website/bin/check-rank-upgrade.py /tmp/rank-render
+
       - name: SEO basics (JSON-LD FAQ/Service valid, images exist, no noindex)
         run: python3 website/bin/check-seo-basics.py dist --strict
 

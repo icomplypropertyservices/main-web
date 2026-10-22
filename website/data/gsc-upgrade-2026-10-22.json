@@ -580,7 +580,8 @@
    ],
    "linkTarget": 85,
    "queue": "FAIL redirects to https://icomplypropertyservices.co.uk/pages/fire-risk-assessments/westhoughton",
-   "position": ""
+   "position": "",
+   "town": "Westhoughton"
   },
   "/pages/services/aov-air-handling": {
    "brief": "GSC-2026-10-22",
@@ -978,7 +979,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "57.5"
+   "position": "57.5",
+   "town": "Emergency Lighting Test"
   },
   "/pages/keywords/self-test-emergency-lighting/warrington": {
    "brief": "GSC-2026-10-22",
@@ -1356,7 +1358,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "29.6"
+   "position": "29.6",
+   "town": "Warrington"
   },
   "/pages/services/fire-suppression": {
    "brief": "GSC-2026-10-22",
@@ -1857,7 +1860,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "30.0"
+   "position": "30.0",
+   "town": "Rochdale"
   },
   "/pages/keywords/lighting-installation": {
    "brief": "GSC-2026-10-22",
@@ -2051,7 +2055,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "46.7"
+   "position": "46.7",
+   "town": "Lighting Installation"
   },
   "/pages/keywords/fire-risk-assessment/wigan": {
    "brief": "GSC-2026-10-22",
@@ -2428,7 +2433,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "47.6"
+   "position": "47.6",
+   "town": "Wigan"
   },
   "/pages/services/fire-stopping": {
    "brief": "GSC-2026-10-22",
@@ -2581,7 +2587,7 @@
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Care Home Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Care Home Fire Risk Assessment Westmorland and Furness",
    "meta": "Care Home Fire Risk Assessment from £350 for a typical 6-bed HMO in Westmorland and Furness, Same/Next-Day and clear dates. Free quote, call 07517 806082",
    "h2": "Care Home Fire Risk Assessment in Westmorland and Furness: what to expect",
    "paras": [
@@ -2828,7 +2834,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "28.8"
+   "position": "28.8",
+   "town": "Westmorland and Furness"
   },
   "/pages/keywords/natural-smoke-ventilation": {
    "brief": "GSC-2026-10-22",
@@ -3022,7 +3029,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "59.8"
+   "position": "59.8",
+   "town": "Natural Smoke Ventilation"
   },
   "/pages/keywords/self-test-emergency-lighting": {
    "brief": "GSC-2026-10-22",
@@ -3216,7 +3224,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "48.3"
+   "position": "48.3",
+   "town": "Self Test Emergency Lighting"
   },
   "/pages/keywords/periodic-electrical-inspection": {
    "brief": "GSC-2026-10-22",
@@ -3410,7 +3419,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.6"
+   "position": "23.6",
+   "town": "Periodic Electrical Inspection"
   },
   "/pages/keywords/landlord-heating-upgrade/morecambe": {
    "brief": "GSC-2026-10-22",
@@ -3651,7 +3661,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "33.9"
+   "position": "33.9",
+   "town": "Morecambe"
   },
   "/pages/keywords/fire-alarm-fault-finding/burnley": {
    "brief": "GSC-2026-10-22",
@@ -4029,7 +4040,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.8"
+   "position": "20.8",
+   "town": "Burnley"
   },
   "/pages/services/electrics-first-fix": {
    "brief": "GSC-2026-10-22",
@@ -4330,7 +4342,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "51.0"
+   "position": "51.0",
+   "town": "L2 Fire Alarm System"
   },
   "/pages/keywords/24-hour-emergency-electrician": {
    "brief": "GSC-2026-10-22",
@@ -4524,7 +4537,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "66.3"
+   "position": "66.3",
+   "town": "24 Hour Emergency Electrician"
   },
   "/pages/keywords/fire-safety-audit/windermere": {
    "brief": "GSC-2026-10-22",
@@ -4777,7 +4791,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "56.8"
+   "position": "56.8",
+   "town": "Westmorland and Furness"
   },
   "/pages/keywords/aov-fault-finding": {
    "brief": "GSC-2026-10-22",
@@ -4971,7 +4986,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "28.9"
+   "position": "28.9",
+   "town": "Aov Fault Finding"
   },
   "/pages/keywords/office-electrical-testing/warrington": {
    "brief": "GSC-2026-10-22",
@@ -5349,7 +5365,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "26.4"
+   "position": "26.4",
+   "town": "Warrington"
   },
   "/pages/keywords/aov-panel-installation": {
    "brief": "GSC-2026-10-22",
@@ -5543,7 +5560,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "47.9"
+   "position": "47.9",
+   "town": "Aov Panel Installation"
   },
   "/pages/keywords/fuse-board-replacement": {
    "brief": "GSC-2026-10-22",
@@ -5737,7 +5755,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "62.3"
+   "position": "62.3",
+   "town": "Fuse Board Replacement"
   },
   "/pages/keywords/fire-risk-assessment/rochdale": {
    "brief": "GSC-2026-10-22",
@@ -6114,7 +6133,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "48.6"
+   "position": "48.6",
+   "town": "Rochdale"
   },
   "/pages/keywords/fire-safety-audit/blackpool": {
    "brief": "GSC-2026-10-22",
@@ -6492,7 +6512,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "65.5"
+   "position": "65.5",
+   "town": "Blackpool"
   },
   "/pages/keywords/fire-door-joinery-support/rossendale": {
    "brief": "GSC-2026-10-22",
@@ -6613,7 +6634,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "28.0"
+   "position": "28.0",
+   "town": "Rossendale"
   },
   "/pages/keywords/hidden-voids-fire-survey": {
    "brief": "GSC-2026-10-22",
@@ -6736,7 +6758,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "39.7"
+   "position": "39.7",
+   "town": "Hidden Voids Fire Survey"
   },
   "/pages/keywords/aov-inspection": {
    "brief": "GSC-2026-10-22",
@@ -6930,7 +6953,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "63.6"
+   "position": "63.6",
+   "town": "Aov Inspection"
   },
   "/pages/keywords/emergency-light-fitting": {
    "brief": "GSC-2026-10-22",
@@ -7124,7 +7148,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.6"
+   "position": "25.6",
+   "town": "Emergency Light Fitting"
   },
   "/pages/keywords/open-area-emergency-lighting": {
    "brief": "GSC-2026-10-22",
@@ -7318,7 +7343,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "29.4"
+   "position": "29.4",
+   "town": "Open Area Emergency Lighting"
   },
   "/pages/keywords/rewire": {
    "brief": "GSC-2026-10-22",
@@ -7511,7 +7537,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "52.2"
+   "position": "52.2",
+   "town": "Rewire"
   },
   "/pages/keywords/aov-inspection/warrington": {
    "brief": "GSC-2026-10-22",
@@ -7889,13 +7916,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "52.8"
+   "position": "52.8",
+   "town": "Warrington"
   },
   "/pages/keywords/new-premises-fire-risk-assessment/lancaster": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "New Premises Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "New Premises Fire Risk Assessment Lancaster from £350",
    "meta": "New Premises Fire Risk Assessment in Lancaster. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "New Premises Fire Risk Assessment in Lancaster: what to expect",
    "paras": [
@@ -8267,7 +8295,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "63.6"
+   "position": "63.6",
+   "town": "Lancaster"
   },
   "/pages/keywords/sprinkler-system-survey": {
    "brief": "GSC-2026-10-22",
@@ -8393,7 +8422,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "48.1"
+   "position": "48.1",
+   "town": "Sprinkler System Survey"
   },
   "/pages/keywords/fire-safety-order-assessment/carlisle": {
    "brief": "GSC-2026-10-22",
@@ -8646,7 +8676,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "59.0"
+   "position": "59.0",
+   "town": "Cumberland"
   },
   "/pages/keywords/fire-alarm-design": {
    "brief": "GSC-2026-10-22",
@@ -8840,7 +8871,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "63.9"
+   "position": "63.9",
+   "town": "Fire Alarm Design"
   },
   "/pages/keywords/emergency-electrician/thornton-cleveleys": {
    "brief": "GSC-2026-10-22",
@@ -9029,7 +9061,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "76.2"
+   "position": "76.2",
+   "town": "Thornton Cleveleys"
   },
   "/pages/keywords/fm-fire-safety-support/lancaster": {
    "brief": "GSC-2026-10-22",
@@ -9255,7 +9288,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "31.6"
+   "position": "31.6",
+   "town": "Lancaster"
   },
   "/pages/keywords/pas-79-fire-risk-assessment": {
    "brief": "GSC-2026-10-22",
@@ -9450,7 +9484,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "37.2"
+   "position": "37.2",
+   "town": "Pas 79 Fire Risk Assessment"
   },
   "/pages/keywords/electrical-inspection": {
    "brief": "GSC-2026-10-22",
@@ -9644,7 +9679,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "53.3"
+   "position": "53.3",
+   "town": "Electrical Inspection"
   },
   "/pages/keywords/type-1-fire-risk-assessment/alport": {
    "brief": "GSC-2026-10-22",
@@ -9833,7 +9869,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "74.1"
+   "position": "74.1",
+   "town": "Alport"
   },
   "/pages/services/fire-extinguishers": {
    "brief": "GSC-2026-10-22",
@@ -10366,7 +10403,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "41.0"
+   "position": "41.0",
+   "town": "Wigan"
   },
   "/pages/keywords/fire-suppression-servicing/manchester": {
    "brief": "GSC-2026-10-22",
@@ -10608,7 +10646,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "43.9"
+   "position": "43.9",
+   "town": "Manchester"
   },
   "/pages/keywords/repointing-services/didsbury": {
    "brief": "GSC-2026-10-22",
@@ -10818,7 +10857,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.3"
+   "position": "20.3",
+   "town": "Didsbury"
   },
   "/pages/keywords/school-fire-risk-assessment": {
    "brief": "GSC-2026-10-22",
@@ -11012,7 +11052,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "36.6"
+   "position": "36.6",
+   "town": "School Fire Risk Assessment"
   },
   "/pages/keywords/aov-commissioning": {
    "brief": "GSC-2026-10-22",
@@ -11206,7 +11247,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "38.7"
+   "position": "38.7",
+   "town": "Aov Commissioning"
   },
   "/pages/keywords/loft-conversion-building-works/romiley": {
    "brief": "GSC-2026-10-22",
@@ -11432,7 +11474,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "24.4"
+   "position": "24.4",
+   "town": "Romiley"
   },
   "/pages/keywords/aov-for-high-rise": {
    "brief": "GSC-2026-10-22",
@@ -11626,7 +11669,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "35.0"
+   "position": "35.0",
+   "town": "Aov For High Rise"
   },
   "/pages/keywords/damp-survey-support/worsley": {
    "brief": "GSC-2026-10-22",
@@ -11875,7 +11919,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.1"
+   "position": "20.1",
+   "town": "Worsley"
   },
   "/pages/keywords/fire-alarm-service/rochdale": {
    "brief": "GSC-2026-10-22",
@@ -12253,7 +12298,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "30.7"
+   "position": "30.7",
+   "town": "Rochdale"
   },
   "/pages/keywords/warehouse-emergency-lighting/carlisle": {
    "brief": "GSC-2026-10-22",
@@ -12506,7 +12552,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "33.9"
+   "position": "33.9",
+   "town": "Cumberland"
   },
   "/pages/keywords/bathroom-refurbishment/urmston": {
    "brief": "GSC-2026-10-22",
@@ -12764,7 +12811,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "34.4"
+   "position": "34.4",
+   "town": "Urmston"
   },
   "/pages/keywords/car-park-smoke-ventilation/guide": {
    "brief": "GSC-2026-10-22",
@@ -12953,7 +13001,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "61.4"
+   "position": "61.4",
+   "town": "Guide"
   },
   "/pages/keywords/roof-tile-replacement/chester": {
    "brief": "GSC-2026-10-22",
@@ -13187,7 +13236,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "81.6"
+   "position": "81.6",
+   "town": "Chester"
   },
   "/pages/emergency-lighting/huddersfield": {
    "brief": "GSC-2026-10-22",
@@ -13527,13 +13577,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.9"
+   "position": "25.9",
+   "town": "Huddersfield"
   },
   "/pages/keywords/warehouse-fire-risk-assessment/colne": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Warehouse Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Warehouse Fire Risk Assessment Colne from £350 | iComply",
    "meta": "Warehouse Fire Risk Assessment in Colne. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Warehouse Fire Risk Assessment in Colne: what to expect",
    "paras": [
@@ -13904,13 +13955,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "40.3"
+   "position": "40.3",
+   "town": "Colne"
   },
   "/pages/keywords/care-home-fire-risk-assessment/woodley": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Care Home Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Care Home Fire Risk Assessment Woodley from £350 | iComply",
    "meta": "Care Home Fire Risk Assessment in Woodley. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Care Home Fire Risk Assessment in Woodley: what to expect",
    "paras": [
@@ -14093,13 +14145,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "35.8"
+   "position": "35.8",
+   "town": "Woodley"
   },
   "/pages/keywords/fire-risk-assessment-support/clitheroe": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Fire Risk Assessment Support from £350 | Same/Next-Day",
+   "title": "Fire Risk Assessment Support Clitheroe from £350 | iComply",
    "meta": "Fire Risk Assessment Support in Clitheroe. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Fire Risk Assessment Support in Clitheroe: what to expect",
    "paras": [
@@ -14471,7 +14524,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "41.0"
+   "position": "41.0",
+   "town": "Clitheroe"
   },
   "/pages/keywords/service-riser-fire-stopping": {
    "brief": "GSC-2026-10-22",
@@ -14622,7 +14676,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "50.3"
+   "position": "50.3",
+   "town": "Service Riser Fire Stopping"
   },
   "/pages/keywords/smoke-vent-system/culcheth": {
    "brief": "GSC-2026-10-22",
@@ -14875,7 +14930,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.5"
+   "position": "22.5",
+   "town": "Warrington"
   },
   "/pages/keywords/render-repairs/farnworth": {
    "brief": "GSC-2026-10-22",
@@ -15117,7 +15173,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "32.3"
+   "position": "32.3",
+   "town": "Farnworth"
   },
   "/pages/keywords/fire-blanket-supply": {
    "brief": "GSC-2026-10-22",
@@ -15276,7 +15333,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "56.2"
+   "position": "56.2",
+   "town": "Fire Blanket Supply"
   },
   "/pages/keywords/conventional-fire-alarm-system": {
    "brief": "GSC-2026-10-22",
@@ -15470,7 +15528,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.2"
+   "position": "22.2",
+   "town": "Conventional Fire Alarm System"
   },
   "/pages/keywords/commercial-security-lighting/lancaster": {
    "brief": "GSC-2026-10-22",
@@ -15848,13 +15907,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "36.9"
+   "position": "36.9",
+   "town": "Lancaster"
   },
   "/pages/keywords/retail-fire-risk-assessment/warrington": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Retail Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Retail Fire Risk Assessment Warrington from £350 | iComply",
    "meta": "Retail Fire Risk Assessment in Warrington. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Retail Fire Risk Assessment in Warrington: what to expect",
    "paras": [
@@ -16226,13 +16286,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "50.7"
+   "position": "50.7",
+   "town": "Warrington"
   },
   "/pages/keywords/school-fire-risk-assessment/woodley": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "School Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "School Fire Risk Assessment Woodley from £350 | iComply",
    "meta": "School Fire Risk Assessment in Woodley. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "School Fire Risk Assessment in Woodley: what to expect",
    "paras": [
@@ -16414,7 +16475,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "21.8"
+   "position": "21.8",
+   "town": "Woodley"
   },
   "/pages/keywords/render-repairs/bramhall": {
    "brief": "GSC-2026-10-22",
@@ -16656,7 +16718,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "35.6"
+   "position": "35.6",
+   "town": "Bramhall"
   },
   "/pages/keywords/fire-alarm-loop-tester/morecambe": {
    "brief": "GSC-2026-10-22",
@@ -17034,7 +17097,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "48.3"
+   "position": "48.3",
+   "town": "Morecambe"
   },
   "/pages/keywords/fire-risk-assessment/blackburn": {
    "brief": "GSC-2026-10-22",
@@ -17411,7 +17475,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "74.6"
+   "position": "74.6",
+   "town": "Blackburn"
   },
   "/pages/keywords/fire-alarm-service/oldham": {
    "brief": "GSC-2026-10-22",
@@ -17789,7 +17854,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.5"
+   "position": "23.5",
+   "town": "Oldham"
   },
   "/pages/keywords/external-rendering/westhoughton": {
    "brief": "GSC-2026-10-22",
@@ -18031,7 +18097,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.4"
+   "position": "25.4",
+   "town": "Westhoughton"
   },
   "/pages/keywords/roof-tile-replacement-cost/holmes-chapel": {
    "brief": "GSC-2026-10-22",
@@ -18212,7 +18279,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "32.0"
+   "position": "32.0",
+   "town": "Cheshire East"
   },
   "/pages/keywords/commercial-eicr": {
    "brief": "GSC-2026-10-22",
@@ -18406,7 +18474,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "33.6"
+   "position": "33.6",
+   "town": "Commercial Eicr"
   },
   "/pages/keywords/eicr/rochdale": {
    "brief": "GSC-2026-10-22",
@@ -18784,7 +18853,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "37.9"
+   "position": "37.9",
+   "town": "Rochdale"
   },
   "/pages/keywords/morley-fire-alarm-panel": {
    "brief": "GSC-2026-10-22",
@@ -18978,7 +19048,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "46.5"
+   "position": "46.5",
+   "town": "Morley Fire Alarm Panel"
   },
   "/pages/keywords/type-1-fire-risk-assessment/crewe": {
    "brief": "GSC-2026-10-22",
@@ -19356,7 +19427,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "67.2"
+   "position": "67.2",
+   "town": "Crewe"
   },
   "/pages/keywords/smoke-vent-installation/heywood": {
    "brief": "GSC-2026-10-22",
@@ -19734,7 +19806,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.1"
+   "position": "22.1",
+   "town": "Heywood"
   },
   "/pages/keywords/periodic-fire-alarm-service/knutsford": {
    "brief": "GSC-2026-10-22",
@@ -20112,7 +20185,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.2"
+   "position": "22.2",
+   "town": "Knutsford"
   },
   "/pages/keywords/plastering-for-renovation/pendlebury": {
    "brief": "GSC-2026-10-22",
@@ -20362,7 +20436,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.6"
+   "position": "23.6",
+   "town": "Pendlebury"
   },
   "/pages/keywords/battery-storage-electrical/st-helens": {
    "brief": "GSC-2026-10-22",
@@ -20740,7 +20815,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "27.8"
+   "position": "27.8",
+   "town": "St Helens"
   },
   "/pages/keywords/bathroom-electrical-safety": {
    "brief": "GSC-2026-10-22",
@@ -20934,7 +21010,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "46.1"
+   "position": "46.1",
+   "town": "Bathroom Electrical Safety"
   },
   "/pages/keywords/fire-risk-assessment/salford": {
    "brief": "GSC-2026-10-22",
@@ -21311,7 +21388,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "68.8"
+   "position": "68.8",
+   "town": "Salford"
   },
   "/pages/keywords/fire-door-installation": {
    "brief": "GSC-2026-10-22",
@@ -21466,7 +21544,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "36.6"
+   "position": "36.6",
+   "town": "Fire Door Installation"
   },
   "/pages/keywords/roof-tile-replacement/holmes-chapel": {
    "brief": "GSC-2026-10-22",
@@ -21647,7 +21726,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.7"
+   "position": "20.7",
+   "town": "Cheshire East"
   },
   "/pages/keywords/aov-system-design": {
    "brief": "GSC-2026-10-22",
@@ -21841,7 +21921,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.9"
+   "position": "20.9",
+   "town": "Aov System Design"
   },
   "/pages/keywords/rising-damp-treatment/swinton": {
    "brief": "GSC-2026-10-22",
@@ -22090,7 +22171,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "21.9"
+   "position": "21.9",
+   "town": "Swinton"
   },
   "/pages/keywords/house-rendering-package/horwich": {
    "brief": "GSC-2026-10-22",
@@ -22332,7 +22414,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.6"
+   "position": "22.6",
+   "town": "Horwich"
   },
   "/pages/keywords/emergency-lighting-maintenance/workington": {
    "brief": "GSC-2026-10-22",
@@ -22585,7 +22668,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.4"
+   "position": "23.4",
+   "town": "Cumberland"
   },
   "/pages/keywords/emergency-lighting-design/carlisle": {
    "brief": "GSC-2026-10-22",
@@ -22838,7 +22922,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "24.9"
+   "position": "24.9",
+   "town": "Cumberland"
   },
   "/pages/keywords/periodic-emergency-lighting-test/bury": {
    "brief": "GSC-2026-10-22",
@@ -23216,7 +23301,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "29.5"
+   "position": "29.5",
+   "town": "Bury"
   },
   "/pages/keywords/fire-extinguisher-supply/lancaster": {
    "brief": "GSC-2026-10-22",
@@ -23522,7 +23608,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "35.3"
+   "position": "35.3",
+   "town": "Lancaster"
   },
   "/pages/keywords/fire-suppression-servicing/liverpool": {
    "brief": "GSC-2026-10-22",
@@ -23764,7 +23851,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "39.2"
+   "position": "39.2",
+   "town": "Liverpool"
   },
   "/pages/keywords/damp-survey-support/urmston": {
    "brief": "GSC-2026-10-22",
@@ -24013,7 +24101,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "21.1"
+   "position": "21.1",
+   "town": "Urmston"
   },
   "/pages/keywords/commercial-kitchen-fire-system/runcorn": {
    "brief": "GSC-2026-10-22",
@@ -24239,7 +24328,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "24.1"
+   "position": "24.1",
+   "town": "Runcorn"
   },
   "/pages/keywords/fire-compartmentation-survey/haydock": {
    "brief": "GSC-2026-10-22",
@@ -24473,7 +24563,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "28.9"
+   "position": "28.9",
+   "town": "Haydock"
   },
   "/pages/keywords/battery-storage-electrical/newton-le-willows": {
    "brief": "GSC-2026-10-22",
@@ -24851,7 +24942,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "29.1"
+   "position": "29.1",
+   "town": "Newton-le-Willows"
   },
   "/pages/keywords/emergency-lighting-test/fulwood": {
    "brief": "GSC-2026-10-22",
@@ -25229,13 +25321,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "47.4"
+   "position": "47.4",
+   "town": "Fulwood"
   },
   "/pages/keywords/electrical-installation-condition-report/ulverston": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Electrical Installation Condition Report | Same/Next-Day",
+   "title": "Electrical Installation Condition Report Ulverston | iComply",
    "meta": "Electrical Installation Condition Report in Ulverston. Local team from Stockport, written scope and Same/Next-Day visits. Free quote, call 07517 806082",
    "h2": "Electrical Installation Condition Report in Ulverston: what to expect",
    "paras": [
@@ -25607,13 +25700,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "64.5"
+   "position": "64.5",
+   "town": "Ulverston"
   },
   "/pages/keywords/school-fire-risk-assessment/poulton-le-fylde": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "School Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "School Fire Risk Assessment Poulton-le-Fylde from £350",
    "meta": "School Fire Risk Assessment in Poulton-le-Fylde. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "School Fire Risk Assessment in Poulton-le-Fylde: what to expect",
    "paras": [
@@ -25984,7 +26078,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.4"
+   "position": "20.4",
+   "town": "Poulton-le-Fylde"
   },
   "/pages/keywords/emergency-lighting-survey-cost/new": {
    "brief": "GSC-2026-10-22",
@@ -26173,7 +26268,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.6"
+   "position": "20.6",
+   "town": "New"
   },
   "/pages/keywords/emergency-lighting-annual-test/walkden": {
    "brief": "GSC-2026-10-22",
@@ -26551,13 +26647,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.3"
+   "position": "23.3",
+   "town": "Walkden"
   },
   "/pages/keywords/emergency-lighting-electrical-works/warrington": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Emergency Lighting Electrical Works | Same/Next-Day",
+   "title": "Emergency Lighting Electrical Works Warrington | iComply",
    "meta": "Emergency Lighting Electrical Works in Warrington. Local team from Stockport, written scope and Same/Next-Day visits. Free quote, call 07517 806082",
    "h2": "Emergency Lighting Electrical Works in Warrington: what to expect",
    "paras": [
@@ -26929,7 +27026,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.5"
+   "position": "25.5",
+   "town": "Warrington"
   },
   "/pages/keywords/industrial-emergency-lighting": {
    "brief": "GSC-2026-10-22",
@@ -27123,7 +27221,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "29.9"
+   "position": "29.9",
+   "town": "Industrial Emergency Lighting"
   },
   "/pages/keywords/louvre-aov": {
    "brief": "GSC-2026-10-22",
@@ -27317,7 +27416,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "32.4"
+   "position": "32.4",
+   "town": "Louvre Aov"
   },
   "/pages/keywords/landlord-extinguisher-service": {
    "brief": "GSC-2026-10-22",
@@ -27475,7 +27575,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "32.4"
+   "position": "32.4",
+   "town": "Landlord Extinguisher Service"
   },
   "/pages/keywords/fire-risk-assessment/carlisle": {
    "brief": "GSC-2026-10-22",
@@ -27727,13 +27828,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "40.5"
+   "position": "40.5",
+   "town": "Cumberland"
   },
   "/pages/keywords/landlord-fire-risk-assessment/clitheroe": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Landlord Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Landlord Fire Risk Assessment Clitheroe from £350 | iComply",
    "meta": "Landlord Fire Risk Assessment in Clitheroe. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Landlord Fire Risk Assessment in Clitheroe: what to expect",
    "paras": [
@@ -28104,7 +28206,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "69.1"
+   "position": "69.1",
+   "town": "Clitheroe"
   },
   "/pages/keywords/emergency-lighting-installation/foulridge": {
    "brief": "GSC-2026-10-22",
@@ -28357,7 +28460,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "87.3"
+   "position": "87.3",
+   "town": "Pendle"
   },
   "/pages/keywords/cavity-barrier-installation/rochdale": {
    "brief": "GSC-2026-10-22",
@@ -28646,7 +28750,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.5"
+   "position": "20.5",
+   "town": "Rochdale"
   },
   "/pages/keywords/repointing-services/bramhall": {
    "brief": "GSC-2026-10-22",
@@ -28868,7 +28973,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.8"
+   "position": "20.8",
+   "town": "Bramhall"
   },
   "/pages/keywords/commercial-electrician/warrington": {
    "brief": "GSC-2026-10-22",
@@ -29246,7 +29352,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.8"
+   "position": "22.8",
+   "town": "Warrington"
   },
   "/pages/keywords/through-colour-render/failsworth": {
    "brief": "GSC-2026-10-22",
@@ -29488,7 +29595,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "23.7"
+   "position": "23.7",
+   "town": "Failsworth"
   },
   "/pages/keywords/fire-alarm-installation/carlisle": {
    "brief": "GSC-2026-10-22",
@@ -29741,7 +29849,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "34.0"
+   "position": "34.0",
+   "town": "Cumberland"
   },
   "/pages/keywords/aov-maintenance-contract": {
    "brief": "GSC-2026-10-22",
@@ -29935,7 +30044,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "37.4"
+   "position": "37.4",
+   "town": "Aov Maintenance Contract"
   },
   "/pages/keywords/through-colour-render/swinton": {
    "brief": "GSC-2026-10-22",
@@ -30177,7 +30287,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "40.3"
+   "position": "40.3",
+   "town": "Swinton"
   },
   "/pages/keywords/home-extension-building/leigh": {
    "brief": "GSC-2026-10-22",
@@ -30394,7 +30505,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "41.8"
+   "position": "41.8",
+   "town": "Leigh"
   },
   "/pages/keywords/no-smoking-fire-signs": {
    "brief": "GSC-2026-10-22",
@@ -30521,7 +30633,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "64.3"
+   "position": "64.3",
+   "town": "No Smoking Fire Signs"
   },
   "/pages/keywords/electrician-near-me/worsley": {
    "brief": "GSC-2026-10-22",
@@ -30899,7 +31012,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "67.2"
+   "position": "67.2",
+   "town": "Worsley"
   },
   "/pages/keywords/car-park-barrier-access/swinton": {
    "brief": "GSC-2026-10-22",
@@ -31277,7 +31391,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "69.3"
+   "position": "69.3",
+   "town": "Swinton"
   },
   "/pages/keywords/landlord-joinery-repairs/tyldesley": {
    "brief": "GSC-2026-10-22",
@@ -31518,7 +31633,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.9"
+   "position": "22.9",
+   "town": "Tyldesley"
   },
   "/pages/keywords/through-colour-render/westhoughton": {
    "brief": "GSC-2026-10-22",
@@ -31760,7 +31876,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "27.3"
+   "position": "27.3",
+   "town": "Westhoughton"
   },
   "/pages/keywords/landlord-extinguisher-service/lymm": {
    "brief": "GSC-2026-10-22",
@@ -32065,7 +32182,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "36.2"
+   "position": "36.2",
+   "town": "Lymm"
   },
   "/pages/keywords/smoke-alarm-installation": {
    "brief": "GSC-2026-10-22",
@@ -32259,7 +32377,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "41.1"
+   "position": "41.1",
+   "town": "Smoke Alarm Installation"
   },
   "/pages/keywords/plastering-services/sale": {
    "brief": "GSC-2026-10-22",
@@ -32509,7 +32628,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "51.0"
+   "position": "51.0",
+   "town": "Sale"
   },
   "/pages/keywords/home-extension-building/bramhall": {
    "brief": "GSC-2026-10-22",
@@ -32726,13 +32846,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "53.0"
+   "position": "53.0",
+   "town": "Bramhall"
   },
   "/pages/keywords/fire-safety-order-assessment/poulton-le-fylde": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Fire Safety Order Assessment | Same/Next-Day | iComply",
+   "title": "Fire Safety Order Assessment Poulton-le-Fylde | iComply",
    "meta": "Fire Safety Order Assessment in Poulton-le-Fylde. Local team from Stockport, written scope and Same/Next-Day visits. Free quote, call 07517 806082",
    "h2": "Fire Safety Order Assessment in Poulton-le-Fylde: what to expect",
    "paras": [
@@ -33104,13 +33225,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "55.1"
+   "position": "55.1",
+   "town": "Poulton-le-Fylde"
   },
   "/pages/keywords/warehouse-fire-risk-assessment/crewe": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Warehouse Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Warehouse Fire Risk Assessment Crewe from £350 | iComply",
    "meta": "Warehouse Fire Risk Assessment in Crewe. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Warehouse Fire Risk Assessment in Crewe: what to expect",
    "paras": [
@@ -33481,7 +33603,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "77.3"
+   "position": "77.3",
+   "town": "Crewe"
   },
   "/pages/keywords/fire-risk-assessment/liverpool": {
    "brief": "GSC-2026-10-22",
@@ -33858,7 +33981,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "84.1"
+   "position": "84.1",
+   "town": "Liverpool"
   },
   "/pages/keywords/damp-survey-support/didsbury": {
    "brief": "GSC-2026-10-22",
@@ -34107,7 +34231,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "24.1"
+   "position": "24.1",
+   "town": "Didsbury"
   },
   "/pages/keywords/fire-safety-audit/manchester": {
    "brief": "GSC-2026-10-22",
@@ -34485,7 +34610,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "24.7"
+   "position": "24.7",
+   "town": "Manchester"
   },
   "/pages/keywords/wireless-fire-alarm-system": {
    "brief": "GSC-2026-10-22",
@@ -34679,7 +34805,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.1"
+   "position": "25.1",
+   "town": "Wireless Fire Alarm System"
   },
   "/pages/keywords/emergency-lighting-certification/whitefield": {
    "brief": "GSC-2026-10-22",
@@ -35057,7 +35184,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "26.4"
+   "position": "26.4",
+   "town": "Whitefield"
   },
   "/pages/keywords/render-repairs/horwich": {
    "brief": "GSC-2026-10-22",
@@ -35299,7 +35427,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "33.7"
+   "position": "33.7",
+   "town": "Horwich"
   },
   "/pages/keywords/commercial-plastering/sale": {
    "brief": "GSC-2026-10-22",
@@ -35548,7 +35677,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "34.7"
+   "position": "34.7",
+   "town": "Sale"
   },
   "/pages/keywords/aov-maintenance/rochdale": {
    "brief": "GSC-2026-10-22",
@@ -35926,7 +36056,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "34.9"
+   "position": "34.9",
+   "town": "Rochdale"
   },
   "/pages/keywords/automatic-emergency-lighting-test/burnley": {
    "brief": "GSC-2026-10-22",
@@ -36304,7 +36435,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "20.3"
+   "position": "20.3",
+   "town": "Burnley"
   },
   "/pages/keywords/damp-survey-support/westhoughton": {
    "brief": "GSC-2026-10-22",
@@ -36553,7 +36685,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "25.5"
+   "position": "25.5",
+   "town": "Westhoughton"
   },
   "/pages/keywords/fire-extinguisher-service/st-helens": {
    "brief": "GSC-2026-10-22",
@@ -36858,7 +36991,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "26.3"
+   "position": "26.3",
+   "town": "St Helens"
   },
   "/pages/keywords/painting-and-decorating/littleborough": {
    "brief": "GSC-2026-10-22",
@@ -37083,7 +37217,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "32.7"
+   "position": "32.7",
+   "town": "Littleborough"
   },
   "/pages/keywords/fire-risk-assessment/burnley": {
    "brief": "GSC-2026-10-22",
@@ -37460,7 +37595,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "36.1"
+   "position": "36.1",
+   "town": "Burnley"
   },
   "/pages/keywords/smoke-vent-system/poynton": {
    "brief": "GSC-2026-10-22",
@@ -37838,7 +37974,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "47.0"
+   "position": "47.0",
+   "town": "Poynton"
   },
   "/pages/keywords/electrical-maintenance/bury": {
    "brief": "GSC-2026-10-22",
@@ -38216,13 +38353,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "56.3"
+   "position": "56.3",
+   "town": "Bury"
   },
   "/pages/keywords/warehouse-fire-risk-assessment/carlisle": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Warehouse Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Warehouse Fire Risk Assessment Cumberland from £350",
    "meta": "Warehouse Fire Risk Assessment in Cumberland. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Warehouse Fire Risk Assessment in Cumberland: what to expect",
    "paras": [
@@ -38468,7 +38606,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "66.7"
+   "position": "66.7",
+   "town": "Cumberland"
   },
   "/pages/keywords/car-park-smoke-ventilation/bramhall": {
    "brief": "GSC-2026-10-22",
@@ -38846,7 +38985,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "69.6"
+   "position": "69.6",
+   "town": "Bramhall"
   },
   "/pages/keywords/fire-safety-order-assessment/liverpool": {
    "brief": "GSC-2026-10-22",
@@ -39224,7 +39364,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "85.5"
+   "position": "85.5",
+   "town": "Liverpool"
   },
   "/pages/keywords/fire-alarm-installation/burnley": {
    "brief": "GSC-2026-10-22",
@@ -39602,7 +39743,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "21.9"
+   "position": "21.9",
+   "town": "Burnley"
   },
   "/pages/keywords/property-refurbishment-management/cheadle": {
    "brief": "GSC-2026-10-22",
@@ -39788,7 +39930,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "28.1"
+   "position": "28.1",
+   "town": "Cheadle"
   },
   "/pages/keywords/emergency-lighting-panel/kirkham": {
    "brief": "GSC-2026-10-22",
@@ -40041,7 +40184,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "34.2"
+   "position": "34.2",
+   "town": "Fylde"
   },
   "/pages/keywords/new-build-electrical-installation/burnley": {
    "brief": "GSC-2026-10-22",
@@ -40419,7 +40563,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "40.1"
+   "position": "40.1",
+   "town": "Burnley"
   },
   "/pages/keywords/hidden-voids-fire-survey/standish": {
    "brief": "GSC-2026-10-22",
@@ -40600,7 +40745,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "40.6"
+   "position": "40.6",
+   "town": "Wigan"
   },
   "/pages/keywords/emergency-lighting-inverter": {
    "brief": "GSC-2026-10-22",
@@ -40794,13 +40940,14 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "49.8"
+   "position": "49.8",
+   "town": "Emergency Lighting Inverter"
   },
   "/pages/keywords/communal-area-fire-risk-assessment/eccles": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Communal Area Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Communal Area Fire Risk Assessment Eccles from £350",
    "meta": "Communal Area Fire Risk Assessment in Eccles. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Communal Area Fire Risk Assessment in Eccles: what to expect",
    "paras": [
@@ -41172,7 +41319,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "85.9"
+   "position": "85.9",
+   "town": "Eccles"
   },
   "/pages/keywords/gas-fire-installation/mossley": {
    "brief": "GSC-2026-10-22",
@@ -41550,7 +41698,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "5.2"
+   "position": "5.2",
+   "town": "Mossley"
   },
   "/pages/keywords/car-park-barrier-access": {
    "brief": "GSC-2026-10-22",
@@ -41744,7 +41893,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "11.5"
+   "position": "11.5",
+   "town": "Car Park Barrier Access"
   },
   "/pages/keywords/eicr-report/disley": {
    "brief": "GSC-2026-10-22",
@@ -41997,7 +42147,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "1.0"
+   "position": "1.0",
+   "town": "Cheshire East"
   },
   "/pages/keywords/fire-door-installation/wilmslow": {
    "brief": "GSC-2026-10-22",
@@ -42295,7 +42446,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "3.5"
+   "position": "3.5",
+   "town": "Wilmslow"
   },
   "/pages/keywords/outside-socket-installation/widnes": {
    "brief": "GSC-2026-10-22",
@@ -42673,7 +42825,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "5.0"
+   "position": "5.0",
+   "town": "Widnes"
   },
   "/pages/keywords/fd30-fire-door/warrington": {
    "brief": "GSC-2026-10-22",
@@ -42971,7 +43124,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "6.0"
+   "position": "6.0",
+   "town": "Warrington"
   },
   "/pages/keywords/emergency-lighting-repair/swinton": {
    "brief": "GSC-2026-10-22",
@@ -43349,7 +43503,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "6.5"
+   "position": "6.5",
+   "town": "Swinton"
   },
   "/pages/keywords/colt-smoke-vent/runcorn": {
    "brief": "GSC-2026-10-22",
@@ -43727,7 +43882,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "9.5"
+   "position": "9.5",
+   "town": "Runcorn"
   },
   "/pages/keywords/external-security-lighting/manchester": {
    "brief": "GSC-2026-10-22",
@@ -44105,7 +44261,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "13.0"
+   "position": "13.0",
+   "town": "Manchester"
   },
   "/pages/keywords/gas-fire-installation/blackpool": {
    "brief": "GSC-2026-10-22",
@@ -44483,7 +44640,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "18.5"
+   "position": "18.5",
+   "town": "Blackpool"
   },
   "/pages/keywords/fire-door-replacement-programme/st-annes-poulton-le-fylde-cleveleys": {
    "brief": "GSC-2026-10-22",
@@ -44631,7 +44789,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "1.0"
+   "position": "1.0",
+   "town": "St Annes Poulton Le Fylde Cleveleys"
   },
   "/pages/keywords/roof-smoke-vent-installation/preston": {
    "brief": "GSC-2026-10-22",
@@ -45009,7 +45168,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "1.0"
+   "position": "1.0",
+   "town": "Preston"
   },
   "/pages/keywords/fire-door-inspection/saddleworth": {
    "brief": "GSC-2026-10-22",
@@ -45387,7 +45547,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "2.0"
+   "position": "2.0",
+   "town": "Saddleworth"
   },
   "/pages/keywords/smoke-control-system/manchester": {
    "brief": "GSC-2026-10-22",
@@ -45765,7 +45926,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "2.0"
+   "position": "2.0",
+   "town": "Manchester"
   },
   "/pages/keywords/three-phase-electrical-installation/ormskirk": {
    "brief": "GSC-2026-10-22",
@@ -46143,7 +46305,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "3.0"
+   "position": "3.0",
+   "town": "Ormskirk"
   },
   "/pages/keywords/aov-installation/west-bradford": {
    "brief": "GSC-2026-10-22",
@@ -46332,7 +46495,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "4.0"
+   "position": "4.0",
+   "town": "West Bradford"
   },
   "/pages/keywords/battery-storage-electrical/haydock": {
    "brief": "GSC-2026-10-22",
@@ -46710,7 +46874,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "4.0"
+   "position": "4.0",
+   "town": "Haydock"
   },
   "/pages/keywords/electrical-safety-inspection/padiham": {
    "brief": "GSC-2026-10-22",
@@ -47088,7 +47253,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "5.0"
+   "position": "5.0",
+   "town": "Padiham"
   },
   "/pages/keywords/fire-alarm-certificate/salford": {
    "brief": "GSC-2026-10-22",
@@ -47466,7 +47632,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "7.0"
+   "position": "7.0",
+   "town": "Salford"
   },
   "/pages/keywords/floor-joist-repairs/whitefield": {
    "brief": "GSC-2026-10-22",
@@ -47675,7 +47842,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "7.0"
+   "position": "7.0",
+   "town": "Whitefield"
   },
   "/pages/keywords/fire-extinguisher-service/poulton-le-fylde": {
    "brief": "GSC-2026-10-22",
@@ -47980,7 +48148,8 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "10.0"
+   "position": "10.0",
+   "town": "Poulton-le-Fylde"
   },
   "/pages/keywords/fire-door-installation/bury": {
    "brief": "GSC-2026-10-22",
@@ -48278,13 +48447,14 @@
    ],
    "linkTarget": 85,
    "queue": "<=5 impressions",
-   "position": "11.0"
+   "position": "11.0",
+   "town": "Bury"
   },
   "/pages/keywords/type-1-fire-risk-assessment/lytham-st-annes": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Type 1 Fire Risk Assessment from £350 | Same/Next-Day",
+   "title": "Type 1 Fire Risk Assessment Lytham St Annes from £350",
    "meta": "Type 1 Fire Risk Assessment in Lytham St Annes. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Type 1 Fire Risk Assessment in Lytham St Annes: what to expect",
    "paras": [
@@ -48656,7 +48826,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "22.0"
+   "position": "22.0",
+   "town": "Lytham St Annes"
   },
   "/pages/keywords/car-park-barrier-access/breightmet-fold": {
    "brief": "GSC-2026-10-22",
@@ -48845,7 +49016,8 @@
    ],
    "linkTarget": 85,
    "queue": "position >20",
-   "position": "27.0"
+   "position": "27.0",
+   "town": "Breightmet Fold"
   },
   "/pages/fire-signage/new-brighton": {
    "brief": "GSC-2026-10-22",
@@ -48964,7 +49136,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "13.4"
+   "position": "13.4",
+   "town": "New Brighton"
   },
   "/pages/jobs/car-park-barrier": {
    "brief": "GSC-2026-10-22",
@@ -49435,7 +49608,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "12.0"
+   "position": "12.0",
+   "town": "Stockport"
   },
   "/pages/keywords/house-rendering-package/failsworth": {
    "brief": "GSC-2026-10-22",
@@ -49677,7 +49851,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.0"
+   "position": "11.0",
+   "town": "Failsworth"
   },
   "/pages/keywords/5-year-eicr-certificate/alderley-edge": {
    "brief": "GSC-2026-10-22",
@@ -49941,7 +50116,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "9.4"
+   "position": "9.4",
+   "town": "Cheshire East"
   },
   "/pages/keywords/render-repairs/walkden": {
    "brief": "GSC-2026-10-22",
@@ -50183,7 +50359,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.9"
+   "position": "11.9",
+   "town": "Walkden"
   },
   "/pages/keywords/house-rendering-package/farnworth": {
    "brief": "GSC-2026-10-22",
@@ -50425,7 +50602,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.5"
+   "position": "11.5",
+   "town": "Farnworth"
   },
   "/pages/keywords/emergency-lighting-repair/warrington": {
    "brief": "GSC-2026-10-22",
@@ -50803,7 +50981,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "19.0"
+   "position": "19.0",
+   "town": "Warrington"
   },
   "/pages/keywords/house-rendering-package/bramhall": {
    "brief": "GSC-2026-10-22",
@@ -51045,7 +51224,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.9"
+   "position": "11.9",
+   "town": "Bramhall"
   },
   "/pages/keywords/fire-door-installation/bootle": {
    "brief": "GSC-2026-10-22",
@@ -51343,7 +51523,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "12.3"
+   "position": "12.3",
+   "town": "Bootle"
   },
   "/pages/keywords/damp-survey-support/cheadle": {
    "brief": "GSC-2026-10-22",
@@ -51592,7 +51773,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "18.8"
+   "position": "18.8",
+   "town": "Cheadle"
   },
   "/pages/keywords/external-rendering/chorlton": {
    "brief": "GSC-2026-10-22",
@@ -51834,7 +52016,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.6"
+   "position": "10.6",
+   "town": "Chorlton"
   },
   "/pages/keywords/render-repairs/littleborough": {
    "brief": "GSC-2026-10-22",
@@ -52076,7 +52259,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "9.4"
+   "position": "9.4",
+   "town": "Littleborough"
   },
   "/pages/keywords/repointing-services/marple": {
    "brief": "GSC-2026-10-22",
@@ -52286,7 +52470,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "16.3"
+   "position": "16.3",
+   "town": "Marple"
   },
   "/pages/keywords/house-rendering-package/westhoughton": {
    "brief": "GSC-2026-10-22",
@@ -52528,7 +52713,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "15.6"
+   "position": "15.6",
+   "town": "Westhoughton"
   },
   "/pages/keywords/emergency-lighting-commissioning": {
    "brief": "GSC-2026-10-22",
@@ -52722,7 +52908,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "14.6"
+   "position": "14.6",
+   "town": "Emergency Lighting Commissioning"
   },
   "/pages/keywords/car-park-smoke-ventilation/chadderton": {
    "brief": "GSC-2026-10-22",
@@ -53100,7 +53287,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "19.9"
+   "position": "19.9",
+   "town": "Chadderton"
   },
   "/pages/keywords/glazed-fire-door/rossendale": {
    "brief": "GSC-2026-10-22",
@@ -53249,7 +53437,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "16.7"
+   "position": "16.7",
+   "town": "Rossendale"
   },
   "/pages/keywords/eicr-near-me/waddington": {
    "brief": "GSC-2026-10-22",
@@ -53502,7 +53691,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "8.5"
+   "position": "8.5",
+   "town": "Ribble Valley"
   },
   "/pages/keywords/fire-door-installation/st-helens": {
    "brief": "GSC-2026-10-22",
@@ -53800,7 +53990,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "9.1"
+   "position": "9.1",
+   "town": "St Helens"
   },
   "/pages/keywords/kitchen-remodel/irlam": {
    "brief": "GSC-2026-10-22",
@@ -54074,7 +54265,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.0"
+   "position": "10.0",
+   "town": "Irlam"
   },
   "/pages/keywords/office-electrical-testing/wigan": {
    "brief": "GSC-2026-10-22",
@@ -54452,7 +54644,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "13.1"
+   "position": "13.1",
+   "town": "Wigan"
   },
   "/pages/keywords/mechanical-smoke-ventilation/whiston": {
    "brief": "GSC-2026-10-22",
@@ -54830,7 +55023,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "16.1"
+   "position": "16.1",
+   "town": "Whiston"
   },
   "/pages/keywords/house-rendering-package/whitefield": {
    "brief": "GSC-2026-10-22",
@@ -55072,7 +55266,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "18.9"
+   "position": "18.9",
+   "town": "Whitefield"
   },
   "/pages/fire-extinguishers/barrow-in-furness": {
    "brief": "GSC-2026-10-22",
@@ -55348,7 +55543,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "17.4"
+   "position": "17.4",
+   "town": "Barrow in Furness"
   },
   "/pages/keywords/stairwell-smoke-vent/tyldesley": {
    "brief": "GSC-2026-10-22",
@@ -55726,7 +55922,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "18.6"
+   "position": "18.6",
+   "town": "Tyldesley"
   },
   "/pages/keywords/render-repairs/swinton": {
    "brief": "GSC-2026-10-22",
@@ -55968,7 +56165,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "14.6"
+   "position": "14.6",
+   "town": "Swinton"
   },
   "/pages/keywords/fire-alarm-testing/blackburn": {
    "brief": "GSC-2026-10-22",
@@ -56346,7 +56544,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "8.2"
+   "position": "8.2",
+   "town": "Blackburn"
   },
   "/pages/keywords/damp-survey-support/cheadle-hulme": {
    "brief": "GSC-2026-10-22",
@@ -56595,7 +56794,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.4"
+   "position": "10.4",
+   "town": "Cheadle Hulme"
   },
   "/pages/keywords/eicr-cost-near-me/waddington": {
    "brief": "GSC-2026-10-22",
@@ -56847,7 +57047,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "9.8"
+   "position": "9.8",
+   "town": "Ribble Valley"
   },
   "/pages/keywords/external-rendering/swinton": {
    "brief": "GSC-2026-10-22",
@@ -57089,7 +57290,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.0"
+   "position": "10.0",
+   "town": "Swinton"
   },
   "/pages/keywords/wet-chemical-extinguisher/huddersfield": {
    "brief": "GSC-2026-10-22",
@@ -57395,7 +57597,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.1"
+   "position": "10.1",
+   "town": "Huddersfield"
   },
   "/pages/keywords/fire-alarm-servicing/burnley": {
    "brief": "GSC-2026-10-22",
@@ -57773,7 +57976,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "15.3"
+   "position": "15.3",
+   "town": "Burnley"
   },
   "/pages/keywords/office-electrical-testing/burnley": {
    "brief": "GSC-2026-10-22",
@@ -58151,7 +58355,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "17.7"
+   "position": "17.7",
+   "town": "Burnley"
   },
   "/pages/keywords/kitchen-extension-build/worsley": {
    "brief": "GSC-2026-10-22",
@@ -58368,13 +58573,14 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "19.7"
+   "position": "19.7",
+   "town": "Worsley"
   },
   "/pages/keywords/electrical-inspection-and-testing/rhyl": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Electrical Inspection and Testing | Same/Next-Day | iComply",
+   "title": "Electrical Inspection and Testing Denbighshire | iComply",
    "meta": "Electrical Inspection and Testing in Denbighshire. Local team from Stockport, written scope and Same/Next-Day visits. Free quote, call 07517 806082",
    "h2": "Electrical Inspection and Testing in Denbighshire: what to expect",
    "paras": [
@@ -58621,7 +58827,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.1"
+   "position": "10.1",
+   "town": "Denbighshire"
   },
   "/pages/keywords/open-area-emergency-lighting/burnley": {
    "brief": "GSC-2026-10-22",
@@ -58999,7 +59206,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.7"
+   "position": "10.7",
+   "town": "Burnley"
   },
   "/pages/keywords/eicr-report/newburgh": {
    "brief": "GSC-2026-10-22",
@@ -59252,7 +59460,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "8.6"
+   "position": "8.6",
+   "town": "Fife"
   },
   "/pages/keywords/groundworks-contractor/altrincham": {
    "brief": "GSC-2026-10-22",
@@ -59462,7 +59671,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "14.5"
+   "position": "14.5",
+   "town": "Altrincham"
   },
   "/pages/keywords/roof-smoke-vent-installation/manchester": {
    "brief": "GSC-2026-10-22",
@@ -59840,13 +60050,14 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "15.6"
+   "position": "15.6",
+   "town": "Manchester"
   },
   "/pages/fire-risk-assessments/wirksworth-village": {
    "brief": "GSC-2026-10-22",
    "kind": "xtown",
    "minWords": 800,
-   "title": "Fire Risk Assessments from £350 | Same/Next-Day | iComply",
+   "title": "Fire Risk Assessments Wirksworth Village from £350 | iComply",
    "meta": "Fire Risk Assessments in Wirksworth Village. From £350 for a typical 6-bed HMO in the North West; other properties POA. Free quote, call 07517 806082",
    "h2": "Fire Risk Assessments in Wirksworth Village: what to expect",
    "paras": [
@@ -60031,7 +60242,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "17.3"
+   "position": "17.3",
+   "town": "Wirksworth Village"
   },
   "/pages/keywords/natural-smoke-ventilation/maghull": {
    "brief": "GSC-2026-10-22",
@@ -60409,7 +60621,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "18.0"
+   "position": "18.0",
+   "town": "Maghull"
   },
   "/pages/keywords/house-rendering-package/denton": {
    "brief": "GSC-2026-10-22",
@@ -60651,7 +60864,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.1"
+   "position": "10.1",
+   "town": "Denton"
   },
   "/pages/keywords/fire-risk-assessment/darwen": {
    "brief": "GSC-2026-10-22",
@@ -61028,7 +61242,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.7"
+   "position": "11.7",
+   "town": "Darwen"
   },
   "/pages/keywords/dormer-loft-conversion/romiley": {
    "brief": "GSC-2026-10-22",
@@ -61254,7 +61469,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.8"
+   "position": "11.8",
+   "town": "Romiley"
   },
   "/pages/keywords/fire-safety-signs-installation/heysham": {
    "brief": "GSC-2026-10-22",
@@ -61496,7 +61712,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.8"
+   "position": "11.8",
+   "town": "Heysham"
   },
   "/pages/keywords/fire-door-survey/morecambe": {
    "brief": "GSC-2026-10-22",
@@ -61793,7 +62010,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "15.5"
+   "position": "15.5",
+   "town": "Morecambe"
   },
   "/pages/keywords/smoke-shaft-aov/millom": {
    "brief": "GSC-2026-10-22",
@@ -62046,7 +62264,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "17.2"
+   "position": "17.2",
+   "town": "Cumberland"
   },
   "/pages/keywords/kitchen-remodel/cheadle-hulme": {
    "brief": "GSC-2026-10-22",
@@ -62320,7 +62539,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "18.4"
+   "position": "18.4",
+   "town": "Cheadle Hulme"
   },
   "/pages/keywords/eicr-cost/whitefield": {
    "brief": "GSC-2026-10-22",
@@ -62698,7 +62918,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "9.6"
+   "position": "9.6",
+   "town": "Whitefield"
   },
   "/pages/keywords/eicr-report/wigan": {
    "brief": "GSC-2026-10-22",
@@ -63076,7 +63297,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "10.8"
+   "position": "10.8",
+   "town": "Wigan"
   },
   "/pages/keywords/block-fire-door-upgrade/accrington": {
    "brief": "GSC-2026-10-22",
@@ -63374,7 +63596,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.5"
+   "position": "11.5",
+   "town": "Accrington"
   },
   "/pages/keywords/eicr-testing/newburgh": {
    "brief": "GSC-2026-10-22",
@@ -63627,7 +63850,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "11.7"
+   "position": "11.7",
+   "town": "Fife"
   },
   "/pages/keywords/category-ld2-fire-alarm/liverpool": {
    "brief": "GSC-2026-10-22",
@@ -64005,7 +64229,8 @@
    ],
    "linkTarget": 85,
    "queue": "pos 8-20 with impressions (quick win)",
-   "position": "16.8"
+   "position": "16.8",
+   "town": "Liverpool"
   }
  },
  "inbound": {
@@ -64164,17 +64389,17 @@
   "/pages/areas/clitheroe": [
    [
     "/pages/keywords/fire-risk-assessment-support/clitheroe",
-    "Fire Risk Assessment Support from £350"
+    "Fire Risk Assessment Support Clitheroe from £350"
    ],
    [
     "/pages/keywords/landlord-fire-risk-assessment/clitheroe",
-    "Landlord Fire Risk Assessment from £350"
+    "Landlord Fire Risk Assessment Clitheroe from £350"
    ]
   ],
   "/pages/areas/colne": [
    [
     "/pages/keywords/warehouse-fire-risk-assessment/colne",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Colne from £350"
    ]
   ],
   "/pages/areas/crewe": [
@@ -64184,7 +64409,7 @@
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/crewe",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Crewe from £350"
    ]
   ],
   "/pages/areas/darwen": [
@@ -64212,7 +64437,7 @@
   "/pages/areas/eccles": [
    [
     "/pages/keywords/communal-area-fire-risk-assessment/eccles",
-    "Communal Area Fire Risk Assessment from £350"
+    "Communal Area Fire Risk Assessment Eccles from £350"
    ]
   ],
   "/pages/areas/failsworth": [
@@ -64298,7 +64523,7 @@
   "/pages/areas/lancaster": [
    [
     "/pages/keywords/new-premises-fire-risk-assessment/lancaster",
-    "New Premises Fire Risk Assessment from £350"
+    "New Premises Fire Risk Assessment Lancaster from £350"
    ],
    [
     "/pages/keywords/fm-fire-safety-support/lancaster",
@@ -64356,7 +64581,7 @@
   "/pages/areas/lytham-st-annes": [
    [
     "/pages/keywords/type-1-fire-risk-assessment/lytham-st-annes",
-    "Type 1 Fire Risk Assessment from £350"
+    "Type 1 Fire Risk Assessment Lytham St Annes from £350"
    ]
   ],
   "/pages/areas/maghull": [
@@ -64446,11 +64671,11 @@
   "/pages/areas/poulton-le-fylde": [
    [
     "/pages/keywords/school-fire-risk-assessment/poulton-le-fylde",
-    "School Fire Risk Assessment from £350"
+    "School Fire Risk Assessment Poulton-le-Fylde from £350"
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/poulton-le-fylde",
-    "Fire Safety Order Assessment"
+    "Fire Safety Order Assessment Poulton-le-Fylde"
    ],
    [
     "/pages/keywords/fire-extinguisher-service/poulton-le-fylde",
@@ -64600,7 +64825,7 @@
   "/pages/areas/ulverston": [
    [
     "/pages/keywords/electrical-installation-condition-report/ulverston",
-    "Electrical Installation Condition Report"
+    "Electrical Installation Condition Report Ulverston"
    ]
   ],
   "/pages/areas/urmston": [
@@ -64642,15 +64867,11 @@
    ],
    [
     "/pages/keywords/retail-fire-risk-assessment/warrington",
-    "Retail Fire Risk Assessment from £350"
-   ],
-   [
-    "/pages/keywords/emergency-lighting-annual-test/warrington",
-    "Emergency Lighting Annual Test Warrington"
+    "Retail Fire Risk Assessment Warrington from £350"
    ],
    [
     "/pages/keywords/emergency-lighting-electrical-works/warrington",
-    "Emergency Lighting Electrical Works"
+    "Emergency Lighting Electrical Works Warrington"
    ],
    [
     "/pages/keywords/commercial-electrician/warrington",
@@ -64774,7 +64995,7 @@
    ],
    [
     "/pages/fire-risk-assessments/wirksworth-village",
-    "Fire Risk Assessments from £350"
+    "Fire Risk Assessments Wirksworth Village from £350"
    ]
   ],
   "/pages/fire-signage": [
@@ -64784,10 +65005,6 @@
    ]
   ],
   "/pages/jobs": [
-   [
-    "/pages/jobs/car-park-barrier",
-    "Car Park Barrier Installation & Repair Manchester"
-   ],
    [
     "/pages/jobs/car-park-barrier",
     "Car Park Barrier Installation & Repair Manchester"
@@ -64880,11 +65097,11 @@
   "/pages/keywords/care-home-fire-risk-assessment": [
    [
     "/pages/keywords/care-home-fire-risk-assessment/windermere",
-    "Care Home Fire Risk Assessment from £350"
+    "Care Home Fire Risk Assessment Westmorland and Furness"
    ],
    [
     "/pages/keywords/care-home-fire-risk-assessment/woodley",
-    "Care Home Fire Risk Assessment from £350"
+    "Care Home Fire Risk Assessment Woodley from £350"
    ]
   ],
   "/pages/keywords/category-ld2-fire-alarm": [
@@ -64932,7 +65149,7 @@
   "/pages/keywords/communal-area-fire-risk-assessment": [
    [
     "/pages/keywords/communal-area-fire-risk-assessment/eccles",
-    "Communal Area Fire Risk Assessment from £350"
+    "Communal Area Fire Risk Assessment Eccles from £350"
    ]
   ],
   "/pages/keywords/damp-survey-support": [
@@ -65018,13 +65235,13 @@
   "/pages/keywords/electrical-inspection-and-testing": [
    [
     "/pages/keywords/electrical-inspection-and-testing/rhyl",
-    "Electrical Inspection and Testing"
+    "Electrical Inspection and Testing Denbighshire"
    ]
   ],
   "/pages/keywords/electrical-installation-condition-report": [
    [
     "/pages/keywords/electrical-installation-condition-report/ulverston",
-    "Electrical Installation Condition Report"
+    "Electrical Installation Condition Report Ulverston"
    ]
   ],
   "/pages/keywords/electrical-maintenance": [
@@ -65057,10 +65274,6 @@
     "Emergency Lighting Annual Test Warrington"
    ],
    [
-    "/pages/keywords/emergency-lighting-annual-test/warrington",
-    "Emergency Lighting Annual Test Warrington"
-   ],
-   [
     "/pages/keywords/emergency-lighting-annual-test/walkden",
     "Emergency Lighting Annual Test Walkden"
    ]
@@ -65080,7 +65293,7 @@
   "/pages/keywords/emergency-lighting-electrical-works": [
    [
     "/pages/keywords/emergency-lighting-electrical-works/warrington",
-    "Emergency Lighting Electrical Works"
+    "Emergency Lighting Electrical Works Warrington"
    ]
   ],
   "/pages/keywords/emergency-lighting-installation": [
@@ -65304,7 +65517,7 @@
   "/pages/keywords/fire-risk-assessment-support": [
    [
     "/pages/keywords/fire-risk-assessment-support/clitheroe",
-    "Fire Risk Assessment Support from £350"
+    "Fire Risk Assessment Support Clitheroe from £350"
    ]
   ],
   "/pages/keywords/fire-safety-audit": [
@@ -65328,7 +65541,7 @@
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/poulton-le-fylde",
-    "Fire Safety Order Assessment"
+    "Fire Safety Order Assessment Poulton-le-Fylde"
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/liverpool",
@@ -65456,7 +65669,7 @@
   "/pages/keywords/landlord-fire-risk-assessment": [
    [
     "/pages/keywords/landlord-fire-risk-assessment/clitheroe",
-    "Landlord Fire Risk Assessment from £350"
+    "Landlord Fire Risk Assessment Clitheroe from £350"
    ]
   ],
   "/pages/keywords/landlord-heating-upgrade": [
@@ -65498,7 +65711,7 @@
   "/pages/keywords/new-premises-fire-risk-assessment": [
    [
     "/pages/keywords/new-premises-fire-risk-assessment/lancaster",
-    "New Premises Fire Risk Assessment from £350"
+    "New Premises Fire Risk Assessment Lancaster from £350"
    ]
   ],
   "/pages/keywords/office-electrical-testing": [
@@ -65606,7 +65819,7 @@
   "/pages/keywords/retail-fire-risk-assessment": [
    [
     "/pages/keywords/retail-fire-risk-assessment/warrington",
-    "Retail Fire Risk Assessment from £350"
+    "Retail Fire Risk Assessment Warrington from £350"
    ]
   ],
   "/pages/keywords/rising-damp-treatment": [
@@ -65644,11 +65857,11 @@
   "/pages/keywords/school-fire-risk-assessment": [
    [
     "/pages/keywords/school-fire-risk-assessment/woodley",
-    "School Fire Risk Assessment from £350"
+    "School Fire Risk Assessment Woodley from £350"
    ],
    [
     "/pages/keywords/school-fire-risk-assessment/poulton-le-fylde",
-    "School Fire Risk Assessment from £350"
+    "School Fire Risk Assessment Poulton-le-Fylde from £350"
    ]
   ],
   "/pages/keywords/self-test-emergency-lighting": [
@@ -65722,7 +65935,7 @@
    ],
    [
     "/pages/keywords/type-1-fire-risk-assessment/lytham-st-annes",
-    "Type 1 Fire Risk Assessment from £350"
+    "Type 1 Fire Risk Assessment Lytham St Annes from £350"
    ]
   ],
   "/pages/keywords/warehouse-emergency-lighting": [
@@ -65734,15 +65947,15 @@
   "/pages/keywords/warehouse-fire-risk-assessment": [
    [
     "/pages/keywords/warehouse-fire-risk-assessment/colne",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Colne from £350"
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/crewe",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Crewe from £350"
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/carlisle",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Cumberland from £350"
    ]
   ],
   "/pages/keywords/wet-chemical-extinguisher": [
@@ -65757,20 +65970,8 @@
     "AOV & Air Handling Servicing Manchester"
    ],
    [
-    "/pages/services/aov-air-handling",
-    "AOV & Air Handling Servicing Manchester"
-   ],
-   [
     "/pages/services/fire-doors",
     "Fire Door Surveys & Repairs North West"
-   ],
-   [
-    "/pages/services/fire-doors",
-    "Fire Door Surveys & Repairs North West"
-   ],
-   [
-    "/pages/services/fire-suppression",
-    "Fire Suppression"
    ],
    [
     "/pages/services/fire-suppression",
@@ -65781,20 +65982,8 @@
     "Fire Stopping"
    ],
    [
-    "/pages/services/fire-stopping",
-    "Fire Stopping"
-   ],
-   [
     "/pages/services/electrics-first-fix",
     "First Fix Electrical"
-   ],
-   [
-    "/pages/services/electrics-first-fix",
-    "First Fix Electrical"
-   ],
-   [
-    "/pages/services/fire-extinguishers",
-    "Fire Extinguishers"
    ],
    [
     "/pages/services/fire-extinguishers",
@@ -66046,11 +66235,11 @@
    ],
    [
     "/pages/keywords/electrical-installation-condition-report/ulverston",
-    "Electrical Installation Condition Report"
+    "Electrical Installation Condition Report Ulverston"
    ],
    [
     "/pages/keywords/emergency-lighting-electrical-works/warrington",
-    "Emergency Lighting Electrical Works"
+    "Emergency Lighting Electrical Works Warrington"
    ],
    [
     "/pages/keywords/commercial-electrician/warrington",
@@ -66110,7 +66299,7 @@
    ],
    [
     "/pages/keywords/electrical-inspection-and-testing/rhyl",
-    "Electrical Inspection and Testing"
+    "Electrical Inspection and Testing Denbighshire"
    ],
    [
     "/pages/keywords/eicr-report/newburgh",
@@ -66165,10 +66354,6 @@
    [
     "/pages/keywords/commercial-security-lighting/lancaster",
     "Commercial Security Lighting Lancaster"
-   ],
-   [
-    "/pages/keywords/emergency-lighting-annual-test/warrington",
-    "Emergency Lighting Annual Test Warrington"
    ],
    [
     "/pages/keywords/emergency-lighting-maintenance/workington",
@@ -66278,7 +66463,7 @@
    ],
    [
     "/pages/keywords/fire-risk-assessment-support/clitheroe",
-    "Fire Risk Assessment Support from £350"
+    "Fire Risk Assessment Support Clitheroe from £350"
    ],
    [
     "/pages/keywords/conventional-fire-alarm-system",
@@ -66430,7 +66615,7 @@
    ],
    [
     "/pages/keywords/care-home-fire-risk-assessment/windermere",
-    "Care Home Fire Risk Assessment from £350"
+    "Care Home Fire Risk Assessment Westmorland and Furness"
    ],
    [
     "/pages/keywords/fire-safety-audit/windermere",
@@ -66446,7 +66631,7 @@
    ],
    [
     "/pages/keywords/new-premises-fire-risk-assessment/lancaster",
-    "New Premises Fire Risk Assessment from £350"
+    "New Premises Fire Risk Assessment Lancaster from £350"
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/carlisle",
@@ -66466,19 +66651,19 @@
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/colne",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Colne from £350"
    ],
    [
     "/pages/keywords/care-home-fire-risk-assessment/woodley",
-    "Care Home Fire Risk Assessment from £350"
+    "Care Home Fire Risk Assessment Woodley from £350"
    ],
    [
     "/pages/keywords/retail-fire-risk-assessment/warrington",
-    "Retail Fire Risk Assessment from £350"
+    "Retail Fire Risk Assessment Warrington from £350"
    ],
    [
     "/pages/keywords/school-fire-risk-assessment/woodley",
-    "School Fire Risk Assessment from £350"
+    "School Fire Risk Assessment Woodley from £350"
    ],
    [
     "/pages/keywords/fire-risk-assessment/blackburn",
@@ -66494,7 +66679,7 @@
    ],
    [
     "/pages/keywords/school-fire-risk-assessment/poulton-le-fylde",
-    "School Fire Risk Assessment from £350"
+    "School Fire Risk Assessment Poulton-le-Fylde from £350"
    ],
    [
     "/pages/keywords/fire-risk-assessment/carlisle",
@@ -66502,15 +66687,15 @@
    ],
    [
     "/pages/keywords/landlord-fire-risk-assessment/clitheroe",
-    "Landlord Fire Risk Assessment from £350"
+    "Landlord Fire Risk Assessment Clitheroe from £350"
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/poulton-le-fylde",
-    "Fire Safety Order Assessment"
+    "Fire Safety Order Assessment Poulton-le-Fylde"
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/crewe",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Crewe from £350"
    ],
    [
     "/pages/keywords/fire-risk-assessment/liverpool",
@@ -66526,7 +66711,7 @@
    ],
    [
     "/pages/keywords/warehouse-fire-risk-assessment/carlisle",
-    "Warehouse Fire Risk Assessment from £350"
+    "Warehouse Fire Risk Assessment Cumberland from £350"
    ],
    [
     "/pages/keywords/fire-safety-order-assessment/liverpool",
@@ -66534,11 +66719,11 @@
    ],
    [
     "/pages/keywords/communal-area-fire-risk-assessment/eccles",
-    "Communal Area Fire Risk Assessment from £350"
+    "Communal Area Fire Risk Assessment Eccles from £350"
    ],
    [
     "/pages/keywords/type-1-fire-risk-assessment/lytham-st-annes",
-    "Type 1 Fire Risk Assessment from £350"
+    "Type 1 Fire Risk Assessment Lytham St Annes from £350"
    ],
    [
     "/pages/keywords/fire-risk-assessment/darwen",

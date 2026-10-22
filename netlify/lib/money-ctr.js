@@ -65,11 +65,31 @@ export function applyRankInbound(path, html) {
   return html;
 }
 
+/** 22 Oct pages: add Service / FAQPage JSON-LD only where the page has none. */
+export function rankSchema(path, page, html) {
+  if (!page || page.brief !== "GSC-2026-10-22") return "";
+  const ld = (html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || []).join(" ");
+  const out = [];
+  const url = SITE + path;
+  if (!/"@type"\s*:\s*"Service"/.test(ld)) {
+    out.push({ "@context": "https://schema.org", "@type": "Service", name: String(page.title).split(" | ")[0], url, description: page.meta,
+      provider: { "@type": "LocalBusiness", name: "iComply Property Services", telephone: "07517 806082", email: "icomplypropertyservices@gmail.com", url: SITE },
+      areaServed: page.town || "Greater Manchester and the North West" });
+  }
+  if (!/"@type"\s*:\s*"FAQPage"/.test(ld) && Array.isArray(page.faqs) && page.faqs.length) {
+    out.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: page.faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
+  }
+  return out.map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`).join("");
+}
+
 export function applyMoneyCtr(path, rawHtml) {
   const html = applyRankInbound(path, rawHtml);
   const page = PAGES[path];
   if (!page || typeof html !== "string") return html;
-  let out = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);
+  let out = html;
+  const schema = rankSchema(path, page, out);
+  if (schema) out = /<\/head>/i.test(out) ? out.replace(/<\/head>/i, schema + "</head>") : out + schema;
+  out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);
   out = setMeta(out, "name", "description", page.meta);
   out = setMeta(out, "property", "og:title", page.title);
   out = setMeta(out, "property", "og:description", page.meta);
