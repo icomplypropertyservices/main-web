@@ -290,7 +290,7 @@ function manufacturerLocalIntro(array $entry, string $area): string
     $openers = [
         "{$brand} work in {$area} starts from the label on the equipment. The range named first on the survey is {$line['label']}.",
         "A {$area} call that says {$brand} still needs the generation: {$line['label']}, or {$lineB['label']} if the building was extended later.",
-        "{$area} ({$p['districts']}) is {$p['stock']}. {$brand} jobs there are scoped around {$line['label']} before a second range is offered.",
+        "{$area} ({$p['districts']}) has {$p['stock']}. {$brand} jobs there are scoped around {$line['label']} before a second range is offered.",
         "From the Stockport workshop, {$area} is {$p['travel']}. The {$brand} note names {$line['label']} so the quote matches the kit, not a catalogue guess.",
         "The usual {$area} brief is {$p['focus']}. Where the system is {$brand}, the survey starts on {$line['label']}.",
         "{$p['region']} buildings around {$area} often mix {$brand} generations. We separate {$line['label']} from {$lineB['label']} before ordering parts.",

@@ -130,7 +130,7 @@ require SITE_ROOT . '/includes/header.php';
         We use your details only to send the reminders you asked for and to follow up if a certificate is due with us. We do not sell your data. See our
         <a href="<?= url('/privacy.php') ?>" class="text-[#ff6b00] font-semibold underline">privacy policy</a>.
         Questions: <a href="mailto:icomplypropertyservices@gmail.com" class="text-[#ff6b00] font-semibold">icomplypropertyservices@gmail.com</a>
-        or <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>.
+        or <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>.
       </div>
 
       <button type="submit" class="w-full md:w-auto px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white text-lg shadow-lg">

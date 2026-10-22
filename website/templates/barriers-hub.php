@@ -72,7 +72,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Price on application</a>
             <a href="<?= url('/pages/manufacturers/came') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold">CAME partnership</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -115,7 +115,7 @@ require SITE_ROOT . '/includes/header.php';
         <aside class="lg:col-span-2 bg-[#0B1F3A] text-white rounded-3xl p-8">
             <h3 class="text-xl font-semibold">Ask for a lane survey</h3>
             <p class="mt-3 text-white/75 text-sm">Width, headroom, duty and who owns the land. No fee is published here.</p>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="block mt-6 px-5 py-3 bg-white text-[#0B1F3A] rounded-2xl font-semibold text-center"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Vehicle barrier quote') ?>" target="_blank" rel="noopener" class="block mt-3 px-5 py-3 bg-green-600 rounded-2xl font-semibold text-center">WhatsApp</a>
         </aside>
     </div>

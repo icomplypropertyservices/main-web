@@ -1,6 +1,6 @@
 import imageFamilies from "../../website/data/service-image-families.json" with { type: "json" };
 import { aliasFamily, pickImages } from "./image-pool.js";
-import { creditName } from "./quality-floor.js";
+import { creditName, manifestHas } from "./quality-floor.js";
 /**
  * CLOSE-Q1 / Q2 / Q3 shared floor for the edge ×town renderer
  * (netlify/edge-functions/town-matrix.js → renderTownPage).
@@ -162,7 +162,7 @@ export function depthBankParagraphs(ctx, count = 3) {
   });
 }
 
-export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
+export function thinImages(serviceSlug, subject, placeName, seed, peImages, preferredHero = "") {
   if (Array.isArray(peImages)) {
     const picked = [];
     for (const image of peImages) {
@@ -185,7 +185,8 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   const slug = String(serviceSlug || "fire-alarms");
   const family = aliasFamily(slug);
   const picks = pickImages(`${slug}/${placeName}`, family, 3);
-  const primary = family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  let primary = family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  if (preferredHero && manifestHas(preferredHero)) primary = preferredHero;
   const second = picks[1] || primary;
   const third = picks[2] || second;
   const creditAttr = (src) => {

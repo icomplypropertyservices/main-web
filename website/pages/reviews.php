@@ -335,7 +335,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">
-                        <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 </div>
             </div>
@@ -350,7 +350,7 @@ require SITE_ROOT . '/includes/header.php';
                         <dt class="text-white/50 text-xs uppercase tracking-wider">Phone</dt>
                         <dd class="mt-1">
                             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-white hover:text-[#ff6b00] font-medium text-lg">
-                                <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                             </a>
                         </dd>
                     </div>
@@ -411,7 +411,7 @@ require SITE_ROOT . '/includes/header.php';
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">

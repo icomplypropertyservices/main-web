@@ -269,7 +269,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Straight answers on EICR, BS&nbsp;5839 fire alarms, emergency lighting, gas safety, CCTV, access control,
-                fire risk assessments, construction, quotes and coverage. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                fire risk assessments, construction, quotes and coverage. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
                 We do not list scheme badges we cannot verify.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
@@ -394,7 +394,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/contact.php') ?>" class="service-card bg-zinc-50 border rounded-3xl p-6 hover:border-[#ff6b00] transition">
                 <div class="text-2xl mb-3">✉️</div>
                 <div class="font-semibold text-black text-lg">Contact / free quote</div>
-                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Send the postcode and property type to start a quote.</p>
+                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Send the postcode and property type to start a quote.</p>
                 <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Get a quote →</div>
             </a>
         </div>
@@ -415,21 +415,21 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Still have a question?</h2>
-            <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
+            <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20compliance%20question"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839, BS 5266 and BS 7671 as job references — not scheme memberships</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and records for the work agreed</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns on our North West list</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form. Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></li>
         </ul>
     </div>
 </section>

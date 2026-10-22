@@ -49,6 +49,17 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+export function spokenSubject(slug, name) {
+  const titled = titleCaseSlug(slug);
+  const given = String(name || "").trim();
+  if (!given || given.toLowerCase() !== titled.toLowerCase()) return given || titled;
+  const topic = TOPICS[slug];
+  if (!topic) return given;
+  const lead = String(topic).split(/\s+is\s+/i)[0].replace(/^(?:an|a)\s+/i, "").trim();
+  if (lead && lead.length >= 3 && lead.length <= 48 && !/[.?!]/.test(lead)) return lead;
+  return given;
+}
+
 function titleCaseSlug(slug) {
   return String(slug)
     .split("-")
@@ -139,7 +150,7 @@ export function tradesEssay(slug, placeName, townSlug) {
   const row = ROWS[slug];
   const family = row?.family || "general-building";
   const fam = COPY[family] || COPY["general-building"];
-  const name = row?.name || titleCaseSlug(slug);
+  const name = spokenSubject(slug, row?.name || titleCaseSlug(slug));
   const place = placeName || "your town";
   const intent = intentOf(slug);
   const topic = topicFor(slug, family);
@@ -191,7 +202,7 @@ export function tradesEssay(slug, placeName, townSlug) {
 
 export function tradesFaqs(slug, placeName) {
   const row = ROWS[slug];
-  const name = row?.name || titleCaseSlug(slug);
+  const name = spokenSubject(slug, row?.name || titleCaseSlug(slug));
   const place = placeName || "your area";
   const eicr = /eicr|electrical-safety-certificate|landlord-eicr/.test(slug);
   return [
@@ -236,7 +247,7 @@ export function tradesImages(slug, placeName) {
   const tradePhoto = ["fencing", "drainage", "driveways", "demolition"].includes(service) || ["fencing", "drainage", "driveways", "demolition"].includes(row.family);
   const src = picks ? picks[1] : (tradePhoto ? real : `/assets/images/trades/${key}.webp`);
   const third = picks ? picks[2] : src;
-  const name = row.name || titleCaseSlug(slug);
+  const name = spokenSubject(slug, row.name || titleCaseSlug(slug));
   const place = placeName ? ` in ${placeName}` : "";
   const alt = `${name}${place}, ${row.family.replace(/-/g, " ")} photograph`;
   const creditAttr = (file) => {
@@ -265,18 +276,19 @@ export function tradesLinkHtml(slug, townSlug) {
   };
   const items = [];
   items.push(`<li><a href="/pages/services/${service}">${escapeHtml(titleCaseSlug(service))} hub</a></li>`);
-  items.push(`<li><a href="${pageHref("")}">${escapeHtml(row?.name || titleCaseSlug(slug))} guide</a></li>`);
+  const spoken = spokenSubject(slug, row?.name || titleCaseSlug(slug));
+  items.push(`<li><a href="${pageHref("")}">${escapeHtml(spoken)} guide</a></li>`);
   items.push(`<li><a href="/pages/services">All services</a></li>`);
   items.push(`<li><a href="/pages/areas">Areas we cover</a></li>`);
   items.push(`<li><a href="/contact">Contact and free quote</a></li>`);
   for (const [other, meta] of siblings) {
     const href = townSlug ? `/pages/keywords/${other}/${townSlug}` : `/pages/keywords/${other}`;
-    items.push(`<li><a href="${href}">${escapeHtml(meta.name)}</a></li>`);
+    items.push(`<li><a href="${href}">${escapeHtml(spokenSubject(other, meta.name))}</a></li>`);
   }
   const townNames = new Map(GM.map((r) => [r[0], r[1]]));
   for (const town of towns) {
     const label = townNames.get(town) || titleCaseSlug(town);
-    items.push(`<li><a href="${pageHref(town)}">${escapeHtml((row?.name || titleCaseSlug(slug)) + " in " + label)}</a></li>`);
+    items.push(`<li><a href="${pageHref(town)}">${escapeHtml(spoken + " in " + label)}</a></li>`);
   }
   const relatedServices = ["plastering", "roofing", "electrical", "aov-air-handling", "kitchens", "bathrooms", "drainage", "brickwork"]
     .filter((s) => s !== service);
@@ -312,7 +324,7 @@ export function tradesProseHtml(slug, placeName, townSlug) {
 export function renderTradesHub(slug) {
   const row = ROWS[slug];
   if (!row) return null;
-  const name = row.name;
+  const name = spokenSubject(slug, row.name);
   const h1 = name;
   const title = [`${name} | Free survey | iComply`, `${name} | iComply`].find((item) => item.length <= 60)
     || `${name.slice(0, 48).replace(/\s+\S*$/, "")} | iComply`;

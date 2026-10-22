@@ -124,7 +124,7 @@ function icomplyGmServicePack(string $slug): array
                 'Boiler type, age and whether the property is occupied',
                 'Service, repair or replacement scoped separately',
                 'Boiler price on application',
-                'a free written quote after scope',
+                'The written price follows the survey, not a tariff on this page.',
             ],
             'gas' => true,
             'siblings' => ['gas-systems', 'plumbing', 'electrical', 'landlord-compliance'],
@@ -308,7 +308,7 @@ function icomplyGmServicePack(string $slug): array
             'Address, access and the outcome you need on the file',
             'Survey or attendance only for the items on the quote',
             'Paperwork labelled for the agent or dutyholder',
-            'a free written quote after scope',
+            'The written price follows the survey, not a tariff on this page.',
         ],
         'gas' => false,
         'siblings' => ['electrical', 'fire-alarms', 'emergency-lighting', 'landlord-compliance'],
@@ -644,7 +644,7 @@ function icomplyGmEnrichmentHtml(array $ctx): string
         $districts = trim((string)($profile['districts'] ?? ''));
         $local = '';
         if ($stock !== '') {
-            $local = $townName . ($districts !== '' ? ' (' . $districts . ')' : '') . ' is ' . $stock . '. ';
+            $local = $townName . ($districts !== '' ? ' (' . $districts . ')' : '') . ' has ' . $stock . '. ';
         }
         if ($chrome === 'matrix') {
             $html .= '<div class="space-y-3"><p>' . $h($local . $pack['summary']) . '</p><ul class="list-disc pl-5 space-y-1">';
@@ -755,7 +755,7 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
             $bits[] = '<a class="text-[#ff6b00] font-semibold" href="' . $h($kw) . '">Local guide</a>';
         }
         $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#0B1F3A]">' . $h($topic . ' in ' . $town)
-            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. a free written quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
+            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. The written price follows the survey.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
                 return '<span>' . $bit . '</span>';
             }, $bits)) . '</p></article>';
     }

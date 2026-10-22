@@ -504,6 +504,14 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
     if ($path === '/' || $path === '') {
         return '/assets/images/real-job/home.jpg';
     }
+    $parts = array_values(array_filter(explode('/', (string)(parse_url($path, PHP_URL_PATH) ?: $path)), static fn ($p) => $p !== ''));
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    if (($head === 'keywords' || $head === 'jobs') && isset($parts[2]) && preg_match('/^[a-z0-9-]+$/', (string)$parts[2])) {
+        $kw = '/assets/images/keywords/' . $parts[2] . '.jpg';
+        if (is_file(dirname(__DIR__) . $kw)) {
+            return $kw;
+        }
+    }
     $family = icomplyQualityFloorFamily($path);
     if ($family === 'products') {
         return '/assets/images/real-job/products-hub.jpg';
@@ -519,8 +527,14 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
         if ($leaf === 'manufacturers') {
             return '/assets/images/real-job/manufacturers.jpg';
         }
-        if ($leaf === 'company' || $leaf === 'home' || $leaf === 'jobs') {
-            return '/assets/images/real-job/jobs-hub.jpg';
+        if ($leaf === 'home') {
+            return '/assets/images/real-job/index.jpg';
+        }
+        if ($leaf === 'jobs' || $leaf === 'company') {
+            if (preg_match('#/(?:jobs|become-a-subcontractor)(?:/|$)#', $path) || str_contains($path, 'become-a-subcontractor')) {
+                return '/assets/images/real-job/jobs-hub.jpg';
+            }
+            return '/assets/images/real-job/index.jpg';
         }
         $rel = '/assets/images/real-job/' . $leaf . '.jpg';
         return is_file(dirname(__DIR__) . $rel) ? $rel : '/assets/images/real-job/directory-hub.jpg';
@@ -1043,6 +1057,10 @@ function icomplyQualityFloorScrubSentences(string $html, string $path, string $s
             if ($line === '') {
                 continue;
             }
+            if (preg_match('/is not optional — it is how you stay audit-ready/i', $line)) {
+                $kept[] = 'The visit is scoped to the building, then written up for the file.';
+                continue;
+            }
             if (preg_match('/do not describe iComply as Gas Safe/i', $line)) {
                 continue;
             }
@@ -1316,6 +1334,14 @@ function icomplyApplyQualityFloor(string $html): string
         $html = $body === false ? $html . $faq : substr($html, 0, $body) . $faq . substr($html, $body);
     }
     $html = icomplyQualityFloorDedupeBooking($html);
+    $html = icomplyQualityFloorDedupeQuote($html);
+    $html = icomplyQualityFloorSpacePhone($html);
+    $html = icomplyQualityFloorFixTownArticle($html, $place);
+    $html = str_replace(
+        ['Bolton (BL1–BL7) is terraced houses', 'Bolton (BL1-BL7) is terraced houses'],
+        ['Bolton (BL1–BL7) has terraced houses', 'Bolton (BL1-BL7) has terraced houses'],
+        $html
+    );
     $html = icomplyStampImageCredits($html);
     $passes = 0;
     while (str_contains($html, '&amp;amp;') && $passes < 4) {
@@ -1323,6 +1349,60 @@ function icomplyApplyQualityFloor(string $html): string
         $passes++;
     }
     return $html;
+}
+
+function icomplyQualityFloorFixTownArticle(string $html, string $place): string
+{
+    $name = trim($place);
+    if ($name === '' || !preg_match('/^[A-Za-z]/', $name)) {
+        return $html;
+    }
+    $vowel = (bool)preg_match('/^[aeiou]/i', $name);
+    $quoted = preg_quote($name, '/');
+    $out = preg_replace_callback('/\b(a|an)\s+(' . $quoted . ')\b/i', static function (array $m) use ($vowel): string {
+        $want = $vowel ? 'an' : 'a';
+        $art = $m[1];
+        $cased = $art[0] === strtoupper($art[0]) ? ucfirst($want) : $want;
+        return $cased . ' ' . $m[2];
+    }, $html);
+    return is_string($out) ? $out : $html;
+}
+
+function icomplyQualityFloorSpacePhone(string $html): string
+{
+    $held = [];
+    $masked = preg_replace_callback('/<(script|style)\b[^>]*>.*?<\/\1>/is', static function (array $m) use (&$held): string {
+        $held[] = $m[0];
+        return "\0PHONE" . (count($held) - 1) . "\0";
+    }, $html);
+    if (!is_string($masked)) {
+        return $html;
+    }
+    $parts = preg_split('/(href\s*=\s*(?:"[^"]*"|\'[^\']*\'))/i', $masked, -1, PREG_SPLIT_DELIM_CAPTURE);
+    if (!is_array($parts)) {
+        return $html;
+    }
+    foreach ($parts as $i => $part) {
+        if ($i % 2 === 1) {
+            continue;
+        }
+        $parts[$i] = str_replace('07517806082', '07517 806082', $part);
+    }
+    $out = implode('', $parts);
+    $out = preg_replace_callback('/\0PHONE(\d+)\0/', static function (array $m) use ($held): string {
+        return $held[(int)$m[1]] ?? '';
+    }, $out);
+    return is_string($out) ? $out : $html;
+}
+
+function icomplyQualityFloorDedupeQuote(string $html): string
+{
+    $seen = 0;
+    $out = preg_replace_callback('/a free written quote after scope/i', static function (array $m) use (&$seen): string {
+        $seen++;
+        return $seen === 1 ? $m[0] : 'the written price follows the survey';
+    }, $html);
+    return is_string($out) ? $out : $html;
 }
 
 function icomplyQualityFloorDedupeBooking(string $html): string

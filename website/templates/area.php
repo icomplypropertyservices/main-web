@@ -138,7 +138,7 @@ $schema = [
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
@@ -239,7 +239,7 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in
                 <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> are diary-booked.
-                Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
             </p>
         </div>
         <?php require_once SITE_ROOT . '/includes/town-depth.php'; $areaHasGeo = townDepthGeo(areaSlug($AREA)) !== null; ?>
@@ -300,7 +300,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is a free written quote. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is a free written quote. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
@@ -404,7 +404,7 @@ echo icomplyQualityBarFaqHtml(
                target="_blank" rel="noopener"
                class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

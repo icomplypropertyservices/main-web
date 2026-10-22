@@ -139,12 +139,12 @@ $aboutSchema = [
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments and fire safety systems, electrical and gas, security,
                     professional support, kitchens, bathrooms, renovation and construction —
-                    plus a trade shop for kits and parts. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                    plus a trade shop for kits and parts. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Get free quote</a>
                     <a href="<?= url('/pages/services/index.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">All services</a>
-                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services</div>
@@ -158,7 +158,7 @@ $aboutSchema = [
                 <dl class="mt-6 space-y-4 text-sm">
                     <div>
                         <dt class="text-white/50 text-xs uppercase tracking-wider">Phone</dt>
-                        <dd class="mt-1"><a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-white hover:text-[#ff6b00] font-medium text-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a></dd>
+                        <dd class="mt-1"><a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-white hover:text-[#ff6b00] font-medium text-lg"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a></dd>
                     </div>
                     <div>
                         <dt class="text-white/50 text-xs uppercase tracking-wider">WhatsApp</dt>
@@ -280,7 +280,7 @@ $aboutSchema = [
             This page does not display NICEIC, BAFE, CHAS, SafeContractor, UKAS, BOHS or a company Gas Safe registration number.
             Gas appliances are only booked when the attending engineer is on the Gas Safe Register for that work — ask for the ID card and check it before the visit.
             Legionella and asbestos visits are priced after scope.
-            Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>.
+            Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>.
         </p>
     </div>
 </section>
@@ -410,7 +410,7 @@ $aboutSchema = [
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Work with iComply</h2>
-            <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>,
+            <p class="mt-3 text-zinc-600">Call <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>,
                 WhatsApp the same mobile, or send the form. Send the postcode and property type to start a quote.</p>
             <div class="mt-6 flex flex-wrap justify-center gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">Call now</a>

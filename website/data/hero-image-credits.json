@@ -204,11 +204,11 @@
   },
   {
     "file": "/assets/images/services/smoke-vent-roof-1.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Heat_and_smoke_vents_and_icicles_(01).jpg",
-    "title": "File:Heat and smoke vents and icicles (01).jpg",
-    "license": "CC0",
-    "artist": "Georg Pik",
-    "alt": "Heat and smoke vents on a flat roof, with icicles along the frames"
+    "source": "https://commons.wikimedia.org/wiki/File:Rauchabzug.jpg",
+    "title": "File:Rauchabzug.jpg",
+    "license": "CC BY-SA 2.0 de",
+    "artist": "Magnus Mertens",
+    "alt": "Smoke outlet on a building"
   },
   {
     "file": "/assets/images/services/smoke-vent-hatch-1.jpg",
@@ -858,11 +858,11 @@
   },
   {
     "file": "/assets/images/services/building-maintenance-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:James_Hatton_and_James_Wilson_1920.jpg",
-    "title": "File:James Hatton and James Wilson 1920.jpg",
-    "license": "Public domain",
-    "artist": "Agence Rol",
-    "alt": "James Hatton and James Wilson 1920"
+    "source": "https://commons.wikimedia.org/wiki/File:Scaffold_poles_around_a_house_undergoing_renovation_-_geograph.org.uk_-_6261440.jpg",
+    "title": "File:Scaffold poles around a house undergoing renovation - geograph.org.uk - 6261440.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Adrian S Pye",
+    "alt": "Scaffold poles around a house being renovated"
   },
   {
     "file": "/assets/images/services/building-maintenance-context.jpg",
@@ -874,19 +874,19 @@
   },
   {
     "file": "/assets/images/services/building-maintenance-photo-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:James_Wilson%2C_Archdeacon_of_Manchester%2C_1890.jpg",
-    "title": "File:James Wilson, Archdeacon of Manchester, 1890.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Ardfern",
-    "alt": "James Wilson, Archdeacon of Manchester, 1890"
+    "source": "https://commons.wikimedia.org/wiki/File:Building_repair_on_Walton_Street_-_geograph.org.uk_-_8121630.jpg",
+    "title": "File:Building repair on Walton Street - geograph.org.uk - 8121630.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Pierre Marshall",
+    "alt": "Building repair on a row of houses"
   },
   {
     "file": "/assets/images/services/building-maintenance-photo-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:James_Wilson_%28anatomist%29._Oil_painting._Wellcome_V0018096.jpg",
-    "title": "File:James Wilson (anatomist). Oil painting. Wellcome V0018096.jpg",
-    "license": "CC BY 4.0",
-    "artist": "Wikimedia Commons",
-    "alt": "James Wilson (anatomist). Oil painting. Wellcome V0018096"
+    "source": "https://commons.wikimedia.org/wiki/File:Croome_Court_-_building_repairs_-_geograph.org.uk_-_4373575.jpg",
+    "title": "File:Croome Court - building repairs - geograph.org.uk - 4373575.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Chris Allen",
+    "alt": "Building repairs under way"
   },
   {
     "file": "/assets/images/services/carpentry.jpg",
@@ -946,27 +946,27 @@
   },
   {
     "file": "/assets/images/services/compliance-consultancy.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Doctor_reviews_patient_information_on_tablet_in_an_office_setting.jpg",
-    "title": "File:Doctor reviews patient information on tablet in an office setting.jpg",
-    "license": "CC BY 2.0",
-    "artist": "Shixart1985",
-    "alt": "Doctor reviews patient information on tablet in an office setting"
+    "source": "https://commons.wikimedia.org/wiki/File:Medford,_93Fast14,_Construction_Inspector,_June_2011_(8491592497).jpg",
+    "title": "File:Medford, 93Fast14, Construction Inspector, June 2011 (8491592497).jpg",
+    "license": "Public domain",
+    "artist": "MassDOT",
+    "alt": "Construction inspector on a building site"
   },
   {
     "file": "/assets/images/services/compliance-consultancy-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Two_men_at_desk_doing_paperwork_-_DPLA_-_df279bdca40ff3fa88689a4575bd93f4.jpg",
-    "title": "File:Two men at desk doing paperwork - DPLA - df279bdca40ff3fa88689a4575bd93f4.jpg",
-    "license": "Public domain",
-    "artist": "Abdalian, Leon H., 1884-1967",
-    "alt": "Two men at desk doing paperwork - DPLA - df279bdca40ff3fa88689a4575bd93f4"
+    "source": "https://commons.wikimedia.org/wiki/File:Enterprise_Way,_surveyor_at_work_-_geograph.org.uk_-_3409638.jpg",
+    "title": "File:Enterprise Way, surveyor at work - geograph.org.uk - 3409638.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Sutton",
+    "alt": "Surveyor at work on a building site"
   },
   {
     "file": "/assets/images/services/compliance-consultancy-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:HFCA_1607_NPS_Employees%2C_Women_342.jpg_%280c7e944202644f92b42f79dd7b968a8d%29.jpg",
-    "title": "File:HFCA 1607 NPS Employees, Women 342.jpg (0c7e944202644f92b42f79dd7b968a8d).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:NRC_Inspector_at_Vogtle_Site_(14492252799).jpg",
+    "title": "File:NRC Inspector at Vogtle Site (14492252799).jpg",
     "license": "Public domain",
-    "artist": "Fred Bell",
-    "alt": "HFCA 1607 NPS Employees, Women 342.jpg (0c7e944202644f92b42f79dd7b968a8d)"
+    "artist": "Nuclear Regulatory Commission from US",
+    "alt": "Inspector at a construction site"
   },
   {
     "file": "/assets/images/services/damp-proofing.jpg",
@@ -1050,19 +1050,19 @@
   },
   {
     "file": "/assets/images/services/evacuation-alerts-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Frances_%28Appleton%29_Longfellow_to_Thomas_Gold_Appleton%2C_24_June_1841_%28e49ec7b6-2465-4983-a1ec-7cb36c801868%29.jpg",
-    "title": "File:Frances (Appleton) Longfellow to Thomas Gold Appleton, 24 June 1841 (e49ec7b6-2465-4983-a1ec-7cb36c801868).jpg",
-    "license": "Public domain",
-    "artist": "Fanny (Appleton) Longfellow (1817-1861)",
-    "alt": "Frances (Appleton) Longfellow to Thomas Gold Appleton, 24 June 1841 (e49ec7b6-2465-4983-a1ec-7cb36c801868)"
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Alarm_Bell_red.jpg",
+    "title": "File:Fire Alarm Bell red.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Zulfaamaliya",
+    "alt": "Red fire alarm bell"
   },
   {
     "file": "/assets/images/services/evacuation-alerts-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Seattle%2C_looking_southeast%2C_ca_1914_%28SEATTLE_3167%29.jpg",
-    "title": "File:Seattle, looking southeast, ca 1914 (SEATTLE 3167).jpg",
-    "license": "Public domain",
-    "artist": "Webster and Stevens, published in The Argus",
-    "alt": "Seattle, looking southeast, ca 1914 (SEATTLE 3167)"
+    "source": "https://commons.wikimedia.org/wiki/File:European_Manual_Call_Point.jpg",
+    "title": "File:European Manual Call Point.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Masanalv",
+    "alt": "Manual call point on an evacuation route"
   },
   {
     "file": "/assets/images/services/fire-alarms.jpg",
@@ -1242,11 +1242,11 @@
   },
   {
     "file": "/assets/images/services/groundworks-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:An_excavator_digging_a_trench_-_geograph.org.uk_-_5672110.jpg",
-    "title": "File:An excavator digging a trench - geograph.org.uk - 5672110.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Philip Halling",
-    "alt": "Excavator digging a trench"
+    "source": "https://commons.wikimedia.org/wiki/File:Lonking_I_Powertrac_22b_excavator_01.jpg",
+    "title": "File:Lonking I Powertrac 22b excavator 01.jpg",
+    "license": "CC BY 4.0",
+    "artist": "P1898",
+    "alt": "Excavator digging on a groundworks site"
   },
   {
     "file": "/assets/images/services/groundworks-context.jpg",
@@ -1330,43 +1330,43 @@
   },
   {
     "file": "/assets/images/services/legionella-risk-assessment.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Blue_Grass_Chemical_Agent-Destruction_Pilot_Plant_Supercritical_Water_Oxidation_Process_Building_%2814049573592%29.jpg",
-    "title": "File:Blue Grass Chemical Agent-Destruction Pilot Plant Supercritical Water Oxidation Process Building (14049573592).jpg",
-    "license": "CC BY 2.0",
-    "artist": "PEO ACWA",
-    "alt": "Blue Grass Chemical Agent-Destruction Pilot Plant Supercritical Water Oxidation Process Building (14049573592)"
+    "source": "https://commons.wikimedia.org/wiki/File:Old_galvanised_steel_water_tank_-_geograph.org.uk_-_5271851.jpg",
+    "title": "File:Old galvanised steel water tank - geograph.org.uk - 5271851.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Evelyn Simak",
+    "alt": "Galvanised cold water storage tank"
   },
   {
     "file": "/assets/images/services/legionella-risk-assessment-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Freezing_Tank_Room_-_Atlantic_Ice_and_Coal_Company%2C_135_Prince_Street%2C_Montgomery%2C_Montgomery_County%2C_AL_HAER_AL-188_%28sheet_13_of_14%29.png",
-    "title": "File:Freezing Tank Room - Atlantic Ice and Coal Company, 135 Prince Street, Montgomery, Montgomery County, AL HAER AL-188 (sheet 13 of 14).png",
-    "license": "Public domain",
-    "artist": "Lowe, Robert III., creator",
-    "alt": "Freezing Tank Room - Atlantic Ice and Coal Company, 135 Prince Street, Montgomery, Montgomery County, AL HAER AL-188 (sheet 13 of 14)"
+    "source": "https://commons.wikimedia.org/wiki/File:Thermostatic_valve.jpg",
+    "title": "File:Thermostatic valve.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Thermostatic mixing valve"
   },
   {
     "file": "/assets/images/services/legionella-risk-assessment-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:RD-Westmoreland_-Fayette_Municipal_Sewage_Authority_Plant_%2820210903-RD-LSC-0184%29.jpg",
-    "title": "File:RD-Westmoreland -Fayette Municipal Sewage Authority Plant (20210903-RD-LSC-0184).jpg",
-    "license": "Public domain",
-    "artist": "USDAgov",
-    "alt": "RD-Westmoreland -Fayette Municipal Sewage Authority Plant (20210903-RD-LSC-0184)"
+    "source": "https://commons.wikimedia.org/wiki/File:1950s_galvanised_steel_water_tank_-_geograph.org.uk_-_5266633.jpg",
+    "title": "File:1950s galvanised steel water tank - geograph.org.uk - 5266633.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Evelyn Simak",
+    "alt": "Galvanised cold water tank"
   },
   {
     "file": "/assets/images/services/nurse-call.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Dublin_Methodist_Hospital_-_Front_1.jpg",
-    "title": "File:Dublin Methodist Hospital - Front 1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
     "license": "CC BY-SA 4.0",
-    "artist": "Sixflashphoto",
-    "alt": "Dublin Methodist Hospital - Front 1"
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
   },
   {
     "file": "/assets/images/services/painting-decorating.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Painter_at_work_in_the_station_-_geograph.org.uk_-_2567374.jpg",
-    "title": "File:Painter at work in the station - geograph.org.uk - 2567374.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Chris Pattinson",
-    "alt": "Painter at work in a station"
+    "source": "https://commons.wikimedia.org/wiki/File:Exterior_Painting_Clackamas-Cascade_Painting_and_restoration_-_panoramio.jpg",
+    "title": "File:Exterior Painting Clackamas-Cascade Painting and restoration - panoramio.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Carl Nurmi",
+    "alt": "Exterior of a house being painted"
   },
   {
     "file": "/assets/images/services/painting-decorating-photo.jpg",
@@ -1434,11 +1434,11 @@
   },
   {
     "file": "/assets/images/services/rendering.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:A_Greek_house_and_walls_rendered_and_white_washed.jpg",
-    "title": "File:A Greek house and walls rendered and white washed.jpg",
-    "license": "Public domain",
-    "artist": "Alan bron ( talk )",
-    "alt": "A Greek house and walls rendered and white washed"
+    "source": "https://commons.wikimedia.org/wiki/File:Pebbledash_houses_on_East_Oakwood_-_geograph.org.uk_-_6531863.jpg",
+    "title": "File:Pebbledash houses on East Oakwood - geograph.org.uk - 6531863.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Oliver Dixon",
+    "alt": "Rendered pebbledash houses"
   },
   {
     "file": "/assets/images/services/rendering-photo.jpg",
@@ -1458,27 +1458,27 @@
   },
   {
     "file": "/assets/images/services/sprinkler-systems.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Fire_Fighting_Appliances_Gilbert_1969_Plate_40.jpg",
-    "title": "File:Fire Fighting Appliances Gilbert 1969 Plate 40.jpg",
-    "license": "Public domain",
-    "artist": "Gilbert, K.R. (Keith Reginald) 1915-1973",
-    "alt": "Fire Fighting Appliances Gilbert 1969 Plate 40"
+    "source": "https://commons.wikimedia.org/wiki/File:Sidewall_fire_sprinkler_head_and_detector.jpg",
+    "title": "File:Sidewall fire sprinkler head and detector.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Darklanlan",
+    "alt": "Sidewall fire sprinkler head beside a detector"
   },
   {
     "file": "/assets/images/services/sprinkler-systems-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:UMN-WalterLobbySprinkler.jpg",
-    "title": "File:UMN-WalterLobbySprinkler.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "SavagePanda845 (Elliot F)",
-    "alt": "UMN-WalterLobbySprinkler"
+    "source": "https://commons.wikimedia.org/wiki/File:TYCO-Standard-Spray-Sprinkler-head-141-degree-celsius-01.jpg",
+    "title": "File:TYCO-Standard-Spray-Sprinkler-head-141-degree-celsius-01.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "CEphoto, Uwe Aranas",
+    "alt": "Standard spray fire sprinkler head"
   },
   {
     "file": "/assets/images/services/sprinkler-systems-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:UMN-WalterSESprinkler.jpg",
-    "title": "File:UMN-WalterSESprinkler.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Sprinkler_Head_with_Red_Fluid_(55563049651).jpg",
+    "title": "File:Fire Sprinkler Head with Red Fluid (55563049651).jpg",
     "license": "CC BY-SA 4.0",
-    "artist": "SavagePanda845 (Elliot F)",
-    "alt": "UMN-WalterSESprinkler"
+    "artist": "Tony Webster",
+    "alt": "Fire sprinkler head"
   },
   {
     "file": "/assets/images/services/tiling.jpg",
@@ -1615,5 +1615,2597 @@
     "license": "CC BY-SA 4.0",
     "artist": "No Swan So Fine",
     "alt": "5 and 7 Corringway, Hampstead Garden Suburb, July 2021"
+  },
+  {
+    "file": "/assets/images/keywords/24-hour-emergency-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-card-programming.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-engineers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-panel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-servicing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/access-control-system-design.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/ackermann-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/aid-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/aiphone-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/aiphone-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/ajax-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/alarm-battery-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/alarm-keypad-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/alarm-monitoring-setup.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/alarm-system-design.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/alarm-system-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/apartment-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/apartment-door-entry-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/apartment-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/ascom-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/assa-abloy-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/assisted-living-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/audio-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/audio-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/audio-intercom-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/audio-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/bathroom-electrical-safety.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/battery-storage-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/bedside-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/biometric-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/block-of-flats-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/bpt-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/bs-4737.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/bs-7671.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/bs-7671-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/building-access-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/burglar-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/burglar-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/business-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/business-premises-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/car-park-barrier-access.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/care-home-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/care-home-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/certified-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/circuit-breaker-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/cloud-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/colour-video-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/comelit-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/commend-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-ev-charging.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-intercom-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/communal-door-entry-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/consumer-unit-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/courtney-thorne-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/data-cabling-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/disabled-toilet-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/disabled-toilet-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/distribution-board-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/domestic-burglar-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/door-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/door-access-control-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/door-contact-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/door-controller-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-access-integration.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-cabling.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-engineer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-engineers-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-handset-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-panel-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-servicing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-system-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-entry-system-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/door-station-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-cost.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electric-door-release.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/electric-strike-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-board-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-certificate-for-lettings.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-compliance-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-contractor.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-fault-finding.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-inspection-and-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-installation-condition-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-remedial-works.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-safety-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-safety-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-services.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-troubleshooting.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-wiring-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/electrician-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-assistance-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-lighting-electrical-works.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-pull-cord-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/energy-efficient-lighting.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/ev-charger-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/factory-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/fermax-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/fingerprint-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/fire-door-access-control-integration.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/fixed-wire-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/fob-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/full-house-rewire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/fuse-board-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/gate-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/gate-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/generator-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/grade-2-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/grade-3-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/gsm-door-entry-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/healthcare-call-system-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/hid-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/hmo-electrical-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/home-electrical-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/home-ev-charger.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/honeywell-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/hospital-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/hospital-nurse-call-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/hospital-nurse-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/htm-08-03.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/htm-08-03-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/industrial-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/industrial-electrical-services.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/intercall-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-access.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-battery-backup.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-cabling-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-commissioning.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-engineer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-engineers-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-maintenance-contract.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-panel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-servicing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-system-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intercom-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-engineer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-engineers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-maintenance-contract.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-panel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-panel-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-servicing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/intruder-alarm-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/ip-door-entry-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/ip-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/ip-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/ip-nurse-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/keypad-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/kitchen-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-certificate-north-west.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-safety-check.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-safety-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/lift-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/lighting-circuit-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/lighting-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/magnetic-lock-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/master-station-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/monitored-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/multi-building-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/multi-door-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/multi-site-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/multi-site-alarm-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/multi-site-nurse-call-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/multi-tenant-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/multi-tenant-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/new-build-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/new-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/niceic-certified.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-battery-backup.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-battery-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-commissioning.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-engineer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-engineers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-integration.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-maintenance-contract.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-panel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-panel-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-pear-lead-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-pendant.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-point-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-service-contract.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-servicing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system-design.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-system-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nurse-call-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/nursing-home-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/office-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/office-access-control-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/office-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/office-electrical-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/office-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/outdoor-intercom-station.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/outside-socket-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/over-door-light-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/panel-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/part-p-certified.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/partial-rewire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/pat-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/paxton-access.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/paxton-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/paxton-net2-install.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/paxton-net2-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/pd-6662-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/pd6662-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/periodic-electrical-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/periodic-inspection-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/pir-sensor-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/police-response-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/portable-appliance-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/power-surge-protection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/preventive-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/proximity-card-reader.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/proximity-card-reader-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/pull-cord-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/pyronix-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/quantec-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/rauland-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/rcbo-consumer-unit.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/reception-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/residential-care-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/residential-care-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/residential-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/residential-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/residential-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/residential-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/risco-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/salto-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/school-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/secure-door-entry-access.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/secure-entry-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/security-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/shock-sensor-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/shop-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/siedle-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/sip-intercom-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/smart-home-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/smart-home-wiring.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/smartphone-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/socket-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/solar-inverter-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/solar-panel-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/staff-attack-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/staff-attack-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/static-systems-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/texecom-alarm-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/texecom-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/three-phase-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/keywords/time-attendance-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/touch-screen-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/trade-button-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/urmet-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/video-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/video-door-phone-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/video-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/video-intercom-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/video-intercom-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/video-intercom-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/videx-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/keywords/visitor-access-management.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/wander-alert-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/warehouse-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/warehouse-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/wired-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/wired-intruder-alarm-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/wired-nurse-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/wireless-access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/keywords/wireless-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/wireless-intercom-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/wireless-intruder-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Home_Intruder_Alarm_system.JPG",
+    "title": "File:Home Intruder Alarm system.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Harrihealey02",
+    "alt": "Home Intruder Alarm system"
+  },
+  {
+    "file": "/assets/images/keywords/wireless-nurse-call-system.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
+  },
+  {
+    "file": "/assets/images/keywords/zenitel-intercom.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pittock_Mansion_Intercom.jpg",
+    "title": "File:Pittock Mansion Intercom.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Wall-mounted intercom"
+  },
+  {
+    "file": "/assets/images/keywords/zettler-nurse-call.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercall_Systems_pancake_cord_set.jpg",
+    "title": "File:Intercall Systems pancake cord set.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Fatcatpaperie",
+    "alt": "Nurse call pull cord and handset"
   }
 ]

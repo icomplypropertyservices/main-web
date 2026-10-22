@@ -161,7 +161,7 @@ function acnQuoteForm(string $place): void
     <section id="quote" class="bg-[#0B1F3A] text-white">
         <div class="max-w-3xl mx-auto px-6 py-14">
             <h2 class="text-3xl font-bold text-center">Quote for access control<?= $place !== '' ? ' in ' . htmlspecialchars($place, ENT_QUOTES, 'UTF-8') : '' ?></h2>
-            <p class="mt-3 text-center text-white/90">Price on application after the doors and the controller are known. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+            <p class="mt-3 text-center text-white/90">Price on application after the doors and the controller are known. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
             <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
                 <input type="hidden" name="csrf" value="<?= htmlspecialchars((string)($_SESSION['csrf'] ?? ''), ENT_QUOTES, 'UTF-8') ?>">
                 <input type="hidden" name="service" value="Access Control">
@@ -246,7 +246,7 @@ function acnRender(array $view): void
             <p class="mt-5 text-lg text-white/90 max-w-3xl"><?= htmlspecialchars($view['lead'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] font-bold">Request a POA quote</a>
-                <a href="<?= htmlspecialchars(acnPhoneHref(), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= htmlspecialchars(acnPhoneHref(), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($view['wa']) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-bold">WhatsApp</a>
             </div>
         </div>

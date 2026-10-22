@@ -231,8 +231,24 @@ function pageFamily(path) {
   return "directory:unknown";
 }
 
+export function manifestHas(src) {
+  return Object.prototype.hasOwnProperty.call(imageManifest, src);
+}
+
+function ownKeywordSrc(path) {
+  const parts = String(path || "").split("/").filter(Boolean);
+  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
+  if ((head === "keywords" || head === "jobs") && parts[2] && /^[a-z0-9-]+$/.test(parts[2])) {
+    const rel = `/assets/images/keywords/${parts[2]}.jpg`;
+    if (manifestHas(rel)) return rel;
+  }
+  return "";
+}
+
 function canonicalSrc(path) {
   if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
+  const own = ownKeywordSrc(path);
+  if (own) return own;
   const family = pageFamily(path);
   if (family === "products") return "/assets/images/real-job/products-hub.jpg";
   if (family.startsWith("directory:")) return "/assets/images/real-job/directory-hub.jpg";
@@ -240,7 +256,13 @@ function canonicalSrc(path) {
     const leaf = family.slice(4);
     if (leaf === "resources") return "/assets/images/real-job/resources.jpg";
     if (leaf === "manufacturers") return "/assets/images/real-job/manufacturers.jpg";
-    if (leaf === "company" || leaf === "home" || leaf === "jobs") return "/assets/images/real-job/jobs-hub.jpg";
+    if (leaf === "home") return "/assets/images/real-job/index.jpg";
+    if (leaf === "jobs" || leaf === "company") {
+      if (/\/(?:jobs|become-a-subcontractor)(?:\/|$)/.test(path) || path.includes("become-a-subcontractor")) {
+        return "/assets/images/real-job/jobs-hub.jpg";
+      }
+      return "/assets/images/real-job/index.jpg";
+    }
     return `/assets/images/real-job/${leaf}.jpg`;
   }
   if (family === "aov-air-handling") return pickImages(path, family, 2)[0];
@@ -640,6 +662,29 @@ function confineImages(html, path) {
   return out;
 }
 
+function fixPlaceArticle(html, place) {
+  const name = String(place || "").trim();
+  if (!/^[A-Za-z]/.test(name)) return html;
+  const vowel = /^[aeiou]/i.test(name);
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return String(html).replace(new RegExp(`\\b(a|an)\\s+(${escaped})\\b`, "gi"), (_, art, town) => {
+    const want = vowel ? "an" : "a";
+    const cased = art[0] === art[0].toUpperCase() ? want.charAt(0).toUpperCase() + want.slice(1) : want;
+    return `${cased} ${town}`;
+  });
+}
+
+function spaceVisiblePhone(html) {
+  const held = [];
+  const masked = String(html).replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
+    held.push(block);
+    return `\u0000PHONE${held.length - 1}\u0000`;
+  });
+  const parts = masked.split(/(href\s*=\s*(?:"[^"]*"|'[^']*'))/gi);
+  const joined = parts.map((part, index) => (index % 2 === 1 ? part : part.replaceAll("07517806082", "07517 806082"))).join("");
+  return joined.replace(/\u0000PHONE(\d+)\u0000/g, (_, index) => held[Number(index)] || "");
+}
+
 export function applyQualityFloor(html, ctx = {}) {
   let out = String(html || "");
   if (!/<html[\s>]/i.test(out) && !/<body[\s>]/i.test(out)) return out;
@@ -689,6 +734,15 @@ export function applyQualityFloor(html, ctx = {}) {
     bookingSeen += 1;
     return bookingSeen === 1 ? paragraph : "";
   });
+  let quoteSeen = 0;
+  out = out.replace(/a free written quote after scope/gi, (line) => {
+    quoteSeen += 1;
+    return quoteSeen === 1 ? line : "the written price follows the survey";
+  });
+  out = out.replace(/[^.<>]{0,180}is not optional — it is how you stay audit-ready\.?/g, "The visit is scoped to the building, then written up for the file.");
+  out = out.replace(/Bolton \(BL1[–-]BL7\) is terraced houses/g, "Bolton (BL1–BL7) has terraced houses");
+  out = spaceVisiblePhone(out);
+  out = fixPlaceArticle(out, place);
   out = stampCredits(out);
   let passes = 0;
   while (out.includes("&amp;amp;") && passes < 4) {

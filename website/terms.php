@@ -91,7 +91,7 @@ require SITE_ROOT . '/includes/header.php';
                 <?= htmlspecialchars(SITE_NAME, ENT_QUOTES, 'UTF-8') ?><br>
                 <?= htmlspecialchars(ADDRESS, ENT_QUOTES, 'UTF-8') ?><br>
                 Tel:
-                <a class="text-[#ff6b00] font-medium" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a class="text-[#ff6b00] font-medium" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 · Email:
                 <a class="text-[#ff6b00] font-medium" href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
             </p>

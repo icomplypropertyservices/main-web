@@ -136,7 +136,8 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
       `Yes. ${list(ocs)} are covered by our Stockport team, about ${mi} miles away. Send the full postcode and a photo, or call 07517 806082.`]);
   }
   if (near.length) {
-    faqs.push([`Can a ${town} visit be combined with nearby sites?`,
+    const townArticle = /^[aeiou]/i.test(town) ? "an" : "a";
+    faqs.push([`Can ${townArticle} ${town} visit be combined with nearby sites?`,
       `Often. The nearest other places we cover are ${list(near.slice(0, 3).map((n) => `${n.name} (${Math.max(1, Math.round(n.miles))} ${Math.max(1, Math.round(n.miles)) === 1 ? "mile" : "miles"} ${n.dir})`))}.`]);
   }
   return { html, faqs };

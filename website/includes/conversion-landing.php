@@ -288,7 +288,7 @@ if (!empty($landing['gmTowns']) && is_array($landing['gmTowns'])) {
         </div>
         <p class="mt-8 text-sm text-white leading-relaxed">
             iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
-            · <a class="underline" href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>">07517806082</a>
+            · <a class="underline" href="<?= htmlspecialchars($callHref, ENT_QUOTES, 'UTF-8') ?>">07517 806082</a>
             · <a class="underline" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a>
         </p>
         <p class="mt-3 text-sm text-white"><?php if ($guide): ?>Guide from <?= htmlspecialchars($guideMoney, ENT_QUOTES, 'UTF-8') ?>. <?php endif; ?>You get a fixed quote after scope, before any work. No obligation until you accept that price. Phone, WhatsApp or the form — send the postcode to start a quote.</p>

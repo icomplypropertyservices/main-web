@@ -108,7 +108,7 @@ function aovKitWizardHtml(string $context): string
     $kits = aovKitChoices();
     $json = htmlspecialchars(json_encode($kits, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8');
     $products = htmlspecialchars(url('/products.php') . '#aov-kits', ENT_QUOTES, 'UTF-8');
-    $phone = htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8');
+    $phone = htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8');
     $tel = htmlspecialchars(aovPhoneHref(), ENT_QUOTES, 'UTF-8');
     $cards = '';
     foreach ($kits as $kit) {

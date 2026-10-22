@@ -69,7 +69,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] font-semibold">Price on application</a>
             <a href="<?= url('/pages/manufacturers/came') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold">CAME partner</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/30 font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/30 font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

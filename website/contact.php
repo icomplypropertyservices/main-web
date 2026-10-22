@@ -272,7 +272,7 @@ $contactSchema = [
                     <a href="#quote-form" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Send a message</a>
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100">
-                        Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                        Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                     </a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
@@ -292,7 +292,7 @@ $contactSchema = [
                         <div>
                             <div class="text-white/50 text-xs uppercase tracking-wider">Phone</div>
                             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-lg font-semibold text-white hover:text-[#ff6b00] transition">
-                                <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                             </a>
                         </div>
                     </div>
@@ -441,7 +441,7 @@ $contactSchema = [
                     Prefer not to wait?
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" class="text-green-600 font-semibold hover:underline" target="_blank" rel="noopener">WhatsApp</a>
                     or
-                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold hover:underline"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                    <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold hover:underline"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 </p>
             </div>
 
@@ -453,7 +453,7 @@ $contactSchema = [
                     <div class="mt-6 space-y-3">
                         <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                            class="flex items-center justify-between gap-3 w-full px-5 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold transition">
-                            <span>Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></span>
+                            <span>Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></span>
                             <span aria-hidden="true">→</span>
                         </a>
                         <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener"

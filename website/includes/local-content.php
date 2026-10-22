@@ -226,7 +226,7 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
     $seed = area_seed($area, $slug . 'intro');
     $openers = [
-        "If you manage property in {$area} ({$p['districts']}), reliable {$serviceName} is not optional — it is how you stay audit-ready.",
+        "{$serviceName} in {$area} ({$p['districts']}) is scoped to the building, then written up so the file matches the visit.",
         "For {$serviceName} in {$area}, iComply Property Services supports landlords, agents and businesses across {$p['region']}.",
         "In {$area}, the buildings we usually see are {$p['stock']}. {$serviceName} has to suit that stock and the standards that apply to the building.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",

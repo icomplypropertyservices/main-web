@@ -46,7 +46,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white">Get a POA quote</a>
             <a href="<?= url('/pages/services/legionella-risk-assessment.php') ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold">Legionella is a separate service</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-bold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-bold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

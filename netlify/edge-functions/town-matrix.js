@@ -14,7 +14,7 @@ import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
 import { heroCta } from "../lib/hero-cta.js";
-import { TRADE_ALIAS, renderTradesHub, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
+import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
@@ -252,6 +252,18 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function fixTownArticle(html, place) {
+  const name = String(place || "").trim();
+  if (!/^[A-Za-z]/.test(name)) return html;
+  const vowel = /^[aeiou]/i.test(name);
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return String(html).replace(new RegExp(`\\b(a|an)\\s+(${escaped})\\b`, "gi"), (_, art, town) => {
+    const want = vowel ? "an" : "a";
+    const cased = art[0] === art[0].toUpperCase() ? want.charAt(0).toUpperCase() + want.slice(1) : want;
+    return `${cased} ${town}`;
+  });
+}
+
 function titleCaseSlug(slug) {
   return String(slug)
     .split("-")
@@ -413,6 +425,12 @@ export function renderTownPage(input) {
     path = `/pages/${serviceSlug}/${input.town}`;
   }
 
+  if (kind === "job" || kind === "keyword") {
+    const spokenSlug = kind === "job" ? input.job : input.keyword;
+    subject = spokenSubject(spokenSlug, subject);
+    if (keyword) keyword = { ...keyword, name: subject };
+  }
+
   const townSlug = input.town;
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(townSlug || "")) return null;
   const resolved = resolvePlace(townSlug, catalogue);
@@ -509,7 +527,10 @@ export function renderTownPage(input) {
   if (pe && Array.isArray(pe.faqs)) {
     qualityCtx.peFaqs = pe.faqs;
   }
-  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null);
+  const preferredHero = (kind === "keyword" || kind === "job")
+    ? `/assets/images/keywords/${kind === "keyword" ? input.keyword : input.job}.jpg`
+    : "";
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero);
   let proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx).slice();
   if (fireTown || fireFamily) {
@@ -652,7 +673,7 @@ export function renderTownPage(input) {
     ],
   };
 
-  const html = `<!DOCTYPE html>
+  const html = fixTownArticle(`<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -683,7 +704,7 @@ ${MATRIX_FOOTER}
 </main>
 ${MATRIX_SITE_FOOTER}
 </body>
-</html>`;
+</html>`, place.name);
 
   return {
     html,

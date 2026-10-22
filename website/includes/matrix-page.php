@@ -67,8 +67,8 @@ function icomplyMatrixShared(): array
 
     $home = rtrim(SITE_URL, '/') . '/';
     $css = assetUrl('/assets/css/site.css');
-    $phone = defined('PHONE') ? PHONE : '';
-    $phoneHref = 'tel:' . preg_replace('/\s+/', '', $phone);
+    $phone = function_exists('icomplyPhoneDisplay') ? icomplyPhoneDisplay() : (defined('PHONE') ? PHONE : '');
+    $phoneHref = 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? (string)PHONE : $phone);
     $wa = defined('WHATSAPP') ? WHATSAPP : '';
 
     $s = [
