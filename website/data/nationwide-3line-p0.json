@@ -484,7 +484,8 @@
       "name": "Emergency Lighting Installation",
       "images": [
         "/assets/images/services/emergency-lighting.jpg",
-        "/assets/images/services/emergency-lighting-photo.jpg"
+        "/assets/images/services/emergency-lighting-photo.jpg",
+        "/assets/images/services/emergency-lighting-2.jpg"
       ]
     },
     {
@@ -592,7 +593,9 @@
       "service": "fire-doors",
       "name": "Fire Door Installation",
       "images": [
-        "/assets/images/services/fire-doors.jpg"
+        "/assets/images/services/fire-doors.jpg",
+        "/assets/images/services/b1/fire-doors-1.jpg",
+        "/assets/images/services/b1/fire-doors-2.jpg"
       ]
     },
     {
@@ -601,7 +604,9 @@
       "service": "fire-doors",
       "name": "Fire Door Installer",
       "images": [
-        "/assets/images/services/fire-doors.jpg"
+        "/assets/images/services/fire-doors.jpg",
+        "/assets/images/services/b1/fire-doors-1.jpg",
+        "/assets/images/services/b1/fire-doors-2.jpg"
       ]
     },
     {
@@ -610,7 +615,9 @@
       "service": "fire-extinguishers",
       "name": "Fire Extinguisher Service",
       "images": [
-        "/assets/images/services/fire-extinguishers.jpg"
+        "/assets/images/services/fire-extinguishers.jpg",
+        "/assets/images/services/fire-extinguishers-2.jpg",
+        "/assets/images/services/fire-extinguishers-3.jpg"
       ]
     },
     {
@@ -631,7 +638,8 @@
       "name": "Fire Risk Assessment",
       "images": [
         "/assets/images/services/fire-risk-assessments.jpg",
-        "/assets/images/services/fire-risk-assessments-photo.jpg"
+        "/assets/images/services/fire-risk-assessments-2.jpg",
+        "/assets/images/services/fire-risk-assessments-3.jpg"
       ]
     },
     {
@@ -640,7 +648,9 @@
       "service": "fire-stopping",
       "name": "Fire Stopping Installer",
       "images": [
-        "/assets/images/services/fire-stopping.jpg"
+        "/assets/images/services/fire-stopping.jpg",
+        "/assets/images/services/fire-stopping-2.jpg",
+        "/assets/images/services/fire-stopping-3.jpg"
       ]
     },
     {
@@ -649,7 +659,9 @@
       "service": "fire-suppression",
       "name": "Fire Suppression Installer",
       "images": [
-        "/assets/images/services/fire-suppression.jpg"
+        "/assets/images/services/fire-suppression.jpg",
+        "/assets/images/services/fire-suppression-2.jpg",
+        "/assets/images/services/fire-suppression-3.jpg"
       ]
     },
     {
@@ -812,7 +824,9 @@
       "service": "sprinkler-systems",
       "name": "Sprinkler System Installer",
       "images": [
-        "/assets/images/services/sprinkler-systems.jpg"
+        "/assets/images/services/sprinkler-systems.jpg",
+        "/assets/images/services/sprinkler-systems-2.jpg",
+        "/assets/images/services/sprinkler-systems-3.jpg"
       ]
     },
     {
