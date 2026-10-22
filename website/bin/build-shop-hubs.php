@@ -110,6 +110,10 @@ function icomplyBuildShopHubs(string $outDir): array
     file_put_contents($outDir . '/electrical/index.html', icomplyRenderShopCategory('electrical', $hubs['electrical'], $ctx));
     file_put_contents($outDir . '/security/index.html', icomplyRenderShopCategory('security', $hubs['security'], $ctx));
     file_put_contents($outDir . '/gas/index.html', icomplyRenderShopCategory('gas', $hubs['gas'], $ctx));
+    require_once __DIR__ . '/../includes/shop-hub-extras.php';
+    foreach (['index' => '/index.html', 'fire' => '/fire/index.html', 'electrical' => '/electrical/index.html', 'security' => '/security/index.html', 'gas' => '/gas/index.html'] as $k => $rel) {
+        file_put_contents($outDir . $rel, icomplyShopHubPatchHtml((string)file_get_contents($outDir . $rel), $k));
+    }
 
     return [
         'total' => count($products),
