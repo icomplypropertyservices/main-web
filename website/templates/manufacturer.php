@@ -166,14 +166,17 @@ $schema = [
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?>
                 </h1>
-                <p class="mt-3 text-2xl sm:text-3xl font-semibold text-[#ff6b00]"><?= $gasBrand ? 'Trade supply' : 'Products and service' ?></p>
-                <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#products" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Shop products</a>
-                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= $gasBrand ? 'Non-gas quote' : 'Install quote' ?></a>
+                <div class="mt-5 flex flex-wrap gap-3" data-hero-cta="call-whatsapp">
+                    <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($mfrName . ' enquiry') ?>"
                        target="_blank" rel="noopener"
-                       class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
+                       class="px-6 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
+                </div>
+                <p class="mt-4 text-2xl sm:text-3xl font-semibold text-[#ff6b00]"><?= $gasBrand ? 'Trade supply' : 'Products and service' ?></p>
+                <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($MFR_BLURB, ENT_QUOTES, 'UTF-8') ?></p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#products" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Shop products</a>
+                    <a href="#quote" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= $gasBrand ? 'Non-gas quote' : 'Install quote' ?></a>
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
