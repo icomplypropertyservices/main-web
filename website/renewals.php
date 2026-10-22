@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
   </div>
 </section>
 
-<section class="bg-[#F4F6F9] border-b">
+<section class="bg-[#f4f4f4] border-b">
   <div class="max-w-3xl mx-auto px-6 py-10 md:py-14">
     <form name="renewals" method="POST" action="/renewals/thanks" data-netlify="true" netlify-honeypot="bot-field" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-6 shadow-sm" id="renewals-form">
       <input type="hidden" name="form-name" value="renewals">
@@ -75,7 +75,7 @@ require SITE_ROOT . '/includes/header.php';
       </div>
 
       <div id="property-list" class="space-y-6">
-        <fieldset class="property-block border border-zinc-200 rounded-2xl p-5 bg-[#F4F6F9]" data-property-index="0">
+        <fieldset class="property-block border border-zinc-200 rounded-2xl p-5 bg-[#f4f4f4]" data-property-index="0">
           <legend class="px-2 text-sm font-semibold uppercase tracking-wide text-[#ff6b00]">Property 1</legend>
           <div class="grid md:grid-cols-3 gap-4 mt-2">
             <label class="block md:col-span-2">
@@ -113,19 +113,19 @@ require SITE_ROOT . '/includes/header.php';
         <h2 class="text-xl font-semibold text-[#0B1F3A]">Reminders</h2>
         <fieldset>
           <legend class="text-sm font-medium text-[#0B1F3A] mb-2">Email me a reminder <span class="text-[#ff6b00]">*</span></legend>
-          <div class="flex flex-wrap gap-4 text-sm text-[#0F172A]">
+          <div class="flex flex-wrap gap-4 text-sm text-[#0B1F3A]">
             <label class="inline-flex items-center gap-2"><input required type="radio" name="reminder_days" value="60" class="accent-[#ff6b00]"> 60 days before</label>
             <label class="inline-flex items-center gap-2"><input type="radio" name="reminder_days" value="30" checked class="accent-[#ff6b00]"> 30 days before</label>
             <label class="inline-flex items-center gap-2"><input type="radio" name="reminder_days" value="14" class="accent-[#ff6b00]"> 14 days before</label>
           </div>
         </fieldset>
-        <label class="flex items-start gap-3 text-sm text-[#0F172A]">
+        <label class="flex items-start gap-3 text-sm text-[#0B1F3A]">
           <input required type="checkbox" name="gdpr_consent" value="yes" class="mt-1 accent-[#ff6b00]">
           <span>I agree that iComply Property Services may email me reminders about the dates I have logged, and store this information for that purpose. I can ask to be forgotten at any time. <span class="text-[#ff6b00]">*</span></span>
         </label>
       </div>
 
-      <div class="rounded-2xl bg-[#FFF4EB] border border-[#FFD3B0] p-4 text-sm text-[#0F172A]">
+      <div class="rounded-2xl bg-[#f7f7f7] border border-[#ff6b00] p-4 text-sm text-[#0B1F3A]">
         <strong class="text-[#0B1F3A]">Privacy note.</strong>
         We use your details only to send the reminders you asked for and to follow up if a certificate is due with us. We do not sell your data. See our
         <a href="<?= url('/privacy.php') ?>" class="text-[#ff6b00] font-semibold underline">privacy policy</a>.
