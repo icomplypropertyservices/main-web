@@ -1,3 +1,4 @@
+import { keywordTwinIntent } from "./keyword-twin.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 /**
  * Nationwide P0 keyword × town HTML for the edge renderer.
@@ -213,8 +214,9 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   if (!hub || !pack || !place) return null;
   const name = pack.name || hub.name;
   const townName = place.name;
-  const title = p0Title(name, townName);
-  const description = p0Description(name, townName);
+  const twin = keywordTwinIntent(keywordSlug, name, townName);
+  const title = twin ? twin.title : p0Title(name, townName);
+  const description = twin ? twin.desc : p0Description(name, townName);
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
   const images = (hub.images || []).slice(0, 3);
   const ogImage = `${ORIGIN}${images[0] || "/assets/images/services/fire-alarms.jpg"}`;
@@ -340,7 +342,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/pages/keywords/${keywordSlug}">${escapeHtml(name)}</a> / <span>${escapeHtml(townName)}</span></nav>
-<h1>${escapeHtml(`${name} in ${townName}`)}</h1>
+<h1>${escapeHtml(`${name} in ${townName}${twin ? twin.h1Tail : ""}`)}</h1>
 ${gallery}
 <article id="local-copy">${articleHtml}</article>
 <section><h2>${escapeHtml(name)} FAQ</h2>${faqHtml}</section>
