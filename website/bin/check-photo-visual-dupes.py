@@ -12,7 +12,7 @@ img = os.path.join(root, 'assets/images')
 sp = os.path.join(root, 'data/service-photo-shared.json')
 groups = [set(g) for g in (json.load(open(sp))['groups'] if os.path.exists(sp) else [])]
 files = []
-for sub in ('services', 'families', 'keywords'):
+for sub in ('services', 'families', 'keywords', 'heroes'):
     d = os.path.join(img, sub)
     for f in sorted(os.listdir(d)) if os.path.isdir(d) else []:
         if f.lower().endswith(('.jpg', '.jpeg')): files.append((sub, f[:-4] if f.endswith('.jpg') else f[:-5], os.path.join(d, f)))
