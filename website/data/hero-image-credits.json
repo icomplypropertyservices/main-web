@@ -1412,5 +1412,29 @@
     "license": "CC BY 4.0",
     "artist": "Evry Electrical",
     "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/services/kitchen-fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Restaurant_Kitchen_expo_station.jpg",
+    "title": "File:Restaurant Kitchen expo station.jpg",
+    "license": "CC0",
+    "artist": "MarkBuckawicki",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "file": "/assets/images/services/loft-conversions.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_loft_conversion_on_Dallinger_Road_-_geograph.org.uk_-_4211470.jpg",
+    "title": "File:A loft conversion on Dallinger Road - geograph.org.uk - 4211470.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Bill Boaden",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/facilities-management.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Jim_Oshersky,_maintenance_worker,_at_Albright_Visitor_Center_(53091017607).jpg",
+    "title": "File:Jim Oshersky, maintenance worker, at Albright Visitor Center (53091017607).jpg",
+    "license": "Public domain",
+    "artist": "YellowstoneNPS",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/"
   }
 ]
