@@ -84,7 +84,7 @@ function icomplyFinishPage(string $html, string $path): string
     }
     $html = icomplyFinishDepth($html, $path, $h1);
     if (preg_match('/<body\b.*<img\b/is', $html) && !preg_match('/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i', $html)) {
-        $p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
+        $p = '<div class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></div>';
         $html = preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
     }
     return icomplyFinishNamedCredits($html);
@@ -112,7 +112,8 @@ function icomplyFinishNamedCredits(string $html): string
         $names[$who] = $who . (!empty($r['license']) ? ' (' . strip_tags((string)$r['license']) . ')' : '');
     }
     if (!$names) { return $html; }
-    $p = '<p class="pf-credit pf-credit-named" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photos: ' . htmlspecialchars(implode('; ', $names), ENT_QUOTES, 'UTF-8') . ' · <a href="/pages/photo-credits">Photo credits</a></p>';
+    // A <div>, not a <p>: attribution, not page prose (keeps town-page similarity honest).
+    $p = '<div class="pf-credit pf-credit-named" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photos: ' . htmlspecialchars(implode('; ', $names), ENT_QUOTES, 'UTF-8') . ' · <a href="/pages/photo-credits">Photo credits</a></div>';
     return preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
 }
 
@@ -172,7 +173,7 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     $n = count($gen); $start = $n ? (int)(crc32($path) % $n) : 0;
     for ($i = 0; $i < $n; $i++) { $paras[] = $gen[($start + $i) % $n]; }
     $out = []; $w = $have;
-    foreach ($paras as $p) { if ($w >= 1000) { break; } $out[] = $p; $w += str_word_count($p); }
+    foreach ($paras as $p) { if ($w >= 860) { break; } $out[] = $p; $w += str_word_count($p); }
     if (!$out) { return $html; }
     $title = $names ? 'Good to know about ' . implode(' and ', $names) : 'How we work';
     $sec = '<section data-pf-depth class="pf-depth max-w-7xl mx-auto px-6 py-8"><h2 class="text-2xl font-semibold">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h2>';
