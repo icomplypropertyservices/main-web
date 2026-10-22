@@ -385,6 +385,15 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
+    // Restored: a merge dropped this definition, so photo credits were silently empty.
+    $creditFor = static function (string $src): string {
+        if (!function_exists('icomplyQualityFloorCreditName')) {
+            require_once __DIR__ . '/quality-floor.php';
+        }
+        return function_exists('icomplyQualityFloorCreditName')
+            ? icomplyQualityFloorCreditName($src)
+            : '';
+    };
     $h = 'icomplyQualityBarH';
     $creditAttr = static function (string $file) use ($creditFor, $h): string {
         $name = $creditFor($file);

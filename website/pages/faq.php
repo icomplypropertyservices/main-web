@@ -13,7 +13,7 @@ $canonicalUrl = url('/pages/faq.php');
 
 $services = getServices();
 $areas = getAreas();
-$areaCount = count($areas);
+$areaCount = icomplyCoverageTownCount();
 
 $faqs = [
     [

@@ -526,7 +526,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= icomplyCoverageTownCount() ?>+ towns</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Stockport-based engineers covering Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.
                 Travel time affects whether a within-24-hours visit is realistic — phone or WhatsApp for a live fault.

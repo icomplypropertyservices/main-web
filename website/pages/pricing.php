@@ -368,7 +368,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['POA guides', 'Ballpark ranges for budgeting — clearly not a quote'],
             ['Fixed quote after scope', 'Agreed price in writing before engineers attend'],
-            ['North West focused', 'Stockport-based team · ' . count($areas) . '+ towns covered'],
+            ['North West focused', 'Stockport-based team · ' . icomplyCoverageTownCount() . '+ towns covered'],
             ['No hidden labour tricks', 'Remedials and parts quoted separately when needed'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -567,7 +567,7 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
             <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Ready for a real number?</h2>
             <p class="mt-3 text-white/80">
                 Free written quotes for landlords, agents and facilities teams across
-                <?= count($areas) ?>+ North West towns. No obligation — guide prices never replace a site-specific quote.
+                <?= icomplyCoverageTownCount() ?>+ North West towns. No obligation — guide prices never replace a site-specific quote.
             </p>
         </div>
         <div class="flex flex-wrap gap-3 shrink-0">

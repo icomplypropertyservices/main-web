@@ -69,18 +69,18 @@ function fitMeta(raw) {
 
 function popSentence(town) {
   if (!town.population) {
-    return `The dual-ring allowlist does not print a population on row ${town.row}.`;
+    return "";
   }
-  return `The allowlist population for row ${town.row} is ${Number(town.population).toLocaleString("en-GB")}.`;
+  return `${town.name} has a population of about ${Number(town.population).toLocaleString("en-GB")}.`;
 }
 
 function mileSentence(town) {
   const m = town.mi_manchester;
   const b = town.mi_burnley;
   if (m == null || b == null) {
-    return `Miles from Manchester and Burnley are not printed on row ${town.row}.`;
+    return "";
   }
-  return `Straight-line figures on the allowlist put row ${town.row} about ${m} miles from Manchester and ${b} miles from Burnley.`;
+  return `${town.name} is about ${m} miles from Manchester and ${b} miles from Burnley.`;
 }
 
 function nearby(town, limit = 8) {
@@ -101,7 +101,7 @@ function paragraphs(meta, town, surface) {
   const surfaceLabel = surface === "job" ? "job page" : "keyword guide";
   return pack.sections.map((heading, index) => {
     const fact = facts[index % facts.length];
-    return `${meta.name} in ${town.name} is the ${surfaceLabel} for “${heading}”. District marker ${town.district}, dual-ring row ${town.row}, ${town.county}. ${popSentence(town)} ${mileSentence(town)} ${meta.angle} ${fact} The quote on this ${surfaceLabel} is price on application. Call ${pack.phone}. Workshop: ${pack.nap}.`;
+    return `${meta.name} in ${town.name}: ${heading}. We cover ${town.name} (${town.district}, ${town.county}) from Stockport. ${popSentence(town)} ${mileSentence(town)} ${meta.angle} ${fact} The quote is price on application. Call ${pack.phone}. Workshop: ${pack.nap}.`.replace(/\s{2,}/g, " ");
   });
 }
 
@@ -110,7 +110,7 @@ function faqs(meta, town, surface) {
   return [
     [
       `What does ${meta.name} cover in ${town.name}?`,
-      `${meta.angle} The ${label} for ${town.name} uses district ${town.district} on row ${town.row}. The quote is price on application.`,
+      `${meta.angle} We cover ${town.name} and the ${town.district} area. The quote is price on application.`,
     ],
     [
       `Where is the visit arranged from for ${town.name}?`,
@@ -121,8 +121,8 @@ function faqs(meta, town, surface) {
       `There is no catalogue fee on the ${town.name} ${label}. ${popSentence(town)} Ask for a quote — price on application. ${meta.angle}`,
     ],
     [
-      `Which ring is ${town.name} on?`,
-      `${town.name} is on the Manchester and Burnley dual ring, row ${town.row}, district ${town.district}, ${town.county}. ${meta.angle}`,
+      `Do you cover ${town.name}?`,
+      `Yes. ${town.name} (${town.county}) is within our Greater Manchester and Lancashire coverage, worked from our Stockport base. ${meta.angle}`,
     ],
   ];
 }
@@ -243,7 +243,7 @@ ${body}
 ${extra}
 <p>Parent: <a href="${hubPath}">${escapeHtml(meta.name)} ${surface === "job" ? "job hub" : "guide"}</a> · <a href="${otherHub}">${escapeHtml(meta.name)} ${surface === "job" ? "guide" : "job hub"}</a> · <a href="${otherPath}">${escapeHtml(meta.name)} ${surface === "job" ? "guide" : "job"} in ${escapeHtml(town.name)}</a> · <a href="/pages/services/${escapeHtml(meta.service)}">${escapeHtml(meta.service.replace(/-/g, " "))}</a> · <a href="/pages/keywords/${escapeHtml(slug)}/manchester">${escapeHtml(meta.name)} in Manchester</a> · <a href="/pages/keywords/${escapeHtml(slug)}/burnley">${escapeHtml(meta.name)} in Burnley</a> · <a href="/pages/jobs/${escapeHtml(slug)}/manchester">${escapeHtml(meta.name)} job in Manchester</a> · <a href="/pages/jobs/${escapeHtml(slug)}/burnley">${escapeHtml(meta.name)} job in Burnley</a> · <a href="tel:07517806082">07517806082</a></p>
 <h2>Related ${escapeHtml(meta.cluster)} pages</h2><ul>${peerHtml}</ul>
-<h2>Nearby dual-ring towns</h2><ul>${nearHtml}</ul>
+<h2>Nearby towns we cover</h2><ul>${nearHtml}</ul>
 <h2>Area hubs</h2><ul>${areaLinks}<li><a href="/pages/areas">All published areas</a></li></ul>
 <h2>Questions about ${escapeHtml(town.name)}</h2>
 ${faqHtml}

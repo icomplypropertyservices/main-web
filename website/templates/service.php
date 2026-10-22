@@ -335,7 +335,7 @@ $schema = [
 
 <section class="bg-white border-b border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#0B1F3A]">How a <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> visit runs</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-[#0B1F3A]">How <?= preg_match('/^(?:[AEIOU]|EICR|EV\b|HMO|FRA|LED)/i', (string)$serviceName) ? 'an' : 'a' ?> <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> visit runs</h2>
         <p class="mt-3 text-zinc-800 max-w-3xl">Our engineers work from Stockport, with same-day and next-day slots often available. You get a written quote before any work starts<?= $serviceSlug === 'electrical' ? ' (EICRs from £160)' : '' ?>, and the work is carried out by qualified, experienced engineers.</p>
         <ol class="mt-6 grid md:grid-cols-2 gap-4 text-zinc-800">
             <li class="rounded-2xl border border-zinc-200 p-4"><strong>1. The building.</strong> Send the address, what <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> has to cover, and whether the site is occupied.</li>

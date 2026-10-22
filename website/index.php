@@ -9,7 +9,7 @@ $pageTitle = 'Property Maintenance & Compliance | iComply Property Services';
 $metaDesc = 'iComply Property Services — AOV and smoke control, vehicle barriers, landlord compliance (EICR, CP12/gas, FRA), electrical, gas and fire safety across Greater Manchester. Call 07517 806082. Stockport SK2 5DE.';
 $canonicalUrl = url('/');
 $metaKeywords = 'AOV smoke control, vehicle barriers, landlord compliance Stockport, EICR Manchester, gas safety CP12, fire risk assessment, North West';
-$ogImage = url('/assets/images/android-chrome-512.png');
+$ogImage = url('/assets/images/og-image.jpg');
 
 $services = getServices();
 $areas = function_exists('icomplyLocalTownNames') ? icomplyLocalTownNames() : getAreas();
@@ -345,7 +345,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Shop</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Products &amp; trade kits</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Shopify-ready cards and Buy Button mounts — shop fire, electrical, security and emergency lighting gear.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Buy fire, electrical, security and emergency lighting gear from our trade shop.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
         </div>

@@ -96,6 +96,17 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
 
     $pageTitle = $title . ($isShopCopy ? ' | iComply Shop' : ' | Product details | iComply');
     $metaDesc = trim($blurb !== '' ? $blurb : ($title . ' — trade supply. Install POA.'));
+    // Category-generic blurbs ("Boiler — trade supply. Installation POA.") were shared by
+    // dozens of products. Name the product itself instead.
+    if ($blurb === '' || preg_match('/^[^—]{1,60} — trade supply\. Install(?:ation)? POA\.?$/u', $blurb)) {
+        $metaDesc = $title . ' from the iComply trade shop. Supply only, or supplied and fitted by our Stockport engineers; installation price on application.';
+        if (mb_strlen($metaDesc) > 160) {
+            $metaDesc = $title . ' from the iComply trade shop. Supply only or fitted by our engineers; install POA.';
+        }
+        if (mb_strlen($metaDesc) > 160) {
+            $metaDesc = rtrim(mb_substr($title, 0, 110)) . ' — iComply trade shop. Supply or fitted; install POA.';
+        }
+    }
     $ogImage = $img;
     $isInstallPoa = true;
     $priceLabel = $price;

@@ -144,7 +144,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Bundle electrical, fire, gas, emergency lighting and security into one schedule —
                 one engineer plan, one documentation pack, one point of contact across
-                <?= count($areas) ?>+ North West towns.
+                <?= icomplyCoverageTownCount() ?>+ North West towns.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#packages" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View packages</a>

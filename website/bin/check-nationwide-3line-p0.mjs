@@ -45,7 +45,7 @@ ok(leeds?.title.includes("Leeds") && (leeds.title.includes("iComply") || leeds.t
 const article = leeds?.html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "";
 const words = article.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 ok(words >= 450, `body words ${words}`);
-ok(article.includes('id="town-facts"') && article.includes("Leeds sits in the"), "town facts block (council, postcodes, travel)");
+ok(article.includes('id="town-facts"') && (article.includes("Leeds sits in the") || article.includes("Leeds has its own council")), "town facts block (council, postcodes, travel)");
 const shingles = (html) => {
   const w = (html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "").replace(/<[^>]+>/g, " ").toLowerCase().replace(/leeds|bradford/g, "town").match(/[a-z0-9']+/g) || [];
   const set = new Set();

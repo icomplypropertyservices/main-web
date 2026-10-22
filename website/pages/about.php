@@ -9,7 +9,7 @@ if (is_file($shopifyLib) && str_starts_with(ltrim((string)file_get_contents($sho
 }
 
 $seoFamily = 'static';
-$pageTitle = 'About Us | Fire Safety, Professional & Construction | Stockport';
+$pageTitle = 'About iComply | Stockport Property Compliance Team';
 $metaDesc = 'About iComply Property Services at Stockport SK2 5DE. Fire, electrical and landlord work is quoted after we see the building. Call 07517 806082.';
 $metaKeywords = 'about iComply, fire risk assessment Stockport, kitchen fitting North West, property compliance Stockport, construction services Greater Manchester';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
@@ -30,7 +30,7 @@ $trust = [
     ['title' => 'Stockport based', 'text' => 'SK2 5DE — local team, North West coverage'],
     ['title' => count($services) . ' services', 'text' => 'Fire safety, professional and construction catalogue'],
     ['title' => 'Written quotes', 'text' => 'Scope first. Some jobs are priced only after a survey'],
-    ['title' => count($areas) . '+ towns', 'text' => 'Towns on our published areas list'],
+    ['title' => icomplyCoverageTownCount() . '+ towns', 'text' => 'Towns on our published areas list'],
 ];
 
 // References for the work — not scheme memberships. Do not add NICEIC, BAFE, CHAS or a company Gas Safe number here.
@@ -149,7 +149,7 @@ $aboutSchema = [
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($categories) ?></span> categories</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span> towns</div>
                 </div>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-sm">
@@ -205,12 +205,16 @@ $aboutSchema = [
                 facilities managers, care providers, homeowners and commercial clients keep buildings safe, compliant and well-finished.
             </p>
             <p class="mt-4 text-zinc-600 leading-relaxed">
+                The business is run by owner Jack Scott, trading for 20 years. Jack prices the jobs, plans the visits and coordinates
+                the engineers who carry out the fire alarm, emergency lighting, AOV, electrical and security work.
+            </p>
+            <p class="mt-4 text-zinc-600 leading-relaxed">
                 From fire risk assessments and BS 5839 systems to EICRs, landlord visits, kitchens, bathrooms and renovations —
                 quotes follow the scope, and paperwork is for the work we complete. Coverage is the North West towns on our areas list.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> <?= count($services) ?> services across <?= count($categories) ?> categories in the published catalogue</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Local response across <?= count($areas) ?>+ North West towns on that list</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Local response across <?= icomplyCoverageTownCount() ?>+ North West towns on that list</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Fire and security installs using the equipment specified for the site — brand names are not approved-installer badges</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Construction and void works for landlords and investors, scoped per job</li>
             </ul>
@@ -222,7 +226,7 @@ $aboutSchema = [
                 <p class="mt-2 text-sm text-zinc-600">Fire safety, electrical, security, professional &amp; construction.</p>
             </div>
             <div class="bg-zinc-50 border rounded-3xl p-6">
-                <div class="text-3xl font-semibold text-[#0B1F3A]"><?= count($areas) ?>+</div>
+                <div class="text-3xl font-semibold text-[#0B1F3A]"><?= icomplyCoverageTownCount() ?>+</div>
                 <div class="mt-1 font-semibold text-black">Towns covered</div>
                 <p class="mt-2 text-sm text-zinc-600">Greater Manchester, Lancashire, Cheshire, Merseyside &amp; Cumbria.</p>
             </div>
@@ -290,7 +294,7 @@ $aboutSchema = [
     <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns across the North West</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= icomplyCoverageTownCount() ?>+ towns across the North West</h2>
             <p class="mt-3 text-zinc-600">
                 Based in Offerton, Stockport, we cover Greater Manchester, Lancashire, Cheshire, Merseyside and the Cumbria towns on our areas list.
                 Pick a town for service links and a local quote.
@@ -350,7 +354,7 @@ $aboutSchema = [
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Shop</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Trade kits &amp; install parts</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Fire, electrical, security and emergency lighting gear — Shopify-ready for direct checkout when connected.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Fire, electrical, security and emergency lighting gear from our trade shop.</p>
             </div>
             <a href="<?= url('/shop/index.php') ?>" class="inline-flex px-5 py-2.5 rounded-full bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">Visit shop</a>
         </div>

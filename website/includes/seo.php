@@ -665,6 +665,8 @@ function seo_document_title(string $raw): string {
         } else {
             $raw = $cut;
         }
+        // Never end on a dangling separator ("… Construction |").
+        $raw = rtrim((string)preg_replace('/\s*[|·—–:,-]+\s*$/u', '', $raw));
     }
     if (mb_strlen($raw) < 30 && stripos($raw, 'iComply') === false) {
         $raw .= ' | iComply Property Services';
