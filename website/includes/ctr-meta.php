@@ -89,7 +89,9 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
  */
 function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $town): ?array
 {
-    $labels = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports'];
+    $labels = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports',
+        'first-fix-electrical' => 'Costs & What Is Included', 'bathroom-fitting' => 'Costs & Design Options', 'kitchen-fitting' => 'Costs & Design Options',
+        'property-renovation' => 'Costs & Project Stages', 'damp-proofing' => 'Costs & Treatment Options', 'bs-5306-extinguisher-service-cost' => 'Prices & What Affects Them'];
     if (!isset($labels[$keywordSlug])) {
         return null;
     }
@@ -101,7 +103,7 @@ function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $t
     return [
         'label' => $l,
         'title' => $title,
-        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': what it costs, what the ' . strtolower($l) . ' cover and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
+        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': ' . strtolower($l) . ' explained, and how to book. Same/next-day slots. Call or WhatsApp 07517 806082.', 160),
         'h1_tail' => ': ' . strtolower($l),
     ];
 }

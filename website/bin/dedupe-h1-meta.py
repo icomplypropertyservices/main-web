@@ -25,6 +25,11 @@ fix_h1 = {}
 for k, fps in h1g.items():
     if len(fps) < 2 or not k:
         continue
+    jobs = [fp for fp in fps if '/pages/jobs/' in fp]
+    if jobs and len(jobs) < len(fps):
+        for fp in jobs: fix_h1[fp] = ': job scope & booking'   # job lane vs keyword guide of the same name
+        fps = [fp for fp in fps if fp not in jobs]
+        if len(fps) < 2: continue
     slugs = {fp: os.path.basename(fp)[:-4] for fp in fps}
     base = min(slugs.values(), key=len)
     for fp, sl in slugs.items():
