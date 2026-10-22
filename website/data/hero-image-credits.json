@@ -655,5 +655,25 @@
     "license": "CC BY 4.0",
     "artist": "Evry Electrical",
     "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/families/landscaping-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Simple_Patio_Border_(21235226226).jpg",
+    "title": "File:Simple Patio Border (21235226226).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Chris Hunkeler",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building",
+    "service": "landscaping"
+  },
+  {
+    "file": "/assets/images/families/facilities-management-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Jim_Oshersky,_maintenance_worker,_at_Albright_Visitor_Center_(53091017607).jpg",
+    "title": "File:Jim Oshersky, maintenance worker, at Albright Visitor Center (53091017607).jpg",
+    "license": "Public domain",
+    "artist": "YellowstoneNPS",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "family": "building",
+    "service": "facilities-management"
   }
 ]
