@@ -1577,11 +1577,11 @@ function serviceImageUrl(string $slug): string {
  * the parent service image (then the shared fire-alarms photo).
  */
 function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
-    $rel = '/assets/images/keywords/' . $slug . '.jpg';
-    if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    $service = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
+    if ($service === 'aov') {
+        $service = 'aov-air-handling';
     }
-    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+    return serviceImageUrl($service);
 }
 
 /**

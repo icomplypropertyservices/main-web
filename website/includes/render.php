@@ -8,25 +8,12 @@ if (!function_exists('icomplyKeywordImagePath')) {
     function icomplyKeywordImagePath(string $slug, string $serviceSlug = ''): string
     {
         $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
-        $alias = [
-            'cp12' => 'cp12-gas-certificate',
-            'emergency-lighting-test' => 'emergency-lighting-testing',
-        ];
-        $candidates = ['/assets/images/keywords/' . $slug . '.jpg'];
-        if (isset($alias[$slug])) {
-            $candidates[] = '/assets/images/keywords/' . $alias[$slug] . '.jpg';
-        }
-        if ($serviceSlug !== '') {
-            $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
-            $candidates[] = '/assets/images/services/' . $serviceSlug . '-photo.jpg';
-        }
-        foreach ($candidates as $c) {
-            if (is_file($root . $c)) {
-                return $c;
+        $service = $serviceSlug === 'aov' ? 'aov-air-handling' : $serviceSlug;
+        if ($service !== '') {
+            $rel = '/assets/images/services/' . $service . '.jpg';
+            if (is_file($root . $rel)) {
+                return $rel;
             }
-        }
-        if ($serviceSlug !== '') {
-            return '/assets/images/services/' . $serviceSlug . '.jpg';
         }
         return '/assets/images/real-job/directory-hub.jpg';
     }

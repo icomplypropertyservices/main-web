@@ -441,18 +441,6 @@ function manufacturerGallery(array $entry, string $area): array
             break;
         }
     }
-    if (!function_exists('getKeywordImages')) {
-        // config already loaded
-    }
-    foreach (array_slice(getKeywordImages($primary), 0, 2) as $kw) {
-        foreach (['.jpg', '.png'] as $ext) {
-            $path = '/assets/images/keywords/' . $kw . $ext;
-            if (is_file(SITE_ROOT . $path)) {
-                $push(url($path), $brand . ' related ' . str_replace('-', ' ', (string)$kw) . ' in ' . $area);
-                break;
-            }
-        }
-    }
     if (in_array('aov-air-handling', $entry['services'] ?? [], true)) {
         $aovMap = manufacturerJsonStringMap('aov-kit-cdn-images');
         foreach (['aov-act', 'aov-ctrl', 'aov-kit-1m2'] as $sku) {

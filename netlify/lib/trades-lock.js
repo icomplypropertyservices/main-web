@@ -49,15 +49,54 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+const ACRONYM = {
+  aov: "AOV", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
+  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", pat: "PAT", hmo: "HMO",
+  cdm: "CDM", co: "CO", tv: "TV", ip: "IP", led: "LED", rcd: "RCD", mcb: "MCB",
+};
+
+const VERB = {
+  fit: "fitting", fitting: "fitting", swap: "replacement", replace: "replacement",
+  replacement: "replacement", install: "installation", installation: "installation",
+  repair: "repair", repairs: "repairs", service: "servicing", servicing: "servicing",
+};
+
+function sentenceToken(part, index) {
+  const lower = String(part).toLowerCase();
+  if (ACRONYM[lower]) return ACRONYM[lower];
+  if (index === 0) return lower.charAt(0).toUpperCase() + lower.slice(1);
+  return lower;
+}
+
+function naturalizeSlug(slug) {
+  const parts = String(slug).split("-").filter(Boolean);
+  if (!parts.length) return "";
+  const last = parts[parts.length - 1].toLowerCase();
+  if (VERB[last]) parts[parts.length - 1] = VERB[last];
+  const out = [];
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].toLowerCase() === "d" && String(parts[i + 1] || "").toLowerCase() === "h") {
+      out.push("D+H");
+      i += 1;
+      continue;
+    }
+    out.push(sentenceToken(parts[i], out.length));
+  }
+  return out.join(" ");
+}
+
 export function spokenSubject(slug, name) {
   const titled = titleCaseSlug(slug);
   const given = String(name || "").trim();
   if (!given || given.toLowerCase() !== titled.toLowerCase()) return given || titled;
-  const topic = TOPICS[slug];
-  if (!topic) return given;
-  const lead = String(topic).split(/\s+is\s+/i)[0].replace(/^(?:an|a)\s+/i, "").trim();
-  if (lead && lead.length >= 3 && lead.length <= 48 && !/[.?!]/.test(lead)) return lead;
-  return given;
+  const topic = TOPICS[slug] || topicFor(slug, "");
+  if (topic) {
+    const lead = String(topic).split(/\s+is\s+/i)[0].replace(/^(?:an|a)\s+/i, "").trim();
+    if (lead && lead.length >= 3 && lead.length <= 48 && !/[.?!,:]/.test(lead)) {
+      return lead.charAt(0).toUpperCase() + lead.slice(1);
+    }
+  }
+  return naturalizeSlug(slug) || given;
 }
 
 function titleCaseSlug(slug) {

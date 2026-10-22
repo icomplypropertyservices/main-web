@@ -170,6 +170,7 @@ function nearestPlaceSlugs(townSlug, places, limit = 8) {
         { lat: townCoords[slug][0], lng: townCoords[slug][1] },
       ),
     }))
+    .filter((row) => row.miles <= 12)
     .sort((a, b) => a.miles - b.miles)
     .slice(0, limit);
 }

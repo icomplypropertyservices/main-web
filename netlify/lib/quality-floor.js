@@ -10,13 +10,55 @@ import distinctEssays from "../../website/data/distinct-essays.json" with { type
 import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
 import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
 import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
+import brandHeroes from "../../website/data/manufacturer-hero-images.json" with { type: "json" };
+import resourceArticles from "../../website/data/resource-article-images.json" with { type: "json" };
+import p0Index from "../../website/data/seo-lock/p0-index.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 import { landlordLines } from "./landlord-note.js";
 import { aliasFamily, pickImages, isCollapsedAov, imageOwner } from "./image-pool.js";
 
+const CRUMB_VERB = {
+  fit: "fitting", swap: "replacement", replace: "replacement", install: "installation",
+  repair: "repair", service: "servicing",
+};
+const CRUMB_ACRONYM = {
+  aov: "AOV", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
+  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", pat: "PAT", hmo: "HMO",
+  cdm: "CDM", co: "CO", tv: "TV", ip: "IP", led: "LED", rcd: "RCD", mcb: "MCB",
+};
+
+function crumbSubject(slug) {
+  const parts = String(slug || "").split("-").filter(Boolean);
+  if (!parts.length) return "";
+  const last = parts[parts.length - 1].toLowerCase();
+  if (CRUMB_VERB[last]) parts[parts.length - 1] = CRUMB_VERB[last];
+  const out = [];
+  for (let i = 0; i < parts.length; i++) {
+    const lower = String(parts[i]).toLowerCase();
+    if (lower === "d" && String(parts[i + 1] || "").toLowerCase() === "h") {
+      out.push("D+H");
+      i += 1;
+      continue;
+    }
+    if (CRUMB_ACRONYM[lower]) out.push(CRUMB_ACRONYM[lower]);
+    else if (out.length === 0) out.push(lower.charAt(0).toUpperCase() + lower.slice(1));
+    else out.push(lower);
+  }
+  return out.join(" ");
+}
+
 function keywordService(slug) {
-  const service = keywordServices[slug] || keywordFallback[slug] || "";
+  const rows = p0Index.rows || p0Index;
+  const row = rows[slug];
+  const fromIndex = row && typeof row.service === "string" ? row.service : "";
+  const service = keywordServices[slug] || keywordFallback[slug] || fromIndex || "";
   return service === "aov" ? "aov-air-handling" : service;
+}
+
+function serviceHero(path, service) {
+  const key = service === "aov" ? "aov-air-handling" : (service || "fire-alarms");
+  if (key === "aov-air-handling") return pickImages(path, key, 2)[0];
+  return `/assets/images/services/${key}.jpg`;
 }
 
 const CREDIT = "iComply Property Services";
@@ -211,12 +253,21 @@ function pageFamily(path) {
   if (head === "jobs" && parts[2] && (services[parts[2]] || keywordService(parts[2]))) {
     return services[parts[2]] ? parts[2] : aliasFamily(keywordService(parts[2]));
   }
+  if ((head === "keywords" || head === "jobs") && parts[2] && parts[2] !== "index") {
+    const blob = String(parts[2]).replace(/-/g, " ");
+    if (/\b(cp12|cp44|gas safety|boiler|gas certificate|landlord gas)\b/.test(blob)
+      && !/\b(gas suppression|inert gas|clean agent)\b/.test(blob)) {
+      return "gas-systems";
+    }
+    return "building-maintenance";
+  }
   if (head === "jobs" || leaf === "jobs" || leaf === "become-a-subcontractor" || String(path).includes("become-a-subcontractor")) {
     return "hub:company";
   }
   if (head === "packages" || leaf === "packages") return "hub:packages";
   if (head === "areas" || leaf === "areas") return "hub:areas";
-  if (head === "resources" || leaf === "resources" || head === "directories" || leaf === "directories") return "hub:resources";
+  if (head === "directories" || leaf === "directories") return "directory:directories";
+  if (head === "resources" || leaf === "resources") return "hub:resources";
   if (head === "manufacturers" || leaf === "manufacturers") return "hub:manufacturers";
   if (head === "care-homes" || /care-home/.test(path)) return "nurse-call";
   if (/asbestos/.test(path)) return "asbestos-survey";
@@ -235,27 +286,65 @@ export function manifestHas(src) {
   return Object.prototype.hasOwnProperty.call(imageManifest, src);
 }
 
-function ownKeywordSrc(path) {
-  const parts = String(path || "").split("/").filter(Boolean);
-  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
-  if ((head === "keywords" || head === "jobs") && parts[2] && /^[a-z0-9-]+$/.test(parts[2])) {
-    const rel = `/assets/images/keywords/${parts[2]}.jpg`;
-    if (manifestHas(rel)) return rel;
+function pathParts(path) {
+  return String(path || "").replace(/\.php$/i, "").replace(/\/+$/, "").split("/").filter(Boolean);
+}
+
+function isHubIndex(path, hub) {
+  const parts = pathParts(path);
+  if (parts[0] === "pages") parts.shift();
+  return parts[0] === hub && (!parts[1] || parts[1] === "index");
+}
+
+function manufacturerSrc(path) {
+  const parts = pathParts(path);
+  const offset = parts[0] === "pages" ? 1 : 0;
+  const brand = parts[offset + 1] || "";
+  const town = parts[offset + 2] || "";
+  const row = brandHeroes[brand] || {};
+  let image = String(row.image || "");
+  const service = String(row.service || "fire-alarms");
+  const exactAssa = brand === "assa-abloy" && !town;
+  if (image.endsWith("/assa-abloy.svg") && !exactAssa) image = "";
+  if (/\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g$/i.test(image)) image = "";
+  if (image) return image;
+  return serviceHero(path, service);
+}
+
+function resourceArticleSrc(path) {
+  const parts = pathParts(path);
+  const slug = parts[parts.length - 1] || "";
+  const service = resourceArticles[slug] || "compliance-consultancy";
+  return serviceHero(path, service);
+}
+
+function borrowedImage(origin, path) {
+  if (/\/assets\/images\/keywords\//i.test(origin)) return true;
+  if (/\/real-job\/manufacturers\.jpe?g$/i.test(origin) && !isHubIndex(path, "manufacturers")) return true;
+  if (/\/real-job\/resources\.jpe?g$/i.test(origin) && !isHubIndex(path, "resources")) return true;
+  if (/\/assa-abloy\.svg$/i.test(origin)) {
+    const parts = pathParts(path);
+    const offset = parts[0] === "pages" ? 1 : 0;
+    const brand = parts[offset + 1] || "";
+    const town = parts[offset + 2] || "";
+    if (brand !== "assa-abloy" || town) return true;
   }
-  return "";
+  return false;
 }
 
 function canonicalSrc(path) {
   if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
-  const own = ownKeywordSrc(path);
-  if (own) return own;
   const family = pageFamily(path);
   if (family === "products") return "/assets/images/real-job/products-hub.jpg";
   if (family.startsWith("directory:")) return "/assets/images/real-job/directory-hub.jpg";
   if (family.startsWith("hub:")) {
     const leaf = family.slice(4);
-    if (leaf === "resources") return "/assets/images/real-job/resources.jpg";
-    if (leaf === "manufacturers") return "/assets/images/real-job/manufacturers.jpg";
+    if (leaf === "resources") {
+      return isHubIndex(path, "resources") ? "/assets/images/real-job/resources.jpg" : resourceArticleSrc(path);
+    }
+    if (leaf === "manufacturers") {
+      return isHubIndex(path, "manufacturers") ? "/assets/images/real-job/manufacturers.jpg" : manufacturerSrc(path);
+    }
     if (leaf === "home") return "/assets/images/real-job/index.jpg";
     if (leaf === "jobs" || leaf === "company") {
       if (/\/(?:jobs|become-a-subcontractor)(?:\/|$)/.test(path) || path.includes("become-a-subcontractor")) {
@@ -312,10 +401,10 @@ function crumbBlock(path, subject) {
     pushHub("/pages/services", "Services");
   } else if (head === "keywords") {
     pushHub("/pages/keywords", "Guides");
-    if (parts[2] && parts[3]) pushHub(`/pages/keywords/${parts[2]}`, parts[2].replace(/-/g, " "));
+    if (parts[2] && parts[3]) pushHub(`/pages/keywords/${parts[2]}`, crumbSubject(parts[2]));
   } else if (head === "jobs") {
     pushHub("/pages/jobs", "Jobs");
-    if (parts[2] && parts[3]) pushHub(`/pages/jobs/${parts[2]}`, parts[2].replace(/-/g, " "));
+    if (parts[2] && parts[3]) pushHub(`/pages/jobs/${parts[2]}`, crumbSubject(parts[2]));
   } else if (head === "areas") {
     pushHub("/pages/areas", "Areas");
   } else if (head === "manufacturers") {
@@ -445,6 +534,7 @@ function skipImg(attrs) {
   const alt = (String(attrs).match(/\balt\s*=\s*"([^"]*)"/i) || [])[1] || "";
   const cls = (String(attrs).match(/\bclass\s*=\s*"([^"]*)"/i) || [])[1] || "";
   const width = Number((String(attrs).match(/\bwidth\s*=\s*"(\d+)"/i) || [])[1] || 0);
+  if (/\/assa-abloy\.svg(?:$|\?)/i.test(src)) return false;
   if (/\.svg(?:$|\?)/i.test(src) || /favicon|\/logo/i.test(src)) return true;
   if (/\blogo\b|\bicon\b|\bbrand\b|mega-logo/i.test(cls)) return true;
   if (/\blogo\b/i.test(alt)) return true;
@@ -588,8 +678,9 @@ function rewriteMetaImages(html, path) {
       const imgFamily = imageFamily(pathOnly);
       const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
       const collapsed = isCollapsedAov(origin) || isCollapsedAov(pathOnly);
+      const borrowed = borrowedImage(origin, path);
       let next = String(url);
-      if (sharedHub || collapsed || !(!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) {
+      if (sharedHub || collapsed || borrowed || !(!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) {
         next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
       }
       return `content="${absoluteImageUrl(next)}"`;
@@ -641,7 +732,17 @@ function confineImages(html, path) {
     const servicePage = wantFamily && !wantFamily.startsWith("hub:") && !wantFamily.startsWith("directory:") && wantFamily !== "products";
     const foreign = servicePage && owner && owner !== wantFamily;
     const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
-    if (sharedHub || collapsed || sharedMaintenance || foreign) return `<img${replaceImgSrc(next, nextSrc())}>`;
+    const borrowed = borrowedImage(origin, path);
+    if (sharedHub || collapsed || sharedMaintenance || foreign || borrowed) {
+      let swapTo = nextSrc();
+      if (borrowed && /\/assets\/images\/keywords\//i.test(origin)
+        && wantFamily && !wantFamily.startsWith("hub:") && !wantFamily.startsWith("directory:")
+        && wantFamily !== "aov-air-handling") {
+        const hero = `/assets/images/services/${wantFamily}.jpg`;
+        swapTo = hero;
+      }
+      return `<img${replaceImgSrc(next, swapTo)}>`;
+    }
     if (directory) {
       if (family.startsWith("hub:") && family !== wantFamily) return `<img${replaceImgSrc(next, want)}>`;
       if (!placeholder && family && !family.startsWith("hub:") && family !== "products") return `<img${next}>`;

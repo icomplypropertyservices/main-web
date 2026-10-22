@@ -399,7 +399,7 @@ export function townDepthBlock({ slug, town, subject, service, names = null, ext
     for (const [s, row] of Object.entries(geo)) {
       if (s === slug || !names.has(s)) continue;
       const m = miles(here, { lat: row[5], lng: row[6] });
-      if (m < 0.5 || m > 35) continue;
+      if (m < 0.5 || m > 12) continue;
       near.push([m, s, row]);
     }
     near.sort((a, b) => a[0] - b[0]);

@@ -54,9 +54,12 @@ function icomplyKitWizardHref(string $slug): string
     return function_exists('url') ? url('/pages/kits/' . $slug) : '/pages/kits/' . $slug;
 }
 
-function manufacturerProductLineLogoUrl(string $slug): string
+function manufacturerProductLineLogoUrl(string $slug, bool $onBrandPage = false): string
 {
     $slug = strtolower(preg_replace('/[^a-z0-9\-]/', '', $slug) ?? '');
+    if ($slug === 'assa-abloy' && !$onBrandPage) {
+        return '';
+    }
     $rel = '/assets/images/brand-logos/' . $slug . '.svg';
     return function_exists('url') ? url($rel) : $rel;
 }
@@ -204,7 +207,9 @@ function manufacturerProductLineCardHtml(array $brand, array $group, bool $compa
     $links = manufacturerProductLineLinks($brand, $group);
     $name = htmlspecialchars($links['name'], ENT_QUOTES, 'UTF-8');
     $href = htmlspecialchars($links['primary'], ENT_QUOTES, 'UTF-8');
-    $logo = htmlspecialchars(manufacturerProductLineLogoUrl($slug), ENT_QUOTES, 'UTF-8');
+    $onBrandPage = !empty($brand['on_brand_page']);
+    $logoUrl = manufacturerProductLineLogoUrl($slug, $onBrandPage);
+    $logo = htmlspecialchars($logoUrl, ENT_QUOTES, 'UTF-8');
     $label = htmlspecialchars($links['primary_label'], ENT_QUOTES, 'UTF-8');
 
     $lines = '';
@@ -231,9 +236,12 @@ function manufacturerProductLineCardHtml(array $brand, array $group, bool $compa
             . htmlspecialchars($links['shop'], ENT_QUOTES, 'UTF-8') . '">Shop range</a>';
     }
 
+    $mark = $logoUrl !== ''
+        ? '<img src="' . $logo . '" alt="' . $name . '" width="560" height="96" loading="lazy" decoding="async">'
+        : '<span class="mfr-line-logo-fallback" role="img" aria-label="' . $name . '">' . $name . '</span>';
     return '<article class="mfr-line-card" id="product-line-' . htmlspecialchars($slug, ENT_QUOTES, 'UTF-8') . '">'
         . '<a class="mfr-line-logo" href="' . $href . '">'
-        . '<img src="' . $logo . '" alt="' . $name . '" width="560" height="96" loading="lazy" decoding="async">'
+        . $mark
         . '</a>'
         . '<div class="mfr-line-body">'
         . '<h3 class="mfr-line-brand"><a href="' . $href . '">' . $name . '</a></h3>'
@@ -259,6 +267,7 @@ function manufacturerProductLinesForBrandHtml(string $slug): string
                 continue;
             }
             $title = (string) ($brand['name'] ?? '') . ' product lines';
+            $brand['on_brand_page'] = true;
             $html .= '<section class="mfr-lines mfr-lines--solo" id="product-lines-' . htmlspecialchars((string) $key, ENT_QUOTES, 'UTF-8') . '" aria-label="'
                 . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '">'
                 . '<div class="mfr-lines-head"><div>'

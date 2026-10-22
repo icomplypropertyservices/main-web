@@ -524,7 +524,11 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
-        . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
+        . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH(
+            ($priceLine !== '' && !preg_match('/written quote/i', $standards))
+                ? ($standards !== '' ? $standards . ' · ' . $priceLine : $priceLine)
+                : $standards
+        ) . '</p>'
         . '</div></section>';
 
     $packedHeading = is_array($packed) && ($packed['h2'] ?? '') !== ''

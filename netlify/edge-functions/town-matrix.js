@@ -71,7 +71,7 @@ function paperworkLine(slug, subject) {
 
 function nearestNeighbourNames(townSlug, places) {
   const here = townCoords[townSlug];
-  if (!Array.isArray(here) || !places) return [];
+  if (!Array.isArray(here) || !places) return null;
   return Object.keys(places)
     .filter((slug) => slug !== townSlug && Array.isArray(townCoords[slug]) && places[slug] && places[slug].name)
     .map((slug) => ({
@@ -81,6 +81,7 @@ function nearestNeighbourNames(townSlug, places) {
         { lat: townCoords[slug][0], lng: townCoords[slug][1] },
       ),
     }))
+    .filter((row) => row.miles <= 12)
     .sort((a, b) => a.miles - b.miles)
     .slice(0, 3)
     .map((row) => row.name);
@@ -427,8 +428,19 @@ export function renderTownPage(input) {
 
   if (kind === "job" || kind === "keyword") {
     const spokenSlug = kind === "job" ? input.job : input.keyword;
+    const previous = subject;
     subject = spokenSubject(spokenSlug, subject);
-    if (keyword) keyword = { ...keyword, name: subject };
+    if (keyword) {
+      const rewrite = (value) => (previous && previous !== subject
+        ? String(value || "").split(previous).join(subject)
+        : value);
+      keyword = {
+        ...keyword,
+        name: subject,
+        intro: rewrite(keyword.intro),
+        focus: Array.isArray(keyword.focus) ? keyword.focus.map((item) => rewrite(item)) : keyword.focus,
+      };
+    }
   }
 
   const townSlug = input.town;
@@ -454,9 +466,9 @@ export function renderTownPage(input) {
   const audience = lockEarly ? "homeowners and landlords" : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
   const rankedNeighbours = nearestNeighbourNames(townSlug, catalogue.places || {});
-  const neighbours = rankedNeighbours.length >= 2
+  const neighbours = Array.isArray(rankedNeighbours)
     ? rankedNeighbours
-    : (Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : []);
+    : (Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean).slice(0, 3) : []);
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
   const pop = place.population
     ? `${place.name} is home to about ${Number(place.population).toLocaleString("en-GB")} people.`
@@ -527,9 +539,7 @@ export function renderTownPage(input) {
   if (pe && Array.isArray(pe.faqs)) {
     qualityCtx.peFaqs = pe.faqs;
   }
-  const preferredHero = (kind === "keyword" || kind === "job")
-    ? `/assets/images/keywords/${kind === "keyword" ? input.keyword : input.job}.jpg`
-    : "";
+  const preferredHero = "";
   const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero);
   let proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx).slice();

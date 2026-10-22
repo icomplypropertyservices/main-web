@@ -49,7 +49,7 @@ export function nearestTowns(slug, names, limit = 6) {
   for (const [s, row] of Object.entries(geo)) {
     if (s === slug || !names.has(s)) continue;
     const m = miles(here, { lat: row[5], lng: row[6] });
-    if (m < 0.5 || m > 35) continue;
+    if (m < 0.5 || m > 12) continue;
     out.push({ slug: s, name: names.get(s).name || s, miles: m, dir: bearing(here, { lat: row[5], lng: row[6] }) });
   }
   out.sort((a, b) => a.miles - b.miles);

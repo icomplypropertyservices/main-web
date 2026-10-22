@@ -328,6 +328,18 @@ function icomplyQualityFloorKeywordServices(): array
                 }
             }
         }
+        $p0File = dirname(__DIR__) . '/data/seo-lock/p0-index.json';
+        $p0 = is_file($p0File) ? json_decode((string)file_get_contents($p0File), true) : [];
+        $p0Rows = is_array($p0['rows'] ?? null) ? $p0['rows'] : (is_array($p0) ? $p0 : []);
+        foreach ($p0Rows as $slug => $row) {
+                if (isset($map[$slug]) || !is_array($row)) {
+                    continue;
+                }
+                $service = (string)($row['service'] ?? '');
+                if ($service !== '') {
+                    $map[(string)$slug] = $service;
+                }
+        }
         foreach ($map as $slug => $service) {
             if ($service === 'aov') {
                 $map[$slug] = 'aov-air-handling';
@@ -449,6 +461,14 @@ function icomplyQualityFloorFamily(string $path): string
     if ($head === 'jobs' && isset($parts[2]) && (isset($services[$parts[2]]) || isset($keywords[$parts[2]]))) {
         return isset($services[$parts[2]]) ? (string)$parts[2] : icomplyImageAlias((string)$keywords[$parts[2]]);
     }
+    if (($head === 'keywords' || $head === 'jobs') && isset($parts[2]) && $parts[2] !== '' && $parts[2] !== 'index') {
+        $blob = str_replace('-', ' ', (string)$parts[2]);
+        if (preg_match('/\b(cp12|cp44|gas safety|boiler|gas certificate|landlord gas)\b/', $blob)
+            && !preg_match('/\b(gas suppression|inert gas|clean agent)\b/', $blob)) {
+            return 'gas-systems';
+        }
+        return 'building-maintenance';
+    }
     if ($head === 'jobs' || $leaf === 'jobs' || $leaf === 'become-a-subcontractor' || str_contains($path, 'become-a-subcontractor')) {
         return 'hub:company';
     }
@@ -458,7 +478,10 @@ function icomplyQualityFloorFamily(string $path): string
     if ($head === 'areas' || $leaf === 'areas') {
         return 'hub:areas';
     }
-    if (in_array($head, ['resources', 'directories'], true) || in_array($leaf, ['resources', 'directories'], true)) {
+    if ($head === 'directories' || $leaf === 'directories') {
+        return 'directory:directories';
+    }
+    if ($head === 'resources' || $leaf === 'resources') {
         return 'hub:resources';
     }
     if ($head === 'manufacturers' || $leaf === 'manufacturers') {
@@ -499,6 +522,117 @@ function icomplyQualityFloorFamily(string $path): string
     return 'directory:unknown';
 }
 
+/** @return list<string> */
+function icomplyQualityFloorParts(string $path): array
+{
+    $path = (string)(parse_url($path, PHP_URL_PATH) ?: $path);
+    $path = preg_replace('#\.php$#i', '', $path) ?? $path;
+    $path = rtrim($path, '/');
+    return array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
+}
+
+function icomplyQualityFloorIsHubIndex(string $path, string $hub): bool
+{
+    $parts = icomplyQualityFloorParts($path);
+    if (($parts[0] ?? '') === 'pages') {
+        array_shift($parts);
+    }
+    return ($parts[0] ?? '') === $hub && (($parts[1] ?? '') === '' || ($parts[1] ?? '') === 'index');
+}
+
+/** @return array<string,array{image?:string,service?:string}> */
+function icomplyQualityFloorBrandHeroes(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $file = dirname(__DIR__) . '/data/manufacturer-hero-images.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    $map = is_array($decoded) ? $decoded : [];
+    return $map;
+}
+
+function icomplyQualityFloorManufacturerSrc(string $path): string
+{
+    $parts = icomplyQualityFloorParts($path);
+    $offset = ($parts[0] ?? '') === 'pages' ? 1 : 0;
+    $brand = (string)($parts[$offset + 1] ?? '');
+    $town = (string)($parts[$offset + 2] ?? '');
+    $row = icomplyQualityFloorBrandHeroes()[$brand] ?? [];
+    $image = is_array($row) ? (string)($row['image'] ?? '') : '';
+    $service = is_array($row) ? (string)($row['service'] ?? 'fire-alarms') : 'fire-alarms';
+    $exactAssa = $brand === 'assa-abloy' && $town === '';
+    if ($image !== '' && str_ends_with($image, '/assa-abloy.svg') && !$exactAssa) {
+        $image = '';
+    }
+    $root = dirname(__DIR__);
+    if ($image !== '' && is_file($root . $image)) {
+        return $image;
+    }
+    return icomplyQualityFloorServiceHero($path, $service !== '' ? $service : 'fire-alarms');
+}
+
+function icomplyQualityFloorServiceHero(string $path, string $service): string
+{
+    if ($service === 'aov') {
+        $service = 'aov-air-handling';
+    }
+    if ($service === 'aov-air-handling') {
+        if (!function_exists('icomplyImagePick')) {
+            $pool = __DIR__ . '/image-pool.php';
+            if (is_file($pool)) {
+                require_once $pool;
+            }
+        }
+        if (function_exists('icomplyImagePick')) {
+            $pick = (string)(icomplyImagePick($path, 'aov-air-handling', 2)[0] ?? '');
+            if ($pick !== '' && is_file(dirname(__DIR__) . $pick)) {
+                return $pick;
+            }
+        }
+    }
+    $rel = '/assets/images/services/' . $service . '.jpg';
+    return is_file(dirname(__DIR__) . $rel) ? $rel : '/assets/images/real-job/directory-hub.jpg';
+}
+
+function icomplyQualityFloorResourceArticleSrc(string $path): string
+{
+    static $map = null;
+    if ($map === null) {
+        $file = dirname(__DIR__) . '/data/resource-article-images.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $map = is_array($decoded) ? $decoded : [];
+    }
+    $parts = icomplyQualityFloorParts($path);
+    $slug = (string)($parts[count($parts) - 1] ?? '');
+    $service = (string)($map[$slug] ?? 'compliance-consultancy');
+    return icomplyQualityFloorServiceHero($path, $service);
+}
+
+function icomplyQualityFloorBorrowedImage(string $origin, string $path): bool
+{
+    if (preg_match('#/assets/images/keywords/#i', $origin)) {
+        return true;
+    }
+    if (preg_match('#/real-job/manufacturers\.jpe?g$#i', $origin) && !icomplyQualityFloorIsHubIndex($path, 'manufacturers')) {
+        return true;
+    }
+    if (preg_match('#/real-job/resources\.jpe?g$#i', $origin) && !icomplyQualityFloorIsHubIndex($path, 'resources')) {
+        return true;
+    }
+    if (preg_match('#/assa-abloy\.svg$#i', $origin)) {
+        $parts = icomplyQualityFloorParts($path);
+        $offset = ($parts[0] ?? '') === 'pages' ? 1 : 0;
+        $brand = (string)($parts[$offset + 1] ?? '');
+        $town = (string)($parts[$offset + 2] ?? '');
+        if ($brand !== 'assa-abloy' || $town !== '') {
+            return true;
+        }
+    }
+    return false;
+}
+
 function icomplyQualityFloorCanonicalSrc(string $path): string
 {
     if ($path === '/' || $path === '') {
@@ -506,12 +640,6 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
     }
     $parts = array_values(array_filter(explode('/', (string)(parse_url($path, PHP_URL_PATH) ?: $path)), static fn ($p) => $p !== ''));
     $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
-    if (($head === 'keywords' || $head === 'jobs') && isset($parts[2]) && preg_match('/^[a-z0-9-]+$/', (string)$parts[2])) {
-        $kw = '/assets/images/keywords/' . $parts[2] . '.jpg';
-        if (is_file(dirname(__DIR__) . $kw)) {
-            return $kw;
-        }
-    }
     $family = icomplyQualityFloorFamily($path);
     if ($family === 'products') {
         return '/assets/images/real-job/products-hub.jpg';
@@ -522,10 +650,16 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
     if (str_starts_with($family, 'hub:')) {
         $leaf = substr($family, 4);
         if ($leaf === 'resources') {
-            return '/assets/images/real-job/resources.jpg';
+            if (icomplyQualityFloorIsHubIndex($path, 'resources')) {
+                return '/assets/images/real-job/resources.jpg';
+            }
+            return icomplyQualityFloorResourceArticleSrc($path);
         }
         if ($leaf === 'manufacturers') {
-            return '/assets/images/real-job/manufacturers.jpg';
+            if (icomplyQualityFloorIsHubIndex($path, 'manufacturers')) {
+                return '/assets/images/real-job/manufacturers.jpg';
+            }
+            return icomplyQualityFloorManufacturerSrc($path);
         }
         if ($leaf === 'home') {
             return '/assets/images/real-job/index.jpg';
@@ -820,6 +954,9 @@ function icomplyQualityFloorSkipImg(string $attrs): bool
     if (preg_match('/\bwidth\s*=\s*"(\d+)"/i', $attrs, $m)) {
         $width = (int)$m[1];
     }
+    if (preg_match('#/assa-abloy\.svg(?:$|\?)#i', $src)) {
+        return false;
+    }
     if (preg_match('/\.svg(?:$|\?)/i', $src) || preg_match('/favicon|\/logo/i', $src)) {
         return true;
     }
@@ -888,6 +1025,46 @@ function icomplyStampImageCredits(string $html): string
     return is_string($restored) ? $restored : $stamped;
 }
 
+function icomplyQualityFloorCrumbSubject(string $slug): string
+{
+    $verbs = [
+        'fit' => 'fitting', 'swap' => 'replacement', 'replace' => 'replacement',
+        'install' => 'installation', 'repair' => 'repair', 'service' => 'servicing',
+    ];
+    $acronyms = [
+        'aov' => 'AOV', 'grp' => 'GRP', 'epdm' => 'EPDM', 'eicr' => 'EICR', 'ev' => 'EV',
+        'pir' => 'PIR', 'upvc' => 'uPVC', 'lvt' => 'LVT', 'cctv' => 'CCTV', 'cp12' => 'CP12',
+        'pat' => 'PAT', 'hmo' => 'HMO', 'cdm' => 'CDM', 'co' => 'CO', 'tv' => 'TV',
+        'ip' => 'IP', 'led' => 'LED', 'rcd' => 'RCD', 'mcb' => 'MCB',
+    ];
+    $parts = array_values(array_filter(explode('-', $slug), static fn ($p) => $p !== ''));
+    if ($parts === []) {
+        return '';
+    }
+    $last = strtolower((string)$parts[count($parts) - 1]);
+    if (isset($verbs[$last])) {
+        $parts[count($parts) - 1] = $verbs[$last];
+    }
+    $out = [];
+    $count = count($parts);
+    for ($i = 0; $i < $count; $i++) {
+        $lower = strtolower((string)$parts[$i]);
+        if ($lower === 'd' && strtolower((string)($parts[$i + 1] ?? '')) === 'h') {
+            $out[] = 'D+H';
+            $i++;
+            continue;
+        }
+        if (isset($acronyms[$lower])) {
+            $out[] = $acronyms[$lower];
+        } elseif ($out === []) {
+            $out[] = ucfirst($lower);
+        } else {
+            $out[] = $lower;
+        }
+    }
+    return implode(' ', $out);
+}
+
 function icomplyQualityFloorCrumbs(string $path, string $subject): string
 {
     $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
@@ -902,12 +1079,12 @@ function icomplyQualityFloorCrumbs(string $path, string $subject): string
     } elseif ($head === 'keywords') {
         $push('/pages/keywords', 'Guides');
         if (isset($parts[2], $parts[3])) {
-            $push('/pages/keywords/' . $parts[2], ucwords(str_replace('-', ' ', $parts[2])));
+            $push('/pages/keywords/' . $parts[2], icomplyQualityFloorCrumbSubject((string)$parts[2]));
         }
     } elseif ($head === 'jobs') {
         $push('/pages/jobs', 'Jobs');
         if (isset($parts[2], $parts[3])) {
-            $push('/pages/jobs/' . $parts[2], ucwords(str_replace('-', ' ', $parts[2])));
+            $push('/pages/jobs/' . $parts[2], icomplyQualityFloorCrumbSubject((string)$parts[2]));
         }
     } elseif ($head === 'areas') {
         $push('/pages/areas', 'Areas');
@@ -1122,7 +1299,8 @@ function icomplyQualityFloorRewriteMetaImages(string $html, string $path): strin
             $sharedHub = (bool)preg_match('#/real-job/(?:company|home)\.jpe?g$#i', $origin) && $path !== '/';
             $collapsed = icomplyImageCollapsedAov($origin) || icomplyImageCollapsedAov($pathOnly);
             $url = $cm[1];
-            if ($sharedHub || $collapsed || !($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)))) {
+            $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
+            if ($sharedHub || $collapsed || $borrowed || !($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)))) {
                 $swapped = preg_replace('#/assets/images/[^"?]+#', $want, $cm[1]);
                 if (is_string($swapped) && $swapped !== '') {
                     $url = $swapped;
@@ -1207,8 +1385,21 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             $slot++;
             return $choice;
         };
-        if ($sharedHub || $collapsed || $sharedMaintenance || $foreign) {
-            return '<img' . $swap($attrs, $nextSrc()) . '>';
+        $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
+        if ($sharedHub || $collapsed || $sharedMaintenance || $foreign || $borrowed) {
+            $swapTo = $nextSrc();
+            if ($borrowed && preg_match('#/assets/images/keywords/#i', $origin)
+                && $wantFamily !== ''
+                && !str_starts_with($wantFamily, 'hub:')
+                && !str_starts_with($wantFamily, 'directory:')
+                && $wantFamily !== 'aov-air-handling'
+            ) {
+                $hero = '/assets/images/services/' . $wantFamily . '.jpg';
+                if (is_file(dirname(__DIR__) . $hero)) {
+                    $swapTo = $hero;
+                }
+            }
+            return '<img' . $swap($attrs, $swapTo) . '>';
         }
         if ($directory) {
             if (str_starts_with($family, 'hub:') && $family !== $wantFamily) {
