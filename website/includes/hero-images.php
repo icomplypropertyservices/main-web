@@ -196,27 +196,21 @@ function icomplyHubInline(string $serviceSlug, int $slot): ?string
 /** @return array{primary:string,inline:string,pool:?string} */
 function icomplyKeywordHero(string $keywordSlug, string $serviceSlug, string $area = ''): array
 {
-    $fallback = [
-        'primary' => function_exists('icomplyKeywordImagePath') ? icomplyKeywordImagePath($keywordSlug, $serviceSlug) : '/assets/images/keywords/' . $keywordSlug . '.jpg',
-        'inline' => '/assets/images/services/' . ($serviceSlug !== '' ? $serviceSlug : 'fire-alarms') . '.jpg',
-        'pool' => null,
-    ];
-    $pool = icomplyPoolForKeyword($keywordSlug, $serviceSlug);
-    if ($pool === null) {
-        return $fallback;
+    unset($serviceSlug);
+    $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+    if (!function_exists('icomplyImagePick')) {
+        $poolFile = $root . '/includes/image-pool.php';
+        if (is_file($poolFile)) {
+            require_once $poolFile;
+        }
     }
-    $ord = icomplyGuideOrdinal($pool, $keywordSlug);
-    if ($area === '') {
-        return [
-            'primary' => icomplyIndexedHero($pool, $ord + 2),
-            'inline' => icomplyIndexedHero($pool, $ord + 2 + 9),
-            'pool' => $pool,
-        ];
-    }
-    $shift = icomplyKeywordTownShift($pool, $ord);
+    $path = '/pages/keywords/' . $keywordSlug . ($area !== '' ? '/' . $area : '');
+    $picks = function_exists('icomplyImagePick') ? icomplyImagePick($path, 'page-keywords', 2) : [];
+    $primary = (string)($picks[0] ?? '/assets/images/real-job/directory-hub.jpg');
+    $inline = (string)($picks[1] ?? $primary);
     return [
-        'primary' => icomplyIndexedHero($pool, icomplyTownIndex($area) + $shift),
-        'inline' => icomplyIndexedHero($pool, icomplyTownIndex($area) + $shift + 9),
-        'pool' => $pool,
+        'primary' => $primary,
+        'inline' => $inline,
+        'pool' => 'page-keywords',
     ];
 }

@@ -257,12 +257,18 @@ function icomplyMatrixOtherServicesInTown(string $serviceSlug, string $areaName,
 
 function icomplyMatrixKeywordChips(string $serviceSlug): string
 {
+    if (!function_exists('icomplySpokenLinkLabel')) {
+        require_once __DIR__ . '/related.php';
+    }
     $s = icomplyMatrixShared();
     $kws = $s['kwByService'][$serviceSlug] ?? [];
     $html = '<div class="chip-cloud">';
     foreach ($kws as $slug => $name) {
+        $label = function_exists('icomplySpokenLinkLabel')
+            ? icomplySpokenLinkLabel((string)$slug, (string)$name)
+            : (string)$name;
         $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $slug)) . '">'
-            . icomplyMatrixH($name) . '</a>';
+            . icomplyMatrixH($label) . '</a>';
     }
     $html .= '</div>';
     return $html;
@@ -322,13 +328,10 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
     }
-    $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
-    if ($svcSlug === 'aov-air-handling' || $svcSlug === 'aov') {
-        if (!function_exists('icomplyImagePick')) {
-            require_once SITE_ROOT . '/includes/image-pool.php';
-        }
-        $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, 'aov-air-handling', 2)[0];
+    if (!function_exists('icomplyImagePick')) {
+        require_once SITE_ROOT . '/includes/image-pool.php';
     }
+    $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, 'page-keywords', 1)[0];
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
@@ -506,11 +509,12 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
-    if ($serviceSlug === 'aov-air-handling' || $serviceSlug === 'aov') {
+    if ($serviceSlug === 'aov' || $serviceSlug === 'aov-air-handling') {
         if (!function_exists('icomplyImagePick')) {
             require_once SITE_ROOT . '/includes/image-pool.php';
         }
-        $svcImagePath = icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, 'aov-air-handling', 2)[0];
+        $poolKey = $serviceSlug === 'aov' ? 'aov' : 'aov-air-handling';
+        $svcImagePath = icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, $poolKey, 2)[0];
     }
     $heroCredit = $serviceSlug === 'demolition' ? ' data-credit="Tomwsulcer (CC0)" data-credit-stamped="1"' : '';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);

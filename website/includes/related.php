@@ -175,6 +175,36 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
     return $html;
 }
 
+function icomplySpokenLinkLabel(string $slug, string $name, string $town = ''): string
+{
+    $given = trim($name);
+    $titled = function_exists('keywordDisplayName') ? keywordDisplayName($slug) : ucwords(str_replace('-', ' ', $slug));
+    $spoken = $given;
+    if ($given === '' || strcasecmp($given, $titled) === 0) {
+        $parts = array_values(array_filter(explode('-', $slug), static fn ($part) => $part !== ''));
+        $verbs = [
+            'fit' => 'fitting', 'fitting' => 'fitting', 'swap' => 'replacement', 'replace' => 'replacement',
+            'replacement' => 'replacement', 'install' => 'installation', 'installation' => 'installation',
+            'repair' => 'repair', 'repairs' => 'repairs', 'service' => 'servicing', 'servicing' => 'servicing',
+        ];
+        $last = strtolower((string)($parts[count($parts) - 1] ?? ''));
+        if (isset($verbs[$last])) {
+            $parts[count($parts) - 1] = $verbs[$last];
+        }
+        $words = [];
+        foreach ($parts as $index => $part) {
+            $lower = strtolower($part);
+            if ($index === 0) {
+                $words[] = ucfirst($lower);
+            } else {
+                $words[] = $lower;
+            }
+        }
+        $spoken = $words !== [] ? implode(' ', $words) : $given;
+    }
+    return $town !== '' ? $spoken . ' in ' . $town : $spoken;
+}
+
 /**
  * Keyword guide chips for a service (links to /pages/keywords/{slug}).
  */
@@ -190,7 +220,7 @@ function relatedKeywordsHtml(string $serviceSlug, int $limit = 0): string {
     $html = '<div class="flex flex-wrap gap-2">';
     foreach ($keywords as $slug => $meta) {
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars(icomplySpokenLinkLabel((string)$slug, (string)($meta['name'] ?? keywordDisplayName($slug))), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
             . $label . '</a>';
     }
@@ -241,7 +271,7 @@ function keywordAreaLinksHtml(string $area, ?array $extraSlugs = null, int $limi
         }
         $name = (string)($all[$slug]['name'] ?? keywordDisplayName($slug));
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '/' . $areaSlug . '.php'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars($name . ' in ' . $area, ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars(icomplySpokenLinkLabel((string)$slug, $name, $area), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-800 hover:border-[#ff6b00] hover:text-[#ff6b00] transition">'
             . $label . '</a>';
     }
@@ -268,7 +298,7 @@ function siblingKeywordsHtml(string $keywordSlug, string $serviceSlug, int $limi
             continue;
         }
         $href = htmlspecialchars(url('/pages/keywords/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $label = htmlspecialchars((string)($meta['name'] ?? keywordDisplayName($slug)), ENT_QUOTES, 'UTF-8');
+        $label = htmlspecialchars(icomplySpokenLinkLabel((string)$slug, (string)($meta['name'] ?? keywordDisplayName($slug))), ENT_QUOTES, 'UTF-8');
         $html .= '<a href="' . $href . '" class="px-3 py-1.5 bg-white border-2 border-zinc-300 rounded-full text-xs font-semibold text-zinc-900 hover:border-[#ff6b00] hover:text-[#ff6b00]">'
             . $label . '</a>';
     }

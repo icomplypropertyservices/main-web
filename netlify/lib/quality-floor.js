@@ -15,7 +15,7 @@ import resourceArticles from "../../website/data/resource-article-images.json" w
 import p0Index from "../../website/data/seo-lock/p0-index.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 import { landlordLines } from "./landlord-note.js";
-import { aliasFamily, pickImages, isCollapsedAov, imageOwner } from "./image-pool.js";
+import { aliasFamily, pickImages, isCollapsedAov, imageOwner, poolHas } from "./image-pool.js";
 
 const CRUMB_VERB = {
   fit: "fitting", swap: "replacement", replace: "replacement", install: "installation",
@@ -56,8 +56,8 @@ function keywordService(slug) {
 }
 
 function serviceHero(path, service) {
-  const key = service === "aov" ? "aov-air-handling" : (service || "fire-alarms");
-  if (key === "aov-air-handling") return pickImages(path, key, 2)[0];
+  const key = service === "aov" ? "aov" : (service || "fire-alarms");
+  if (key === "aov" || key === "aov-air-handling") return pickImages(path, key, 2)[0];
   return `/assets/images/services/${key}.jpg`;
 }
 
@@ -296,6 +296,38 @@ function isHubIndex(path, hub) {
   return parts[0] === hub && (!parts[1] || parts[1] === "index");
 }
 
+const AOV_EQUIPMENT = /\/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g(?:$|\?)/i;
+
+function isAovEquipment(src) {
+  return poolHas("aov", src) || AOV_EQUIPMENT.test(String(src || ""));
+}
+
+function isElectricalHero(src) {
+  const value = String(src || "");
+  return /\/services\/electrical\.jpe?g(?:$|\?)/i.test(value) || value.includes("21bb8660f87c");
+}
+
+function isElectricalServicePage(path) {
+  const parts = pathParts(path);
+  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
+  const slug = parts[0] === "pages" ? (parts[2] || "") : (parts[1] || "");
+  return head === "electrical" || (head === "services" && slug === "electrical");
+}
+
+function pageImageKey(path) {
+  const parts = pathParts(path);
+  const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
+  const slug = parts[0] === "pages" ? (parts[2] || "") : (parts[1] || "");
+  if (head === "aov") return "aov";
+  if (head === "aov-air-handling") return "aov-air-handling";
+  if (head === "services" && slug === "aov") return "aov";
+  if (head === "services" && slug === "aov-air-handling") return "aov-air-handling";
+  if (head === "keywords" && slug && slug !== "index") return "page-keywords";
+  if (head === "jobs" && slug && slug !== "index") return "page-jobs";
+  if (head === "resources" && slug && slug !== "index" && !isHubIndex(path, "resources")) return "page-resources";
+  return "";
+}
+
 function manufacturerSrc(path) {
   const parts = pathParts(path);
   const offset = parts[0] === "pages" ? 1 : 0;
@@ -307,7 +339,11 @@ function manufacturerSrc(path) {
   const exactAssa = brand === "assa-abloy" && !town;
   if (image.endsWith("/assa-abloy.svg") && !exactAssa) image = "";
   if (/\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g$/i.test(image)) image = "";
+  if (isAovEquipment(image) || isElectricalHero(image) || /\/page-sets\//i.test(image)) image = "";
   if (image) return image;
+  if (service === "aov" || service === "aov-air-handling" || brand === "assa-abloy") {
+    return "/assets/images/manufacturers/lines/assa-abloy-door-closers.svg";
+  }
   return serviceHero(path, service);
 }
 
@@ -333,6 +369,8 @@ function borrowedImage(origin, path) {
 }
 
 function canonicalSrc(path) {
+  const imageKey = pageImageKey(path);
+  if (imageKey) return pickImages(path, imageKey, 1)[0];
   if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
   const family = pageFamily(path);
   if (family === "products") return "/assets/images/real-job/products-hub.jpg";
@@ -354,7 +392,7 @@ function canonicalSrc(path) {
     }
     return `/assets/images/real-job/${leaf}.jpg`;
   }
-  if (family === "aov-air-handling") return pickImages(path, family, 2)[0];
+  if (family === "aov" || family === "aov-air-handling") return pickImages(path, family, 2)[0];
   return `/assets/images/services/${family}.jpg`;
 }
 
@@ -577,8 +615,10 @@ function stampCredits(html) {
 }
 
 function photoHtml(path, subject) {
-  const family = pageFamily(path);
-  const srcs = family === "aov-air-handling" ? pickImages(path, family, 2).slice(0, 2) : [slotSrc(path)];
+  const imageKey = pageImageKey(path);
+  const srcs = imageKey === "aov" || imageKey === "aov-air-handling"
+    ? pickImages(path, imageKey, 2).slice(0, 2)
+    : [slotSrc(path)];
   const imgs = srcs.map((src) => (
     `<img src="${escapeHtml(src)}" alt="${escapeHtml(`Photograph of ${subject}`)}" data-pe-slot="real-photo" width="1200" height="800">`
   )).join("");
@@ -668,8 +708,10 @@ function capTownPrefix(html, place) {
 }
 
 function rewriteMetaImages(html, path) {
-  const want = canonicalSrc(path);
+  const imageKey = pageImageKey(path);
+  const want = imageKey ? pickImages(path, imageKey, 1)[0] : canonicalSrc(path);
   const family = pageFamily(path);
+  const electricalPage = isElectricalServicePage(path);
   return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
     if (!/\b(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"/i.test(tag)) return tag;
     return tag.replace(/\bcontent\s*=\s*"([^"]*)"/i, (full, url) => {
@@ -679,8 +721,12 @@ function rewriteMetaImages(html, path) {
       const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
       const collapsed = isCollapsedAov(origin) || isCollapsedAov(pathOnly);
       const borrowed = borrowedImage(origin, path);
+      const blocked = isAovEquipment(origin) && imageKey !== "aov"
+        || (isElectricalHero(origin) || isElectricalHero(pathOnly)) && !electricalPage
+        || /\/page-sets\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
       let next = String(url);
-      if (sharedHub || collapsed || borrowed || !(!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) {
+      const owned = imageKey ? poolHas(imageKey, origin) : (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)));
+      if (sharedHub || collapsed || borrowed || blocked || !owned) {
         next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
       }
       return `content="${absoluteImageUrl(next)}"`;
@@ -705,12 +751,20 @@ function replaceImgSrc(attrs, src) {
 }
 
 function confineImages(html, path) {
-  const want = canonicalSrc(path);
+  const imageKey = pageImageKey(path);
+  const want = imageKey ? pickImages(path, imageKey, 1)[0] : canonicalSrc(path);
   const wantFamily = pageFamily(path);
   const allowProducts = wantFamily === "products";
   const directory = wantFamily.startsWith("directory:") || wantFamily.startsWith("hub:");
+  const electricalPage = isElectricalServicePage(path);
   let slot = 0;
   const nextSrc = () => {
+    if (imageKey) {
+      const picks = pickImages(path, imageKey, 6);
+      const choice = picks[slot % picks.length];
+      slot += 1;
+      return choice;
+    }
     if (wantFamily.startsWith("hub:") || wantFamily.startsWith("directory:") || wantFamily === "products" || !wantFamily) return want;
     const picks = pickImages(path, wantFamily, 6);
     const choice = picks[slot % picks.length];
@@ -730,18 +784,20 @@ function confineImages(html, path) {
     const collapsed = isCollapsedAov(origin) || isCollapsedAov(src);
     const owner = imageOwner(origin) || imageOwner(src);
     const servicePage = wantFamily && !wantFamily.startsWith("hub:") && !wantFamily.startsWith("directory:") && wantFamily !== "products";
-    const foreign = servicePage && owner && owner !== wantFamily;
+    const foreign = servicePage && owner && owner !== wantFamily && !(imageKey && poolHas(imageKey, origin));
     const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
     const borrowed = borrowedImage(origin, path);
-    if (sharedHub || collapsed || sharedMaintenance || foreign || borrowed) {
-      let swapTo = nextSrc();
-      if (borrowed && /\/assets\/images\/keywords\//i.test(origin)
-        && wantFamily && !wantFamily.startsWith("hub:") && !wantFamily.startsWith("directory:")
-        && wantFamily !== "aov-air-handling") {
-        const hero = `/assets/images/services/${wantFamily}.jpg`;
-        swapTo = hero;
+    const wrongSet = (isAovEquipment(origin) || isAovEquipment(src)) && imageKey !== "aov"
+      || (isElectricalHero(origin) || isElectricalHero(src)) && !electricalPage
+      || /\/page-sets\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
+    if (imageKey) {
+      if (!poolHas(imageKey, origin) || sharedHub || collapsed || wrongSet) {
+        return `<img${replaceImgSrc(next, nextSrc())}>`;
       }
-      return `<img${replaceImgSrc(next, swapTo)}>`;
+      return `<img${next}>`;
+    }
+    if (sharedHub || collapsed || sharedMaintenance || foreign || borrowed || wrongSet) {
+      return `<img${replaceImgSrc(next, nextSrc())}>`;
     }
     if (directory) {
       if (family.startsWith("hub:") && family !== wantFamily) return `<img${replaceImgSrc(next, want)}>`;
@@ -753,12 +809,17 @@ function confineImages(html, path) {
     if (allowProducts && product) return `<img${next}>`;
     return `<img${replaceImgSrc(next, nextSrc())}>`;
   });
-  const replacement = wantFamily === "aov-air-handling" ? pickImages(path, wantFamily, 2)[0] : want;
+  const replacement = imageKey ? pickImages(path, imageKey, 1)[0] : want;
   if (!String(replacement).includes("a055da46974c") && !String(replacement).includes("aov-air-handling.jpg")) {
     out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/a055da46974c-\d+\.webp/gi, replacement);
-    if (wantFamily === "aov-air-handling") {
-      out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g/gi, replacement);
-    }
+    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g/gi, replacement);
+  }
+  if (imageKey !== "aov") {
+    out = out.replace(/\/assets\/images\/services\/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g/gi, replacement);
+  }
+  if (!electricalPage) {
+    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/21bb8660f87c-\d+\.webp/gi, replacement);
+    out = out.replace(/\/assets\/images\/services\/electrical\.jpe?g/gi, replacement);
   }
   return out;
 }

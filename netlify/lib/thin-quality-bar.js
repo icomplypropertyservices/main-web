@@ -162,7 +162,7 @@ export function depthBankParagraphs(ctx, count = 3) {
   });
 }
 
-export function thinImages(serviceSlug, subject, placeName, seed, peImages, preferredHero = "") {
+export function thinImages(serviceSlug, subject, placeName, seed, peImages, preferredHero = "", poolKey = "") {
   if (Array.isArray(peImages)) {
     const picked = [];
     for (const image of peImages) {
@@ -183,9 +183,9 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
     }
   }
   const slug = String(serviceSlug || "fire-alarms");
-  const family = aliasFamily(slug);
+  const family = poolKey || aliasFamily(slug);
   const picks = pickImages(`${slug}/${placeName}`, family, 3);
-  let primary = family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  let primary = poolKey || family === "aov" || family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
   if (preferredHero && manifestHas(preferredHero)) primary = preferredHero;
   const second = picks[1] || primary;
   const third = picks[2] || second;

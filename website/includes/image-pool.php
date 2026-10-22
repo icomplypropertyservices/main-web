@@ -1,7 +1,8 @@
 <?php
 /**
  * Per-service photograph pools. company.jpg and home.jpg are not pool members.
- * AOV pages draw a smoke-vent file and a separate AOV file.
+ * /pages/aov draws a smoke-vent file and a separate AOV file.
+ * AOV air-handling, keyword, job and resource pages use their own sets.
  */
 
 function icomplyImagePools(): array
@@ -18,7 +19,7 @@ function icomplyImagePools(): array
 
 function icomplyImageAlias(string $family): string
 {
-    return $family === 'aov' ? 'aov-air-handling' : $family;
+    return $family;
 }
 
 function icomplyImageHash(string $path, int $slot): int
@@ -44,9 +45,8 @@ function icomplyImagePick(string $path, string $family, int $count = 3): array
     $smoke = array_values(is_array($entry['smoke'] ?? null) ? $entry['smoke'] : []);
     $aov = array_values(is_array($entry['aov'] ?? null) ? $entry['aov'] : []);
     $own = array_values(is_array($entry['own'] ?? null) ? $entry['own'] : []);
-    if ($family === 'aov-air-handling' && $smoke !== [] && $aov !== []) {
-        // Hero rotates across the whole smoke + AOV pool so no single photo dominates;
-        // the second slot always comes from the other group.
+    if ($family === 'aov' && $smoke !== [] && $aov !== []) {
+        // Hero rotates across the AOV equipment pool. The second slot comes from the other group.
         $first = icomplyImageHashed(array_merge($smoke, $aov), $path, 0);
         $second = icomplyImageHashed(in_array($first, $smoke, true) ? $aov : $smoke, $path, 1);
         $rest = array_values(array_filter(
@@ -108,6 +108,24 @@ function icomplyImageCollapsedAov(string $src): bool
         return true;
     }
     return isset(icomplyImageAcCluster()[$path]);
+}
+
+function icomplyImagePoolHas(string $family, string $src): bool
+{
+    $family = icomplyImageAlias($family);
+    $entry = icomplyImagePools()[$family] ?? [];
+    $path = (string)strtok($src, '?');
+    $path = (string)preg_replace('#^https?://[^/]+#i', '', $path);
+    foreach (['smoke', 'aov', 'own'] as $bucket) {
+        $list = is_array($entry[$bucket] ?? null) ? $entry[$bucket] : [];
+        foreach ($list as $item) {
+            $item = (string)$item;
+            if ($path === $item || ($item !== '' && str_ends_with($path, $item))) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 function icomplyImageOwner(string $src): string

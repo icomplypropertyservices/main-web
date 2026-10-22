@@ -23,6 +23,7 @@ import areasMainland from "../../website/data/areas-mainland.json" with { type: 
 import { BOROUGH_GEO } from "./town-depth.js";
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
+import { spokenSubject } from "./spoken-subject.js";
 
 function mainlandAreaSlug(name) {
   return String(name || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -285,6 +286,11 @@ function nearestSlice(items, townSlug, size) {
     .map((row) => row[2]);
 }
 
+function spokenLinkLabel(slug, name, townName = "") {
+  const spoken = spokenSubject(slug, name);
+  return townName ? `${spoken} in ${townName}` : spoken;
+}
+
 export function matrixRelatedHtml(catalogue, identity) {
   const kind = identity.kind || "service";
   const townSlug = identity.townSlug || "";
@@ -347,14 +353,14 @@ export function matrixRelatedHtml(catalogue, identity) {
       if (!townSlug) continue;
       sameTown.push({
         href: `/pages/keywords/${slug}/${townSlug}`,
-        label: `${keywords[slug].name} in ${townName}`,
+        label: spokenLinkLabel(slug, keywords[slug].name, townName),
       });
     }
   }
   if (kind === "job") {
     for (const [slug, job] of Object.entries(jobs)) {
       if (slug === identity.job || !job || job.service !== serviceSlug || !townSlug) continue;
-      sameTown.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
+      sameTown.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: spokenLinkLabel(slug, job.name, townName) });
       if (sameTown.length >= 8) break;
     }
   }
@@ -394,10 +400,10 @@ export function matrixRelatedHtml(catalogue, identity) {
     const row = keywords[slug];
     if (!row) continue;
     if (!HUB_SKIP.has(slug)) {
-      cross.push({ href: `/pages/keywords/${slug}`, label: row.name });
+      cross.push({ href: `/pages/keywords/${slug}`, label: spokenLinkLabel(slug, row.name) });
     }
     if (townSlug && isLocalTown(townSlug) && kind !== "keyword" && kind !== "variant") {
-      cross.push({ href: `/pages/keywords/${slug}/${townSlug}`, label: `${row.name} in ${townName}` });
+      cross.push({ href: `/pages/keywords/${slug}/${townSlug}`, label: spokenLinkLabel(slug, row.name, townName) });
     }
   }
   const jobEntries = Object.entries(jobs).filter(([, job]) => job && job.service === serviceSlug);
@@ -405,8 +411,8 @@ export function matrixRelatedHtml(catalogue, identity) {
   const jobList = (jobEntries.length ? jobEntries : jobFallback).slice(0, 4);
   for (const [slug, job] of jobList) {
     if (kind === "job" && slug === identity.job) continue;
-    cross.push({ href: `/pages/jobs/${slug}`, label: job.name });
-    if (townSlug && isLocalTown(townSlug)) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
+    cross.push({ href: `/pages/jobs/${slug}`, label: spokenLinkLabel(slug, job.name) });
+    if (townSlug && isLocalTown(townSlug)) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: spokenLinkLabel(slug, job.name, townName) });
   }
   if (kind !== "job") cross.push({ href: "/pages/jobs", label: "Job types" });
 

@@ -540,6 +540,56 @@ function icomplyQualityFloorIsHubIndex(string $path, string $hub): bool
     return ($parts[0] ?? '') === $hub && (($parts[1] ?? '') === '' || ($parts[1] ?? '') === 'index');
 }
 
+function icomplyQualityFloorAovEquipment(string $src): bool
+{
+    if (function_exists('icomplyImagePoolHas') && icomplyImagePoolHas('aov', $src)) {
+        return true;
+    }
+    return (bool)preg_match('#/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g(?:$|\?)#i', $src);
+}
+
+function icomplyQualityFloorElectricalHero(string $src): bool
+{
+    return (bool)preg_match('#/services/electrical\.jpe?g(?:$|\?)#i', $src) || str_contains($src, '21bb8660f87c');
+}
+
+function icomplyQualityFloorElectricalServicePage(string $path): bool
+{
+    $parts = icomplyQualityFloorParts($path);
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    $slug = ($parts[0] ?? '') === 'pages' ? ($parts[2] ?? '') : ($parts[1] ?? '');
+    return $head === 'electrical' || ($head === 'services' && $slug === 'electrical');
+}
+
+function icomplyQualityFloorImageKey(string $path): string
+{
+    $parts = icomplyQualityFloorParts($path);
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    $slug = ($parts[0] ?? '') === 'pages' ? ($parts[2] ?? '') : ($parts[1] ?? '');
+    if ($head === 'aov') {
+        return 'aov';
+    }
+    if ($head === 'aov-air-handling') {
+        return 'aov-air-handling';
+    }
+    if ($head === 'services' && $slug === 'aov') {
+        return 'aov';
+    }
+    if ($head === 'services' && $slug === 'aov-air-handling') {
+        return 'aov-air-handling';
+    }
+    if ($head === 'keywords' && $slug !== '' && $slug !== 'index') {
+        return 'page-keywords';
+    }
+    if ($head === 'jobs' && $slug !== '' && $slug !== 'index') {
+        return 'page-jobs';
+    }
+    if ($head === 'resources' && $slug !== '' && $slug !== 'index' && !icomplyQualityFloorIsHubIndex($path, 'resources')) {
+        return 'page-resources';
+    }
+    return '';
+}
+
 /** @return array<string,array{image?:string,service?:string}> */
 function icomplyQualityFloorBrandHeroes(): array
 {
@@ -566,19 +616,28 @@ function icomplyQualityFloorManufacturerSrc(string $path): string
     if ($image !== '' && str_ends_with($image, '/assa-abloy.svg') && !$exactAssa) {
         $image = '';
     }
+    if ($image !== '' && (preg_match('#/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g$#i', $image)
+        || icomplyQualityFloorAovEquipment($image)
+        || icomplyQualityFloorElectricalHero($image)
+        || str_contains($image, '/page-sets/'))) {
+        $image = '';
+    }
     $root = dirname(__DIR__);
     if ($image !== '' && is_file($root . $image)) {
         return $image;
+    }
+    if ($service === 'aov' || $service === 'aov-air-handling' || $brand === 'assa-abloy') {
+        $line = '/assets/images/manufacturers/lines/assa-abloy-door-closers.svg';
+        if (is_file($root . $line)) {
+            return $line;
+        }
     }
     return icomplyQualityFloorServiceHero($path, $service !== '' ? $service : 'fire-alarms');
 }
 
 function icomplyQualityFloorServiceHero(string $path, string $service): string
 {
-    if ($service === 'aov') {
-        $service = 'aov-air-handling';
-    }
-    if ($service === 'aov-air-handling') {
+    if ($service === 'aov' || $service === 'aov-air-handling') {
         if (!function_exists('icomplyImagePick')) {
             $pool = __DIR__ . '/image-pool.php';
             if (is_file($pool)) {
@@ -586,7 +645,7 @@ function icomplyQualityFloorServiceHero(string $path, string $service): string
             }
         }
         if (function_exists('icomplyImagePick')) {
-            $pick = (string)(icomplyImagePick($path, 'aov-air-handling', 2)[0] ?? '');
+            $pick = (string)(icomplyImagePick($path, $service, 2)[0] ?? '');
             if ($pick !== '' && is_file(dirname(__DIR__) . $pick)) {
                 return $pick;
             }
@@ -635,6 +694,10 @@ function icomplyQualityFloorBorrowedImage(string $origin, string $path): bool
 
 function icomplyQualityFloorCanonicalSrc(string $path): string
 {
+    $imageKey = icomplyQualityFloorImageKey($path);
+    if ($imageKey !== '') {
+        return (string)(icomplyImagePick($path, $imageKey, 1)[0] ?? '/assets/images/real-job/directory-hub.jpg');
+    }
     if ($path === '/' || $path === '') {
         return '/assets/images/real-job/home.jpg';
     }
@@ -673,7 +736,7 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
         $rel = '/assets/images/real-job/' . $leaf . '.jpg';
         return is_file(dirname(__DIR__) . $rel) ? $rel : '/assets/images/real-job/directory-hub.jpg';
     }
-    if ($family === 'aov-air-handling') {
+    if ($family === 'aov' || $family === 'aov-air-handling') {
         return icomplyImagePick($path, $family, 2)[0];
     }
     $rel = '/assets/images/services/' . $family . '.jpg';
@@ -1125,9 +1188,9 @@ function icomplyQualityFloorCrumbs(string $path, string $subject): string
 
 function icomplyQualityFloorPhoto(string $path, string $subject): string
 {
-    $family = icomplyQualityFloorFamily($path);
-    $srcs = $family === 'aov-air-handling'
-        ? array_slice(icomplyImagePick($path, $family, 2), 0, 2)
+    $imageKey = icomplyQualityFloorImageKey($path);
+    $srcs = $imageKey === 'aov' || $imageKey === 'aov-air-handling'
+        ? array_slice(icomplyImagePick($path, $imageKey, 2), 0, 2)
         : [icomplyQualityFloorSlotSrc($path)];
     $html = '<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner">';
     foreach ($srcs as $index => $src) {
@@ -1285,14 +1348,16 @@ function icomplyQualityFloorCapPrefix(string $html, string $place): string
 
 function icomplyQualityFloorRewriteMetaImages(string $html, string $path): string
 {
-    $want = icomplyQualityFloorCanonicalSrc($path);
+    $imageKey = icomplyQualityFloorImageKey($path);
+    $want = $imageKey !== '' ? (string)(icomplyImagePick($path, $imageKey, 1)[0] ?? '') : icomplyQualityFloorCanonicalSrc($path);
     $family = icomplyQualityFloorFamily($path);
-    $out = preg_replace_callback('/<meta\b[^>]*>/i', static function (array $m) use ($want, $family, $path): string {
+    $electricalPage = icomplyQualityFloorElectricalServicePage($path);
+    $out = preg_replace_callback('/<meta\b[^>]*>/i', static function (array $m) use ($want, $family, $path, $imageKey, $electricalPage): string {
         $tag = $m[0];
         if (!preg_match('/\b(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"/i', $tag)) {
             return $tag;
         }
-        $next = preg_replace_callback('/\bcontent\s*=\s*"([^"]*)"/i', static function (array $cm) use ($want, $family, $path): string {
+        $next = preg_replace_callback('/\bcontent\s*=\s*"([^"]*)"/i', static function (array $cm) use ($want, $family, $path, $imageKey, $electricalPage): string {
             $pathOnly = (string)preg_replace('#^https?://[^/]+#i', '', $cm[1]);
             $origin = icomplyQualityFloorImageSource($pathOnly);
             $imgFamily = icomplyQualityFloorImageFamily($pathOnly);
@@ -1300,7 +1365,13 @@ function icomplyQualityFloorRewriteMetaImages(string $html, string $path): strin
             $collapsed = icomplyImageCollapsedAov($origin) || icomplyImageCollapsedAov($pathOnly);
             $url = $cm[1];
             $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
-            if ($sharedHub || $collapsed || $borrowed || !($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)))) {
+            $blocked = (icomplyQualityFloorAovEquipment($origin) && $imageKey !== 'aov')
+                || ((icomplyQualityFloorElectricalHero($origin) || icomplyQualityFloorElectricalHero($pathOnly)) && !$electricalPage)
+                || (str_contains($origin, '/page-sets/') && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
+            $owned = $imageKey !== ''
+                ? icomplyImagePoolHas($imageKey, $origin)
+                : ($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)));
+            if ($sharedHub || $collapsed || $borrowed || $blocked || !$owned) {
                 $swapped = preg_replace('#/assets/images/[^"?]+#', $want, $cm[1]);
                 if (is_string($swapped) && $swapped !== '') {
                     $url = $swapped;
@@ -1315,12 +1386,14 @@ function icomplyQualityFloorRewriteMetaImages(string $html, string $path): strin
 
 function icomplyQualityFloorConfineImages(string $html, string $path): string
 {
-    $want = icomplyQualityFloorCanonicalSrc($path);
+    $imageKey = icomplyQualityFloorImageKey($path);
+    $want = $imageKey !== '' ? (string)(icomplyImagePick($path, $imageKey, 1)[0] ?? '') : icomplyQualityFloorCanonicalSrc($path);
     $wantFamily = icomplyQualityFloorFamily($path);
     $allowProducts = $wantFamily === 'products';
     $directory = str_starts_with($wantFamily, 'directory:') || str_starts_with($wantFamily, 'hub:');
+    $electricalPage = icomplyQualityFloorElectricalServicePage($path);
     $slot = 0;
-    $out = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m) use ($want, $wantFamily, $allowProducts, $directory, $path, &$slot): string {
+    $out = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m) use ($want, $wantFamily, $allowProducts, $directory, $path, $imageKey, $electricalPage, &$slot): string {
         $attrs = rtrim($m[1]);
         if (str_ends_with($attrs, '/')) {
             $attrs = rtrim(substr($attrs, 0, -1));
@@ -1349,7 +1422,7 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             && !str_starts_with($wantFamily, 'hub:')
             && !str_starts_with($wantFamily, 'directory:')
             && $wantFamily !== 'products';
-        $foreign = $servicePage && $owner !== '' && $owner !== $wantFamily;
+        $foreign = $servicePage && $owner !== '' && $owner !== $wantFamily && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin));
         $sharedMaintenance = $wantFamily !== 'building-maintenance' && (
             str_contains($origin, '/services/building-maintenance.jpg') || str_contains($src, '19f957bd50f5')
         );
@@ -1376,7 +1449,13 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             }
             return $attrs;
         };
-        $nextSrc = static function () use ($want, $wantFamily, $path, &$slot): string {
+        $nextSrc = static function () use ($want, $wantFamily, $path, $imageKey, &$slot): string {
+            if ($imageKey !== '') {
+                $picks = icomplyImagePick($path, $imageKey, 6);
+                $choice = $picks[$slot % count($picks)];
+                $slot++;
+                return $choice;
+            }
             if (str_starts_with($wantFamily, 'hub:') || str_starts_with($wantFamily, 'directory:') || $wantFamily === 'products' || $wantFamily === '') {
                 return $want;
             }
@@ -1386,20 +1465,17 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             return $choice;
         };
         $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
-        if ($sharedHub || $collapsed || $sharedMaintenance || $foreign || $borrowed) {
-            $swapTo = $nextSrc();
-            if ($borrowed && preg_match('#/assets/images/keywords/#i', $origin)
-                && $wantFamily !== ''
-                && !str_starts_with($wantFamily, 'hub:')
-                && !str_starts_with($wantFamily, 'directory:')
-                && $wantFamily !== 'aov-air-handling'
-            ) {
-                $hero = '/assets/images/services/' . $wantFamily . '.jpg';
-                if (is_file(dirname(__DIR__) . $hero)) {
-                    $swapTo = $hero;
-                }
+        $wrongSet = ((icomplyQualityFloorAovEquipment($origin) || icomplyQualityFloorAovEquipment($src)) && $imageKey !== 'aov')
+            || ((icomplyQualityFloorElectricalHero($origin) || icomplyQualityFloorElectricalHero($src)) && !$electricalPage)
+            || (str_contains($origin, '/page-sets/') && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
+        if ($imageKey !== '') {
+            if (!icomplyImagePoolHas($imageKey, $origin) || $sharedHub || $collapsed || $wrongSet) {
+                return '<img' . $swap($attrs, $nextSrc()) . '>';
             }
-            return '<img' . $swap($attrs, $swapTo) . '>';
+            return '<img' . $attrs . '>';
+        }
+        if ($sharedHub || $collapsed || $sharedMaintenance || $foreign || $borrowed || $wrongSet) {
+            return '<img' . $swap($attrs, $nextSrc()) . '>';
         }
         if ($directory) {
             if (str_starts_with($family, 'hub:') && $family !== $wantFamily) {
@@ -1424,14 +1500,17 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
     if (!is_string($out)) {
         $out = $html;
     }
-    $replacement = $wantFamily === 'aov-air-handling'
-        ? icomplyImagePick($path, $wantFamily, 2)[0]
-        : $want;
+    $replacement = $imageKey !== '' ? (string)(icomplyImagePick($path, $imageKey, 1)[0] ?? $want) : $want;
     if (!str_contains($replacement, 'a055da46974c') && !str_contains($replacement, 'aov-air-handling.jpg')) {
         $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/opt/a055da46974c-\d+\.webp#i', $replacement, $out) ?? $out;
-        if ($wantFamily === 'aov-air-handling') {
-            $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g#i', $replacement, $out) ?? $out;
-        }
+        $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g#i', $replacement, $out) ?? $out;
+    }
+    if ($imageKey !== 'aov') {
+        $out = preg_replace('#/assets/images/services/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g#i', $replacement, $out) ?? $out;
+    }
+    if (!$electricalPage) {
+        $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/opt/21bb8660f87c-\d+\.webp#i', $replacement, $out) ?? $out;
+        $out = preg_replace('#/assets/images/services/electrical\.jpe?g#i', $replacement, $out) ?? $out;
     }
     return $out;
 }

@@ -4,7 +4,7 @@
             "/assets/images/services/access-control.jpg"
         ]
     },
-    "aov-air-handling": {
+    "aov": {
         "smoke": [
             "/assets/images/services/smoke-vent-roof-1.jpg",
             "/assets/images/services/smoke-vent-hatch-1.jpg",
@@ -31,11 +31,37 @@
             "/assets/images/services/aov-smoke-damper-3.jpg",
             "/assets/images/services/aov-damper-actuator-2.jpg",
             "/assets/images/services/aov-damper-actuator-3.jpg",
-            "/assets/images/services/aov-damper-actuator-4.jpg",
+            "/assets/images/services/aov-damper-actuator-4.jpg"
+        ]
+    },
+    "aov-air-handling": {
+        "own": [
+            "/assets/images/page-sets/air-handler-unit.jpg",
+            "/assets/images/page-sets/air-duct-pipes.jpg",
+            "/assets/images/page-sets/rooftop-packaged-units.jpg",
             "/assets/images/services/aov-air-handling-unit-1.jpg",
             "/assets/images/services/aov-air-handling-unit-2.jpg",
             "/assets/images/services/aov-air-handling-unit-3.jpg",
             "/assets/images/services/aov-rooftop-unit-1.jpg"
+        ]
+    },
+    "page-keywords": {
+        "own": [
+            "/assets/images/page-sets/combination-spanners.jpg",
+            "/assets/images/page-sets/tape-measure.jpg",
+            "/assets/images/page-sets/safety-boots.jpg"
+        ]
+    },
+    "page-jobs": {
+        "own": [
+            "/assets/images/page-sets/workshop-interior.jpg",
+            "/assets/images/page-sets/mechanics-tool-set.jpg"
+        ]
+    },
+    "page-resources": {
+        "own": [
+            "/assets/images/page-sets/desk-notebook.jpg",
+            "/assets/images/page-sets/public-bookcase.jpg"
         ]
     },
     "asbestos-survey": {

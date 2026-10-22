@@ -1577,11 +1577,20 @@ function serviceImageUrl(string $slug): string {
  * the parent service image (then the shared fire-alarms photo).
  */
 function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
-    $service = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
-    if ($service === 'aov') {
-        $service = 'aov-air-handling';
+    unset($serviceSlug);
+    if (!function_exists('icomplyImagePick')) {
+        $pool = SITE_ROOT . '/includes/image-pool.php';
+        if (is_file($pool)) {
+            require_once $pool;
+        }
     }
-    return serviceImageUrl($service);
+    if (function_exists('icomplyImagePick')) {
+        $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, 'page-keywords', 1)[0] ?? '');
+        if ($rel !== '' && is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return url('/assets/images/real-job/directory-hub.jpg');
 }
 
 /**

@@ -1,7 +1,8 @@
 /**
  * Per-service photograph pools shared with the PHP floor.
  * company.jpg and home.jpg are not pool members.
- * AOV pages draw a smoke-vent file and a separate AOV file.
+ * /pages/aov draws a smoke-vent file and a separate AOV file.
+ * AOV air-handling, keyword, job and resource pages use their own sets.
  */
 import pools from "../../website/data/service-image-pools.json" with { type: "json" };
 import acCluster from "../../website/data/ac-photo-cluster.json" with { type: "json" };
@@ -10,7 +11,7 @@ import imageOwners from "../../website/data/image-owners.json" with { type: "jso
 const AC_CLUSTER = new Set(Array.isArray(acCluster.paths) ? acCluster.paths : []);
 
 export function aliasFamily(family) {
-  return family === "aov" ? "aov-air-handling" : String(family || "");
+  return String(family || "");
 }
 
 function imageHash(path, slot) {
@@ -36,8 +37,8 @@ export function pickImages(path, family, count = 3) {
   const smoke = Array.isArray(entry.smoke) ? entry.smoke : [];
   const aov = Array.isArray(entry.aov) ? entry.aov : [];
   let own = Array.isArray(entry.own) ? entry.own.slice() : [];
-  if (key === "aov-air-handling" && smoke.length && aov.length) {
-    // Hero rotates across the whole smoke + AOV pool; the second slot comes from the other group.
+  if (key === "aov" && smoke.length && aov.length) {
+    // Hero rotates across the AOV equipment pool. The second slot comes from the other group.
     const first = hashed(smoke.concat(aov), path, 0);
     const second = hashed(smoke.includes(first) ? aov : smoke, path, 1);
     const rest = smoke.concat(aov).filter((src) => src !== first && src !== second);
@@ -69,6 +70,17 @@ export function isCollapsedAov(src) {
   if (/\/opt\/a055da46974c-/i.test(path)) return true;
   if (/\/assets\/images\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g$/i.test(path)) return true;
   return AC_CLUSTER.has(path);
+}
+
+export function poolHas(family, src) {
+  const key = aliasFamily(family);
+  const entry = pools[key] || {};
+  const path = String(src || "").split("?")[0].replace(/^https?:\/\/[^/]+/i, "");
+  const lists = []
+    .concat(Array.isArray(entry.smoke) ? entry.smoke : [])
+    .concat(Array.isArray(entry.aov) ? entry.aov : [])
+    .concat(Array.isArray(entry.own) ? entry.own : []);
+  return lists.some((item) => path === item || (item && path.endsWith(item)));
 }
 
 export function imageOwner(src) {

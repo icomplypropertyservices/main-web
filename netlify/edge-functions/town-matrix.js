@@ -540,7 +540,16 @@ export function renderTownPage(input) {
     qualityCtx.peFaqs = pe.faqs;
   }
   const preferredHero = "";
-  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero);
+  const poolKey = kind === "keyword"
+    ? "page-keywords"
+    : kind === "job"
+      ? "page-jobs"
+      : serviceSlug === "aov"
+        ? "aov"
+        : serviceSlug === "aov-air-handling"
+          ? "aov-air-handling"
+          : "";
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero, poolKey);
   let proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx).slice();
   if (fireTown || fireFamily) {

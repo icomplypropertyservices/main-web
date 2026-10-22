@@ -330,11 +330,34 @@ foreach ($paths as $path) {
     if ($path === '/pages/areas/wigan') {
         $say(!str_contains($html, 'WN1–WN6in') && !str_contains($html, 'WN1-WN6in'), $path . ' district spacing');
     }
-    if (preg_match('#/(?:aov|aov-air-handling)(?:/|$)#', $path)) {
+    $aovEquipment = '#/services/(?:smoke-vent-|smoke-shaft-|smoke-exhaust-|smoke-stair-|aov-release-switch-|aov-control-panel-|aov-roof-hatch-|aov-damper-actuator-|aov-smoke-damper-)#';
+    $airSet = '#/(?:page-sets/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units)|services/aov-air-handling-unit-|services/aov-rooftop-unit-)#';
+    if (preg_match('#/aov-air-handling(?:/|$)#', $path)) {
         $say(!str_contains($html, 'a055da46974c') && !str_contains($html, '/services/aov-air-handling.jpg'), $path . ' aov image not collapsed');
-        $hasSmoke = (bool)preg_match('/(?:smoke|shaft|ventilation)/i', $html);
-        $hasAov = (bool)preg_match('~(?:/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))~i', $html);
+        $say(!preg_match($aovEquipment, $html), $path . ' air handling does not use aov equipment');
+        $say(preg_match($airSet, $html) === 1, $path . ' air handling photo set');
+        $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg'), $path . ' no electrical hero');
+    } elseif (preg_match('#/aov(?:/|$)#', $path)) {
+        $say(!str_contains($html, 'a055da46974c') && !str_contains($html, '/services/aov-air-handling.jpg'), $path . ' aov image not collapsed');
+        $hasSmoke = (bool)preg_match('/(?:smoke-vent|smoke-shaft|shaft|ventilation)/i', $html);
+        $hasAov = (bool)preg_match('#/services/(?:aov-release-switch-|aov-control-panel-|aov-roof-hatch-|aov-damper-actuator-|aov-smoke-damper-)#', $html);
         $say($hasSmoke && $hasAov, $path . ' smoke and aov photos');
+        $say(!preg_match($airSet, $html) && !str_contains($html, '/page-sets/'), $path . ' aov does not use the air handling set');
+    }
+    if (preg_match('#/keywords/[^/]+#', $path)) {
+        $say(!preg_match($aovEquipment, $html), $path . ' keyword does not use aov equipment');
+        $say(!preg_match('#/page-sets/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units|workshop-interior|mechanics-tool-set|desk-notebook|public-bookcase)\.jpg#', $html) && !preg_match($airSet, $html), $path . ' keyword does not use another page set');
+        $say(preg_match('#/page-sets/(?:combination-spanners|tape-measure|safety-boots)\.jpg#', $html) === 1, $path . ' keyword photo set');
+        $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg') && !str_contains($html, '/assets/images/keywords/'), $path . ' keyword does not reuse electrical or old keyword files');
+    }
+    if (preg_match('#/jobs/[^/]+#', $path)) {
+        $say(!preg_match($aovEquipment, $html), $path . ' job does not use aov equipment');
+        $say(preg_match('#/page-sets/(?:workshop-interior|mechanics-tool-set)\.jpg#', $html) === 1, $path . ' job photo set');
+        $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg'), $path . ' job does not use electrical hero');
+    }
+    if (preg_match('#/resources/[^/]+#', $path)) {
+        $say(preg_match('#/page-sets/(?:desk-notebook|public-bookcase)\.jpg#', $html) === 1, $path . ' resource photo set');
+        $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg'), $path . ' resource does not use electrical hero');
     }
     if ($path === '/pages/manufacturers/vaillant') {
         $say(qmBodyWords($html) >= 800, $path . ' manufacturer body words=' . qmBodyWords($html));

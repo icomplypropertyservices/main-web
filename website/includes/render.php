@@ -7,11 +7,17 @@ if (!function_exists('icomplyKeywordImagePath')) {
      */
     function icomplyKeywordImagePath(string $slug, string $serviceSlug = ''): string
     {
+        unset($serviceSlug);
         $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
-        $service = $serviceSlug === 'aov' ? 'aov-air-handling' : $serviceSlug;
-        if ($service !== '') {
-            $rel = '/assets/images/services/' . $service . '.jpg';
-            if (is_file($root . $rel)) {
+        if (!function_exists('icomplyImagePick')) {
+            $pool = $root . '/includes/image-pool.php';
+            if (is_file($pool)) {
+                require_once $pool;
+            }
+        }
+        if (function_exists('icomplyImagePick')) {
+            $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, 'page-keywords', 1)[0] ?? '');
+            if ($rel !== '' && is_file($root . $rel)) {
                 return $rel;
             }
         }

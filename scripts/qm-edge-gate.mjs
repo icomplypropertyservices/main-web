@@ -12,6 +12,8 @@ import { renderTradesHub, tradesRows } from "../netlify/lib/trades-lock.js";
 import { rewriteHref } from "../netlify/lib/internal-links.js";
 import { pickImages, isCollapsedAov } from "../netlify/lib/image-pool.js";
 import { applyQualityFloor } from "../netlify/lib/quality-floor.js";
+import { matrixRelatedHtml } from "../netlify/lib/link-blocks.js";
+import { spokenSubject } from "../netlify/lib/spoken-subject.js";
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const services = JSON.parse(fs.readFileSync(path.join(repo, "website/data/services.json"), "utf8"));
@@ -115,9 +117,14 @@ function check(label, html) {
   say(!page.includes("panel, board or door"), `${label} photo line`);
   say(!/trade supply only in/i.test(page), `${label} heading leak`);
   say(!page.includes("real-job/company.jpg"), `${label} no company.jpg`);
-  if (/aov/.test(label)) {
+  if (/aov-air-handling/.test(label)) {
     say(!page.includes("a055da46974c") && !page.includes("/services/aov-air-handling.jpg"), `${label} aov not collapsed`);
-    say(/(?:smoke|shaft|ventilation)/i.test(page) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(page), `${label} smoke and aov photos`);
+    say(!/\/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g/.test(page), `${label} no aov equipment`);
+    say(page.includes("/page-sets/air-"), `${label} air handling photo set`);
+  } else if (/(?:^|:)aov(?:[:/]|$)/.test(label)) {
+    say(!page.includes("a055da46974c") && !page.includes("/services/aov-air-handling.jpg"), `${label} aov not collapsed`);
+    say(/(?:smoke|shaft|ventilation)/i.test(page) && /(?:\/aov-|actuator|automatic-opening-vent)/i.test(page), `${label} smoke and aov photos`);
+    say(!page.includes("/page-sets/"), `${label} aov does not use another page set`);
   }
   say(!/pOA\./.test(page), `${label} no garbled POA`);
   say(!/do not describe iComply as Gas Safe/i.test(page), `${label} no gas denial`);
@@ -224,16 +231,77 @@ for (const stems of byHash.values()) {
 }
 say(shared === 0, `service image hashes shared across services=${shared}`);
 
-const aovPicks = pickImages("/pages/aov-air-handling/york", "aov-air-handling", 3);
+const aovPicks = pickImages("/pages/aov/york", "aov", 3);
 say(aovPicks.length >= 2 && aovPicks[0] !== aovPicks[1], `aov pool distinct ${aovPicks.slice(0, 2).join(" ")}`);
-say(!aovPicks.some((src) => isCollapsedAov(src)), "aov pool not collapsed");
+say(!aovPicks.some((src) => isCollapsedAov(src) || src.includes("/page-sets/") || src.includes("air-handling-unit") || src.includes("rooftop-unit")), "aov pool is equipment only");
+const airPicks = pickImages("/pages/aov-air-handling/york", "aov-air-handling", 3);
+const airFile = /\/(?:page-sets\/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units)|services\/aov-air-handling-unit-|services\/aov-rooftop-unit-)/;
+say(airPicks.every((src) => airFile.test(src)), `air pool ${airPicks.join(" ")}`);
+say(!airPicks.some((src) => /smoke-vent|aov-release|aov-control|aov-roof-hatch|aov-damper|aov-smoke-damper/.test(src)), "air pool has no aov equipment");
 const aovFloor = applyQualityFloor(
-  `<html><head><meta property="og:image" content="/assets/images/services/aov-air-handling.jpg"><meta name="twitter:image" content="/assets/images/keywords/roof-aov.jpg"></head><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
-  { path: "/pages/aov-air-handling/york", subject: "AOV", place: "York" },
+  `<html><head><meta property="og:image" content="/assets/images/services/aov-air-handling.jpg"><meta name="twitter:image" content="/assets/images/keywords/roof-aov.jpg"></head><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/services/electrical.jpg" alt="Board"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
+  { path: "/pages/aov/york", subject: "AOV", place: "York" },
 );
 say(!aovFloor.includes("a055da46974c") && !aovFloor.includes("/services/aov-air-handling.jpg") && !aovFloor.includes("real-job/company.jpg"), "aov floor drops collapsed and company photos");
+say(!aovFloor.includes("/page-sets/") && !aovFloor.includes("21bb8660f87c") && !aovFloor.includes("/services/electrical.jpg"), "aov floor keeps its own photos");
 const ogTags = [...aovFloor.matchAll(/<meta\b[^>]*(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"[^>]*>/gi)];
 say(ogTags.length > 0 && ogTags.every((tag) => /content="https:\/\//.test(tag[0])), "aov floor og:image is absolute https");
+const airFloor = applyQualityFloor(
+  `<html><head><meta property="og:image" content="/assets/images/services/smoke-vent-roof-1.jpg"></head><body><main><h1>Air handling in York</h1><img src="/assets/images/services/aov-release-switch-1.jpg" alt="Switch"><img src="/assets/images/opt/21bb8660f87c-800.webp" alt="Board"></main></body></html>`,
+  { path: "/pages/aov-air-handling/york", subject: "Air handling", place: "York" },
+);
+say(airFile.test(airFloor) && !/smoke-vent-|smoke-shaft-|smoke-exhaust-|smoke-stair-|aov-release-switch-|aov-control-panel-|aov-roof-hatch-|aov-damper-actuator-|aov-smoke-damper-|21bb8660f87c|\/services\/electrical\.jpg|combination-spanners|workshop-interior|desk-notebook/.test(airFloor), "air floor uses only its photo set");
+const keywordFloor = applyQualityFloor(
+  `<html><head></head><body><main><h1>Kitchen fitting in Colne</h1><img src="/assets/images/services/electrical.jpg" alt="Board"><img src="/assets/images/services/aov-control-panel-1.jpg" alt="Panel"><img src="/assets/images/keywords/kitchen-fit.jpg" alt="Kitchen"></main></body></html>`,
+  { path: "/pages/keywords/kitchen-fit/colne", subject: "Kitchen fitting", place: "Colne" },
+);
+say(/\/page-sets\/(?:combination-spanners|tape-measure|safety-boots)\.jpg/.test(keywordFloor) && !/smoke-vent|aov-release|aov-control|aov-roof-hatch|21bb8660f87c|\/services\/electrical\.jpg|\/assets\/images\/keywords\//.test(keywordFloor), "keyword floor uses only its photo set");
+const jobFloor = applyQualityFloor(
+  `<html><head></head><body><main><h1>Kitchen fitting in Colne</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
+  { path: "/pages/jobs/kitchen-fit/colne", subject: "Kitchen fitting", place: "Colne" },
+);
+say(/\/page-sets\/(?:workshop-interior|mechanics-tool-set)\.jpg/.test(jobFloor) && !/21bb8660f87c|\/services\/electrical\.jpg/.test(jobFloor), "job floor uses only its photo set");
+const resourceFloor = applyQualityFloor(
+  `<html><head></head><body><main><h1>EICR guide</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
+  { path: "/pages/resources/eicr-guide", subject: "EICR guide", place: "Stockport" },
+);
+say(/\/page-sets\/(?:desk-notebook|public-bookcase)\.jpg/.test(resourceFloor) && !/21bb8660f87c|\/services\/electrical\.jpg/.test(resourceFloor), "resource floor uses only its photo set");
+const electricalFloor = applyQualityFloor(
+  `<html><head></head><body><main><h1>Electrical in York</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
+  { path: "/pages/electrical/york", subject: "Electrical", place: "York" },
+);
+say(electricalFloor.includes("/assets/images/services/electrical.jpg"), "electrical service page keeps its hero");
+say(spokenSubject("kitchen-fit", "Kitchen Fit") === "Kitchen fitting", "spoken kitchen fitting");
+const related = matrixRelatedHtml({
+  keywords: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" } },
+  jobs: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" }, "consumer-unit-swap": { name: "Consumer Unit Swap", service: "electrical" } },
+  services: { labels: { kitchens: "Kitchens", electrical: "Electrical" }, keywords: { kitchens: ["kitchen-fit"] } },
+  places: { york: { name: "York" } },
+  manufacturers: {},
+}, {
+  kind: "service",
+  townSlug: "york",
+  townName: "York",
+  subject: "Kitchens",
+  serviceSlug: "kitchens",
+  selfPath: "/pages/kitchens/york",
+});
+say(related.includes("Kitchen fitting in York") && !related.includes("Kitchen Fit in York"), "related label speaks Kitchen fitting");
+const relatedJob = matrixRelatedHtml({
+  keywords: {},
+  jobs: { "consumer-unit-swap": { name: "Consumer Unit Swap", service: "electrical" } },
+  services: { labels: { electrical: "Electrical" }, keywords: {} },
+  places: { colne: { name: "Colne" } },
+  manufacturers: {},
+}, {
+  kind: "service",
+  townSlug: "colne",
+  townName: "Colne",
+  subject: "Electrical",
+  serviceSlug: "electrical",
+  selfPath: "/pages/electrical/colne",
+});
+say(relatedJob.includes("Consumer unit replacement in Colne") && !relatedJob.includes("Consumer Unit Swap"), "related label speaks consumer unit replacement");
 const plasterNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/plastering/york", "Plastering", "York").join(" ");
 say(/wall or the ceiling/.test(plasterNote) && !/fence run/.test(plasterNote) && !/Useful photographs before/.test(plasterNote), "plastering photo line");
 const gasNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/keywords/gas-engineer/york", "Gas engineer", "York").join(" ");
