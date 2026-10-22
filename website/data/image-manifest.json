@@ -25043,27 +25043,102 @@
     ]
   },
   "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg": {
-    "width": 1600,
-    "height": 1200,
-    "origBytes": 343759,
+    "width": 859,
+    "height": 1600,
+    "origBytes": 133989,
     "variants": [
       {
         "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/4de121f60584-480.webp",
-        "bytes": 20832
+        "h": 894,
+        "webp": "/assets/images/opt/516d0c79a410-480.webp",
+        "bytes": 19394
       },
       {
         "w": 800,
-        "h": 600,
-        "webp": "/assets/images/opt/4de121f60584-800.webp",
-        "bytes": 47158
+        "h": 1490,
+        "webp": "/assets/images/opt/516d0c79a410-800.webp",
+        "bytes": 38616
+      },
+      {
+        "w": 859,
+        "h": 1600,
+        "webp": "/assets/images/opt/516d0c79a410-859.webp",
+        "bytes": 44824
+      }
+    ]
+  },
+  "/assets/images/manufacturers/paxton--access-control.jpg": {
+    "width": 1600,
+    "height": 868,
+    "origBytes": 326917,
+    "variants": [
+      {
+        "w": 480,
+        "h": 260,
+        "webp": "/assets/images/opt/1dfa1e243d85-480.webp",
+        "bytes": 14866
+      },
+      {
+        "w": 800,
+        "h": 434,
+        "webp": "/assets/images/opt/1dfa1e243d85-800.webp",
+        "bytes": 45720
       },
       {
         "w": 1280,
-        "h": 960,
-        "webp": "/assets/images/opt/4de121f60584-1280.webp",
-        "bytes": 100400
+        "h": 694,
+        "webp": "/assets/images/opt/1dfa1e243d85-1280.webp",
+        "bytes": 123824
+      }
+    ]
+  },
+  "/assets/images/manufacturers/paxton--barriers.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 368087,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/09394d916a8a-480.webp",
+        "bytes": 26226
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/09394d916a8a-800.webp",
+        "bytes": 65254
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/09394d916a8a-1280.webp",
+        "bytes": 138498
+      }
+    ]
+  },
+  "/assets/images/manufacturers/paxton--door-entry.jpg": {
+    "width": 1600,
+    "height": 1311,
+    "origBytes": 297635,
+    "variants": [
+      {
+        "w": 480,
+        "h": 393,
+        "webp": "/assets/images/opt/31315193ea15-480.webp",
+        "bytes": 8920
+      },
+      {
+        "w": 800,
+        "h": 656,
+        "webp": "/assets/images/opt/31315193ea15-800.webp",
+        "bytes": 27088
+      },
+      {
+        "w": 1280,
+        "h": 1049,
+        "webp": "/assets/images/opt/31315193ea15-1280.webp",
+        "bytes": 68486
       }
     ]
   }

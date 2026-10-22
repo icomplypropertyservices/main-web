@@ -5794,10 +5794,34 @@
   },
   {
     "file": "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:N%C3%A1%C5%99ad%C3%AD_a_n%C3%A1dob%C3%AD_pro_velkokapacitn%C3%AD_kuchyn%C4%9B.jpg",
-    "title": "File:Nářadí a nádobí pro velkokapacitní kuchyně.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wet_chemical_fire_extinguisher.jpg",
+    "title": "File:Wet chemical fire extinguisher.jpg",
     "license": "CC BY-SA 4.0",
-    "artist": "Pohled 111",
-    "alt": "Stainless commercial kitchen cooking line"
+    "artist": "Firetech117",
+    "alt": "Wet chemical fire extinguisher for a commercial kitchen"
+  },
+  {
+    "file": "/assets/images/manufacturers/paxton--access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Automatic_Systems_SlimLane_EPR_Optical_Turnstile_swing_glass_with_QR_reader_and_Elev_Dest_Dispatch.jpg",
+    "title": "File:Automatic Systems SlimLane EPR Optical Turnstile swing glass with QR reader and Elev Dest Dispatch.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "McGov1258",
+    "alt": "Optical turnstiles with card and QR readers at a building entrance"
+  },
+  {
+    "file": "/assets/images/manufacturers/paxton--barriers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Car_park,_Novosibirsk_1.JPG",
+    "title": "File:Car park, Novosibirsk 1.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "К.Артём.1",
+    "alt": "Car park entry barrier arm"
+  },
+  {
+    "file": "/assets/images/manufacturers/paxton--door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Intercom_(Railroad_Station,_26452_Sande,_FRG).jpg",
+    "title": "File:Intercom (Railroad Station, 26452 Sande, FRG).jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Taborsky",
+    "alt": "Door entry intercom panel at a building entrance"
   }
 ]
