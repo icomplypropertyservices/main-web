@@ -81,6 +81,7 @@ function icomplyFinishPage(string $html, string $path): string
         $pos = strripos($html, '</main>');
         $html = substr($html, 0, $pos) . $vis . substr($html, $pos);
     }
+    $html = icomplyFinishDepth($html, $path, $h1);
     if (preg_match('/<body\b.*<img\b/is', $html) && !preg_match('/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i', $html)) {
         $p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
         $html = preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
@@ -103,4 +104,51 @@ function icomplyFinishCaption(string $src): string
     $r = $map[$src] ?? null;
     $who = $r && trim((string)($r['artist'] ?? '')) !== '' ? trim(strip_tags((string)$r['artist'])) . (!empty($r['license']) ? ', ' . strip_tags((string)$r['license']) : '') : 'iComply Property Services';
     return '<figcaption style="font-size:.8rem;color:#555555;margin-top:.3rem">Photo: ' . htmlspecialchars($who, ENT_QUOTES, 'UTF-8') . ' · <a href="/pages/photo-credits">Photo credits</a></figcaption>';
+}
+
+/** QM #156 under_800_words: pages under 840 prose words get topic guidance from data/page-depth.json. */
+function icomplyFinishProseWords(string $html): int
+{
+    $lo = strtolower($html);
+    $a = strpos($lo, '<main'); $z = strrpos($lo, '</main>');
+    if ($a === false || $z === false) { $a = strpos($lo, '<body'); $z = strrpos($lo, '</body>'); }
+    if ($a === false) { $a = 0; }
+    if ($z === false || $z < $a) { $z = strlen($html); }
+    $b = substr($html, $a, $z - $a); $lb = substr($lo, $a, $z - $a); $out = ''; $pos = 0; $n = strlen($b);
+    while ($pos < $n) {
+        if (!preg_match('/<(nav|header|footer|script|style|noscript)\b/', $lb, $m, PREG_OFFSET_CAPTURE, $pos)) { $out .= substr($b, $pos); break; }
+        $out .= substr($b, $pos, $m[0][1] - $pos);
+        $end = strpos($lb, '</' . $m[1][0] . '>', $m[0][1]);
+        if ($end === false) { break; }
+        $pos = $end + strlen($m[1][0]) + 3;
+    }
+    $t = html_entity_decode((string)preg_replace("/<[^>]*>/", " ", $out), ENT_QUOTES, "UTF-8");
+    return (int)preg_match_all("/[A-Za-z0-9\x{00A3}'\x{2019}-]+/u", $t);
+}
+function icomplyFinishDepth(string $html, string $path, string $h1): string
+{
+    static $data = null;
+    if (stripos($html, 'data-pf-depth') !== false || preg_match('#(^|/)(404|thank|admin)#', $path)) { return $html; }
+    $have = icomplyFinishProseWords($html);
+    if ($have >= 840) { return $html; }
+    if ($data === null) { $data = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/page-depth.json'), true) ?: []; }
+    $hay = strtolower($path . ' ' . (preg_replace('/[^a-z0-9]+/i', '-', $h1) ?? ''));
+    $paras = []; $names = [];
+    foreach ((array)($data['topics'] ?? []) as $rx => $t) {
+        if (preg_match('#' . $rx . '#', $hay)) { $names[] = $t['name']; $tp = array_values((array)$t['p']); $tn = count($tp); $ts = $tn ? (int)(crc32($path . $rx) % $tn) : 0; for ($j = 0; $j < $tn; $j++) { $paras[] = $tp[($ts + $j) % $tn]; } }
+        if (count($names) >= 2) { break; }
+    }
+    $gen = (array)($data['general'] ?? []);
+    $n = count($gen); $start = $n ? (int)(crc32($path) % $n) : 0;
+    for ($i = 0; $i < $n; $i++) { $paras[] = $gen[($start + $i) % $n]; }
+    $out = []; $w = $have;
+    foreach ($paras as $p) { if ($w >= 870) { break; } $out[] = $p; $w += str_word_count($p); }
+    if (!$out) { return $html; }
+    $title = $names ? 'Good to know about ' . implode(' and ', $names) : 'How we work';
+    $sec = '<section data-pf-depth class="pf-depth max-w-7xl mx-auto px-6 py-8"><h2 class="text-2xl font-semibold">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h2>';
+    foreach ($out as $p) { $sec .= '<p class="mt-3 leading-relaxed">' . htmlspecialchars($p, ENT_QUOTES, 'UTF-8') . '</p>'; }
+    $sec .= '</section>';
+    if (($pos = strripos($html, '</main>')) !== false) { return substr($html, 0, $pos) . $sec . substr($html, $pos); }
+    if (preg_match('/<footer\b/i', $html, $m, PREG_OFFSET_CAPTURE)) { $pos = $m[0][1]; return substr($html, 0, $pos) . $sec . substr($html, $pos); }
+    return $html;
 }
