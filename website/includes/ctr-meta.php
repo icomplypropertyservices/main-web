@@ -53,7 +53,18 @@ function icomplyCtrTitle(string $topic, string $town, string $slug, string $svcS
             return $o;
         }
     }
-    return icomplyCtrCut($topic . ' ' . $town, 50) . ' | iComply';
+    // Never drop the town: shorten the topic instead (strip " by …"/" and …" tails, then word-cut).
+    $short = trim(preg_replace('/\s+(by|for|with|from)\s+.*$/i', '', $topic));
+    foreach ([$short . ' in ' . $town . ' | iComply', $short . ' ' . $town . ' | iComply', $short . ' ' . $town] as $o) {
+        if ($short !== '' && mb_strlen($o) <= 60) {
+            return $o;
+        }
+    }
+    $room = 60 - mb_strlen(' ' . $town);
+    if ($room >= 12) {
+        return icomplyCtrCut($short !== '' ? $short : $topic, $room) . ' ' . $town;
+    }
+    return icomplyCtrCut($topic . ' ' . $town, 60);
 }
 
 function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSlug = ''): string
@@ -63,7 +74,7 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
     $who = icomplyCtrIsGas($slug, $svcSlug)
         ? ' Same/next-day visits, carried out by Gas Safe registered engineers.'
         : ' Same/next-day engineers from our Stockport team.';
-    $tail = ' Fixed written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
+    $tail = ' Free written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
     foreach ([$lead . $who . $tail, $lead . $who . ' Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.', $lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.'] as $d) {
         if (mb_strlen($d) <= 160) {
             return $d;

@@ -708,7 +708,7 @@ def main() -> None:
         focus = [
             standard,
             scope,
-            "Fixed written quote before work starts",
+            "Free written quote before work starts",
             limit,
         ]
         blob = " ".join([intro, body, meta, seo_title, json.dumps(faq), json.dumps(focus)])

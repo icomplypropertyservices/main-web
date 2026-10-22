@@ -61,7 +61,7 @@ require SITE_ROOT . '/includes/header.php';
         </label>
         <label class="block">
           <span class="text-sm font-medium text-[#0B1F3A]">Email <span class="text-[#ff6b00]">*</span></span>
-          <input required name="email" type="email" maxlength="160" autocomplete="email" class="mt-1 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]" placeholder="you@company.co.uk">
+          <input required name="email" type="email" maxlength="160" autocomplete="email" class="mt-1 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]" placeholder="Your email address">
         </label>
         <label class="block">
           <span class="text-sm font-medium text-[#0B1F3A]">Phone <span class="text-[#ff6b00]">*</span></span>

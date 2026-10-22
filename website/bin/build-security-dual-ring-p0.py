@@ -439,7 +439,7 @@ def build_paragraphs(spec: dict, surface: str) -> list[str]:
             f"Price on application means the quote follows the survey. "
             f"Camera count, door count, cable runs, night lighting, access equipment and whether the building is occupied all change the figure for {name}. "
             f"Travel from {NAP} is included in that quote for the towns we cover. "
-            f"You get a fixed written quote before anything is booked. "
+            f"You get a written quote before anything is booked. "
             f"A multi-site estate is quoted per site or as a programme, and the email says which."
         ),
         (

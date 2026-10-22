@@ -126,7 +126,7 @@ function icomplyBuildingHubCopy(string $slug): ?array
     $intro = [
         (string)$row['lead'],
         'Each Greater Manchester borough already on this site, and the towns listed with them, has its own ' . $name . ' page. Visits are arranged from Offerton, Stockport, SK2. ' . (string)$row['local'],
-        'You get a fixed written quote once ' . (string)$row['scope'] . '.',
+        'You get a written quote once ' . (string)$row['scope'] . '.',
         'The visit is carried out by people qualified for the trade on the page. A specialist ticket, where the building needs one, is named in the written scope.',
     ];
     if (!empty($row['gas'])) {
@@ -139,7 +139,7 @@ function icomplyBuildingHubCopy(string $slug): ?array
         ],
         [
             'How is ' . $name . ' priced?',
-            'You get a fixed written quote once ' . (string)$row['scope'] . '.',
+            'You get a written quote once ' . (string)$row['scope'] . '.',
         ],
         [
             'Who attends?',

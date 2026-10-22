@@ -24,7 +24,7 @@ $pop = number_format((int)$place['pop']);
                 <span> / </span>
                 <span class="text-white"><?= $h((string)$place['name']) ?></span>
             </nav>
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb080]"><?= $h((string)$place['nation']) ?> · <?= $h((string)$place['region']) ?> · fire protection</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00]"><?= $h((string)$place['nation']) ?> · <?= $h((string)$place['region']) ?> · fire protection</p>
             <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl"><?= $h($article['h1']) ?></h1>
             <p class="mt-5 text-lg text-white/80 max-w-3xl"><?= $h($article['intro']) ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
@@ -45,7 +45,7 @@ $pop = number_format((int)$place['pop']);
             <?php endforeach; ?>
             <?= townDepthHtml($article['depth'] ?? ['sections' => [], 'faq' => []], (string)$place['name']) ?>
             <?php if ($article['extra'] !== ''): ?>
-                <section class="p-6 bg-[#fff7f0] border border-[#ffd7b8] rounded-3xl">
+                <section class="p-6 bg-[#f7f7f7] border border-[#ff6b00] rounded-3xl">
                     <h2 class="text-2xl font-semibold text-black">What changes the visit in <?= $h((string)$place['name']) ?></h2>
                     <p class="mt-3 text-zinc-800 leading-relaxed"><?= $h($article['extra']) ?></p>
                 </section>

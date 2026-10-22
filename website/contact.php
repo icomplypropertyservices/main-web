@@ -380,7 +380,7 @@ $contactSchema = [
                         </div>
                         <div>
                             <label for="contact-email" class="block text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-1.5">Email</label>
-                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" required
+                            <input id="contact-email" type="email" name="email" placeholder="Your email address" required
                                    class="w-full border border-zinc-200 px-5 py-3.5 rounded-2xl focus:outline-none focus:border-[#ff6b00] focus:ring-1 focus:ring-[#ff6b00]"
                                    value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                         </div>

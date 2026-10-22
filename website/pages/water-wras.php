@@ -88,7 +88,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-bold text-center">Quote a water fittings job</h2>
-        <p class="mt-2 text-center text-white/90">Fixed written quote before any work starts. Tell us the fitting, the postcode, and whether the undertaker has written to you.</p>
+        <p class="mt-2 text-center text-white/90">Free written quote before any work starts. Tell us the fitting, the postcode, and whether the undertaker has written to you.</p>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-xl"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

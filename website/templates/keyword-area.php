@@ -218,4 +218,12 @@ $h = static function ($s): string {
         </form>
     </div>
 </section>
-<?php require SITE_ROOT . '/includes/footer.php'; ?>
+<?php
+// QM #156 (CLOSE 8): town-specific depth (postcode districts, wards, housing, council) so every
+// keyword × town page clears 800 prose words and reads differently from its neighbours.
+require_once SITE_ROOT . '/includes/town-deep.php';
+if (function_exists('icomplyTownDeepHtml')) {
+    echo icomplyTownDeepHtml((string)$AREA_SLUG, (string)$AREA, (string)$KEYWORD_NAME, (string)$SERVICE_SLUG);
+}
+require SITE_ROOT . '/includes/footer.php';
+?>

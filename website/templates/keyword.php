@@ -166,7 +166,7 @@ if (function_exists('accessControlLaneKeywordStrip')) {
         $trust = [
             [($nationwideP0 || $fireInstallerFamily) ? 'UK mainland' : 'Local engineers', $nationwideP0 ? 'Stockport base — TOP 5000 towns' : ($fireInstallerFamily ? 'Stockport base — mainland towns over 10,000' : 'Stockport base — 150+ North West towns')],
             ['Standards-led', 'British Standards & manufacturer guidance'],
-            [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Fixed written quote' : 'Clear scope before work starts'],
+            [$poaService ? 'POA / enquire' : 'Fixed quotes', $poaService ? 'Free written quote' : 'Clear scope before work starts'],
             ['Full paperwork', $poaService ? 'Survey or briefing notes for the dutyholder file' : 'Certificates & logbooks for compliance'],
         ];
         foreach ($trust as [$t, $d]): ?>

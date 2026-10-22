@@ -171,7 +171,7 @@ function icomplyMfrFaqs(string $serviceSlug): array
         return [
             ['Are you a CAME barrier partner?', 'Yes. New barrier supply on these pages is through CAME. The five published 5m pack prices are supply only, ex VAT. Installation is quoted after survey.'],
             ['Can you repair a barrier from another manufacturer?', 'We will look at existing booms from the brands listed. Parts and labour are POA. If a safe repair is not realistic we say so and can quote a CAME replacement.'],
-            ['How is installation priced?', 'Civils, power, loops and commissioning are confirmed in a fixed written quote after a quick survey. CAME supply packs show their prices on this site.'],
+            ['How is installation priced?', 'Civils, power, loops and commissioning are confirmed in a written quote after a quick survey. CAME supply packs show their prices on this site.'],
         ];
     }
     if (areaSlug($serviceSlug) === 'aov-air-handling') {

@@ -270,7 +270,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
     $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope.'
-        : 'Fixed written quote once we confirm the scope.';
+        : 'Free written quote once we confirm the scope.';
 
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
@@ -424,7 +424,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
-        ? 'Fixed written quote before any work starts.'
+        ? 'Free written quote before any work starts.'
         : 'Written quote after scope is agreed.';
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
         $priceLine = (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.');

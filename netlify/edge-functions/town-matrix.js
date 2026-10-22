@@ -55,7 +55,7 @@ export function ctrDescription(subject, town, slug, gas) {
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
   for (const d of [
-    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Free written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
   ]) if (d.length <= 160) return d;
@@ -120,6 +120,7 @@ const SERVICE_HUB_ALIAS = {
   "solar-pv": "/pages/services/electrical",
 };
 import { securityJobRedirect } from "../lib/security-dual-ring.js";
+import { finishPage } from "../lib/page-finish.js";
 import { SECURITY_NEW_INTENTS, securityTownCopy } from "../lib/security-town-copy.js";
 
 const RESERVED = new Set([
@@ -300,7 +301,7 @@ export function renderTownPage(input) {
       intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Certificates and reports emailed after the visit",
       ],
       gas: serviceSlug === "gas-systems",
@@ -317,10 +318,10 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
@@ -340,7 +341,7 @@ export function renderTownPage(input) {
         intro: "",
         focus: [
           "Same-day and next-day slots where available",
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
         gas,
@@ -369,7 +370,7 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
@@ -488,12 +489,12 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a written quote.`,
     ]);
   }
   if (facts) {
@@ -701,7 +702,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(withContactWidgets(finishLinks(scrubMeta(rendered.html), rendered.path || "")), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -974,7 +975,7 @@ async function renderMatrix(request, context) {
   if (b1) {
     const page = renderBatch1(b1);
     if (page) {
-      return new Response(withContactWidgets(scrubMeta(page.html)), {
+      return new Response(withContactWidgets(finishLinks(scrubMeta(page.html), path)), {
         status: 200,
         headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
@@ -1070,7 +1071,7 @@ async function renderMatrix(request, context) {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), { authored: Boolean(moneyCtrPage(path)) }), {
+  return new Response(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishLinks(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) }), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -1110,3 +1111,12 @@ export const config = {
     "/pages/packages/hmo-fire-package/",
   ],
 };
+
+// QM #156 (broken_internal_link): a sibling /pages/ link that would 301 (retired keyword, out-of-area
+// town, trade alias) becomes plain text, then the shared under-H1 CTA / breadcrumb / photo pass runs.
+function finishLinks(html, path) {
+  const out = String(html).replace(/<a\b[^>]*\bhref="(\/pages\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g, (m0, href, text) => {
+    try { return (nonGmMatrixRedirect(href) || tradeSlugRedirect(href)) ? text : m0; } catch { return m0; }
+  });
+  return finishPage(out, path);
+}

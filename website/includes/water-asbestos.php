@@ -34,7 +34,7 @@ function waterAsbestosKeywordCatalog(): array
                 'Written risk assessment for the water system you actually have',
                 'Temperature, storage and little-used outlet notes',
                 'Sampling only when the assessment supports it',
-                'Fixed written quote',
+                'Free written quote',
             ],
             'faq' => [
                 ['Do landlords always need a Legionella risk assessment?', 'HSE expects dutyholders to consider Legionella risk. Many simple domestic systems are lower risk, but rented and commercial sites still need a suitable assessment. We confirm what is appropriate after you describe the property.'],
