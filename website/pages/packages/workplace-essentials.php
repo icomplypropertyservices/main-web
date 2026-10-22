@@ -35,6 +35,19 @@ require SITE_ROOT . '/includes/header.php';
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/epc.php') ?>">EPC</a>
   </div>
 </section>
+<section class="max-w-4xl mx-auto px-6 pb-12 prose">
+  <h2 class="text-2xl font-semibold">How the Workplace Essentials package works</h2>
+  <p>Workplace Essentials brings together the routine safety checks most offices, shops, warehouses and small commercial premises need each year. Instead of booking PAT testing, emergency lighting, fire alarm servicing and extinguisher checks with different contractors, you get one schedule, one point of contact and one set of records that your insurer or the fire authority can review.</p>
+  <p>We plan visits around your opening hours, including early starts and weekends where testing would otherwise disrupt staff or customers. Each item comes with a dated certificate or logbook entry, and anything that fails is listed with a clear, written remedial quote. We never carry out extra work without your approval.</p>
+  <h3 class="text-xl font-semibold">Who it suits</h3>
+  <p>It works well for businesses with one or more sites, managing agents responsible for common areas, and responsible persons under the Regulatory Reform (Fire Safety) Order who want evidence that checks are up to date. A fire risk assessment can be added, from £350 for a typical 6-bed HMO in the North West; other properties are priced on application.</p>
+  <h3 class="text-xl font-semibold">Frequently asked questions</h3>
+  <p><strong>How is the package priced?</strong> Workplace Essentials is priced on application, based on the number of sites, appliances, light fittings and alarm devices.</p>
+  <p><strong>Can visits be booked quickly?</strong> Same-day or next-day appointments are often possible, depending on location and availability.</p>
+  <p><strong>Do you send reminders?</strong> Yes. We note each due date so retests can be booked before certificates expire.</p>
+  <p>Call or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com, to arrange a quote.</p>
+</section>
+
 <section id="quote" class="bg-zinc-50 border-t"><div class="max-w-3xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold text-center">Quote Workplace Essentials</h2>
   <?= icomplyQuoteFormOpen('mt-8 bg-white border rounded-3xl p-6 space-y-4') ?>

@@ -25,6 +25,9 @@ const dist = path.resolve(process.argv[2] || path.join(repo, "dist"));
 const SITE = "https://icomplypropertyservices.co.uk";
 // MONEY_CTR_DATA=website/data/gsc-upgrade-2026-10-21.json checks the GSC 21 Oct upgrade queue the same way.
 const doc = JSON.parse(fs.readFileSync(path.join(repo, process.env.MONEY_CTR_DATA || "website/data/money-ctr-c1-c15.json"), "utf8"));
+// GSC rankings 22 Oct entries override title/meta on overlap (money-ctr.js gives them priority).
+const rank22 = JSON.parse(fs.readFileSync(path.join(repo, "website/data/gsc-upgrade-2026-10-22.json"), "utf8")).pages || {};
+for (const [p, e] of Object.entries(doc.pages || {})) if (rank22[p]) { e.title = rank22[p].title; e.meta = rank22[p].meta; }
 const tm = await import(path.join(repo, "netlify/edge-functions/town-matrix.js"));
 const p0 = await import(path.join(repo, "netlify/lib/nationwide-p0.js"));
 const { applyMoneyCtr } = await import(path.join(repo, "netlify/lib/money-ctr.js"));

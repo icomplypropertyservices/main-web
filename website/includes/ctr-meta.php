@@ -95,15 +95,20 @@ function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $t
     if (!isset($labels[$keywordSlug])) {
         return null;
     }
-    $l = $labels[$keywordSlug];
-    $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day Engineers';
-    if (strlen($title) > 70) {
-        $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day';
+    $long = $labels[$keywordSlug];
+    $short = explode(' & ', $long)[0];
+    // Titles keep "Same/Next-Day" and stay <= 60 chars; the town comes before the first '|'.
+    $title = '';
+    foreach ([$kwName . ' ' . $town . ': ' . $long . ' | Same/Next-Day', $kwName . ' ' . $town . ': ' . $short . ' | Same/Next-Day', $kwName . ' ' . $town . ' ' . $short . ' | Same/Next-Day'] as $t) {
+        if (strlen($t) <= 60) { $title = $t; break; }
+    }
+    if ($title === '') {
+        $title = icomplyCtrCut($kwName . ' ' . $town, 44) . ' | Same/Next-Day';
     }
     return [
-        'label' => $l,
+        'label' => $long,
         'title' => $title,
-        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': ' . strtolower($l) . ' explained, and how to book. Same/next-day slots. Call or WhatsApp 07517 806082.', 160),
-        'h1_tail' => ': ' . strtolower($l),
+        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': ' . strtolower($long) . ' explained, typical costs and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
+        'h1_tail' => ': ' . strtolower($long),
     ];
 }
