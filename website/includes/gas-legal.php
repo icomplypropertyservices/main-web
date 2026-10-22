@@ -206,7 +206,7 @@ function icomplyManufacturerEntryIsGas(array $entry): bool
 
 function icomplyGasBrandBlurb(string $brand): string
 {
-    return $brand . ''
+    return $brand . '. '
         . icomplyGasLegalSentence()
         . ' Quotes for ' . $brand . ' appliances are price on application.';
 }

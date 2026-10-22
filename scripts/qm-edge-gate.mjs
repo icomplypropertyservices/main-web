@@ -10,6 +10,8 @@ import { renderTownPage } from "../netlify/edge-functions/town-matrix.js";
 import { withContactWidgets } from "../netlify/lib/contact-widgets.js";
 import { renderTradesHub, tradesRows } from "../netlify/lib/trades-lock.js";
 import { rewriteHref } from "../netlify/lib/internal-links.js";
+import { pickImages, isCollapsedAov } from "../netlify/lib/image-pool.js";
+import { applyQualityFloor } from "../netlify/lib/quality-floor.js";
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const services = JSON.parse(fs.readFileSync(path.join(repo, "website/data/services.json"), "utf8"));
@@ -103,6 +105,16 @@ function check(label, html) {
   if (/demolition/.test(label)) {
     const hero = page.match(/<section class="(?:matrix-hero|page-hero|hero)\b[\s\S]*?<\/section>/i);
     say(!hero || /<img\b/i.test(hero[0]), `${label} hero image`);
+    say(page.includes("Tomwsulcer (CC0)"), `${label} demolition credit`);
+  }
+  const priceHtml = page.replace(/[a-z0-9]+-fixed-price(?:-[a-z0-9]+)+/gi, "");
+  say(!/fixed written quote|fixed prices|fixed-prices|fixed-pricing|\bfixed-price\b|\bfixed quotes?\b|\bfixed price\b|fixed pricing/i.test(priceHtml), `${label} no fixed pricing`);
+  say(!page.includes("panel, board or door"), `${label} photo line`);
+  say(!/trade supply only in/i.test(page), `${label} heading leak`);
+  say(!page.includes("real-job/company.jpg"), `${label} no company.jpg`);
+  if (/aov/.test(label)) {
+    say(!page.includes("a055da46974c") && !page.includes("/services/aov-air-handling.jpg"), `${label} aov not collapsed`);
+    say(/(?:smoke|shaft|ventilation)/i.test(page) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(page), `${label} smoke and aov photos`);
   }
   say(!/pOA\./.test(page), `${label} no garbled POA`);
   say(!/do not describe iComply as Gas Safe/i.test(page), `${label} no gas denial`);
@@ -208,6 +220,16 @@ for (const stems of byHash.values()) {
   if (new Set(stems).size > 1) shared++;
 }
 say(shared === 0, `service image hashes shared across services=${shared}`);
+
+const aovPicks = pickImages("/pages/aov-air-handling/york", "aov-air-handling", 3);
+say(aovPicks.length >= 2 && aovPicks[0] !== aovPicks[1], `aov pool distinct ${aovPicks.slice(0, 2).join(" ")}`);
+say(!aovPicks.some((src) => isCollapsedAov(src)), "aov pool not collapsed");
+const aovFloor = applyQualityFloor(
+  `<html><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
+  { path: "/pages/aov-air-handling/york", subject: "AOV", place: "York" },
+);
+say(!aovFloor.includes("a055da46974c") && !aovFloor.includes("/services/aov-air-handling.jpg") && !aovFloor.includes("real-job/company.jpg"), "aov floor drops collapsed and company photos");
+say(/(?:smoke|shaft|ventilation)/i.test(aovFloor) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(aovFloor), "aov floor smoke and aov photos");
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

@@ -104,6 +104,7 @@ $paths = [
     '/pages/areas/wigan',
     '/pages/driveways/wigan',
     '/pages/aov/belfast',
+    '/pages/aov-air-handling/york',
     '/pages/drainage/york',
     '/pages/demolition/stockport',
     '/pages/services/heating',
@@ -112,6 +113,10 @@ $paths = [
     '/pages/keywords/next-day-heating-engineer',
     '/pages/manufacturers/hysecurity',
     '/pages/manufacturers/designa',
+    '/pages/manufacturers/vaillant',
+    '/pages/landlords',
+    '/pages/packages',
+    '/pages/demolition/bolton',
 ];
 
 function qmBodyWords(string $html): int
@@ -226,11 +231,16 @@ foreach ($paths as $path) {
         $say(!preg_match('/-(?:photo|context)\.jpg/i', $html), $path . ' no placeholder graphic');
     }
     $say(!str_contains($html, 'pOA.'), $path . ' no garbled POA');
-    $say(!preg_match('/fixed written quote|\bfixed price\b/i', $html), $path . ' no fixed-price wording');
+    $priceHtml = preg_replace('/[a-z0-9]+-fixed-price(?:-[a-z0-9]+)+/i', '', $html) ?? $html;
+    $say(!preg_match('/fixed written quote|fixed prices|fixed-prices|fixed-pricing|\bfixed-price\b|\bfixed quotes?\b|\bfixed price\b|fixed pricing/i', $priceHtml), $path . ' no fixed-price wording');
+    $say(!str_contains($html, 'panel, board or door'), $path . ' no generic photo line');
+    $say(!preg_match('/trade supply only in/i', $html), $path . ' no heading leak');
+    $say($path === '/' || !str_contains($html, 'real-job/company.jpg'), $path . ' company.jpg only on home');
     $say(!preg_match('/do not describe iComply as Gas Safe/i', $html), $path . ' no gas denial');
     $garden = (bool)preg_match('#/(?:fencing|landscaping|demolition|driveways)(?:/|$)#', $path);
     $say($garden || !preg_match('/fill a skip and call the garden clear/i', $html), $path . ' no off-family skip sentence');
-    $gasPage = (bool)preg_match('/gas|cp12|boiler|heating|compliance-bundle|landlord-pack/i', $path);
+    $gasPage = (bool)preg_match('/gas|cp12|boiler|heating|compliance-bundle|landlord/i', $path)
+        || (bool)preg_match('#/manufacturers/(?:alpha|ariston|baxi|ferroli|firebird|glow-worm|grant|ideal|intergas|main-heating|navien|potterton|ravenheat|remeha|vaillant|viessmann|vokera|worcester-bosch)$#', $path);
     $say($gasPage || !preg_match('/Gas Safe registered/i', $html), $path . ' gas sentence only on gas pages');
     $say(!preg_match('/\b(?:a|an|the) the area\b/i', $html), $path . ' no broken area grammar');
     $say(!str_contains($html, 'dump 200,000') && !str_contains($html, '200,000 links'), $path . ' no hub dump line');
@@ -249,6 +259,20 @@ foreach ($paths as $path) {
     $say($badAov === [], $path . ' unbuilt aov links ' . ($badAov === [] ? '0' : implode(',', $badAov)));
     if (str_contains($path, 'demolition') && preg_match('/<section class="(?:matrix-hero|page-hero|hero)\b[\s\S]*?<\/section>/i', $html, $hero)) {
         $say(preg_match('/<img\b/i', $hero[0]) === 1, $path . ' hero has an image');
+        $say(str_contains($hero[0], 'Tomwsulcer (CC0)'), $path . ' demolition hero credit');
+    }
+    if ($path === '/pages/areas/wigan') {
+        $say(!str_contains($html, 'WN1–WN6in') && !str_contains($html, 'WN1-WN6in'), $path . ' district spacing');
+    }
+    if (preg_match('#/(?:aov|aov-air-handling)(?:/|$)#', $path)) {
+        $say(!str_contains($html, 'a055da46974c') && !str_contains($html, '/services/aov-air-handling.jpg'), $path . ' aov image not collapsed');
+        $hasSmoke = (bool)preg_match('/(?:smoke|shaft|ventilation)/i', $html);
+        $hasAov = (bool)preg_match('~(?:/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))~i', $html);
+        $say($hasSmoke && $hasAov, $path . ' smoke and aov photos');
+    }
+    if ($path === '/pages/manufacturers/vaillant') {
+        $say(qmBodyWords($html) >= 800, $path . ' manufacturer body words=' . qmBodyWords($html));
+        $say(!preg_match('/Vaillant \(vaillant\)|trade supply only in/i', $html), $path . ' brand subject clean');
     }
     if (preg_match('#/manufacturers/(?:hysecurity|heald|designa)$#', $path)) {
         $say(qmBodyWords($html) >= 800, $path . ' manufacturer body words=' . qmBodyWords($html));
@@ -300,6 +324,25 @@ foreach ($pairs as [$a, $b]) {
     $j = qmJaccard(qmShingles(qmBody($rendered[$a])), qmShingles(qmBody($rendered[$b])));
     $say($j < 0.72, sprintf('near-dup %s vs %s j=%.3f', $a, $b, $j));
 }
+
+$sentenceCounts = [];
+$sentencePages = 0;
+foreach (array_slice($places, 0, 40) as $town) {
+    foreach (['plumbing', 'kitchens', 'plastering', 'electrical', 'roofing'] as $service) {
+        $sentencePages++;
+        $note = icomplyQualityFloorLandlord('/pages/' . $service . '/' . $town, 'SUBJECT', 'TOWNNAME');
+        $norm = str_replace(['SUBJECT', 'TOWNNAME'], '', $note);
+        foreach (preg_split('/(?<=[.!?])\s+/', $norm) ?: [] as $sentence) {
+            $sentence = trim((string)$sentence);
+            if ($sentence === '') {
+                continue;
+            }
+            $sentenceCounts[$sentence] = ($sentenceCounts[$sentence] ?? 0) + 1;
+        }
+    }
+}
+$maxShare = $sentencePages > 0 && $sentenceCounts !== [] ? max($sentenceCounts) / $sentencePages : 1;
+$say($maxShare < 0.5, 'landlord sentence max share ' . round($maxShare * 100, 1) . '% of ' . $sentencePages);
 
 echo $fail === 0 ? "QM FLOOR OK\n" : "QM FLOOR FAILED {$fail}\n";
 exit($fail === 0 ? 0 : 1);

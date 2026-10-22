@@ -37,7 +37,7 @@ $packages = [
         'highlight' => true,
         'price_label' => 'From',
         'price' => 'POA',
-        'price_note' => 'Scoped per property / portfolio — fixed quote after survey',
+        'price_note' => 'Scoped per property / portfolio — written quote after survey',
         'ideal' => 'Private landlords, letting agents and HMO operators',
         'includes' => [
             'EICR (Electrical Installation Condition Report)',
@@ -158,7 +158,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <?= sectionTrustStrip([
-    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
+    ['Honest pricing', 'Shown as From / POA — written quote after we agree scope'],
     ['One visit plan', 'Combine services where practical to cut access days'],
     ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
     ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
@@ -172,7 +172,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 Packages are starting points — we tailor scope to your buildings, system brands and renewals.
-                Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
+                Prices are <strong class="text-black">from / POA</strong> only; you always get a written quote before work starts.
             </p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse single services →</a>
@@ -266,14 +266,14 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-            We never publish fake fixed prices online — every building is different.
+            We never publish a made-up price online — every building is different.
             You get a clear, written quote once scope is agreed.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
             <?php
             $steps = [
                 ['1', 'Tell us the package', 'Pick Landlord Essentials, Fire, Security or Full FM — plus postcode and property type.'],
-                ['2', 'We scope & quote', 'We confirm systems, standards and access. Pricing is From / POA until the fixed quote is issued.'],
+                ['2', 'We scope & quote', 'We confirm systems, standards and access. Pricing is From / POA until the written quote is issued.'],
                 ['3', 'Deliver & certify', 'Engineers complete the works, issue certificates and hand over an audit-ready pack.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>

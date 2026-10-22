@@ -1,6 +1,6 @@
 /**
- * One landlord note per page. The eight banks are combined from a hash of
- * the path, so the paragraph is not one sentence with the town swapped.
+ * Landlord lines, one from each bank, hashed by path. Banks are wide enough
+ * that a single sentence stays well under half of pages after the town is removed.
  */
 import lines from "../../website/data/landlord-lines.json" with { type: "json" };
 
@@ -18,7 +18,7 @@ function mix(path, salt) {
   return (h ^ (h >>> 16)) >>> 0;
 }
 
-export function landlordNote(path, subject, place) {
+export function landlordLines(path, subject, place) {
   const job = subject || "the work";
   const town = place || "Stockport";
   const parts = [];
@@ -27,5 +27,9 @@ export function landlordNote(path, subject, place) {
     const line = bank[mix(path, index + 1) % bank.length];
     parts.push(String(line).replaceAll("{subject}", job).replaceAll("{place}", town));
   });
-  return parts.join(" ");
+  return parts;
+}
+
+export function landlordNote(path, subject, place) {
+  return landlordLines(path, subject, place).join(" ");
 }

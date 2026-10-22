@@ -230,9 +230,7 @@ $schema = [
                 Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Property compliance for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> uses outward codes
-                <strong><?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?></strong>
-                in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
+                Property compliance for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> uses outward codes <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
                 The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
                 Our local focus: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
                 Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.

@@ -1,4 +1,5 @@
 import imageFamilies from "../../website/data/service-image-families.json" with { type: "json" };
+import { aliasFamily, pickImages } from "./image-pool.js";
 /**
  * CLOSE-Q1 / Q2 / Q3 shared floor for the edge ×town renderer
  * (netlify/edge-functions/town-matrix.js → renderTownPage).
@@ -21,11 +22,11 @@ export function imageFamilyOf(slug) {
   return null;
 }
 
-/** Two extra photos for `slug`, both from its own family: its -photo first, then family members by seed. */
+/** Two extra photos for `slug`, taken from that service's own pool. */
 export function familyPicks(slug, seed) {
-  void seed;
-  // Own photograph only. The -photo and -context files are flat diagrams.
-  return [slug, slug];
+  const family = aliasFamily(slug);
+  const picks = pickImages(`${slug}|${seed}`, family, 3);
+  return [picks[1] || picks[0], picks[2] || picks[0]];
 }
 
 export function escapeHtml(value) {
@@ -156,17 +157,20 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
     }
   }
   const slug = String(serviceSlug || "fire-alarms");
-  const primary = `/assets/images/services/${slug}.jpg`;
-  // Jack 20 Oct: only photos from the page's own service family (no CCTV on an EICR page).
-  const [second, third] = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
+  const family = aliasFamily(slug);
+  const picks = pickImages(`${slug}/${placeName}`, family, 3);
+  const primary = family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  const second = picks[1] || primary;
+  const third = picks[2] || second;
+  const creditFor = (src) => (/\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(src) ? "Tomwsulcer (CC0)" : "iComply Property Services");
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero" data-credit="iComply Property Services" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work" data-credit="iComply Property Services" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context" data-credit="iComply Property Services" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
-    + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
+    + `<img data-pe-slot="q2-image-hero" data-credit="${escapeHtml(creditFor(primary))}" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-work" data-credit="${escapeHtml(creditFor(second))}" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-context" data-credit="${escapeHtml(creditFor(third))}" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + `<figcaption>Image credit: ${escapeHtml(creditFor(primary))}</figcaption></figure>`;
   return {
     html,
     heroSrc: primary,

@@ -318,19 +318,27 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
 {
     // Jack 20 Oct: only photos from the page's own service family (website/data/service-image-families.json).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
-    $primary = '/assets/images/services/' . $slug . '.jpg';
-    [$b2, $b3] = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
-    $second = '/assets/images/services/' . $b2 . '.jpg';
-    $third = '/assets/images/services/' . $b3 . '.jpg';
+    if (!function_exists('icomplyImagePick')) {
+        require_once __DIR__ . '/image-pool.php';
+    }
+    $family = $slug === 'aov' ? 'aov-air-handling' : $slug;
+    $picks = icomplyImagePick($altPrefix . '|' . $family, $family, 3);
+    $primary = $family === 'aov-air-handling' ? $picks[0] : '/assets/images/services/' . $slug . '.jpg';
+    $second = $picks[1] ?? $primary;
+    $third = $picks[2] ?? $second;
+    $creditFor = static function (string $src): string {
+        return preg_match('#/demolition(?:-(?:photo|context))?\.jpe?g$#i', $src) ? 'Tomwsulcer (CC0)' : 'iComply Property Services';
+    };
+    $heroCredit = $creditFor($primary);
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
     $h = 'icomplyQualityBarH';
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero" data-credit="iComply Property Services" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work" data-credit="iComply Property Services" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context" data-credit="iComply Property Services" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
-        . '<figcaption>Image credit: iComply Property Services</figcaption>'
+        . '<img data-pe-slot="q2-image-hero" data-credit="' . $h($heroCredit) . '" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-work" data-credit="' . $h($creditFor($second)) . '" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-context" data-credit="' . $h($creditFor($third)) . '" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
+        . '<figcaption>Image credit: ' . $h($heroCredit) . '</figcaption>'
         . '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];

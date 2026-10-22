@@ -8,9 +8,16 @@ import services from "../../website/data/services.json" with { type: "json" };
 import creditsDoc from "../../website/data/hero-image-credits.json" with { type: "json" };
 import distinctEssays from "../../website/data/distinct-essays.json" with { type: "json" };
 import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
+import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
 import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
-import { landlordNote } from "./landlord-note.js";
+import { landlordLines } from "./landlord-note.js";
+import { aliasFamily, pickImages, isCollapsedAov } from "./image-pool.js";
+
+function keywordService(slug) {
+  const service = keywordServices[slug] || keywordFallback[slug] || "";
+  return service === "aov" ? "aov-air-handling" : service;
+}
 
 const CREDIT = "iComply Property Services";
 const REAL_JOB = new Set([
@@ -90,6 +97,13 @@ function shortSubject(subject, key, path = "") {
   if (key && key !== "default" && services[key]) return services[key];
   let cleaned = String(subject || "").replace(/\s+in\s+.+$/i, "").trim();
   cleaned = cleaned.replace(/\.\s*POA\.?.*$/i, "").trim();
+  cleaned = cleaned.replace(/\btrade supply only\b/gi, "").replace(/\bproducts\s*(?:&(?:amp;)?|and)\s*service\b/gi, "");
+  const leaf = (parts[parts.length - 1] || "").toLowerCase();
+  if (leaf) {
+    const escaped = leaf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    cleaned = cleaned.replace(new RegExp(`\\s*\\(${escaped}\\)`, "i"), "");
+  }
+  cleaned = cleaned.replace(/\s+/g, " ").trim();
   const first = cleaned.split(".")[0].trim();
   return first || cleaned || "the work";
 }
@@ -104,6 +118,12 @@ const GARDEN_FAMILY = new Set([
 const GAS_PACKAGE_PATHS = new Set([
   "/pages/packages/compliance-bundle",
   "/pages/packages/landlord-pack",
+  "/pages/landlords",
+]);
+const GAS_MANUFACTURERS = new Set([
+  "alpha", "ariston", "baxi", "ferroli", "firebird", "glow-worm", "grant", "ideal",
+  "intergas", "main-heating", "navien", "potterton", "ravenheat", "remeha", "vaillant",
+  "viessmann", "vokera", "worcester-bosch",
 ]);
 const OFFICE = "17 Woodlands Park Road, Offerton, Stockport SK2 5DE";
 const hashToSource = new Map();
@@ -120,7 +140,10 @@ function escapeReg(value) {
 
 export function isGasPath(path, subject = "") {
   const value = `${path} ${subject}`;
-  if (GAS_PACKAGE_PATHS.has(String(path || "").replace(/\/$/, "") || "/")) return true;
+  const clean = String(path || "").replace(/\/$/, "") || "/";
+  if (GAS_PACKAGE_PATHS.has(clean)) return true;
+  const brand = clean.match(/^\/pages\/manufacturers\/([a-z0-9-]+)$/);
+  if (brand && GAS_MANUFACTURERS.has(brand[1])) return true;
   if (/\/(?:gas-systems|heating)(?:\/|$)/.test(path)) return true;
   if (/heating/i.test(value)) return true;
   return /\bgas\b|cp12|boiler/i.test(value);
@@ -137,12 +160,14 @@ function capPlaceMentions(text) {
 }
 
 function packFor(key) {
-  const resolved = copy.services[key] ? key : "default";
+  if (!key || key === "default" || !copy.services[key]) {
+    return { key: "default", paragraphs: [], notes: [], facts: [] };
+  }
   return {
-    key: resolved,
-    paragraphs: copy.services[resolved] || [],
-    notes: (copy.notes && copy.notes[resolved]) || [],
-    facts: (copy.facts && copy.facts[resolved]) || (copy.facts && copy.facts.default) || [],
+    key,
+    paragraphs: copy.services[key] || [],
+    notes: (copy.notes && copy.notes[key]) || [],
+    facts: (copy.facts && copy.facts[key]) || [],
   };
 }
 
@@ -170,7 +195,7 @@ export function essayHtml(path, subject, place) {
   for (const list of [pack.paragraphs, pack.notes, pack.facts]) {
     for (const item of list || []) blocks.push(fillCopy(item, town, job));
   }
-  blocks.push(landlordNote(path, job, town));
+  for (const line of landlordLines(path, job, town)) blocks.push(line);
   return blocks.filter(Boolean).map((line) => `<p>${escapeHtml(line)}</p>`).join("");
 }
 
@@ -182,9 +207,9 @@ function pageFamily(path) {
   if (head === "services" && services[parts[2]]) return parts[2];
   if (head === "aov") return "aov-air-handling";
   if (head === "barriers" || (head === "manufacturers" && BARRIER_BRANDS.has(parts[2] || ""))) return "barriers";
-  if (head === "keywords" && keywordServices[parts[2]]) return keywordServices[parts[2]];
-  if (head === "jobs" && parts[2] && (services[parts[2]] || keywordServices[parts[2]])) {
-    return services[parts[2]] ? parts[2] : keywordServices[parts[2]];
+  if (head === "keywords" && keywordService(parts[2])) return aliasFamily(keywordService(parts[2]));
+  if (head === "jobs" && parts[2] && (services[parts[2]] || keywordService(parts[2]))) {
+    return services[parts[2]] ? parts[2] : aliasFamily(keywordService(parts[2]));
   }
   if (head === "jobs" || leaf === "jobs" || leaf === "become-a-subcontractor" || String(path).includes("become-a-subcontractor")) {
     return "hub:company";
@@ -207,10 +232,15 @@ function pageFamily(path) {
 }
 
 function canonicalSrc(path) {
+  if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
   const family = pageFamily(path);
-  if (family === "products") return "/assets/images/real-job/resources.jpg";
-  if (family.startsWith("directory:")) return "/assets/images/real-job/company.jpg";
-  if (family.startsWith("hub:")) return `/assets/images/real-job/${family.slice(4)}.jpg`;
+  if (family === "products" || family.startsWith("directory:")) return "/assets/images/real-job/resources.jpg";
+  if (family.startsWith("hub:")) {
+    const leaf = family.slice(4);
+    if (leaf === "company" || leaf === "home") return "/assets/images/real-job/resources.jpg";
+    return `/assets/images/real-job/${leaf}.jpg`;
+  }
+  if (family === "aov-air-handling") return pickImages(path, family, 2)[0];
   return `/assets/images/services/${family}.jpg`;
 }
 
@@ -227,6 +257,10 @@ function imageFamily(src) {
   if (service) return service[1];
   const lane = origin.match(/\/assets\/images\/lanes\/([a-z0-9-]+)\//i) || String(src).match(/\/lanes\/([a-z0-9-]+)\//i);
   if (lane) return lane[1];
+  const keyword = origin.match(/\/assets\/images\/keywords\/([a-z0-9-]+)\.jpe?g$/i);
+  if (keyword) return aliasFamily(keywordService(keyword[1]));
+  const trade = origin.match(/\/assets\/images\/trades\/([a-z0-9-]+)--/i);
+  if (trade) return aliasFamily(trade[1] === "aov" ? "aov-air-handling" : trade[1]);
   const hub = origin.match(/\/assets\/images\/real-job\/([a-z0-9-]+)\.jpe?g$/i);
   if (hub) return `hub:${hub[1]}`;
   if (/\/assets\/images\/(?:products|shop)\//i.test(origin)) return "products";
@@ -235,7 +269,9 @@ function imageFamily(src) {
 
 function isPlaceholderImage(src) {
   const origin = sourceOfImage(src);
-  return /-(?:photo|context)\./i.test(origin) || /\/lanes\//i.test(origin) || /\/lanes\//i.test(src);
+  if (/\/lanes\//i.test(origin) || /\/lanes\//i.test(src)) return true;
+  if (/\/aov-air-handling-(?:photo|context)\.jpe?g$/i.test(origin)) return false;
+  return /-(?:photo|context)\./i.test(origin);
 }
 
 function slotSrc(path) {
@@ -313,7 +349,9 @@ function faqBlock(subject, place, path) {
 }
 
 function creditName(src) {
-  const path = String(src || "").split("?")[0];
+  let path = sourceOfImage(src);
+  if (!path.startsWith("/")) path = path.replace(/^https?:\/\/[^/]+/i, "");
+  if (/\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(path)) return "Tomwsulcer (CC0)";
   const row = creditBySrc.get(path);
   if (!row) return CREDIT;
   const source = String(row.source || "");
@@ -348,10 +386,16 @@ function stampCredits(html) {
   });
   const stamped = masked.replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
     let next = String(attrs).replace(/\s*\/\s*$/, "");
-    if (skipImg(next) || /\bdata-credit-stamped=/.test(next)) return `<img${next}>`;
     const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
-    if (!src || isPlaceholderImage(src)) return `<img${next}>`;
+    const demolition = /\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(sourceOfImage(src));
+    if (skipImg(next) || (/\bdata-credit-stamped=/.test(next) && !demolition)) return `<img${next}>`;
+    if (!src || (isPlaceholderImage(src) && !demolition)) return `<img${next}>`;
     const name = creditName(src);
+    if (demolition && /\bdata-credit-stamped=/.test(next)) {
+      if (/\bdata-credit=/.test(next)) next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
+      else next += ` data-credit="${escapeHtml(name)}"`;
+      return `<img${next}>`;
+    }
     if (/\bdata-credit=/.test(next)) {
       next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
     } else {
@@ -364,21 +408,40 @@ function stampCredits(html) {
 }
 
 function photoHtml(path, subject) {
-  const src = slotSrc(path);
-  const name = creditName(src);
-  return `<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner"><img src="${escapeHtml(src)}" alt="${escapeHtml(`Completed ${subject} by ${name}`)}" data-pe-slot="real-photo" data-credit="${escapeHtml(name)}" data-credit-stamped="1" width="1200" height="800"><figcaption>Image credit: ${escapeHtml(name)}</figcaption></figure>`;
+  const family = pageFamily(path);
+  const srcs = family === "aov-air-handling" ? pickImages(path, family, 2).slice(0, 2) : [slotSrc(path)];
+  const imgs = srcs.map((src) => {
+    const name = creditName(src);
+    return `<img src="${escapeHtml(src)}" alt="${escapeHtml(`Completed ${subject} by ${name}`)}" data-pe-slot="real-photo" data-credit="${escapeHtml(name)}" data-credit-stamped="1" width="1200" height="800"><figcaption>Image credit: ${escapeHtml(name)}</figcaption>`;
+  }).join("");
+  return `<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner">${imgs}</figure>`;
 }
 
 function scrubFixedPricing(html) {
-  let out = String(html);
-  out = out.replace(/No fixed price is published/gi, "Price on application");
-  out = out.replace(/fixed written quotes/gi, "free written quotes");
-  out = out.replace(/fixed written quote/gi, "free written quote");
-  out = out.replace(/Every quote is fixed and written/gi, "Every quote is a free written quote");
-  out = out.replace(/fixed pricing/gi, "a free written quote");
-  out = out.replace(/\bPOA fixed quote\b/gi, "a free written quote");
-  out = out.replace(/\bfixed price\b/gi, "free written quote");
-  return out;
+  const held = [];
+  let out = String(html).replace(/[a-z0-9]+-fixed-price(?:-[a-z0-9]+)+/gi, (slug) => {
+    held.push(slug);
+    return `\u0001SLUG${held.length - 1}\u0001`;
+  });
+  const steps = [
+    [/No fixed price is published/gi, "Price on application"],
+    [/fixed written quotes/gi, "free written quotes"],
+    [/fixed written quote/gi, "free written quote"],
+    [/Every quote is fixed and written/gi, "Every quote is a free written quote"],
+    [/fixed-pricing/gi, "a free written quote"],
+    [/fixed pricing/gi, "a free written quote"],
+    [/fixed-prices/gi, "free written quotes"],
+    [/fixed prices/gi, "free written quotes"],
+    [/fixed-price/gi, "free written quote"],
+    [/\bPOA fixed quote\b/gi, "a free written quote"],
+    [/fixed quotes/gi, "free written quotes"],
+    [/fixed quote/gi, "free written quote"],
+    [/\bfixed price\b/gi, "free written quote"],
+  ];
+  for (const [pattern, replacement] of steps) {
+    out = out.replace(pattern, (match) => (/^[A-Z]/.test(match) && /^[a-z]/.test(replacement) ? replacement.charAt(0).toUpperCase() + replacement.slice(1) : replacement));
+  }
+  return out.replace(/\u0001SLUG(\d+)\u0001/g, (_, index) => held[Number(index)] || "");
 }
 
 function scrubSentences(html, path, subject) {
@@ -433,8 +496,11 @@ function rewriteMetaImages(html, path) {
     if (!/\b(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"/i.test(tag)) return tag;
     return tag.replace(/\bcontent\s*=\s*"([^"]*)"/i, (full, url) => {
       const pathOnly = String(url).replace(/^https?:\/\/[^/]+/i, "");
+      const origin = sourceOfImage(pathOnly);
       const imgFamily = imageFamily(pathOnly);
-      if (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly))) return full;
+      const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
+      const collapsed = family === "aov-air-handling" && isCollapsedAov(origin);
+      if (!sharedHub && !collapsed && (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) return full;
       const next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
       return `content="${next}"`;
     });
@@ -456,27 +522,43 @@ function confineImages(html, path) {
   const want = canonicalSrc(path);
   const wantFamily = pageFamily(path);
   const allowProducts = wantFamily === "products";
-  const directory = wantFamily.startsWith("directory:");
-  return String(html).replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
+  const directory = wantFamily.startsWith("directory:") || wantFamily.startsWith("hub:");
+  let slot = 0;
+  const nextSrc = () => {
+    if (wantFamily.startsWith("hub:") || wantFamily.startsWith("directory:") || wantFamily === "products" || !wantFamily) return want;
+    const picks = pickImages(path, wantFamily, 6);
+    const choice = picks[slot % picks.length];
+    slot += 1;
+    return choice;
+  };
+  let out = String(html).replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
     let next = String(attrs).replace(/\s*\/\s*$/, "");
     if (skipImg(next)) return `<img${next}>`;
     const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
     if (!src) return `<img${next}>`;
+    const origin = sourceOfImage(src);
     const family = imageFamily(src);
     const placeholder = isPlaceholderImage(src);
     const product = family === "products" || /\/(?:products|shop)\//i.test(src);
+    const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
+    const collapsed = wantFamily === "aov-air-handling" && isCollapsedAov(origin);
+    const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
+    if (sharedHub || collapsed || sharedMaintenance) return `<img${replaceImgSrc(next, nextSrc())}>`;
     if (directory) {
       if (!placeholder && family && !family.startsWith("hub:") && family !== "products") return `<img${next}>`;
-      if (placeholder && family && !family.startsWith("hub:")) {
-        return `<img${replaceImgSrc(next, `/assets/images/services/${family}.jpg`)}>`;
-      }
-      if (family === "hub:home" || placeholder) return `<img${replaceImgSrc(next, want)}>`;
+      if (placeholder || family === "hub:home" || family === "hub:company" || !family) return `<img${replaceImgSrc(next, want)}>`;
       return `<img${next}>`;
     }
-    if (!placeholder && family === wantFamily) return `<img${next}>`;
+    if (!placeholder && family === wantFamily && family) return `<img${next}>`;
     if (allowProducts && product) return `<img${next}>`;
-    return `<img${replaceImgSrc(next, want)}>`;
+    return `<img${replaceImgSrc(next, nextSrc())}>`;
   });
+  if (wantFamily === "aov-air-handling") {
+    const smoke = pickImages(path, wantFamily, 2)[0];
+    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/services\/aov-air-handling\.jpe?g/gi, smoke);
+    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/a055da46974c-\d+\.webp/gi, smoke);
+  }
+  return out;
 }
 
 export function applyQualityFloor(html, ctx = {}) {

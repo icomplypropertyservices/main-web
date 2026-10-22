@@ -28,7 +28,7 @@ if (!function_exists('icomplyKeywordImagePath')) {
         if ($serviceSlug !== '') {
             return '/assets/images/services/' . $serviceSlug . '.jpg';
         }
-        return '/assets/images/services/building-maintenance.jpg';
+        return '/assets/images/real-job/resources.jpg';
     }
 }
 /**

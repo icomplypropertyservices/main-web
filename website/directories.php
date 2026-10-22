@@ -141,7 +141,7 @@ require SITE_ROOT . '/includes/header.php';
             <span>Listings and directories</span>
         </nav>
         <h1 class="text-4xl font-semibold tracking-tight">Find us online</h1>
-        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, Cheshire, and arranges compliance and property work across Greater Manchester. Use this page for the official name, address and phone we keep consistent across directories. Quotes are price on application. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
+        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, Cheshire, and arranges compliance and property work across Greater Manchester. Use this page for the official name, address and phone we keep consistent across directories. Quotes are price on application.</p>
     </div>
 </section>
 <main class="max-w-3xl mx-auto px-6 py-12 space-y-12">
@@ -162,6 +162,7 @@ require SITE_ROOT . '/includes/header.php';
     <section aria-labelledby="directories-heading">
         <h2 id="directories-heading" class="text-2xl font-semibold text-[#0B1F3A]">Directories</h2>
         <p class="mt-2 text-zinc-600">Directory listings use the address above. New confirmed URLs are added from the citations log. Nothing is shown as a link until that URL exists.</p>
+        <p class="mt-4 text-zinc-700 leading-relaxed">A listing is useful when the trading name, street address and phone match this page. The published details are iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE, phone 07517 806082, email icomplypropertyservices@gmail.com. If a directory still shows a retired number, follow the details here and send the listing address through the contact form so the office can ask the publisher to correct it. A row stays as text, without a link, until the citations log has a public URL. That is not a claim that a profile already exists. Official profiles are accounts opened by the office. Directory rows are third-party pages that repeat the same name, address and phone. Written quotes for property work are price on application and are confirmed before a visit is booked.</p>
         <?php $renderRows($directories); ?>
     </section>
     <section class="related-links" aria-label="Related pages">

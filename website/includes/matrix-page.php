@@ -323,6 +323,12 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
     }
     $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
+    if ($svcSlug === 'aov-air-handling' || $svcSlug === 'aov') {
+        if (!function_exists('icomplyImagePick')) {
+            require_once SITE_ROOT . '/includes/image-pool.php';
+        }
+        $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, 'aov-air-handling', 2)[0];
+    }
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
@@ -500,9 +506,17 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
+    if ($serviceSlug === 'aov-air-handling' || $serviceSlug === 'aov') {
+        if (!function_exists('icomplyImagePick')) {
+            require_once SITE_ROOT . '/includes/image-pool.php';
+        }
+        $svcImagePath = icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, 'aov-air-handling', 2)[0];
+    }
+    $heroCredit = $serviceSlug === 'demolition' ? ' data-credit="Tomwsulcer (CC0)" data-credit-stamped="1"' : '';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
-        . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800">'
+        . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800"' . $heroCredit . '>'
+        . ($serviceSlug === 'demolition' ? '<p class="image-credit">Image credit: Tomwsulcer (CC0)</p>' : '')
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'

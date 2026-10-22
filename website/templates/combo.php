@@ -248,14 +248,26 @@ $schema = [
                 <?php endif; ?>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <img src="<?= htmlspecialchars(serviceImageUrl($serviceSlug), ENT_QUOTES, 'UTF-8') ?>"
+                <?php
+                $comboHero = serviceImageUrl($serviceSlug);
+                if ($serviceSlug === 'aov-air-handling' || $serviceSlug === 'aov') {
+                    if (!function_exists('icomplyImagePick')) {
+                        require_once SITE_ROOT . '/includes/image-pool.php';
+                    }
+                    $comboHero = url(icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, 'aov-air-handling', 2)[0]);
+                }
+                $comboCredit = $serviceSlug === 'demolition' ? 'Tomwsulcer (CC0)' : '';
+                ?>
+                <img src="<?= htmlspecialchars($comboHero, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> installation and servicing in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
-                     loading="eager">
+                     loading="eager"
+                     <?php if ($comboCredit !== ''): ?>data-credit="<?= htmlspecialchars($comboCredit, ENT_QUOTES, 'UTF-8') ?>" data-credit-stamped="1"<?php endif; ?>>
                 <div class="relative p-6 md:p-8 flex flex-col justify-end min-h-[260px] bg-gradient-to-t from-[#0B1F3A]/90 via-[#0B1F3A]/20 to-transparent">
                     <div class="text-sm text-white/70"><?php if (is_array($ncNationwide)): ?>Nurse call in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> · <?= htmlspecialchars($ncNationwide['region'] . ', ' . $ncNationwide['nation'], ENT_QUOTES, 'UTF-8') ?><?php else: ?>Serving <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> &amp; <?= htmlspecialchars($coveragePhrase, ENT_QUOTES, 'UTF-8') ?><?php endif; ?></div>
                     <div class="text-2xl font-semibold mt-1">Local engineers · Written quotes</div>
+                    <?php if ($comboCredit !== ''): ?><p class="image-credit mt-2 text-sm text-white/80">Image credit: <?= htmlspecialchars($comboCredit, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?>
                 </div>
             </div>
         </div>

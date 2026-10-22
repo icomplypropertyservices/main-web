@@ -11,6 +11,7 @@ import { gmTownName, isGmTown } from "./link-blocks.js";
 import { townFactsBlock } from "./town-facts.js";
 import { geoRow, townDepthBlock } from "./town-depth.js";
 import { depthBankParagraphs } from "./thin-quality-bar.js";
+import { pickImages } from "./image-pool.js";
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
@@ -218,7 +219,10 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   const description = p0Description(name, townName);
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
   const imageService = hub.service === "aov" ? "aov-air-handling" : (hub.service || "fire-alarms");
-  const images = [
+  const pool = imageService === "aov-air-handling"
+    ? pickImages(`/pages/keywords/${keywordSlug}/${townSlug}`, imageService, 3)
+    : null;
+  const images = pool || [
     `/assets/images/services/${imageService}.jpg`,
     `/assets/images/services/${imageService}.jpg`,
     `/assets/images/services/${imageService}.jpg`,

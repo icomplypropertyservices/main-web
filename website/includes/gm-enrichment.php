@@ -490,6 +490,55 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
  * @param list<array{0:string,1:string}> $extraFaqs
  * @return array{0:string,1:string}[]
  */
+function icomplyGmPhotoAsk(string $serviceSlug): string
+{
+    $asks = [
+        'demolition' => 'photos of the wall, the chimney or the room to be stripped',
+        'driveways' => 'photos of the drive, the levels and the kerb',
+        'patios' => 'photos of the patio, the levels and the drainage',
+        'fencing' => 'photos of the run, the posts and any gate',
+        'drainage' => 'photos of the gully, the manhole and where the water sits',
+        'roofing' => 'photos of the slope, the leak and the gutter',
+        'electrical' => 'photos of the consumer unit and the circuit that has failed',
+        'aov-air-handling' => 'photos of the vent, the actuator and the control panel',
+        'aov' => 'photos of the vent, the actuator and the control panel',
+        'heating' => 'photos of the boiler and the programmer, taken from a safe distance',
+        'gas-systems' => 'photos of the appliance and the flue, taken from a safe distance',
+        'barriers' => 'photos of the barrier arm, the cabinet and the lane',
+        'plumbing' => 'photos of the pipe, the leak and the fitting',
+        'windows-doors' => 'photos of the frame, the opening and the damaged section',
+        'kitchens' => 'photos of the units, the services and the room',
+        'bathrooms' => 'photos of the room, the fittings and the leak',
+        'plastering' => 'photos of the wall, the ceiling and the damaged area',
+        'brickwork' => 'photos of the brickwork, the crack and the mortar',
+        'joinery' => 'photos of the timber, the opening and the repair',
+        'dry-lining' => 'photos of the wall, the ceiling and the board',
+        'renovation' => 'photos of the rooms and what you want changed',
+        'building-maintenance' => 'photos of the defect and the access to it',
+        'cctv' => 'photos of the camera positions and the recorder',
+        'intruder-alarm' => 'photos of the alarm panel, the keypad and a detector',
+        'fire-alarms' => 'photos of the fire panel, a detector and a call point',
+        'fire-doors' => 'photos of the door, the closer and the frame',
+        'nurse-call' => 'photos of the nurse-call panel, a call point and the corridor',
+        'legionella-risk-assessment' => 'photos of the tanks, the outlets and the plant room',
+        'asbestos-survey' => 'photos of the material from a safe distance, without disturbing it',
+        'ev-chargers' => 'photos of the consumer unit, the parking bay and the cable route',
+        'water-wras' => 'photos of the incoming main, the meter and the outlets',
+        'commercial-fit-out' => 'photos of the unit, the services and the layout',
+        'landscaping' => 'photos of the garden, the levels and the access',
+        'garden-clearance' => 'photos of the garden, the waste and the access',
+        'garden-maintenance' => 'photos of the garden, the beds and the access',
+        'landlord-compliance' => 'photos of the areas the certificates need to cover',
+        'painting-decorating' => 'photos of the rooms and the surfaces to be painted',
+        'loft-conversions' => 'photos of the loft, the hatch and the stair position',
+    ];
+    if (isset($asks[$serviceSlug])) {
+        return $asks[$serviceSlug];
+    }
+    $name = trim(str_replace('-', ' ', $serviceSlug));
+    return $name !== '' ? 'photos of the ' . $name . ' and the access to it' : 'photos of the failed part and the access to it';
+}
+
 function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug, bool $gas, array $extraFaqs, string $localProse = ''): array
 {
     $place = $townName;
@@ -534,7 +583,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     } else {
         $faqs[] = [
             'What should I send before a ' . $townName . ' visit?',
-            'The postcode in ' . $place . ', whether anyone is living there, and photos of the panel, board or door if you have them. That keeps the first visit to the agreed scope.',
+            'The postcode in ' . $place . ', whether anyone is living there, and ' . icomplyGmPhotoAsk($serviceSlug) . '. That keeps the first visit to the agreed scope.',
         ];
     }
     $faqs[] = [

@@ -4,6 +4,7 @@
  */
 import { heroCta } from "./hero-cta.js";
 import { landlordNote } from "./landlord-note.js";
+import { pickImages } from "./image-pool.js";
 import { breadcrumbHtml } from "./link-blocks.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
 import { LOCAL_TOWN_SLUGS } from "./dual-ring-allowlist.js";
@@ -226,18 +227,22 @@ export function tradesImages(slug, placeName) {
   };
   const key = imageKey(slug, row.family);
   const service = row.service || "building-maintenance";
-  const real = `/assets/images/services/${service}.jpg`;
+  const aov = service === "aov-air-handling" || service === "aov" || row.family === "aov";
+  const picks = aov ? pickImages(`/pages/${slug}/${placeName || ""}`, "aov-air-handling", 3) : null;
+  const real = picks ? picks[0] : `/assets/images/services/${service}.jpg`;
   const tradePhoto = ["fencing", "drainage", "driveways", "demolition"].includes(service) || ["fencing", "drainage", "driveways", "demolition"].includes(row.family);
-  const src = tradePhoto ? real : `/assets/images/trades/${key}.webp`;
+  const src = picks ? picks[1] : (tradePhoto ? real : `/assets/images/trades/${key}.webp`);
+  const third = picks ? picks[2] : src;
   const name = row.name || titleCaseSlug(slug);
   const place = placeName ? ` in ${placeName}` : "";
   const alt = `${name}${place} — ${row.family.replace(/-/g, " ")} photograph or diagram for this exact job`;
-  const credit = ` data-credit="iComply Property Services"`;
+  const creditName = /\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(real) ? "Tomwsulcer (CC0)" : "iComply Property Services";
+  const credit = ` data-credit="${escapeHtml(creditName)}"`;
   const html = `<figure class="quality-bar-images trades-images" data-pe-slot="real-photo" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
-    + `<img${credit} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by iComply Property Services`)}" width="1200" height="675">`
+    + `<img${credit} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by ${creditName}`)}" width="1200" height="675">`
     + `<img${credit} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675" loading="lazy">`
-    + `<img${credit} src="${src}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
-    + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
+    + `<img${credit} src="${third}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
+    + `<figcaption>Image credit: ${escapeHtml(creditName)}</figcaption></figure>`;
   return { html, src, key, family: row.family, alt };
 }
 
