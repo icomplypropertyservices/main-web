@@ -18349,31 +18349,6 @@
       }
     ]
   },
-  "/assets/images/heroes/uk-engineer.jpg": {
-    "width": 1600,
-    "height": 1068,
-    "origBytes": 220370,
-    "variants": [
-      {
-        "w": 480,
-        "h": 320,
-        "webp": "/assets/images/opt/7966ed6b0117-480.webp",
-        "bytes": 8832
-      },
-      {
-        "w": 800,
-        "h": 534,
-        "webp": "/assets/images/opt/7966ed6b0117-800.webp",
-        "bytes": 19362
-      },
-      {
-        "w": 1280,
-        "h": 854,
-        "webp": "/assets/images/opt/7966ed6b0117-1280.webp",
-        "bytes": 38604
-      }
-    ]
-  },
   "/assets/images/manufacturers/advanced-fire-panel.jpg": {
     "width": 640,
     "height": 480,
