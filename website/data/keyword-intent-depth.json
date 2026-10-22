@@ -1,35 +1,83 @@
 {
-  "_note": "QM #156 CLOSE 8: keyword-specific depth for the GSC upgrade keyword x town pages, so each keyword reads differently in the same town. {town} is replaced at render time.",
-  "eicr-cost-near-me": {
-    "h2": "What an EICR costs in {town}, and why",
-    "p": [
-      "EICRs start from £160 for a typical rented flat or small house in {town}, and an HMO pack is £561. The figure moves with the number of circuits, not the number of bedrooms. A one-board flat with eight circuits tests in a morning. A converted house with a second consumer unit, an outbuilding supply or a communal landing circuit takes longer, so we price it after we have seen the board.",
-      "The quickest way to get a firm figure is to send a clear photo of the consumer unit with the cover on, the approximate age of the wiring if you know it, and whether the property is let, empty or occupied. Access matters too. If a tenant needs notice, or the loft and meter cupboard are locked, tell us before we book so the engineer is not paid to wait outside.",
-      "The price covers the inspection, the sample testing set out in BS 7671, and the written report emailed to you. Remedial work is not included, because nobody can know what is needed until the circuits are tested. If the report records C1 or C2 observations, we list each one with its own written quote so you can approve them line by line. Landlords in {town} have 28 days to complete remedial work and pass written confirmation to the tenant and, if asked, to the council."
-    ]
-  },
-  "5-year-eicr-certificate": {
-    "h2": "The five-year EICR cycle for {town} properties",
-    "p": [
-      "Private landlords in England must have the fixed wiring in each let property inspected and tested at least every five years, and before a new tenancy if the last report has expired. The report, not a certificate in the strict sense, is what a letting agent or the council will ask to see. Owner-occupiers in {town} have no legal deadline, but ten years is the usual recommendation, and most mortgage lenders and insurers will accept a five-year cycle.",
-      "Five years is a maximum, not a fixed date. The engineer can set a shorter interval on the report if the installation is old, if there is evidence of damage, or if the property is an HMO with heavy use. When that happens the next inspection date on the report is the one that counts, and it should go straight into your compliance diary.",
-      "We keep the date for you. When you book a five-year EICR in {town}, the next due date is logged and we contact you about eight weeks before it falls due, so there is time to arrange access and any tenant notice. If you manage several properties, send us the addresses and last report dates and we will line them up so neighbouring jobs share a visit and a single trip."
-    ]
-  },
-  "boiler-service-and-repair-package": {
-    "h2": "How the boiler service and repair package works in {town}",
-    "p": [
-      "The package combines an annual boiler service with priority call-outs for breakdowns during the year. It suits landlords and homeowners in {town} who would rather have one arrangement than book a service, then search for an engineer the day the heating fails. Gas work is carried out by Gas Safe registered engineers.",
-      "The annual visit covers a visual check of the appliance and flue, a combustion analysis, a check of the seals, safety devices and condensate route, and a written record of what was tested. If the appliance is in a rented property, the landlord gas safety record can be done on the same visit, which saves a second appointment and a second round of tenant notice.",
-      "Repairs under the package are prioritised over standard bookings. Parts are quoted separately because a diverter valve costs very differently from a PCB or a heat exchanger, and the engineer will tell you the part and the price before fitting anything. If a boiler is beyond economic repair, we say so in writing and give a separate written quote for a replacement rather than fitting parts that will not last."
-    ]
-  },
-  "boiler-service-gas-safe": {
-    "h2": "What a full boiler service in {town} includes",
-    "p": [
-      "A full boiler service is more than a quick look at the pressure gauge. The engineer removes the casing, inspects the burner, heat exchanger and seals, checks the flue terminal and route, tests the safety devices and records a flue gas analysis reading. The work is carried out by Gas Safe registered engineers, and you receive a written service record for the appliance.",
-      "Most manufacturers ask for a service every twelve months to keep the warranty valid, and the service record is what they ask to see if you make a claim. If your boiler in {town} is under warranty, send us the make and model when you book so the engineer follows that manufacturer's checklist and brings any parts the schedule calls for.",
-      "If the service finds a fault, the engineer explains it, classifies any safety issue under the gas industry unsafe situations procedure, and gives you a written quote for the repair. An appliance that is immediately dangerous will be made safe and labelled with your permission. Annual servicing is also the cheapest way to avoid winter breakdowns, because worn seals and blocked condensate traps show up long before they stop the heating."
-    ]
-  }
+ "_note": "QM #156 CLOSE 8: keyword-specific depth for the GSC upgrade keyword x town pages, so each keyword reads differently in the same town. {town} is replaced at render time.",
+ "eicr-cost-near-me": {
+  "h2": "What an EICR costs in {town}, and why",
+  "p": [
+   "EICRs start from £160 for a typical rented flat or small house in {town}, and an HMO pack is £561. The figure moves with the number of circuits, not the number of bedrooms. A one-board flat with eight circuits tests in a morning. A converted house with a second consumer unit, an outbuilding supply or a communal landing circuit takes longer, so we price it after we have seen the board.",
+   "The quickest way to get a firm figure is to send a clear photo of the consumer unit with the cover on, the approximate age of the wiring if you know it, and whether the property is let, empty or occupied. Access matters too. If a tenant needs notice, or the loft and meter cupboard are locked, tell us before we book so the engineer is not paid to wait outside.",
+   "The price covers the inspection, the sample testing set out in BS 7671, and the written report emailed to you. Remedial work is not included, because nobody can know what is needed until the circuits are tested. If the report records C1 or C2 observations, we list each one with its own written quote so you can approve them line by line. Landlords in {town} have 28 days to complete remedial work and pass written confirmation to the tenant and, if asked, to the council."
+  ]
+ },
+ "5-year-eicr-certificate": {
+  "h2": "The five-year EICR cycle for {town} properties",
+  "p": [
+   "Private landlords in England must have the fixed wiring in each let property inspected and tested at least every five years, and before a new tenancy if the last report has expired. The report, not a certificate in the strict sense, is what a letting agent or the council will ask to see. Owner-occupiers in {town} have no legal deadline, but ten years is the usual recommendation, and most mortgage lenders and insurers will accept a five-year cycle.",
+   "Five years is a maximum, not a fixed date. The engineer can set a shorter interval on the report if the installation is old, if there is evidence of damage, or if the property is an HMO with heavy use. When that happens the next inspection date on the report is the one that counts, and it should go straight into your compliance diary.",
+   "We keep the date for you. When you book a five-year EICR in {town}, the next due date is logged and we contact you about eight weeks before it falls due, so there is time to arrange access and any tenant notice. If you manage several properties, send us the addresses and last report dates and we will line them up so neighbouring jobs share a visit and a single trip."
+  ]
+ },
+ "boiler-service-and-repair-package": {
+  "h2": "How the boiler service and repair package works in {town}",
+  "p": [
+   "The package combines an annual boiler service with priority call-outs for breakdowns during the year. It suits landlords and homeowners in {town} who would rather have one arrangement than book a service, then search for an engineer the day the heating fails. Gas work is carried out by Gas Safe registered engineers.",
+   "The annual visit covers a visual check of the appliance and flue, a combustion analysis, a check of the seals, safety devices and condensate route, and a written record of what was tested. If the appliance is in a rented property, the landlord gas safety record can be done on the same visit, which saves a second appointment and a second round of tenant notice.",
+   "Repairs under the package are prioritised over standard bookings. Parts are quoted separately because a diverter valve costs very differently from a PCB or a heat exchanger, and the engineer will tell you the part and the price before fitting anything. If a boiler is beyond economic repair, we say so in writing and give a separate written quote for a replacement rather than fitting parts that will not last."
+  ]
+ },
+ "boiler-service-gas-safe": {
+  "h2": "What a full boiler service in {town} includes",
+  "p": [
+   "A full boiler service is more than a quick look at the pressure gauge. The engineer removes the casing, inspects the burner, heat exchanger and seals, checks the flue terminal and route, tests the safety devices and records a flue gas analysis reading. The work is carried out by Gas Safe registered engineers, and you receive a written service record for the appliance.",
+   "Most manufacturers ask for a service every twelve months to keep the warranty valid, and the service record is what they ask to see if you make a claim. If your boiler in {town} is under warranty, send us the make and model when you book so the engineer follows that manufacturer's checklist and brings any parts the schedule calls for.",
+   "If the service finds a fault, the engineer explains it, classifies any safety issue under the gas industry unsafe situations procedure, and gives you a written quote for the repair. An appliance that is immediately dangerous will be made safe and labelled with your permission. Annual servicing is also the cheapest way to avoid winter breakdowns, because worn seals and blocked condensate traps show up long before they stop the heating."
+  ]
+ },
+ "commercial-plumbing-support": {
+  "h2": "Commercial plumbing support in {town}",
+  "p": [
+   "Commercial plumbing in {town} covers the pipework, water heaters, toilets, urinals, kitchen sinks and drainage that keep a shop, office, café or communal block running. Most calls are leaks, blockages, failed water heaters or low pressure, and most of them stop the business working until they are fixed, so we triage by impact: water escaping, no toilets, then everything else.",
+   "For regular support we survey the site once and record the stopcock and isolation valves, the water heater and its controls, any thermostatic mixing valves, the backflow protection on catering equipment, and the access routes to risers and ceiling voids. That record means an engineer arriving at night knows where to turn the water off.",
+   "Commercial water systems also bring duties under the Water Supply (Water Fittings) Regulations 1999 and the HSE's legionella guidance. We flag dead legs, unused outlets and incorrect backflow devices as we find them, and quote to put them right separately."
+  ]
+ },
+ "dishwasher-plumbing-install": {
+  "h2": "Fitting a dishwasher in {town}",
+  "p": [
+   "A dishwasher needs three things: a cold feed with its own isolation valve, a waste connection with an air gap or anti-siphon loop, and a nearby switched socket or fused spur. In most {town} kitchens the cold feed comes off the sink supply with a washing machine valve, and the waste joins the sink trap through a spare spigot or a new trap.",
+   "Before we arrive, check the gap is 600 mm wide (or 450 mm for slimline models), measure the height under the worktop, and note whether the machine is freestanding or integrated. Integrated machines need the door panel fitted and aligned, which takes longer than sliding a freestanding machine into place.",
+   "We level the machine, secure it to the worktop, run a test cycle and check every joint for drips under pressure. Old machines can be disconnected and the pipework capped neatly if you are not reusing the space."
+  ]
+ },
+ "damp-proofing-prices": {
+  "h2": "What affects damp-proofing prices in {town}",
+  "p": [
+   "Damp-proofing prices in {town} depend first on the cause. Rising damp, penetrating damp and condensation all look like damp patches but need very different work, and many walls treated with an injected damp-proof course never had rising damp at all. So the price starts with a survey that finds the source before quoting.",
+   "For a genuine rising damp problem the cost depends on the length of wall treated, the wall thickness, whether old plaster must come off to above the tide mark, and the replastering specification. Penetrating damp is usually cheaper to fix at the source: a leaking gutter, failed pointing, a bridged cavity or ground levels too high against the wall.",
+   "Condensation is dealt with by ventilation and heating rather than chemicals: extractor fans in kitchens and bathrooms, trickle vents and sometimes a positive-input ventilation unit. We price each option separately so you can see what each one costs."
+  ]
+ },
+ "damp-proofing-service-cost": {
+  "h2": "How a damp-proofing job is costed in {town}",
+  "p": [
+   "A damp-proofing job in {town} is costed in stages: the survey, any opening-up needed to confirm the cause, the treatment itself, and making good afterwards. Showing those stages separately lets you see which part of the cost actually fixes the damp and which part restores the finish.",
+   "Our survey uses moisture readings at different heights, salts analysis where it helps, and a look at the outside of the building: gutters, downpipes, pointing, render, sills and the ground level against the wall. Many jobs end with an outside repair and a dehumidifier rather than an injection.",
+   "Where treatment is needed we specify the product, the area and the plaster system, and we leave a written record so a buyer or lender can see what was done. Landlords in particular need this when a tenant has reported damp and mould, so the response is documented."
+  ]
+ },
+ "acrylic-render-cost": {
+  "h2": "Acrylic render costs in {town}",
+  "p": [
+   "Acrylic render in {town} is a thin, through-coloured finish applied over a base coat and mesh, so it rarely needs painting and resists cracking better than traditional sand and cement. The cost is set mainly by the wall area, the scaffold needed to reach it, and the condition of the wall underneath.",
+   "Old, hollow or cracked render usually has to come off before a new system goes on, and that strip-out can be a large part of the job. Window reveals, sills, beads and corner details also add time, so two houses with the same wall area can be priced quite differently.",
+   "Colour choice does not usually change the price, but texture can: a 1.5 mm grain covers small defects better than a smooth finish. We give a written quote showing scaffold, preparation, base coat and topcoat separately, so you can compare like with like."
+  ]
+ },
+ "rendering-prices": {
+  "h2": "Comparing rendering prices in {town}",
+  "p": [
+   "Rendering prices in {town} vary with the system as much as the size of the house. Sand and cement render is cheapest to apply but usually needs painting and can crack; monocouche is through-coloured in one thick coat; silicone and acrylic thin-coat systems cost more but stay cleaner and flex better with the building.",
+   "Insulated render, where boards are fixed to the wall before rendering, costs much more but cuts heat loss through solid walls. It may need building regulations approval and can affect window sills, downpipes and the roof overhang, so we check those details in the survey.",
+   "When comparing quotes, check whether scaffold, removal of old render, new beads, sills and making good around fittings are included, and what guarantee comes with the system. Our quotes list each of those so the totals can be compared fairly."
+  ]
+ }
 }
