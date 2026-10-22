@@ -431,7 +431,7 @@ if ($acnBrand && function_exists('acnCities')):
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Based in Stockport — North West coverage</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Install, service &amp; certification for <?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?></li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-service packages for landlords &amp; FM teams</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed written quotes</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Free written quotes</li>
         </ul>
     </div>
 </section>
@@ -469,4 +469,28 @@ if ($acnBrand && function_exists('acnCities')):
     </div>
 </section>
 <?= function_exists('shopifyBuyButtonScript') ? shopifyBuyButtonScript() : '' ?>
+<?php
+// QM #156 under_800_words: brand-specific service notes by equipment family.
+$mfN = htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8');
+$mfFam = [
+  'fire-alarms' => "On a {$mfN} fire alarm system we test every detector and call point on a rolling schedule, so each device is tested at least once a year, check the panel's event log for faults and false alarms, measure the standby batteries under load and confirm the sounders reach the right sound levels. We follow BS 5839-1 for commercial premises and BS 5839-6 for homes and HMOs, and we leave a signed logbook entry after every visit.",
+  'emergency-lighting' => "For {$mfN} emergency lighting we carry out the monthly flick test and the annual full-duration discharge test, replace batteries and lamps that fail, and check that exit signs and escape routes are still lit to BS 5266-1. Each fitting is recorded in the logbook, so you can see what failed and what was replaced.",
+  'cctv' => "On {$mfN} CCTV we check every camera's view, focus and night-time image, the recorder's drives and how long footage is kept, the time stamp and the remote viewing app. We also review signage and data-protection settings with you, because recorded footage has to be handled under UK GDPR.",
+  'intruder-alarms' => "For {$mfN} intruder alarms we test each detector, door contact and the hold-up devices, check the panel and siren batteries, confirm signalling to the receiving centre where there is one, and review user codes. Work follows PD 6662 and BS EN 50131 so the system keeps its grade for insurance.",
+  'access-control' => "On {$mfN} access control we test readers, door locks, exit buttons and the green break-glass units, check the fire-alarm release, and tidy the user database so leavers' fobs stop working. Door hardware is checked at the same visit.",
+  'barriers' => "For {$mfN} barriers and gates we check the arm or leaf balance, the drive unit, the safety loops and photocells, the control board and battery backup, and the force settings on automatic gates. Every visit is recorded for the site's maintenance file.",
+  'heating' => "Gas work on {$mfN} heating appliances is carried out by Gas Safe registered engineers. A service covers combustion and flue checks, controls, pressure and safety devices, with a written record left for the landlord or owner.",
+  'electrical' => "On {$mfN} electrical equipment our electricians test and inspect to BS 7671, replace damaged parts with matching ones, and issue the right certificate or minor works form for the job, so you have a record for landlord, insurer or building control use.",
+];
+$mfLine = $mfFam[$primaryService] ?? ("We service and repair {$mfN} equipment to the relevant British Standard, use matching parts where they are available, and leave a written record of what we tested and what we changed at every visit.");
+$mfProd = array_slice(array_map(static fn($x) => htmlspecialchars(is_array($x) ? (string)($x['name'] ?? '') : (string)$x, ENT_QUOTES, 'UTF-8'), (array)$products), 0, 6);
+$mfProd = array_values(array_filter($mfProd));
+?>
+<section class="max-w-7xl mx-auto px-6 py-10">
+  <h2 class="text-2xl font-semibold text-black">Looking after <?= $mfN ?> equipment</h2>
+  <p class="mt-3 text-zinc-700 leading-relaxed"><?= $mfLine ?></p>
+  <?php if ($mfProd): ?><p class="mt-3 text-zinc-700 leading-relaxed">The <?= $mfN ?> products we are asked about most include <?= implode(', ', $mfProd) ?>. If you know the model, send us a photo of the rating plate or panel label. It helps us bring the right parts and software on the first visit.</p><?php endif; ?>
+  <p class="mt-3 text-zinc-700 leading-relaxed">Before we visit, tell us roughly how old the <?= $mfN ?> equipment is, whether it is still under the installer's warranty, any fault codes or messages it shows, and who holds the engineer or admin codes. If the original installer has gone out of business we can usually take over the system. If parts are no longer made, we will say so in writing and quote for a compatible replacement instead of a repair that will not last.</p>
+  <p class="mt-3 text-zinc-700 leading-relaxed">We cover <?= $mfN ?> work from Stockport SK2 across Greater Manchester, Cheshire and the North West, with a written quote before any chargeable work. Call 07517 806082 or email icomplypropertyservices@gmail.com.</p>
+</section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

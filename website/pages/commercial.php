@@ -9,7 +9,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'Commercial & Facilities Management | Fire Safety & Multi-Site';
 $metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Written quotes for multi-site portfolios.';
 $metaKeywords = 'commercial fire risk assessment, multi-site compliance, commercial fire alarms, AOV, nurse call, CCTV, access control, commercial fit out, FM North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/commercial.php');
 
 $services = getServices();
@@ -92,7 +92,7 @@ $trust = [
 
 $howItWorks = [
     ['1', 'Map the estate', 'Share sites, system types, panel brands and current cert expiry dates.'],
-    ['2', 'Agree the programme', 'We quote install, remedial or planned maintenance — fixed price after scope.'],
+    ['2', 'Agree the programme', 'We quote install, remedial or planned maintenance — written quote after scope.'],
     ['3', 'Deliver & document', 'Engineers attend, complete works and issue audit-ready certificates.'],
 ];
 

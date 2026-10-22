@@ -1,3 +1,4 @@
+import { keywordTwinIntent } from "../lib/keyword-twin.js";
 import { scrubMeta } from "../lib/scrub-meta.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
@@ -13,7 +14,8 @@ import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
-import { applyMoneyCtr } from "../lib/money-ctr.js";
+import { applyMoneyCtr, moneyCtrPage } from "../lib/money-ctr.js";
+import { applySeoBasics } from "../lib/seo-basics.js";
 import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
@@ -54,7 +56,7 @@ export function ctrDescription(subject, town, slug, gas) {
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
   for (const d of [
-    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Free written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
   ]) if (d.length <= 160) return d;
@@ -110,8 +112,17 @@ const SERVICE_HUB_ALIAS = {
   "fra": "/pages/services/fire-risk-assessments",
   "fire-risk-assessment": "/pages/services/fire-risk-assessments",
   "ev-charging": "/pages/services/ev-chargers",
+  // GSC 21 Oct (B3): legacy service paths with no hub go straight to the live hub.
+  "solar-thermal": "/pages/services/heating",
+  "ground-source-heat-pumps": "/pages/services/heating",
+  "air-source-heat-pumps": "/pages/services/heating",
+  "heat-pumps": "/pages/services/heating",
+  "battery-storage": "/pages/services/electrical",
+  "solar-pv": "/pages/services/electrical",
 };
 import { securityJobRedirect } from "../lib/security-dual-ring.js";
+import { finishPage } from "../lib/page-finish.js";
+import { withAnalytics } from "../lib/analytics.js";
 import { SECURITY_NEW_INTENTS, securityTownCopy } from "../lib/security-town-copy.js";
 
 const RESERVED = new Set([
@@ -292,7 +303,7 @@ export function renderTownPage(input) {
       intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Certificates and reports emailed after the visit",
       ],
       gas: serviceSlug === "gas-systems",
@@ -309,10 +320,10 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
@@ -332,7 +343,7 @@ export function renderTownPage(input) {
         intro: "",
         focus: [
           "Same-day and next-day slots where available",
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
         gas,
@@ -361,7 +372,7 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Fixed written quote before work starts",
+          "Free written quote before work starts",
           "Certificates and reports emailed after the visit",
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
@@ -412,8 +423,9 @@ export function renderTownPage(input) {
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
-  const title = buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug);
-  const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
+  const twin = kind === "keyword" ? keywordTwinIntent(input.keyword, subject, place.name) : null;
+  const title = twin ? twin.title : (buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug));
+  const description = twin ? twin.desc : ctrDescription(subject, place.name, ctrSlug, ctrGas);
   // Plastering / plasterboard / dry-lining pages show their own credited photo.
   const plasterText = kind === "manufacturer" ? "" : `${path} ${serviceSlug || ""}`;
   const imageSlug = /dry-?lining/.test(plasterText) ? "dry-lining" : /plaster|skim/.test(plasterText) ? "plastering" : (IMAGE_SLUG[serviceSlug] || serviceSlug);
@@ -480,12 +492,12 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a written quote.`,
     ]);
   }
   if (facts) {
@@ -614,7 +626,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(twin ? `${subject} in ${place.name}${twin.h1Tail}` : h1)}</h1>
 ${images.html}
 <article id="local-copy">
 ${proseHtml}
@@ -693,11 +705,11 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(withAnalytics(withContactWidgets(finishLinks(scrubMeta(rendered.html), rendered.path || ""))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      "cache-control": "public, max-age=3600",
+      ...PAGE_CACHE,
       "x-robots-tag": rendered.robots,
     },
   });
@@ -744,7 +756,7 @@ async function loadCatalogue(origin) {
 const PLACE_ALIAS_BARRIERS = {"trafford":"hale-trafford","tameside":"hyde-tameside","shaw":"shaw-oldham","milnrow":"rochdale","pendlebury":"swinton-salford","cadishead":"irlam","chorlton":"manchester","withington":"manchester","crosby":"crosby-sefton","ince":"ince-in-makerfield","thornton-cleveleys":"cleveleys","ainsdale":"southport","ambleside":"kendal","appleton":"warrington","birchwood":"warrington","burscough":"ormskirk","carnforth":"lancaster","clayton-le-moors":"accrington","cockermouth":"workington","culcheth":"warrington","dalton-in-furness":"barrow-in-furness","frodsham":"runcorn","garstang":"preston-preston","halton":"runcorn","handforth":"wilmslow","helsby":"runcorn","holmes-chapel":"crewe","hoylake":"wallasey","keswick":"workington","kirkham":"blackpool","longridge":"preston-preston","maryport":"workington","millom":"barrow-in-furness","penketh":"warrington","rainford":"st-helens-st-helens","risley":"warrington","rossendale":"rawtenstall","shevington":"wigan","stockton-heath":"warrington","tarporley":"chester","tarvin":"chester","wesham":"blackpool","whalley":"blackburn-blackburn-with-darwen","windermere":"kendal"};
 const PLACE_ALIAS_AOV = {"worsley":"walkden","wythenshawe":"manchester","pendlebury":"salford","cadishead":"eccles","trafford":"hale-trafford","chorlton":"manchester","withington":"manchester","tameside":"hyde-tameside","shaw":"shaw-oldham"};
 
-function placeAliasRedirect(path) {
+export function placeAliasRedirect(path) {
   let m = path.match(/^\/pages\/(barriers|aov)\/([a-z0-9-]+)$/);
   if (!m) return null;
   const family = m[1];
@@ -757,6 +769,8 @@ function placeAliasRedirect(path) {
   return `/pages/${family}/${dest}`;
 }
 
+// Retired keyword slugs (banned wording): every town URL goes straight to the replacement hub.
+const RETIRED_KEYWORD = { "extension-fixed-price-package": "/pages/keywords/extension-building-package-quote" };
 // Trade head-term keywords (3fae2db). netlify.toml redirects never run for
 // /pages/keywords/:keyword/:town because this edge function serves that path
 // first, so the aliases live here. One hop: local towns go to the trade town
@@ -776,8 +790,9 @@ export function tradeSlugRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
-  if (GSC_KEEP.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (m && RETIRED_KEYWORD[m[1]]) return RETIRED_KEYWORD[m[1]];
+  if (GSC_KEEP.has(path)) return null;
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
@@ -790,35 +805,112 @@ export function nonGmMatrixRedirect(path) {
   if (m) return isLocalTown(m[1]) ? null : "/pages/areas";
   m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isLocalTown(m[2])) return null;
-  return `/pages/services/${m[1]}`;
+  return SERVICE_HUB_ALIAS[m[1]] || `/pages/services/${m[1]}`;
+}
+
+// GSC 21 Oct (§5): 616 first-load 5xx on town pages (cold renders during crawl
+// bursts). Rendered pages are cached at Netlify's edge for a day and served
+// stale while they refresh, so most crawls never hit a cold render. If a render
+// still fails or runs long, the response is a 503 with Retry-After (not
+// cached), never another page's HTML.
+const PAGE_CACHE = {
+  "cache-control": "public, max-age=3600",
+  "netlify-cdn-cache-control": "public, s-maxage=86400, stale-while-revalidate=604800, durable",
+};
+const RENDER_BUDGET_MS = 8000;
+const APEX = "https://icomplypropertyservices.co.uk";
+
+export function fallbackHubPath(path) {
+  let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/keywords/${m[1].split("--")[0]}`;
+  m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
+  if (m) return "/pages/keywords";
+  m = path.match(/^\/pages\/(manufacturers|jobs)\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/${m[1]}/${m[2]}`;
+  m = path.match(/^\/pages\/(areas)\/[a-z0-9-]+$/);
+  if (m) return "/pages/areas";
+  m = path.match(/^\/pages\/([a-z0-9-]+)\/[a-z0-9-]+$/);
+  if (m) return `/pages/services/${m[1]}`;
+  return "/pages/services";
+}
+
+async function fallbackResponse(url, path) {
+  // SEO 21 Oct (fix 4): never serve another page's HTML (and canonical) at this
+  // URL. A 503 with Retry-After makes Google retry later; nothing is canonicalised away.
+  return new Response("Temporarily unavailable, please retry shortly.", {
+    status: 503,
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "retry-after": "60",
+      "cache-control": "no-store",
+      "netlify-cdn-cache-control": "no-store",
+    },
+  });
 }
 
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
   // /shop is a directory hub: one 301 to the slash form the static file lives at.
-  if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, url.origin).toString(), 301);
+  if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, APEX).toString(), 301);
   if (url.pathname === "/shop/") return context.next(); // never strip the slash here (would loop)
-  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
-  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
-  if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
-    return Response.redirect(new URL(path + url.search, url.origin).toString(), 301);
+  if (path.startsWith("/matrix-sitemap")) return renderMatrix(request, context);
+  let timer;
+  try {
+    const res = await Promise.race([
+      renderMatrix(request, context),
+      new Promise((resolve) => {
+        timer = setTimeout(() => resolve(null), RENDER_BUDGET_MS);
+      }),
+    ]);
+    if (res && res.status < 500) return res;
+    return fallbackResponse(url, path);
+  } catch {
+    return fallbackResponse(url, path);
+  } finally {
+    clearTimeout(timer);
   }
+};
+
+async function renderMatrix(request, context) {
+  const url = new URL(request.url);
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+  // GSC 21 Oct: every redirect is ONE hop. This function runs before the
+  // netlify.toml www->apex rule and before the _redirects/toml 301s, so
+  // redirects from here always land on the apex, and a trailing-slash or www
+  // URL goes straight to wherever the clean apex URL ends up.
+  const origin = APEX;
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
-    return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(aliasTo, origin).toString(), 301);
   }
   const securityTo = securityJobRedirect(path);
   if (securityTo) {
-    return Response.redirect(new URL(securityTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(securityTo, origin).toString(), 301);
   }
   const tradeTo = tradeSlugRedirect(path);
   if (tradeTo) {
-    return Response.redirect(new URL(tradeTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(tradeTo, origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
-    return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
+    return Response.redirect(new URL(matrixTo, origin).toString(), 301);
+  }
+  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
+  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
+  const wwwHost = url.host !== new URL(APEX).host;
+  if (path !== "/" && !path.startsWith("/matrix-sitemap") && (url.pathname !== path || wwwHost)) {
+    const clean = new URL(path + url.search, origin);
+    try {
+      const probe = await fetch(clean, { redirect: "manual" });
+      const loc = probe.headers.get("location");
+      if (probe.status >= 300 && probe.status < 400 && loc) {
+        return Response.redirect(new URL(loc, origin).toString(), 301);
+      }
+    } catch {
+      // fall through to the plain canonical redirect
+    }
+    return Response.redirect(clean.toString(), 301);
   }
   // AOV, barriers and fire-family town HTML is exported. Do not replace it
   // with the Greater Manchester matrix renderer.
@@ -886,7 +978,7 @@ export default async (request, context) => {
   if (b1) {
     const page = renderBatch1(b1);
     if (page) {
-      return new Response(withContactWidgets(scrubMeta(page.html)), {
+      return new Response(withAnalytics(withContactWidgets(finishLinks(scrubMeta(page.html), path))), {
         status: 200,
         headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
       });
@@ -944,8 +1036,8 @@ export default async (request, context) => {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
       }
       if (hub.status === 404) {
-        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
-        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+        // GSC 21 Oct (A3): no 410 + noindex. One hop to the live keyword index.
+        return Response.redirect(new URL("/pages/keywords", url.origin).toString(), 301);
       }
     }
     if (!rendered) {
@@ -982,15 +1074,15 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
+  return new Response(withAnalytics(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishLinks(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) })), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      "cache-control": "public, max-age=3600",
+      ...PAGE_CACHE,
       "x-robots-tag": rendered.robots,
     },
   });
-};
+}
 
 export const config = {
   path: [
@@ -1022,3 +1114,12 @@ export const config = {
     "/pages/packages/hmo-fire-package/",
   ],
 };
+
+// QM #156 (broken_internal_link): a sibling /pages/ link that would 301 (retired keyword, out-of-area
+// town, trade alias) becomes plain text, then the shared under-H1 CTA / breadcrumb / photo pass runs.
+function finishLinks(html, path) {
+  const out = String(html).replace(/<a\b[^>]*\bhref="(\/pages\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g, (m0, href, text) => {
+    try { return (nonGmMatrixRedirect(href) || tradeSlugRedirect(href)) ? text : m0; } catch { return m0; }
+  });
+  return finishPage(out, path);
+}

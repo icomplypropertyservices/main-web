@@ -53,7 +53,18 @@ function icomplyCtrTitle(string $topic, string $town, string $slug, string $svcS
             return $o;
         }
     }
-    return icomplyCtrCut($topic . ' ' . $town, 50) . ' | iComply';
+    // Never drop the town: shorten the topic instead (strip " by …"/" and …" tails, then word-cut).
+    $short = trim(preg_replace('/\s+(by|for|with|from)\s+.*$/i', '', $topic));
+    foreach ([$short . ' in ' . $town . ' | iComply', $short . ' ' . $town . ' | iComply', $short . ' ' . $town] as $o) {
+        if ($short !== '' && mb_strlen($o) <= 60) {
+            return $o;
+        }
+    }
+    $room = 60 - mb_strlen(' ' . $town);
+    if ($room >= 12) {
+        return icomplyCtrCut($short !== '' ? $short : $topic, $room) . ' ' . $town;
+    }
+    return icomplyCtrCut($topic . ' ' . $town, 60);
 }
 
 function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSlug = ''): string
@@ -63,11 +74,36 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
     $who = icomplyCtrIsGas($slug, $svcSlug)
         ? ' Same/next-day visits, carried out by Gas Safe registered engineers.'
         : ' Same/next-day engineers from our Stockport team.';
-    $tail = ' Fixed written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
+    $tail = ' Free written quote, certificates emailed. Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.';
     foreach ([$lead . $who . $tail, $lead . $who . ' Call or WhatsApp ' . ICOMPLY_CTR_PHONE . '.', $lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.'] as $d) {
         if (mb_strlen($d) <= 160) {
             return $d;
         }
     }
     return icomplyCtrCut($lead . ' Same/next-day. Call ' . ICOMPLY_CTR_PHONE . '.', 160);
+}
+
+/**
+ * QM #158: PAT / asbestos / legionella have a service town URL (/pages/{slug}/{town}) and a keyword twin
+ * (/pages/keywords/{slug}/{town}). The keyword twin gets its own cost/report intent. Returns null for other keywords.
+ */
+function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $town): ?array
+{
+    $labels = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports',
+        'first-fix-electrical' => 'Costs & What Is Included', 'bathroom-fitting' => 'Costs & Design Options', 'kitchen-fitting' => 'Costs & Design Options',
+        'property-renovation' => 'Costs & Project Stages', 'damp-proofing' => 'Costs & Treatment Options', 'bs-5306-extinguisher-service-cost' => 'Prices & What Affects Them'];
+    if (!isset($labels[$keywordSlug])) {
+        return null;
+    }
+    $l = $labels[$keywordSlug];
+    $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day Engineers';
+    if (strlen($title) > 70) {
+        $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day';
+    }
+    return [
+        'label' => $l,
+        'title' => $title,
+        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': ' . strtolower($l) . ' explained, and how to book. Same/next-day slots. Call or WhatsApp 07517 806082.', 160),
+        'h1_tail' => ': ' . strtolower($l),
+    ];
 }

@@ -1,0 +1,159 @@
+#!/usr/bin/env python3
+"""After export: a page only shows photos owned by its own service family (QM #156 img_reused_across_families).
+Page family comes from the URL, using data/service-image-families.json. An image's owner family is the family
+with the most pages showing it. On a page of another family, that <img>/<source> switches to the family's own
+credited Commons photo (assets/images/families/<family>-photo.jpg, credits in data/hero-image-credits.json).
+Pages with no family and brand/logo images are left alone."""
+import os, re, sys, json, collections
+def html_esc(s): return str(s).replace("&", "&amp;").replace("<", "&lt;")
+dist = sys.argv[1] if len(sys.argv) > 1 else 'dist'
+root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+fam = json.load(open(os.path.join(root, 'data/service-image-families.json')))['families']
+man = json.load(open(os.path.join(root, 'data/image-manifest.json')))
+cred = {c['file']: c for c in json.load(open(os.path.join(root, 'data/hero-image-credits.json')))}
+dir2fam = {d: f for f, ds in fam.items() for d in ds}
+famkeys = sorted(dir2fam, key=len, reverse=True)
+def page_family(u):
+    s = u.lower()
+    for k in famkeys:
+        if k.replace('-photo', '') in s: return dir2fam[k]
+    for f in fam:
+        if f in s: return f
+    if 'aov' in s or 'smoke' in s: return 'fire'
+    if 'roof' in s: return 'roofing'
+    return None
+ALT = {'fire': 'Fire alarm manual call point', 'gas': 'Wall-mounted gas boiler in a kitchen', 'security': 'CCTV cameras on a building',
+       'electrical': 'Consumer unit with RCD protection', 'building': 'Building under renovation with scaffolding', 'compliance': 'Terraced rented houses on a residential street'}
+fp_photo = {}
+for f in ALT:
+    rel = f'/assets/images/families/{f}-photo.jpg'
+    v = man[rel]['variants']; c = cred.get(rel, {})
+    fp_photo[f] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[f],
+                       credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+OPT2SRC = {}
+for _k, _v in man.items():
+    for _x in _v.get('variants', []):
+        OPT2SRC.setdefault(_x['webp'].rsplit('/', 1)[1].split('-')[0], _k)
+def cross_photo(h, u):
+    rel = f'/assets/images/families/{h}-photo-{u}.jpg'
+    if rel not in man: return fp_photo[h]
+    v = man[rel]['variants']; c = cred.get(rel, {})
+    return dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[h],
+                credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+# SEO 22 Oct: services where the family photo is a loose fit get their own credited Commons photo.
+SVC_ALT = {'landscaping': 'Planted garden border with bark mulch', 'building-surveys': 'Thermal imaging survey of a church building', 'facilities-management': 'Maintenance worker servicing a washroom'}
+for sv in SVC_ALT:
+    rel = f'/assets/images/families/{sv}-photo.jpg'
+    if rel in man:
+        v = man[rel]['variants']; c = cred.get(rel, {})
+        fp_photo[sv] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=SVC_ALT[sv],
+                            credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+def caption(ph):
+    return ('<span class="pf-credit fam-credit" style="display:block;font-size:.8rem;color:#555555;margin:.3rem 0 .6rem">'
+            + ph['credit'].replace('&', '&amp;').replace('<', '&lt;') + ' · <a href="/pages/photo-credits">Photo credits</a></span>')
+IMG = re.compile(r'<(img|source)\b[^>]*>', re.I)
+SRC = re.compile(r'\b(src|data-src)="([^"]+)"', re.I)
+SRCSET = re.compile(r'\bsrcset="([^"]+)"', re.I)
+def key(s):
+    s = s.split('?')[0].split('#')[0]
+    s = re.sub(r'^https?://[^/]+', '', s)
+    return s if s.startswith('/assets/') and 'brand/' not in s and 'logo' not in s and '/families/' not in s else None
+def tag_keys(t):
+    ks = [key(m.group(2)) for m in SRC.finditer(t)]
+    for m in SRCSET.finditer(t):
+        ks += [key(p.strip().split(' ')[0]) for p in m.group(1).split(',') if p.strip()]
+    return {k for k in ks if k}
+files = []
+for r, _, fs in os.walk(dist):
+    if '/assets' in r: continue
+    for f in fs:
+        if f.endswith(('.php', '.html')):
+            fp = os.path.join(r, f); u = '/' + os.path.relpath(fp, dist).rsplit('.', 1)[0]
+            u = re.sub(r'/index$', '', u) or '/'
+            pf = page_family(u)
+            # The hero service photo's family wins over URL words (e.g. a windows-doors page whose URL says fire-door).
+            hm = None
+            _raw = open(fp, encoding='utf-8', errors='replace').read()
+            _b = _raw.find('<body')
+            _fig = re.search(r'<figure\b.*?</figure>', _raw[_b:] if _b >= 0 else '', re.S | re.I)  # hero figure only, never og:image/head
+            if _fig:
+                hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _fig.group(0))
+                if not hm:
+                    _o = re.search(r'/assets/images/opt/([0-9a-f]{12})-\d+\.webp', _fig.group(0))
+                    _src = OPT2SRC.get(_o.group(1), '') if _o else ''
+                    hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _src)
+            hf = dir2fam.get(hm.group(1)) if hm else None
+            hf = hf if hf in ALT else None
+            _sv = hm.group(1) if hm and hm.group(1) in SVC_ALT else next((k for k in SVC_ALT if k in u), None)
+            if pf is None and hf:
+                files.append((fp, hf, False, _sv)); continue   # no family in the URL: follow the hero figure (does not count for owners)
+            if pf in ALT and hf and hf != pf:
+                files.append((fp, (hf, pf), False, _sv)); continue   # URL and hero families disagree: hero-family photo, cropped for this URL family
+            if pf in ALT: files.append((fp, pf, True, _sv))
+use = collections.defaultdict(collections.Counter)
+for fp, pf, own, _ in files:
+    if not own: continue
+    s = open(fp, encoding='utf-8', errors='replace').read()
+    for m in IMG.finditer(s):
+        for k in tag_keys(m.group(0)): use[k][pf] += 1
+owner = {k: c.most_common(1)[0][0] for k, c in use.items()}
+changed = tags = 0
+for fp, pf, own, sv in files:
+    s = open(fp, encoding='utf-8', errors='replace').read(); n = [0]
+    cross = isinstance(pf, tuple)
+    ph = fp_photo.get(sv) or (cross_photo(*pf) if cross else fp_photo[pf])
+    def fix(m):
+        t = m.group(0)
+        ks = tag_keys(t)
+        if not ks or (not cross and not any(owner.get(k) not in (None, pf) for k in ks)): return t
+        n[0] += 1
+        if m.group(1).lower() == 'source':
+            return SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
+        t = SRC.sub(lambda x: f'{x.group(1)}="{ph["src"]}"', t)
+        t = SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
+        t = re.sub(r'\balt="[^"]*"', f'alt="{ph["alt"]}"', t, count=1)
+        t = re.sub(r'\s(width|height)="\d+"', '', t)
+        return t[:-1].rstrip('/').rstrip() + f' width="1280" height="823" data-credit="{ph["credit"]}">' + '<!--famcap-->'
+    if own:
+        s2 = IMG.sub(fix, s)
+    else:
+        # family-from-hero (no URL family, or URL/hero disagree): rewrite the hero <figure> only, never body/og images
+        _b = s.find('<body'); _f = re.search(r'<figure\b.*?</figure>', s[_b:], re.S | re.I) if _b >= 0 else None
+        s2 = s if not _f else s[:_b + _f.start()] + IMG.sub(fix, _f.group(0)) + s[_b + _f.end():]
+    # Visible credit under each switched photo: replace the figure's own caption if it has one, else add a line.
+    def cap(mm):
+        return mm.group(1) + '<figcaption style="font-size:.8rem;color:#555555;margin-top:.3rem">' + caption(ph)[caption(ph).index('>') + 1:-7] + '</figcaption>'
+    s2 = re.sub(r'(<!--famcap-->(?:(?!</figure>)[\s\S]){0,400}?)<figcaption\b[^>]*>[\s\S]*?</figcaption>', lambda mm: cap(mm).replace('<!--famcap-->', '', 1), s2)
+    s2 = s2.replace('<!--famcap-->', caption(ph))
+    if n[0]:
+        open(fp, 'w', encoding='utf-8').write(s2); changed += 1; tags += n[0]
+print(f'family-images: {len(files)} family pages, {changed} pages / {tags} image tags switched to own-family photos')
+# QM #157: FRA-adjacent pages (evacuation strategy guides, HMO / landlord packs) show the second credited FRA photo,
+# so the main FRA photo is not shared across them and the FRA service pages.
+FRA2_PAGES = re.compile(r'/pages/(keywords/evacuation-strategy-(document|review)(/|$)|jobs/(landlord-bundle|hmo-occupancy)$)')
+_a, _b = '/assets/images/services/fire-risk-assessments.jpg', '/assets/images/services/fire-risk-assessments-2.jpg'
+if _a in man and _b in man:
+    _swap = {_a: _b}
+    for _x, _y in zip(man[_a]['variants'], man[_b]['variants']): _swap[_x['webp']] = _y['webp']
+    for _x in man[_a]['variants']: _swap.setdefault(_x['webp'], man[_b]['variants'][-1]['webp'])
+    _pat = re.compile('|'.join(re.escape(k) for k in sorted(_swap, key=len, reverse=True)))
+    _cb = (cred.get(_b) or {})
+    _n = 0
+    for r, _, fs in os.walk(dist):
+        if '/assets' in r: continue
+        for f in fs:
+            if not f.endswith(('.php', '.html')): continue
+            fp = os.path.join(r, f); u = re.sub(r'/index$', '', '/' + os.path.relpath(fp, dist).rsplit('.', 1)[0])
+            if not FRA2_PAGES.search(u): continue
+            s = open(fp, encoding='utf-8', errors='replace').read(); s2 = _pat.sub(lambda m: _swap[m.group(0)], s)
+            if s2 != s:
+                _ca = cred.get(_a) or {}
+                if _ca.get('artist') and _cb.get('artist'):   # the visible credit follows the photo
+                    for _old, _new in ((_ca['artist'], _cb['artist']), (_ca.get('license', ''), _cb.get('license', ''))):
+                        if _old: s2 = s2.replace(html_esc(_old), html_esc(_new)).replace(_old, html_esc(_new))
+                if _cb.get('artist') and html_esc(_cb['artist']) not in s2:
+                    _line = ('<div class="pf-credit" style="font-size:.8rem;color:#555555;margin:1rem 0">Photo: ' + html_esc(_cb['artist']) + ', '
+                             + html_esc(_cb.get('license', '')) + ', via Wikimedia Commons · <a href="/pages/photo-credits">Photo credits</a></div>')
+                    s2 = re.sub(r'(</main>|<footer\b)', lambda m: _line + m.group(1), s2, count=1)
+                open(fp, 'w', encoding='utf-8').write(s2); _n += 1
+    print(f'family-images: {_n} FRA-adjacent pages use the second FRA photo')

@@ -21,6 +21,8 @@ $siteDefaults = [
     // GA4 property. Loaded only by the consent-gated loader in includes/header.php
     // (never hardcoded in <head>). GA_MEASUREMENT_ID env still overrides.
     'GA_MEASUREMENT_ID' => 'G-RN048B7861',
+    // Second GA4 property, configured alongside GA_MEASUREMENT_ID by the same single gtag.js loader.
+    'GA_MEASUREMENT_ID_2' => 'G-G8NTX4JMC9',
     'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)
@@ -59,6 +61,7 @@ $envMap = [
     'ADMIN_USER' => 'ADMIN_USER',
     'ADMIN_PASS' => 'ADMIN_PASS',
     'GA_MEASUREMENT_ID' => 'GA_MEASUREMENT_ID',
+    'GA_MEASUREMENT_ID_2' => 'GA_MEASUREMENT_ID_2',
     'GTM_CONTAINER_ID' => 'GTM_CONTAINER_ID',
     'AW_CONVERSION_ID' => 'AW_CONVERSION_ID',
     'GOOGLE_SITE_VERIFICATION' => 'GOOGLE_SITE_VERIFICATION',
@@ -729,7 +732,7 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             $row['focus_points'] = [
                 'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
                 'Same-day and next-day slots where available',
-                'Fixed written quote from our Stockport team',
+                'Free written quote from our Stockport team',
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
@@ -1553,7 +1556,7 @@ function serviceImageUrl(string $slug): string {
             return url($rel);
         }
     }
-    return url('/assets/images/services/fire-alarms.jpg');
+    return url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**
@@ -1565,7 +1568,7 @@ function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
     if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
         return url($rel);
     }
-    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+    return $serviceSlug !== '' ? serviceImageUrl($serviceSlug) : url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**

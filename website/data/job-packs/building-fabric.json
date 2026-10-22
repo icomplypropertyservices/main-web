@@ -32,7 +32,7 @@
         "Access chosen before the repair price",
         "Unsafe climbs refused",
         "A drone is not a repair",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -69,7 +69,7 @@
         "Build-up named",
         "Perimeters sealed",
         "Sound levels measured, not assumed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -106,7 +106,7 @@
         "Vent path checked, not just the grille",
         "Buried vents called out",
         "Suspended floors are not sealed up",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -143,7 +143,7 @@
         "Mitres that can move",
         "Fixed into the lining",
         "Profile agreed before we cut a whole room",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -180,7 +180,7 @@
         "Lining saved if it is sound",
         "Profile matched",
         "A rotten lining is not hidden with trim",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -217,7 +217,7 @@
         "No sanding of textured coatings",
         "Loose texture is overboarded",
         "Skim versus board is written in the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -254,7 +254,7 @@
         "Old coating left undisturbed",
         "New level explained",
         "Edges and lights allowed for",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -291,7 +291,7 @@
         "Courses set out first",
         "Cut while the coat will take a line",
         "Priced separately from a plain float",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -328,7 +328,7 @@
         "Refixed into structure",
         "Broken parts replaced",
         "Unsafe gaps are reported, not ignored",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -365,7 +365,7 @@
         "System named before work starts",
         "Ground line detailed",
         "A blocked drain is not tanked over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -402,7 +402,7 @@
         "New bead set above the DPC",
         "Bridged render cut back",
         "Priced as a detail, not a new elevation",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -439,7 +439,7 @@
         "DPC left unbridged",
         "High ground levels quoted separately",
         "Not sold as a damp-proof treatment",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -476,7 +476,7 @@
         "Scribed to the alcove",
         "Fixings into structure",
         "Load agreed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -513,7 +513,7 @@
         "Lintel specified first",
         "Threshold and ventilation flagged",
         "Supply and building work split on the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -550,7 +550,7 @@
         "Door left shutting",
         "Rotten frames replaced rather than re-latched",
         "Not a bin-cleaning visit",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -587,7 +587,7 @@
         "Agent's list",
         "Fire doors and leaks named properly",
         "Not sold as a fire risk assessment",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -624,7 +624,7 @@
         "Set-out to an agreed line",
         "Lintels specified, not guessed",
         "Load-bearing walls only with an engineer's design",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -661,7 +661,7 @@
         "Joints taped",
         "Beads on",
         "Not described as paint-ready",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -698,7 +698,7 @@
         "Hatches at valves",
         "Leaks are not boxed in",
         "Fire rating only when specified",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -735,7 +735,7 @@
         "Opening propped before bricks come out",
         "Curve rebuilt, not just pointed",
         "Failed lintel behind the arch is called out",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -772,7 +772,7 @@
         "Cut out failed bricks only",
         "Colour and size matched as closely as stock allows",
         "Mortar matched to the existing joint",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -809,7 +809,7 @@
         "Local rebuild of loose masonry",
         "Movement flagged instead of covered",
         "Photos with the written POA",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -846,7 +846,7 @@
         "Plain-English priorities",
         "Not a valuation",
         "Not sold as a chartered survey",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -883,7 +883,7 @@
         "Cause checked before we repair",
         "Photos of the remedial",
         "Warranty claims are not our paperwork",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -920,7 +920,7 @@
         "Buildings and trades named",
         "Reactive and planned separated",
         "No open-ended rebuild promise",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -957,7 +957,7 @@
         "Measured to the alcove",
         "Damp external walls called out",
         "Sliding gear sized to the doors",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -994,7 +994,7 @@
         "Leak stopped first",
         "Only failed timber replaced",
         "Wet voids are not boarded shut",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1031,7 +1031,7 @@
         "Structural work only to a design",
         "Rot chased to sound timber",
         "Joinery is a different visit",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1068,7 +1068,7 @@
         "Tray and stop-ends checked",
         "Weeps put back so the cavity drains",
         "Not treated as rising damp by default",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1105,7 +1105,7 @@
         "Joints taped",
         "Movement is not caulked",
         "A map of cracks may need a skim, not a dab",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1142,7 +1142,7 @@
         "Joists checked",
         "Grid when the line needs it",
         "Loft insulation put back",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1179,7 +1179,7 @@
         "Hangers into sound structure",
         "Drop agreed against headroom",
         "Hatches and lights planned",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1216,7 +1216,7 @@
         "Cause of the crack checked",
         "Soft boards come down",
         "Joists looked at before a skim over a sag",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1253,7 +1253,7 @@
         "Leak stopped first",
         "Tile type matched",
         "Bent grid noted",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1290,7 +1290,7 @@
         "Diagnosis before any drilling",
         "Not used for condensation or leaks",
         "Replaster called out when salts are in the coat",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1327,7 +1327,7 @@
         "Flue and pot looked at",
         "Salts are not called rising damp",
         "Injection is not the reflex",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1364,7 +1364,7 @@
         "Stack inspected from proper access",
         "Pots reset only if the flaunching can hold them",
         "Leaning stacks are not 'just pointed'",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1401,7 +1401,7 @@
         "Split lead is renewed, not painted",
         "Soakers checked under the tiles",
         "Cement fillets removed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1438,7 +1438,7 @@
         "Lead and flaunching diagnosed separately",
         "Cement fillets are not the repair",
         "Failed stacks handed to brickwork",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1475,7 +1475,7 @@
         "Joints raked on all weathersides",
         "Blown bricks separated from the pointing price",
         "Access priced honestly",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1512,7 +1512,7 @@
         "Window still operates",
         "Rain leaks are not insulated over",
         "Thin product for a narrow reveal",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1549,7 +1549,7 @@
         "The cold detail is marked",
         "Leaks ruled out first",
         "Ventilation still matters",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1586,7 +1586,7 @@
         "Booked around trading hours",
         "Electrical faults passed to electricians",
         "Make-good agreed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1623,7 +1623,7 @@
         "Access limits written down",
         "Not a valuation",
         "Priorities, not a tender",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1660,7 +1660,7 @@
         "Set out from the drawing",
         "Fire and acoustic boards as specified",
         "Second side closed after services",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1697,7 +1697,7 @@
         "Hours agreed around the building",
         "Fire lines are not ordinary board",
         "Dust and protection are in the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1734,7 +1734,7 @@
         "Manager's list only",
         "Fire doors not planed or propped",
         "Decoration is a separate instruction",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1771,7 +1771,7 @@
         "Lamps and failed fittings",
         "Circuit faults passed to an electrician",
         "Emergency systems are not guessed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1808,7 +1808,7 @@
         "Opening measured properly",
         "Threshold set to shed water",
         "Rotten sills found before the new door is trapped",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1845,7 +1845,7 @@
         "Sill, seal and paving separated",
         "Door still latches",
         "A rubber is not sold if the sill has failed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1882,7 +1882,7 @@
         "Extract ducts outside",
         "DPC injection is not the mould treatment",
         "Occupant habits stated honestly",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1919,7 +1919,7 @@
         "Cause is on the same quote",
         "Not sold as a dryness certificate",
         "The wrong stain is not washed into a cure",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1956,7 +1956,7 @@
         "Profile matched or the difference explained",
         "Loose lengths refixed",
         "Polystyrene is not slipped in as plaster",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -1993,7 +1993,7 @@
         "Storage, not a bedroom",
         "Door left shutting",
         "Electrics kept as electrics",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2030,7 +2030,7 @@
         "Radius checked before the board",
         "Studs close enough",
         "Too-tight curves are refused",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2067,7 +2067,7 @@
         "Access to services kept",
         "Boilers ventilated",
         "Built to the space",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2104,7 +2104,7 @@
         "Leak confirmed stopped",
         "Only failed finishes stripped",
         "Timber is not boxed in wet",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2141,7 +2141,7 @@
         "Causes separated",
         "Meter is not the verdict",
         "Works are optional and later",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2178,7 +2178,7 @@
         "Cause named in the quote",
         "Gutters, ground levels and leaks checked first",
         "Mixed causes split into separate lines",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2215,7 +2215,7 @@
         "Written diagnosis",
         "Meters are not the whole answer",
         "Works are a separate POA",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2252,7 +2252,7 @@
         "One defect, properly",
         "Opening-up agreed",
         "Engineer referred when it is structural",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2289,7 +2289,7 @@
         "Fabric list, not a legal claim",
         "Betterment called out",
         "Your adviser stays in charge",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2326,7 +2326,7 @@
         "Closer sized to the door",
         "Fire doors are not wedged",
         "Binding eased rather than overpowered",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2363,7 +2363,7 @@
         "Adjusted, not just wound tighter",
         "Binding doors identified",
         "Fire-door closers stay on",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2400,7 +2400,7 @@
         "Set plumb",
         "External frames weathered",
         "Fire-door frames matched to the leaf",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2437,7 +2437,7 @@
         "Even gaps",
         "Latch meets the keep",
         "Fire doors trimmed only within allowance",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2474,7 +2474,7 @@
         "Lining packed plumb",
         "Fire doors get the right frame",
         "The old door is reused only if it is fit",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2511,7 +2511,7 @@
         "Lock matched to the door",
         "Fire doors are not cut about",
         "Not a lockout service",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2548,7 +2548,7 @@
         "Stop and keep set so it latches",
         "Fire-door furniture respected",
         "A rattle is not a new door",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2585,7 +2585,7 @@
         "Wall dry first",
         "The damp specification wins",
         "Stains are not boarded over live",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2622,7 +2622,7 @@
         "Dry walls only",
         "Sockets marked before the boards",
         "Not used as a damp cover-up",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2659,7 +2659,7 @@
         "Internal dry walls",
         "Sockets to a layout",
         "Outside walls are not dabbed to hide damp",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2696,7 +2696,7 @@
         "Outlet size kept honest",
         "Water ends in a gully, not on the brick",
         "Cast iron discussed before it is swapped",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2733,7 +2733,7 @@
         "Pattern suited to a solid wall",
         "Paths that bury the wall are dealt with first",
         "Replaster stays breathable",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2770,7 +2770,7 @@
         "First fix checked before it disappears",
         "Unready walls left open",
         "Insulation in before the second side",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2807,7 +2807,7 @@
         "Specification before any board",
         "Ordinary board is not fire protection",
         "Junctions at wall and ceiling included",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2844,7 +2844,7 @@
         "Surfaces listed",
         "Board type agreed",
         "Mould is not boarded over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2881,7 +2881,7 @@
         "Rafter trays or equivalent",
         "Quilt pulled off the soffit",
         "Insulation kept, ventilation restored",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2918,7 +2918,7 @@
         "Stop the water first",
         "Temporary work is labelled temporary",
         "Unsafe roofs are not climbed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2955,7 +2955,7 @@
         "Frame seated",
         "Broken screed dealt with",
         "Left as a level walking surface",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -2992,7 +2992,7 @@
         "The recommended measure, not a guess",
         "No promised band",
         "Eaves ventilation kept in a loft",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3029,7 +3029,7 @@
         "Deck checked before the membrane",
         "Outlets and trims are part of the roof",
         "System named in the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3066,7 +3066,7 @@
         "Round agreed in writing",
         "Big repairs quoted outside the package",
         "No published package price",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3103,7 +3103,7 @@
         "Fixed into a sound wall",
         "Lockable door put back if it had one",
         "Notices are not our content",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3140,7 +3140,7 @@
         "Toothed into the existing bond",
         "Gauge kept so the courses line through",
         "Remeasured if the hole is bigger than the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3177,7 +3177,7 @@
         "Seal matched to the door",
         "Dropped doors are not 'fixed' with foam",
         "Temporary foam is not the finished job",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3214,7 +3214,7 @@
         "Level lowered or channelled",
         "Injection is not the fix",
         "Bridging render cut back",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3251,7 +3251,7 @@
         "Hollow render removed",
         "Bellcast kept above the DPC",
         "Finish named in the quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3288,7 +3288,7 @@
         "Fabric items only",
         "Survey before the price",
         "Extras are a revised POA",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3325,7 +3325,7 @@
         "Unit measured from the sash",
         "Toughened where required",
         "Rotten sashes are not re-glazed and ignored",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3362,7 +3362,7 @@
         "Rotten timber removed, not capped",
         "Eaves ventilation kept",
         "Gutters reset to a fall",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3399,7 +3399,7 @@
         "Deck repaired before new felt",
         "A patch is described as a patch",
         "Outlets dressed in, not left proud",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3436,7 +3436,7 @@
         "What comes off and what can stay",
         "Engineer flagged for structure",
         "The claim is not ours to settle",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3473,7 +3473,7 @@
         "Glass and beads to the door system",
         "Ordinary glass refused",
         "Cut-about doors are not restickered",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3510,7 +3510,7 @@
         "Trim allowance respected",
         "Seals and closer set to latch",
         "No sticker on a ruined leaf",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3547,7 +3547,7 @@
         "Leaf, frame and ironmongery as a set",
         "Trim limits respected",
         "Certificates match the work done",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3584,7 +3584,7 @@
         "System named",
         "Openings flagged",
         "Fire certificates match the work done",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3621,7 +3621,7 @@
         "System and access agreed first",
         "Escape kept usable",
         "We do not sign off the whole FRA",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3658,7 +3658,7 @@
         "Noggins where the units will be",
         "Joists trimmed, not hacked",
         "Left ready for the other trades",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3695,7 +3695,7 @@
         "Water-filled blisters opened",
         "Soft deck replaced under the patch",
         "A sea of blisters is a strip, not a patch",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3732,7 +3732,7 @@
         "Rotten kerbs replaced",
         "Falls corrected if the firrings have gone",
         "Covering is a separate line unless included",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3769,7 +3769,7 @@
         "Fall toward an outlet",
         "Joists looked at if the ceiling sags",
         "Covering named before we strip",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3806,7 +3806,7 @@
         "Air bricks kept clear",
         "Joists not wrapped in a wet membrane",
         "Concrete floors quoted separately",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3843,7 +3843,7 @@
         "Opened until the rot is understood",
         "Load-bearing repairs engineered",
         "The leak or the vent is part of the cause",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3880,7 +3880,7 @@
         "Sound boards kept",
         "Pipes found before we fix",
         "Chipboard is not slipped into a boarded floor",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3917,7 +3917,7 @@
         "Opening checked before the doors come off",
         "Meeting stile adjusted",
         "Threshold set for rain",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3954,7 +3954,7 @@
         "Whole room, one finish",
         "Beads on external corners",
         "Drying time stated",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -3991,7 +3991,7 @@
         "One gable, properly accessed",
         "Hollow coat removed",
         "Roof abutment stopped so water cannot get behind",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4028,7 +4028,7 @@
         "Foundations sized for the height",
         "Copings set to shed water",
         "Retaining walls are not guessed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4065,7 +4065,7 @@
         "Failed wall taken down, not propped forever",
         "Foundations checked before reuse",
         "Soil-retaining walls are a different job",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4102,7 +4102,7 @@
         "Flushed, not just scooped",
         "Leaking joints resealed",
         "Split gutters are quoted as replacement",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4139,7 +4139,7 @@
         "Safe access priced",
         "Leaking joints noted",
         "Split gutters not ignored",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4176,7 +4176,7 @@
         "Fascia checked before the gutter goes on",
         "Falls set to the outlet",
         "System matched, including unions",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4213,7 +4213,7 @@
         "Regulated work taken off the list",
         "Small fabric done properly",
         "Fire doors are not planed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4250,7 +4250,7 @@
         "Elevations measured",
         "One finish agreed for the package",
         "Scaffold included when the height needs it",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4287,7 +4287,7 @@
         "Crushed quilt reinstated",
         "Storage kept on legs",
         "Cables left reachable",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4324,7 +4324,7 @@
         "Wet walls refused",
         "Product named",
         "No promised EPC band",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4361,7 +4361,7 @@
         "Recommendation taken from the report",
         "Unsafe measures refused",
         "No guaranteed band",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4398,7 +4398,7 @@
         "Void filled as the product intends",
         "Vapour control on the warm side",
         "Not described as a fire rating",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4435,7 +4435,7 @@
         "Wall type and eaves checked first",
         "No promised EPC band",
         "A bad detail is refused",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4472,7 +4472,7 @@
         "Measures listed one by one",
         "Eaves ventilation protected",
         "No grant claim on the page",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4509,7 +4509,7 @@
         "Product and thickness on the quote",
         "Radiators and sockets planned",
         "Wet walls are not lined under another name",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4546,7 +4546,7 @@
         "Wall type checked",
         "Thickness explained",
         "No promised EPC band",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4583,7 +4583,7 @@
         "Counted on a walk-round",
         "Fire-door ironmongery respected",
         "One product agreed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4620,7 +4620,7 @@
         "Measured list",
         "Fire doors kept separate",
         "Kitchens are not slipped into a joinery line",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4657,7 +4657,7 @@
         "Same product family where possible",
         "Colour sampled if the code is lost",
         "Debonded panels are not skimmed over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4694,7 +4694,7 @@
         "Built to the unit line",
         "Access to valves kept",
         "Fixed to structure",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4731,7 +4731,7 @@
         "Agent's list, item by item",
         "Occupied access written into the visit",
         "Extra defects quoted separately",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4768,7 +4768,7 @@
         "Agent list and photos",
         "Regulated work split out",
         "No refurbishment upsell from a drip",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4805,7 +4805,7 @@
         "Dated photos",
         "Not an inventory",
         "Certificates match the work done",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4842,7 +4842,7 @@
         "Cause written for the agent",
         "Repairs separated from occupant moisture",
         "Mould wash is not the whole job",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4879,7 +4879,7 @@
         "One door, properly",
         "Fire doors respected",
         "A lock is not a substitute for a failed door",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4916,7 +4916,7 @@
         "Existing depth measured",
         "Boarded lofts called out",
         "Note of the depth we leave",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4953,7 +4953,7 @@
         "Goods and fabric labelled separately",
         "Not a substitute for a clerk",
         "Dated photos",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -4990,7 +4990,7 @@
         "Item by item",
         "Fire doors protected",
         "Photos for the agent",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5027,7 +5027,7 @@
         "Agent instruction only",
         "Multipoint checked after a cylinder swap",
         "Keys labelled and handed over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5064,7 +5064,7 @@
         "Depth recorded in millimetres",
         "Uncovered downlighters left clear",
         "Eaves left open",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5101,7 +5101,7 @@
         "Complaint rooms recorded",
         "Repairs separated from household moisture",
         "Written note for the file",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5138,7 +5138,7 @@
         "Wet rooms get the right board",
         "Services checked before we screw",
         "Patches left flush",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5175,7 +5175,7 @@
         "Void list priced item by item",
         "Patches left flush",
         "Live leaks are not skimmed over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5212,7 +5212,7 @@
         "Only open joints are priced",
         "Mix matched to the wall",
         "Agent photos with the invoice",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5249,7 +5249,7 @@
         "Finding written down",
         "No forced access",
         "Parts that are not on the van are a follow-up",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5286,7 +5286,7 @@
         "Small scope kept small",
         "Hollow bays requoted",
         "Photos for the agent",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5323,7 +5323,7 @@
         "Cut back to a sound edge",
         "Texture matched as closely as a patch allows",
         "A huge patch is requoted as an elevation",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5360,7 +5360,7 @@
         "Inside looked at before the tiles",
         "Overflows and pipe boots ruled out",
         "Agent note names the cause",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5397,7 +5397,7 @@
         "Reported leak, not a surprise re-roof",
         "Temporary stop if water is still live",
         "Agent note says where the water entered",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5434,7 +5434,7 @@
         "Windows listed one by one",
         "Occupied swaps planned",
         "One misted unit is not an excuse to replace the house",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5471,7 +5471,7 @@
         "Chase raked and re-wedged",
         "Lead length joined so it can move",
         "Tape is not sold as the finished flashing",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5508,7 +5508,7 @@
         "Things ruled out",
         "Opening-up asked for",
         "Repair quoted separately",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5545,7 +5545,7 @@
         "Rated plate or no hole",
         "Oversized holes reported",
         "Not a whole-door certificate",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5582,7 +5582,7 @@
         "Breathable finish where the wall needs it",
         "Gypsum not smeared over lime",
         "Programme is slower and we say so",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5619,7 +5619,7 @@
         "Ceiling joists are not assumed to be a floor",
         "Insulation not crushed",
         "A bedroom is a conversion, not a sheet of board",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5656,7 +5656,7 @@
         "Lid still closes",
         "Draught seal fitted",
         "A broken hatch is not disguised with quilt",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5693,7 +5693,7 @@
         "Lid closes and latches",
         "Joists are not cut casually",
         "Insulation on the lid if you asked",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5730,7 +5730,7 @@
         "Cut joists carried by a trimmer",
         "Not left hanging on plasterboard",
         "A bigger hole is not a conversion",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5767,7 +5767,7 @@
         "Eaves left open",
         "Cables lifted clear",
         "Storage boarding is not allowed to crush the quilt",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5804,7 +5804,7 @@
         "Crack measured before any mortar goes in",
         "Live movement is not pointed over",
         "Stitching only to an engineer's spec",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5841,7 +5841,7 @@
         "Set out from the drawing",
         "Deflection head where the soffit moves",
         "Services in before the second board",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5878,7 +5878,7 @@
         "Product and colour named",
         "Scraped to the system, not rushed",
         "Not applied over hollow or moving walls",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5915,7 +5915,7 @@
         "Lintel specified before the cut",
         "Bearings and padstones included in the scope",
         "Building control flagged up front",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5952,7 +5952,7 @@
         "Non-load-bearing, confirmed",
         "Door opening sized",
         "Sound expectations priced honestly",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -5989,7 +5989,7 @@
         "Cut back to sound plaster",
         "Chases filled so they do not crack on the line",
         "Finished flush for the decorator",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6026,7 +6026,7 @@
         "Sill set level",
         "Drainage slots kept open",
         "Structural openings are not hidden in the fit",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6063,7 +6063,7 @@
         "Aggregate thrown onto a live coat",
         "Hollow dash is not patched forever",
         "DPC bridges are cut back",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6100,7 +6100,7 @@
         "Weather face inspected",
         "DPC injection is not the raincoat",
         "Inside plaster waits until the outside is fixed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6137,7 +6137,7 @@
         "Bends included",
         "Split foam replaced",
         "Leaks are not lagged over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6174,7 +6174,7 @@
         "Assets and months agreed",
         "Notes say what is wearing out",
         "Price on application",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6211,7 +6211,7 @@
         "Board type matched to the room",
         "Fire board only when specified",
         "Services in before the wall is closed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6248,7 +6248,7 @@
         "Non-load-bearing, and we keep it that way",
         "Door and sockets agreed first",
         "Sound expectations stated",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6285,7 +6285,7 @@
         "After first fix",
         "Rooms listed, not a whole-house guess",
         "Bowed walls are flagged",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6322,7 +6322,7 @@
         "Patch, skim or reboard decided up front",
         "Lime and wet walls get a different spec",
         "Photos beat a guess",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6359,7 +6359,7 @@
         "Expensive fabric items first",
         "Not a valuation",
         "Vendor access agreed",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6396,7 +6396,7 @@
         "Measured scope",
         "Discovery items listed",
         "Works start only after a POA is accepted",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6433,7 +6433,7 @@
         "Salts hacked off, not skimmed",
         "Finish matched to the damp system",
         "No new coat on a wall that is still getting wet",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6470,7 +6470,7 @@
         "Make-safe separated from the repair",
         "Right trade named",
         "POA after the look",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6507,7 +6507,7 @@
         "Coat cracks opened, not painted over",
         "Movement cracks are not meshed and forgotten",
         "Debonded render either side is cut back",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6544,7 +6544,7 @@
         "Hollow areas sounded and marked",
         "Cut back to a stuck edge",
         "Plane and texture matched",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6581,7 +6581,7 @@
         "Contaminated plaster removed",
         "Not a skim over salts",
         "Leak still active means we do not replaster yet",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6618,7 +6618,7 @@
         "Joints raked, not smeared",
         "Lime where the wall is lime",
         "Sample panel where colour matters",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6655,7 +6655,7 @@
         "Other causes ruled out first",
         "DPC kept continuous",
         "High paths are not injected behind",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6692,7 +6692,7 @@
         "What was inspected is written down",
         "Urgent leaks separated from items that can wait",
         "Repairs are not bundled into the look",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6729,7 +6729,7 @@
         "Traced from the stain back to the entry",
         "Smallest honest fix",
         "A new roof is not the default quote",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6766,7 +6766,7 @@
         "Each failed item is on the quote",
         "Ridges fixed for the exposure",
         "Coverings matched",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6803,7 +6803,7 @@
         "Profile matched",
         "Fixings renewed on tiles we lift",
         "Rotten battens are not tiled over",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6840,7 +6840,7 @@
         "Not a cold-loft quilt in a slope",
         "Ventilation path kept",
         "Headroom measured",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6877,7 +6877,7 @@
         "Dated room-by-room record",
         "Limits written down",
         "Not an expert-witness report",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6914,7 +6914,7 @@
         "After plaster and floors where it matters",
         "Fire-door gaps kept",
         "Schedule priced, not a day that drifts",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6951,7 +6951,7 @@
         "Outer window stays",
         "Escape and cleaning still possible",
         "Not sold as a replacement window",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -6988,7 +6988,7 @@
         "System named",
         "Access agreed with the building",
         "Gaps are not called fire stops",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7025,7 +7025,7 @@
         "Manufacturer and colour named",
         "Base coat first",
         "Insulation underneath is a separate system",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7062,7 +7062,7 @@
         "List written down",
         "Variations priced",
         "Stairs and kitchens are not implied",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7099,7 +7099,7 @@
         "Backing checked first",
         "Joints taped",
         "A skim is not a straightening coat",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7136,7 +7136,7 @@
         "Scribed to the floor",
         "Profile matched",
         "MDF not used where it will swell",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7173,7 +7173,7 @@
         "Skim or overboard agreed",
         "Wallpaper off the surfaces we finish",
         "A decorating finish, not a false promise of perfect flatness",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7210,7 +7210,7 @@
         "Incomplete separated from taste",
         "Developer not compelled by us",
         "Structure flagged, not snagged as paint",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7247,7 +7247,7 @@
         "Airborne and impact distinguished",
         "Edges sealed",
         "No promise of silence",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7284,7 +7284,7 @@
         "Loose parts found",
         "A failing stair is not glued and left",
         "Balusters stay",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7321,7 +7321,7 @@
         "Finished thickness agreed",
         "Noggins for the known loads",
         "Fixed into structure",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7358,7 +7358,7 @@
         "Product preparation followed",
         "Floor-to-wall joint included",
         "The wrong system is refused",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7395,7 +7395,7 @@
         "Colour agreed from a sample",
         "Day joints planned",
         "Not painted over unless you ask",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7432,7 +7432,7 @@
         "Opened to sound timber",
         "Cause named",
         "The wall is held while plates are replaced",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7469,7 +7469,7 @@
         "Old rotten frames removed",
         "Packed and squared",
         "Vents and drainage kept",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7506,7 +7506,7 @@
         "Must-do separated from can-wait",
         "Compliance jobs pointed at, not faked",
         "No silent instruction to start",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7543,7 +7543,7 @@
         "Sound backgrounds only",
         "Product named, including breathability",
         "Hollow render is not coated",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7580,7 +7580,7 @@
         "Leak checked first",
         "Scribed to the reveals",
         "Material suited to a wet window",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7617,7 +7617,7 @@
         "Fall and drip on the new cill",
         "Frame bottom checked",
         "Not mistaken for rising damp",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [
@@ -7654,7 +7654,7 @@
         "Measured before it is ordered",
         "Safety glass where it is required",
         "One window is an acceptable job",
-        "Fixed written quote after a quick look"
+        "Free written quote after a quick look"
       ],
       "faq": [
         [

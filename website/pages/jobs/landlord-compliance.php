@@ -26,7 +26,7 @@ $landing = [
     'kicker' => 'Landlords, agents & small portfolios',
     'h1' => 'Landlord essentials — one schedule, one documentation pack',
     'lede' => 'One coordinated visit plan. One documentation pack for landlords and agents. **Written quote after we agree scope.** Typically **EICR**, **gas safety (CP12 / Landlord Gas Safety Record)**, and **core fire and alarm checks as scoped** — with an FRA where the building needs one.',
-    'note' => '“Landlord essentials” is a commercial way of packaging typical certificate work. It is not a statutory product name and it does not guarantee that every duty on a given property is covered. Inclusions are agreed in writing before a fixed price. This page is general information, not legal advice.',
+    'note' => '“Landlord essentials” is a commercial way of packaging typical certificate work. It is not a statutory product name and it does not guarantee that every duty on a given property is covered. Inclusions are agreed in writing before a written quote. This page is general information, not legal advice.',
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
@@ -88,7 +88,7 @@ $landing = [
         ],
         [
             'q' => 'Is this the same as a wider compliance brief?',
-            'a' => 'No. This package focuses on the core landlord certificate conversation — typically EICR, gas safety, and core fire or alarm checks as scoped, with FRA where agreed. A wider brief (for example asbestos, Legionella or a larger fire package) is a separate conversation. Either way: scope first, fixed price after.',
+            'a' => 'No. This package focuses on the core landlord certificate conversation — typically EICR, gas safety, and core fire or alarm checks as scoped, with FRA where agreed. A wider brief (for example asbestos, Legionella or a larger fire package) is a separate conversation. Either way: scope first, written quote after.',
         ],
         [
             'q' => 'Do you always include a fire risk assessment?',
@@ -100,7 +100,7 @@ $landing = [
         ],
         [
             'q' => 'Can agents use this for several landlords?',
-            'a' => 'Yes. Tell us you are an agent, how many properties, and how you need certificates handed back. The ' . $packFrom . ' guide is per agreed schedule, not a portfolio total. The fixed price follows scope.',
+            'a' => 'Yes. Tell us you are an agent, how many properties, and how you need certificates handed back. The ' . $packFrom . ' guide is per agreed schedule, not a portfolio total. The written quote follows scope.',
         ],
         [
             'q' => 'Will everything happen in one visit?',
@@ -136,7 +136,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Request a landlord compliance quote',
-    'ctaText' => 'Tell us postcodes, property types (flat, house, HMO) and which certificates or checks are due, including alarms if you want them on the same schedule. Pack guide **' . $packFrom . '** (EICR ' . $eicrFrom . ', gas ' . $gasFrom . ', FRA ' . $fraFrom . '). The fixed price follows scope.',
+    'ctaText' => 'Tell us postcodes, property types (flat, house, HMO) and which certificates or checks are due, including alarms if you want them on the same schedule. Pack guide **' . $packFrom . '** (EICR ' . $eicrFrom . ', gas ' . $gasFrom . ', FRA ' . $fraFrom . '). The written quote follows scope.',
 ];
 
 require SITE_ROOT . '/includes/conversion-landing.php';

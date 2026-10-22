@@ -492,7 +492,7 @@ $gapRedirects = [
     '/pages/fire-doors/redish' => '/pages/fire-doors/reddish',
     '/24-hour-aov' => '/pages/keywords/24-hour-aov',
     '/24-hour-barrier' => '/pages/keywords/24-hour-barrier',
-    '/emergency-barrier' => '/pages/keywords/emergency-barrier',
+    '/emergency-barrier' => '/pages/keywords/emergency-barrier-repair',
     '/emergency-cctv' => '/pages/keywords/emergency-cctv',
     '/emergency-fire-door' => '/pages/keywords/emergency-fire-door',
     '/emergency-sprinkler' => '/pages/keywords/emergency-sprinkler',
@@ -943,6 +943,8 @@ foreach ($canonIter as $canonFile) {
     $canonSeen++;
     $allowed = $page === $canonPath
         || ($page === '/pages/products' && $canonPath === '/products')
+        // QM #158: product twins canonicalise to the shop copy (never noindex).
+        || (str_starts_with($page, '/products/product/') && $canonPath === '/shop/products/' . substr($page, 18))
         || ($page === '/pages/packages/landlord-pack' && $canonPath === '/pages/packages/compliance-bundle')
         || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack');
     if (!$allowed) {

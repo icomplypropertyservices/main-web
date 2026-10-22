@@ -8,7 +8,7 @@ require_once SITE_ROOT . '/includes/shopify.php';
 $pageTitle = 'Shop | Fire Safety, Electrical & Security Products';
 $metaDesc = 'Shop fire safety, electrical, CCTV and emergency lighting products from iComply. Trade kits and install accessories for North West engineers, landlords and contractors.';
 $metaKeywords = 'fire alarm parts, emergency lighting buy, CCTV kits, electrical trade supplies Stockport, fire safety equipment';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 
 $catalog = getShopCatalog();
 $collections = $catalog['collections'];

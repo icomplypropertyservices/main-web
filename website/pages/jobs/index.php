@@ -45,7 +45,7 @@ $groups = [
 
 $faqs = [
     [
-        'Do you publish fixed prices on job pages?',
+        'Do you publish written quotes on job pages?',
         'Most job types are price on application, quoted in writing once we know the building, the access and the certificate needed. Where a service has a list price, the service page shows it.',
     ],
     [

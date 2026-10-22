@@ -8,7 +8,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'Site Map | iComply Property Services';
 $metaDesc = 'Browse the iComply site map — fire safety, professional and construction services, popular North West areas, manufacturers, service guides and XML sitemaps.';
 $metaKeywords = 'iComply site map, fire risk assessment, kitchen fitting, property compliance, North West areas, EICR guides';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/site-map.php');
 
 $services = getServices();

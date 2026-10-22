@@ -8,7 +8,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'FAQ | Property Compliance Questions Answered';
 $metaDesc = 'FAQ for iComply Property Services, Stockport. EICR, fire alarms, emergency lighting, gas safety, CCTV, access, construction, quotes and coverage. Call 07517 806082. No scheme badges we cannot verify.';
 $metaKeywords = 'property compliance FAQ, EICR questions, BS 5839 fire alarm, emergency lighting testing, gas safety certificate, CCTV installation, access control, North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/faq.php');
 
 $services = getServices();
@@ -126,7 +126,7 @@ $faqs = [
     // Quotes
     [
         'cat' => 'Quotes & pricing',
-        'q' => 'Are quotes free, and are they always a fixed price?',
+        'q' => 'Are quotes free, and are they always a written quote?',
         'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
         'link' => ['/contact.php', 'Request a free quote'],
     ],

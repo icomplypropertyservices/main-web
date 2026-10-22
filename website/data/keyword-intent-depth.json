@@ -1,0 +1,191 @@
+{
+ "_note": "QM #156 CLOSE 8: keyword-specific depth for the GSC upgrade keyword x town pages, so each keyword reads differently in the same town. {town} is replaced at render time.",
+ "eicr-cost-near-me": {
+  "h2": "What an EICR costs in {town}, and why",
+  "p": [
+   "EICRs start from £160 for a typical rented flat or small house in {town}, and an HMO pack is £561. The figure moves with the number of circuits, not the number of bedrooms. A one-board flat with eight circuits tests in a morning. A converted house with a second consumer unit, an outbuilding supply or a communal landing circuit takes longer, so we price it after we have seen the board.",
+   "The quickest way to get a firm figure is to send a clear photo of the consumer unit with the cover on, the approximate age of the wiring if you know it, and whether the property is let, empty or occupied. Access matters too. If a tenant needs notice, or the loft and meter cupboard are locked, tell us before we book so the engineer is not paid to wait outside.",
+   "The price covers the inspection, the sample testing set out in BS 7671, and the written report emailed to you. Remedial work is not included, because nobody can know what is needed until the circuits are tested. If the report records C1 or C2 observations, we list each one with its own written quote so you can approve them line by line. Landlords in {town} have 28 days to complete remedial work and pass written confirmation to the tenant and, if asked, to the council."
+  ]
+ },
+ "5-year-eicr-certificate": {
+  "h2": "The five-year EICR cycle for {town} properties",
+  "p": [
+   "Private landlords in England must have the fixed wiring in each let property inspected and tested at least every five years, and before a new tenancy if the last report has expired. The report, not a certificate in the strict sense, is what a letting agent or the council will ask to see. Owner-occupiers in {town} have no legal deadline, but ten years is the usual recommendation, and most mortgage lenders and insurers will accept a five-year cycle.",
+   "Five years is a maximum, not a fixed date. The engineer can set a shorter interval on the report if the installation is old, if there is evidence of damage, or if the property is an HMO with heavy use. When that happens the next inspection date on the report is the one that counts, and it should go straight into your compliance diary.",
+   "We keep the date for you. When you book a five-year EICR in {town}, the next due date is logged and we contact you about eight weeks before it falls due, so there is time to arrange access and any tenant notice. If you manage several properties, send us the addresses and last report dates and we will line them up so neighbouring jobs share a visit and a single trip."
+  ]
+ },
+ "boiler-service-and-repair-package": {
+  "h2": "How the boiler service and repair package works in {town}",
+  "p": [
+   "The package combines an annual boiler service with priority call-outs for breakdowns during the year. It suits landlords and homeowners in {town} who would rather have one arrangement than book a service, then search for an engineer the day the heating fails. Gas work is carried out by Gas Safe registered engineers.",
+   "The annual visit covers a visual check of the appliance and flue, a combustion analysis, a check of the seals, safety devices and condensate route, and a written record of what was tested. If the appliance is in a rented property, the landlord gas safety record can be done on the same visit, which saves a second appointment and a second round of tenant notice.",
+   "Repairs under the package are prioritised over standard bookings. Parts are quoted separately because a diverter valve costs very differently from a PCB or a heat exchanger, and the engineer will tell you the part and the price before fitting anything. If a boiler is beyond economic repair, we say so in writing and give a separate written quote for a replacement rather than fitting parts that will not last."
+  ]
+ },
+ "boiler-service-gas-safe": {
+  "h2": "What a full boiler service in {town} includes",
+  "p": [
+   "A full boiler service is more than a quick look at the pressure gauge. The engineer removes the casing, inspects the burner, heat exchanger and seals, checks the flue terminal and route, tests the safety devices and records a flue gas analysis reading. The work is carried out by Gas Safe registered engineers, and you receive a written service record for the appliance.",
+   "Most manufacturers ask for a service every twelve months to keep the warranty valid, and the service record is what they ask to see if you make a claim. If your boiler in {town} is under warranty, send us the make and model when you book so the engineer follows that manufacturer's checklist and brings any parts the schedule calls for.",
+   "If the service finds a fault, the engineer explains it, classifies any safety issue under the gas industry unsafe situations procedure, and gives you a written quote for the repair. An appliance that is immediately dangerous will be made safe and labelled with your permission. Annual servicing is also the cheapest way to avoid winter breakdowns, because worn seals and blocked condensate traps show up long before they stop the heating."
+  ]
+ },
+ "commercial-plumbing-support": {
+  "h2": "Commercial plumbing support in {town}",
+  "p": [
+   "Commercial plumbing in {town} covers the pipework, water heaters, toilets, urinals, kitchen sinks and drainage that keep a shop, office, café or communal block running. Most calls are leaks, blockages, failed water heaters or low pressure, and most of them stop the business working until they are fixed, so we triage by impact: water escaping, no toilets, then everything else.",
+   "For regular support we survey the site once and record the stopcock and isolation valves, the water heater and its controls, any thermostatic mixing valves, the backflow protection on catering equipment, and the access routes to risers and ceiling voids. That record means an engineer arriving at night knows where to turn the water off.",
+   "Commercial water systems also bring duties under the Water Supply (Water Fittings) Regulations 1999 and the HSE's legionella guidance. We flag dead legs, unused outlets and incorrect backflow devices as we find them, and quote to put them right separately."
+  ]
+ },
+ "dishwasher-plumbing-install": {
+  "h2": "Fitting a dishwasher in {town}",
+  "p": [
+   "A dishwasher needs three things: a cold feed with its own isolation valve, a waste connection with an air gap or anti-siphon loop, and a nearby switched socket or fused spur. In most {town} kitchens the cold feed comes off the sink supply with a washing machine valve, and the waste joins the sink trap through a spare spigot or a new trap.",
+   "Before we arrive, check the gap is 600 mm wide (or 450 mm for slimline models), measure the height under the worktop, and note whether the machine is freestanding or integrated. Integrated machines need the door panel fitted and aligned, which takes longer than sliding a freestanding machine into place.",
+   "We level the machine, secure it to the worktop, run a test cycle and check every joint for drips under pressure. Old machines can be disconnected and the pipework capped neatly if you are not reusing the space."
+  ]
+ },
+ "damp-proofing-prices": {
+  "h2": "What affects damp-proofing prices in {town}",
+  "p": [
+   "Damp-proofing prices in {town} depend first on the cause. Rising damp, penetrating damp and condensation all look like damp patches but need very different work, and many walls treated with an injected damp-proof course never had rising damp at all. So the price starts with a survey that finds the source before quoting.",
+   "For a genuine rising damp problem the cost depends on the length of wall treated, the wall thickness, whether old plaster must come off to above the tide mark, and the replastering specification. Penetrating damp is usually cheaper to fix at the source: a leaking gutter, failed pointing, a bridged cavity or ground levels too high against the wall.",
+   "Condensation is dealt with by ventilation and heating rather than chemicals: extractor fans in kitchens and bathrooms, trickle vents and sometimes a positive-input ventilation unit. We price each option separately so you can see what each one costs."
+  ]
+ },
+ "damp-proofing-service-cost": {
+  "h2": "How a damp-proofing job is costed in {town}",
+  "p": [
+   "A damp-proofing job in {town} is costed in stages: the survey, any opening-up needed to confirm the cause, the treatment itself, and making good afterwards. Showing those stages separately lets you see which part of the cost actually fixes the damp and which part restores the finish.",
+   "Our survey uses moisture readings at different heights, salts analysis where it helps, and a look at the outside of the building: gutters, downpipes, pointing, render, sills and the ground level against the wall. Many jobs end with an outside repair and a dehumidifier rather than an injection.",
+   "Where treatment is needed we specify the product, the area and the plaster system, and we leave a written record so a buyer or lender can see what was done. Landlords in particular need this when a tenant has reported damp and mould, so the response is documented."
+  ]
+ },
+ "acrylic-render-cost": {
+  "h2": "Acrylic render costs in {town}",
+  "p": [
+   "Acrylic render in {town} is a thin, through-coloured finish applied over a base coat and mesh, so it rarely needs painting and resists cracking better than traditional sand and cement. The cost is set mainly by the wall area, the scaffold needed to reach it, and the condition of the wall underneath.",
+   "Old, hollow or cracked render usually has to come off before a new system goes on, and that strip-out can be a large part of the job. Window reveals, sills, beads and corner details also add time, so two houses with the same wall area can be priced quite differently.",
+   "Colour choice does not usually change the price, but texture can: a 1.5 mm grain covers small defects better than a smooth finish. We give a written quote showing scaffold, preparation, base coat and topcoat separately, so you can compare like with like."
+  ]
+ },
+ "rendering-prices": {
+  "h2": "Comparing rendering prices in {town}",
+  "p": [
+   "Rendering prices in {town} vary with the system as much as the size of the house. Sand and cement render is cheapest to apply but usually needs painting and can crack; monocouche is through-coloured in one thick coat; silicone and acrylic thin-coat systems cost more but stay cleaner and flex better with the building.",
+   "Insulated render, where boards are fixed to the wall before rendering, costs much more but cuts heat loss through solid walls. It may need building regulations approval and can affect window sills, downpipes and the roof overhang, so we check those details in the survey.",
+   "When comparing quotes, check whether scaffold, removal of old render, new beads, sills and making good around fittings are included, and what guarantee comes with the system. Our quotes list each of those so the totals can be compared fairly."
+  ]
+ },
+ "air-source-heat-pumps-site-attendance": {
+  "h2": "Heat pump site attendance in {town}",
+  "p": [
+   "Site attendance for an air source heat pump in {town} usually means one of three things: a pre-installation survey, supervising or helping on installation day, or a return visit when the system is not performing. Each needs different information, so tell us which one you need when you book.",
+   "For a survey we measure the rooms, note the existing radiators and pipe sizes, check where the outdoor unit can go with enough airflow and distance from neighbours' windows, and look at the electrical supply. Heat pumps run at lower flow temperatures than boilers, so undersized radiators are the most common reason a system feels cold.",
+   "On a performance visit we read the controller's history, check flow temperatures, the weather compensation curve, defrost cycles and the hot water cylinder settings. Many complaints come from settings rather than faults, and changing the curve or the cylinder schedule can cut running costs noticeably.",
+   "We record readings and changes in a short report, so the installer, the manufacturer or a future engineer can see what was checked and why."
+  ]
+ },
+ "radiator-balancing-service": {
+  "h2": "Radiator balancing in {town}",
+  "p": [
+   "Balancing a heating system in {town} means setting each radiator's lockshield valve so hot water reaches every room in the right amount. In an unbalanced system the radiators nearest the boiler get hot quickly while those furthest away stay lukewarm, and the boiler cycles more than it should.",
+   "We bleed the system first, check the pressure and the pump setting, then fit clip-on thermometers to measure the temperature drop across each radiator. The target is usually about 11°C on a boiler system, or less on a heat pump, and we adjust valves from the nearest radiator outward.",
+   "If a radiator stays cold at the bottom after balancing, the cause is usually sludge, and a powerflush or chemical clean may be needed. If one stays cold at the top, it usually needs bleeding. We tell you which before quoting further work.",
+   "Balancing takes one visit for most homes, and we leave a note of the valve settings so they can be put back if a radiator is removed for decorating."
+  ]
+ },
+ "basement-tanking-cost": {
+  "h2": "What basement tanking costs in {town}, and why",
+  "p": [
+   "Basement tanking in {town} is priced on the floor and wall area, the type of system and the condition of the walls. Cementitious tanking slurry is applied directly to prepared masonry; cavity drain membranes are fixed to the walls and floor and channel water to a sump and pump, which adds the cost of the pump, its power supply and its servicing.",
+   "BS 8102 sets out how below-ground waterproofing should be designed, and for habitable rooms it usually expects a combination of systems. That affects cost more than room size does.",
+   "Preparation is often the hidden cost: removing old plaster and coatings, treating salts, dealing with timber that touches the walls, and moving services. We list each of those items separately in the quote.",
+   "Pump systems need a yearly service and ideally a battery backup or a second pump, so we include those running costs when comparing systems."
+  ]
+ },
+ "damp-survey-cost": {
+  "h2": "What a damp survey in {town} includes",
+  "p": [
+   "A damp survey in {town} is a fee for the visit and the written report, separate from any treatment. Its job is to find the cause: rising damp, penetrating damp, condensation, a plumbing leak or a building defect. It should not just recommend an injection everywhere a meter reads high.",
+   "We take moisture readings at several heights, compare them with readings inside the wall where needed, look for salts, and check the outside: gutters, downpipes, pointing, render, sills, airbricks and ground levels. Humidity readings and signs of mould help separate condensation from water getting in.",
+   "The report sets out what we found, the likely cause, and the options to fix it, cheapest first. Buyers, lenders and landlords responding to a tenant's damp report often need this paperwork.",
+   "If you later go ahead with the work, the survey findings set the scope, so you only pay for treatment that tackles the cause we found."
+  ]
+ },
+ "penetrating-damp-repair-cost": {
+  "h2": "Penetrating damp repair costs in {town}",
+  "p": [
+   "Penetrating damp in {town} is water coming through the wall from outside, usually from a defect higher up or nearby. The cost of fixing it depends on finding and repairing that defect. Treating the inside of the wall alone will not stop it.",
+   "Typical causes are blocked or leaking gutters and downpipes, failed pointing, cracked render, defective sills or flashings, and bridged cavities. Many are low-cost repairs once found, though a few need scaffolding.",
+   "After the outside repair the wall must dry out, which can take weeks or months for solid walls. We may suggest a dehumidifier and salt-resistant plaster where the old plaster is contaminated, and we price these as separate options."
+  ]
+ },
+ "custom-storage-joinery-quote": {
+  "h2": "Getting a quote for custom storage in {town}",
+  "p": [
+   "Custom storage in {town} is quoted from a measured drawing: alcove units, under-stair drawers, fitted wardrobes, built-in desks or loft cupboards. The price depends on the material (MDF for painted finishes, birch ply or solid timber), the doors and drawers, the hardware, and whether we spray-finish on site.",
+   "Send us photos of the space with a tape measure in shot, and a rough sketch or a picture of something you like. We use those to give an early estimate, then confirm on a measuring visit, because old houses rarely have square walls or level floors.",
+   "Drawers and soft-close hinges add more to cost than carcass size does, so the quote lists them separately. Lighting inside units, sockets or cable routes for a desk should be planned before we build, so an electrician can work around them."
+  ]
+ },
+ "joinery-stockport": {
+  "h2": "Joinery from our Stockport workshop for {town}",
+  "p": [
+   "Our joinery is based in Stockport, so {town} jobs are made up and part-finished before installation, which means less dust and fewer days on site. We make and fit doors, skirting and architrave, staircases and balustrades, window boards, fitted furniture and timber repairs.",
+   "For period properties we can match mouldings on skirting, architrave and doors by profiling a sample, so repairs blend with the original. On new work we agree the timber, finish and ironmongery in writing before we cut anything.",
+   "Fire doors are a specialist area: they must be installed as a certified set with the right frame, gaps, seals and closers. We record each one with its certification label so landlords and managing agents have the evidence they need."
+  ]
+ },
+ "external-rendering-cost": {
+  "h2": "External rendering costs in {town}",
+  "p": [
+   "External rendering in {town} is priced by the wall area, the scaffold needed, the system and the preparation. Scaffolding alone can be a large part of the cost on a two- or three-storey house, which is why doing the whole elevation at once is usually better value than patching.",
+   "Preparation depends on what is there now: bare brick needs cleaning and possibly a bonding coat, while old render that is hollow or cracked has to be removed first. Damaged brickwork, lintels or sills found during strip-out are priced as extras before we fix them.",
+   "Planning permission is usually not needed to render a house unless it is listed, in a conservation area, or the change is significant. We check this with you before starting, and we protect windows, doors and paths throughout the job."
+  ]
+ },
+ "render-and-paint-package-cost": {
+  "h2": "How our render and paint package is priced in {town}",
+  "p": [
+   "The render and paint package for {town} homes covers repairing existing render and repainting the elevations in one scaffold visit. It suits houses whose render is mostly sound but has hairline cracks, tired paint or small blown patches.",
+   "We tap-test the render to find hollow areas, cut them out and patch them, fill cracks with a flexible filler, treat algae, and apply a stabilising primer before two coats of breathable masonry paint. The price is driven by how much patching is needed, so we confirm that on a survey.",
+   "If more than about a fifth of the render is hollow, a full re-render may be better value than repairs and repainting, and we will show both prices so you can choose."
+  ]
+ },
+ "hmo-plastering-package": {
+  "h2": "Plastering for HMOs in {town}",
+  "p": [
+   "The HMO plastering package for {town} landlords covers the repairs that come up between tenancies: patching damaged walls, skimming over old wallpaper or cracking, making good after electrical or plumbing work, and repairing ceilings. Work is scheduled into void periods so rooms are ready to let again quickly.",
+   "HMOs have fire safety duties, so we use plasterboard and plaster systems that keep the fire resistance of walls and ceilings between rooms and escape routes. Holes around pipes and cables are sealed properly rather than just filled.",
+   "Each room is priced and signed off separately, with photos before and after, which helps landlords recover costs from deposits where damage was caused by a tenant."
+  ]
+ },
+ "patch-plastering-cost": {
+  "h2": "Patch plastering costs in {town}",
+  "p": [
+   "Patch plastering in {town} is priced by the number and size of patches and how much preparation each needs. A small hole from a removed fitting is quick; a section of blown lime plaster on a solid wall needs more care and the right materials so it does not crack or trap moisture.",
+   "We cut back loose plaster to sound edges, match the background (gypsum on modern walls, lime-based on older solid walls where needed) and feather the finish in so it is not visible after painting. Drying time before decorating depends on the depth of the patch.",
+   "Where patches are close together, a full skim of the wall can cost little more and gives a better finish, so we price both options."
+  ]
+ },
+ "building-surveys-near-me": {
+  "h2": "Building surveys in {town}",
+  "p": [
+   "A building survey for a {town} property gives a detailed report on its condition, defects and likely repair needs. It is the right choice for older, larger or altered properties, and for buyers planning work after they move in.",
+   "The surveyor inspects the roof, chimneys, walls, damp, timbers, windows, drainage covers and the interior, and notes services such as electrics and heating for specialist checks. The report explains each defect, how serious it is and what to do next.",
+   "Ask for the survey early in the purchase so its findings can feed into price negotiations or further investigations before exchange."
+  ]
+ },
+ "dilapidations-support-survey-quote": {
+  "h2": "Dilapidations support in {town}",
+  "p": [
+   "Dilapidations are the repairs a commercial tenant may owe a landlord at the end of a lease. A dilapidations survey in {town} compares the property's condition with the lease's repairing and reinstatement clauses and the schedule of condition, if there is one.",
+   "For tenants we review the schedule served by the landlord, challenge items the lease does not support, and price the remaining work so you can choose to carry it out or negotiate a cash settlement. For landlords we prepare the schedule and keep evidence of condition with dated photos.",
+   "Starting early, ideally a year before the lease ends, gives time to do work cheaply rather than paying a settlement priced at the landlord's rates."
+  ]
+ }
+}

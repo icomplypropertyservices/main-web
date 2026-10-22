@@ -74,7 +74,7 @@ function icomplyLive404Redirects(): array
         '/eicr-near-me' => '/pages/keywords/eicr-near-me',
         '/electrician-near-me' => '/pages/keywords/electrician-near-me',
         '/emergency' => '/pages/emergency',
-        '/emergency-barrier' => '/pages/keywords/emergency-barrier',
+        '/emergency-barrier' => '/pages/keywords/emergency-barrier-repair',
         '/emergency-cctv' => '/pages/keywords/emergency-cctv',
         '/emergency-emergency-lighting' => '/pages/services/emergency-lighting',
         '/emergency-fire-door' => '/pages/keywords/emergency-fire-door',

@@ -107,7 +107,7 @@ function gasJobLanePages(): array
                 ['title' => 'Hand the record back', 'text' => 'The certificate goes to you or your agent for the tenancy file, with defects written as found.'],
             ],
             'faqs' => [
-                ['q' => 'Is ' . $amount . ' a fixed price for every property?', 'a' => 'It is the list price for a typical North West 6-bed HMO landlord gas safety record. Send the postcode and appliance list and we confirm before booking. Commercial plant rooms are scoped separately.'],
+                ['q' => 'Is ' . $amount . ' a written quote for every property?', 'a' => 'It is the list price for a typical North West 6-bed HMO landlord gas safety record. Send the postcode and appliance list and we confirm before booking. Commercial plant rooms are scoped separately.'],
                 ['q' => 'Is VAT added on top?', 'a' => 'No. iComply is not VAT registered, so VAT is not added. The ' . $amount . ' figure is all-in for that typical record.'],
                 ['q' => 'How often is a CP12 due?', 'a' => 'Where the landlord duty applies in England, the usual rhythm is at least every 12 months, with a copy for tenants. This is general guidance, not legal advice. Check current HSE landlord gas safety pages.'],
                 ['q' => 'Can an agent book several properties?', 'a' => 'Yes. Use the landlord pages linked below and list the addresses. Each typical property uses the same ' . $amount . ' list price; we confirm anything that sits outside that scope.'],

@@ -101,7 +101,7 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
     ?>
     <section id="quote" class="bg-[#0B1F3A] text-white">
         <div class="max-w-3xl mx-auto px-6 py-16">
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb080] font-semibold text-center">Call <?= $h((string)PHONE) ?> or send the form</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold text-center">Call <?= $h((string)PHONE) ?> or send the form</p>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mt-3"><?= $h($heading) ?></h2>
             <p class="mt-3 text-center text-white/80 max-w-xl mx-auto"><?= $h($intro) ?></p>
             <div class="mt-6 flex flex-wrap gap-3 justify-center">
@@ -120,7 +120,7 @@ function aovQuoteForm(string $heading, string $intro, string $serviceValue, stri
                 </div>
                 <textarea name="message" rows="5" required placeholder="<?= $h($placeholder) ?>" class="w-full border border-zinc-300 px-4 py-3 rounded-xl"></textarea>
                 <button type="submit" class="w-full py-4 rounded-xl bg-[#ff6b00] text-white font-semibold">Request a written quote</button>
-                <p class="text-xs text-zinc-500">Fixed written quote before any work starts. Same-day and next-day slots are often available.</p>
+                <p class="text-xs text-zinc-500">Free written quote before any work starts. Same-day and next-day slots are often available.</p>
             </form>
         </div>
     </section>

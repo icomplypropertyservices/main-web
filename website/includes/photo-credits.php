@@ -49,7 +49,7 @@ if (!function_exists('icomplyPhotoCreditInject')) {
             $map = [];
             $credits = icomplyPhotoCredits();
             $manifest = json_decode((string) @file_get_contents(SITE_ROOT . '/data/image-manifest.json'), true) ?: [];
-            foreach (['/assets/images/services/plastering.jpg', '/assets/images/services/dry-lining.jpg'] as $file) {
+            foreach (['/assets/images/services/plastering.jpg', '/assets/images/services/dry-lining.jpg', '/assets/images/services/damp-proofing.jpg', '/assets/images/services/building-maintenance.jpg', '/assets/images/services/cdm-support.jpg', '/assets/images/services/groundworks.jpg'] as $file) {
                 if (!isset($credits[$file])) continue;
                 $map[$file] = $file;
                 foreach (($manifest[$file]['variants'] ?? []) as $v) {

@@ -68,7 +68,7 @@ jobs:
       - name: Static export (PHP → HTML in dist/)
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/static-export.php --keyword-towns=none
+        run: php website/bin/static-export.php --keyword-towns=none && node website/bin/apply-seo-basics.mjs dist && python3 website/bin/unlink-dead-internal.py dist && python3 website/bin/dedupe-h1-meta.py dist && python3 website/bin/family-images.py dist
         timeout-minutes: 180
 
       - name: Verify dist/ pretty URLs

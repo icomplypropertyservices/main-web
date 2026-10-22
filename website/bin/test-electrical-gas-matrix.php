@@ -105,7 +105,7 @@ $ok(str_contains($sitemapXml, '/pages/services/gas-systems</loc>'), 'sitemap sti
 $ok(str_contains($sitemapXml, '/pages/keywords/boiler</loc>'), 'sitemap still lists boiler keyword hub');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-electrical.md') && is_file(SITE_ROOT . '/data/seo-matrix-gas.md'), 'Marketing seo-matrix md files present');
 $sitemapSrc = (string)file_get_contents(SITE_ROOT . '/includes/sitemap.php');
-$ok(str_contains($sitemapSrc, 'icomplyPathIsIndexable'), 'sitemap omits noindex town templates');
+$ok(!str_contains($sitemapSrc, 'icomplyPathIsIndexable'), 'sitemap has no indexability gate (GSC 21 Oct A4)');
 $ok(is_file(SITE_ROOT . '/data/seo-matrix-rollout-notes.md'), 'seo-matrix-rollout-notes.md present');
 
 $areaSet = [];

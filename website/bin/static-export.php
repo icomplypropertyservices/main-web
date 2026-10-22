@@ -276,7 +276,8 @@ $notFoundHtml = icomplyRenderRoute('/__icomply-missing-export-404__')['html'];
 if (!icomplyLooksLikeHtml($notFoundHtml)) {
     $notFoundHtml = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Not found</title></head><body><h1>Not found</h1></body></html>\n";
 }
-file_put_contents($dist . '/404.html', $notFoundHtml);
+require_once dirname(__DIR__) . '/includes/analytics-inject.php';
+file_put_contents($dist . '/404.html', icomplyInjectAnalytics($notFoundHtml));
 
 icomplyCopyStaticAssets($websiteRoot, $repoRoot, $dist);
 $productPages = icomplyExportProductPages($dist, $log);
@@ -744,6 +745,10 @@ function icomplyWritePrettyFiles(string $dist, string $path, string $html): void
 {
     require_once dirname(__DIR__) . '/includes/scrub-meta.php';
     $html = icomplyScrubMeta($html);
+    require_once dirname(__DIR__) . '/includes/page-finish.php';
+    $html = icomplyFinishPage($html, $path);
+    require_once dirname(__DIR__) . '/includes/analytics-inject.php';
+    $html = icomplyInjectAnalytics($html);
     if ($path === '/' || $path === '') {
         file_put_contents($dist . '/index.html', $html);
         file_put_contents($dist . '/index.php', $html);
@@ -833,6 +838,13 @@ function icomplyCopyStaticAssets(string $websiteRoot, string $repoRoot, string $
 
     // PR #9 trade hubs: /shop/index.html + Fire/Electrical/Security/Gas (never PHP source).
     icomplyCopyShopStatic($websiteRoot . '/shop', $dist . '/shop');
+    // Copied-verbatim HTML (shop hubs, Netlify form stubs) gets the same GA4 loader.
+    require_once dirname(__DIR__) . '/includes/analytics-inject.php';
+    foreach (array_merge(glob($dist . '/*.html') ?: [], glob($dist . '/shop/*.html') ?: [], glob($dist . '/shop/*/*.html') ?: []) as $f) {
+        $h = (string)file_get_contents($f);
+        $n = icomplyInjectAnalytics($h);
+        if ($n !== $h) file_put_contents($f, $n);
+    }
 }
 
 function icomplyCopyDir(string $src, string $dest): void

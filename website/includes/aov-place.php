@@ -187,12 +187,21 @@ function aovPlaceArticle(array $t): array
         $extra = 'Burnley (BB10–BB12) is mill conversions and newer infill blocks, plus industrial air handling on the estates toward the M65, not a glass city-centre atrium. Retrofit louvres on converted stairs often have no free-area note in the file. ONS puts the 2019 usual residents at 83,364 and classes the built-up area as a larger non-coastal working town. The drive from Stockport is typically 55–75 minutes, so East Lancashire visits are batched. We will not pretend it is a 20-minute call-out. Pennine rain seizes roof hatches; a lid that will not close is both a leak and a failed smoke vent.';
     }
 
+    static $aovNotes = null;
+    if ($aovNotes === null) {
+        $aovNotes = (array)json_decode((string)@file_get_contents(SITE_ROOT . '/data/aov-local-notes.json'), true);
+    }
+    if ($extra === '' && isset($aovNotes[(string)($t['slug'] ?? '')])) {
+        $extra = (string)$aovNotes[(string)$t['slug']];
+    }
+
     return [
         'title' => $title,
         'meta' => $meta,
         'h1' => $h1,
         'intro' => aovPlaceIntro($t),
-        'modules' => $pair,
+        // Thin-data places carry a local note in place of the second shared technical module (QM #156 near-duplicates).
+        'modules' => isset($aovNotes[(string)($t['slug'] ?? '')]) ? [$modules[crc32((string)$t['slug'] . '|note') % $n]] : $pair,
         'extra' => $extra,
         'nearby' => aovNearbyPlaces($t),
         'depth' => townDepth('aov', (string)$t['slug'], $name, (string)($t['nation'] ?? ''), aovFamilyNames()),

@@ -23,7 +23,8 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repo = path.resolve(here, "../..");
 const dist = path.resolve(process.argv[2] || path.join(repo, "dist"));
 const SITE = "https://icomplypropertyservices.co.uk";
-const doc = JSON.parse(fs.readFileSync(path.join(repo, "website/data/money-ctr-c1-c15.json"), "utf8"));
+// MONEY_CTR_DATA=website/data/gsc-upgrade-2026-10-21.json checks the GSC 21 Oct upgrade queue the same way.
+const doc = JSON.parse(fs.readFileSync(path.join(repo, process.env.MONEY_CTR_DATA || "website/data/money-ctr-c1-c15.json"), "utf8"));
 const tm = await import(path.join(repo, "netlify/edge-functions/town-matrix.js"));
 const p0 = await import(path.join(repo, "netlify/lib/nationwide-p0.js"));
 const { applyMoneyCtr } = await import(path.join(repo, "netlify/lib/money-ctr.js"));
@@ -133,8 +134,8 @@ for (const [p, page] of Object.entries(doc.pages || {})) {
   for (const g of block.match(/[^.]*Gas Safe[^.]*/g) || []) if (!/carried out by Gas Safe registered engineers/i.test(g)) fail(p, `gas wording: ${g.trim()}`);
   const words = proseWords(html);
   const links = internalLinks(html).size;
-  if (page.kind === "xtown") {
-    if (words < 800) fail(p, `prose words ${words} < 800`);
+  if (page.kind === "xtown" || page.minWords) {
+    if (words < (page.minWords || 800)) fail(p, `prose words ${words} < 800`);
     if (links < 80) fail(p, `unique internal links ${links} < 80`);
   }
   rows.push(`${page.brief}\t${p}\ttitle=${title.length}\tmeta=${meta.length}\twords=${words}\tlinks=${links}\t${robots}`);
