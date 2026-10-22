@@ -158,8 +158,17 @@ function icomplyPerfRewriteImg(string $tag, bool &$gaveHigh, array &$seen): stri
         $attrs['onerror'] = "this.onerror=null;this.src='" . $fallback . "'";
     }
     $attrs['data-perf'] = '1';
-    if (!isset($attrs['data-credit']) || $attrs['data-credit'] === '') {
-        $attrs['data-credit'] = 'iComply Property Services';
+    $existingCredit = trim((string)($attrs['data-credit'] ?? ''));
+    if ($existingCredit === '' || $existingCredit === 'iComply Property Services') {
+        $credit = '';
+        if (function_exists('icomplyQualityFloorCreditName') && !empty($attrs['src'])) {
+            $credit = icomplyQualityFloorCreditName((string)$attrs['src']);
+        }
+        if ($credit !== '') {
+            $attrs['data-credit'] = $credit;
+        } else {
+            unset($attrs['data-credit']);
+        }
     }
     return icomplyPerfRenderTag($tag, $attrs);
 }

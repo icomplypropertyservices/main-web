@@ -33,6 +33,9 @@ function aovManufacturers(): array
 
 function aovBrandWordmarkUrl(string $slug): string
 {
+    if ($slug === 'assa-abloy') {
+        return '';
+    }
     $svg = '/assets/images/manufacturers/' . $slug . '.svg';
     if (is_file(SITE_ROOT . $svg)) {
         return url($svg);
@@ -47,11 +50,14 @@ function aovBrandGridHtml(): string
     $html = '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">';
     foreach (aovManufacturers() as $brand) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $brand['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(aovBrandWordmarkUrl($brand['slug']), ENT_QUOTES, 'UTF-8');
+        $src = aovBrandWordmarkUrl($brand['slug']);
         $name = htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8');
         $line = htmlspecialchars($brand['line'], ENT_QUOTES, 'UTF-8');
+        $img = $src !== ''
+            ? '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#ffffff]" loading="lazy">'
+            : '';
         $html .= '<a href="' . $href . '" class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] transition block">'
-            . '<img src="' . $src . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#ffffff]" loading="lazy">'
+            . $img
             . '<div class="p-4"><div class="font-semibold text-black">' . $name . '</div>'
             . '<p class="mt-1 text-sm text-zinc-600">' . $line . '</p>'
             . '<span class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]">Brand page and spares →</span></div></a>';

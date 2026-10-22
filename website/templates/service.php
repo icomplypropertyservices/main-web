@@ -280,7 +280,7 @@ $schema = [
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     <?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?>.<br>
-                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.'), ENT_QUOTES, 'UTF-8') ?></span>
+                    <span class="text-[#ff6b00]"><?= htmlspecialchars($svcCopy['hero_accent'] ?? ($serviceSlug === 'demolition' ? 'Surveyed, stripped, cleared.' : ($poaService ? 'Surveyed, documented, POA.' : 'Installed, tested, certified.')), ENT_QUOTES, 'UTF-8') ?></span>
                 </h1>
                 <p class="mt-6 text-lg text-white/80 max-w-xl"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php if ($serviceSlug === 'fire-risk-assessments' && !empty($metaRow['guide_price_label'])): ?>
@@ -301,7 +301,7 @@ $schema = [
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <img src="<?= htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> by iComply Property Services"
+                     alt="<?= htmlspecialchars(html_entity_decode((string)$serviceName, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES, 'UTF-8') ?>"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager"
                      onerror="this.style.display='none'">
@@ -404,15 +404,17 @@ $schema = [
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed"><?= htmlspecialchars((string)$para, ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endforeach; ?>
             <?php else: ?>
+            <?php
+                $handTrade = in_array($serviceSlug, ['demolition', 'fencing', 'drainage', 'driveways', 'brickwork', 'plastering', 'roofing', 'painting-decorating'], true);
+                $overviewVerb = $serviceSlug === 'demolition'
+                    ? 'surveys, strips and clears'
+                    : ($handTrade ? 'surveys, quotes and carries out' : 'designs, installs, commissions, maintains and certifies');
+                $overviewScope = $ownsMainland
+                    ? 'for commercial, industrial, multi-let, care and residential properties across England, Wales and mainland Scotland.'
+                    : 'for commercial, industrial, multi-let, care and residential properties across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.';
+            ?>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                iComply Property Services designs, installs, commissions, maintains and certifies
-                <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong>
-                <?php if ($ownsMainland): ?>
-                for commercial, industrial, multi-let, care and residential properties across England, Wales and mainland Scotland.
-                <?php else: ?>
-                for commercial, industrial, multi-let, care and residential properties across Greater Manchester,
-                Lancashire, Cheshire, Merseyside and Cumbria.
-                <?php endif; ?>
+                iComply Property Services <?= htmlspecialchars($overviewVerb, ENT_QUOTES, 'UTF-8') ?> <strong><?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?></strong> <?= htmlspecialchars($overviewScope, ENT_QUOTES, 'UTF-8') ?>
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 <?php if ($ownsMainland): ?>

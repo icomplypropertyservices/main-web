@@ -87,7 +87,7 @@ foreach ($towns as $i => $town) {
             if (!str_contains($html, 'data-manufacturer="' . $brand['slug'] . '"')) {
                 $fail("missing brand {$brand['slug']} on {$family} {$town['slug']}");
             }
-            if (!str_contains($html, '/assets/images/manufacturers/nameplates/' . $brand['slug'] . '.svg')) {
+            if ($brand['slug'] !== 'assa-abloy' && !str_contains($html, '/assets/images/manufacturers/nameplates/' . $brand['slug'] . '.svg')) {
                 $fail("missing logo {$brand['slug']}");
             }
             if (!str_contains($html, '/pages/manufacturers/' . $brand['slug'])) {

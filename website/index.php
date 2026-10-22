@@ -201,7 +201,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — iComply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(trim(html_entity_decode((string)$name, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . ' in Greater Manchester and the North West', ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>

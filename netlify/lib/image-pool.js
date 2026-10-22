@@ -25,7 +25,7 @@ function imageHash(path, slot) {
 }
 
 function hashed(list, path, slot) {
-  if (!list.length) return "/assets/images/real-job/resources.jpg";
+  if (!list.length) return "/assets/images/real-job/directory-hub.jpg";
   return list[imageHash(path, slot) % list.length];
 }
 

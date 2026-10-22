@@ -39,7 +39,7 @@ if ($gasBrand && function_exists('icomplyGasBrandBlurb')) {
     $MFR_BLURB = icomplyGasBrandBlurb($mfrName);
 }
 $metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply.');
-$ogImage = manufacturerImageUrl($mfrSlug, $primaryService);
+$ogImage = manufacturerImageUrl($mfrSlug, $primaryService, true);
 if ($ogImage === '') {
     $ogImage = url('/assets/images/og-default.svg');
 }
@@ -170,7 +170,7 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService); ?>
+                <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService, true); ?>
                 <?php if ($mfrHero !== ''): ?>
                 <img src="<?= htmlspecialchars($mfrHero, ENT_QUOTES, 'UTF-8') ?>"
                      alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"

@@ -1,5 +1,6 @@
 import imageFamilies from "../../website/data/service-image-families.json" with { type: "json" };
 import { aliasFamily, pickImages } from "./image-pool.js";
+import { creditName } from "./quality-floor.js";
 /**
  * CLOSE-Q1 / Q2 / Q3 shared floor for the edge ×town renderer
  * (netlify/edge-functions/town-matrix.js → renderTownPage).
@@ -149,10 +150,12 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
     if (picked.length === 3) {
       const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
       const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-        + picked.map((image, index) => (
-          `<img data-pe-slot="${slots[index]}" data-credit="iComply Property Services" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
-        )).join("")
-        + `<figcaption>Image credit: iComply Property Services</figcaption></figure>`;
+        + picked.map((image, index) => {
+          const credit = creditName(image.src);
+          const attr = credit ? ` data-credit="${escapeHtml(credit)}"` : "";
+          return `<img data-pe-slot="${slots[index]}"${attr} src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`;
+        }).join("")
+        + `</figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
   }
@@ -162,15 +165,18 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
   const primary = family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
   const second = picks[1] || primary;
   const third = picks[2] || second;
-  const creditFor = (src) => (/\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(src) ? "Tomwsulcer (CC0)" : "iComply Property Services");
+  const creditAttr = (src) => {
+    const name = creditName(src);
+    return name ? ` data-credit="${escapeHtml(name)}"` : "";
+  };
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero" data-credit="${escapeHtml(creditFor(primary))}" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work" data-credit="${escapeHtml(creditFor(second))}" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context" data-credit="${escapeHtml(creditFor(third))}" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
-    + `<figcaption>Image credit: ${escapeHtml(creditFor(primary))}</figcaption></figure>`;
+    + `<img data-pe-slot="q2-image-hero"${creditAttr(primary)} src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-work"${creditAttr(second)} src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
+    + `<img data-pe-slot="q2-image-context"${creditAttr(third)} src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + `</figure>`;
   return {
     html,
     heroSrc: primary,

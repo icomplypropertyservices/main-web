@@ -236,14 +236,16 @@ export function tradesImages(slug, placeName) {
   const third = picks ? picks[2] : src;
   const name = row.name || titleCaseSlug(slug);
   const place = placeName ? ` in ${placeName}` : "";
-  const alt = `${name}${place} — ${row.family.replace(/-/g, " ")} photograph or diagram for this exact job`;
-  const creditName = licensedCredit(real);
-  const credit = ` data-credit="${escapeHtml(creditName)}"`;
+  const alt = `${name}${place}, ${row.family.replace(/-/g, " ")} photograph`;
+  const creditAttr = (file) => {
+    const credit = licensedCredit(file);
+    return credit ? ` data-credit="${escapeHtml(credit)}"` : "";
+  };
   const html = `<figure class="quality-bar-images trades-images" data-pe-slot="real-photo" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
-    + `<img${credit} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Completed ${name} work${place} by ${creditName}`)}" width="1200" height="675">`
-    + `<img${credit} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675" loading="lazy">`
-    + `<img${credit} src="${third}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
-    + `<figcaption>Image credit: ${escapeHtml(creditName)}</figcaption></figure>`;
+    + `<img${creditAttr(real)} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Photograph of ${name}${place}`)}" width="1200" height="675">`
+    + `<img${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675" loading="lazy">`
+    + `<img${creditAttr(third)} src="${third}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
+    + `</figure>`;
   return { html, src, key, family: row.family, alt };
 }
 

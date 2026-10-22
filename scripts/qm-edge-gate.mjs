@@ -84,7 +84,10 @@ function check(label, html) {
   say(!/gets\s+[a-z]+\s+in writing/i.test(page), `${label} no salad writing`);
   const header = page.match(/<header\b[\s\S]*?<\/header>/i);
   say(!header || !/image-credit|data-credit=/.test(header[0]), `${label} no header credit`);
-  say(/data-pe-slot="real-photo"[\s\S]{0,400}data-credit=|data-credit="[^"]+"[\s\S]{0,200}data-pe-slot="real-photo"/.test(page), `${label} content credit`);
+  const photoTag = page.match(/<img\b[^>]*data-pe-slot="real-photo"[^>]*>/i);
+  const photoNeutral = Boolean(photoTag) && !/\balt="[^"]*\bCompleted\b[^"]*\sby\s/i.test(photoTag[0]);
+  const photoFalse = Boolean(photoTag) && /data-credit="iComply Property Services"/.test(photoTag[0]);
+  say(Boolean(photoTag) && photoNeutral && !photoFalse, `${label} content credit`);
   const missing = [...page.matchAll(/\/assets\/images\/real-job\/([a-z0-9-]+)\.jpg/gi)].filter((m) => !REAL_JOB_OK.has(m[1].toLowerCase()));
   say(missing.length === 0, `${label} missing real-job ${missing.map((m) => m[1]).slice(0, 4).join(",") || "none"}`);
   const badLinks = brokenHrefs(page);
@@ -232,13 +235,13 @@ say(!aovFloor.includes("a055da46974c") && !aovFloor.includes("/services/aov-air-
 const ogTags = [...aovFloor.matchAll(/<meta\b[^>]*(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"[^>]*>/gi)];
 say(ogTags.length > 0 && ogTags.every((tag) => /content="https:\/\//.test(tag[0])), "aov floor og:image is absolute https");
 const plasterNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/plastering/york", "Plastering", "York").join(" ");
-say(/wall or the ceiling/.test(plasterNote) && !/fence run/.test(plasterNote), "plastering photo line");
+say(/wall or the ceiling/.test(plasterNote) && !/fence run/.test(plasterNote) && !/Useful photographs before/.test(plasterNote), "plastering photo line");
 const gasNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/keywords/gas-engineer/york", "Gas engineer", "York").join(" ");
-say(/appliance and the flue/.test(gasNote) && !/when the job is the roof/.test(gasNote), "gas-engineer photo line");
+say(/appliance and the flue/.test(gasNote) && !/when the job is the roof/.test(gasNote) && !/Useful photographs before/.test(gasNote), "gas-engineer photo line");
 const townNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/areas/york", "York", "York").join(" ");
-say(/part that has failed/.test(townNote) && !/when the job is the roof/.test(townNote), "town photo line");
+say(/part that has failed/.test(townNote) && !/when the job is the roof/.test(townNote) && !/Useful photographs before/.test(townNote), "town photo line");
 const landlordNoteLine = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/landlords", "Landlords", "Stockport").join(" ");
-say(/part that has failed/.test(landlordNoteLine) && !/when the job is a driveway/.test(landlordNoteLine), "landlord photo line");
+say(/part that has failed/.test(landlordNoteLine) && !/when the job is a driveway/.test(landlordNoteLine) && !/Useful photographs before/.test(landlordNoteLine), "landlord photo line");
 say(/(?:smoke|shaft|ventilation)/i.test(aovFloor) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(aovFloor), "aov floor smoke and aov photos");
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);

@@ -228,12 +228,15 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
     $openers = [
         "If you manage property in {$area} ({$p['districts']}), reliable {$serviceName} is not optional — it is how you stay audit-ready.",
         "For {$serviceName} in {$area}, iComply Property Services supports landlords, agents and businesses across {$p['region']}.",
-        "{$area} sites — from {$p['stock']} — need {$serviceName} that matches UK standards and real building use.",
+        "In {$area}, the buildings we usually see are {$p['stock']}. {$serviceName} has to suit that stock and the standards that apply to the building.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",
     ];
+    $handTrade = in_array($slug, ['fencing', 'drainage', 'demolition', 'driveways', 'brickwork', 'plastering', 'roofing', 'painting-decorating'], true);
     $mid = (function_exists('isPoaService') && isPoaService($slug))
         ? "We scope {$serviceName} against {$standards} for the system or building you actually have — written notes for the file, not a catalogue install. {$angle}"
-        : "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
+        : ($handTrade
+            ? "We survey, quote and carry out {$serviceName} with attention to {$standards}. {$angle}"
+            : "We design, install, maintain and certify {$serviceName} with attention to {$standards}. {$angle}");
     $close = (function_exists('isPoaService') && isPoaService($slug))
         ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a free written quote once we confirm the scope."
         : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free. The written price follows the survey or the photos.";

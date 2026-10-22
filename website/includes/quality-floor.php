@@ -176,31 +176,53 @@ function icomplyQualityFloorPhotoTemplate(string $path): string
     $family = icomplyQualityFloorFamily($path);
     $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
     $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    $line = $generic;
     if (
-        str_starts_with($family, 'hub:')
-        || str_starts_with($family, 'directory:')
-        || $head === 'areas'
-        || $head === 'landlords'
-        || str_contains($path, '/landlords')
+        !str_starts_with($family, 'hub:')
+        && !str_starts_with($family, 'directory:')
+        && $head !== 'areas'
+        && $head !== 'landlords'
+        && !str_contains($path, '/landlords')
     ) {
-        return $generic;
+        $families = is_array($doc['families'] ?? null) ? $doc['families'] : [];
+        if (isset($families[$family]) && is_string($families[$family]) && $families[$family] !== '') {
+            $line = $families[$family];
+        } else {
+            $services = function_exists('getServices') ? getServices() : [];
+            $label = '';
+            if (isset($services[$family]) && is_string($services[$family]) && $services[$family] !== '') {
+                $label = $services[$family];
+            } elseif ($family !== '') {
+                $label = ucwords(str_replace('-', ' ', $family));
+            }
+            $fallback = (string)($doc['fallback'] ?? '');
+            if ($label !== '' && $fallback !== '') {
+                $line = str_replace('{trade}', $label, $fallback);
+            }
+        }
     }
-    $families = is_array($doc['families'] ?? null) ? $doc['families'] : [];
-    if (isset($families[$family]) && is_string($families[$family]) && $families[$family] !== '') {
-        return $families[$family];
+    return icomplyQualityFloorVaryPhotoAsk($path, $line);
+}
+
+function icomplyQualityFloorVaryPhotoAsk(string $path, string $line): string
+{
+    $prefix = 'Useful photographs before {subject} in {place} ';
+    if (!str_starts_with($line, $prefix)) {
+        return $line;
     }
-    $services = function_exists('getServices') ? getServices() : [];
-    $label = '';
-    if (isset($services[$family]) && is_string($services[$family]) && $services[$family] !== '') {
-        $label = $services[$family];
-    } elseif ($family !== '') {
-        $label = ucwords(str_replace('-', ' ', $family));
-    }
-    $fallback = (string)($doc['fallback'] ?? '');
-    if ($label === '' || $fallback === '') {
-        return $generic;
-    }
-    return str_replace('{trade}', $label, $fallback);
+    $rest = substr($line, strlen($prefix));
+    $openings = [
+        'Before {subject} in {place}, pictures that help ',
+        'For {subject} in {place}, please send photographs that ',
+        'When booking {subject} in {place}, the useful frames ',
+        'A quote for {subject} in {place} needs photos that ',
+        'If you are arranging {subject} in {place}, pictures should ',
+        'The {subject} visit in {place} is clearer when photos ',
+        'Send, for {subject} in {place}, images that ',
+        'What prepares {subject} in {place} is photographs that ',
+    ];
+    $n = hexdec(substr(hash('sha256', $path . '|photo-line'), 0, 8));
+    return $openings[$n % count($openings)] . $rest;
 }
 
 function icomplyQualityFloorAbsoluteImageUrl(string $url): string
@@ -483,16 +505,25 @@ function icomplyQualityFloorCanonicalSrc(string $path): string
         return '/assets/images/real-job/home.jpg';
     }
     $family = icomplyQualityFloorFamily($path);
-    if ($family === 'products' || str_starts_with($family, 'directory:')) {
-        return '/assets/images/real-job/resources.jpg';
+    if ($family === 'products') {
+        return '/assets/images/real-job/products-hub.jpg';
+    }
+    if (str_starts_with($family, 'directory:')) {
+        return '/assets/images/real-job/directory-hub.jpg';
     }
     if (str_starts_with($family, 'hub:')) {
         $leaf = substr($family, 4);
-        if ($leaf === 'company' || $leaf === 'home') {
+        if ($leaf === 'resources') {
             return '/assets/images/real-job/resources.jpg';
         }
+        if ($leaf === 'manufacturers') {
+            return '/assets/images/real-job/manufacturers.jpg';
+        }
+        if ($leaf === 'company' || $leaf === 'home' || $leaf === 'jobs') {
+            return '/assets/images/real-job/jobs-hub.jpg';
+        }
         $rel = '/assets/images/real-job/' . $leaf . '.jpg';
-        return is_file(dirname(__DIR__) . $rel) ? $rel : '/assets/images/real-job/resources.jpg';
+        return is_file(dirname(__DIR__) . $rel) ? $rel : '/assets/images/real-job/directory-hub.jpg';
     }
     if ($family === 'aov-air-handling') {
         return icomplyImagePick($path, $family, 2)[0];
@@ -692,8 +723,15 @@ function icomplyQualityFloorCreditName(string $src): string
     }
     $base = (string)preg_replace('#-(?:photo|context)(\.[a-z0-9]+)$#i', '$1', $path);
     $row = icomplyQualityFloorCredits()[$path] ?? icomplyQualityFloorCredits()[$base] ?? null;
-    if (!is_array($row) || !preg_match('#^https?://#i', (string)($row['source'] ?? ''))) {
+    if (!is_array($row)) {
+        return '';
+    }
+    $source = (string)($row['source'] ?? '');
+    if (!empty($row['own']) && !preg_match('#^https?://#i', $source)) {
         return 'iComply Property Services';
+    }
+    if (!preg_match('#^https?://#i', $source)) {
+        return '';
     }
     $artist = trim((string)preg_replace('/\s+/', ' ', strip_tags((string)($row['artist'] ?? ''))));
     $license = trim(strip_tags((string)($row['license'] ?? '')));
@@ -702,6 +740,45 @@ function icomplyQualityFloorCreditName(string $src): string
         $name = substr($name, 0, 120);
     }
     return $license !== '' ? $name . ' (' . $license . ')' : $name;
+}
+
+function icomplyQualityFloorImageAlt(string $src): string
+{
+    $path = icomplyQualityFloorImageSource($src);
+    if (!str_starts_with($path, '/')) {
+        $path = (string)preg_replace('#^https?://[^/]+#i', '', $path);
+    }
+    $base = (string)preg_replace('#-(?:photo|context)(\.[a-z0-9]+)$#i', '$1', $path);
+    $row = icomplyQualityFloorCredits()[$path] ?? icomplyQualityFloorCredits()[$base] ?? null;
+    if (!is_array($row) || !preg_match('#^https?://#i', (string)($row['source'] ?? ''))) {
+        return '';
+    }
+    $title = (string)($row['title'] ?? '');
+    $title = preg_replace('/^File:/i', '', $title) ?? $title;
+    $title = preg_replace('/\.(jpe?g|png|webp|gif|svg)$/i', '', $title) ?? $title;
+    $title = preg_replace('/\s+-\s+geograph\.org\.uk\s+-\s+\d+\s*$/i', '', $title) ?? $title;
+    $title = trim(html_entity_decode(strip_tags($title), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+    $title = trim((string)preg_replace('/\s+/', ' ', $title));
+    if ($title === '' || strlen($title) > 180) {
+        return 'Photograph';
+    }
+    return $title;
+}
+
+function icomplyQualityFloorNeutralAlt(string $alt): string
+{
+    $passes = 0;
+    while (str_contains($alt, '&amp;') && $passes < 4) {
+        $alt = html_entity_decode($alt, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $passes++;
+    }
+    $alt = preg_replace('/^Completed\s+(.+?)\s+by\s+.+$/iu', '$1', $alt) ?? $alt;
+    $alt = preg_replace('/\s+used by iComply\b.*/iu', '', $alt) ?? $alt;
+    $alt = preg_replace('/\s+by\s+iComply Property Services\b.*/iu', '', $alt) ?? $alt;
+    $alt = preg_replace('/\s+by\s+iComply\b.*/iu', '', $alt) ?? $alt;
+    $alt = preg_replace('/\s+[—–-]\s+iComply(?: Property Services)?\b.*/iu', '', $alt) ?? $alt;
+    $alt = trim((string)preg_replace('/\s+/', ' ', $alt));
+    return $alt !== '' ? $alt : 'Photograph';
 }
 
 function icomplyQualityFloorSkipImg(string $attrs): bool
@@ -744,6 +821,8 @@ function icomplyStampImageCredits(string $html): string
     if (!is_string($masked)) {
         $masked = $html;
     }
+    $masked = preg_replace('/<figcaption>\s*Image credit:.*?<\/figcaption>/is', '', $masked) ?? $masked;
+    $masked = preg_replace('/<span class="image-credit">.*?<\/span>/is', '', $masked) ?? $masked;
     $stamped = preg_replace_callback('/<img\b([^>]*?)>/i', static function (array $m): string {
         $attrs = rtrim($m[1]);
         if (str_ends_with($attrs, '/')) {
@@ -753,36 +832,31 @@ function icomplyStampImageCredits(string $html): string
         if (preg_match('/\bsrc\s*=\s*"([^"]*)"/i', $attrs, $sm)) {
             $src = $sm[1];
         }
-        $origin = icomplyQualityFloorImageSource($src);
-        $demolition = (bool)preg_match('#/demolition(?:-(?:photo|context))?\.jpe?g$#i', $origin);
-        if (icomplyQualityFloorSkipImg($attrs) || (str_contains($attrs, 'data-credit-stamped=') && !$demolition)) {
-            return '<img' . $attrs . '>';
-        }
-        if ($src === '' || (icomplyQualityFloorPlaceholderImage($src) && !$demolition)) {
-            return '<img' . $attrs . '>';
-        }
-        $name = icomplyQualityFloorH(icomplyQualityFloorCreditName($src));
-        if ($name !== 'iComply Property Services' && preg_match('/\balt\s*=\s*"([^"]*)"/i', $attrs, $am)) {
-            $alt = str_replace('by iComply Property Services', 'by ' . $name, $am[1]);
-            if ($alt !== $am[1]) {
+        $skip = icomplyQualityFloorSkipImg($attrs) || $src === '';
+        $described = $skip ? '' : icomplyQualityFloorImageAlt($src);
+        if ($described !== '') {
+            $alt = icomplyQualityFloorH($described);
+            if (preg_match('/\balt\s*=/i', $attrs)) {
                 $attrs = preg_replace('/\balt\s*=\s*"[^"]*"/i', 'alt="' . $alt . '"', $attrs) ?? $attrs;
-            }
-        }
-        if ($demolition && str_contains($attrs, 'data-credit-stamped=')) {
-            if (preg_match('/\bdata-credit="/i', $attrs)) {
-                $attrs = preg_replace('/\bdata-credit="[^"]*"/i', 'data-credit="' . $name . '"', $attrs) ?? $attrs;
             } else {
-                $attrs .= ' data-credit="' . $name . '"';
+                $attrs .= ' alt="' . $alt . '"';
             }
+        } elseif (preg_match('/\balt\s*=\s*"([^"]*)"/i', $attrs, $am)) {
+            $alt = icomplyQualityFloorH(icomplyQualityFloorNeutralAlt($am[1]));
+            $attrs = preg_replace('/\balt\s*=\s*"[^"]*"/i', 'alt="' . $alt . '"', $attrs) ?? $attrs;
+        }
+        $attrs = preg_replace('/\sdata-credit="[^"]*"/i', '', $attrs) ?? $attrs;
+        $attrs = preg_replace('/\sdata-credit-stamped="[^"]*"/i', '', $attrs) ?? $attrs;
+        if ($skip) {
             return '<img' . $attrs . '>';
         }
-        if (preg_match('/\bdata-credit="/i', $attrs)) {
-            $attrs = preg_replace('/\bdata-credit="[^"]*"/i', 'data-credit="' . $name . '"', $attrs) ?? $attrs;
-        } else {
-            $attrs .= ' data-credit="' . $name . '"';
+        $name = icomplyQualityFloorCreditName($src);
+        if ($name === '') {
+            return '<img' . $attrs . '>';
         }
-        $attrs .= ' data-credit-stamped="1"';
-        return '<img' . $attrs . '><span class="image-credit">Image credit: ' . $name . '</span>';
+        $safe = icomplyQualityFloorH($name);
+        $attrs .= ' data-credit="' . $safe . '" data-credit-stamped="1"';
+        return '<img' . $attrs . '><span class="image-credit">Image credit: ' . $safe . '</span>';
     }, $masked);
     if (!is_string($stamped)) {
         $stamped = $masked;
@@ -859,11 +933,8 @@ function icomplyQualityFloorPhoto(string $path, string $subject): string
         : [icomplyQualityFloorSlotSrc($path)];
     $html = '<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner">';
     foreach ($srcs as $index => $src) {
-        $name = icomplyQualityFloorCreditName($src);
-        $html .= '<img src="' . icomplyQualityFloorH($src) . '" alt="' . icomplyQualityFloorH('Completed ' . $subject . ' by ' . $name)
-            . '" data-pe-slot="real-photo" data-credit="' . icomplyQualityFloorH($name)
-            . '" data-credit-stamped="1" width="1200" height="800"><figcaption>Image credit: '
-            . icomplyQualityFloorH($name) . '</figcaption>';
+        $html .= '<img src="' . icomplyQualityFloorH($src) . '" alt="' . icomplyQualityFloorH('Photograph of ' . $subject)
+            . '" data-pe-slot="real-photo" width="1200" height="800">';
         unset($index);
     }
     return $html . '</figure>';
@@ -1066,6 +1137,18 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             $attrs = preg_replace('/\s+data-srcset\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
             $attrs = preg_replace('/\s+data-perf\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
             $attrs = preg_replace('/\s+onerror\s*=\s*"[^"]*"/i', '', $attrs) ?? $attrs;
+            $attrs = preg_replace('/\sdata-credit="[^"]*"/i', '', $attrs) ?? $attrs;
+            $attrs = preg_replace('/\sdata-credit-stamped="[^"]*"/i', '', $attrs) ?? $attrs;
+            $label = icomplyQualityFloorImageAlt($src);
+            if ($label === '') {
+                $label = 'Photograph';
+            }
+            $safeAlt = icomplyQualityFloorH($label);
+            if (preg_match('/\balt\s*=/i', $attrs)) {
+                $attrs = preg_replace('/\balt\s*=\s*"[^"]*"/i', 'alt="' . $safeAlt . '"', $attrs) ?? $attrs;
+            } else {
+                $attrs .= ' alt="' . $safeAlt . '"';
+            }
             return $attrs;
         };
         $nextSrc = static function () use ($want, $wantFamily, $path, &$slot): string {
@@ -1081,6 +1164,9 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             return '<img' . $swap($attrs, $nextSrc()) . '>';
         }
         if ($directory) {
+            if (str_starts_with($family, 'hub:') && $family !== $wantFamily) {
+                return '<img' . $swap($attrs, $want) . '>';
+            }
             if (!$placeholder && $family !== '' && !str_starts_with($family, 'hub:') && $family !== 'products') {
                 return '<img' . $attrs . '>';
             }
@@ -1201,7 +1287,13 @@ function icomplyApplyQualityFloor(string $html): string
         $html = $body === false ? $html . $faq : substr($html, 0, $body) . $faq . substr($html, $body);
     }
     $html = icomplyQualityFloorDedupeBooking($html);
-    return icomplyStampImageCredits($html);
+    $html = icomplyStampImageCredits($html);
+    $passes = 0;
+    while (str_contains($html, '&amp;amp;') && $passes < 4) {
+        $html = str_replace('&amp;amp;', '&amp;', $html);
+        $passes++;
+    }
+    return $html;
 }
 
 function icomplyQualityFloorDedupeBooking(string $html): string

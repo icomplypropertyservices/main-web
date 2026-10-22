@@ -112,11 +112,15 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         $ogImage = 'https://' . substr($ogImage, 7);
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
-    $ogAltSafe = htmlspecialchars(
-        $ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West'),
-        ENT_QUOTES,
+    $ogAltRaw = html_entity_decode(
+        (string)($ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West')),
+        ENT_QUOTES | ENT_HTML5,
         'UTF-8'
     );
+    if (str_contains($ogAltRaw, '&amp;')) {
+        $ogAltRaw = html_entity_decode($ogAltRaw, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
+    $ogAltSafe = htmlspecialchars($ogAltRaw, ENT_QUOTES, 'UTF-8');
     ?>
     <meta property="og:image" content="<?= $ogImageSafe ?>">
     <meta property="og:image:secure_url" content="<?= $ogImageSafe ?>">

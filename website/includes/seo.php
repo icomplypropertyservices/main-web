@@ -171,7 +171,7 @@ function service_faqs(string $slug, string $serviceName, string $area = ''): arr
         ],
     ];
     $faqs = $base[$slug] ?? [
-        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => "Yes. iComply installs, services and certificates {$serviceName}{$loc} for residential and commercial clients."],
+        ['q' => "Do you provide {$serviceName}{$loc}?", 'a' => 'Yes. iComply ' . (in_array($slug, ['fencing', 'drainage', 'demolition', 'driveways', 'brickwork', 'plastering', 'roofing', 'painting-decorating'], true) ? 'surveys, quotes and carries out' : 'installs, services and certifies') . " {$serviceName}{$loc} for residential and commercial clients."],
         ['q' => "How do I get a quote?", 'a' => "Call, WhatsApp or use our online form with the postcode and property type for a fast quoted style quote."],
         ['q' => "What areas do you cover?", 'a' => "Greater Manchester and 150+ North West towns from our Stockport base."],
     ];

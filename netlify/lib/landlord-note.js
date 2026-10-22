@@ -39,20 +39,47 @@ function noteFamily(path) {
   return head ? `hub:${head}` : "directory:unknown";
 }
 
+function varyPhotoAsk(path, line) {
+  const prefix = "Useful photographs before {subject} in {place} ";
+  const text = String(line || "");
+  if (!text.startsWith(prefix)) return text;
+  const rest = text.slice(prefix.length);
+  const openings = [
+    "Before {subject} in {place}, pictures that help ",
+    "For {subject} in {place}, please send photographs that ",
+    "When booking {subject} in {place}, the useful frames ",
+    "A quote for {subject} in {place} needs photos that ",
+    "If you are arranging {subject} in {place}, pictures should ",
+    "The {subject} visit in {place} is clearer when photos ",
+    "Send, for {subject} in {place}, images that ",
+    "What prepares {subject} in {place} is photographs that ",
+  ];
+  let h = 0x811c9dc5;
+  const value = `${path || "/"}|photo-line`;
+  for (let i = 0; i < value.length; i++) {
+    h ^= value.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  h >>>= 0;
+  return openings[h % openings.length] + rest;
+}
+
 function photoTemplate(path) {
   const generic = String(photoAsk.generic || "Useful photographs before {subject} in {place} show the part that has failed and the access.");
   const family = noteFamily(path);
   const parts = String(path || "").split("/").filter(Boolean);
   const head = parts[0] === "pages" ? (parts[1] || "") : (parts[0] || "");
-  if (family.startsWith("hub:") || family.startsWith("directory:") || head === "areas" || head === "landlords" || String(path).includes("/landlords")) {
-    return generic;
+  let line = generic;
+  if (!(family.startsWith("hub:") || family.startsWith("directory:") || head === "areas" || head === "landlords" || String(path).includes("/landlords"))) {
+    const specific = photoAsk.families && photoAsk.families[family];
+    if (specific) line = String(specific);
+    else {
+      const label = services[family] || (family ? family.replace(/-/g, " ") : "");
+      const fallback = String(photoAsk.fallback || "");
+      if (label && fallback) line = fallback.replaceAll("{trade}", label);
+    }
   }
-  const specific = photoAsk.families && photoAsk.families[family];
-  if (specific) return String(specific);
-  const label = services[family] || (family ? family.replace(/-/g, " ") : "");
-  const fallback = String(photoAsk.fallback || "");
-  if (!label || !fallback) return generic;
-  return fallback.replaceAll("{trade}", label);
+  return varyPhotoAsk(path, line);
 }
 
 const BANKS = Array.isArray(lines.banks) ? lines.banks : [];

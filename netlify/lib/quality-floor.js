@@ -234,10 +234,13 @@ function pageFamily(path) {
 function canonicalSrc(path) {
   if (path === "/" || path === "") return "/assets/images/real-job/home.jpg";
   const family = pageFamily(path);
-  if (family === "products" || family.startsWith("directory:")) return "/assets/images/real-job/resources.jpg";
+  if (family === "products") return "/assets/images/real-job/products-hub.jpg";
+  if (family.startsWith("directory:")) return "/assets/images/real-job/directory-hub.jpg";
   if (family.startsWith("hub:")) {
     const leaf = family.slice(4);
-    if (leaf === "company" || leaf === "home") return "/assets/images/real-job/resources.jpg";
+    if (leaf === "resources") return "/assets/images/real-job/resources.jpg";
+    if (leaf === "manufacturers") return "/assets/images/real-job/manufacturers.jpg";
+    if (leaf === "company" || leaf === "home" || leaf === "jobs") return "/assets/images/real-job/jobs-hub.jpg";
     return `/assets/images/real-job/${leaf}.jpg`;
   }
   if (family === "aov-air-handling") return pickImages(path, family, 2)[0];
@@ -363,13 +366,51 @@ export function creditName(src) {
   if (/\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(path)) return "Tomwsulcer (CC0)";
   const base = path.replace(/-(?:photo|context)(\.[a-z0-9]+)$/i, "$1");
   const row = creditBySrc.get(path) || creditBySrc.get(base);
-  if (!row) return CREDIT;
+  if (!row) return "";
   const source = String(row.source || "");
-  if (!/^https?:/i.test(source)) return CREDIT;
+  if (row.own && !/^https?:/i.test(source)) return CREDIT;
+  if (!/^https?:/i.test(source)) return "";
   const artist = String(row.artist || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
   const license = String(row.license || "").replace(/<[^>]+>/g, " ").trim();
   const name = (artist || "Wikimedia Commons").slice(0, 120);
   return license ? `${name} (${license})` : name;
+}
+
+function imageAlt(src) {
+  let path = sourceOfImage(src);
+  if (!path.startsWith("/")) path = path.replace(/^https?:\/\/[^/]+/i, "");
+  const base = path.replace(/-(?:photo|context)(\.[a-z0-9]+)$/i, "$1");
+  const row = creditBySrc.get(path) || creditBySrc.get(base);
+  if (!row || !/^https?:/i.test(String(row.source || ""))) return "";
+  let title = String(row.title || "")
+    .replace(/^File:/i, "")
+    .replace(/\.(jpe?g|png|webp|gif|svg)$/i, "")
+    .replace(/\s+-\s+geograph\.org\.uk\s+-\s+\d+\s*$/i, "")
+    .replace(/<[^>]+>/g, " ")
+    .replaceAll("&amp;", "&")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!title || title.length > 180) return "Photograph";
+  return title;
+}
+
+function neutralAlt(alt) {
+  let text = String(alt || "");
+  let passes = 0;
+  while (text.includes("&amp;") && passes < 4) {
+    text = text.replaceAll("&amp;", "&");
+    passes += 1;
+  }
+  text = text
+    .replace(/&#0?38;/g, "&")
+    .replace(/^Completed\s+(.+?)\s+by\s+.+$/i, "$1")
+    .replace(/\s+used by iComply\b.*/i, "")
+    .replace(/\s+by\s+iComply Property Services\b.*/i, "")
+    .replace(/\s+by\s+iComply\b.*/i, "")
+    .replace(/\s+[—–-]\s+iComply(?: Property Services)?\b.*/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text || "Photograph";
 }
 
 function skipImg(attrs) {
@@ -386,7 +427,7 @@ function skipImg(attrs) {
 
 function stampCredits(html) {
   const held = [];
-  const masked = String(html).replace(/<(header|nav|footer)\b[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
+  let masked = String(html).replace(/<(header|nav|footer)\b[^>]*>[\s\S]*?<\/\1>/gi, (block) => {
     const cleaned = block
       .replace(/\sdata-credit="[^"]*"/gi, "")
       .replace(/\sdata-credit-stamped="[^"]*"/gi, "")
@@ -394,30 +435,25 @@ function stampCredits(html) {
     held.push(cleaned);
     return `\u0000HOLD${held.length - 1}\u0000`;
   });
+  masked = masked
+    .replace(/<figcaption>\s*Image credit:[\s\S]*?<\/figcaption>/gi, "")
+    .replace(/<span class="image-credit">[\s\S]*?<\/span>/gi, "");
   const stamped = masked.replace(/<img\b([^>]*?)>/gi, (tag, attrs) => {
     let next = String(attrs).replace(/\s*\/\s*$/, "");
     const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
-    const demolition = /\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(sourceOfImage(src));
-    if (skipImg(next) || (/\bdata-credit-stamped=/.test(next) && !demolition)) return `<img${next}>`;
-    if (!src || (isPlaceholderImage(src) && !demolition)) return `<img${next}>`;
-    const name = creditName(src);
-    if (name !== "iComply Property Services" && /\balt\s*=\s*"([^"]*)"/i.test(next)) {
-      next = next.replace(/\balt\s*=\s*"([^"]*)"/i, (full, alt) => {
-        const replaced = String(alt).split("by iComply Property Services").join(`by ${name}`);
-        return `alt="${replaced}"`;
-      });
-    }
-    if (demolition && /\bdata-credit-stamped=/.test(next)) {
-      if (/\bdata-credit=/.test(next)) next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
-      else next += ` data-credit="${escapeHtml(name)}"`;
-      return `<img${next}>`;
-    }
-    if (/\bdata-credit=/.test(next)) {
-      next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
+    const skip = skipImg(next) || !src;
+    const described = skip ? "" : imageAlt(src);
+    if (described) {
+      if (/\balt\s*=/.test(next)) next = next.replace(/\balt\s*=\s*"[^"]*"/i, `alt="${escapeHtml(described)}"`);
+      else next += ` alt="${escapeHtml(described)}"`;
     } else {
-      next += ` data-credit="${escapeHtml(name)}"`;
+      next = next.replace(/\balt\s*=\s*"([^"]*)"/i, (full, alt) => `alt="${escapeHtml(neutralAlt(alt))}"`);
     }
-    next += ` data-credit-stamped="1"`;
+    next = next.replace(/\sdata-credit="[^"]*"/gi, "").replace(/\sdata-credit-stamped="[^"]*"/gi, "");
+    if (skip) return `<img${next}>`;
+    const name = creditName(src);
+    if (!name) return `<img${next}>`;
+    next += ` data-credit="${escapeHtml(name)}" data-credit-stamped="1"`;
     return `<img${next}><span class="image-credit">Image credit: ${escapeHtml(name)}</span>`;
   });
   return stamped.replace(/\u0000HOLD(\d+)\u0000/g, (_, index) => held[Number(index)]);
@@ -426,10 +462,9 @@ function stampCredits(html) {
 function photoHtml(path, subject) {
   const family = pageFamily(path);
   const srcs = family === "aov-air-handling" ? pickImages(path, family, 2).slice(0, 2) : [slotSrc(path)];
-  const imgs = srcs.map((src) => {
-    const name = creditName(src);
-    return `<img src="${escapeHtml(src)}" alt="${escapeHtml(`Completed ${subject} by ${name}`)}" data-pe-slot="real-photo" data-credit="${escapeHtml(name)}" data-credit-stamped="1" width="1200" height="800"><figcaption>Image credit: ${escapeHtml(name)}</figcaption>`;
-  }).join("");
+  const imgs = srcs.map((src) => (
+    `<img src="${escapeHtml(src)}" alt="${escapeHtml(`Photograph of ${subject}`)}" data-pe-slot="real-photo" width="1200" height="800">`
+  )).join("");
   return `<figure class="real-job-photo" data-pe-slot="real-photo" data-real-job-photo="owner">${imgs}</figure>`;
 }
 
@@ -533,6 +568,11 @@ function replaceImgSrc(attrs, src) {
   next = next.replace(/\s+data-srcset\s*=\s*"[^"]*"/gi, "");
   next = next.replace(/\s+data-perf\s*=\s*"[^"]*"/gi, "");
   next = next.replace(/\s+onerror\s*=\s*"[^"]*"/gi, "");
+  next = next.replace(/\sdata-credit="[^"]*"/gi, "");
+  next = next.replace(/\sdata-credit-stamped="[^"]*"/gi, "");
+  const label = imageAlt(src) || "Photograph";
+  if (/\balt\s*=/.test(next)) next = next.replace(/\balt\s*=\s*"[^"]*"/i, `alt="${escapeHtml(label)}"`);
+  else next += ` alt="${escapeHtml(label)}"`;
   return next;
 }
 
@@ -566,6 +606,7 @@ function confineImages(html, path) {
     const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
     if (sharedHub || collapsed || sharedMaintenance || foreign) return `<img${replaceImgSrc(next, nextSrc())}>`;
     if (directory) {
+      if (family.startsWith("hub:") && family !== wantFamily) return `<img${replaceImgSrc(next, want)}>`;
       if (!placeholder && family && !family.startsWith("hub:") && family !== "products") return `<img${next}>`;
       if (placeholder || family === "hub:home" || family === "hub:company" || !family) return `<img${replaceImgSrc(next, want)}>`;
       return `<img${next}>`;
@@ -634,5 +675,10 @@ export function applyQualityFloor(html, ctx = {}) {
     return bookingSeen === 1 ? paragraph : "";
   });
   out = stampCredits(out);
+  let passes = 0;
+  while (out.includes("&amp;amp;") && passes < 4) {
+    out = out.replaceAll("&amp;amp;", "&amp;");
+    passes += 1;
+  }
   return out;
 }

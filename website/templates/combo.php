@@ -364,7 +364,7 @@ if ($townFacts !== '') {
         <div class="lg:col-span-2 space-y-4">
             <div class="rounded-3xl overflow-hidden border bg-zinc-100">
                 <img src="<?= url(icomplyKeywordImagePath((string)$KEYWORD_IMAGE_1, (string)$SERVICE_SLUG)) ?>"
-                     alt="<?= htmlspecialchars($serviceName, ENT_QUOTES, 'UTF-8') ?> panel and equipment used by iComply in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>"
+                     alt="<?= htmlspecialchars(trim(html_entity_decode((string)$serviceName, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . ' in ' . $areaName, ENT_QUOTES, 'UTF-8') ?>"
                      width="800" height="600"
                      class="w-full h-44 object-cover"
                      loading="lazy"

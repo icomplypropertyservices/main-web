@@ -332,18 +332,20 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
         }
         return function_exists('icomplyQualityFloorCreditName')
             ? icomplyQualityFloorCreditName($src)
-            : 'iComply Property Services';
+            : '';
     };
-    $heroCredit = $creditFor($primary);
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
     $h = 'icomplyQualityBarH';
+    $creditAttr = static function (string $file) use ($creditFor, $h): string {
+        $name = $creditFor($file);
+        return $name !== '' ? ' data-credit="' . $h($name) . '"' : '';
+    };
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero" data-credit="' . $h($heroCredit) . '" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work" data-credit="' . $h($creditFor($second)) . '" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context" data-credit="' . $h($creditFor($third)) . '" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
-        . '<figcaption>Image credit: ' . $h($heroCredit) . '</figcaption>'
+        . '<img data-pe-slot="q2-image-hero"' . $creditAttr($primary) . ' src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-work"' . $creditAttr($second) . ' src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ', equipment') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-context"' . $creditAttr($third) . ' src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ', site context') . '" width="1200" height="630">'
         . '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];

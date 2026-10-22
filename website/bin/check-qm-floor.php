@@ -127,6 +127,9 @@ $paths = [
     '/pages/packages/let-ready',
     '/pages/packages/workplace-essentials',
     '/pages/services/brickwork',
+    '/pages/services/demolition',
+    '/pages/areas/warrington',
+    '/pages/areas/great-sankey',
     '/pages/services/driveways',
 ];
 
@@ -204,7 +207,7 @@ foreach ($paths as $path) {
         $header = $hm[0];
     }
     $say($header === '' || (!str_contains($header, 'image-credit') && !str_contains($header, 'data-credit=')), $path . ' no header credit');
-    $say(str_contains($html, 'data-credit='), $path . ' content image credit');
+    $say(!str_contains($html, 'data-credit="iComply Property Services"'), $path . ' no false iComply image credit');
     if (preg_match_all('#/assets/images/real-job/([a-z0-9-]+)\.jpg#i', $html, $rm)) {
         foreach (array_unique($rm[1]) as $leaf) {
             $file = dirname(__DIR__) . '/assets/images/real-job/' . strtolower((string)$leaf) . '.jpg';
@@ -283,12 +286,26 @@ foreach ($paths as $path) {
         $say(!preg_match('/Useful photographs[^<]{0,500}when the job is the roof/i', $html), $path . ' town photo line is generic');
     }
     if (str_contains($path, 'driveways')) {
-        $say(str_contains($html, 'Dave Spicer'), $path . ' driveway credit');
+        $say(str_contains($html, 'Robin Stott'), $path . ' driveway credit');
+        $say(!str_contains($html, 'Dave Spicer'), $path . ' driveway credit is not the old lane');
         $say(!preg_match('/data-credit="iComply Property Services"[^>]*driveways|driveways[^>]*data-credit="iComply Property Services"/i', $html), $path . ' driveway image credit is not iComply');
     }
     if (str_contains($path, 'brickwork')) {
-        $say(str_contains($html, 'Library of Congress') || str_contains($html, 'PPOC'), $path . ' brickwork credit');
+        $say(str_contains($html, 'Bob Harvey'), $path . ' brickwork credit');
+        $say(!str_contains($html, 'Library of Congress') && !str_contains($html, 'PPOC'), $path . ' brickwork credit is not the archive photo');
     }
+    if (str_contains($path, 'fencing') || str_contains($path, 'drainage')) {
+        $say(!preg_match('/\bcertificate (?:Fencing|Drainage)\b/i', $html) && !str_contains($html, 'and certificate '), $path . ' certificate is not used as a verb');
+    }
+    if ($path === '/pages/services/demolition') {
+        $say(!str_contains($html, 'Installed, tested, certified.'), $path . ' demolition hero is not an install line');
+        $say(!str_contains($html, 'Demolitionfor') && !str_contains($html, 'certifies Demolition'), $path . ' demolition sentence has a space and the right verb');
+    }
+    if ($path === '/pages/areas/warrington' || $path === '/pages/areas/great-sankey') {
+        $say(!str_contains($html, 'WA55'), $path . ' WA55 is not listed');
+    }
+    $say(!str_contains($html, '&amp;amp;'), $path . ' no double-escaped amp');
+    $say(!preg_match('/\balt="[^"]*\bCompleted\b[^"]*\sby\s/i', $html), $path . ' alt does not say completed by');
     if (str_contains($path, 'plastering')) {
         $say(str_contains($html, 'Pingstone') || str_contains($html, 'Arpingstone'), $path . ' plastering credit');
     }

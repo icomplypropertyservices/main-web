@@ -1507,11 +1507,15 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
             ? url('/pages/manufacturers/' . $slug . '.php')
             : url('/pages/manufacturers/index.php');
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
+        $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+        $img = '';
+        if ($src !== '') {
+            $img = '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' logo" width="640" height="360" '
+                . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
+                . 'onerror="this.src=\'' . $fallback . '\'">';
+        }
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" width="640" height="360" '
-            . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
-            . 'onerror="this.src=\'' . $fallback . '\'">'
+            . $img
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
             . ' <span class="text-[#ff6b00]">→</span></div>'
             . '</a>';
@@ -1583,7 +1587,12 @@ function servicePhotoUrl(string $slug): string {
  * logo-less card on a lane look like the same picture.
  * $fallbackService is unused and kept so existing call sites stay valid.
  */
-function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms', bool $onManufacturerPage = false): string {
+    // assa-abloy.svg is the manufacturer-page logo only. The same basename
+    // was being repeated on service, shop and town pages.
+    if ($slug === 'assa-abloy' && !$onManufacturerPage) {
+        return '';
+    }
     foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
         $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
         if (is_file(SITE_ROOT . $rel)) {

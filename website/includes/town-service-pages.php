@@ -440,6 +440,9 @@ function icomplyTownEditorial(string $family, array $town): array
 
 function icomplyTownNameplateImg(string $slug, string $label, string $class, int $width, int $height): string
 {
+    if ($slug === 'assa-abloy') {
+        return '';
+    }
     $rel = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
     $file = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . $rel;
     if (!is_file($file)) {

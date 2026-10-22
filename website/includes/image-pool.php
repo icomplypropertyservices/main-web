@@ -30,7 +30,7 @@ function icomplyImageHash(string $path, int $slot): int
 function icomplyImageHashed(array $list, string $path, int $slot): string
 {
     if ($list === []) {
-        return '/assets/images/real-job/resources.jpg';
+        return '/assets/images/real-job/directory-hub.jpg';
     }
     return $list[icomplyImageHash($path, $slot) % count($list)];
 }
@@ -58,7 +58,7 @@ function icomplyImagePick(string $path, string $family, int $count = 3): array
     if ($own === []) {
         $rel = '/assets/images/services/' . $family . '.jpg';
         $root = dirname(__DIR__);
-        $own = is_file($root . $rel) ? [$rel] : ['/assets/images/real-job/resources.jpg'];
+        $own = is_file($root . $rel) ? [$rel] : ['/assets/images/real-job/directory-hub.jpg'];
     }
     $picked = [];
     $used = [];
