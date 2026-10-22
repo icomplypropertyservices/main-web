@@ -164,6 +164,67 @@ function icomplyQualityFloorFill(string $text, string $place, string $subject, i
     return str_replace(['{subject}', '{place}'], [$job, $town], $text);
 }
 
+function icomplyQualityFloorPhotoTemplate(string $path): string
+{
+    static $doc = null;
+    if ($doc === null) {
+        $file = dirname(__DIR__) . '/data/photo-ask.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $doc = is_array($decoded) ? $decoded : [];
+    }
+    $generic = (string)($doc['generic'] ?? 'Useful photographs before {subject} in {place} show the part that has failed and the access.');
+    $family = icomplyQualityFloorFamily($path);
+    $parts = array_values(array_filter(explode('/', $path), static fn ($p) => $p !== ''));
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    if (
+        str_starts_with($family, 'hub:')
+        || str_starts_with($family, 'directory:')
+        || $head === 'areas'
+        || $head === 'landlords'
+        || str_contains($path, '/landlords')
+    ) {
+        return $generic;
+    }
+    $families = is_array($doc['families'] ?? null) ? $doc['families'] : [];
+    if (isset($families[$family]) && is_string($families[$family]) && $families[$family] !== '') {
+        return $families[$family];
+    }
+    $services = function_exists('getServices') ? getServices() : [];
+    $label = '';
+    if (isset($services[$family]) && is_string($services[$family]) && $services[$family] !== '') {
+        $label = $services[$family];
+    } elseif ($family !== '') {
+        $label = ucwords(str_replace('-', ' ', $family));
+    }
+    $fallback = (string)($doc['fallback'] ?? '');
+    if ($label === '' || $fallback === '') {
+        return $generic;
+    }
+    return str_replace('{trade}', $label, $fallback);
+}
+
+function icomplyQualityFloorAbsoluteImageUrl(string $url): string
+{
+    $url = trim(html_entity_decode($url, ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+    if (preg_match('#^https://#i', $url)) {
+        return $url;
+    }
+    if (preg_match('#^http://#i', $url)) {
+        return 'https://' . substr($url, 7);
+    }
+    if (str_starts_with($url, '//')) {
+        return 'https:' . $url;
+    }
+    $path = $url;
+    if (preg_match('~^https?://[^/]+(/[^?#]*)~i', $url, $m)) {
+        $path = $m[1];
+    }
+    if ($path === '' || ($path[0] ?? '') !== '/') {
+        $path = '/' . ltrim($path, '/');
+    }
+    return 'https://icomplypropertyservices.co.uk' . $path;
+}
+
 function icomplyQualityFloorCapMentions(string $text, string $place, int $max = 6): string
 {
     unset($place, $max);
@@ -188,6 +249,9 @@ function icomplyQualityFloorLandlord(string $path, string $subject, string $plac
         $hash = hash('sha256', $path . '|' . ($index + 1));
         $n = hexdec(substr($hash, 0, 8));
         $line = (string)$bank[$n % count($bank)];
+        if (str_starts_with($line, 'Useful photographs')) {
+            $line = icomplyQualityFloorPhotoTemplate($path);
+        }
         $parts[] = str_replace(['{subject}', '{place}'], [$job, $town], $line);
     }
     return implode("\n", $parts);
@@ -626,7 +690,8 @@ function icomplyQualityFloorCreditName(string $src): string
     if (preg_match('#/demolition(?:-(?:photo|context))?\.jpe?g$#i', $path)) {
         return 'Tomwsulcer (CC0)';
     }
-    $row = icomplyQualityFloorCredits()[$path] ?? null;
+    $base = (string)preg_replace('#-(?:photo|context)(\.[a-z0-9]+)$#i', '$1', $path);
+    $row = icomplyQualityFloorCredits()[$path] ?? icomplyQualityFloorCredits()[$base] ?? null;
     if (!is_array($row) || !preg_match('#^https?://#i', (string)($row['source'] ?? ''))) {
         return 'iComply Property Services';
     }
@@ -697,6 +762,12 @@ function icomplyStampImageCredits(string $html): string
             return '<img' . $attrs . '>';
         }
         $name = icomplyQualityFloorH(icomplyQualityFloorCreditName($src));
+        if ($name !== 'iComply Property Services' && preg_match('/\balt\s*=\s*"([^"]*)"/i', $attrs, $am)) {
+            $alt = str_replace('by iComply Property Services', 'by ' . $name, $am[1]);
+            if ($alt !== $am[1]) {
+                $attrs = preg_replace('/\balt\s*=\s*"[^"]*"/i', 'alt="' . $alt . '"', $attrs) ?? $attrs;
+            }
+        }
         if ($demolition && str_contains($attrs, 'data-credit-stamped=')) {
             if (preg_match('/\bdata-credit="/i', $attrs)) {
                 $attrs = preg_replace('/\bdata-credit="[^"]*"/i', 'data-credit="' . $name . '"', $attrs) ?? $attrs;
@@ -931,15 +1002,15 @@ function icomplyQualityFloorRewriteMetaImages(string $html, string $path): strin
             $origin = icomplyQualityFloorImageSource($pathOnly);
             $imgFamily = icomplyQualityFloorImageFamily($pathOnly);
             $sharedHub = (bool)preg_match('#/real-job/(?:company|home)\.jpe?g$#i', $origin) && $path !== '/';
-            $collapsed = $family === 'aov-air-handling' && icomplyImageCollapsedAov($origin);
-            if (!$sharedHub && !$collapsed && ($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)))) {
-                return $cm[0];
+            $collapsed = icomplyImageCollapsedAov($origin) || icomplyImageCollapsedAov($pathOnly);
+            $url = $cm[1];
+            if ($sharedHub || $collapsed || !($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)))) {
+                $swapped = preg_replace('#/assets/images/[^"?]+#', $want, $cm[1]);
+                if (is_string($swapped) && $swapped !== '') {
+                    $url = $swapped;
+                }
             }
-            $url = preg_replace('#/assets/images/[^"?]+#', $want, $cm[1]);
-            if (!is_string($url) || $url === '') {
-                return $cm[0];
-            }
-            return 'content="' . $url . '"';
+            return 'content="' . icomplyQualityFloorAbsoluteImageUrl($url) . '"';
         }, $tag);
         return is_string($next) ? $next : $tag;
     }, $html);
@@ -973,7 +1044,16 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
         $product = $family === 'products' || (bool)preg_match('#/(?:products|shop)/#i', $src);
         $placeholder = icomplyQualityFloorPlaceholderImage($src);
         $sharedHub = (bool)preg_match('#/real-job/(?:company|home)\.jpe?g$#i', $origin) && $path !== '/';
-        $collapsed = $wantFamily === 'aov-air-handling' && icomplyImageCollapsedAov($origin);
+        $collapsed = icomplyImageCollapsedAov($origin) || icomplyImageCollapsedAov($src);
+        $owner = icomplyImageOwner($origin);
+        if ($owner === '' ) {
+            $owner = icomplyImageOwner($src);
+        }
+        $servicePage = $wantFamily !== ''
+            && !str_starts_with($wantFamily, 'hub:')
+            && !str_starts_with($wantFamily, 'directory:')
+            && $wantFamily !== 'products';
+        $foreign = $servicePage && $owner !== '' && $owner !== $wantFamily;
         $sharedMaintenance = $wantFamily !== 'building-maintenance' && (
             str_contains($origin, '/services/building-maintenance.jpg') || str_contains($src, '19f957bd50f5')
         );
@@ -997,7 +1077,7 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             $slot++;
             return $choice;
         };
-        if ($sharedHub || $collapsed || $sharedMaintenance) {
+        if ($sharedHub || $collapsed || $sharedMaintenance || $foreign) {
             return '<img' . $swap($attrs, $nextSrc()) . '>';
         }
         if ($directory) {
@@ -1020,10 +1100,14 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
     if (!is_string($out)) {
         $out = $html;
     }
-    if ($wantFamily === 'aov-air-handling') {
-        $smoke = icomplyImagePick($path, $wantFamily, 2)[0];
-        $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/services/aov-air-handling\.jpe?g#i', $smoke, $out) ?? $out;
-        $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/opt/a055da46974c-\d+\.webp#i', $smoke, $out) ?? $out;
+    $replacement = $wantFamily === 'aov-air-handling'
+        ? icomplyImagePick($path, $wantFamily, 2)[0]
+        : $want;
+    if (!str_contains($replacement, 'a055da46974c') && !str_contains($replacement, 'aov-air-handling.jpg')) {
+        $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/opt/a055da46974c-\d+\.webp#i', $replacement, $out) ?? $out;
+        if ($wantFamily === 'aov-air-handling') {
+            $out = preg_replace('#(?:https?://[^"\'\s]+)?/assets/images/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g#i', $replacement, $out) ?? $out;
+        }
     }
     return $out;
 }
@@ -1116,5 +1200,20 @@ function icomplyApplyQualityFloor(string $html): string
         $body = strripos($html, '</body>');
         $html = $body === false ? $html . $faq : substr($html, 0, $body) . $faq . substr($html, $body);
     }
+    $html = icomplyQualityFloorDedupeBooking($html);
     return icomplyStampImageCredits($html);
+}
+
+function icomplyQualityFloorDedupeBooking(string $html): string
+{
+    $seen = 0;
+    $out = preg_replace_callback(
+        '/<p\b[^>]*>[^<]*To book, call or WhatsApp 07517 806082[^<]*<\/p>/i',
+        static function (array $m) use (&$seen): string {
+            $seen++;
+            return $seen === 1 ? $m[0] : '';
+        },
+        $html
+    );
+    return is_string($out) ? $out : $html;
 }

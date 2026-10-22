@@ -53,78 +53,17 @@
         ]
     },
     "aov-air-handling": {
-        "aov": [
-            "/assets/images/keywords/ahu-commissioning.jpg",
-            "/assets/images/keywords/ahu-controls-installation.jpg",
-            "/assets/images/keywords/ahu-electrical-control.jpg",
-            "/assets/images/keywords/ahu-installation.jpg",
-            "/assets/images/keywords/ahu-inverter-drive.jpg",
-            "/assets/images/keywords/ahu-panel.jpg",
-            "/assets/images/keywords/air-handling-system-repair.jpg",
-            "/assets/images/keywords/air-handling-unit-certification.jpg",
-            "/assets/images/keywords/air-handling-unit-installation.jpg",
-            "/assets/images/keywords/air-handling-unit-maintenance.jpg",
-            "/assets/images/keywords/air-handling-unit-servicing.jpg",
-            "/assets/images/keywords/aov-actuator-installation.jpg",
-            "/assets/images/keywords/aov-actuator.jpg",
-            "/assets/images/keywords/aov-annual-service.jpg",
-            "/assets/images/keywords/aov-battery-backup.jpg",
-            "/assets/images/keywords/aov-battery-replacement.jpg",
-            "/assets/images/keywords/aov-certification.jpg",
-            "/assets/images/keywords/aov-commissioning.jpg",
-            "/assets/images/keywords/aov-control-panel.jpg",
-            "/assets/images/keywords/aov-engineer.jpg",
-            "/assets/images/keywords/aov-fault-finding.jpg",
-            "/assets/images/keywords/aov-fire-alarm-interface.jpg",
-            "/assets/images/keywords/aov-for-apartment-blocks.jpg",
-            "/assets/images/keywords/aov-for-high-rise.jpg",
-            "/assets/images/keywords/aov-inspection.jpg",
-            "/assets/images/keywords/aov-installation.jpg",
-            "/assets/images/keywords/aov-maintenance-contract.jpg",
-            "/assets/images/keywords/aov-maintenance.jpg",
-            "/assets/images/keywords/aov-near-me.jpg",
-            "/assets/images/keywords/aov-panel-installation.jpg",
-            "/assets/images/keywords/aov-repair.jpg",
-            "/assets/images/keywords/aov-servicing.jpg",
-            "/assets/images/keywords/aov-system-design.jpg",
-            "/assets/images/keywords/aov-system.jpg",
-            "/assets/images/keywords/aov-testing-and-certification.jpg",
-            "/assets/images/keywords/aov-testing.jpg",
-            "/assets/images/keywords/automatic-opening-vent-installation.jpg",
-            "/assets/images/keywords/automatic-opening-vent.jpg",
-            "/assets/images/keywords/bs-9991.jpg",
-            "/assets/images/keywords/commercial-ahu-maintenance.jpg",
-            "/assets/images/keywords/fire-rated-aov.jpg",
-            "/assets/images/keywords/hvac-electrical-installation.jpg",
-            "/assets/images/keywords/industrial-air-handling-unit.jpg",
-            "/assets/images/keywords/louvre-aov.jpg",
-            "/assets/images/keywords/multi-site-aov-maintenance.jpg",
-            "/assets/images/keywords/roof-aov.jpg",
-            "/assets/images/keywords/se-controls-aov.jpg",
-            "/assets/images/keywords/window-aov.jpg",
-            "/assets/images/keywords/windowmaster-aov.jpg",
-            "/assets/images/services/aov-air-handling-context.jpg",
-            "/assets/images/services/aov-air-handling-photo.jpg"
-        ],
         "smoke": [
-            "/assets/images/keywords/automatic-smoke-vent.jpg",
-            "/assets/images/keywords/bs-9991-smoke-control.jpg",
-            "/assets/images/keywords/car-park-smoke-ventilation.jpg",
-            "/assets/images/keywords/colt-smoke-vent.jpg",
-            "/assets/images/keywords/corridor-smoke-ventilation.jpg",
-            "/assets/images/keywords/emergency-smoke-ventilation.jpg",
-            "/assets/images/keywords/en-12101-smoke-vent.jpg",
-            "/assets/images/keywords/life-safety-ventilation.jpg",
-            "/assets/images/keywords/lobby-smoke-ventilation.jpg",
-            "/assets/images/keywords/mechanical-smoke-ventilation.jpg",
-            "/assets/images/keywords/natural-smoke-ventilation.jpg",
-            "/assets/images/keywords/roof-smoke-vent-installation.jpg",
-            "/assets/images/keywords/smoke-control-engineers.jpg",
-            "/assets/images/keywords/smoke-control-panel-service.jpg",
-            "/assets/images/keywords/smoke-control-system.jpg",
-            "/assets/images/keywords/smoke-shaft-aov.jpg",
-            "/assets/images/keywords/smoke-vent-system.jpg",
-            "/assets/images/keywords/stairwell-smoke-vent.jpg"
+            "/assets/images/services/smoke-vent-roof-1.jpg",
+            "/assets/images/services/smoke-vent-hatch-1.jpg",
+            "/assets/images/services/smoke-vent-cover-1.jpg",
+            "/assets/images/services/smoke-shaft-1.jpg"
+        ],
+        "aov": [
+            "/assets/images/services/aov-release-switch-1.jpg",
+            "/assets/images/services/aov-control-panel-1.jpg",
+            "/assets/images/services/aov-control-panel-2.jpg",
+            "/assets/images/services/aov-roof-hatch-1.jpg"
         ]
     },
     "asbestos-survey": {
@@ -164,8 +103,7 @@
     },
     "building-maintenance-photo": {
         "own": [
-            "/assets/images/services/building-maintenance-photo-context.jpg",
-            "/assets/images/services/building-maintenance-photo-photo.jpg"
+            "/assets/images/services/building-maintenance-photo-context.jpg"
         ]
     },
     "building-surveys": {
@@ -635,8 +573,6 @@
     },
     "fire-compartmentation": {
         "own": [
-            "/assets/images/services/fire-compartmentation-context.jpg",
-            "/assets/images/services/fire-compartmentation-photo.jpg",
             "/assets/images/services/fire-compartmentation.jpg"
         ]
     },

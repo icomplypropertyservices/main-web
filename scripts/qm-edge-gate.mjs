@@ -225,10 +225,20 @@ const aovPicks = pickImages("/pages/aov-air-handling/york", "aov-air-handling", 
 say(aovPicks.length >= 2 && aovPicks[0] !== aovPicks[1], `aov pool distinct ${aovPicks.slice(0, 2).join(" ")}`);
 say(!aovPicks.some((src) => isCollapsedAov(src)), "aov pool not collapsed");
 const aovFloor = applyQualityFloor(
-  `<html><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
+  `<html><head><meta property="og:image" content="/assets/images/services/aov-air-handling.jpg"><meta name="twitter:image" content="/assets/images/keywords/roof-aov.jpg"></head><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
   { path: "/pages/aov-air-handling/york", subject: "AOV", place: "York" },
 );
 say(!aovFloor.includes("a055da46974c") && !aovFloor.includes("/services/aov-air-handling.jpg") && !aovFloor.includes("real-job/company.jpg"), "aov floor drops collapsed and company photos");
+const ogTags = [...aovFloor.matchAll(/<meta\b[^>]*(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"[^>]*>/gi)];
+say(ogTags.length > 0 && ogTags.every((tag) => /content="https:\/\//.test(tag[0])), "aov floor og:image is absolute https");
+const plasterNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/plastering/york", "Plastering", "York").join(" ");
+say(/wall or the ceiling/.test(plasterNote) && !/fence run/.test(plasterNote), "plastering photo line");
+const gasNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/keywords/gas-engineer/york", "Gas engineer", "York").join(" ");
+say(/appliance and the flue/.test(gasNote) && !/when the job is the roof/.test(gasNote), "gas-engineer photo line");
+const townNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/areas/york", "York", "York").join(" ");
+say(/part that has failed/.test(townNote) && !/when the job is the roof/.test(townNote), "town photo line");
+const landlordNoteLine = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/landlords", "Landlords", "Stockport").join(" ");
+say(/part that has failed/.test(landlordNoteLine) && !/when the job is a driveway/.test(landlordNoteLine), "landlord photo line");
 say(/(?:smoke|shaft|ventilation)/i.test(aovFloor) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(aovFloor), "aov floor smoke and aov photos");
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);

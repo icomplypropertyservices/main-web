@@ -12,7 +12,7 @@ import keywordFallback from "../../website/data/keyword-service-fallback.json" w
 import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 import { landlordLines } from "./landlord-note.js";
-import { aliasFamily, pickImages, isCollapsedAov } from "./image-pool.js";
+import { aliasFamily, pickImages, isCollapsedAov, imageOwner } from "./image-pool.js";
 
 function keywordService(slug) {
   const service = keywordServices[slug] || keywordFallback[slug] || "";
@@ -348,11 +348,21 @@ function faqBlock(subject, place, path) {
     + `</section><script type="application/ld+json">${JSON.stringify(ld)}</script>`;
 }
 
-function creditName(src) {
+function absoluteImageUrl(url) {
+  const value = String(url || "").trim();
+  if (/^https:\/\//i.test(value)) return value;
+  if (/^http:\/\//i.test(value)) return `https://${value.slice(7)}`;
+  if (value.startsWith("//")) return `https:${value}`;
+  const path = value.replace(/^https?:\/\/[^/]+/i, "") || "/";
+  return `https://icomplypropertyservices.co.uk${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function creditName(src) {
   let path = sourceOfImage(src);
   if (!path.startsWith("/")) path = path.replace(/^https?:\/\/[^/]+/i, "");
   if (/\/demolition(?:-(?:photo|context))?\.jpe?g$/i.test(path)) return "Tomwsulcer (CC0)";
-  const row = creditBySrc.get(path);
+  const base = path.replace(/-(?:photo|context)(\.[a-z0-9]+)$/i, "$1");
+  const row = creditBySrc.get(path) || creditBySrc.get(base);
   if (!row) return CREDIT;
   const source = String(row.source || "");
   if (!/^https?:/i.test(source)) return CREDIT;
@@ -391,6 +401,12 @@ function stampCredits(html) {
     if (skipImg(next) || (/\bdata-credit-stamped=/.test(next) && !demolition)) return `<img${next}>`;
     if (!src || (isPlaceholderImage(src) && !demolition)) return `<img${next}>`;
     const name = creditName(src);
+    if (name !== "iComply Property Services" && /\balt\s*=\s*"([^"]*)"/i.test(next)) {
+      next = next.replace(/\balt\s*=\s*"([^"]*)"/i, (full, alt) => {
+        const replaced = String(alt).split("by iComply Property Services").join(`by ${name}`);
+        return `alt="${replaced}"`;
+      });
+    }
     if (demolition && /\bdata-credit-stamped=/.test(next)) {
       if (/\bdata-credit=/.test(next)) next = next.replace(/\bdata-credit="[^"]*"/i, `data-credit="${escapeHtml(name)}"`);
       else next += ` data-credit="${escapeHtml(name)}"`;
@@ -499,10 +515,12 @@ function rewriteMetaImages(html, path) {
       const origin = sourceOfImage(pathOnly);
       const imgFamily = imageFamily(pathOnly);
       const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
-      const collapsed = family === "aov-air-handling" && isCollapsedAov(origin);
-      if (!sharedHub && !collapsed && (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) return full;
-      const next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
-      return `content="${next}"`;
+      const collapsed = isCollapsedAov(origin) || isCollapsedAov(pathOnly);
+      let next = String(url);
+      if (sharedHub || collapsed || !(!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)))) {
+        next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
+      }
+      return `content="${absoluteImageUrl(next)}"`;
     });
   });
 }
@@ -541,9 +559,12 @@ function confineImages(html, path) {
     const placeholder = isPlaceholderImage(src);
     const product = family === "products" || /\/(?:products|shop)\//i.test(src);
     const sharedHub = /\/real-job\/(?:company|home)\.jpe?g$/i.test(origin) && path !== "/";
-    const collapsed = wantFamily === "aov-air-handling" && isCollapsedAov(origin);
+    const collapsed = isCollapsedAov(origin) || isCollapsedAov(src);
+    const owner = imageOwner(origin) || imageOwner(src);
+    const servicePage = wantFamily && !wantFamily.startsWith("hub:") && !wantFamily.startsWith("directory:") && wantFamily !== "products";
+    const foreign = servicePage && owner && owner !== wantFamily;
     const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
-    if (sharedHub || collapsed || sharedMaintenance) return `<img${replaceImgSrc(next, nextSrc())}>`;
+    if (sharedHub || collapsed || sharedMaintenance || foreign) return `<img${replaceImgSrc(next, nextSrc())}>`;
     if (directory) {
       if (!placeholder && family && !family.startsWith("hub:") && family !== "products") return `<img${next}>`;
       if (placeholder || family === "hub:home" || family === "hub:company" || !family) return `<img${replaceImgSrc(next, want)}>`;
@@ -553,10 +574,12 @@ function confineImages(html, path) {
     if (allowProducts && product) return `<img${next}>`;
     return `<img${replaceImgSrc(next, nextSrc())}>`;
   });
-  if (wantFamily === "aov-air-handling") {
-    const smoke = pickImages(path, wantFamily, 2)[0];
-    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/services\/aov-air-handling\.jpe?g/gi, smoke);
-    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/a055da46974c-\d+\.webp/gi, smoke);
+  const replacement = wantFamily === "aov-air-handling" ? pickImages(path, wantFamily, 2)[0] : want;
+  if (!String(replacement).includes("a055da46974c") && !String(replacement).includes("aov-air-handling.jpg")) {
+    out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/a055da46974c-\d+\.webp/gi, replacement);
+    if (wantFamily === "aov-air-handling") {
+      out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g/gi, replacement);
+    }
   }
   return out;
 }
@@ -605,6 +628,11 @@ export function applyQualityFloor(html, ctx = {}) {
     const body = out.toLowerCase().lastIndexOf("</body>");
     out = body === -1 ? out + faq : out.slice(0, body) + faq + out.slice(body);
   }
+  let bookingSeen = 0;
+  out = out.replace(/<p\b[^>]*>[^<]*To book, call or WhatsApp 07517 806082[^<]*<\/p>/gi, (paragraph) => {
+    bookingSeen += 1;
+    return bookingSeen === 1 ? paragraph : "";
+  });
   out = stampCredits(out);
   return out;
 }

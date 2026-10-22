@@ -327,7 +327,12 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
     $second = $picks[1] ?? $primary;
     $third = $picks[2] ?? $second;
     $creditFor = static function (string $src): string {
-        return preg_match('#/demolition(?:-(?:photo|context))?\.jpe?g$#i', $src) ? 'Tomwsulcer (CC0)' : 'iComply Property Services';
+        if (!function_exists('icomplyQualityFloorCreditName')) {
+            require_once __DIR__ . '/quality-floor.php';
+        }
+        return function_exists('icomplyQualityFloorCreditName')
+            ? icomplyQualityFloorCreditName($src)
+            : 'iComply Property Services';
     };
     $heroCredit = $creditFor($primary);
     $src = static function (string $path): string {

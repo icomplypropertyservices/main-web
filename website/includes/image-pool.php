@@ -79,11 +79,47 @@ function icomplyImagePick(string $path, string $family, int $count = 3): array
     return $picked;
 }
 
+/** @return array<string, true> */
+function icomplyImageAcCluster(): array
+{
+    static $set = null;
+    if ($set !== null) {
+        return $set;
+    }
+    $set = [];
+    $file = dirname(__DIR__) . '/data/ac-photo-cluster.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    foreach (is_array($decoded['paths'] ?? null) ? $decoded['paths'] : [] as $item) {
+        $set[(string)$item] = true;
+    }
+    return $set;
+}
+
 function icomplyImageCollapsedAov(string $src): bool
 {
     $path = (string)strtok($src, '?');
+    $path = (string)preg_replace('#^https?://[^/]+#i', '', $path);
     if (preg_match('#/opt/a055da46974c-#i', $path)) {
         return true;
     }
-    return (bool)preg_match('#/assets/images/services/aov-air-handling\.jpe?g$#i', $path);
+    if (preg_match('#/assets/images/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g$#i', $path)) {
+        return true;
+    }
+    return isset(icomplyImageAcCluster()[$path]);
+}
+
+function icomplyImageOwner(string $src): string
+{
+    static $map = null;
+    if ($map === null) {
+        $file = dirname(__DIR__) . '/data/image-owners.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $map = is_array($decoded) ? $decoded : [];
+    }
+    $path = (string)strtok($src, '?');
+    $path = (string)preg_replace('#^https?://[^/]+#i', '', $path);
+    if (isset($map[$path])) {
+        return (string)$map[$path];
+    }
+    return '';
 }

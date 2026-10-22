@@ -117,6 +117,17 @@ $paths = [
     '/pages/landlords',
     '/pages/packages',
     '/pages/demolition/bolton',
+    '/pages/jobs/aov-service',
+    '/pages/manufacturers/dea',
+    '/pages/manufacturers/eagle',
+    '/pages/manufacturers/life',
+    '/pages/manufacturers/newgate',
+    '/pages/manufacturers/skidata',
+    '/pages/packages/fire-ready',
+    '/pages/packages/let-ready',
+    '/pages/packages/workplace-essentials',
+    '/pages/services/brickwork',
+    '/pages/services/driveways',
 ];
 
 function qmBodyWords(string $html): int
@@ -243,6 +254,44 @@ foreach ($paths as $path) {
         || (bool)preg_match('#/manufacturers/(?:alpha|ariston|baxi|ferroli|firebird|glow-worm|grant|ideal|intergas|main-heating|navien|potterton|ravenheat|remeha|vaillant|viessmann|vokera|worcester-bosch)$#', $path);
     $say($gasPage || !preg_match('/Gas Safe registered/i', $html), $path . ' gas sentence only on gas pages');
     $say(!preg_match('/\b(?:a|an|the) the area\b/i', $html), $path . ' no broken area grammar');
+    $ogBad = [];
+    if (preg_match_all('/<meta\b[^>]*(?:property|name)\s*=\s*"(?:og:image(?::secure_url)?|twitter:image)"[^>]*>/i', $html, $ogTags)) {
+        foreach ($ogTags[0] as $tag) {
+            if (!preg_match('/\bcontent\s*=\s*"([^"]*)"/i', $tag, $cm) || !str_starts_with($cm[1], 'https://')) {
+                $ogBad[] = $tag;
+            }
+        }
+    }
+    $say($ogTags[0] !== [] && $ogBad === [], $path . ' absolute og:image');
+    if ($path === '/pages/packages') {
+        $say(!str_contains($html, 'arefrom') && !str_contains($html, 'POAonly'), $path . ' package price spacing');
+    }
+    if ($path === '/pages/jobs/aov-service') {
+        $say(substr_count($html, 'To book, call or WhatsApp 07517 806082') === 1, $path . ' booking paragraph once');
+        $say(!str_contains($html, 'a055da46974c'), $path . ' no collapsed aov webp');
+    }
+    if (str_contains($path, 'plastering')) {
+        $say(!preg_match('/Useful photographs[^<]{0,500}fence run/i', $html), $path . ' photo line is plastering');
+    }
+    if (str_contains($path, 'gas-engineer')) {
+        $say(!preg_match('/Useful photographs[^<]{0,500}when the job is the roof/i', $html), $path . ' photo line is not the roof');
+    }
+    if ($path === '/pages/landlords') {
+        $say(!preg_match('/Useful photographs[^<]{0,500}when the job is a driveway/i', $html), $path . ' landlord photo line is generic');
+    }
+    if ($path === '/pages/areas/stockport' || $path === '/pages/areas/wigan' || $path === '/pages/areas/bolton') {
+        $say(!preg_match('/Useful photographs[^<]{0,500}when the job is the roof/i', $html), $path . ' town photo line is generic');
+    }
+    if (str_contains($path, 'driveways')) {
+        $say(str_contains($html, 'Dave Spicer'), $path . ' driveway credit');
+        $say(!preg_match('/data-credit="iComply Property Services"[^>]*driveways|driveways[^>]*data-credit="iComply Property Services"/i', $html), $path . ' driveway image credit is not iComply');
+    }
+    if (str_contains($path, 'brickwork')) {
+        $say(str_contains($html, 'Library of Congress') || str_contains($html, 'PPOC'), $path . ' brickwork credit');
+    }
+    if (str_contains($path, 'plastering')) {
+        $say(str_contains($html, 'Pingstone') || str_contains($html, 'Arpingstone'), $path . ' plastering credit');
+    }
     $say(!str_contains($html, 'dump 200,000') && !str_contains($html, '200,000 links'), $path . ' no hub dump line');
     $say(!str_contains($html, 'arrive unannounced to a tenant') && !str_contains($html, 'will not arrive unannounced'), $path . ' no shared landlord paragraph');
     $say($path === '/' || !str_contains($html, 'real-job/home.jpg'), $path . ' home.jpg only on home');

@@ -4,6 +4,10 @@
  * AOV pages draw a smoke-vent file and a separate AOV file.
  */
 import pools from "../../website/data/service-image-pools.json" with { type: "json" };
+import acCluster from "../../website/data/ac-photo-cluster.json" with { type: "json" };
+import imageOwners from "../../website/data/image-owners.json" with { type: "json" };
+
+const AC_CLUSTER = new Set(Array.isArray(acCluster.paths) ? acCluster.paths : []);
 
 export function aliasFamily(family) {
   return family === "aov" ? "aov-air-handling" : String(family || "");
@@ -60,7 +64,13 @@ export function pickImages(path, family, count = 3) {
 }
 
 export function isCollapsedAov(src) {
-  const path = String(src || "").split("?")[0];
-  return /\/opt\/a055da46974c-/i.test(path)
-    || /\/assets\/images\/services\/aov-air-handling\.jpe?g$/i.test(path);
+  const path = String(src || "").split("?")[0].replace(/^https?:\/\/[^/]+/i, "");
+  if (/\/opt\/a055da46974c-/i.test(path)) return true;
+  if (/\/assets\/images\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g$/i.test(path)) return true;
+  return AC_CLUSTER.has(path);
+}
+
+export function imageOwner(src) {
+  const path = String(src || "").split("?")[0].replace(/^https?:\/\/[^/]+/i, "");
+  return String(imageOwners[path] || "");
 }
