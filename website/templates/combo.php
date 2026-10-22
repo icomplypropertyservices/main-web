@@ -11,9 +11,17 @@ $poaCombo = function_exists('isPoaService') && isPoaService($SERVICE_SLUG);
 $ownsMainland = function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($SERVICE_SLUG);
 $coveragePhrase = $ownsMainland ? 'UK mainland' : 'the North West';
 $pageTitle = $SERVICE_NAME . ' in ' . $AREA . ' | iComply Property Services';
-$metaDesc = $poaCombo
-    ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Free written quote, same/next-day engineers from our Stockport team.')
-    : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.');
+$handTradeMeta = [
+    'demolition' => 'Strip-out and demolition in ' . $AREA . '. We survey the structure, protect what stays and clear the waste. Written quote after a look at the building.',
+    'driveways' => 'Driveways in ' . $AREA . '. We survey the levels, excavate and lay the finish. Written quote before any work starts.',
+    'fencing' => 'Fencing in ' . $AREA . '. We survey the line, set the posts and hang the panels. Written quote before work starts.',
+    'drainage' => 'Drainage in ' . $AREA . '. We survey the run, clear or repair it and leave it flowing. Written quote before work starts.',
+];
+$metaDesc = isset($handTradeMeta[$SERVICE_SLUG])
+    ? $handTradeMeta[$SERVICE_SLUG]
+    : ($poaCombo
+        ? ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Free written quote, same/next-day engineers from our Stockport team.')
+        : ('Expert ' . $SERVICE_NAME . ' in ' . $AREA . '. Installation, maintenance, testing and certification. ' . ($ownsMainland ? 'UK mainland fire protection, scheduled from Stockport.' : 'Local engineers.') . ' Written quote after scope.'));
 if ($SERVICE_SLUG === 'fire-risk-assessments') {
     $fraGuide = function_exists('fraGuidePrice') ? fraGuidePrice() : '£350';
     $metaDesc = 'Fire risk assessment in ' . $AREA . '. From ' . $fraGuide . ' for a typical 6-bed HMO in the North West; other properties POA.';

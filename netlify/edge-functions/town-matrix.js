@@ -23,6 +23,7 @@ import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
 import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
+import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
 
 // Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
 // render them index,follow so the rankings are kept.
@@ -58,12 +59,61 @@ export function ctrTitle(subject, town, slug) {
   return `${`${subject} ${town}`.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
 }
 
+const HAND_TRADES = new Set(["demolition", "driveways", "fencing", "drainage"]);
+
+function handTrade(slug, subject) {
+  return HAND_TRADES.has(String(slug || "")) || /\b(demolition|driveways|fencing|drainage)\b/i.test(String(subject || ""));
+}
+
+function paperworkLine(slug, subject) {
+  return handTrade(slug, subject) ? "Written notes after the visit" : "Certificates and reports emailed after the visit";
+}
+
+function nearestNeighbourNames(townSlug, places) {
+  const here = townCoords[townSlug];
+  if (!Array.isArray(here) || !places) return [];
+  return Object.keys(places)
+    .filter((slug) => slug !== townSlug && Array.isArray(townCoords[slug]) && places[slug] && places[slug].name)
+    .map((slug) => ({
+      name: places[slug].name,
+      miles: haversineMiles(
+        { lat: here[0], lng: here[1] },
+        { lat: townCoords[slug][0], lng: townCoords[slug][1] },
+      ),
+    }))
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, 3)
+    .map((row) => row.name);
+}
+
+function fitTownTitle(subject, place) {
+  const suffix = " | iComply";
+  const candidates = [
+    `${subject} in ${place}${suffix}`,
+    `${subject}, ${place}${suffix}`,
+    `${place} ${subject}${suffix}`,
+  ];
+  for (const title of candidates) {
+    if (title.length >= 15 && title.length <= 60) return title;
+  }
+  const words = `${subject} ${place}`.split(/\s+/).filter(Boolean);
+  let kept = "";
+  for (const word of words) {
+    const next = kept ? `${kept} ${word}` : word;
+    if (next.length + suffix.length > 60) break;
+    kept = next;
+  }
+  const title = `${kept || place}${suffix}`;
+  return title.length <= 60 ? title : `${String(place).slice(0, 48).trim()}${suffix}`;
+}
+
 export function ctrDescription(subject, town, slug, gas) {
   const price = ctrPriceFrom(slug);
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
+  const paper = handTrade(slug, subject) ? " Free written quote." : " Free written quote, certificates emailed.";
   for (const d of [
-    `${lead}${who} Free written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who}${paper} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
   ]) if (d.length <= 155) return d;
@@ -284,7 +334,7 @@ export function renderTownPage(input) {
       focus: [
         `${subject} parts identified before the visit`,
         "Free written quote before work starts",
-        "Certificates and reports emailed after the visit",
+        paperworkLine(serviceSlug, subject),
       ],
       gas: serviceSlug === "gas-systems",
     };
@@ -324,7 +374,7 @@ export function renderTownPage(input) {
         focus: [
           "Same-day and next-day slots where available",
           "Free written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          paperworkLine(serviceSlug, subject),
         ],
         gas,
         synthetic: true,
@@ -354,7 +404,7 @@ export function renderTownPage(input) {
         : [
           `Survey and scope for ${serviceName}`,
           "Free written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          paperworkLine(serviceSlug, subject),
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
     };
@@ -385,7 +435,10 @@ export function renderTownPage(input) {
   const lockEarly = tradesHas(String(input.keyword || "")) || tradesHas(String(input.job || "")) || tradesIsNewService(String(input.service || ""));
   const audience = lockEarly ? "homeowners and landlords" : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
-  const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
+  const rankedNeighbours = nearestNeighbourNames(townSlug, catalogue.places || {});
+  const neighbours = rankedNeighbours.length >= 2
+    ? rankedNeighbours
+    : (Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : []);
   const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
   const pop = place.population
     ? `${place.name} is home to about ${Number(place.population).toLocaleString("en-GB")} people.`
@@ -504,16 +557,7 @@ export function renderTownPage(input) {
   const lockPage = lockSlug !== "" && (tradesHas(lockSlug) || (kind === "service" && tradesIsNewService(lockSlug)));
   let tradesGallery = "";
   if (lockPage) {
-    const fullTitle = `${subject} in ${place.name} | iComply`;
-    if (fullTitle.length <= 60) {
-      title = fullTitle;
-    } else {
-      const tail = String(lockSlug).replace(/-/g, " ");
-      const budget = 60 - ` in ${place.name} | iComply`.length;
-      const cut = tail.slice(Math.max(0, tail.length - budget)).replace(/^\s*\S*\s/, "");
-      title = `${cut} in ${place.name} | iComply`;
-      if (title.length > 60 || title.length < 15) title = `${place.name} ${tail}`.slice(0, 49).trim() + " | iComply";
-    }
+    title = fitTownTitle(subject, place.name);
     proseHtml += tradesProseHtml(lockSlug, place.name, townSlug) + tradesLinkHtml(lockSlug, townSlug);
     const extraFaqs = tradesFaqs(lockSlug, place.name);
     faqs.push(...extraFaqs);

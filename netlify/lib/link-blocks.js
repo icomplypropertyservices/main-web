@@ -18,6 +18,7 @@
  * files are not guessed here (some GM localities 404 on those templates).
  */
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
 import areasMainland from "../../website/data/areas-mainland.json" with { type: "json" };
 import { BOROUGH_GEO } from "./town-depth.js";
 
@@ -154,6 +155,23 @@ export function isLocalTown(slug) {
 
 export function gmTownName(slug) {
   return GM_NAME[slug] || "";
+}
+
+function nearestPlaceSlugs(townSlug, places, limit = 8) {
+  const here = townCoords[townSlug];
+  if (!Array.isArray(here) || !places) return [];
+  return Object.keys(places)
+    .filter((slug) => slug !== townSlug && places[slug] && places[slug].name && Array.isArray(townCoords[slug]))
+    .map((slug) => ({
+      slug,
+      name: places[slug].name,
+      miles: milesApart(
+        { lat: here[0], lng: here[1] },
+        { lat: townCoords[slug][0], lng: townCoords[slug][1] },
+      ),
+    }))
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, limit);
 }
 
 export function adjacentGmSlugs(townSlug, limit = 12) {
@@ -349,7 +367,15 @@ export function matrixRelatedHtml(catalogue, identity) {
 
   const nearby = [];
   const coverage = [];
-  const nearSet = new Set(adjacentGmSlugs(townSlug, 12));
+  const distanceNear = nearestPlaceSlugs(townSlug, catalogue.places || {}, 8);
+  for (const town of distanceNear) {
+    nearby.push({
+      href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
+      label: `${subject} in ${town.name}`,
+      slug: town.slug,
+    });
+  }
+  const nearSet = new Set(distanceNear.length ? distanceNear.map((town) => town.slug) : adjacentGmSlugs(townSlug, 12));
   for (const town of gmTowns) {
     if (!town.slug || town.slug === townSlug) continue;
     const item = {
@@ -357,8 +383,8 @@ export function matrixRelatedHtml(catalogue, identity) {
       label: `${subject} in ${town.name}`,
       slug: town.slug,
     };
-    if (nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
-    else coverage.push(item);
+    if (!distanceNear.length && nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
+    else if (!nearSet.has(town.slug)) coverage.push(item);
   }
 
   const cross = [];

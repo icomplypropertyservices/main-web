@@ -212,11 +212,17 @@ function icomplyQualityBarHash(string $value): int
     return $h;
 }
 
+function icomplyQualityBarArticle(string $subject): string
+{
+    return preg_match('/^[aeiou]/i', trim($subject)) ? 'an' : 'a';
+}
+
 function icomplyQualityBarFill(string $template, array $ctx): string
 {
-    return strtr($template, [
+    $subject = (string)($ctx['subject'] ?? '');
+    $text = strtr($template, [
         '{place}' => (string)($ctx['place'] ?? ''),
-        '{subject}' => (string)($ctx['subject'] ?? ''),
+        '{subject}' => $subject,
         '{service}' => (string)($ctx['service'] ?? ''),
         '{audience}' => (string)($ctx['audience'] ?? 'landlords'),
         '{visit}' => (string)($ctx['visit'] ?? 'a planned daytime visit'),
@@ -224,7 +230,29 @@ function icomplyQualityBarFill(string $template, array $ctx): string
         '{housing}' => (string)($ctx['housing'] ?? ''),
         '{industry}' => (string)($ctx['industry'] ?? ''),
         '{pop}' => (string)($ctx['pop'] ?? ''),
+        '{article}' => icomplyQualityBarArticle($subject),
     ]);
+    $service = (string)($ctx['service'] ?? '');
+    $hand = in_array($service, ['demolition', 'driveways', 'fencing', 'drainage'], true)
+        || preg_match('/\b(demolition|driveways|fencing|drainage)\b/i', $subject);
+    if (!$hand) {
+        return $text;
+    }
+    return str_replace(
+        [
+            'Certificates are emailed to you.',
+            'Certificates are emailed',
+            'your certificate or report',
+            'You get the certificate or report issued',
+        ],
+        [
+            'The written quote is emailed to you.',
+            'The written quote is emailed',
+            'your written quote',
+            'You get the written notes',
+        ],
+        $text
+    );
 }
 
 /**

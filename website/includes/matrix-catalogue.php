@@ -60,6 +60,37 @@ function icomplyMatrixRememberPlace(array &$bySlug, string $slug, array $row, in
 /**
  * @return array{selected:array<string,array<string,mixed>>,available:int,remaining:int,skipped_duplicates:int}
  */
+/** @return array<string, array{0:float,1:float}> */
+function icomplyMatrixCoords(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    $file = SITE_ROOT . '/data/town-coords-slim.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    if (!is_array($decoded)) {
+        return $map;
+    }
+    foreach ($decoded as $slug => $pair) {
+        if (!is_array($pair) || count($pair) < 2) {
+            continue;
+        }
+        $map[icomplyMatrixSlug((string)$slug)] = [(float)$pair[0], (float)$pair[1]];
+    }
+    return $map;
+}
+
+function icomplyMatrixMiles(float $lat1, float $lng1, float $lat2, float $lng2): float
+{
+    $earth = 3958.8;
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLng = deg2rad($lng2 - $lng1);
+    $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
+    return $earth * (2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a))));
+}
+
 function icomplyMatrixSelectPlaces(int $wanted): array
 {
     $bySlug = [];
@@ -270,14 +301,30 @@ function icomplyMatrixSelectPlaces(int $wanted): array
                 break;
             }
         }
-        if (count($neighbours) < 2) {
-            foreach ($chosen as $other) {
-                if ($other['slug'] === $row['slug'] || ($other['region'] ?? '') !== ($row['region'] ?? '')) {
-                    continue;
+        if (count($neighbours) < 3) {
+            $coords = icomplyMatrixCoords();
+            $here = $coords[$row['slug']] ?? null;
+            $ranked = [];
+            if (is_array($here)) {
+                foreach ($chosen as $other) {
+                    $there = $coords[$other['slug']] ?? null;
+                    if ($other['slug'] === $row['slug'] || !is_array($there)) {
+                        continue;
+                    }
+                    $ranked[] = [
+                        'name' => (string)$other['name'],
+                        'miles' => icomplyMatrixMiles($here[0], $here[1], $there[0], $there[1]),
+                    ];
                 }
-                $neighbours[] = (string)$other['name'];
-                if (count($neighbours) >= 3) {
-                    break;
+                usort($ranked, static fn (array $a, array $b): int => $a['miles'] <=> $b['miles']);
+                foreach ($ranked as $near) {
+                    if (in_array($near['name'], $neighbours, true)) {
+                        continue;
+                    }
+                    $neighbours[] = $near['name'];
+                    if (count($neighbours) >= 3) {
+                        break;
+                    }
                 }
             }
         }

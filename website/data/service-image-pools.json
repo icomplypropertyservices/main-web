@@ -1,54 +1,6 @@
 {
     "access-control": {
         "own": [
-            "/assets/images/keywords/access-control-card-programming.jpg",
-            "/assets/images/keywords/access-control-certification.jpg",
-            "/assets/images/keywords/access-control-engineers.jpg",
-            "/assets/images/keywords/access-control-installation.jpg",
-            "/assets/images/keywords/access-control-maintenance.jpg",
-            "/assets/images/keywords/access-control-near-me.jpg",
-            "/assets/images/keywords/access-control-panel.jpg",
-            "/assets/images/keywords/access-control-repair.jpg",
-            "/assets/images/keywords/access-control-servicing.jpg",
-            "/assets/images/keywords/access-control-system-design.jpg",
-            "/assets/images/keywords/access-control-system.jpg",
-            "/assets/images/keywords/assa-abloy-access-control.jpg",
-            "/assets/images/keywords/biometric-access-control.jpg",
-            "/assets/images/keywords/building-access-system.jpg",
-            "/assets/images/keywords/car-park-barrier-access.jpg",
-            "/assets/images/keywords/cloud-access-control.jpg",
-            "/assets/images/keywords/commercial-access-control.jpg",
-            "/assets/images/keywords/door-access-control-system.jpg",
-            "/assets/images/keywords/door-access-control.jpg",
-            "/assets/images/keywords/door-controller-installation.jpg",
-            "/assets/images/keywords/electric-door-release.jpg",
-            "/assets/images/keywords/electric-strike-installation.jpg",
-            "/assets/images/keywords/fingerprint-access-control.jpg",
-            "/assets/images/keywords/fire-door-access-control-integration.jpg",
-            "/assets/images/keywords/fob-access-control.jpg",
-            "/assets/images/keywords/gate-access-control.jpg",
-            "/assets/images/keywords/hid-access-control.jpg",
-            "/assets/images/keywords/intercom-access.jpg",
-            "/assets/images/keywords/keypad-access-control.jpg",
-            "/assets/images/keywords/lift-access-control.jpg",
-            "/assets/images/keywords/magnetic-lock-installation.jpg",
-            "/assets/images/keywords/multi-door-access-control.jpg",
-            "/assets/images/keywords/multi-site-access-control.jpg",
-            "/assets/images/keywords/office-access-control-system.jpg",
-            "/assets/images/keywords/office-access-control.jpg",
-            "/assets/images/keywords/paxton-access-control.jpg",
-            "/assets/images/keywords/paxton-access.jpg",
-            "/assets/images/keywords/paxton-net2-install.jpg",
-            "/assets/images/keywords/paxton-net2-maintenance.jpg",
-            "/assets/images/keywords/proximity-card-reader-installation.jpg",
-            "/assets/images/keywords/proximity-card-reader.jpg",
-            "/assets/images/keywords/salto-access-control.jpg",
-            "/assets/images/keywords/secure-door-entry-access.jpg",
-            "/assets/images/keywords/time-attendance-access-control.jpg",
-            "/assets/images/keywords/visitor-access-management.jpg",
-            "/assets/images/keywords/wireless-access-control.jpg",
-            "/assets/images/services/access-control-context.jpg",
-            "/assets/images/services/access-control-photo.jpg",
             "/assets/images/services/access-control.jpg"
         ]
     },
@@ -68,22 +20,16 @@
     },
     "asbestos-survey": {
         "own": [
-            "/assets/images/services/asbestos-survey-context.jpg",
-            "/assets/images/services/asbestos-survey-photo.jpg",
             "/assets/images/services/asbestos-survey.jpg"
         ]
     },
     "barriers": {
         "own": [
-            "/assets/images/services/barriers-context.jpg",
-            "/assets/images/services/barriers-photo.jpg",
             "/assets/images/services/barriers.jpg"
         ]
     },
     "bathrooms": {
         "own": [
-            "/assets/images/services/bathrooms-context.jpg",
-            "/assets/images/services/bathrooms-photo.jpg",
             "/assets/images/services/bathrooms.jpg"
         ]
     },
@@ -96,13 +42,15 @@
     },
     "building-maintenance": {
         "own": [
-            "/assets/images/services/building-maintenance-context.jpg",
+            "/assets/images/services/building-maintenance.jpg",
             "/assets/images/services/building-maintenance-photo.jpg",
-            "/assets/images/services/building-maintenance.jpg"
+            "/assets/images/services/building-maintenance-context.jpg"
         ]
     },
     "building-maintenance-photo": {
         "own": [
+            "/assets/images/services/building-maintenance-photo.jpg",
+            "/assets/images/services/building-maintenance-photo-photo.jpg",
             "/assets/images/services/building-maintenance-photo-context.jpg"
         ]
     },
@@ -115,75 +63,21 @@
     },
     "carpentry": {
         "own": [
-            "/assets/images/services/carpentry-context.jpg",
-            "/assets/images/services/carpentry-photo.jpg",
             "/assets/images/services/carpentry.jpg"
         ]
     },
     "cctv": {
         "own": [
-            "/assets/images/keywords/4k-cctv-system.jpg",
-            "/assets/images/keywords/anpr-cctv-system.jpg",
-            "/assets/images/keywords/axis-camera-installation.jpg",
-            "/assets/images/keywords/bullet-camera-installation.jpg",
-            "/assets/images/keywords/business-security-cameras.jpg",
-            "/assets/images/keywords/cctv-cabling-installation.jpg",
-            "/assets/images/keywords/cctv-camera-installation.jpg",
-            "/assets/images/keywords/cctv-certification.jpg",
-            "/assets/images/keywords/cctv-compliance.jpg",
-            "/assets/images/keywords/cctv-engineer.jpg",
-            "/assets/images/keywords/cctv-engineers-near-me.jpg",
-            "/assets/images/keywords/cctv-for-business.jpg",
-            "/assets/images/keywords/cctv-for-car-parks.jpg",
-            "/assets/images/keywords/cctv-for-care-homes.jpg",
-            "/assets/images/keywords/cctv-for-schools.jpg",
-            "/assets/images/keywords/cctv-hard-drive-upgrade.jpg",
-            "/assets/images/keywords/cctv-installation.jpg",
-            "/assets/images/keywords/cctv-maintenance.jpg",
-            "/assets/images/keywords/cctv-monitoring-setup.jpg",
-            "/assets/images/keywords/cctv-monitoring.jpg",
-            "/assets/images/keywords/cctv-near-me.jpg",
-            "/assets/images/keywords/cctv-recording.jpg",
-            "/assets/images/keywords/cctv-remote-viewing-setup.jpg",
-            "/assets/images/keywords/cctv-repair.jpg",
-            "/assets/images/keywords/cctv-servicing.jpg",
-            "/assets/images/keywords/cctv-system-design.jpg",
-            "/assets/images/keywords/cctv-testing.jpg",
-            "/assets/images/keywords/cctv-upgrade.jpg",
-            "/assets/images/keywords/commercial-cctv-system.jpg",
-            "/assets/images/keywords/dahua-cctv-installation.jpg",
-            "/assets/images/keywords/dome-camera-installation.jpg",
-            "/assets/images/keywords/domestic-cctv-installation.jpg",
-            "/assets/images/keywords/dvr-installation.jpg",
-            "/assets/images/keywords/external-cctv-installation.jpg",
-            "/assets/images/keywords/hd-cctv-camera-installation.jpg",
-            "/assets/images/keywords/hd-cctv-camera.jpg",
-            "/assets/images/keywords/hikvision-cctv-installation.jpg",
-            "/assets/images/keywords/hikvision-cctv.jpg",
-            "/assets/images/keywords/internal-cctv-installation.jpg",
-            "/assets/images/keywords/ip-cctv-system.jpg",
-            "/assets/images/keywords/multi-site-cctv.jpg",
-            "/assets/images/keywords/number-plate-recognition-camera.jpg",
-            "/assets/images/keywords/nvr-installation.jpg",
-            "/assets/images/keywords/office-cctv-installation.jpg",
-            "/assets/images/keywords/ptz-camera-installation.jpg",
-            "/assets/images/keywords/remote-cctv-access.jpg",
-            "/assets/images/keywords/security-camera-installation.jpg",
-            "/assets/images/keywords/shop-cctv-installation.jpg",
-            "/assets/images/keywords/video-surveillance-system.jpg",
-            "/assets/images/keywords/warehouse-cctv.jpg",
-            "/assets/images/keywords/wireless-cctv-installation.jpg",
-            "/assets/images/keywords/wireless-cctv.jpg",
-            "/assets/images/services/cctv-context.jpg",
+            "/assets/images/services/cctv.jpg",
             "/assets/images/services/cctv-photo.jpg",
-            "/assets/images/services/cctv.jpg"
+            "/assets/images/services/cctv-context.jpg"
         ]
     },
     "cdm-support": {
         "own": [
-            "/assets/images/services/cdm-support-context.jpg",
+            "/assets/images/services/cdm-support.jpg",
             "/assets/images/services/cdm-support-photo.jpg",
-            "/assets/images/services/cdm-support.jpg"
+            "/assets/images/services/cdm-support-context.jpg"
         ]
     },
     "commercial-fit-out": {
@@ -195,16 +89,16 @@
     },
     "compliance-consultancy": {
         "own": [
-            "/assets/images/services/compliance-consultancy-context.jpg",
+            "/assets/images/services/compliance-consultancy.jpg",
             "/assets/images/services/compliance-consultancy-photo.jpg",
-            "/assets/images/services/compliance-consultancy.jpg"
+            "/assets/images/services/compliance-consultancy-context.jpg"
         ]
     },
     "damp-proofing": {
         "own": [
-            "/assets/images/services/damp-proofing-context.jpg",
+            "/assets/images/services/damp-proofing.jpg",
             "/assets/images/services/damp-proofing-photo.jpg",
-            "/assets/images/services/damp-proofing.jpg"
+            "/assets/images/services/damp-proofing-context.jpg"
         ]
     },
     "demolition": {
@@ -214,44 +108,6 @@
     },
     "door-entry": {
         "own": [
-            "/assets/images/keywords/aiphone-door-entry.jpg",
-            "/assets/images/keywords/apartment-door-entry-system.jpg",
-            "/assets/images/keywords/apartment-door-entry.jpg",
-            "/assets/images/keywords/audio-door-entry.jpg",
-            "/assets/images/keywords/block-of-flats-door-entry.jpg",
-            "/assets/images/keywords/bpt-door-entry.jpg",
-            "/assets/images/keywords/colour-video-door-entry.jpg",
-            "/assets/images/keywords/comelit-door-entry.jpg",
-            "/assets/images/keywords/commercial-door-entry.jpg",
-            "/assets/images/keywords/communal-door-entry-system.jpg",
-            "/assets/images/keywords/door-entry-access-integration.jpg",
-            "/assets/images/keywords/door-entry-cabling.jpg",
-            "/assets/images/keywords/door-entry-certification.jpg",
-            "/assets/images/keywords/door-entry-engineer.jpg",
-            "/assets/images/keywords/door-entry-engineers-near-me.jpg",
-            "/assets/images/keywords/door-entry-handset-replacement.jpg",
-            "/assets/images/keywords/door-entry-installation.jpg",
-            "/assets/images/keywords/door-entry-maintenance.jpg",
-            "/assets/images/keywords/door-entry-panel-replacement.jpg",
-            "/assets/images/keywords/door-entry-repair.jpg",
-            "/assets/images/keywords/door-entry-servicing.jpg",
-            "/assets/images/keywords/door-entry-system-installation.jpg",
-            "/assets/images/keywords/door-entry-system-upgrade.jpg",
-            "/assets/images/keywords/door-entry-system.jpg",
-            "/assets/images/keywords/fermax-door-entry.jpg",
-            "/assets/images/keywords/gsm-door-entry-system.jpg",
-            "/assets/images/keywords/ip-door-entry-system.jpg",
-            "/assets/images/keywords/multi-tenant-door-entry.jpg",
-            "/assets/images/keywords/residential-door-entry.jpg",
-            "/assets/images/keywords/smartphone-door-entry.jpg",
-            "/assets/images/keywords/trade-button-door-entry.jpg",
-            "/assets/images/keywords/urmet-door-entry.jpg",
-            "/assets/images/keywords/video-door-entry.jpg",
-            "/assets/images/keywords/video-door-phone-installation.jpg",
-            "/assets/images/keywords/video-intercom-door-entry.jpg",
-            "/assets/images/keywords/videx-door-entry.jpg",
-            "/assets/images/services/door-entry-context.jpg",
-            "/assets/images/services/door-entry-photo.jpg",
             "/assets/images/services/door-entry.jpg"
         ]
     },
@@ -283,165 +139,19 @@
     },
     "electrical": {
         "own": [
-            "/assets/images/keywords/24-hour-emergency-electrician.jpg",
-            "/assets/images/keywords/bathroom-electrical-safety.jpg",
-            "/assets/images/keywords/battery-storage-electrical.jpg",
-            "/assets/images/keywords/bs-7671-inspection.jpg",
-            "/assets/images/keywords/bs-7671.jpg",
-            "/assets/images/keywords/certified-electrician.jpg",
-            "/assets/images/keywords/circuit-breaker-repair.jpg",
-            "/assets/images/keywords/commercial-eicr.jpg",
-            "/assets/images/keywords/commercial-electrical-maintenance.jpg",
-            "/assets/images/keywords/commercial-electrician.jpg",
-            "/assets/images/keywords/commercial-ev-charging.jpg",
-            "/assets/images/keywords/consumer-unit-upgrade.jpg",
-            "/assets/images/keywords/data-cabling-installation.jpg",
-            "/assets/images/keywords/distribution-board-installation.jpg",
-            "/assets/images/keywords/eicr-certificate.jpg",
-            "/assets/images/keywords/eicr-cost.jpg",
-            "/assets/images/keywords/eicr-report.jpg",
-            "/assets/images/keywords/eicr-testing.jpg",
-            "/assets/images/keywords/eicr.jpg",
-            "/assets/images/keywords/electrical-board-upgrade.jpg",
-            "/assets/images/keywords/electrical-certificate-for-lettings.jpg",
-            "/assets/images/keywords/electrical-certification.jpg",
-            "/assets/images/keywords/electrical-compliance-certificate.jpg",
-            "/assets/images/keywords/electrical-contractor.jpg",
-            "/assets/images/keywords/electrical-fault-finding.jpg",
-            "/assets/images/keywords/electrical-inspection-and-testing.jpg",
-            "/assets/images/keywords/electrical-inspection.jpg",
-            "/assets/images/keywords/electrical-installation-condition-report.jpg",
-            "/assets/images/keywords/electrical-installation.jpg",
-            "/assets/images/keywords/electrical-maintenance.jpg",
-            "/assets/images/keywords/electrical-remedial-works.jpg",
-            "/assets/images/keywords/electrical-repair.jpg",
-            "/assets/images/keywords/electrical-safety-certificate.jpg",
-            "/assets/images/keywords/electrical-safety-inspection.jpg",
-            "/assets/images/keywords/electrical-services.jpg",
-            "/assets/images/keywords/electrical-troubleshooting.jpg",
-            "/assets/images/keywords/electrical-wiring-installation.jpg",
-            "/assets/images/keywords/electrician-near-me.jpg",
-            "/assets/images/keywords/emergency-electrician.jpg",
-            "/assets/images/keywords/emergency-lighting-electrical-works.jpg",
-            "/assets/images/keywords/energy-efficient-lighting.jpg",
-            "/assets/images/keywords/ev-charger-installation.jpg",
-            "/assets/images/keywords/fixed-wire-testing.jpg",
-            "/assets/images/keywords/full-house-rewire.jpg",
-            "/assets/images/keywords/fuse-board-replacement.jpg",
-            "/assets/images/keywords/generator-installation.jpg",
-            "/assets/images/keywords/hmo-electrical-certificate.jpg",
-            "/assets/images/keywords/home-electrical-upgrade.jpg",
-            "/assets/images/keywords/home-ev-charger.jpg",
-            "/assets/images/keywords/industrial-electrical-maintenance.jpg",
-            "/assets/images/keywords/industrial-electrical-services.jpg",
-            "/assets/images/keywords/kitchen-electrical-installation.jpg",
-            "/assets/images/keywords/landlord-eicr.jpg",
-            "/assets/images/keywords/landlord-electrical-certificate-north-west.jpg",
-            "/assets/images/keywords/landlord-electrical-certificate.jpg",
-            "/assets/images/keywords/landlord-electrical-safety-check.jpg",
-            "/assets/images/keywords/landlord-safety-certificate.jpg",
-            "/assets/images/keywords/lighting-circuit-installation.jpg",
-            "/assets/images/keywords/lighting-installation.jpg",
-            "/assets/images/keywords/new-build-electrical-installation.jpg",
-            "/assets/images/keywords/new-electrical-installation.jpg",
-            "/assets/images/keywords/niceic-certified.jpg",
-            "/assets/images/keywords/office-electrical-testing.jpg",
-            "/assets/images/keywords/outside-socket-installation.jpg",
-            "/assets/images/keywords/panel-upgrade.jpg",
-            "/assets/images/keywords/part-p-certified.jpg",
-            "/assets/images/keywords/partial-rewire.jpg",
-            "/assets/images/keywords/pat-testing.jpg",
-            "/assets/images/keywords/periodic-electrical-inspection.jpg",
-            "/assets/images/keywords/periodic-inspection-report.jpg",
-            "/assets/images/keywords/portable-appliance-testing.jpg",
-            "/assets/images/keywords/power-surge-protection.jpg",
-            "/assets/images/keywords/preventive-electrical-maintenance.jpg",
-            "/assets/images/keywords/rcbo-consumer-unit.jpg",
-            "/assets/images/keywords/residential-electrician.jpg",
-            "/assets/images/keywords/smart-home-wiring.jpg",
-            "/assets/images/keywords/socket-installation.jpg",
-            "/assets/images/keywords/solar-inverter-installation.jpg",
-            "/assets/images/keywords/solar-panel-installation.jpg",
-            "/assets/images/keywords/three-phase-electrical-installation.jpg",
-            "/assets/images/services/electrical-context.jpg",
-            "/assets/images/services/electrical-photo.jpg",
             "/assets/images/services/electrical.jpg"
         ]
     },
     "electrics-first-fix": {
         "own": [
-            "/assets/images/services/electrics-first-fix-context.jpg",
-            "/assets/images/services/electrics-first-fix-photo.jpg",
             "/assets/images/services/electrics-first-fix.jpg"
         ]
     },
     "emergency-lighting": {
         "own": [
-            "/assets/images/keywords/automatic-emergency-lighting-test.jpg",
-            "/assets/images/keywords/bs-5266-compliance-certificate.jpg",
-            "/assets/images/keywords/bs-5266-emergency-lighting.jpg",
-            "/assets/images/keywords/bs-5266.jpg",
-            "/assets/images/keywords/car-park-lighting-installation.jpg",
-            "/assets/images/keywords/care-home-emergency-lighting.jpg",
-            "/assets/images/keywords/central-battery-emergency-lighting.jpg",
-            "/assets/images/keywords/commercial-emergency-lighting.jpg",
-            "/assets/images/keywords/commercial-security-lighting.jpg",
-            "/assets/images/keywords/emergency-bulkhead-lights.jpg",
-            "/assets/images/keywords/emergency-exit-lighting.jpg",
-            "/assets/images/keywords/emergency-light-battery-replacement.jpg",
-            "/assets/images/keywords/emergency-light-fitting.jpg",
-            "/assets/images/keywords/emergency-lighting-annual-test.jpg",
-            "/assets/images/keywords/emergency-lighting-battery-replacement.jpg",
-            "/assets/images/keywords/emergency-lighting-certificate.jpg",
-            "/assets/images/keywords/emergency-lighting-certification.jpg",
-            "/assets/images/keywords/emergency-lighting-commissioning.jpg",
-            "/assets/images/keywords/emergency-lighting-compliance.jpg",
-            "/assets/images/keywords/emergency-lighting-design.jpg",
-            "/assets/images/keywords/emergency-lighting-duration-test.jpg",
-            "/assets/images/keywords/emergency-lighting-engineer.jpg",
-            "/assets/images/keywords/emergency-lighting-engineers.jpg",
-            "/assets/images/keywords/emergency-lighting-for-landlords.jpg",
-            "/assets/images/keywords/emergency-lighting-inspection.jpg",
-            "/assets/images/keywords/emergency-lighting-installation.jpg",
-            "/assets/images/keywords/emergency-lighting-inverter.jpg",
-            "/assets/images/keywords/emergency-lighting-logbook.jpg",
-            "/assets/images/keywords/emergency-lighting-maintenance.jpg",
-            "/assets/images/keywords/emergency-lighting-monthly-test.jpg",
-            "/assets/images/keywords/emergency-lighting-near-me.jpg",
-            "/assets/images/keywords/emergency-lighting-panel.jpg",
-            "/assets/images/keywords/emergency-lighting-remedials.jpg",
-            "/assets/images/keywords/emergency-lighting-repair.jpg",
-            "/assets/images/keywords/emergency-lighting-service-contract.jpg",
-            "/assets/images/keywords/emergency-lighting-servicing.jpg",
-            "/assets/images/keywords/emergency-lighting-survey.jpg",
-            "/assets/images/keywords/emergency-lighting-system.jpg",
-            "/assets/images/keywords/emergency-lighting-testing.jpg",
-            "/assets/images/keywords/emergency-lighting-upgrade.jpg",
-            "/assets/images/keywords/emergency-twin-spot-lights.jpg",
-            "/assets/images/keywords/escape-route-lighting.jpg",
-            "/assets/images/keywords/exit-sign-installation.jpg",
-            "/assets/images/keywords/external-security-lighting.jpg",
-            "/assets/images/keywords/fire-alarm-and-emergency-lighting.jpg",
-            "/assets/images/keywords/high-risk-task-area-lighting.jpg",
-            "/assets/images/keywords/industrial-emergency-lighting.jpg",
-            "/assets/images/keywords/landlord-emergency-lighting.jpg",
-            "/assets/images/keywords/led-emergency-lighting-conversion.jpg",
-            "/assets/images/keywords/led-emergency-lighting.jpg",
-            "/assets/images/keywords/maintained-emergency-lighting.jpg",
-            "/assets/images/keywords/multi-site-emergency-lighting-contract.jpg",
-            "/assets/images/keywords/non-maintained-emergency-lighting.jpg",
-            "/assets/images/keywords/office-emergency-lighting.jpg",
-            "/assets/images/keywords/open-area-emergency-lighting.jpg",
-            "/assets/images/keywords/periodic-emergency-lighting-test.jpg",
-            "/assets/images/keywords/pir-security-lighting.jpg",
-            "/assets/images/keywords/running-man-exit-signs.jpg",
-            "/assets/images/keywords/security-lighting-installation.jpg",
-            "/assets/images/keywords/self-test-emergency-lighting.jpg",
-            "/assets/images/keywords/self-testing-emergency-lighting.jpg",
-            "/assets/images/keywords/warehouse-emergency-lighting.jpg",
-            "/assets/images/services/emergency-lighting-context.jpg",
+            "/assets/images/services/emergency-lighting.jpg",
             "/assets/images/services/emergency-lighting-photo.jpg",
-            "/assets/images/services/emergency-lighting.jpg"
+            "/assets/images/services/emergency-lighting-context.jpg"
         ]
     },
     "epc": {
@@ -460,9 +170,9 @@
     },
     "evacuation-alerts": {
         "own": [
-            "/assets/images/services/evacuation-alerts-context.jpg",
+            "/assets/images/services/evacuation-alerts.jpg",
             "/assets/images/services/evacuation-alerts-photo.jpg",
-            "/assets/images/services/evacuation-alerts.jpg"
+            "/assets/images/services/evacuation-alerts-context.jpg"
         ]
     },
     "extensions": {
@@ -486,101 +196,23 @@
     },
     "fire-alarms": {
         "own": [
-            "/assets/images/keywords/addressable-fire-alarm-panel.jpg",
-            "/assets/images/keywords/addressable-fire-alarm-system.jpg",
-            "/assets/images/keywords/advanced-fire-alarm-panel.jpg",
-            "/assets/images/keywords/advanced-fire-panel-service.jpg",
-            "/assets/images/keywords/apollo-fire-alarm.jpg",
-            "/assets/images/keywords/apollo-fire-detectors.jpg",
-            "/assets/images/keywords/aspirating-smoke-detection.jpg",
-            "/assets/images/keywords/beam-detection-system.jpg",
-            "/assets/images/keywords/beam-detection.jpg",
-            "/assets/images/keywords/bs-5839-fire-alarm.jpg",
-            "/assets/images/keywords/bs-5839.jpg",
-            "/assets/images/keywords/c-tec-fire-alarm-panel.jpg",
-            "/assets/images/keywords/c-tec-fire-alarm-service.jpg",
-            "/assets/images/keywords/care-home-fire-alarm.jpg",
-            "/assets/images/keywords/category-ld2-fire-alarm.jpg",
-            "/assets/images/keywords/category-ld3-fire-alarm.jpg",
-            "/assets/images/keywords/commercial-fire-alarm-service.jpg",
-            "/assets/images/keywords/commercial-fire-alarm-system.jpg",
-            "/assets/images/keywords/conventional-fire-alarm-panel.jpg",
-            "/assets/images/keywords/conventional-fire-alarm-system.jpg",
-            "/assets/images/keywords/disabled-refuge-system.jpg",
-            "/assets/images/keywords/domestic-fire-alarm-installation.jpg",
-            "/assets/images/keywords/factory-fire-alarm-system.jpg",
-            "/assets/images/keywords/fire-alarm-battery-replacement.jpg",
-            "/assets/images/keywords/fire-alarm-call-point-installation.jpg",
-            "/assets/images/keywords/fire-alarm-certificate.jpg",
-            "/assets/images/keywords/fire-alarm-certification.jpg",
-            "/assets/images/keywords/fire-alarm-commissioning.jpg",
-            "/assets/images/keywords/fire-alarm-compliance.jpg",
-            "/assets/images/keywords/fire-alarm-design.jpg",
-            "/assets/images/keywords/fire-alarm-engineer-near-me.jpg",
-            "/assets/images/keywords/fire-alarm-engineer.jpg",
-            "/assets/images/keywords/fire-alarm-engineers-near-me.jpg",
-            "/assets/images/keywords/fire-alarm-fault-finding.jpg",
-            "/assets/images/keywords/fire-alarm-inspection.jpg",
-            "/assets/images/keywords/fire-alarm-installation-certificate.jpg",
-            "/assets/images/keywords/fire-alarm-installation.jpg",
-            "/assets/images/keywords/fire-alarm-logbook.jpg",
-            "/assets/images/keywords/fire-alarm-loop-tester.jpg",
-            "/assets/images/keywords/fire-alarm-maintenance-contract.jpg",
-            "/assets/images/keywords/fire-alarm-maintenance.jpg",
-            "/assets/images/keywords/fire-alarm-monitoring-setup.jpg",
-            "/assets/images/keywords/fire-alarm-monitoring.jpg",
-            "/assets/images/keywords/fire-alarm-panel-service.jpg",
-            "/assets/images/keywords/fire-alarm-panel.jpg",
-            "/assets/images/keywords/fire-alarm-repair.jpg",
-            "/assets/images/keywords/fire-alarm-servicing.jpg",
-            "/assets/images/keywords/fire-alarm-system.jpg",
-            "/assets/images/keywords/fire-alarm-testing.jpg",
-            "/assets/images/keywords/fire-alarm-upgrade.jpg",
-            "/assets/images/keywords/fire-alarm-weekly-test-support.jpg",
-            "/assets/images/keywords/fire-alarm-zone-chart.jpg",
-            "/assets/images/keywords/fire-detection-system-installation.jpg",
-            "/assets/images/keywords/fire-detection-system.jpg",
-            "/assets/images/keywords/fire-door-inspection.jpg",
-            "/assets/images/keywords/fire-risk-assessment-support.jpg",
-            "/assets/images/keywords/fire-safety-certificate.jpg",
-            "/assets/images/keywords/fire-safety-order-compliance.jpg",
-            "/assets/images/keywords/heat-detector-installation.jpg",
-            "/assets/images/keywords/hmo-fire-alarm-system.jpg",
-            "/assets/images/keywords/hochiki-fire-alarm.jpg",
-            "/assets/images/keywords/hochiki-fire-detection.jpg",
-            "/assets/images/keywords/industrial-fire-alarm.jpg",
-            "/assets/images/keywords/kentec-fire-alarm-panel.jpg",
-            "/assets/images/keywords/kentec-panel-service.jpg",
-            "/assets/images/keywords/l1-fire-alarm-system.jpg",
-            "/assets/images/keywords/l2-fire-alarm-system.jpg",
-            "/assets/images/keywords/l3-fire-alarm-system.jpg",
-            "/assets/images/keywords/landlord-fire-alarm.jpg",
-            "/assets/images/keywords/manual-call-point.jpg",
-            "/assets/images/keywords/morley-fire-alarm-panel.jpg",
-            "/assets/images/keywords/multi-site-fire-alarm-maintenance.jpg",
-            "/assets/images/keywords/office-fire-alarm-installation.jpg",
-            "/assets/images/keywords/periodic-fire-alarm-service.jpg",
-            "/assets/images/keywords/smoke-alarm-installation.jpg",
-            "/assets/images/keywords/smoke-detector-installation-commercial.jpg",
-            "/assets/images/keywords/sounder-beacon.jpg",
-            "/assets/images/keywords/vesda-installation.jpg",
-            "/assets/images/keywords/voice-alarm-system.jpg",
-            "/assets/images/keywords/wireless-fire-alarm-system.jpg",
-            "/assets/images/services/fire-alarms-context.jpg",
+            "/assets/images/services/fire-alarms.jpg",
             "/assets/images/services/fire-alarms-photo.jpg",
-            "/assets/images/services/fire-alarms.jpg"
+            "/assets/images/services/fire-alarms-context.jpg"
         ]
     },
     "fire-compartmentation": {
         "own": [
-            "/assets/images/services/fire-compartmentation.jpg"
+            "/assets/images/services/fire-compartmentation.jpg",
+            "/assets/images/services/fire-compartmentation-photo.jpg",
+            "/assets/images/services/fire-compartmentation-context.jpg"
         ]
     },
     "fire-doors": {
         "own": [
-            "/assets/images/services/fire-doors-context.jpg",
+            "/assets/images/services/fire-doors.jpg",
             "/assets/images/services/fire-doors-photo.jpg",
-            "/assets/images/services/fire-doors.jpg"
+            "/assets/images/services/fire-doors-context.jpg"
         ]
     },
     "fire-extinguishers": {
@@ -592,16 +224,16 @@
     },
     "fire-risk-assessments": {
         "own": [
-            "/assets/images/services/fire-risk-assessments-context.jpg",
+            "/assets/images/services/fire-risk-assessments.jpg",
             "/assets/images/services/fire-risk-assessments-photo.jpg",
-            "/assets/images/services/fire-risk-assessments.jpg"
+            "/assets/images/services/fire-risk-assessments-context.jpg"
         ]
     },
     "fire-signage": {
         "own": [
-            "/assets/images/services/fire-signage-context.jpg",
+            "/assets/images/services/fire-signage.jpg",
             "/assets/images/services/fire-signage-photo.jpg",
-            "/assets/images/services/fire-signage.jpg"
+            "/assets/images/services/fire-signage-context.jpg"
         ]
     },
     "fire-stopping": {
@@ -620,79 +252,23 @@
     },
     "flooring": {
         "own": [
-            "/assets/images/services/flooring-context.jpg",
+            "/assets/images/services/flooring.jpg",
             "/assets/images/services/flooring-photo.jpg",
-            "/assets/images/services/flooring.jpg"
+            "/assets/images/services/flooring-context.jpg"
         ]
     },
     "gas-systems": {
         "own": [
-            "/assets/images/keywords/annual-gas-safety-certificate.jpg",
-            "/assets/images/keywords/boiler-breakdown-repair.jpg",
-            "/assets/images/keywords/boiler-installation.jpg",
-            "/assets/images/keywords/boiler-repair.jpg",
-            "/assets/images/keywords/boiler-service.jpg",
-            "/assets/images/keywords/carbon-monoxide-alarm-installation.jpg",
-            "/assets/images/keywords/combi-boiler-installation.jpg",
-            "/assets/images/keywords/commercial-boiler-service.jpg",
-            "/assets/images/keywords/commercial-gas-installation.jpg",
-            "/assets/images/keywords/commercial-gas-safety-certificate.jpg",
-            "/assets/images/keywords/commercial-kitchen-gas-safety.jpg",
-            "/assets/images/keywords/cp12-gas-certificate.jpg",
-            "/assets/images/keywords/cp44-gas-certificate.jpg",
-            "/assets/images/keywords/cp44-gas-safety.jpg",
-            "/assets/images/keywords/emergency-gas-engineer.jpg",
-            "/assets/images/keywords/flue-installation.jpg",
-            "/assets/images/keywords/gas-appliance-service.jpg",
-            "/assets/images/keywords/gas-boiler-installation.jpg",
-            "/assets/images/keywords/gas-boiler-repair.jpg",
-            "/assets/images/keywords/gas-boiler-servicing.jpg",
-            "/assets/images/keywords/gas-certificate-for-tenants.jpg",
-            "/assets/images/keywords/gas-certificate-same-day.jpg",
-            "/assets/images/keywords/gas-compliance-certificate.jpg",
-            "/assets/images/keywords/gas-cooker-installation.jpg",
-            "/assets/images/keywords/gas-engineer-near-me.jpg",
-            "/assets/images/keywords/gas-engineer.jpg",
-            "/assets/images/keywords/gas-fire-installation.jpg",
-            "/assets/images/keywords/gas-hob-installation.jpg",
-            "/assets/images/keywords/gas-installation.jpg",
-            "/assets/images/keywords/gas-leak-detection.jpg",
-            "/assets/images/keywords/gas-maintenance.jpg",
-            "/assets/images/keywords/gas-meter-works.jpg",
-            "/assets/images/keywords/gas-pipework-installation.jpg",
-            "/assets/images/keywords/gas-repair.jpg",
-            "/assets/images/keywords/gas-safe-engineer.jpg",
-            "/assets/images/keywords/gas-safe-register-engineer.jpg",
-            "/assets/images/keywords/gas-safety-certificate.jpg",
-            "/assets/images/keywords/gas-safety-check.jpg",
-            "/assets/images/keywords/gas-safety-for-landlords-north-west.jpg",
-            "/assets/images/keywords/gas-safety-inspection.jpg",
-            "/assets/images/keywords/gas-safety-near-me.jpg",
-            "/assets/images/keywords/gas-safety-record.jpg",
-            "/assets/images/keywords/gas-servicing.jpg",
-            "/assets/images/keywords/gas-system-upgrade.jpg",
-            "/assets/images/keywords/gas-tightness-test.jpg",
-            "/assets/images/keywords/heating-system-service.jpg",
-            "/assets/images/keywords/hmo-gas-safety-certificate.jpg",
-            "/assets/images/keywords/industrial-gas-system.jpg",
-            "/assets/images/keywords/landlord-gas-certificate.jpg",
-            "/assets/images/keywords/landlord-gas-safety-certificate.jpg",
-            "/assets/images/keywords/landlord-gas-safety-inspection.jpg",
-            "/assets/images/keywords/lettings-gas-certificate.jpg",
-            "/assets/images/keywords/lgsr-certificate.jpg",
-            "/assets/images/keywords/multi-property-gas-certificates.jpg",
-            "/assets/images/keywords/new-boiler-quote.jpg",
-            "/assets/images/keywords/power-flush-heating.jpg",
-            "/assets/images/services/gas-systems-context.jpg",
+            "/assets/images/services/gas-systems.jpg",
             "/assets/images/services/gas-systems-photo.jpg",
-            "/assets/images/services/gas-systems.jpg"
+            "/assets/images/services/gas-systems-context.jpg"
         ]
     },
     "groundworks": {
         "own": [
-            "/assets/images/services/groundworks-context.jpg",
+            "/assets/images/services/groundworks.jpg",
             "/assets/images/services/groundworks-photo.jpg",
-            "/assets/images/services/groundworks.jpg"
+            "/assets/images/services/groundworks-context.jpg"
         ]
     },
     "heating": {
@@ -704,129 +280,24 @@
     },
     "insulation": {
         "own": [
-            "/assets/images/services/insulation-context.jpg",
-            "/assets/images/services/insulation-photo.jpg",
             "/assets/images/services/insulation.jpg"
         ]
     },
     "intercoms": {
         "own": [
-            "/assets/images/keywords/aiphone-intercom.jpg",
-            "/assets/images/keywords/apartment-intercom-system.jpg",
-            "/assets/images/keywords/audio-intercom-repair.jpg",
-            "/assets/images/keywords/audio-intercom-system.jpg",
-            "/assets/images/keywords/audio-intercom.jpg",
-            "/assets/images/keywords/business-intercom-system.jpg",
-            "/assets/images/keywords/commend-intercom.jpg",
-            "/assets/images/keywords/commercial-intercom-installation.jpg",
-            "/assets/images/keywords/commercial-intercom.jpg",
-            "/assets/images/keywords/door-entry-intercom.jpg",
-            "/assets/images/keywords/door-station-intercom.jpg",
-            "/assets/images/keywords/factory-intercom-system.jpg",
-            "/assets/images/keywords/gate-intercom-system.jpg",
-            "/assets/images/keywords/hospital-intercom-system.jpg",
-            "/assets/images/keywords/intercom-battery-backup.jpg",
-            "/assets/images/keywords/intercom-cabling-installation.jpg",
-            "/assets/images/keywords/intercom-certification.jpg",
-            "/assets/images/keywords/intercom-commissioning.jpg",
-            "/assets/images/keywords/intercom-engineer.jpg",
-            "/assets/images/keywords/intercom-engineers-near-me.jpg",
-            "/assets/images/keywords/intercom-installation.jpg",
-            "/assets/images/keywords/intercom-maintenance-contract.jpg",
-            "/assets/images/keywords/intercom-maintenance.jpg",
-            "/assets/images/keywords/intercom-near-me.jpg",
-            "/assets/images/keywords/intercom-panel.jpg",
-            "/assets/images/keywords/intercom-repair.jpg",
-            "/assets/images/keywords/intercom-servicing.jpg",
-            "/assets/images/keywords/intercom-system-upgrade.jpg",
-            "/assets/images/keywords/intercom-system.jpg",
-            "/assets/images/keywords/intercom-testing.jpg",
-            "/assets/images/keywords/intercom-upgrade.jpg",
-            "/assets/images/keywords/ip-intercom-system.jpg",
-            "/assets/images/keywords/ip-intercom.jpg",
-            "/assets/images/keywords/master-station-intercom.jpg",
-            "/assets/images/keywords/multi-building-intercom.jpg",
-            "/assets/images/keywords/multi-tenant-intercom.jpg",
-            "/assets/images/keywords/office-intercom-system.jpg",
-            "/assets/images/keywords/outdoor-intercom-station.jpg",
-            "/assets/images/keywords/reception-intercom.jpg",
-            "/assets/images/keywords/residential-intercom.jpg",
-            "/assets/images/keywords/school-intercom-system.jpg",
-            "/assets/images/keywords/secure-entry-intercom.jpg",
-            "/assets/images/keywords/siedle-intercom.jpg",
-            "/assets/images/keywords/sip-intercom-installation.jpg",
-            "/assets/images/keywords/video-intercom-installation.jpg",
-            "/assets/images/keywords/video-intercom-system.jpg",
-            "/assets/images/keywords/video-intercom.jpg",
-            "/assets/images/keywords/warehouse-intercom.jpg",
-            "/assets/images/keywords/wireless-intercom-installation.jpg",
-            "/assets/images/keywords/wireless-intercom.jpg",
-            "/assets/images/keywords/zenitel-intercom.jpg",
-            "/assets/images/services/intercoms-context.jpg",
-            "/assets/images/services/intercoms-photo.jpg",
             "/assets/images/services/intercoms.jpg"
         ]
     },
     "intruder-alarm": {
         "own": [
-            "/assets/images/keywords/ajax-alarm-installation.jpg",
-            "/assets/images/keywords/alarm-battery-replacement.jpg",
-            "/assets/images/keywords/alarm-keypad-installation.jpg",
-            "/assets/images/keywords/alarm-monitoring-setup.jpg",
-            "/assets/images/keywords/alarm-system-design.jpg",
-            "/assets/images/keywords/alarm-system-upgrade.jpg",
-            "/assets/images/keywords/bs-4737.jpg",
-            "/assets/images/keywords/burglar-alarm-installation.jpg",
-            "/assets/images/keywords/burglar-alarm-system.jpg",
-            "/assets/images/keywords/business-premises-alarm.jpg",
-            "/assets/images/keywords/commercial-intruder-alarm.jpg",
-            "/assets/images/keywords/domestic-burglar-alarm.jpg",
-            "/assets/images/keywords/door-contact-alarm-installation.jpg",
-            "/assets/images/keywords/grade-2-intruder-alarm.jpg",
-            "/assets/images/keywords/grade-3-intruder-alarm.jpg",
-            "/assets/images/keywords/honeywell-intruder-alarm.jpg",
-            "/assets/images/keywords/intruder-alarm-certification.jpg",
-            "/assets/images/keywords/intruder-alarm-engineer.jpg",
-            "/assets/images/keywords/intruder-alarm-engineers.jpg",
-            "/assets/images/keywords/intruder-alarm-installation.jpg",
-            "/assets/images/keywords/intruder-alarm-maintenance-contract.jpg",
-            "/assets/images/keywords/intruder-alarm-maintenance.jpg",
-            "/assets/images/keywords/intruder-alarm-near-me.jpg",
-            "/assets/images/keywords/intruder-alarm-panel-replacement.jpg",
-            "/assets/images/keywords/intruder-alarm-panel.jpg",
-            "/assets/images/keywords/intruder-alarm-repair.jpg",
-            "/assets/images/keywords/intruder-alarm-servicing.jpg",
-            "/assets/images/keywords/intruder-alarm-testing.jpg",
-            "/assets/images/keywords/monitored-intruder-alarm.jpg",
-            "/assets/images/keywords/multi-site-alarm-maintenance.jpg",
-            "/assets/images/keywords/office-alarm-installation.jpg",
-            "/assets/images/keywords/pd-6662-alarm-system.jpg",
-            "/assets/images/keywords/pd6662-alarm-system.jpg",
-            "/assets/images/keywords/pir-sensor-installation.jpg",
-            "/assets/images/keywords/police-response-alarm.jpg",
-            "/assets/images/keywords/pyronix-alarm-installation.jpg",
-            "/assets/images/keywords/residential-intruder-alarm.jpg",
-            "/assets/images/keywords/risco-alarm-installation.jpg",
-            "/assets/images/keywords/security-alarm-installation.jpg",
-            "/assets/images/keywords/shock-sensor-installation.jpg",
-            "/assets/images/keywords/shop-alarm-installation.jpg",
-            "/assets/images/keywords/smart-home-alarm-installation.jpg",
-            "/assets/images/keywords/texecom-alarm-installation.jpg",
-            "/assets/images/keywords/texecom-intruder-alarm.jpg",
-            "/assets/images/keywords/warehouse-alarm-system.jpg",
-            "/assets/images/keywords/wired-intruder-alarm-system.jpg",
-            "/assets/images/keywords/wired-intruder-alarm.jpg",
-            "/assets/images/keywords/wireless-intruder-alarm.jpg",
-            "/assets/images/services/intruder-alarm-context.jpg",
-            "/assets/images/services/intruder-alarm-photo.jpg",
             "/assets/images/services/intruder-alarm.jpg"
         ]
     },
     "joinery": {
         "own": [
-            "/assets/images/services/joinery-context.jpg",
+            "/assets/images/services/joinery.jpg",
             "/assets/images/services/joinery-photo.jpg",
-            "/assets/images/services/joinery.jpg"
+            "/assets/images/services/joinery-context.jpg"
         ]
     },
     "kitchen-fire-suppression": {
@@ -852,16 +323,16 @@
     },
     "landscaping": {
         "own": [
-            "/assets/images/services/landscaping-context.jpg",
+            "/assets/images/services/landscaping.jpg",
             "/assets/images/services/landscaping-photo.jpg",
-            "/assets/images/services/landscaping.jpg"
+            "/assets/images/services/landscaping-context.jpg"
         ]
     },
     "legionella-risk-assessment": {
         "own": [
-            "/assets/images/services/legionella-risk-assessment-context.jpg",
+            "/assets/images/services/legionella-risk-assessment.jpg",
             "/assets/images/services/legionella-risk-assessment-photo.jpg",
-            "/assets/images/services/legionella-risk-assessment.jpg"
+            "/assets/images/services/legionella-risk-assessment-context.jpg"
         ]
     },
     "loft-conversions": {
@@ -873,80 +344,14 @@
     },
     "nurse-call": {
         "own": [
-            "/assets/images/keywords/ackermann-nurse-call.jpg",
-            "/assets/images/keywords/aid-call-system.jpg",
-            "/assets/images/keywords/ascom-nurse-call.jpg",
-            "/assets/images/keywords/assisted-living-call-system.jpg",
-            "/assets/images/keywords/bedside-nurse-call.jpg",
-            "/assets/images/keywords/care-home-call-system.jpg",
-            "/assets/images/keywords/care-home-nurse-call.jpg",
-            "/assets/images/keywords/courtney-thorne-nurse-call.jpg",
-            "/assets/images/keywords/disabled-toilet-alarm-installation.jpg",
-            "/assets/images/keywords/disabled-toilet-alarm.jpg",
-            "/assets/images/keywords/emergency-assistance-alarm.jpg",
-            "/assets/images/keywords/emergency-nurse-call.jpg",
-            "/assets/images/keywords/emergency-pull-cord-installation.jpg",
-            "/assets/images/keywords/healthcare-call-system-installation.jpg",
-            "/assets/images/keywords/hospital-nurse-call-installation.jpg",
-            "/assets/images/keywords/hospital-nurse-call-system.jpg",
-            "/assets/images/keywords/htm-08-03-nurse-call.jpg",
-            "/assets/images/keywords/htm-08-03.jpg",
-            "/assets/images/keywords/intercall-nurse-call.jpg",
-            "/assets/images/keywords/ip-nurse-call-system.jpg",
-            "/assets/images/keywords/multi-site-nurse-call-maintenance.jpg",
-            "/assets/images/keywords/nurse-call-battery-backup.jpg",
-            "/assets/images/keywords/nurse-call-battery-replacement.jpg",
-            "/assets/images/keywords/nurse-call-certification.jpg",
-            "/assets/images/keywords/nurse-call-commissioning.jpg",
-            "/assets/images/keywords/nurse-call-compliance.jpg",
-            "/assets/images/keywords/nurse-call-engineer.jpg",
-            "/assets/images/keywords/nurse-call-engineers.jpg",
-            "/assets/images/keywords/nurse-call-integration.jpg",
-            "/assets/images/keywords/nurse-call-maintenance-contract.jpg",
-            "/assets/images/keywords/nurse-call-maintenance.jpg",
-            "/assets/images/keywords/nurse-call-near-me.jpg",
-            "/assets/images/keywords/nurse-call-panel-installation.jpg",
-            "/assets/images/keywords/nurse-call-panel.jpg",
-            "/assets/images/keywords/nurse-call-pear-lead-replacement.jpg",
-            "/assets/images/keywords/nurse-call-pendant.jpg",
-            "/assets/images/keywords/nurse-call-point-installation.jpg",
-            "/assets/images/keywords/nurse-call-repair.jpg",
-            "/assets/images/keywords/nurse-call-service-contract.jpg",
-            "/assets/images/keywords/nurse-call-servicing.jpg",
-            "/assets/images/keywords/nurse-call-system-design.jpg",
-            "/assets/images/keywords/nurse-call-system-installation.jpg",
-            "/assets/images/keywords/nurse-call-system-maintenance.jpg",
-            "/assets/images/keywords/nurse-call-system-repair.jpg",
-            "/assets/images/keywords/nurse-call-system-upgrade.jpg",
-            "/assets/images/keywords/nurse-call-system.jpg",
-            "/assets/images/keywords/nurse-call-testing.jpg",
-            "/assets/images/keywords/nurse-call-upgrade.jpg",
-            "/assets/images/keywords/nursing-home-nurse-call.jpg",
-            "/assets/images/keywords/over-door-light-nurse-call.jpg",
-            "/assets/images/keywords/pull-cord-nurse-call.jpg",
-            "/assets/images/keywords/quantec-nurse-call.jpg",
-            "/assets/images/keywords/rauland-nurse-call.jpg",
-            "/assets/images/keywords/residential-care-call-system.jpg",
-            "/assets/images/keywords/residential-care-nurse-call.jpg",
-            "/assets/images/keywords/staff-attack-alarm-system.jpg",
-            "/assets/images/keywords/staff-attack-alarm.jpg",
-            "/assets/images/keywords/static-systems-nurse-call.jpg",
-            "/assets/images/keywords/touch-screen-nurse-call.jpg",
-            "/assets/images/keywords/tunstall-nurse-call.jpg",
-            "/assets/images/keywords/wander-alert-system.jpg",
-            "/assets/images/keywords/wired-nurse-call-system.jpg",
-            "/assets/images/keywords/wireless-nurse-call-system.jpg",
-            "/assets/images/keywords/zettler-nurse-call.jpg",
-            "/assets/images/services/nurse-call-context.jpg",
-            "/assets/images/services/nurse-call-photo.jpg",
             "/assets/images/services/nurse-call.jpg"
         ]
     },
     "painting-decorating": {
         "own": [
-            "/assets/images/services/painting-decorating-context.jpg",
+            "/assets/images/services/painting-decorating.jpg",
             "/assets/images/services/painting-decorating-photo.jpg",
-            "/assets/images/services/painting-decorating.jpg"
+            "/assets/images/services/painting-decorating-context.jpg"
         ]
     },
     "pat-testing": {
@@ -965,9 +370,9 @@
     },
     "plumbing": {
         "own": [
-            "/assets/images/services/plumbing-context.jpg",
+            "/assets/images/services/plumbing.jpg",
             "/assets/images/services/plumbing-photo.jpg",
-            "/assets/images/services/plumbing.jpg"
+            "/assets/images/services/plumbing-context.jpg"
         ]
     },
     "project-management": {
@@ -979,16 +384,16 @@
     },
     "property-refurbishment-pm": {
         "own": [
-            "/assets/images/services/property-refurbishment-pm-context.jpg",
+            "/assets/images/services/property-refurbishment-pm.jpg",
             "/assets/images/services/property-refurbishment-pm-photo.jpg",
-            "/assets/images/services/property-refurbishment-pm.jpg"
+            "/assets/images/services/property-refurbishment-pm-context.jpg"
         ]
     },
     "rendering": {
         "own": [
-            "/assets/images/services/rendering-context.jpg",
+            "/assets/images/services/rendering.jpg",
             "/assets/images/services/rendering-photo.jpg",
-            "/assets/images/services/rendering.jpg"
+            "/assets/images/services/rendering-context.jpg"
         ]
     },
     "renovation": {
@@ -1012,30 +417,28 @@
     },
     "sprinkler-systems": {
         "own": [
-            "/assets/images/services/sprinkler-systems-context.jpg",
+            "/assets/images/services/sprinkler-systems.jpg",
             "/assets/images/services/sprinkler-systems-photo.jpg",
-            "/assets/images/services/sprinkler-systems.jpg"
+            "/assets/images/services/sprinkler-systems-context.jpg"
         ]
     },
     "tiling": {
         "own": [
-            "/assets/images/services/tiling-context.jpg",
+            "/assets/images/services/tiling.jpg",
             "/assets/images/services/tiling-photo.jpg",
-            "/assets/images/services/tiling.jpg"
+            "/assets/images/services/tiling-context.jpg"
         ]
     },
     "water-wras": {
         "own": [
-            "/assets/images/services/water-wras-context.jpg",
-            "/assets/images/services/water-wras-photo.jpg",
             "/assets/images/services/water-wras.jpg"
         ]
     },
     "windows-doors": {
         "own": [
-            "/assets/images/services/windows-doors-context.jpg",
+            "/assets/images/services/windows-doors.jpg",
             "/assets/images/services/windows-doors-photo.jpg",
-            "/assets/images/services/windows-doors.jpg"
+            "/assets/images/services/windows-doors-context.jpg"
         ]
     }
 }

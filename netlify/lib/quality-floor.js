@@ -382,6 +382,8 @@ function imageAlt(src) {
   const base = path.replace(/-(?:photo|context)(\.[a-z0-9]+)$/i, "$1");
   const row = creditBySrc.get(path) || creditBySrc.get(base);
   if (!row || !/^https?:/i.test(String(row.source || ""))) return "";
+  const given = String(row.alt || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (given) return given.length > 180 ? "Photograph" : given;
   let title = String(row.title || "")
     .replace(/^File:/i, "")
     .replace(/\.(jpe?g|png|webp|gif|svg)$/i, "")
@@ -391,6 +393,9 @@ function imageAlt(src) {
     .replace(/\s+/g, " ")
     .trim();
   if (!title || title.length > 180) return "Photograph";
+  if (/[^\u0000-\u007F]/.test(title) || /\b(einem|einen|einer|für|fuer|und|der|die|das|dachluke|rauchabzug)\b/i.test(title)) {
+    return "";
+  }
   return title;
 }
 
@@ -512,8 +517,18 @@ function scrubSentences(html, path, subject) {
     held.push(block);
     return `\u0000SCRUB${held.length - 1}\u0000`;
   });
+  const hand = new Set(["demolition", "driveways", "fencing", "drainage"]).has(family);
   const scrubbed = masked.replace(/>([^<]+)</g, (full, text) => {
-    if (!/[.!?]/.test(text)) return full;
+    let body = text;
+    if (hand) {
+      body = body
+        .replace(/Installation, maintenance, testing and certification\.?/gi, "We survey, quote and carry out the work.")
+        .replace(/full certification/gi, "a written scope")
+        .replace(/Certificates are emailed to you\./gi, "The written quote is emailed to you.")
+        .replace(/Certificates are emailed/gi, "The written quote is emailed");
+    }
+    if (!/[.!?]/.test(body)) return `>${body}<`;
+    text = body;
     const kept = text.split(/(?<=[.!?])\s+/).filter((sentence) => {
       const line = sentence.trim();
       if (!line) return false;

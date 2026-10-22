@@ -38,8 +38,29 @@ export function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function articleFor(value) {
+  return /^[aeiou]/i.test(String(value || "").trim()) ? "an" : "a";
+}
+
+function handTrade(ctx) {
+  const service = String(ctx.service || "");
+  const subject = String(ctx.subject || "");
+  return ["demolition", "driveways", "fencing", "drainage"].includes(service)
+    || /\b(demolition|driveways|fencing|drainage)\b/i.test(subject);
+}
+
+function softenHandTrade(text, ctx) {
+  if (!handTrade(ctx)) return text;
+  return String(text)
+    .replace(/Certificates are emailed to you\./gi, "The written quote is emailed to you.")
+    .replace(/Certificates are emailed/gi, "The written quote is emailed")
+    .replace(/your certificate or report/gi, "your written quote")
+    .replace(/You get the certificate or report issued/gi, "You get the written notes")
+    .replace(/certificates emailed/gi, "a written quote emailed");
+}
+
 function fill(template, ctx) {
-  return String(template)
+  const text = String(template)
     .replaceAll("{place}", ctx.place)
     .replaceAll("{subject}", ctx.subject)
     .replaceAll("{service}", ctx.service)
@@ -48,7 +69,9 @@ function fill(template, ctx) {
     .replaceAll("{near}", ctx.near)
     .replaceAll("{housing}", ctx.housing)
     .replaceAll("{industry}", ctx.industry)
-    .replaceAll("{pop}", ctx.pop);
+    .replaceAll("{pop}", ctx.pop)
+    .replaceAll("{article}", articleFor(ctx.subject));
+  return softenHandTrade(text, ctx);
 }
 
 function mixIndex(seed, pass, bankIndex, length) {

@@ -1265,6 +1265,16 @@ function getSeoKeywords(string $service, string $area = ''): string {
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
 }
 
+/** Visible UK mobile format. tel: links keep the digits in PHONE. */
+function icomplyPhoneDisplay(): string
+{
+    $digits = preg_replace('/\D+/', '', defined('PHONE') ? (string)PHONE : '');
+    if (is_string($digits) && strlen($digits) === 11) {
+        return substr($digits, 0, 5) . ' ' . substr($digits, 5);
+    }
+    return defined('PHONE') ? (string)PHONE : '';
+}
+
 /** Canonical service blurbs / standards (data/service-meta.json) */
 function getServiceMeta(string $slug = ''): array {
     $all = loadJsonData('service-meta', []);

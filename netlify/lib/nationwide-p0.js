@@ -52,7 +52,11 @@ function byteLength(value) {
   return new TextEncoder().encode(value).length;
 }
 
-function fitMeta(text) {
+function handTradeName(name) {
+  return /\b(drain|drainage|fence|fencing|demolition|driveway|driveways)\b/i.test(String(name || ""));
+}
+
+function fitMeta(text, hand = false) {
   let value = String(text).replace(/\s+/g, " ").trim();
   // PHP strlen() counts UTF-8 bytes. An em dash is 3 bytes; swap it only when it exceeds 160.
   if (byteLength(value) > 160 && value.includes("—")) {
@@ -69,7 +73,10 @@ function fitMeta(text) {
     const extra = " Call 07517 806082.";
     if (!value.endsWith("806082.") && byteLength(value) + byteLength(extra) <= 160) value += extra;
   }
-  for (const pad of [" Book today.", " Free written quote.", " Certificates emailed.", " Call 07517 806082."]) {
+  const pads = hand
+    ? [" Book today.", " Free written quote.", " Quote emailed.", " Call 07517 806082."]
+    : [" Book today.", " Free written quote.", " Certificates emailed.", " Call 07517 806082."];
+  for (const pad of pads) {
     if (byteLength(value) >= 140 && value.length >= 140) break;
     if (value.toLowerCase().includes(pad.trim().toLowerCase().replace(/\.$/, ""))) continue;
     if (byteLength(value) + byteLength(pad) <= 160) value += pad;
@@ -86,10 +93,13 @@ export function p0Title(name, town) {
 }
 
 export function p0Description(name, place) {
-  let text = `${name} in ${place}. Same/next-day engineers, free written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
+  const hand = handTradeName(name);
+  let text = hand
+    ? `${name} in ${place}. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.`
+    : `${name} in ${place}. Same/next-day engineers, free written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
   if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day engineers, free written quote. Call 07517 806082.`;
   if (byteLength(text) > 160) text = `${name} in ${place}. Same/next-day. Call 07517 806082.`;
-  return fitMeta(text);
+  return fitMeta(text, hand);
 }
 
 function placeFor(townSlug) {

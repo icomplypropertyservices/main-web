@@ -753,6 +753,10 @@ function icomplyQualityFloorImageAlt(string $src): string
     if (!is_array($row) || !preg_match('#^https?://#i', (string)($row['source'] ?? ''))) {
         return '';
     }
+    $given = trim((string)preg_replace('/\s+/', ' ', strip_tags((string)($row['alt'] ?? ''))));
+    if ($given !== '') {
+        return strlen($given) > 180 ? 'Photograph' : $given;
+    }
     $title = (string)($row['title'] ?? '');
     $title = preg_replace('/^File:/i', '', $title) ?? $title;
     $title = preg_replace('/\.(jpe?g|png|webp|gif|svg)$/i', '', $title) ?? $title;
@@ -761,6 +765,9 @@ function icomplyQualityFloorImageAlt(string $src): string
     $title = trim((string)preg_replace('/\s+/', ' ', $title));
     if ($title === '' || strlen($title) > 180) {
         return 'Photograph';
+    }
+    if (preg_match('/[^\x00-\x7F]/', $title) || preg_match('/\b(einem|einen|einer|für|fuer|und|der|die|das|dachluke|rauchabzug)\b/iu', $title)) {
+        return '';
     }
     return $title;
 }
@@ -1002,10 +1009,32 @@ function icomplyQualityFloorScrubSentences(string $html, string $path, string $s
     if (!is_string($masked)) {
         $masked = $html;
     }
-    $out = preg_replace_callback('/>([^<]+)</', static function (array $m) use ($gas, $garden): string {
+    $hand = in_array($family, ['demolition', 'driveways', 'fencing', 'drainage'], true);
+    $out = preg_replace_callback('/>([^<]+)</', static function (array $m) use ($gas, $garden, $hand): string {
         $text = $m[1];
+        if ($hand) {
+            $text = str_replace(
+                [
+                    'Installation, maintenance, testing and certification.',
+                    'Installation, maintenance, testing and certification',
+                    'full certification',
+                    'Certificates are emailed to you.',
+                    'Certificates are emailed.',
+                    'Certificates are emailed',
+                ],
+                [
+                    'We survey, quote and carry out the work.',
+                    'We survey, quote and carry out the work',
+                    'a written scope',
+                    'The written quote is emailed to you.',
+                    'The written quote is emailed.',
+                    'The written quote is emailed',
+                ],
+                $text
+            );
+        }
         if (!preg_match('/[.!?]/', $text)) {
-            return $m[0];
+            return '>' . $text . '<';
         }
         $parts = preg_split('/(?<=[.!?])\s+/', $text) ?: [];
         $kept = [];

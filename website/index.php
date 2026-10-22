@@ -25,7 +25,7 @@ $aovUrl = url('/pages/services/aov-air-handling.php');
 $barriersUrl = url('/products.php') . '#barriers';
 $contactUrl = url('/contact.php');
 $trust = [
-    ['title' => 'Call ' . PHONE, 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
+    ['title' => 'Call ' . icomplyPhoneDisplay(), 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
     ['title' => 'AOV & barriers first', 'text' => 'Smoke control and 5m barrier packs are the priority quotes'],
     ['title' => 'Phone, WhatsApp or form', 'text' => 'Send the postcode and property type to start a quote', 'href' => $contactUrl],
     ['title' => 'Scoped quotes', 'text' => 'Written figure after scope — AOV install and barrier install are POA'],
@@ -64,7 +64,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="home-hero-cta">
                 <a class="btn-hero-accent" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">AOV &amp; smoke control</a>
                 <a class="btn-hero-light" href="<?= htmlspecialchars($barriersUrl, ENT_QUOTES, 'UTF-8') ?>">Barriers</a>
-                <a class="btn-hero-light" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a class="btn-hero-light" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a class="btn-hero-wa" href="<?= htmlspecialchars($waHref, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">WhatsApp</a>
                 <a class="btn-hero-ghost" href="#quote">Get a quote</a>
                 <a class="btn-hero-ghost" href="<?= htmlspecialchars($contactUrl, ENT_QUOTES, 'UTF-8') ?>">Contact form</a>
@@ -79,7 +79,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div><strong><?= count($areas) ?>+</strong> towns</div>
                 <div><strong><?= number_format($kwCount) ?>+</strong> guides</div>
             </div>
-            <p class="home-hero-fine">Stockport SK2 5DE · Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?> · AOV and barrier install are POA</p>
+            <p class="home-hero-fine">Stockport SK2 5DE · Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?> · AOV and barrier install are POA</p>
         </div>
         <div class="home-hero-cards">
             <a class="home-hero-card home-hero-card--priority" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">
@@ -118,7 +118,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-10">
         <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Priority services</p>
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">Barriers and AOV</h2>
-        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">Barriers hub</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; smoke control</a>

@@ -151,19 +151,21 @@ export function tradesEssay(slug, placeName, townSlug) {
     : `We cover Greater Manchester and the towns within 50 miles of Manchester or Burnley from our Stockport base. The survey is free, the written quote is free, and a chat costs nothing.`;
   const price = `We do not put a rate card on this page.${eicrLine(slug)}The price follows the building, the access and the materials, and it is written down before anyone starts.`;
   const checks = fam.checks || [];
+  const work = fam.work || "the work";
+  const article = /^[aeiou]/i.test(work) ? "an" : "a";
   const frames = [
-    (item) => `When we look at ${name} in ${place}, we start with this, because it changes the quote: ${item}`,
-    (item) => `A landlord booking ${name} should tell us about this before the day: ${item}`,
-    (item) => `Homeowners in ${place} often discover the real job only after we check this: ${item}`,
-    (item) => `We will not guess this from a photo on WhatsApp. We look at it on site for ${name}: ${item}`,
-    (item) => `Making good after ${name} depends on this, and it is named in the written quote: ${item}`,
-    (item) => `If this is wrong, ${name} in ${place} takes longer and we would rather say so first: ${item}`,
-    (item) => `The free survey for ${name} includes this, and we show you what we found: ${item}`,
-    (item) => `Waste, access and neighbours matter on ${name}. In ${place} that usually means: ${item}`,
-    (item) => `We leave ${name} ready for the next trade or for you to live with. That means: ${item}`,
-    (item) => `Do not pay for this twice. On ${name} we check it once and write the result down: ${item}`,
-    (item) => `Weather and the age of the house change ${name}. Around ${place} we allow for: ${item}`,
-    (item) => `The part of ${name} that people forget until the end is this: ${item}`,
+    (item) => `In ${place}, ${article} ${work} survey looks at ${item}. That is what we write into the quote.`,
+    (item) => `Before anyone starts ${work} in ${place}, we ask about ${item}.`,
+    (item) => `People in ${place} often only notice ${item} once we are stood in front of it.`,
+    (item) => `A photo on WhatsApp is not enough for ${item}. We look at it on site and say what we found.`,
+    (item) => `The written quote for ${place} names ${item}, so making good is not a surprise at the end.`,
+    (item) => `If ${item} is worse than it looked, ${work} in ${place} takes longer and we say so before we book the day.`,
+    (item) => `The free survey includes ${item}. You see it with us, rather than reading it for the first time on an invoice.`,
+    (item) => `Access, waste and the neighbours all sit next to ${item}. In ${place} we plan that before the van arrives.`,
+    (item) => `When ${work} is finished in ${place}, ${item} should be left so the next trade, or you, can live with it.`,
+    (item) => `We check ${item} once and write the result down. You should not have to pay a second visit to discover it.`,
+    (item) => `The age of the house and the weather both affect ${item}. Around ${place} we allow time for that in the quote.`,
+    (item) => `The part people forget until the end is ${item}. We put it on the list at the survey.`,
   ];
   const checkParas = [];
   if (checks.length) {
@@ -176,7 +178,7 @@ export function tradesEssay(slug, placeName, townSlug) {
   }
   const guide = String(fam.guide || "").replaceAll("{name}", name).replaceAll("{place}", place).replaceAll("{work}", fam.work);
   const chunks = [
-    `${name}${townSlug ? ` in ${place}` : ""}. ${topic}`,
+    `This page is about ${name}${townSlug ? ` in ${place}` : ""}. ${topic}`,
     intentCopy.replaceAll("{name}", name).replaceAll("{place}", place).replaceAll("{work}", fam.work),
     guide,
     price,
@@ -251,15 +253,19 @@ export function tradesImages(slug, placeName) {
 
 export function tradesLinkHtml(slug, townSlug) {
   const row = ROWS[slug];
-  const family = row?.family || "general-building";
-  const service = row?.service || "building-maintenance";
+  const family = row?.family || (NEW_SERVICES.has(slug) ? slug : "general-building");
+  const service = row?.service || (NEW_SERVICES.has(slug) ? slug : "building-maintenance");
   const siblings = Object.entries(ROWS)
     .filter(([other, meta]) => other !== slug && meta.family === family && meta.kind !== "job")
     .slice(0, 24);
   const towns = (family === "aov" ? LOCAL_TOWN_SLUGS : GM.map((r) => r[0])).filter((t) => t !== townSlug);
+  const pageHref = (town) => {
+    if (row) return town ? `/pages/keywords/${slug}/${town}` : `/pages/keywords/${slug}`;
+    return town ? `/pages/${slug}/${town}` : `/pages/services/${slug}`;
+  };
   const items = [];
   items.push(`<li><a href="/pages/services/${service}">${escapeHtml(titleCaseSlug(service))} hub</a></li>`);
-  items.push(`<li><a href="/pages/keywords/${slug}">${escapeHtml(row?.name || titleCaseSlug(slug))} guide</a></li>`);
+  items.push(`<li><a href="${pageHref("")}">${escapeHtml(row?.name || titleCaseSlug(slug))} guide</a></li>`);
   items.push(`<li><a href="/pages/services">All services</a></li>`);
   items.push(`<li><a href="/pages/areas">Areas we cover</a></li>`);
   items.push(`<li><a href="/contact">Contact and free quote</a></li>`);
@@ -270,7 +276,7 @@ export function tradesLinkHtml(slug, townSlug) {
   const townNames = new Map(GM.map((r) => [r[0], r[1]]));
   for (const town of towns) {
     const label = townNames.get(town) || titleCaseSlug(town);
-    items.push(`<li><a href="/pages/keywords/${slug}/${town}">${escapeHtml((row?.name || titleCaseSlug(slug)) + " in " + label)}</a></li>`);
+    items.push(`<li><a href="${pageHref(town)}">${escapeHtml((row?.name || titleCaseSlug(slug)) + " in " + label)}</a></li>`);
   }
   const relatedServices = ["plastering", "roofing", "electrical", "aov-air-handling", "kitchens", "bathrooms", "drainage", "brickwork"]
     .filter((s) => s !== service);

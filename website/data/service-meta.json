@@ -474,5 +474,25 @@
         "short": "PAT of portable appliances — not an EICR",
         "standards": "IET in-service inspection guidance · risk-based frequency",
         "pricing": "POA"
+    },
+    "demolition": {
+        "blurb": "Strip-out and demolition: survey the structure, protect what stays, and clear the waste.",
+        "short": "Survey, strip-out and clearance",
+        "standards": "Survey first · waste carried away · making good named in the quote"
+    },
+    "driveways": {
+        "blurb": "Block paving, tarmac and resin drives: survey the levels, excavate, and lay the finish.",
+        "short": "Survey, excavate and pave",
+        "standards": "Falls and edging · a written quote before work"
+    },
+    "fencing": {
+        "blurb": "Panel, post and closeboard fencing: survey the line, set the posts, and hang the panels.",
+        "short": "Survey, posts and panels",
+        "standards": "Line and boundaries · posts set · a written quote before work"
+    },
+    "drainage": {
+        "blurb": "Blocked drains, repairs and new runs: survey the fall, clear or repair, and leave the run flowing.",
+        "short": "Survey, clear and repair",
+        "standards": "Falls and access · a written quote before work"
     }
 }
