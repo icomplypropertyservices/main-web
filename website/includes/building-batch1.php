@@ -37,11 +37,11 @@ function icomplyB1TownLinks(string $kind, string $slug): string {
     $towns = $d['gm60'] ?? [];
     usort($towns, fn($a, $b) => ($a[0] === 'manchester' ? -1 : ($b[0] === 'manchester' ? 1 : strcmp($a[1], $b[1]))));
     $h = '<section class="bg-white border-t border-zinc-200" data-b1="gm60-links"><div class="max-w-7xl mx-auto px-6 py-12">'
-        . '<h2 class="text-2xl md:text-3xl font-bold text-[#061828]">' . htmlspecialchars($label . ' in Manchester and Greater Manchester', ENT_QUOTES, 'UTF-8') . '</h2>'
+        . '<h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">' . htmlspecialchars($label . ' in Manchester and Greater Manchester', ENT_QUOTES, 'UTF-8') . '</h2>'
         . '<p class="mt-2 text-zinc-800">Pick your town for local details, nearby areas and a free quote. Same/next-day visits from our Stockport team.</p>'
         . '<ul class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-2">';
     foreach ($towns as [$t, $n]) {
-        $h .= '<li><a class="text-[#061828] font-semibold hover:text-[#ff6b00] underline-offset-2 hover:underline" href="' . htmlspecialchars(url($base . $t), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label . ' in ' . $n, ENT_QUOTES, 'UTF-8') . '</a></li>';
+        $h .= '<li><a class="text-[#0B1F3A] font-semibold hover:text-[#ff6b00] underline-offset-2 hover:underline" href="' . htmlspecialchars(url($base . $t), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label . ' in ' . $n, ENT_QUOTES, 'UTF-8') . '</a></li>';
     }
     return $h . '</ul></div></section>';
 }
@@ -49,15 +49,15 @@ function icomplyB1TownLinks(string $kind, string $slug): string {
 function icomplyB1HomeBlock(): string {
     $d = icomplyB1Data();
     $h = '<section class="bg-white border-t border-zinc-200" data-b1="home-manchester-trades"><div class="max-w-7xl mx-auto px-6 py-12">'
-        . '<h2 class="text-2xl md:text-3xl font-bold text-[#061828]">Building work in Manchester</h2>'
+        . '<h2 class="text-2xl md:text-3xl font-bold text-[#0B1F3A]">Building work in Manchester</h2>'
         . '<p class="mt-2 text-zinc-800">Homeowners and landlords: same/next-day visits and a free written quote. Call <a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517 806082</a>.</p>'
         . '<ul class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-2">';
     foreach (($d['services'] ?? []) as $s => $label) {
-        $h .= '<li><a class="text-[#061828] font-semibold hover:text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/' . $s . '/manchester'), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label . ' in Manchester', ENT_QUOTES, 'UTF-8') . '</a></li>';
+        $h .= '<li><a class="text-[#0B1F3A] font-semibold hover:text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/' . $s . '/manchester'), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label . ' in Manchester', ENT_QUOTES, 'UTF-8') . '</a></li>';
     }
     foreach (['plasterboard-installation', 'loft-conversion', 'house-renovation', 'damp-proofing', 'brickwork-repairs', 'emergency-plumber', 'boiler-repair', 'boiler-installation'] as $k) {
         if (!isset($d['keywords'][$k])) continue;
-        $h .= '<li><a class="text-[#061828] font-semibold hover:text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/keywords/' . $k . '/manchester'), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($d['keywords'][$k] . ' in Manchester', ENT_QUOTES, 'UTF-8') . '</a></li>';
+        $h .= '<li><a class="text-[#0B1F3A] font-semibold hover:text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/keywords/' . $k . '/manchester'), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($d['keywords'][$k] . ' in Manchester', ENT_QUOTES, 'UTF-8') . '</a></li>';
     }
     return $h . '</ul></div></section>';
 }

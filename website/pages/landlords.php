@@ -82,7 +82,7 @@ $packages = [
 $trust = [
     ['title' => 'Stockport-based', 'text' => 'Local engineers covering Greater Manchester & the North West'],
     ['title' => 'Letting-agent ready', 'text' => 'Certificates and reports formatted for tenancy files & portals'],
-    ['title' => 'Multi-property quotes', 'text' => 'Fixed prices across portfolios — no per-visit surprises'],
+    ['title' => 'Multi-property quotes', 'text' => 'Written quotes across portfolios — no per-visit surprises'],
     ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers'],
 ];
 

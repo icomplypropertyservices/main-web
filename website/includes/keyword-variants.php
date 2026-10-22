@@ -75,7 +75,7 @@ function icomplyKeywordVariantIntents(): array
         ['slug' => 'book', 'label' => 'Book', 'title' => 'Book', 'note' => 'Book a visit. We confirm the date as soon as you accept the quote.'],
         ['slug' => 'arrange', 'label' => 'Arrange', 'title' => 'Arrange', 'note' => 'We arrange the visit around access, tenants and opening hours.'],
         ['slug' => 'find', 'label' => 'Find', 'title' => 'Find', 'note' => 'Looking for a reliable engineer in Greater Manchester? We cover every town from Stockport.'],
-        ['slug' => 'compare', 'label' => 'Compare', 'title' => 'Compare', 'note' => 'Compare with confidence: every quote sets out the full scope and a fixed price in writing.'],
+        ['slug' => 'compare', 'label' => 'Compare', 'title' => 'Compare', 'note' => 'Compare with confidence: every quote sets out the full scope and a written quote in writing.'],
         ['slug' => 'schedule', 'label' => 'Schedule', 'title' => 'Schedule', 'note' => 'Pick a date that suits you, and we confirm it when you accept the quote.'],
         ['slug' => 'instruct', 'label' => 'Instruct', 'title' => 'Instruct', 'note' => 'Ready to go ahead? Accept the quote in writing and we will book the engineer.'],
         ['slug' => 'resurvey', 'label' => 'Resurvey', 'title' => 'Resurvey', 'note' => 'A return visit after an earlier job or a change to the building.'],

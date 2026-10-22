@@ -100,7 +100,7 @@ $landing = [
             'a' => 'Ask us to scope it. Commercial and other multi-occupied buildings are fact-specific under the Fire Safety Order. Tell us the building type, floors and borough. From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA; the written quote follows the scope. The service page is linked above; this landing does not replace it.',
         ],
         [
-            'q' => 'Will you quote a fixed price up front?',
+            'q' => 'Will you quote a written quote up front?',
             'a' => 'From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA. You get a written quote after scope is agreed. Alarms, emergency lighting and extinguishers are quoted separately unless they are included in an agreed package.',
         ],
     ],

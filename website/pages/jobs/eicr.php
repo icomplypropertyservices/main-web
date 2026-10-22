@@ -65,7 +65,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'The published guide is **' . $eicrFrom . '**. That is not the fixed quote. Inspection and remedials may be separate line items. No obligation until you accept a fixed price.',
+            'text' => 'The published guide is **' . $eicrFrom . '**. That is not the fixed quote. Inspection and remedials may be separate line items. No obligation until you accept a written quote.',
         ],
         [
             'title' => 'Test and file the report',
@@ -121,7 +121,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Book an EICR quote',
-    'ctaText' => 'Single let, HMO or a small portfolio — or line electrical checks up with gas and fire on one schedule. Share the postcode and property type. Guide from **' . $eicrFrom . '**. The fixed price follows scope.',
+    'ctaText' => 'Single let, HMO or a small portfolio — or line electrical checks up with gas and fire on one schedule. Share the postcode and property type. Guide from **' . $eicrFrom . '**. The written quote follows scope.',
 ];
 
 $landing['gmTopic'] = 'EICR';

@@ -92,7 +92,7 @@ $trust = [
 
 $howItWorks = [
     ['1', 'Map the estate', 'Share sites, system types, panel brands and current cert expiry dates.'],
-    ['2', 'Agree the programme', 'We quote install, remedial or planned maintenance — fixed price after scope.'],
+    ['2', 'Agree the programme', 'We quote install, remedial or planned maintenance — written quote after scope.'],
     ['3', 'Deliver & document', 'Engineers attend, complete works and issue audit-ready certificates.'],
 ];
 
