@@ -13,7 +13,6 @@
             "/assets/images/services/smoke-vent-rooflight-1.jpg",
             "/assets/images/services/smoke-exhaust-duct-1.jpg",
             "/assets/images/services/smoke-vent-roof-window-1.jpg",
-            "/assets/images/services/smoke-shaft-2.jpg",
             "/assets/images/services/smoke-stair-fan-1.jpg"
         ],
         "aov": [
@@ -1076,6 +1075,18 @@
         "own": [
             "/assets/images/page-types/keywords/electrics-first-fix.jpg",
             "/assets/images/page-types/keywords/electrics-first-fix-2.jpg"
+        ]
+    },
+    "type-keywords-epc": {
+        "own": [
+            "/assets/images/page-types/keywords/epc.jpg",
+            "/assets/images/page-types/keywords/epc-2.jpg"
+        ]
+    },
+    "type-keywords-kitchen-fire-suppression": {
+        "own": [
+            "/assets/images/page-types/keywords/kitchen-fire-suppression.jpg",
+            "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg"
         ]
     }
 }
