@@ -7,7 +7,7 @@
 declare(strict_types=1);
 require_once __DIR__ . '/hero-cta.php';
 
-const ICOMPLY_FINISH_CSS = '<style id="pf-css">.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin:.35rem 0 1.1rem}.hero-cta a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.55rem 1rem;border-radius:.55rem;color:#fff;font-weight:700;text-decoration:none}.hero-cta a.call{background:#FF6B00}.hero-cta a.wa{background:#0B1F3A}.pf-bc{font-size:.85rem;color:#333333;margin:.5rem 0}.pf-bc a{color:#333333;text-decoration:underline}.pf-bc ol{list-style:none;display:flex;flex-wrap:wrap;gap:.35rem;padding:0;margin:0}.pf-bc li+li:before{content:"›";margin-right:.35rem}</style>';
+const ICOMPLY_FINISH_CSS = '<style id="pf-css">.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin:.35rem 0 1.1rem}.hero-cta a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.55rem 1rem;border-radius:.55rem;color:#fff;font-weight:700;text-decoration:none}.hero-cta a.call{background:#FF6B00}.hero-cta a.wa{background:#0B1F3A}.pf-bc{font-size:.85rem;color:#333333;margin:.5rem 0}.pf-bc a{color:#333333;text-decoration:underline}.pf-bc ol{list-style:none;display:flex;flex-wrap:wrap;gap:.35rem;padding:0;margin:0}.pf-bc li+li:before{content:"›";margin-right:.35rem}.matrix-hero .pf-bc,.matrix-hero .pf-bc a{color:#ffffff}.matrix-hero .hero-cta a.wa{background:#ffffff;color:#0B1F3A}</style>';
 
 function icomplyFinishTitleCase(string $slug): string
 {

@@ -310,7 +310,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     }
     $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
-    if (in_array($svcSlug, ['cctv', 'access-control', 'intruder-alarm', 'door-entry', 'intercoms', 'security-systems'], true)) {
+    if (in_array($svcSlug, ['cctv', 'access-control', 'intruder-alarm', 'intruder-alarms', 'door-entry', 'intercoms', 'security-systems'], true)) {
         // QM #156 item 13: security town pages use the full branded site header.
         require_once __DIR__ . '/site-nav.php';
         if (function_exists('icomplyMegaHeaderHtml')) {
@@ -525,6 +525,13 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath);
+    if (in_array($serviceSlug, ['cctv', 'access-control', 'intruder-alarm', 'intruder-alarms', 'door-entry', 'intercoms', 'security-systems'], true)) {
+        // QM #156 item 13: security service x town pages use the full branded site header too.
+        require_once __DIR__ . '/site-nav.php';
+        if (function_exists('icomplyMegaHeaderHtml')) {
+            $html = preg_replace('#<header class="matrix-header">.*?</header>#s', icomplyMegaHeaderHtml(), $html, 1) ?? $html;
+        }
+    }
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
