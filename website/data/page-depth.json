@@ -1,0 +1,219 @@
+{
+ "_note": "QM #156 under_800_words: topic guidance added by page-finish to pages under 840 prose words. Topics match the URL path or H1.",
+ "topics": {
+  "fire-alarm|bs-5839|call-point|detector|sounder|panel": {
+   "name": "fire alarm systems",
+   "p": [
+    "BS 5839-1 covers fire alarms in non-domestic buildings and BS 5839-6 covers homes, including HMOs and the flats in a converted house. The standard expects a competent person to service the system at least every six months, test a sample of devices at each visit so every detector and call point is tested once a year, and record each visit in the logbook.",
+    "Most commercial systems are designed to a category. L1 to L5 protect life, M is manual call points only, and P1 or P2 protect property. Before changing a system we check the category in the fire risk assessment, because adding rooms, partitions or a change of use can mean extra detection is needed.",
+    "False alarms usually come from the wrong type of detector in the wrong place, such as a smoke detector by a kitchen or shower, or from dust, insects or a failing device. We read the panel's event log, find which zone and device keeps triggering, and fix the cause instead of disabling it.",
+    "Standby batteries in the panel should run the system for at least 24 hours and then sound the alarm for 30 minutes. Batteries are usually changed every four to five years, or sooner if they fail a load test. We record the battery date on the panel and in the logbook."
+   ]
+  },
+  "emergency-light|exit-sign|bs-5266|escape-route": {
+   "name": "emergency lighting",
+   "p": [
+    "BS 5266-1 expects emergency lights to be checked monthly with a short functional test, and tested once a year for their full rated duration, usually three hours. The results go in the logbook. Fittings that fail are repaired or replaced and retested, so the escape routes stay lit if the mains supply fails.",
+    "Maintained fittings stay on all the time and are used where people gather, such as theatres, bars and some shops. Non-maintained fittings only light when the power fails, and are the usual choice for corridors and stairs. Self-test fittings run their own monthly and annual tests and show a status light, but they still need checking and recording.",
+    "A survey looks at every escape route, change of direction, stair, final exit, fire alarm call point and firefighting equipment point, because each needs enough light to be found in a power cut. Toilets over 8 square metres, lift cars and plant rooms often need cover too.",
+    "LED conversions cut energy use and extend service intervals, but the fitting, battery and exit legend must still meet the standard. When a building is refurbished we check the new layout against the emergency lighting design, because moved walls often leave dark spots on escape routes."
+   ]
+  },
+  "cctv|camera": {
+   "name": "CCTV",
+   "p": [
+    "A CCTV system should be planned around what you need to see: faces at the door, number plates at the gate, or general activity in a car park. Each needs a different lens, height and level of light, so we agree the purpose of each camera before choosing equipment.",
+    "Recorded footage is personal data under UK GDPR. Businesses and landlords need a reason for recording, signs telling people that cameras are in use, a retention period, usually around 30 days, and a way to respond to subject access requests. Cameras must not look into neighbours' homes or gardens.",
+    "Servicing covers cleaning lenses and housings, checking the focus and the night-time picture, confirming the recorder's drives are healthy and storing the expected number of days, checking the time and date stamp, and making sure remote viewing works. Firmware updates close security holes in older recorders.",
+    "Older analogue systems can often be upgraded by keeping the cabling and changing the recorder and cameras to HD-over-coax, or moved to IP cameras on network cable with power over Ethernet. We survey the existing cable runs before recommending either option."
+   ]
+  },
+  "access-control|door-entry|intercom|fob|keypad|maglock": {
+   "name": "access control and door entry",
+   "p": [
+    "Door entry and access control decide who can get into a building and when. Systems range from a single keypad to a networked system with fobs, cards, phone credentials and video intercoms, logging every door event. We start by mapping the doors, the users and the times each group needs access.",
+    "Doors on escape routes must still open easily in an emergency. Locks that hold doors shut need a green break-glass override, a fail-safe release on power loss, and often a link to the fire alarm so the doors release when it sounds. We test each of those links when we service the system.",
+    "User management is where most systems fall down. Leavers keep working fobs, shared codes are never changed, and no one has the admin password. As part of a service visit we tidy the user list, change shared codes, and give you a simple process for issuing and cancelling fobs.",
+    "Door closers, hinges, strikes and handles wear before the electronics do. A door that does not close fully will not lock, so a service visit checks the hardware as well as the readers, power supplies and battery backup."
+   ]
+  },
+  "intruder|burglar|alarm-system|security-system": {
+   "name": "intruder alarms",
+   "p": [
+    "Intruder alarms in the UK are designed to PD 6662 and BS EN 50131, which set the grade of the system from 1 to 4. Most homes are grade 2, while commercial premises often need grade 3 for insurance. Your insurer may name the grade, the signalling and the type of response they require.",
+    "A service checks every detector, door contact and personal attack button, the panel and siren batteries, the tamper circuits and the signalling path to the receiving centre where there is one. User codes are reviewed and the event log is checked for repeated false alarms.",
+    "Police response depends on the system being installed and maintained by a certified company and on a good false-alarm record. Unmonitored bells-only alarms rely on keyholders, so we help you set up a keyholder list and decide whether a monitored signalling path is worth adding."
+   ]
+  },
+  "asbestos": {
+   "name": "asbestos",
+   "p": [
+    "The Control of Asbestos Regulations 2012 require the dutyholder for non-domestic premises, including the common parts of blocks of flats, to find out whether asbestos is present, assess its condition, keep a register and a management plan, and tell anyone who might disturb it.",
+    "A management survey finds materials that could be disturbed in normal use and maintenance. A refurbishment and demolition survey is more intrusive and is needed before building work. Samples are analysed by an accredited laboratory, and the report lists each material, its location, its condition and a recommended action.",
+    "Asbestos in good condition and unlikely to be disturbed is usually left in place, labelled and rechecked. Damaged material may need sealing or removal by a suitably qualified contractor, and some removal work must be done by a licensed contractor. Contractors must see the register before they start work."
+   ]
+  },
+  "legionella|water-hygiene|water-risk|wras|tmv": {
+   "name": "legionella and water safety",
+   "p": [
+    "Landlords and employers must assess the risk of legionella under the Health and Safety at Work Act and the COSHH Regulations, following the HSE's ACOP L8 and HSG274. For most rented homes the assessment is simple, but it still needs to be done, recorded and reviewed when anything changes.",
+    "The main risks are water stored or held between 20°C and 45°C, dead legs, little-used outlets, and tanks that let in debris. Hot water should be stored at 60°C or above and reach 50°C at taps within about a minute, and cold water should stay below 20°C.",
+    "Simple controls cover most properties: flushing little-used outlets weekly, descaling showerheads, keeping tank lids fitted, and checking temperatures. Larger buildings may need a written scheme, monthly temperature records and periodic sampling, and we set out the tasks and their frequency in the report."
+   ]
+  },
+  "eicr|electrical|electrician|consumer-unit|rewire|fixed-wire|bs-7671": {
+   "name": "electrical safety",
+   "p": [
+    "The Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020 require an EICR at least every five years for rented homes, with a copy given to tenants within 28 days. Any C1 or C2 faults must be put right within 28 days, or sooner if the report says so.",
+    "Commercial premises are usually tested every five years, but more often for buildings such as swimming pools, cinemas and some industrial sites. The inspector samples circuits across the installation, so a larger building takes longer and may need out-of-hours access to switch circuits off.",
+    "An EICR codes each fault: C1 means danger present, C2 means potentially dangerous, C3 means improvement recommended, and FI means further investigation is needed. A report with any C1, C2 or FI is unsatisfactory until the work is done and confirmed in writing.",
+    "Remedial work is quoted line by line so you can see what each fault costs to fix. After the work you get a minor works or electrical installation certificate, which sits with the EICR to show the installation is now satisfactory."
+   ]
+  },
+  "pat|portable-appliance": {
+   "name": "portable appliance testing",
+   "p": [
+    "PAT testing is not a fixed legal requirement, but employers and landlords must keep electrical equipment safe, and testing is the usual way to show that. How often depends on the type of equipment and how it is used: a kettle in a busy office is checked more often than a monitor that never moves.",
+    "Each appliance gets a visual inspection of the plug, flex and casing, and class I items get earth continuity and insulation tests. Every item is labelled and listed with its result, so you have an asset register to show insurers or auditors.",
+    "Most failures are damaged flexes, wrong fuses or cracked plugs, and many can be fixed on the day. Items that cannot be repaired safely are labelled as failed and taken out of use, and we tell you which ones before we leave."
+   ]
+  },
+  "gas|boiler|cp12|heating": {
+   "name": "gas safety",
+   "p": [
+    "The Gas Safety (Installation and Use) Regulations 1998 require landlords to have every gas appliance, fitting and flue they provide checked every 12 months. The record must be given to existing tenants within 28 days and to new tenants before they move in, and kept for at least two years.",
+    "Gas work is carried out by Gas Safe registered engineers. A safety check covers appliance operation, burner pressure or gas rate, flue flow and spillage, ventilation and safety devices, and the record lists any defects and the action taken.",
+    "An appliance classed as Immediately Dangerous is disconnected with the owner's permission, and one classed as At Risk is turned off until it is repaired. In an emergency or if you smell gas, call the National Gas Emergency Service on 0800 111 999."
+   ]
+  },
+  "epc|energy-performance": {
+   "name": "energy performance certificates",
+   "p": [
+    "An EPC is needed when a property is built, sold or let, and lasts ten years. Rented homes in England and Wales must normally reach at least band E under the Minimum Energy Efficiency Standards unless a valid exemption is registered.",
+    "The assessor records the construction, insulation, windows, heating system, controls and hot water, and produces a rating with recommended improvements. Having boiler paperwork, insulation certificates and photos of the loft ready can raise the rating, because evidence lets the assessor use better values than the defaults."
+   ]
+  },
+  "fire-door": {
+   "name": "fire doors",
+   "p": [
+    "The Fire Safety (England) Regulations 2022 require the responsible person in blocks of flats over 11 metres to check fire doors in the common parts every three months, and flat entrance doors every year on a best-endeavours basis. Other buildings rely on the fire risk assessment to set the frequency.",
+    "A fire door inspection checks the certification label or plug, the gaps around the leaf, the intumescent strips and smoke seals, the hinges, the closer and any glazing. A door that does not close fully onto its latch from any angle will not hold back fire and smoke.",
+    "Common failures are gaps over 4 mm, missing or painted-over seals, wedged doors and closers that have been removed. Many are fixed on the day; others need a new door set, and we record each door's result with a photo."
+   ]
+  },
+  "fire-risk|fra": {
+   "name": "fire risk assessments",
+   "p": [
+    "The Regulatory Reform (Fire Safety) Order 2005 requires the responsible person for non-domestic premises, including the common parts of flats and HMOs, to have a suitable and sufficient fire risk assessment. It must be written down where five or more people are employed, and the Fire Safety Act 2021 extended it to external walls and flat entrance doors.",
+    "The assessor looks at what could start a fire, what would burn, who is at risk, how people are warned and how they escape. The report lists actions by priority with a timescale, so you can plan the work.",
+    "The assessment should be reviewed regularly, often every year, and again after any significant change, such as building work, a change of use or a fire. Keeping a record of completed actions makes the next review quicker."
+   ]
+  },
+  "extinguisher": {
+   "name": "fire extinguishers",
+   "p": [
+    "Extinguishers are serviced every year to BS 5306-3. The engineer checks the pressure, seals, hose and weight, and replaces or refills units that have been used. Most extinguishers need an extended service or replacement every five years, and CO2 units at ten.",
+    "The right type depends on what could burn: water or foam for paper and wood, CO2 for electrical equipment, wet chemical for deep-fat fryers, and powder only where its mess is acceptable. Each extinguisher should be wall-mounted or on a stand, with its sign, near an exit or the hazard."
+   ]
+  },
+  "sprinkler|suppression|dry-riser|wet-riser": {
+   "name": "sprinkler and suppression systems",
+   "p": [
+    "Sprinkler systems are maintained to BS EN 12845 for commercial buildings or BS 9251 for homes. Weekly checks are often done by site staff, with quarterly, half-yearly and annual visits by an engineer covering valves, alarms, pumps, water supplies and the condition of the pipework and heads.",
+    "Dry risers must be visually inspected every six months and pressure-tested every year to BS 9990. Missing or damaged landing valves, outlet caps and inlet boxes are common findings and are fixed before the system is passed.",
+    "Kitchen suppression systems need servicing every six months to cover the nozzles, the detection line, the agent cylinders and the gas shut-off. Insurers often ask for the latest service certificate."
+   ]
+  },
+  "fire-stopping|compartment": {
+   "name": "fire stopping and compartmentation",
+   "p": [
+    "Compartmentation keeps fire and smoke in the area where they start, giving people time to escape. Each time a cable, pipe or duct passes through a fire-resisting wall or floor, the gap must be sealed with a tested product that matches the wall and the services.",
+    "A compartmentation survey checks the risers, ceiling voids and plant rooms where trades have made holes. Each defect is photographed, logged and given a reference, so you can prove what was found and what was sealed.",
+    "Sealing should use a product tested for that particular wall or floor and that particular service, installed to the maker's instructions. We label each seal and record it in the building's fire safety file."
+   ]
+  },
+  "smoke|carbon-monoxide|co-alarm": {
+   "name": "smoke and carbon monoxide alarms",
+   "p": [
+    "The Smoke and Carbon Monoxide Alarm (Amendment) Regulations 2022 require landlords in England to fit a smoke alarm on every storey used as living space, and a carbon monoxide alarm in any room with a fixed combustion appliance except a gas cooker. Alarms must be tested at the start of each new tenancy.",
+    "Sealed ten-year battery alarms avoid flat batteries, while mains-wired alarms with battery backup are expected in new builds, HMOs and major refurbishments. Interlinking means all the alarms sound when one detects smoke, which gives people more time to escape."
+   ]
+  },
+  "aov|smoke-vent|smoke-control": {
+   "name": "smoke ventilation",
+   "p": [
+    "Automatic opening vents and smoke shafts clear smoke from stairs and corridors so residents can escape and firefighters can reach the fire. They are usually linked to smoke detectors on each floor and to a firefighter's override switch.",
+    "Smoke control systems should be tested weekly by the building manager and serviced at least yearly by a competent engineer, covering actuators, control panels, batteries, detectors and the opening angle of every vent. Each visit is recorded in the building's fire log."
+   ]
+  },
+  "barrier|gate|bollard": {
+   "name": "barriers and gates",
+   "p": [
+    "Automatic barriers and gates must be fitted and maintained so they cannot trap or crush people or vehicles. Safety loops, photocells and force limits are set at installation and checked at each service, and every visit is recorded.",
+    "A service visit checks the arm or leaf, the drive unit, the control board, the loops and photocells, the battery backup and the manual release. Regular servicing finds worn parts before a barrier fails in the closed or open position."
+   ]
+  },
+  "hmo|landlord|letting|renewal|certificate": {
+   "name": "landlord compliance",
+   "p": [
+    "Landlords in England must provide a gas safety record each year, an EICR at least every five years, a valid EPC, and smoke and carbon monoxide alarms that meet the 2022 regulations. HMOs also need a licence where the council requires one, plus fire doors, fire detection and emergency lighting to match the property's risk.",
+    "Councils can issue civil penalties of up to £30,000 for some failures, and a missing gas record or EPC can stop a landlord from serving a section 21 notice. Keeping every certificate, the date it was issued and the date it runs out in one place is the simplest way to avoid gaps.",
+    "We send reminders before each certificate runs out and book the visits around tenants. That way the paperwork for each property stays up to date in one file."
+   ]
+  },
+  "subcontract|become-a|partner-with|careers": {
+   "name": "working with us as a subcontractor",
+   "p": [
+    "We work with sole traders and small firms across the North West who are qualified in fire, security, electrical, gas, water and building trades. Before your first job we ask for proof of the relevant qualifications and registrations, public liability insurance, and the risk assessments and method statements you use.",
+    "Jobs come with a clear scope, the site address, access arrangements, the tenant or site contact, and photos where we have them. You agree the price before you start, and any extra work found on site is priced and approved before it goes ahead.",
+    "Every job needs a short written record on completion: what you checked or fitted, test results, photos before and after, and any certificate the work requires. We pass that to the client the same day, so complete paperwork means quicker payment.",
+    "Payment terms are agreed at the start and paid against completed paperwork. Subcontractors who turn up on time, keep tenants informed and send clean paperwork get first call on repeat work across our managing-agent and multi-site clients."
+   ]
+  },
+  "director": {
+   "name": "our directories",
+   "p": [
+    "The directories list the towns, services, manufacturers and keywords we cover, so you can go straight to the page for the place and the job you need. Each page sets out what the work involves, the standards it follows and how to book.",
+    "If you cannot find your town, we probably still cover it. We work across the North West from Stockport SK2 and travel further for multi-site and specialist work, so send us the postcode and we will confirm.",
+    "The service pages explain the law and the standards behind each check, for example BS 5839 for fire alarms, BS 5266 for emergency lighting, BS 7671 for electrical installations and the Gas Safety Regulations for landlords."
+   ]
+  },
+  "product|shop": {
+   "name": "products we supply",
+   "p": [
+    "The products we supply and fit are chosen to work with the systems we already maintain, so spare parts and support are easy to get. Where a part is no longer made, we suggest a compatible replacement and tell you if the panel or controller will also need changing.",
+    "Prices for supplied products depend on quantity, delivery and whether we fit them. Fitted items come with the commissioning paperwork the work needs, and we register maker's warranties where the manufacturer offers them."
+   ]
+  },
+  "review|testimonial": {
+   "name": "customer reviews",
+   "p": [
+    "Reviews come from landlords, managing agents, schools, care homes and businesses we have worked for. We ask every customer for honest feedback after a job, and we read and reply to every review, including the critical ones.",
+    "If something has gone wrong, tell us directly first so we can put it right: call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com with the address and date of the visit."
+   ]
+  },
+  "contact": {
+   "name": "contacting us",
+   "p": [
+    "The quickest way to reach us is by phone or WhatsApp on 07517 806082. Messages and emails to icomplypropertyservices@gmail.com are answered the same working day, and urgent faults such as a fire alarm stuck in alarm or a barrier stuck shut are prioritised.",
+    "For a quote, send the address, the type of building, what you need and when the current certificate or service runs out. Photos of panels, rating plates and the problem area help us send the right engineer with the right parts."
+   ]
+  }
+ },
+ "general": [
+  "Every job starts with the facts: the address, the type of building, who lives or works there, and any previous certificates or reports. Photos of panels, rating plates and problem areas help us bring the right parts and send the right engineer, which saves a second visit.",
+  "Quotes are written and itemised. Where a survey is needed first, we say so and explain what it will cover. Any extra work found on site is priced separately and only goes ahead once you approve it.",
+  "Access is often the hardest part of compliance work in occupied buildings. We give tenants and staff notice, book visits around opening hours, and can work early, late or at weekends for sites that cannot shut down.",
+  "After each visit you get a written record by email: what was checked, what passed, what failed, and what we recommend, with photos where they help. Keeping these records together makes inspections, insurance renewals and sales much easier.",
+  "We work from Stockport SK2 and cover Greater Manchester, Cheshire, Lancashire, Merseyside, Derbyshire and the wider North West, with engineers travelling further for multi-site clients. Same-day and next-day visits are often possible for urgent faults.",
+  "Managing agents and multi-site clients can have all their properties on one schedule, with service dates, certificate expiry dates and open actions in a single list. This avoids missed renewals when properties change hands or staff change.",
+  "If you are not sure what a building needs, start with what you already have: the latest fire risk assessment, the last service sheets and any letters from the council or insurer. We read these first and tell you which items are urgent and which can be planned.",
+  "To get started, call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com. Tell us the address, what you need and when the current certificate or service runs out.",
+  "Our engineers carry identification and wear protective equipment on every site. In occupied buildings they introduce themselves to tenants or staff, explain what they are testing, and leave the area as they found it.",
+  "Where a system belongs to a previous contractor, we can usually take it over. We ask for the logbook, the last service report and any passwords or engineer codes, and if those are missing we can often reset the system safely after confirming ownership.",
+  "Health and safety paperwork is provided before work starts: risk assessments, method statements and insurance certificates. Larger sites can have this sent to their facilities team or principal contractor in advance.",
+  "If the work is urgent because an insurer, council or fire officer has raised it, send us their letter or report. We will quote against each listed item so you can show what has been done and when.",
+  "Repeat visits are booked as a schedule, so you do not need to remember the dates. We send a reminder before each visit and the report after it, and we flag anything coming up in the next few months.",
+  "We aim to fix faults on the first visit. Engineers carry common parts for the systems we look after, and where a part has to be ordered we make the system safe and tell you when we will return."
+ ]
+}
