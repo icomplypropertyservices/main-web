@@ -1560,6 +1560,15 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
             // so one photo is not repeated across unrelated service pages.
             $src = '';
         }
+        $cardPath = (string)(parse_url($src, PHP_URL_PATH) ?: $src);
+        $cardIsMark = $src === '' || (bool)preg_match('/\.(?:svg|png)$/i', $cardPath);
+        if ($cardIsMark && $serviceSlug !== '') {
+            $familyPhoto = manufacturerFamilyPhoto($serviceSlug);
+            if ($familyPhoto !== '') {
+                $src = $familyPhoto;
+                $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' equipment';
+            }
+        }
         $described = icomplyManufacturerPhotoAlt($src, '');
         if ($described !== '') {
             $alt = $described;
@@ -1648,6 +1657,29 @@ function servicePhotoUrl(string $slug): string {
 }
 
 /**
+ * Photograph for a service family. Brand cards use this when the brand file
+ * is a logo or a labelled diagram, so Aiphone and C-TEC are not the picture
+ * on every other family.
+ */
+function manufacturerFamilyPhoto(string $serviceSlug): string
+{
+    $serviceSlug = $serviceSlug === 'aov' ? 'aov-air-handling' : $serviceSlug;
+    $candidates = [];
+    if ($serviceSlug === 'aov-air-handling') {
+        $candidates[] = '/assets/images/services/aov-smoke-vent.jpg';
+    }
+    if ($serviceSlug !== '') {
+        $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
+    }
+    foreach ($candidates as $rel) {
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return '';
+}
+
+/**
  * Brand photo only. Do not borrow a service stock frame — that made every
  * logo-less card on a lane look like the same picture.
  * $fallbackService is unused and kept so existing call sites stay valid.
@@ -1657,6 +1689,13 @@ function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alar
     // was being repeated on service, shop and town pages.
     if ($slug === 'assa-abloy' && !$onManufacturerPage) {
         return '';
+    }
+    // One shared brand file must not be the card on every service family.
+    if ($fallbackService !== '') {
+        $perService = '/assets/images/manufacturers/' . $slug . '--' . $fallbackService . '.jpg';
+        if (is_file(SITE_ROOT . $perService)) {
+            return url($perService);
+        }
     }
     foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
         $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;

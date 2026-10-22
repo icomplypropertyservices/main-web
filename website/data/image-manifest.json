@@ -19105,27 +19105,33 @@
     ]
   },
   "/assets/images/services/fire-stopping.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 154527,
+    "width": 1599,
+    "height": 1068,
+    "origBytes": 210287,
     "variants": [
       {
         "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/72c74469e18e-480.webp",
-        "bytes": 8214
+        "h": 321,
+        "webp": "/assets/images/opt/33a4777f830d-480.webp",
+        "bytes": 14106
       },
       {
         "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/72c74469e18e-800.webp",
-        "bytes": 15324
+        "h": 534,
+        "webp": "/assets/images/opt/33a4777f830d-800.webp",
+        "bytes": 26488
       },
       {
         "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/72c74469e18e-1280.webp",
-        "bytes": 28736
+        "h": 855,
+        "webp": "/assets/images/opt/33a4777f830d-1280.webp",
+        "bytes": 46208
+      },
+      {
+        "w": 1599,
+        "h": 1068,
+        "webp": "/assets/images/opt/33a4777f830d-1599.webp",
+        "bytes": 62610
       }
     ]
   },
@@ -25099,27 +25105,27 @@
     ]
   },
   "/assets/images/real-job/areas.jpg": {
-    "width": 1600,
-    "height": 1200,
-    "origBytes": 378439,
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 293059,
     "variants": [
       {
         "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/3629f651df08-480.webp",
-        "bytes": 23966
+        "h": 640,
+        "webp": "/assets/images/opt/9d076fd1ee8f-480.webp",
+        "bytes": 27424
       },
       {
         "w": 800,
-        "h": 600,
-        "webp": "/assets/images/opt/3629f651df08-800.webp",
-        "bytes": 52302
+        "h": 1067,
+        "webp": "/assets/images/opt/9d076fd1ee8f-800.webp",
+        "bytes": 52870
       },
       {
-        "w": 1280,
-        "h": 960,
-        "webp": "/assets/images/opt/3629f651df08-1280.webp",
-        "bytes": 106842
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/9d076fd1ee8f-1200.webp",
+        "bytes": 90448
       }
     ]
   },
@@ -25218,152 +25224,631 @@
     ]
   },
   "/assets/images/services/ev-chargers.jpg": {
-    "width": 1600,
-    "height": 1067,
-    "origBytes": 387951,
+    "width": 1400,
+    "height": 900,
+    "origBytes": 560358,
     "variants": [
       {
         "w": 480,
-        "h": 320,
-        "webp": "/assets/images/opt/b1d86cb76000-480.webp",
-        "bytes": 22234
+        "h": 309,
+        "webp": "/assets/images/opt/3be7881db979-480.webp",
+        "bytes": 44020
       },
       {
         "w": 800,
-        "h": 534,
-        "webp": "/assets/images/opt/b1d86cb76000-800.webp",
-        "bytes": 58060
+        "h": 514,
+        "webp": "/assets/images/opt/3be7881db979-800.webp",
+        "bytes": 122834
       },
       {
         "w": 1280,
-        "h": 854,
-        "webp": "/assets/images/opt/b1d86cb76000-1280.webp",
-        "bytes": 134968
+        "h": 823,
+        "webp": "/assets/images/opt/3be7881db979-1280.webp",
+        "bytes": 306988
       }
     ]
   },
   "/assets/images/services/fire-stopping-context.jpg": {
-    "width": 1600,
-    "height": 1096,
-    "origBytes": 349289,
+    "width": 1157,
+    "height": 1600,
+    "origBytes": 356183,
     "variants": [
       {
         "w": 480,
-        "h": 329,
-        "webp": "/assets/images/opt/57f90623873b-480.webp",
-        "bytes": 22388
+        "h": 664,
+        "webp": "/assets/images/opt/0d0cf2f2dd2a-480.webp",
+        "bytes": 55712
       },
       {
         "w": 800,
-        "h": 548,
-        "webp": "/assets/images/opt/57f90623873b-800.webp",
-        "bytes": 52132
+        "h": 1106,
+        "webp": "/assets/images/opt/0d0cf2f2dd2a-800.webp",
+        "bytes": 100540
       },
       {
-        "w": 1280,
-        "h": 877,
-        "webp": "/assets/images/opt/57f90623873b-1280.webp",
-        "bytes": 103194
+        "w": 1157,
+        "h": 1600,
+        "webp": "/assets/images/opt/0d0cf2f2dd2a-1157.webp",
+        "bytes": 152606
       }
     ]
   },
   "/assets/images/services/fire-stopping-photo.jpg": {
     "width": 1600,
-    "height": 1068,
-    "origBytes": 294293,
+    "height": 1086,
+    "origBytes": 230718,
     "variants": [
       {
         "w": 480,
-        "h": 320,
-        "webp": "/assets/images/opt/0337a3e927b8-480.webp",
-        "bytes": 17910
+        "h": 326,
+        "webp": "/assets/images/opt/9386435fc76b-480.webp",
+        "bytes": 16266
       },
       {
         "w": 800,
-        "h": 534,
-        "webp": "/assets/images/opt/0337a3e927b8-800.webp",
-        "bytes": 40028
+        "h": 543,
+        "webp": "/assets/images/opt/9386435fc76b-800.webp",
+        "bytes": 30470
       },
       {
         "w": 1280,
-        "h": 854,
-        "webp": "/assets/images/opt/0337a3e927b8-1280.webp",
-        "bytes": 78206
+        "h": 869,
+        "webp": "/assets/images/opt/9386435fc76b-1280.webp",
+        "bytes": 55322
+      },
+      {
+        "w": 1600,
+        "h": 1086,
+        "webp": "/assets/images/opt/9386435fc76b-1600.webp",
+        "bytes": 73232
       }
     ]
   },
   "/assets/images/real-job/directory-hub.jpg": {
     "width": 1600,
-    "height": 1200,
-    "origBytes": 373090,
+    "height": 1063,
+    "origBytes": 409034,
     "variants": [
       {
         "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/99e8578bea0b-480.webp",
-        "bytes": 22600
+        "h": 319,
+        "webp": "/assets/images/opt/cfb1ef7bb14f-480.webp",
+        "bytes": 22208
       },
       {
         "w": 800,
-        "h": 600,
-        "webp": "/assets/images/opt/99e8578bea0b-800.webp",
-        "bytes": 51624
+        "h": 532,
+        "webp": "/assets/images/opt/cfb1ef7bb14f-800.webp",
+        "bytes": 57794
       },
       {
         "w": 1280,
-        "h": 960,
-        "webp": "/assets/images/opt/99e8578bea0b-1280.webp",
-        "bytes": 109132
+        "h": 850,
+        "webp": "/assets/images/opt/cfb1ef7bb14f-1280.webp",
+        "bytes": 136594
+      },
+      {
+        "w": 1600,
+        "h": 1063,
+        "webp": "/assets/images/opt/cfb1ef7bb14f-1600.webp",
+        "bytes": 200398
       }
     ]
   },
   "/assets/images/page-types/jobs/aov-service.jpg": {
-    "width": 1600,
-    "height": 1550,
-    "origBytes": 313635,
+    "width": 1314,
+    "height": 1089,
+    "origBytes": 178309,
     "variants": [
       {
         "w": 480,
-        "h": 465,
-        "webp": "/assets/images/opt/42e3fde539cc-480.webp",
-        "bytes": 21938
+        "h": 398,
+        "webp": "/assets/images/opt/dca2b39d22f7-480.webp",
+        "bytes": 9472
       },
       {
         "w": 800,
-        "h": 775,
-        "webp": "/assets/images/opt/42e3fde539cc-800.webp",
-        "bytes": 43418
+        "h": 663,
+        "webp": "/assets/images/opt/dca2b39d22f7-800.webp",
+        "bytes": 20080
       },
       {
         "w": 1280,
-        "h": 1240,
-        "webp": "/assets/images/opt/42e3fde539cc-1280.webp",
-        "bytes": 75404
+        "h": 1061,
+        "webp": "/assets/images/opt/dca2b39d22f7-1280.webp",
+        "bytes": 41682
+      },
+      {
+        "w": 1314,
+        "h": 1089,
+        "webp": "/assets/images/opt/dca2b39d22f7-1314.webp",
+        "bytes": 45552
       }
     ]
   },
   "/assets/images/page-types/jobs/aov-service-2.jpg": {
-    "width": 1600,
-    "height": 1312,
-    "origBytes": 349268,
+    "width": 876,
+    "height": 362,
+    "origBytes": 27707,
     "variants": [
       {
         "w": 480,
-        "h": 394,
-        "webp": "/assets/images/opt/bc1cfbdcadb2-480.webp",
-        "bytes": 16960
+        "h": 198,
+        "webp": "/assets/images/opt/617718864658-480.webp",
+        "bytes": 5082
       },
       {
         "w": 800,
-        "h": 656,
-        "webp": "/assets/images/opt/bc1cfbdcadb2-800.webp",
-        "bytes": 35150
+        "h": 331,
+        "webp": "/assets/images/opt/617718864658-800.webp",
+        "bytes": 8996
+      },
+      {
+        "w": 876,
+        "h": 362,
+        "webp": "/assets/images/opt/617718864658-876.webp",
+        "bytes": 10406
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-roof-vent.jpg": {
+    "width": 1600,
+    "height": 1563,
+    "origBytes": 205645,
+    "variants": [
+      {
+        "w": 480,
+        "h": 469,
+        "webp": "/assets/images/opt/92513be00f8f-480.webp",
+        "bytes": 10980
+      },
+      {
+        "w": 800,
+        "h": 782,
+        "webp": "/assets/images/opt/92513be00f8f-800.webp",
+        "bytes": 23940
       },
       {
         "w": 1280,
-        "h": 1050,
-        "webp": "/assets/images/opt/bc1cfbdcadb2-1280.webp",
-        "bytes": 79546
+        "h": 1250,
+        "webp": "/assets/images/opt/92513be00f8f-1280.webp",
+        "bytes": 46326
+      },
+      {
+        "w": 1600,
+        "h": 1563,
+        "webp": "/assets/images/opt/92513be00f8f-1600.webp",
+        "bytes": 62360
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-panel.jpg": {
+    "width": 1600,
+    "height": 1049,
+    "origBytes": 338332,
+    "variants": [
+      {
+        "w": 480,
+        "h": 315,
+        "webp": "/assets/images/opt/5e29d8d4cb3a-480.webp",
+        "bytes": 22800
+      },
+      {
+        "w": 800,
+        "h": 524,
+        "webp": "/assets/images/opt/5e29d8d4cb3a-800.webp",
+        "bytes": 54714
+      },
+      {
+        "w": 1280,
+        "h": 839,
+        "webp": "/assets/images/opt/5e29d8d4cb3a-1280.webp",
+        "bytes": 117320
+      },
+      {
+        "w": 1600,
+        "h": 1049,
+        "webp": "/assets/images/opt/5e29d8d4cb3a-1600.webp",
+        "bytes": 166036
+      }
+    ]
+  },
+  "/assets/images/manufacturers/came--access-control.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 378294,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/96d129fa0959-480.webp",
+        "bytes": 9326
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/96d129fa0959-800.webp",
+        "bytes": 27928
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/96d129fa0959-1280.webp",
+        "bytes": 92348
+      },
+      {
+        "w": 1600,
+        "h": 1200,
+        "webp": "/assets/images/opt/96d129fa0959-1600.webp",
+        "bytes": 167556
+      }
+    ]
+  },
+  "/assets/images/manufacturers/aiphone--door-entry.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 351936,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/9267536ab8f9-480.webp",
+        "bytes": 16014
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/9267536ab8f9-800.webp",
+        "bytes": 45350
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/9267536ab8f9-1280.webp",
+        "bytes": 107430
+      },
+      {
+        "w": 1600,
+        "h": 1200,
+        "webp": "/assets/images/opt/9267536ab8f9-1600.webp",
+        "bytes": 155300
+      }
+    ]
+  },
+  "/assets/images/manufacturers/aiphone--intercoms.jpg": {
+    "width": 268,
+    "height": 490,
+    "origBytes": 37466,
+    "variants": [
+      {
+        "w": 268,
+        "h": 490,
+        "webp": "/assets/images/opt/01fd8e9c0a84-268.webp",
+        "bytes": 21674
+      }
+    ]
+  },
+  "/assets/images/manufacturers/c-tec--fire-alarms.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 269454,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/ba6c68cb33b9-480.webp",
+        "bytes": 11286
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/ba6c68cb33b9-800.webp",
+        "bytes": 24740
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/ba6c68cb33b9-1280.webp",
+        "bytes": 48810
+      },
+      {
+        "w": 1600,
+        "h": 1200,
+        "webp": "/assets/images/opt/ba6c68cb33b9-1600.webp",
+        "bytes": 68032
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fire-alarms.jpg": {
+    "width": 912,
+    "height": 1216,
+    "origBytes": 177097,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/8583008e3093-480.webp",
+        "bytes": 23336
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/8583008e3093-800.webp",
+        "bytes": 51840
+      },
+      {
+        "w": 912,
+        "h": 1216,
+        "webp": "/assets/images/opt/8583008e3093-912.webp",
+        "bytes": 62174
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/barriers.jpg": {
+    "width": 1024,
+    "height": 683,
+    "origBytes": 188225,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/d18462ca5feb-480.webp",
+        "bytes": 22532
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/d18462ca5feb-800.webp",
+        "bytes": 60092
+      },
+      {
+        "w": 1024,
+        "h": 683,
+        "webp": "/assets/images/opt/d18462ca5feb-1024.webp",
+        "bytes": 96804
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/barriers-2.jpg": {
+    "width": 1600,
+    "height": 899,
+    "origBytes": 377540,
+    "variants": [
+      {
+        "w": 480,
+        "h": 270,
+        "webp": "/assets/images/opt/63d227c69f3a-480.webp",
+        "bytes": 19642
+      },
+      {
+        "w": 800,
+        "h": 450,
+        "webp": "/assets/images/opt/63d227c69f3a-800.webp",
+        "bytes": 53380
+      },
+      {
+        "w": 1280,
+        "h": 719,
+        "webp": "/assets/images/opt/63d227c69f3a-1280.webp",
+        "bytes": 131612
+      },
+      {
+        "w": 1600,
+        "h": 899,
+        "webp": "/assets/images/opt/63d227c69f3a-1600.webp",
+        "bytes": 207814
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fire-extinguishers.jpg": {
+    "width": 900,
+    "height": 966,
+    "origBytes": 191828,
+    "variants": [
+      {
+        "w": 480,
+        "h": 515,
+        "webp": "/assets/images/opt/23cc711d43ab-480.webp",
+        "bytes": 38718
+      },
+      {
+        "w": 800,
+        "h": 859,
+        "webp": "/assets/images/opt/23cc711d43ab-800.webp",
+        "bytes": 81712
+      },
+      {
+        "w": 900,
+        "h": 966,
+        "webp": "/assets/images/opt/23cc711d43ab-900.webp",
+        "bytes": 97252
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fire-extinguishers-2.jpg": {
+    "width": 1204,
+    "height": 1600,
+    "origBytes": 259577,
+    "variants": [
+      {
+        "w": 480,
+        "h": 638,
+        "webp": "/assets/images/opt/35733c4897c9-480.webp",
+        "bytes": 13120
+      },
+      {
+        "w": 800,
+        "h": 1063,
+        "webp": "/assets/images/opt/35733c4897c9-800.webp",
+        "bytes": 35226
+      },
+      {
+        "w": 1204,
+        "h": 1600,
+        "webp": "/assets/images/opt/35733c4897c9-1204.webp",
+        "bytes": 73146
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fire-risk-assessments.jpg": {
+    "width": 1600,
+    "height": 1062,
+    "origBytes": 396560,
+    "variants": [
+      {
+        "w": 480,
+        "h": 319,
+        "webp": "/assets/images/opt/00577fad8aa8-480.webp",
+        "bytes": 25588
+      },
+      {
+        "w": 800,
+        "h": 531,
+        "webp": "/assets/images/opt/00577fad8aa8-800.webp",
+        "bytes": 62140
+      },
+      {
+        "w": 1280,
+        "h": 850,
+        "webp": "/assets/images/opt/00577fad8aa8-1280.webp",
+        "bytes": 134400
+      },
+      {
+        "w": 1600,
+        "h": 1062,
+        "webp": "/assets/images/opt/00577fad8aa8-1600.webp",
+        "bytes": 193502
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/gas-systems.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 229294,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/fe655e4f80c5-480.webp",
+        "bytes": 10152
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/fe655e4f80c5-800.webp",
+        "bytes": 24068
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/fe655e4f80c5-1200.webp",
+        "bytes": 52638
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/access-control.jpg": {
+    "width": 1600,
+    "height": 1066,
+    "origBytes": 69634,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/1a1f53fb8b81-480.webp",
+        "bytes": 3276
+      },
+      {
+        "w": 800,
+        "h": 533,
+        "webp": "/assets/images/opt/1a1f53fb8b81-800.webp",
+        "bytes": 6968
+      },
+      {
+        "w": 1280,
+        "h": 853,
+        "webp": "/assets/images/opt/1a1f53fb8b81-1280.webp",
+        "bytes": 14000
+      },
+      {
+        "w": 1600,
+        "h": 1066,
+        "webp": "/assets/images/opt/1a1f53fb8b81-1600.webp",
+        "bytes": 20562
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/landlord-compliance.jpg": {
+    "width": 1066,
+    "height": 1600,
+    "origBytes": 231001,
+    "variants": [
+      {
+        "w": 480,
+        "h": 720,
+        "webp": "/assets/images/opt/c04acccdcffb-480.webp",
+        "bytes": 22694
+      },
+      {
+        "w": 800,
+        "h": 1201,
+        "webp": "/assets/images/opt/c04acccdcffb-800.webp",
+        "bytes": 48386
+      },
+      {
+        "w": 1066,
+        "h": 1600,
+        "webp": "/assets/images/opt/c04acccdcffb-1066.webp",
+        "bytes": 72536
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/steel-beam.jpg": {
+    "width": 640,
+    "height": 483,
+    "origBytes": 53636,
+    "variants": [
+      {
+        "w": 480,
+        "h": 362,
+        "webp": "/assets/images/opt/60c6a3dd9e0f-480.webp",
+        "bytes": 12458
+      },
+      {
+        "w": 640,
+        "h": 483,
+        "webp": "/assets/images/opt/60c6a3dd9e0f-640.webp",
+        "bytes": 19448
+      }
+    ]
+  },
+  "/assets/images/services/aov-smoke-vent.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 294986,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/0a21ce691f59-480.webp",
+        "bytes": 12502
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/0a21ce691f59-800.webp",
+        "bytes": 30104
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/0a21ce691f59-1280.webp",
+        "bytes": 64404
+      },
+      {
+        "w": 1600,
+        "h": 1200,
+        "webp": "/assets/images/opt/0a21ce691f59-1600.webp",
+        "bytes": 95472
       }
     ]
   }

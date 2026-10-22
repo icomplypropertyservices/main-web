@@ -40,6 +40,13 @@ if ($gasBrand && function_exists('icomplyGasBrandBlurb')) {
 }
 $metaDesc = seo_fit_meta($MFR_BLURB . ' Serviced from Stockport SK2 by iComply.');
 $ogImage = manufacturerImageUrl($mfrSlug, $primaryService, true);
+$ogPath = (string)(parse_url($ogImage, PHP_URL_PATH) ?: $ogImage);
+if ($ogImage === '' || preg_match('/\.(?:svg|png)$/i', $ogPath)) {
+    $familyOg = manufacturerFamilyPhoto($primaryService);
+    if ($familyOg !== '') {
+        $ogImage = $familyOg;
+    }
+}
 if ($ogImage === '') {
     $ogImage = url('/assets/images/og-default.svg');
 }
@@ -170,7 +177,27 @@ $schema = [
                 </div>
             </div>
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
-                <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService, true); ?>
+                <?php
+                $mfrHero = '';
+                foreach ($mfrServices as $heroService) {
+                    $candidate = manufacturerImageUrl($mfrSlug, (string)$heroService, true);
+                    if ($candidate !== '' && !str_ends_with(parse_url($candidate, PHP_URL_PATH) ?: $candidate, '/' . $mfrSlug . '.jpg')) {
+                        $mfrHero = $candidate;
+                        break;
+                    }
+                }
+                if ($mfrHero === '') {
+                    $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService, true);
+                }
+                $heroPath = (string)(parse_url($mfrHero, PHP_URL_PATH) ?: $mfrHero);
+                $heroIsMark = $mfrHero === '' || (bool)preg_match('/\.(?:svg|png)$/i', $heroPath);
+                if ($heroIsMark || str_ends_with($heroPath, '/' . $mfrSlug . '.jpg')) {
+                    $familyHero = manufacturerFamilyPhoto($primaryService);
+                    if ($familyHero !== '' && ($heroIsMark || $mfrHero === '')) {
+                        $mfrHero = $familyHero;
+                    }
+                }
+                ?>
                 <?php if ($mfrHero !== ''): ?>
                 <?php
                 $heroAlt = $mfrSlug === 'paxton'

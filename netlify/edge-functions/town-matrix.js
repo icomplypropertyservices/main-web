@@ -963,9 +963,8 @@ export default async (request, context) => {
       });
     }
   }
-  // These two keyword guides are built as static pages. Passing them through stops
-  // the matrix sending them to /pages/areas. Every other /pages/keywords/{slug}
-  // keeps the matrix route (an edge-rendered hub or a single 301 to a live page).
+  // These two keyword guides are real pages. Every other /pages/keywords/{slug}
+  // with no built file is a trades hub when one exists, otherwise one 301.
   if (/^\/pages\/keywords\/(?:air-source-heat-pumps-service-agreement|bs-5306-extinguisher-service-cost)$/.test(path)) {
     return context.next();
   }

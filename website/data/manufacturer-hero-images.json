@@ -20,7 +20,7 @@
     "service": "nurse-call"
   },
   "aiphone": {
-    "image": "/assets/images/manufacturers/aiphone.jpg",
+    "image": "/assets/images/manufacturers/aiphone--door-entry.jpg",
     "service": "door-entry"
   },
   "ajax-systems": {
@@ -40,7 +40,7 @@
     "service": "access-control"
   },
   "alpha": {
-    "image": "/assets/images/manufacturers/lines/alpha-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "ansell-lighting": {
@@ -60,7 +60,7 @@
     "service": "barriers"
   },
   "ariston": {
-    "image": "/assets/images/manufacturers/lines/ariston-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "ascom": {
@@ -68,7 +68,7 @@
     "service": "nurse-call"
   },
   "assa-abloy": {
-    "image": "/assets/images/manufacturers/assa-abloy.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "atg-access": {
@@ -104,7 +104,7 @@
     "service": "intercoms"
   },
   "baxi": {
-    "image": "/assets/images/manufacturers/lines/baxi-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "beghelli": {
@@ -124,7 +124,7 @@
     "service": "electrical"
   },
   "bilco": {
-    "image": "/assets/images/manufacturers/bilco.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "bitron-video": {
@@ -148,15 +148,15 @@
     "service": "door-entry"
   },
   "brooks": {
-    "image": "/assets/images/manufacturers/brooks.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "c-tec": {
-    "image": "/assets/images/manufacturers/c-tec.jpg",
+    "image": "/assets/images/manufacturers/c-tec--fire-alarms.jpg",
     "service": "fire-alarms"
   },
   "cambric": {
-    "image": "/assets/images/manufacturers/cambric.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "came": {
@@ -192,7 +192,7 @@
     "service": "electrical"
   },
   "colt": {
-    "image": "/assets/images/manufacturers/colt.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "comelit": {
@@ -236,7 +236,7 @@
     "service": "intercoms"
   },
   "d-h-mechatronic": {
-    "image": "/assets/images/manufacturers/d-h-mechatronic.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "d-light": {
@@ -260,7 +260,7 @@
     "service": "barriers"
   },
   "dh-mechatronic": {
-    "image": "/assets/images/manufacturers/lines/dh-mechatronic-cdc.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "ditec": {
@@ -332,7 +332,7 @@
     "service": "door-entry"
   },
   "ferroli": {
-    "image": "/assets/images/manufacturers/lines/ferroli-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "fike": {
@@ -340,7 +340,7 @@
     "service": "fire-alarms"
   },
   "firebird": {
-    "image": "/assets/images/manufacturers/lines/firebird-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "fireclass": {
@@ -348,7 +348,7 @@
     "service": "fire-alarms"
   },
   "flaktgroup": {
-    "image": "/assets/images/manufacturers/flaktgroup.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "flir": {
@@ -380,7 +380,7 @@
     "service": "fire-alarms"
   },
   "geze": {
-    "image": "/assets/images/manufacturers/geze.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "gibidi": {
@@ -396,7 +396,7 @@
     "service": "intruder-alarm"
   },
   "glow-worm": {
-    "image": "/assets/images/manufacturers/lines/glow-worm-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "golmar": {
@@ -404,7 +404,7 @@
     "service": "door-entry"
   },
   "grant": {
-    "image": "/assets/images/manufacturers/lines/grant-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "greenbrook": {
@@ -412,7 +412,7 @@
     "service": "electrical"
   },
   "group-scs": {
-    "image": "/assets/images/manufacturers/group-scs.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "haes-systems": {
@@ -460,7 +460,7 @@
     "service": "barriers"
   },
   "ideal": {
-    "image": "/assets/images/manufacturers/lines/ideal-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "idis": {
@@ -476,7 +476,7 @@
     "service": "nurse-call"
   },
   "intergas": {
-    "image": "/assets/images/manufacturers/lines/intergas-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "jeron": {
@@ -500,7 +500,7 @@
     "service": "barriers"
   },
   "kingspan-air": {
-    "image": "/assets/images/manufacturers/kingspan-air.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "legrand": {
@@ -544,7 +544,7 @@
     "service": "barriers"
   },
   "main-heating": {
-    "image": "/assets/images/manufacturers/lines/main-heating-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "mem": {
@@ -580,7 +580,7 @@
     "service": "electrical"
   },
   "navien": {
-    "image": "/assets/images/manufacturers/lines/navien-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "nedap": {
@@ -604,7 +604,7 @@
     "service": "fire-alarms"
   },
   "nuaire": {
-    "image": "/assets/images/manufacturers/nuaire.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "ohme": {
@@ -640,7 +640,7 @@
     "service": "emergency-lighting"
   },
   "potterton": {
-    "image": "/assets/images/manufacturers/lines/potterton-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "proteco": {
@@ -660,11 +660,11 @@
     "service": "nurse-call"
   },
   "ravenheat": {
-    "image": "/assets/images/manufacturers/lines/ravenheat-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "remeha": {
-    "image": "/assets/images/manufacturers/lines/remeha-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "reolink": {
@@ -700,7 +700,7 @@
     "service": "nurse-call"
   },
   "se-controls": {
-    "image": "/assets/images/manufacturers/se-controls.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "sea": {
@@ -716,7 +716,7 @@
     "service": "electrical"
   },
   "simon-rwa": {
-    "image": "/assets/images/manufacturers/simon-rwa.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "skidata": {
@@ -724,7 +724,7 @@
     "service": "barriers"
   },
   "smoke-control": {
-    "image": "/assets/images/manufacturers/smoke-control.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "software-house": {
@@ -760,7 +760,7 @@
     "service": "fire-alarms"
   },
   "systemair": {
-    "image": "/assets/images/manufacturers/systemair.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "tau": {
@@ -800,7 +800,7 @@
     "service": "intercoms"
   },
   "trox": {
-    "image": "/assets/images/manufacturers/trox.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "uniview": {
@@ -816,7 +816,7 @@
     "service": "barriers"
   },
   "vaillant": {
-    "image": "/assets/images/manufacturers/lines/vaillant-controls.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "vanderbilt": {
@@ -824,7 +824,7 @@
     "service": "access-control"
   },
   "ventilux": {
-    "image": "/assets/images/manufacturers/ventilux.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "videx": {
@@ -832,7 +832,7 @@
     "service": "door-entry"
   },
   "viessmann": {
-    "image": "/assets/images/manufacturers/lines/viessmann-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "vingtor-stentofon": {
@@ -848,7 +848,7 @@
     "service": "cctv"
   },
   "vokera": {
-    "image": "/assets/images/manufacturers/lines/vokera-boilers.svg",
+    "image": "/assets/images/services/gas-systems.jpg",
     "service": "gas-systems"
   },
   "wallbox": {
@@ -860,7 +860,7 @@
     "service": "nurse-call"
   },
   "windowmaster": {
-    "image": "/assets/images/manufacturers/windowmaster.svg",
+    "image": "/assets/images/services/aov-smoke-vent.jpg",
     "service": "aov-air-handling"
   },
   "wisenet": {

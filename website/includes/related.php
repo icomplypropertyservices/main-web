@@ -131,10 +131,28 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
     }
 
     $picked = array_slice(array_merge($featured, $rest), 0, $limit);
+    $imageService = $serviceSlug;
 
-    // Fallback: any manufacturers if service filter emptied the list
+    // A service with no brands still links to featured manufacturers, but the
+    // card photo stays on this service. Borrowing Aiphone or C-TEC here put
+    // those two pictures on every other family.
     if (!$picked && $serviceSlug !== '') {
-        return relatedManufacturersHtml('', $limit);
+        $globalFeatured = [];
+        $globalRest = [];
+        foreach ($catalog as $slug => $entry) {
+            $row = [
+                'slug' => $slug,
+                'name' => $entry['name'] ?? ucwords(str_replace('-', ' ', (string)$slug)),
+                'featured' => !empty($entry['featured']),
+                'blurb' => $entry['blurb'] ?? '',
+            ];
+            if ($row['featured']) {
+                $globalFeatured[] = $row;
+            } else {
+                $globalRest[] = $row;
+            }
+        }
+        $picked = array_slice(array_merge($globalFeatured, $globalRest), 0, $limit);
     }
     if (!$picked) {
         return '';
@@ -144,10 +162,28 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
     foreach ($picked as $row) {
         $slug = preg_replace('/[^a-z0-9\-]/', '', (string)$row['slug']);
         $href = htmlspecialchars(url('/pages/manufacturers/' . $slug . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+        $src = '';
+        if ($imageService !== '') {
+            $brandServices = getManufacturerBySlug($slug)['services'] ?? [];
+            $perService = '/assets/images/manufacturers/' . $slug . '--' . $imageService . '.jpg';
+            if (is_file(SITE_ROOT . $perService)) {
+                $src = url($perService);
+            } elseif (in_array($imageService, $brandServices, true) && is_file(SITE_ROOT . '/assets/images/manufacturers/' . $slug . '.jpg')) {
+                $src = url('/assets/images/manufacturers/' . $slug . '.jpg');
+            } else {
+                $src = manufacturerFamilyPhoto($imageService);
+            }
+        }
+        if ($src === '') {
+            $src = manufacturerImageUrl($slug, $imageService, true);
+        }
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+        $photoAlt = function_exists('icomplyManufacturerPhotoAlt') ? icomplyManufacturerPhotoAlt($src, '') : '';
+        if ($photoAlt === '') {
+            $photoAlt = $row['name'] . ' products and service';
+        }
         $thumb = $src !== ''
-            ? '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' products and service" class="w-full h-full object-contain bg-white group-hover:scale-105 transition duration-300" loading="lazy">'
+            ? '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($photoAlt, ENT_QUOTES, 'UTF-8') . '" class="w-full h-full object-contain bg-white group-hover:scale-105 transition duration-300" loading="lazy">'
             : '<div class="w-full h-full flex items-center justify-center text-xs font-semibold text-zinc-500 px-2 text-center">' . $label . '</div>';
         $html .= '<a href="' . $href . '" class="group bg-white border rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block">'
             . '<div class="h-24 bg-zinc-100 overflow-hidden">'

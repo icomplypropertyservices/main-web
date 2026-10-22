@@ -374,10 +374,11 @@
   },
   {
     "file": "/assets/images/services/fire-stopping.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Dih_electrical_firestop_bc_superferries.jpg",
-    "title": "File:Dih electrical firestop bc superferries.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Combo_penetration.jpg",
+    "title": "File:Combo penetration.jpg",
     "license": "CC BY 3.0",
-    "artist": "Achim Hering"
+    "artist": "Achim Hering",
+    "alt": "Fire-stopping seal around several pipe penetrations"
   },
   {
     "file": "/assets/images/services/project-management.jpg",
@@ -1505,11 +1506,11 @@
   },
   {
     "file": "/assets/images/real-job/areas.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Megger_testing_the_main_and_branch_breakers_in_electrical_panels_in_a_power_substation_in_Queens._09-04-2019_(48689467532).jpg",
-    "title": "File:Megger testing the main and branch breakers in electrical panels in a power substation in Queens. 09-04-2019 (48689467532).jpg",
-    "license": "CC BY 2.0",
-    "artist": "MTA Capital Construction Mega Projects",
-    "alt": "Engineer testing breakers in an electrical panel"
+    "source": "https://commons.wikimedia.org/wiki/File:Carties_Professional_Electrician_.jpg",
+    "title": "File:Carties Professional Electrician .jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Carties Professional Electrician",
+    "alt": "Property compliance engineer with test tools"
   },
   {
     "file": "/assets/images/real-job/company.jpg",
@@ -5857,50 +5858,185 @@
   },
   {
     "file": "/assets/images/services/ev-chargers.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:BMW_i3_home_charging_L2_CRI_04_2021_9753.jpg",
-    "title": "File:BMW i3 home charging L2 CRI 04 2021 9753.jpg",
-    "license": "CC BY-SA 4.0",
-    "author": "Mariordo (Mario Roberto Durán Ortiz)",
-    "alt": "Electric car charging from a wall-mounted home EV charger"
+    "source": "https://commons.wikimedia.org/wiki/File:Tesla_Wall_Connector_EV_charging_station_installed_outdoors_in_Newton_MA_1.jpg",
+    "title": "File:Tesla Wall Connector EV charging station installed outdoors in Newton MA 1.jpg",
+    "license": "CC BY 4.0",
+    "artist": "4300streetcar"
   },
   {
     "file": "/assets/images/services/fire-stopping-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:3m_fs195_ppd_nortown_casistas.jpg",
-    "title": "File:3m fs195 ppd nortown casistas.jpg",
-    "license": "CC BY 3.0",
-    "author": "Achim Hering",
-    "alt": "Intumescent pipe collar fire-stopping a plastic pipe through a slab"
+    "source": "https://commons.wikimedia.org/wiki/File:Conduit_firestop_us.jpg",
+    "title": "File:Conduit firestop us.jpg",
+    "license": "Public domain",
+    "artist": "Achim Hering",
+    "alt": "Fire-stopping seal around conduit penetrations"
   },
   {
     "file": "/assets/images/services/fire-stopping-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Nortown.jpg",
-    "title": "File:Nortown.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Boot_firestop.jpg",
+    "title": "File:Boot firestop.jpg",
     "license": "Public domain",
-    "author": "Achim Hering",
-    "alt": "Intumescent fire-stopping collar fitted where a pipe passes through concrete"
+    "artist": "Achim Hering",
+    "alt": "Fire-stopping boot sealed around a duct penetration"
   },
   {
     "file": "/assets/images/real-job/directory-hub.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Downloading_software_on_to_the_Fire_Control_Panel_of_a_sub-station_located_in_Queens._(CS179,_01-22-2019)_(46906375001).jpg",
-    "title": "File:Downloading software on to the Fire Control Panel of a sub-station located in Queens. (CS179, 01-22-2019) (46906375001).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Camas_Quarters_2_electrical_refit_(Recovery_Act).jpg",
+    "title": "File:Camas Quarters 2 electrical refit (Recovery Act).jpg",
     "license": "CC BY 2.0",
-    "author": "MTA Capital Construction Mega Projects",
-    "alt": "Engineer working on a building fire control panel"
+    "artist": "U.S. Fish & Wildlife Service - Pacific Region's",
+    "alt": "Electricians refitting a distribution board"
   },
   {
     "file": "/assets/images/page-types/jobs/aov-service.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_01.png",
-    "title": "File:Ul 3h smoke and fire damper 01.png",
-    "license": "CC BY 3.0",
-    "author": "Achim Hering",
-    "alt": "Motorised smoke damper with its actuator fitted for an AOV service"
+    "source": "https://commons.wikimedia.org/wiki/File:Attuatore_lineare_su_motore_passo_passo.JPG",
+    "title": "File:Attuatore lineare su motore passo passo.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Frgras",
+    "alt": "Linear actuator that opens a smoke vent window"
   },
   {
     "file": "/assets/images/page-types/jobs/aov-service-2.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_03a.png",
-    "title": "File:Ul 3h smoke and fire damper 03a.png",
-    "license": "CC BY 3.0",
-    "author": "Achim Hering",
-    "alt": "Smoke damper blades and linkage inspected during servicing"
+    "source": "https://commons.wikimedia.org/wiki/File:Linear_motors.jpg",
+    "title": "File:Linear motors.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Smacmca",
+    "alt": "Linear actuators for a smoke vent"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-roof-vent.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gravity_Roof_Vent.jpg",
+    "title": "File:Gravity Roof Vent.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Roofvents",
+    "alt": "Roof-mounted smoke vent"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-panel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RWA_Zentrale.jpg",
+    "title": "File:RWA Zentrale.jpg",
+    "license": "CC BY-SA 3.0 de",
+    "artist": "Reinhard Schindlbacher",
+    "alt": "Smoke vent control panel"
+  },
+  {
+    "file": "/assets/images/manufacturers/came--access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Magnetic_Lock.jpg",
+    "title": "File:Magnetic Lock.jpg",
+    "license": "Public domain",
+    "artist": "Mooinglemur",
+    "alt": "Electromagnetic lock on an access-controlled door"
+  },
+  {
+    "file": "/assets/images/manufacturers/aiphone--door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2675_boulevard_des_Trinitaires_-_2024-12-23.jpg",
+    "title": "File:2675 boulevard des Trinitaires - 2024-12-23.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jeangagnon",
+    "alt": "Door-entry intercom at a building entrance"
+  },
+  {
+    "file": "/assets/images/manufacturers/aiphone--intercoms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aparat_4lb.jpg",
+    "title": "File:Aparat 4lb.jpg",
+    "license": "Public domain",
+    "artist": "Waldemar Gmiński",
+    "alt": "Wall-mounted intercom handset"
+  },
+  {
+    "file": "/assets/images/manufacturers/c-tec--fire-alarms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:AutocallC2224.jpg",
+    "title": "File:AutocallC2224.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Simplex-2",
+    "alt": "Fire alarm control panel with zone indicators"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/fire-alarms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Noumi_R_Fire_Alarm_Control_Panel.jpg",
+    "title": "File:Noumi R Fire Alarm Control Panel.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Darklanlan",
+    "alt": "Fire alarm control panel on a wall"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/barriers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:An_automatic_barrier_at_the_exit_of_the_Marine_Drive_car_park_-_geograph.org.uk_-_2281418.jpg",
+    "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Roger A Smith",
+    "alt": "Rising-arm vehicle barrier at a car park exit"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/barriers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:M%C3%BCnster%2C_LVM_--_2017_--_6272-8.jpg",
+    "title": "File:Münster, LVM -- 2017 -- 6272-8.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "alt": "Vehicle barrier beside an access-control pedestal"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/fire-extinguishers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Extinguisher_Service.jpg",
+    "title": "File:Fire Extinguisher Service.jpg",
+    "license": "CC0",
+    "artist": "Lonestarfirefa",
+    "alt": "Fire extinguisher being serviced"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/fire-extinguishers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Fire_Extinguisher.jpg",
+    "title": "File:A Fire Extinguisher.jpg",
+    "license": "CC0",
+    "artist": "Paul The Writer",
+    "alt": "Fire extinguisher"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/fire-risk-assessments.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:FEMA_-_42362_-_DeKalb_County_Training_How_to_Inspect_Disaster_affected_Homes.jpg",
+    "title": "File:FEMA - 42362 - DeKalb County Training How to Inspect Disaster affected Homes.jpg",
+    "license": "Public domain",
+    "artist": "George Armstrong",
+    "alt": "Inspectors assessing a house"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/gas-systems.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chaudi%C3%A8re_%C3%A0_gaz_Br%C3%B6tje_WGB_28_C_(ext%C3%A9rieur).jpg",
+    "title": "File:Chaudière à gaz Brötje WGB 28 C (extérieur).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "The RedBurn",
+    "alt": "Wall-hung gas boiler"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Access_control_locks_for_gates.jpg",
+    "title": "File:Access control locks for gates.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Chole Wu",
+    "alt": "Electric lock on a gate"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/landlord-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Small_house_distribution_panel_1.jpg",
+    "title": "File:Small house distribution panel 1.jpg",
+    "license": "CC0",
+    "artist": "Retired electrician",
+    "alt": "Consumer unit in a house"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/steel-beam.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Steel_beam_being_lifted._-_geograph.org.uk_-_506294.jpg",
+    "title": "File:Steel beam being lifted. - geograph.org.uk - 506294.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Steve F",
+    "alt": "Steel beam being lifted into a building"
+  },
+  {
+    "file": "/assets/images/services/aov-smoke-vent.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Roof_Louver_of_Nikkan_Arena_Tochigi.jpg",
+    "title": "File:Roof Louver of Nikkan Arena Tochigi.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Miyuki Meinaka",
+    "alt": "Roof louvres on a building"
   }
 ]

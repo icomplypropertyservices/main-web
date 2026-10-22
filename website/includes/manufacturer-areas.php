@@ -430,8 +430,16 @@ function manufacturerGallery(array $entry, string $area): array
         }
         $items[] = ['src' => $src, 'alt' => $alt];
     };
+    $usedPerService = false;
+    foreach ($entry['services'] ?? [] as $svc) {
+        $per = '/assets/images/manufacturers/' . $slug . '--' . $svc . '.jpg';
+        if (is_file(SITE_ROOT . $per)) {
+            $push(url($per), $brand . ' ' . (getServices()[$svc] ?? $svc) . ' equipment');
+            $usedPerService = true;
+        }
+    }
     $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
+    if (!$usedPerService && is_file(SITE_ROOT . $rel)) {
         $push(url($rel), $brand . ' equipment used on ' . $area . ' surveys');
     }
     foreach (['.jpg', '.png'] as $ext) {

@@ -17,6 +17,15 @@ if (function_exists('hubPageVisuals')) {
         $ogImage = (string)$areaHero['src'];
     }
 }
+$engineerRel = '/assets/images/real-job/areas.jpg';
+if (is_file(SITE_ROOT . $engineerRel)) {
+    $areaHero = [
+        'src' => url($engineerRel),
+        'alt' => 'Property compliance engineer with test tools',
+        'fit' => 'cover',
+    ];
+    $ogImage = (string)$areaHero['src'];
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -159,7 +168,13 @@ $schema = [
                 <?php endif; ?>
             <div class="grid grid-cols-2 gap-3">
                 <?php
-                $heroCards = array_slice($allServices, 0, 4, true);
+                $heroCardOrder = ['electrical', 'fire-alarms', 'emergency-lighting', 'access-control'];
+                $heroCards = [];
+                foreach ($heroCardOrder as $heroSlug) {
+                    if (isset($allServices[$heroSlug])) {
+                        $heroCards[$heroSlug] = $allServices[$heroSlug];
+                    }
+                }
                 foreach ($heroCards as $slug => $name):
                 ?>
                 <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"

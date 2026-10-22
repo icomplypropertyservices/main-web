@@ -417,30 +417,40 @@ say((round15Pools["type-keywords-kitchen-fire-suppression"]?.own || []).some((sr
 const round16Credits = fs.readFileSync(path.join(repo, "website/data/hero-image-credits.json"), "utf8");
 const round16Pools = JSON.parse(fs.readFileSync(path.join(repo, "website/data/service-image-pools.json"), "utf8"));
 const round16Overrides = JSON.parse(fs.readFileSync(path.join(repo, "website/data/page-image-pool-overrides.json"), "utf8"));
-say(round16Credits.includes("Engineer testing breakers in an electrical panel") && !round16Credits.includes("Stockton High Street"), "areas photo is electrical testing");
+say(round16Credits.includes("Property compliance engineer with test tools") && !round16Credits.includes("Stockton High Street"), "areas photo is a compliance engineer");
 say(round16Credits.includes("Self-closing fire door") && !round16Credits.includes("Copped Hall"), "fire door photo is a self-closing fire door");
 say(round16Credits.includes("Bricklayer repointing a masonry wall") && !round16Credits.includes("Hatfield House"), "building maintenance context is repointing");
 say(round16Credits.includes("CAME Unipark automated parking barrier"), "CAME photo is a CAME barrier");
 say(round16Credits.includes("Video door-entry panel with a camera and call buttons"), "door-entry panel alt describes the panel");
-say(round16Credits.includes("Engineer working on a building fire control panel") && !round16Credits.includes("Welsh fence"), "directory hub is a fire control panel");
+say(round16Credits.includes("Electricians refitting a distribution board") && !round16Credits.includes("Welsh fence"), "directory hub is electricians at a distribution board");
 say(round16Credits.includes("Multifunction installation tester used for an EICR"), "EICR job photo is a tester");
 say(round16Credits.includes("Addressable fire alarm control panel"), "addressable fire alarm job photo is a panel");
-say(round16Credits.includes("Motorised smoke damper with its actuator fitted for an AOV service"), "AOV service photo is smoke-control equipment");
-say(round16Credits.includes("Intumescent pipe collar fire-stopping a plastic pipe through a slab") && round16Credits.includes("Intumescent fire-stopping collar fitted where a pipe passes through concrete"), "fire stopping photos are different");
+say(round16Credits.includes("Linear actuator that opens a smoke vent window"), "AOV service photo is a window actuator");
+say(round16Credits.includes("Fire-stopping seal around several pipe penetrations") && round16Credits.includes("Fire-stopping boot sealed around a duct penetration"), "fire stopping photos are installed seals");
 say(round16Overrides["jobs/eicr"] === "type-jobs-eicr" && (round16Pools["type-jobs-eicr"]?.own || []).some((src) => src.endsWith("/jobs/eicr.jpg")), "EICR job uses its own pool");
 say(round16Overrides["jobs/addressable-fire-alarm-installation"] === "type-jobs-addressable-fire-alarm", "addressable fire alarm job uses its own pool");
 say(round16Overrides["jobs/aov-service"] === "type-jobs-aov-service", "AOV service job uses its own pool");
 const fireDup = applyQualityFloor(
-  `<html><body><img src="/assets/images/opt/72c74469e18e-480.webp" alt="Fire stopping"><img src="/assets/images/opt/72c74469e18e-1280.webp" alt="Fire stopping"></body></html>`,
+  `<html><body><img src="/assets/images/opt/33a4777f830d-480.webp" alt="Fire stopping"><img src="/assets/images/opt/33a4777f830d-1280.webp" alt="Fire stopping"></body></html>`,
   { path: "/pages/services/fire-stopping", subject: "Fire stopping", place: "" },
 );
-say((fireDup.match(/<img\b[^>]*72c74469e18e[^>]*>/gi) || []).length === 1, "fire stopping does not repeat one photo at two sizes");
+say((fireDup.match(/<img\b[^>]*33a4777f830d[^>]*>/gi) || []).length === 1, "fire stopping does not repeat one photo at two sizes");
 const cameKept = applyQualityFloor(
   `<html><body><img src="/assets/images/manufacturers/came.jpg" alt="CAME Unipark automated parking barrier"></body></html>`,
   { path: "/pages/services/barriers", subject: "Barriers", place: "" },
 );
 say(cameKept.includes("d7f0875411a8") || cameKept.includes("/manufacturers/came.jpg"), "barriers keeps the CAME product photo");
 say(cameKept.includes("CAME Unipark automated parking barrier") && !cameKept.includes('alt="CAME logo"'), "CAME alt names the barrier");
+const cameAccess = applyQualityFloor(
+  `<html><body><img src="/assets/images/manufacturers/came.jpg" alt="CAME Unipark automated parking barrier"></body></html>`,
+  { path: "/pages/services/access-control", subject: "Access control", place: "" },
+);
+say(!cameAccess.includes("d7f0875411a8") && !cameAccess.includes("/manufacturers/came.jpg"), "access-control does not keep the CAME parking post");
+const lockKept = applyQualityFloor(
+  `<html><body><img src="/assets/images/manufacturers/came--access-control.jpg" alt="Electromagnetic lock on an access-controlled door"></body></html>`,
+  { path: "/pages/services/access-control", subject: "Access control", place: "" },
+);
+say(lockKept.includes("came--access-control.jpg"), "access-control keeps the door lock photo");
 const videxKept = applyQualityFloor(
   `<html><body><img src="/assets/images/manufacturers/videx.jpg" alt="Video door-entry panel with a camera and call buttons"></body></html>`,
   { path: "/pages/services/door-entry", subject: "Door entry", place: "" },
@@ -454,6 +464,38 @@ for (const slug of ["bs-5306-extinguisher-service-cost", "air-source-heat-pumps-
   const body = await hub.text();
   say(hub.status === 200 && body === "keyword-hub" && !String(hub.headers.get("location") || "").includes("/pages/areas"), `${slug} does not redirect to areas`);
 }
+const realFetch = globalThis.fetch;
+globalThis.fetch = async (href, init) => {
+  const name = String(href).split("/").pop();
+  const files = {
+    "keywords.json": catalogue.keywords,
+    "places.json": catalogue.places,
+    "services.json": catalogue.services,
+    "nationwide.json": catalogue.nationwide,
+    "manufacturers.json": catalogue.manufacturers,
+    "jobs.json": catalogue.jobs,
+  };
+  if (files[name]) {
+    return new Response(JSON.stringify(files[name]), { status: 200, headers: { "content-type": "application/json" } });
+  }
+  return realFetch(href, init);
+};
+const drainage = await townMatrix(new Request("https://example.com/pages/keywords/drainage"), {
+  next: async () => new Response("missing-file", { status: 404 }),
+});
+const drainageBody = await drainage.text();
+say(drainage.status === 200 && drainageBody.includes("Drainage") && !drainageBody.startsWith("missing-file"), "unbuilt drainage keyword hub renders the trades page");
+const testingCost = await townMatrix(new Request("https://example.com/pages/keywords/aov-testing-cost"), {
+  next: async () => new Response("missing-file", { status: 404 }),
+});
+const testingBody = await testingCost.text();
+say(testingCost.status === 200 && testingBody.includes("AOV testing cost") && !testingBody.startsWith("missing-file"), "unbuilt aov-testing-cost hub renders its trades page");
+const unknownHub = await townMatrix(new Request("https://example.com/pages/keywords/zz-unbuilt-keyword-hub"), {
+  next: async () => new Response("missing-file", { status: 404 }),
+});
+const unknownLoc = String(unknownHub.headers.get("location") || "");
+say(unknownHub.status === 301 && unknownLoc.endsWith("/pages/keywords") && !unknownLoc.includes("zz-unbuilt-keyword-hub"), "keyword hub with no page and no trades row redirects to the guides index");
+globalThis.fetch = realFetch;
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

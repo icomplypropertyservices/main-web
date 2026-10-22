@@ -877,8 +877,8 @@
     },
     "type-jobs-aov-air-handling": {
         "own": [
-            "/assets/images/page-types/jobs/aov-air-handling.jpg",
-            "/assets/images/page-types/keywords/aov-air-handling-2.jpg"
+            "/assets/images/page-types/jobs/aov-roof-vent.jpg",
+            "/assets/images/page-types/jobs/aov-panel.jpg"
         ]
     },
     "type-jobs-bathrooms": {
@@ -1105,6 +1105,48 @@
         "own": [
             "/assets/images/page-types/jobs/aov-service.jpg",
             "/assets/images/page-types/jobs/aov-service-2.jpg"
+        ]
+    },
+    "type-jobs-fire-alarms": {
+        "own": [
+            "/assets/images/page-types/jobs/fire-alarms.jpg"
+        ]
+    },
+    "type-jobs-barriers": {
+        "own": [
+            "/assets/images/page-types/jobs/barriers.jpg",
+            "/assets/images/page-types/jobs/barriers-2.jpg"
+        ]
+    },
+    "type-jobs-fire-extinguishers": {
+        "own": [
+            "/assets/images/page-types/jobs/fire-extinguishers.jpg",
+            "/assets/images/page-types/jobs/fire-extinguishers-2.jpg"
+        ]
+    },
+    "type-jobs-fire-risk-assessments": {
+        "own": [
+            "/assets/images/page-types/jobs/fire-risk-assessments.jpg"
+        ]
+    },
+    "type-jobs-gas-systems": {
+        "own": [
+            "/assets/images/page-types/jobs/gas-systems.jpg"
+        ]
+    },
+    "type-jobs-landlord-compliance": {
+        "own": [
+            "/assets/images/page-types/jobs/landlord-compliance.jpg"
+        ]
+    },
+    "type-jobs-access-control": {
+        "own": [
+            "/assets/images/page-types/jobs/access-control.jpg"
+        ]
+    },
+    "type-jobs-steel-beam": {
+        "own": [
+            "/assets/images/page-types/jobs/steel-beam.jpg"
         ]
     }
 }

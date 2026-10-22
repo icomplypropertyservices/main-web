@@ -468,7 +468,29 @@ function renderManufacturerPage(string $mfrSlug): void {
     if (!$products) {
         $productsHtml = '<p class="text-zinc-600 col-span-full">Contact us for ' . htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') . ' pricing and availability, or <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8') . '">browse the shop</a>.</p>';
     } else {
-        foreach ($products as $p) {
+        foreach ($products as $productIndex => $p) {
+            $brandServices = array_values($entry['services'] ?? []);
+            $cardService = $brandServices[$productIndex % max(1, count($brandServices))] ?? '';
+            $perService = '/assets/images/manufacturers/' . $entry['slug'] . '--' . $cardService . '.jpg';
+            $perIndexed = '/assets/images/manufacturers/' . $entry['slug'] . '--' . $cardService . '-' . ($productIndex + 1) . '.jpg';
+            if ($cardService !== '' && is_file(SITE_ROOT . $perIndexed)) {
+                $p['image'] = $perIndexed;
+            } elseif ($cardService !== '' && is_file(SITE_ROOT . $perService)) {
+                $p['image'] = $perService;
+            } else {
+                $current = (string)($p['image'] ?? '');
+                $currentPath = (string)(parse_url($current, PHP_URL_PATH) ?: $current);
+                $currentRel = '/' . ltrim($currentPath, '/');
+                $currentIsPhoto = $currentRel !== '/'
+                    && is_file(SITE_ROOT . $currentRel)
+                    && (bool)preg_match('/\.jpe?g$/i', $currentRel);
+                if (!$currentIsPhoto && $cardService !== '') {
+                    $familyPhoto = manufacturerFamilyPhoto($cardService);
+                    if ($familyPhoto !== '') {
+                        $p['image'] = $familyPhoto;
+                    }
+                }
+            }
             $productsHtml .= shopifyCardFromManufacturerProduct($p, $entry['slug'], $entry['name']);
         }
     }
