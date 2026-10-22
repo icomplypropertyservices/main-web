@@ -1,0 +1,6 @@
+{
+  "groups": [
+    ["barriers", "car-park-barrier-access"]
+  ],
+  "why": {"car-park-barrier-access": "access-control keyword about car park barriers; shows the barriers service photo on purpose (#157)"}
+}
