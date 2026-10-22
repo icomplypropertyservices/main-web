@@ -20084,5 +20084,30 @@
         "bytes": 63318
       }
     ]
+  },
+  "/assets/images/areas/leigh.jpg": {
+    "width": 1280,
+    "height": 823,
+    "origBytes": 231640,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/89b7b8162f01-480.webp",
+        "bytes": 25076
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/89b7b8162f01-800.webp",
+        "bytes": 54694
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/89b7b8162f01-1280.webp",
+        "bytes": 108332
+      }
+    ]
   }
 }

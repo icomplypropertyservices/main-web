@@ -1844,5 +1844,13 @@
     "license": "Public domain",
     "artist": "U.S. Army photo by Hannah Mitchell",
     "license_url": ""
+  },
+  {
+    "file": "/assets/images/areas/leigh.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Leigh_Town_Hall_-_geograph.org.uk_-_5894716.jpg",
+    "title": "File:Entrance to Leigh Town Hall - geograph.org.uk - 5894716.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Gerald England",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
   }
 ]
