@@ -20059,5 +20059,55 @@
         "bytes": 32652
       }
     ]
+  },
+  "/assets/images/heroes/property-generic.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 242103,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/636f686e8a59-480.webp",
+        "bytes": 22370
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/636f686e8a59-800.webp",
+        "bytes": 49990
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/636f686e8a59-1280.webp",
+        "bytes": 98042
+      }
+    ]
+  },
+  "/assets/images/services/air-conditioning.jpg": {
+    "width": 1280,
+    "height": 823,
+    "origBytes": 166245,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2f935fcf23b3-480.webp",
+        "bytes": 17570
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2f935fcf23b3-800.webp",
+        "bytes": 33646
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2f935fcf23b3-1280.webp",
+        "bytes": 63318
+      }
+    ]
   }
 }

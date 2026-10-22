@@ -1796,5 +1796,21 @@
     "artist": "Robert Wade",
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
     "family": "compliance"
+  },
+  {
+    "file": "/assets/images/heroes/property-generic.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Salford_Quays_Apartment_Block_Overlooking_Central_Bay_-_geograph.org.uk_-_7830689.jpg",
+    "title": "File:Salford Quays Apartment Block Overlooking Central Bay - geograph.org.uk - 7830689.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Tom Jolliffe",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/air-conditioning.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Outdoor_air_conditioner_unit_installed_in_residential_garden_space.jpg",
+    "title": "File:Outdoor air conditioner unit installed in residential garden space.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Shixart1985",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
   }
 ]

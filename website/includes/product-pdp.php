@@ -123,7 +123,7 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
   </nav>
   <div class="grid lg:grid-cols-2 gap-10 items-start">
     <div class="bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
-      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-80 object-contain bg-white" loading="eager" width="640" height="320" onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
+      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-80 object-contain bg-white" loading="eager" width="640" height="320" onerror="this.src='<?= htmlspecialchars(url('/assets/images/heroes/property-generic.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
     </div>
     <div>
       <?php if (!empty($product['badge']) || !empty($over['is_aov_package'])): ?>
