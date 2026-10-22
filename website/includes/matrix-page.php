@@ -310,6 +310,13 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     }
     $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
+    if (in_array($svcSlug, ['cctv', 'access-control', 'intruder-alarm', 'door-entry', 'intercoms', 'security-systems'], true)) {
+        // QM #156 item 13: security town pages use the full branded site header.
+        require_once __DIR__ . '/site-nav.php';
+        if (function_exists('icomplyMegaHeaderHtml')) {
+            $html = preg_replace('#<header class="matrix-header">.*?</header>#s', icomplyMegaHeaderHtml(), $html, 1) ?? $html;
+        }
+    }
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
         . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
