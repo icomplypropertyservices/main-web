@@ -69,10 +69,8 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <?php endif; ?>
     <?php
     require_once __DIR__ . '/seo-monitor.php';
+    // Jack 2026-10-19 / GSC 21 Oct (A1): no host or helper may force noindex.
     $robotsContent = $metaRobots ?? 'index, follow, max-image-preview:large';
-    if (function_exists('seoShouldNoindex') && seoShouldNoindex()) {
-        $robotsContent = 'noindex,nofollow';
-    }
     ?>
     <meta name="robots" content="<?= htmlspecialchars($robotsContent, ENT_QUOTES, 'UTF-8') ?>">
     <?php
@@ -176,6 +174,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <link rel="stylesheet" href="<?= htmlspecialchars(assetUrl('/assets/css/site.css'), ENT_QUOTES, 'UTF-8') ?>">
     <?php
     $gaId = defined('GA_MEASUREMENT_ID') ? trim((string)GA_MEASUREMENT_ID) : '';
+    $gaId2 = defined('GA_MEASUREMENT_ID_2') ? trim((string)GA_MEASUREMENT_ID_2) : '';
     $awId = defined('AW_CONVERSION_ID') ? trim((string)AW_CONVERSION_ID) : '';
     $gtmId = defined('GTM_CONTAINER_ID') ? trim((string)GTM_CONTAINER_ID) : '';
     ?>
@@ -196,6 +195,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         });
         window.__icomplyAnalytics = {
             ga: <?= json_encode($gaId) ?>,
+            ga2: <?= json_encode($gaId2) ?>,
             aw: <?= json_encode($awId) ?>,
             gtm: <?= json_encode($gtmId) ?>,
             load: function () {
@@ -214,7 +214,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                     document.head.appendChild(gtmS);
                     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
                 }
-                var id = this.ga || this.aw;
+                var id = this.ga || this.ga2 || this.aw;
                 if (!id) return;
                 var s = document.createElement('script');
                 s.async = true;
@@ -222,6 +222,7 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
                 document.head.appendChild(s);
                 gtag('js', new Date());
                 if (this.ga) gtag('config', this.ga);
+                if (this.ga2 && this.ga2 !== this.ga) gtag('config', this.ga2);
                 if (this.aw) gtag('config', this.aw);
             }
         };

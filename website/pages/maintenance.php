@@ -9,7 +9,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'Planned Maintenance Contracts | Fire, Emergency Lighting, Nurse Call & CCTV';
 $metaDesc = 'Planned preventative maintenance (PPM) contracts for fire alarms, emergency lighting, nurse call and CCTV. Audit-ready certification, multi-site schedules and priority call-outs across the North West.';
 $metaKeywords = 'maintenance contracts, planned maintenance, PPM, fire alarm service contract, emergency lighting testing, nurse call maintenance, CCTV maintenance, BS 5839, BS 5266, North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/maintenance.php');
 
 $services = getServices();

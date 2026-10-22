@@ -91,7 +91,7 @@ $landing = [
         ],
         [
             'q' => 'Can I book gas safety and an EICR together?',
-            'a' => 'Yes. Tell us the postcode, property type and which certificates are due. We can discuss one schedule where capacity allows. Gas safety on its own is guided from ' . $gasFrom . '; the fixed price follows the agreed scope.',
+            'a' => 'Yes. Tell us the postcode, property type and which certificates are due. We can discuss one schedule where capacity allows. Gas safety on its own is guided from ' . $gasFrom . '; the written quote follows the agreed scope.',
         ],
         [
             'q' => 'Do you cover Stockport and Greater Manchester?',

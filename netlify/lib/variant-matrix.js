@@ -312,7 +312,7 @@ function pageHtml(options) {
   const faqs = [
     [`Do you cover ${placeName} for ${subject}?`, `Yes, where ${placeName} is in Greater Manchester. The quote is price on application once the building and the ${scope.label} scope are known.`],
     [`Who carries out ${subject} in ${placeName}?`, gas ? GAS_SENTENCE : `The ${placeName} visit is scoped to the building named on the enquiry. The figure follows that scope.`],
-    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "" : "Price on application for this visit."}`],
+    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "" : "No written quote is published for this visit."}`],
   ];
   const schema = {
     "@context": "https://schema.org",
@@ -409,7 +409,7 @@ export function renderVariantPage({ spec, keyword, town }) {
       description: "",
       h1: "",
       canonical: location,
-      robots: "noindex, nofollow",
+      robots: "index, follow",
       indexable: false,
       path: location,
       status: 301,

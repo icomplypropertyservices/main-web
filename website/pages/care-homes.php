@@ -64,7 +64,7 @@ $extraCareServices = [
 $packages = [
     [
         'name' => 'Single-home package',
-        'text' => 'Nurse call service, fire alarm certification, emergency lighting tests and a security review for one care home — fixed price after survey.',
+        'text' => 'Nurse call service, fire alarm certification, emergency lighting tests and a security review for one care home — written quote after survey.',
         'points' => ['Site survey included', 'Digital certificates', 'Remedial advice'],
     ],
     [

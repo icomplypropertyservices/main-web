@@ -45,7 +45,7 @@ $pop = number_format((int)$place['pop']);
             <?php endforeach; ?>
             <?= townDepthHtml($article['depth'] ?? ['sections' => [], 'faq' => []], (string)$place['name']) ?>
             <?php if ($article['extra'] !== ''): ?>
-                <section class="p-6 bg-[#fff7f0] border border-[#ffd7b8] rounded-3xl">
+                <section class="p-6 bg-[#f7f7f7] border border-[#ff6b00] rounded-3xl">
                     <h2 class="text-2xl font-semibold text-black">What changes the visit in <?= $h((string)$place['name']) ?></h2>
                     <p class="mt-3 text-zinc-800 leading-relaxed"><?= $h($article['extra']) ?></p>
                 </section>

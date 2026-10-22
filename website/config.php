@@ -21,6 +21,8 @@ $siteDefaults = [
     // GA4 property. Loaded only by the consent-gated loader in includes/header.php
     // (never hardcoded in <head>). GA_MEASUREMENT_ID env still overrides.
     'GA_MEASUREMENT_ID' => 'G-RN048B7861',
+    // Second GA4 property, configured alongside GA_MEASUREMENT_ID by the same single gtag.js loader.
+    'GA_MEASUREMENT_ID_2' => 'G-G8NTX4JMC9',
     'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)
@@ -59,6 +61,7 @@ $envMap = [
     'ADMIN_USER' => 'ADMIN_USER',
     'ADMIN_PASS' => 'ADMIN_PASS',
     'GA_MEASUREMENT_ID' => 'GA_MEASUREMENT_ID',
+    'GA_MEASUREMENT_ID_2' => 'GA_MEASUREMENT_ID_2',
     'GTM_CONTAINER_ID' => 'GTM_CONTAINER_ID',
     'AW_CONVERSION_ID' => 'AW_CONVERSION_ID',
     'GOOGLE_SITE_VERIFICATION' => 'GOOGLE_SITE_VERIFICATION',
@@ -738,9 +741,9 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
             $row['body'] = $shown . ' is booked from 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
             $row['meta_desc'] = $shown . '. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
             $row['focus_points'] = [
-                'Gas work is carried out by Gas Safe registered engineers',
-                'Scheduled visits where the diary allows',
-                'Written quote from our Stockport team',
+                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
+                'Same-day and next-day slots where available',
+                'Free written quote from our Stockport team',
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
@@ -1633,7 +1636,7 @@ function serviceImageUrl(string $slug): string {
             return url($rel);
         }
     }
-    return url('/assets/images/services/fire-alarms.jpg');
+    return url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**
@@ -1648,13 +1651,7 @@ function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
             require_once $pool;
         }
     }
-    if (function_exists('icomplyImagePick')) {
-        $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, icomplyPageImageKey('/pages/keywords/' . $slug), 1)[0] ?? '');
-        if ($rel !== '' && is_file(SITE_ROOT . $rel)) {
-            return url($rel);
-        }
-    }
-    return url('/assets/images/real-job/directory-hub.jpg');
+    return $serviceSlug !== '' ? serviceImageUrl($serviceSlug) : url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**

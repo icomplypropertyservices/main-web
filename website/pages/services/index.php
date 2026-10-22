@@ -9,7 +9,7 @@ $pageTitle = 'Property services catalogue | iComply North West';
 $metaDesc = 'The iComply service catalogue: fire, electrical, water hygiene, asbestos and building trades from Stockport. Quotes are price on application. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.';
 $metaKeywords = 'fire risk assessment, fire safety systems, kitchen fitting, bathroom renovation, plastering, landlord compliance, EICR, CCTV, Manchester, Stockport, North West';
 $canonicalUrl = url('/pages/services/index.php');
-$ogImage = icomply_absolute_url('/assets/images/services/fire-alarms.jpg');
+$ogImage = icomply_absolute_url('/assets/images/heroes/property-generic.jpg');
 
 $services = getServices();
 $areas = getAreas();

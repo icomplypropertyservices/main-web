@@ -232,4 +232,44 @@ require SITE_ROOT . '/includes/header.php';
         ?>
     </div>
 </section>
+<?php
+// QM #156 under_800_words: barrier planning notes driven by this place's own census figures.
+$bpPct = static function (array $rows, string $needle): float {
+    foreach ($rows as $r) { if (stripos((string)($r['label'] ?? ''), $needle) !== false) { return (float)($r['pct'] ?? 0); } }
+    return 0.0;
+};
+$bpFlats = $bpPct((array)($place['housing'] ?? []), 'Flat');
+$bpSocial = $bpPct((array)($place['tenure'] ?? []), 'Social rented');
+$bpPrivate = $bpPct((array)($place['tenure'] ?? []), 'Private rented');
+$bpTopInd = (string)(((array)($place['industry'] ?? []))[0]['label'] ?? '');
+$bpAge = (int)($place['median_age'] ?? 0);
+$bpN = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+$bpP = [];
+$bpP[] = $population >= 100000
+    ? "{$bpN} is a large place, with " . number_format($population) . " residents at the last census, so barrier work here is spread across retail parks, hospital and office car parks, apartment developments and industrial estates. Larger sites often have more than one lane, an intercom to a staffed desk and a link to the site's access control, and we survey each lane separately."
+    : ($population >= 30000
+        ? "With " . number_format($population) . " residents at the last census, {$bpN} has a mix of town-centre car parks, business units and residential developments with their own parking. Most barrier jobs are one or two lanes, and the main questions are who needs to get in, how they will be recognised, and what happens when the power or the network is down."
+        : "{$bpN} is a smaller place, with " . number_format($population) . " residents at the last census. Barriers here are usually on a single private car park: a block of flats, a surgery, a works yard or a pub. A single rising-arm barrier with a keypad, fob reader or app control usually does the job, with a loop to stop the arm closing on a vehicle.");
+if ($bpFlats >= 20) {
+    $bpP[] = "Flats, maisonettes and apartments make up about " . number_format($bpFlats, 0) . "% of homes in {$bpN}, which is high enough that residents' car parks are a regular source of barrier enquiries. For a residents' car park, think about how fobs are issued and cancelled when people move, how visitors and deliveries get in, and how the fire service and ambulances get through. A barrier must never block an emergency route, and many blocks fit a fire-alarm release or a key switch for the fire service.";
+} else {
+    $bpP[] = "Only about " . number_format($bpFlats, 0) . "% of homes in {$bpN} are flats, so most barrier enquiries come from businesses rather than residents: yards, depots, surgeries, schools and private car parks. For a business site the key decisions are opening hours, whether the barrier should stay up during the day, how staff and visitors are recognised, and how deliveries reach the loading area without someone walking out to the gate.";
+}
+if ($bpSocial + $bpPrivate >= 35) {
+    $bpP[] = "Renting is common in {$bpN} (around " . number_format($bpSocial, 0) . "% social and " . number_format($bpPrivate, 0) . "% private rented), so managing agents and housing providers commission much of the work. They usually need a written maintenance schedule, a log of tests and repairs, and clear responsibility for lost fobs and damage, and we set those out in the quote.";
+}
+if ($bpTopInd !== '') {
+    $bpP[] = "The largest employment sector recorded for {$bpN} is " . htmlspecialchars(strtolower(preg_replace('/;.*$/', '', $bpTopInd)), ENT_QUOTES, 'UTF-8') . ". Sites in that sector often need barriers that cope with shift changes, so we look at traffic at peak times, arm speed and whether a second lane or an exit loop is needed to stop queues backing onto the road.";
+}
+if ($bpAge >= 45) {
+    $bpP[] = "The median age in {$bpN} is {$bpAge}, older than the national figure, which matters for retirement developments and care homes: intercoms with large buttons, longer opening times and clear signs help residents and visitors who drive less often.";
+}
+$bpReg = htmlspecialchars((string)($place['region'] ?? ''), ENT_QUOTES, 'UTF-8');
+$bpP[] = "Before installation in {$bpN}" . ($bpReg !== '' ? " ({$bpReg})" : '') . " we check the ground where the barrier base will sit, whether a duct can be cut across the lane for the loop and cabling, and where the nearest suitable power supply is. Tarmac, block paving and concrete each need a different base, and a shared driveway may need the landlord's or neighbours' consent first. We also note how wide the lane is, whether the arm needs a skirt or a support post, and whether the barrier should open automatically for vehicles leaving.";
+$bpP[] = "Every barrier we quote in {$bpN} is supplied as a CAME partner from Stockport, with installation price on application after a survey of the lane, the ground, the power supply and any ducting. Ongoing servicing checks the arm, the safety loops and photocells, the control board and the battery backup, and we record each visit for the site's maintenance file.";
+?>
+<section class="max-w-7xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-semibold text-black">Planning a vehicle barrier in <?= $bpN ?></h2>
+    <?php foreach ($bpP as $bpLine): ?><p class="mt-3 text-zinc-700 leading-relaxed"><?= $bpLine ?></p><?php endforeach; ?>
+</section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

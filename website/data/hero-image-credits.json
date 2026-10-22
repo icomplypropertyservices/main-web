@@ -186,14 +186,14 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_026.jpg",
     "title": "File:Sindelfingen Haus & Energie 2018 by-RaBoe 026.jpg",
     "license": "CC BY-SA 3.0 de",
-    "artist": "\u00a9 Ra Boe / Wikipedia"
+    "artist": "© Ra Boe / Wikipedia"
   },
   {
     "file": "/assets/images/services/b1/damp-proofing-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Sindelfingen_Haus_%26_Energie_2018_by-RaBoe_024.jpg",
     "title": "File:Sindelfingen Haus & Energie 2018 by-RaBoe 024.jpg",
     "license": "CC BY-SA 3.0 de",
-    "artist": "\u00a9 Ra Boe / Wikipedia"
+    "artist": "© Ra Boe / Wikipedia"
   },
   {
     "file": "/assets/images/services/b1/flooring-1.jpg",
@@ -366,7 +366,7 @@
   {
     "file": "/assets/images/services/b1/rendering-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Bogot%C3%A1_carrera_6_calle_118.JPG",
-    "title": "File:Bogot\u00e1 carrera 6 calle 118.JPG",
+    "title": "File:Bogotá carrera 6 calle 118.JPG",
     "license": "CC BY-SA 4.0",
     "artist": "Felipe Restrepo Acosta"
   },
@@ -403,12 +403,12 @@
     "source": "https://commons.wikimedia.org/wiki/File:Skifertak_-_slate_roof_natural_stone_cover.JPG",
     "title": "File:Skifertak - slate roof natural stone cover.JPG",
     "license": "CC BY-SA 4.0",
-    "artist": "\u00d8yvind Holmstad"
+    "artist": "Øyvind Holmstad"
   },
   {
     "file": "/assets/images/services/b1/roofing-3.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Slate_roof,_Sosnov%C3%A1_%C4%8Dp._28,_Opava_District,_Czech_Republic_18.jpg",
-    "title": "File:Slate roof, Sosnov\u00e1 \u010dp. 28, Opava District, Czech Republic 18.jpg",
+    "title": "File:Slate roof, Sosnová čp. 28, Opava District, Czech Republic 18.jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Michal Klajban"
   },
@@ -443,7 +443,7 @@
   {
     "file": "/assets/images/services/b1/windows-doors-2.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck,_An_der_Mauer_150-152_--_2017_--_0454.jpg",
-    "title": "File:L\u00fcbeck, An der Mauer 150-152 -- 2017 -- 0454.jpg",
+    "title": "File:Lübeck, An der Mauer 150-152 -- 2017 -- 0454.jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Dietmar Rabich"
   },
@@ -464,7 +464,7 @@
   {
     "file": "/assets/images/services/b1/fire-doors-1.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Brandd%C3%B6rrar_vindsv%C3%A5ning,_G%C3%B6teborg_(S4024074).jpg",
-    "title": "File:Brandd\u00f6rrar vindsv\u00e5ning, G\u00f6teborg (S4024074).jpg",
+    "title": "File:Branddörrar vindsvåning, Göteborg (S4024074).jpg",
     "license": "CC BY-SA 4.0",
     "artist": "Andersreilund"
   },
@@ -487,7 +487,7 @@
     "source": "https://commons.wikimedia.org/wiki/File:Plasterer_at_work_on_a_wall_arp.jpg",
     "title": "File:Plasterer at work on a wall arp.jpg",
     "license": "Public domain",
-    "artist": "Adrian Pingstone (Arpingstone)"
+    "artist": "Adrian Pingstone (Arpingstone"
   },
   {
     "file": "/assets/images/services/dry-lining.jpg",
@@ -495,5 +495,1362 @@
     "title": "File:Hanging Drywall (9020064).jpg",
     "license": "Public domain",
     "artist": "U.S. Navy photo by Petty Officer 3rd Class Thomas Depippo"
+  },
+  {
+    "file": "/assets/images/services/damp-proofing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Horizontalsperre-Injektionsverfahren-(drkb).jpg",
+    "title": "File:Horizontalsperre-Injektionsverfahren-(drkb).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Drahkrub (http://de.wikipedia.org/wiki/Benutzer:Drahkrub"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Handyman_measuring_a_board.jpg",
+    "title": "File:Handyman measuring a board.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Ivan Radic"
+  },
+  {
+    "file": "/assets/images/services/cdm-support.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Worker_Speaking_of_Personal_Safety_(8744516732).jpg",
+    "title": "File:Worker Speaking of Personal Safety (8744516732).jpg",
+    "license": "Public domain",
+    "artist": "National Institute for Occupational Safety and Health (NIOSH"
+  },
+  {
+    "file": "/assets/images/services/groundworks.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Digger_excavating_trial_trenches_-_geograph.org.uk_-_7407043.jpg",
+    "title": "File:Digger excavating trial trenches - geograph.org.uk - 7407043.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "TCExplorer"
+  },
+  {
+    "file": "/assets/images/services/barriers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Automatic_Rising_Arm_Barrier.jpg",
+    "title": "File:Automatic Rising Arm Barrier.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "FrontierPitts"
+  },
+  {
+    "file": "/assets/images/keywords/car-park-barrier-access.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:An_automatic_barrier_at_the_exit_of_the_Marine_Drive_car_park_-_geograph.org.uk_-_2281418.jpg",
+    "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Roger A Smith"
+  },
+  {
+    "file": "/assets/images/families/fire-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/gas-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/security-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/building-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/services/brickwork.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Zambia_-Bricklayer.jpg",
+    "title": "File:Zambia -Bricklayer.jpg (cropped 1280x720, same photo as b1/brickwork-1.jpg)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thatlowdownwoman"
+  },
+  {
+    "file": "/assets/images/services/electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/families/landscaping-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Simple_Patio_Border_(21235226226).jpg",
+    "title": "File:Simple Patio Border (21235226226).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Chris Hunkeler",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building",
+    "service": "landscaping"
+  },
+  {
+    "file": "/assets/images/families/facilities-management-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Jim_Oshersky,_maintenance_worker,_at_Albright_Visitor_Center_(53091017607).jpg",
+    "title": "File:Jim Oshersky, maintenance worker, at Albright Visitor Center (53091017607).jpg",
+    "license": "Public domain",
+    "artist": "YellowstoneNPS",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "family": "building",
+    "service": "facilities-management"
+  },
+  {
+    "file": "/assets/images/services/ev-chargers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Electric_Vehicle_Charging_Point,_Orange_Street_Car_Park,_Bradford_-_geograph.org.uk_-_7390343.jpg",
+    "title": "File:Electric Vehicle Charging Point, Orange Street Car Park, Bradford - geograph.org.uk - 7390343.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Armstrong",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/epc.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bohum%C3%ADn-Z%C3%A1blat%C3%AD,_polozateplen%C3%BD_d%C5%AFm_Bezru%C4%8Dova_80.jpg",
+    "title": "File:Bohumín-Záblatí, polozateplený dům Bezručova 80.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kamil Czaiński",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "/assets/images/services/asbestos-survey.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos-warning-cy-en.jpg",
+    "title": "File:Asbestos-warning-cy-en.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Microchip08",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "/assets/images/services/fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:FM-200_fire_suppression_system_at_NERSC.jpg",
+    "title": "File:FM-200 fire suppression system at NERSC.jpg",
+    "license": "CC0",
+    "artist": "Derrick Coetzee from Berkeley, CA, USA",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "file": "/assets/images/services/dry-risers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DRY_RISER_INLET_(3423890499).jpg",
+    "title": "File:DRY RISER INLET (3423890499).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Metro Centric",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "/assets/images/services/smoke-co-alarms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Carbon_monoxide_alarm.jpg",
+    "title": "File:Carbon monoxide alarm.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Santeri Viinamäki",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "/assets/images/services/evacuation-alerts.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_34203_Sounder.jpg",
+    "title": "File:Gent 34203 Sounder.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "/assets/images/services/legionella-risk-assessment.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_Water_Storage_Tank_-_geograph.org.uk_-_6359539.jpg",
+    "title": "File:Old Water Storage Tank - geograph.org.uk - 6359539.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Eirian Evans",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/water-wras.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kupferfittings_4062.jpg",
+    "title": "File:Kupferfittings 4062.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Torsten Bätge",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "file": "/assets/images/services/renovation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Faubourg_Marigny,_New_Orleans_-_Interior_of_recently_renovated_house_-_01.jpg",
+    "title": "File:Faubourg Marigny, New Orleans - Interior of recently renovated house - 01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Infrogmation of New Orleans",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "/assets/images/services/heating.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/24-hour-emergency-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/bathroom-electrical-safety.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/battery-storage-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/bs-7671-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/bs-7671.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/certified-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/circuit-breaker-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/commercial-ev-charging.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/consumer-unit-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/data-cabling-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/distribution-board-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-cost.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/eicr-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-board-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-certificate-for-lettings.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-certification.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-compliance-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-contractor.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-fault-finding.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-inspection-and-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-installation-condition-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-remedial-works.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-repair.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-safety-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-safety-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-services.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-troubleshooting.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrical-wiring-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/electrician-near-me.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/emergency-lighting-electrical-works.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/energy-efficient-lighting.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/ev-charger-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/fixed-wire-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/full-house-rewire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/fuse-board-replacement.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/generator-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/hmo-electrical-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/home-electrical-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/home-ev-charger.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/industrial-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/industrial-electrical-services.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/kitchen-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-certificate-north-west.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-electrical-safety-check.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/landlord-safety-certificate.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/lighting-circuit-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/lighting-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/new-build-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/new-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/niceic-certified.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/office-electrical-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/outside-socket-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/panel-upgrade.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/part-p-certified.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/partial-rewire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/pat-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/periodic-electrical-inspection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/periodic-inspection-report.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/portable-appliance-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/power-surge-protection.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/preventive-electrical-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/rcbo-consumer-unit.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/residential-electrician.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/smart-home-wiring.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/socket-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/solar-inverter-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/solar-panel-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/keywords/three-phase-electrical-installation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg) (same photo as assets/images/services/electrical.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "file": "/assets/images/services/kitchen-fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Restaurant_Kitchen_expo_station.jpg",
+    "title": "File:Restaurant Kitchen expo station.jpg",
+    "license": "CC0",
+    "artist": "MarkBuckawicki",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "file": "/assets/images/services/loft-conversions.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_loft_conversion_on_Dallinger_Road_-_geograph.org.uk_-_4211470.jpg",
+    "title": "File:A loft conversion on Dallinger Road - geograph.org.uk - 4211470.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Bill Boaden",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/facilities-management.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Jim_Oshersky,_maintenance_worker,_at_Albright_Visitor_Center_(53091017607).jpg",
+    "title": "File:Jim Oshersky, maintenance worker, at Albright Visitor Center (53091017607).jpg",
+    "license": "Public domain",
+    "artist": "YellowstoneNPS",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/"
+  },
+  {
+    "file": "/assets/images/services/building-surveys.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_01.jpg",
+    "title": "File:Under Renovation house in Mid-City New Orleans - 01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Bart Everson"
+  },
+  {
+    "file": "/assets/images/services/fire-risk-assessments.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:037_Fire_safety_-_fire_escape_stairs_in_Rotterdam%2C_Netherlands.jpg",
+    "title": "File:037 Fire safety - fire escape stairs in Rotterdam, Netherlands.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Marek Ślusarczyk ( Tupungato ) Photo portfolio",
+    "alt": "037 Fire safety - fire escape stairs in Rotterdam, Netherlands"
+  },
+  {
+    "file": "/assets/images/services/fire-risk-assessments-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:037_Fire_safety_-_fire_escape_stairs_in_Rotterdam%2C_Netherlands.jpg",
+    "title": "File:037 Fire safety - fire escape stairs in Rotterdam, Netherlands.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Marek Ślusarczyk ( Tupungato ) Photo portfolio",
+    "alt": "037 Fire safety - fire escape stairs in Rotterdam, Netherlands"
+  },
+  {
+    "file": "/assets/images/services/aov-control-panel-1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:VENTZ_control_panel_for_heat_and_smoke_vents_%2801%29.jpg",
+    "title": "File:VENTZ control panel for heat and smoke vents (01).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik",
+    "alt": "Control panel for heat and smoke vents"
+  },
+  {
+    "file": "/assets/images/services/fire-stopping.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3m_fs195_ppd_nortown_casistas.jpg",
+    "title": "File:3m fs195 ppd nortown casistas.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "file": "/assets/images/services/fire-compartmentation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pillowinst.jpg",
+    "title": "File:Pillowinst.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Infrared_St_Margaret%27s_church_Paston_Norfolk_2_(3710057668).jpg",
+    "title": "File:Infrared St Margaret's church Paston Norfolk 2 (3710057668).jpg",
+    "license": "CC BY 2.0",
+    "artist": "David from Colorado Springs, United States",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "file": "/assets/images/families/building-surveys-photo.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-alarms-callpoint.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Sidewall_fire_sprinkler_head_and_detector.jpg",
+    "title": "File:Sidewall fire sprinkler head and detector.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Darklanlan",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "file": "/assets/images/services/sprinkler-systems-2.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_sprinkler_victaulic_couplings.jpg",
+    "title": "File:Fire sprinkler victaulic couplings.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "file": "/assets/images/services/sprinkler-systems-3.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_with_ID_sign,_call_point_and_fire_action_sign.JPG",
+    "title": "File:Fire extinguisher with ID sign, call point and fire action sign.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "KRoock74",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "/assets/images/services/fire-extinguishers-3.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Afton_Historical_Museum_Clean_Agent_Fire_Suppression_System_Demonstration-02.jpg",
+    "title": "File:Afton Historical Museum Clean Agent Fire Suppression System Demonstration-02.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Myotus",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-suppression-2.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Afton_Historical_Museum_Clean_Agent_Fire_Suppression_System_Demonstration-04.jpg",
+    "title": "File:Afton Historical Museum Clean Agent Fire Suppression System Demonstration-04.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Myotus",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-suppression-3.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Dow2000_conduit_wall_penetration.jpg",
+    "title": "File:Dow2000 conduit wall penetration.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "file": "/assets/images/services/fire-stopping-2.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Nortown.jpg",
+    "title": "File:Nortown.jpg",
+    "license": "Public domain",
+    "artist": "Achim Hering",
+    "license_url": "",
+    "file": "/assets/images/services/fire-stopping-3.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Conference_center_receives_USACE_safety_inspection_(4884534393).jpg",
+    "title": "File:Conference center receives USACE safety inspection (4884534393).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Army Corps of Engineers Europe District from Wiesbaden, Germany",
+    "license_url": "",
+    "file": "/assets/images/services/fire-risk-assessments-2.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:2017-11-19_Fire_escape,_Edif%C3%ADcio_Kiss,_Rua_Vasco_da_Gama,_Albufeira.JPG",
+    "title": "File:2017-11-19 Fire escape, Edifício Kiss, Rua Vasco da Gama, Albufeira.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kolforn (Kolforn)\nI'd appreciate if you could mail me ( ) if you",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-risk-assessments-3.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Emergency_exit_light.jpg",
+    "title": "File:Emergency exit light.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Erik1980",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/emergency-lighting-2.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_foam_extinguisher_(h%C3%A5ndslokker,_brannslukningsapparat,_pulverapparat,_skumapparat,_type_HOUSEGARD)_on_wall_in_a_primary_school_in_Eikelandsosen,_Fusa,_Norway._Also_fire_alarm,_sign,_fire_blanket_(brannteppe)._2018-03-23_A.jpg",
+    "title": "File:Fire foam extinguisher (håndslokker, brannslukningsapparat, pulverapparat, skumapparat, type HOUSEGARD) on wall in a primary school in Eikelandsosen, Fusa, Norway. Also fire alarm, sign, fire blanket (brannteppe). 2018-03-23 A.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wolfmann",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-extinguishers-2.jpg"
+  },
+  {
+    "file": "/assets/images/families/fire-photo-gas.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/fire-photo-security.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/fire-photo-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/fire-photo-building.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/fire-photo-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "fire"
+  },
+  {
+    "file": "/assets/images/families/gas-photo-fire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/gas-photo-security.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/gas-photo-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/gas-photo-building.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/gas-photo-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "gas"
+  },
+  {
+    "file": "/assets/images/families/security-photo-fire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/security-photo-gas.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/security-photo-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/security-photo-building.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/security-photo-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg (crop)",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "family": "security"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo-fire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (crop)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo-gas.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (crop)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo-security.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (crop)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo-building.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (crop)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/electrical-photo-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (crop)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "family": "electrical"
+  },
+  {
+    "file": "/assets/images/families/building-photo-fire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg (crop)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/families/building-photo-gas.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg (crop)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/families/building-photo-security.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg (crop)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/families/building-photo-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg (crop)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/families/building-photo-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_renovation,_Spen_Lane_-_geograph.org.uk_-_6822608.jpg",
+    "title": "File:Building renovation, Spen Lane - geograph.org.uk - 6822608.jpg (crop)",
+    "license": "CC BY-SA 2.0",
+    "artist": "Stephen Craven",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "building"
+  },
+  {
+    "file": "/assets/images/services/fire-signage.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Derbion_fire_exit_sign_-_4_July_2025.jpg",
+    "title": "File:Derbion fire exit sign - 4 July 2025.jpg",
+    "license": "CC0",
+    "artist": "Aethonatic"
+  },
+  {
+    "file": "/assets/images/services/fire-extinguishers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Extinguisher_501.JPG",
+    "title": "File:Fire Extinguisher 501.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Tripl3rdmc454"
+  },
+  {
+    "file": "/assets/images/services/insulation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Installing_installation_in_an_attic_(9337).jpg",
+    "title": "File:Installing installation in an attic (9337).jpg",
+    "license": "CC0",
+    "artist": "The EnergySmart Academy"
+  },
+  {
+    "file": "/assets/images/services/carpentry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Carpenter_working_on_an_item_4.jpg",
+    "title": "File:Carpenter working on an item 4.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kambai Akau"
+  },
+  {
+    "file": "/assets/images/services/sprinkler-systems.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Sprinkler_Head_with_Red_Fluid_(55563049651).jpg",
+    "title": "File:Fire Sprinkler Head with Red Fluid (55563049651).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Tony Webster"
+  },
+  {
+    "file": "/assets/images/services/barriers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:An_automatic_barrier_at_the_exit_of_the_Marine_Drive_car_park_-_geograph.org.uk_-_2281418.jpg",
+    "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Roger A Smith"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Terraced_Houses,_Manchester_Road_-_geograph.org.uk_-_2162890.jpg",
+    "title": "File:Terraced Houses, Manchester Road - geograph.org.uk - 2162890.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Robert Wade",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "compliance"
+  },
+  {
+    "file": "/assets/images/heroes/property-generic.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Salford_Quays_Apartment_Block_Overlooking_Central_Bay_-_geograph.org.uk_-_7830689.jpg",
+    "title": "File:Salford Quays Apartment Block Overlooking Central Bay - geograph.org.uk - 7830689.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Tom Jolliffe",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/air-conditioning.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Outdoor_air_conditioner_unit_installed_in_residential_garden_space.jpg",
+    "title": "File:Outdoor air conditioner unit installed in residential garden space.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Shixart1985",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "/assets/images/services/electrics-first-fix.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Electrical-wiring-rough-in.jpg",
+    "title": "File:Electrical-wiring-rough-in.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Amy Bonilla",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/services/nurse-call-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nurse_Call_Button_at_Hospital_(17238701230).jpg",
+    "title": "File:Nurse Call Button at Hospital (17238701230).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tony Webster from Minneapolis, Minnesota, United States",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "file": "/assets/images/services/landlord-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Diverse_sleutels.jpg",
+    "title": "File:Diverse sleutels.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Quistnix at Dutch Wikipedia",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "file": "/assets/images/services/compliance-consultancy.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Safety_Site_Inspections_in_Bulgaria_(9826648).jpg",
+    "title": "File:Safety Site Inspections in Bulgaria (9826648).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Army photo by Hannah Mitchell",
+    "license_url": ""
+  },
+  {
+    "file": "/assets/images/areas/leigh.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Leigh_Town_Hall_-_geograph.org.uk_-_5894716.jpg",
+    "title": "File:Entrance to Leigh Town Hall - geograph.org.uk - 5894716.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Gerald England",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
   }
 ]

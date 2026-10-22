@@ -588,7 +588,7 @@ def build_keywords(slugs: list[str]) -> dict:
                 ],
                 [
                     f"How is {name} priced?",
-                    "You get a fixed written quote once we know the building, the access and the standard that applies.",
+                    "You get a written quote once we know the building, the access and the standard that applies.",
                 ],
                 [
                     f"Do you claim BAFE or NSI for {name}?",

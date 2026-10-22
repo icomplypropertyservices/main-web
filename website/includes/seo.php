@@ -68,7 +68,7 @@ function seo_combo_intro(string $serviceName, string $slug, string $area): strin
         . "appointments booked when the diary allows and "
         . ((function_exists('isPoaService') && isPoaService($slug))
             ? "a price-on-application quote once scope is clear."
-            : "written quotes whenever the scope is clear.");
+            : "written quotes once the scope is clear.");
 }
 
 function seo_combo_why(string $serviceName, string $area): array {
@@ -539,13 +539,13 @@ function icomply_service_hub_seo(string $slug, string $serviceName, bool $poa): 
     }
 
     if ($poa) {
-        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.';
+        $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, written quote. Call or WhatsApp 07517 806082.';
     } else {
         $description = 'Professional ' . $serviceName . ' in Stockport and Greater Manchester. Installation, testing and certification. Written quote after scope.';
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) > 165) {
         $description = $poa
-            ? ($serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.')
+            ? ($serviceName . ' in Stockport and Greater Manchester. Same/next-day engineers, written quote. Call or WhatsApp 07517 806082.')
             : ($serviceName . ' in Stockport and Greater Manchester. Written quote after scope from our Offerton team.');
     }
     if (mb_strlen(htmlspecialchars($description, ENT_QUOTES, 'UTF-8')) < 70) {

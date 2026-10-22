@@ -51,7 +51,7 @@ $brands = [
 ];
 
 $included = [
-    ['title' => 'Site survey & load check', 'text' => 'Supply capacity, consumer unit condition, earthing and cable route assessed before we quote a fixed price.'],
+    ['title' => 'Site survey & load check', 'text' => 'Supply capacity, consumer unit condition, earthing and cable route assessed before we quote a written quote.'],
     ['title' => 'Supply & install', 'text' => 'Wall or pedestal mount, dedicated circuit, isolation, RCD protection and tidy cable runs to current regs.'],
     ['title' => 'BS 7671 certification', 'text' => 'Electrical installation certificate / minor works as appropriate — paperwork you can keep for insurers and property files.'],
     ['title' => 'Commissioning & handover', 'text' => 'Unit powered, app/user setup guided, and charging demonstrated so you leave ready to plug in.'],

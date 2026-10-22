@@ -437,7 +437,7 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
     return [
         [
             'How do I request a quote for work in ' . $areaName . '?',
-            'Tell us the postcode, the property type and the system. We will send a free written quote for ' . $areaName . ' once the scope is clear.',
+            'Tell us the postcode, the property type and the system. We will send a written quote for ' . $areaName . ' once the scope is clear.',
         ],
         [
             'Where is iComply based for ' . $areaName . ' visits?',

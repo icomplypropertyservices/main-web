@@ -346,7 +346,7 @@ require SITE_ROOT . '/includes/header.php';
             </p>
             <div class="mt-6 p-4 rounded-2xl bg-amber-500/15 border border-amber-400/30 text-sm text-amber-50/95 max-w-2xl">
                 <strong class="text-amber-100">Important:</strong> Every figure on this page is a
-                <strong class="text-white">guide estimate only</strong>, not a fixed price or formal quotation.
+                <strong class="text-white">guide estimate only</strong>, not a written quote or formal quotation.
                 Final prices depend on site survey, system condition and agreed scope. You always receive a
                 <strong class="text-white">written quote</strong> before work starts.
             </div>
@@ -523,7 +523,7 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">What affects the final price</h2>
             <p class="mt-3 text-zinc-600">
                 Online “POA” figures cannot see your consumer unit, fire panel or cable runs.
-                These factors are why we confirm a fixed price after scope — never guess on the day.
+                These factors are why we confirm a written quote after scope — never guess on the day.
             </p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

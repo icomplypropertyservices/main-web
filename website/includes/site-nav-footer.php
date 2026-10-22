@@ -66,7 +66,8 @@ function icomplyFooterHtml(): string
         $kwDrop .= '</details>';
     }
 
-    $matrixDrop = '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';
+    $matrixDrop = '<p class="foot-note">Open a service hub, then choose your town to see local coverage, prices and FAQs.</p>';
+    $matrixDrop .= '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';
     foreach ($n['featuredKw'] as $slug => $name) {
         if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label((string)$name)) {
             continue;

@@ -187,7 +187,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Request your landlord quote</h2>
-            <p class="mt-3 text-zinc-600">Single certificates or multi-property packages — fixed price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Single certificates or multi-property packages — written quote after scope is agreed.</p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">

@@ -238,8 +238,8 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
             ? "We survey, quote and carry out {$serviceName} with attention to {$standards}. {$angle}"
             : "We design, install, maintain and certify {$serviceName} with attention to {$standards}. {$angle}");
     $close = (function_exists('isPoaService') && isPoaService($slug))
-        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a free written quote once we confirm the scope."
-        : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free. The written price follows the survey or the photos.";
+        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a written quote once we confirm the scope."
+        : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free, and you get a written quote after a survey or a few photos.";
     return pick_seeded($openers, $seed, 0) . ' ' . $mid . ' ' . $close;
 }
 

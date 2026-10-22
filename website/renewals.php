@@ -37,7 +37,11 @@ require SITE_ROOT . '/includes/header.php';
   </div>
 </section>
 
-<section class="bg-[#ffffff] border-b">
+<figure class="max-w-3xl mx-auto px-6 pt-8" data-photo-slot="real-photo">
+  <img src="/assets/images/opt/9ce274df546b-800.webp" srcset="/assets/images/opt/9ce274df546b-480.webp 480w, /assets/images/opt/9ce274df546b-800.webp 800w, /assets/images/opt/9ce274df546b-1280.webp 1280w" sizes="(min-width: 768px) 720px, 100vw" alt="Terraced rented houses, each with its own certificate renewal dates" width="800" height="514" loading="lazy" style="width:100%;height:auto;border-radius:1rem">
+  <figcaption style="font-size:.8rem;color:#555555;margin-top:.4rem">Photo: Robert Wade, CC BY-SA 2.0, via Wikimedia Commons · <a href="/pages/photo-credits">photo credits</a></figcaption>
+</figure>
+<section class="bg-[#f4f4f4] border-b">
   <div class="max-w-3xl mx-auto px-6 py-10 md:py-14">
     <form name="renewals" method="POST" action="/renewals/thanks" data-netlify="true" netlify-honeypot="bot-field" class="bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 space-y-6 shadow-sm" id="renewals-form">
       <input type="hidden" name="form-name" value="renewals">
@@ -61,7 +65,7 @@ require SITE_ROOT . '/includes/header.php';
         </label>
         <label class="block">
           <span class="text-sm font-medium text-[#0B1F3A]">Email <span class="text-[#ff6b00]">*</span></span>
-          <input required name="email" type="email" maxlength="160" autocomplete="email" class="mt-1 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]" placeholder="icomplypropertyservices@gmail.com">
+          <input required name="email" type="email" maxlength="160" autocomplete="email" class="mt-1 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#ff6b00]" placeholder="Your email address">
         </label>
         <label class="block">
           <span class="text-sm font-medium text-[#0B1F3A]">Phone <span class="text-[#ff6b00]">*</span></span>
@@ -75,7 +79,7 @@ require SITE_ROOT . '/includes/header.php';
       </div>
 
       <div id="property-list" class="space-y-6">
-        <fieldset class="property-block border border-zinc-200 rounded-2xl p-5 bg-[#ffffff]" data-property-index="0">
+        <fieldset class="property-block border border-zinc-200 rounded-2xl p-5 bg-[#f4f4f4]" data-property-index="0">
           <legend class="px-2 text-sm font-semibold uppercase tracking-wide text-[#ff6b00]">Property 1</legend>
           <div class="grid md:grid-cols-3 gap-4 mt-2">
             <label class="block md:col-span-2">
@@ -125,7 +129,7 @@ require SITE_ROOT . '/includes/header.php';
         </label>
       </div>
 
-      <div class="rounded-2xl bg-[#ffffff] border border-[#ff6b00] p-4 text-sm text-[#0B1F3A]">
+      <div class="rounded-2xl bg-[#f7f7f7] border border-[#ff6b00] p-4 text-sm text-[#0B1F3A]">
         <strong class="text-[#0B1F3A]">Privacy note.</strong>
         We use your details only to send the reminders you asked for and to follow up if a certificate is due with us. We do not sell your data. See our
         <a href="<?= url('/privacy.php') ?>" class="text-[#ff6b00] font-semibold underline">privacy policy</a>.

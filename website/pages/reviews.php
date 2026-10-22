@@ -9,7 +9,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'Reviews & Testimonials | iComply Property Services';
 $metaDesc = 'Read client reviews of iComply Property Services — landlords, agents and facilities teams on EICR, fire alarms, gas safety, CCTV and compliance work across Greater Manchester and the North West.';
 $metaKeywords = 'iComply reviews, property compliance testimonials, EICR reviews Stockport, fire alarm engineer reviews Manchester, landlord compliance feedback North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/reviews.php');
 
 $services = getServices();

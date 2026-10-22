@@ -321,6 +321,8 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     require_once SITE_ROOT . '/includes/ctr-meta.php';
     $title = icomplyCtrTitle($kwName, $areaName, $keywordSlug, $svcSlug);
     $desc = icomplyCtrDesc($kwName, $areaName, $keywordSlug, $svcSlug);
+    $twin = icomplyKeywordTwinIntent((string)$keywordSlug, (string)$kwName, (string)$areaName);
+    if ($twin) { $title = $twin['title']; $desc = $twin['desc']; }
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
@@ -334,9 +336,16 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     }
     $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, icomplyPageImageKey('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal), 1)[0];
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
+    if (in_array($svcSlug, ['cctv', 'access-control', 'intruder-alarm', 'intruder-alarms', 'door-entry', 'intercoms', 'security-systems'], true)) {
+        // QM #156 item 13: security town pages use the full branded site header.
+        require_once __DIR__ . '/site-nav.php';
+        if (function_exists('icomplyMegaHeaderHtml')) {
+            $html = preg_replace('#<header class="matrix-header">.*?</header>#s', icomplyMegaHeaderHtml(), $html, 1) ?? $html;
+        }
+    }
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
-        . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
+        . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . ($twin ? icomplyMatrixH($twin['h1_tail']) : '') . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
@@ -429,6 +438,41 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
 
+    // QM #156 (CLOSE 8): town-specific depth inside <main> so keyword × town pages clear 800 words and differ.
+    static $kwDepth = null;
+    if ($kwDepth === null) {
+        $kwDepth = (array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/keyword-intent-depth.json'), true);
+    }
+    $deep = '';
+    if (isset($kwDepth[$keywordSlug]['p'])) {
+        $sub = static fn(string $t): string => icomplyMatrixH(str_replace('{town}', $areaName, $t));
+        $deep = '<section class="kw-intent-depth"><h2 class="text-2xl font-semibold mb-3">' . $sub((string)$kwDepth[$keywordSlug]['h2']) . '</h2>';
+        foreach ((array)$kwDepth[$keywordSlug]['p'] as $p) { $deep .= '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub((string)$p) . '</p>'; }
+        $deep .= '</section>';
+    }
+    {
+        // Thin keyword × town pages (under ~850 prose words) get the town-depth block: postcode districts,
+        // wards, housing and council facts for this town (QM #156 under_800_words).
+        $mainTxt = preg_replace('#<(script|style|nav|header|footer)\b.*?</\1>#s', ' ', substr($html, (int)strpos($html, '<main')));
+        if (str_word_count(strip_tags((string)$mainTxt . ' ' . $deep)) < 850) {
+            require_once __DIR__ . '/town-deep.php';
+            $deep .= ($deep === '' && function_exists('icomplyTownDeepHtml')) ? icomplyTownDeepHtml($areaSlugVal, $areaName, $kwName, $svcSlug) : '';
+            static $svcDepth = null;
+            if ($svcDepth === null) {
+                $svcDepth = (array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/service-depth.json'), true);
+            }
+            if (isset($svcDepth[$svcSlug]) && is_array($svcDepth[$svcSlug])) {
+                $sub2 = static fn(string $t): string => icomplyMatrixH(str_replace(['{town}', '{kw}'], [$areaName, mb_strtolower($kwName)], $t));
+                $deep = '<section class="svc-depth"><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName . ' in ' . $areaName . ': what to expect') . '</h2>'
+                    . implode('', array_map(static fn($p) => '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub2((string)$p) . '</p>', $svcDepth[$svcSlug]))
+                    . '</section>' . $deep;
+            }
+        }
+    }
+    if ($deep !== '') {
+        $pos = strrpos($html, '</main>');
+        if ($pos !== false) { $html = substr($html, 0, $pos) . $deep . substr($html, $pos); }
+    }
     $html .= icomplyMatrixChromeEnd();
     return $html;
 }
@@ -510,15 +554,14 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
-    if ($serviceSlug === 'aov' || $serviceSlug === 'aov-air-handling') {
-        if (!function_exists('icomplyImagePick')) {
-            require_once SITE_ROOT . '/includes/image-pool.php';
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath);
+    if (in_array($serviceSlug, ['cctv', 'access-control', 'intruder-alarm', 'intruder-alarms', 'door-entry', 'intercoms', 'security-systems'], true)) {
+        // QM #156 item 13: security service x town pages use the full branded site header too.
+        require_once __DIR__ . '/site-nav.php';
+        if (function_exists('icomplyMegaHeaderHtml')) {
+            $html = preg_replace('#<header class="matrix-header">.*?</header>#s', icomplyMegaHeaderHtml(), $html, 1) ?? $html;
         }
-        $poolKey = $serviceSlug === 'aov' ? 'aov' : 'aov-air-handling';
-        $svcImagePath = icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, $poolKey, 2)[0];
     }
-    $heroCredit = $serviceSlug === 'demolition' ? ' data-credit="Tomwsulcer (CC0)" data-credit-stamped="1"' : '';
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800"' . $heroCredit . '>'
         . ($serviceSlug === 'demolition' ? '<p class="image-credit">Image credit: Tomwsulcer (CC0)</p>' : '')

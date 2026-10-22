@@ -129,6 +129,33 @@ require SITE_ROOT . '/includes/header.php';
     </div>
 </section>
 
+<?php
+// QM #156 near_duplicate_body: each URL gets copy written for its own audience.
+$cbAudience = $isLandlord ? [
+    'Who the landlord pack is for',
+    [
+        'The landlord pack is for private landlords with one to a handful of rented homes who want every annual and five-yearly check booked together, rather than chasing a different trade for each certificate. It suits single lets, flats in converted houses and small HMOs.',
+        'In England a landlord needs a gas safety record every 12 months for each gas appliance, flue and fitting they provide, an EICR at least every five years, an EPC of band E or above for most lets, and working smoke and carbon monoxide alarms, tested on the first day of every new tenancy. Missing a gas record or EPC can stop a section 21 notice being valid, and councils can fine landlords up to £30,000 for some electrical and HMO failures.',
+        'We line the visits up so tenants are disturbed as little as possible, ideally one appointment per property. Copies of each certificate are emailed to you so you can pass them on to tenants within the 28 days the regulations allow, and we keep a copy in case one goes missing.',
+        'If a check finds faults, we quote the remedial work line by line and, once you approve it, put it right on the same visit wherever we can. You then get the updated certificate rather than a list of problems to sort out yourself.',
+        'Letting agents can book on a landlord\'s behalf. Tell us who should receive the paperwork and who holds the keys, and we will arrange access with the tenant directly.',
+    ],
+] : [
+    'Who the compliance bundle is for',
+    [
+        'The compliance bundle is for managing agents, housing providers and businesses who look after several properties or a mixed portfolio of homes, shops and offices, and want one contractor and one renewal calendar for the routine statutory checks.',
+        'Instead of booking gas, electrical, fire alarm, emergency lighting and PAT visits one at a time, we put each property on a schedule with its due dates, group nearby sites into the same day, and send reminders to whoever manages each building.',
+        'Commercial and common-area properties bring their own duties: a written fire risk assessment under the Regulatory Reform (Fire Safety) Order 2005, fire alarm servicing to BS 5839-1 every six months, emergency lighting tests to BS 5266-1, and an asbestos register for non-domestic parts under the Control of Asbestos Regulations 2012. We tell you which of these apply to each building before we price.',
+        'Reports are sent to the right person for each property, with open actions listed by priority. Finance teams get one invoice per batch with the property reference on every line, which makes recharging service charges or tenants simpler.',
+        'For portfolios that change often, adding or removing a property is a quick email. New properties are surveyed on the first visit so their schedule starts from accurate dates rather than guesses.',
+    ],
+];
+?>
+<section class="max-w-7xl mx-auto px-6 py-14">
+    <h2 class="text-3xl font-semibold tracking-tight text-black"><?= htmlspecialchars($cbAudience[0], ENT_QUOTES, 'UTF-8') ?></h2>
+    <?php foreach ($cbAudience[1] as $cbP): ?><p class="mt-4 text-zinc-700 leading-relaxed max-w-3xl"><?= htmlspecialchars($cbP, ENT_QUOTES, 'UTF-8') ?></p><?php endforeach; ?>
+</section>
+
 <section class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">How booking works</div>

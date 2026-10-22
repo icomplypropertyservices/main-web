@@ -13,6 +13,12 @@ function icomplyMoneyCtrPages(): array
         $file = dirname(__DIR__) . '/data/money-ctr-c1-c15.json';
         $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : null;
         $pages = is_array($doc['pages'] ?? null) ? $doc['pages'] : [];
+        // GSC 21 Oct upgrade queue; C1-C15 entries win on overlap.
+        $gscFile = dirname(__DIR__) . '/data/gsc-upgrade-2026-10-21.json';
+        $gsc = is_file($gscFile) ? json_decode((string)file_get_contents($gscFile), true) : null;
+        if (is_array($gsc['pages'] ?? null)) {
+            $pages = $pages + $gsc['pages'];
+        }
     }
     return $pages;
 }

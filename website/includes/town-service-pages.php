@@ -291,7 +291,7 @@ function icomplyTownPools(string $family): array
                 'The useful first message for {name} is lane count, boom length and the name on the cabinet. Phone 07517 806082.',
                 'Quotes for {name} are POA after scope. The phone number is 07517806082. WhatsApp uses the same line.',
                 'If you manage several entrances around {name}, list them. One survey can cover more than one lane. 07517806082.',
-                'Do not send only a photo of a bent boom and expect a fixed price. Send the cabinet label as well. {name} desk: 07517806082.',
+                'Do not send only a photo of a bent boom and expect a written quote. Send the cabinet label as well. {name} desk: 07517806082.',
                 'Service contracts for {name} record the manufacturer, the loop test and the release method. Start with 07517806082.',
             ],
         ];

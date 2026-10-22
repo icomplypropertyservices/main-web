@@ -1,7 +1,7 @@
 <?php
 /**
  * Multi-service compliance packages — Landlord, Fire, Security, Full FM.
- * Pricing shown as "from" / POA only (no fabricated fixed prices).
+ * Pricing shown as "from" / POA only (no fabricated written quotes).
  */
 require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/partials.php';
@@ -266,7 +266,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-            We never publish a made-up price online — every building is different.
+            We never publish fake written quotes online — every building is different.
             You get a clear, written quote once scope is agreed.
         </p>
         <div class="grid md:grid-cols-3 gap-8">

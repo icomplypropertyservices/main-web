@@ -164,12 +164,17 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
-        // Dual-ring area hubs are indexable and served by the router
-        // (Manchester has a stub file; the other allowlist towns do not).
-        // Towns outside the Manchester/Burnley rings stay out.
+        // GSC 21 Oct (A4): no indexability gate on area hubs. Every area hub
+        // that answers 200 is listed. The only area hubs left out are the ones
+        // the edge answers with a 301 (town-matrix nonGmMatrixRedirect sends
+        // towns outside the dual ring to /pages/areas): a 301 source is never
+        // a sitemap URL. That is the same rule as every other 301, not a prune.
         $isPublishedAreaHub = false;
-        if (preg_match('#^/pages/areas/[a-z0-9\-]+$#', $path)) {
-            if (!function_exists('icomplyPathIsIndexable') || !icomplyPathIsIndexable($path)) {
+        if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaLoc)) {
+            $areaAnswers200 = function_exists('icomplyLocalTownSlug')
+                ? icomplyLocalTownSlug($areaLoc[1])
+                : (function_exists('icomplyIsGreaterManchesterAreaSlug') && icomplyIsGreaterManchesterAreaSlug($areaLoc[1]));
+            if (!$areaAnswers200) {
                 return;
             }
             $isPublishedAreaHub = true;

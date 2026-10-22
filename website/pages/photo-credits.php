@@ -17,7 +17,7 @@ require SITE_ROOT . '/includes/header.php';
 ?>
 <main class="bg-white">
 <section class="max-w-5xl mx-auto px-6 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold text-[#061828]">Photo credits</h1>
+    <h1 class="text-3xl md:text-4xl font-bold text-[#0B1F3A]">Photo credits</h1>
     <p class="mt-4 text-zinc-800">Some pages use photos from Wikimedia Commons to show the kind of work described. They are example photos, not photos of iComply jobs. Each one is listed below with its author, licence and a link to the original file. Questions about a photo: call 07517 806082 or email icomplypropertyservices@gmail.com.</p>
     <div class="mt-8 overflow-x-auto">
     <table class="w-full text-sm border-collapse">
@@ -28,7 +28,7 @@ require SITE_ROOT . '/includes/header.php';
                 <td class="py-2 pr-4"><img src="<?= $h($file) ?>" alt="<?= $h($c['title']) ?>" width="120" height="63" loading="lazy" class="rounded w-[120px] h-auto"></td>
                 <td class="py-2 pr-4"><?= $h($c['artist']) ?></td>
                 <td class="py-2 pr-4"><?= $h($c['license']) ?></td>
-                <td class="py-2"><a class="underline text-[#061828]" href="<?= $h($c['source']) ?>" rel="nofollow noopener" target="_blank"><?= $h($c['title']) ?></a></td>
+                <td class="py-2"><a class="underline text-[#0B1F3A]" href="<?= $h($c['source']) ?>" rel="nofollow noopener" target="_blank"><?= $h($c['title']) ?></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

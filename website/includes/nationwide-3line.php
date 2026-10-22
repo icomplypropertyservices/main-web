@@ -309,6 +309,9 @@ function icomplyNationwide3lineRenderTown(string $keywordSlug, string $townSlug)
     $place = (string)$town['name'];
     $title = icomplyNationwide3lineTitle($name, $place);
     $description = icomplyNationwide3lineMeta($name, $place);
+    require_once SITE_ROOT . '/includes/ctr-meta.php';
+    $twin = icomplyKeywordTwinIntent($keywordSlug, $name, $place);
+    if ($twin) { $title = $twin['title']; $description = $twin['desc']; }
     $canonical = 'https://icomplypropertyservices.co.uk/pages/keywords/' . $keywordSlug . '/' . $townSlug;
     $images = icomplyNationwide3lineImages($keywordSlug);
     $ogImage = 'https://icomplypropertyservices.co.uk' . ($images[0] ?? '/assets/images/services/fire-alarms.jpg');
@@ -410,7 +413,7 @@ function icomplyNationwide3lineRenderTown(string $keywordSlug, string $townSlug)
         . '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>'
         . '</head><body><main>'
         . '<nav><a href="/">Home</a> / <a href="' . $h('/pages/keywords/' . $keywordSlug) . '">' . $h($name) . '</a> / <span>' . $h($place) . '</span></nav>'
-        . '<h1>' . $h($name . ' in ' . $place) . '</h1>'
+        . '<h1>' . $h($name . ' in ' . $place . ($twin ? $twin['h1_tail'] : '')) . '</h1>'
         . $gallery
         . '<article id="local-copy">' . $bodyHtml . '</article>'
         . '<section><h2>' . $h($name . ' FAQ') . '</h2>' . $faqHtml . '</section>'

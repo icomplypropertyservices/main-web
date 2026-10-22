@@ -26,7 +26,7 @@ BANNED = (
     "ukas",
     "£",
     "quoted",
-    "fixed price",
+    "written quote",
     "guaranteed legionella",
     "disease-free",
     "100%",
