@@ -486,5 +486,73 @@ $hoodHandled = routerDispatchVirtual('/pages/keywords/kitchen-hood-suppression')
 $hoodHtml = (string)ob_get_clean();
 $say($hoodHandled && str_contains($hoodHtml, 'kitchen-fire-suppression-2.jpg'), 'kitchen hood page uses the suppression photo');
 
+$say(str_contains($creditsRaw, 'Engineer testing breakers in an electrical panel') && !str_contains($creditsRaw, 'Stockton High Street'), 'areas photo is electrical testing');
+$say(str_contains($creditsRaw, 'Self-closing fire door') && !str_contains($creditsRaw, 'Copped Hall'), 'fire door photo is a self-closing fire door');
+$say(str_contains($creditsRaw, 'Bricklayer repointing a masonry wall') && !str_contains($creditsRaw, 'Hatfield House'), 'building maintenance context is repointing');
+$say(str_contains($creditsRaw, 'CAME Unipark automated parking barrier'), 'CAME photo is a CAME barrier');
+$say(str_contains($creditsRaw, 'Video door-entry panel with a camera and call buttons'), 'door-entry panel alt describes the panel');
+$say(str_contains($creditsRaw, 'Fire alarm control panel with fire-service route cards') && !str_contains($creditsRaw, 'Welsh fence'), 'directory hub is a fire alarm panel');
+$say(str_contains($creditsRaw, 'Multifunction installation tester used for an EICR'), 'EICR job photo is a tester');
+$say(str_contains($creditsRaw, 'Addressable fire alarm control panel'), 'addressable fire alarm job photo is a panel');
+$say(str_contains($creditsRaw, 'Roof hatch with a safety rail for smoke-vent access'), 'AOV service photo is a roof hatch');
+$say(str_contains($creditsRaw, 'Fire-stopping pillows packed around a penetration') && str_contains($creditsRaw, 'Fire-stopping mortar around a pipe penetration'), 'fire stopping photos are different');
+
+$round16Expect = [
+    '/pages/jobs/eicr' => ['004542a95df2', 'Multifunction installation tester used for an EICR'],
+    '/pages/jobs/addressable-fire-alarm-installation' => ['b30f971c4961', 'Addressable fire alarm control panel'],
+    '/pages/jobs/aov-service' => ['f49c3be9f254', 'Roof hatch with a safety rail for smoke-vent access'],
+    '/pages/areas/burnley' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
+    '/pages/areas/nelson' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
+    '/pages/areas/colne' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
+    '/pages/areas/bolton' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
+    '/pages/areas/wigan' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
+    '/pages/manchester-property-compliance' => ['5bf0dca473be', 'Fire alarm control panel with fire-service route cards'],
+    '/pages/fire-doors/oldham' => ['d17622b8d081', 'Self-closing fire door'],
+    '/pages/services/building-maintenance' => ['c99c58a19914', 'Bricklayer repointing a masonry wall'],
+    '/pages/services/barriers' => ['d7f0875411a8', 'CAME Unipark automated parking barrier'],
+    '/pages/services/door-entry' => ['c8c40eef46a6', 'Video door-entry panel with a camera and call buttons'],
+    '/pages/manufacturers/came' => ['d7f0875411a8', 'CAME Unipark automated parking barrier'],
+    '/pages/manufacturers/paxton' => ['949cf9191ce2', 'Numeric access-control keypad beside a door'],
+    '/pages/services/fire-stopping' => ['344d63f70377', 'Fire-stopping pillows packed around a penetration'],
+    '/pages/keywords/bs-5306-extinguisher-service-cost' => ['BS 5306 extinguisher servicing', 'BS 5306 extinguisher servicing'],
+    '/pages/keywords/air-source-heat-pumps-service-agreement' => ['air source heat pump service agreement', 'air source heat pump service agreement'],
+];
+$fireHtml = '';
+$paxtonHtml = '';
+foreach ($round16Expect as $round16Path => $needles) {
+    $_SERVER['REQUEST_URI'] = $round16Path;
+    $_SERVER['SCRIPT_NAME'] = '/index.php';
+    ob_start();
+    $round16Handled = routerDispatchVirtual($round16Path);
+    if (!$round16Handled) {
+        routerHandleRequest();
+    }
+    $round16Html = icomplyPerfRewriteHtml((string)ob_get_clean());
+    if ($round16Path === '/pages/services/fire-stopping') {
+        $fireHtml = $round16Html;
+    }
+    if ($round16Path === '/pages/manufacturers/paxton') {
+        $paxtonHtml = $round16Html;
+    }
+    $say(str_contains($round16Html, $needles[0]) && str_contains($round16Html, $needles[1]), $round16Path . ' shows the matching photo');
+    $say(!str_contains($round16Html, 'Stockton High Street') && !str_contains($round16Html, 'Copped Hall') && !str_contains($round16Html, 'Hatfield House') && !str_contains($round16Html, 'Welsh fence') && !str_contains($round16Html, 'alt="CAME logo"') && !str_contains($round16Html, 'alt="Videx logo"') && !str_contains($round16Html, '1220dc9fd7d4'), $round16Path . ' drops the wrong-subject photos');
+    if ($round16Path === '/pages/jobs/aov-service') {
+        $say(!str_contains($round16Html, 'Fan coil') && !str_contains($round16Html, '593e09e5eae8'), $round16Path . ' is not a fan coil');
+    }
+    if ($round16Path === '/pages/jobs/eicr' || $round16Path === '/pages/jobs/addressable-fire-alarm-installation') {
+        $say(!str_contains($round16Html, '03da502c0032') && !str_contains($round16Html, '216155e95ff0') && !str_contains($round16Html, 'Scaffolding on a house being repaired'), $round16Path . ' is not a roofing photo');
+    }
+}
+$fireCounts = [];
+if (preg_match_all('#<img\b[^>]*>#i', $fireHtml, $fireImgs)) {
+    foreach ($fireImgs[0] as $fireTag) {
+        if (preg_match('#/(72c74469e18e|344d63f70377|651a5f11f2c1)-#', $fireTag, $fireMatch)) {
+            $fireCounts[$fireMatch[1]] = ($fireCounts[$fireMatch[1]] ?? 0) + 1;
+        }
+    }
+}
+$say(($fireCounts['72c74469e18e'] ?? 0) === 1 && ($fireCounts['344d63f70377'] ?? 0) === 1 && ($fireCounts['651a5f11f2c1'] ?? 0) === 1, 'fire stopping shows each photo once');
+$say($paxtonHtml !== '' && !preg_match('#<img\b[^>]*(?:949cf9191ce2|manufacturers/paxton\.jpg)[^>]*\balt="Photograph"#i', $paxtonHtml) && !preg_match('#<img\b[^>]*\balt="Photograph"[^>]*(?:949cf9191ce2|manufacturers/paxton\.jpg)#i', $paxtonHtml), 'paxton hero is not alt Photograph');
+
 echo $fail === 0 ? "QM FLOOR OK\n" : "QM FLOOR FAILED {$fail}\n";
 exit($fail === 0 ? 0 : 1);

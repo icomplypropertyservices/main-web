@@ -346,8 +346,6 @@ function routerHandleRequest(): void {
         '/thanks' => '/thank-you',
         '/thankyou' => '/thank-you',
         '/pages/residential' => '/pages/landlords',
-        '/pages/keywords/air-source-heat-pumps-service-agreement' => '/pages/services/heating',
-        '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
         '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
         '/blog' => '/pages/resources',
         '/news' => '/pages/resources',

@@ -45,8 +45,6 @@ $legacyAliases = [
     '/thanks' => '/thank-you',
     '/thankyou' => '/thank-you',
     '/pages/residential' => '/pages/landlords',
-    '/pages/keywords/air-source-heat-pumps-service-agreement' => '/pages/services/heating',
-    '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
     '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
 ];
 if (!function_exists('icomplyLive404Redirects')) {

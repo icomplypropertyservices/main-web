@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
-import { renderTownPage } from "../netlify/edge-functions/town-matrix.js";
+import townMatrix, { renderTownPage } from "../netlify/edge-functions/town-matrix.js";
 import { withContactWidgets } from "../netlify/lib/contact-widgets.js";
 import { renderTradesHub, tradesRows } from "../netlify/lib/trades-lock.js";
 import { rewriteHref } from "../netlify/lib/internal-links.js";
@@ -413,6 +413,47 @@ say((round15Pools["access-control"]?.own || []).some((src) => src.endsWith("/ser
 say((round15Pools.barriers?.own || []).some((src) => src.endsWith("/services/barriers.jpg")), "barriers pool keeps its own photo");
 say((round15Pools["door-entry"]?.own || []).some((src) => src.endsWith("/services/door-entry.jpg")), "door-entry pool keeps its own photo");
 say((round15Pools["type-keywords-kitchen-fire-suppression"]?.own || []).some((src) => src.endsWith("kitchen-fire-suppression-2.jpg")), "kitchen hood pool still uses the replacement photo");
+
+const round16Credits = fs.readFileSync(path.join(repo, "website/data/hero-image-credits.json"), "utf8");
+const round16Pools = JSON.parse(fs.readFileSync(path.join(repo, "website/data/service-image-pools.json"), "utf8"));
+const round16Overrides = JSON.parse(fs.readFileSync(path.join(repo, "website/data/page-image-pool-overrides.json"), "utf8"));
+say(round16Credits.includes("Engineer testing breakers in an electrical panel") && !round16Credits.includes("Stockton High Street"), "areas photo is electrical testing");
+say(round16Credits.includes("Self-closing fire door") && !round16Credits.includes("Copped Hall"), "fire door photo is a self-closing fire door");
+say(round16Credits.includes("Bricklayer repointing a masonry wall") && !round16Credits.includes("Hatfield House"), "building maintenance context is repointing");
+say(round16Credits.includes("CAME Unipark automated parking barrier"), "CAME photo is a CAME barrier");
+say(round16Credits.includes("Video door-entry panel with a camera and call buttons"), "door-entry panel alt describes the panel");
+say(round16Credits.includes("Fire alarm control panel with fire-service route cards") && !round16Credits.includes("Welsh fence"), "directory hub is a fire alarm panel");
+say(round16Credits.includes("Multifunction installation tester used for an EICR"), "EICR job photo is a tester");
+say(round16Credits.includes("Addressable fire alarm control panel"), "addressable fire alarm job photo is a panel");
+say(round16Credits.includes("Roof hatch with a safety rail for smoke-vent access"), "AOV service photo is a roof hatch");
+say(round16Credits.includes("Fire-stopping pillows packed around a penetration") && round16Credits.includes("Fire-stopping mortar around a pipe penetration"), "fire stopping photos are different");
+say(round16Overrides["jobs/eicr"] === "type-jobs-eicr" && (round16Pools["type-jobs-eicr"]?.own || []).some((src) => src.endsWith("/jobs/eicr.jpg")), "EICR job uses its own pool");
+say(round16Overrides["jobs/addressable-fire-alarm-installation"] === "type-jobs-addressable-fire-alarm", "addressable fire alarm job uses its own pool");
+say(round16Overrides["jobs/aov-service"] === "type-jobs-aov-service", "AOV service job uses its own pool");
+const fireDup = applyQualityFloor(
+  `<html><body><img src="/assets/images/opt/72c74469e18e-480.webp" alt="Fire stopping"><img src="/assets/images/opt/72c74469e18e-1280.webp" alt="Fire stopping"></body></html>`,
+  { path: "/pages/services/fire-stopping", subject: "Fire stopping", place: "" },
+);
+say((fireDup.match(/<img\b[^>]*72c74469e18e[^>]*>/gi) || []).length === 1, "fire stopping does not repeat one photo at two sizes");
+const cameKept = applyQualityFloor(
+  `<html><body><img src="/assets/images/manufacturers/came.jpg" alt="CAME Unipark automated parking barrier"></body></html>`,
+  { path: "/pages/services/barriers", subject: "Barriers", place: "" },
+);
+say(cameKept.includes("d7f0875411a8") || cameKept.includes("/manufacturers/came.jpg"), "barriers keeps the CAME product photo");
+say(cameKept.includes("CAME Unipark automated parking barrier") && !cameKept.includes('alt="CAME logo"'), "CAME alt names the barrier");
+const videxKept = applyQualityFloor(
+  `<html><body><img src="/assets/images/manufacturers/videx.jpg" alt="Video door-entry panel with a camera and call buttons"></body></html>`,
+  { path: "/pages/services/door-entry", subject: "Door entry", place: "" },
+);
+say((videxKept.includes("c8c40eef46a6") || videxKept.includes("/manufacturers/videx.jpg")) && videxKept.includes("Video door-entry panel with a camera and call buttons") && !videxKept.includes('alt="Videx logo"'), "Videx alt describes the door-entry panel");
+for (const slug of ["bs-5306-extinguisher-service-cost", "air-source-heat-pumps-service-agreement"]) {
+  say(rewriteHref(`/pages/keywords/${slug}`) === `/pages/keywords/${slug}`, `${slug} link stays on its page`);
+  const hub = await townMatrix(new Request(`https://example.com/pages/keywords/${slug}`), {
+    next: async () => new Response("keyword-hub", { status: 200 }),
+  });
+  const body = await hub.text();
+  say(hub.status === 200 && body === "keyword-hub" && !String(hub.headers.get("location") || "").includes("/pages/areas"), `${slug} does not redirect to areas`);
+}
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);
 process.exit(fail === 0 ? 0 : 1);

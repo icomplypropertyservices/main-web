@@ -1287,26 +1287,6 @@
 
 # Retired keyword hubs. Exact paths only, so /pages/keywords/{slug}/{town} stays on the matrix.
 [[redirects]]
-  from = "/pages/keywords/air-source-heat-pumps-service-agreement"
-  to = "/pages/services/heating"
-  status = 301
-
-[[redirects]]
-  from = "/pages/keywords/air-source-heat-pumps-service-agreement/"
-  to = "/pages/services/heating"
-  status = 301
-
-[[redirects]]
-  from = "/pages/keywords/bs-5306-extinguisher-service-cost"
-  to = "/pages/services/fire-extinguishers"
-  status = 301
-
-[[redirects]]
-  from = "/pages/keywords/bs-5306-extinguisher-service-cost/"
-  to = "/pages/services/fire-extinguishers"
-  status = 301
-
-[[redirects]]
   from = "/pages/keywords/loft-conversion-fixed-price-package"
   to = "/pages/services/loft-conversions"
   status = 301

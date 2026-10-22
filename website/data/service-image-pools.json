@@ -1088,5 +1088,23 @@
             "/assets/images/page-types/keywords/kitchen-fire-suppression.jpg",
             "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg"
         ]
+    },
+    "type-jobs-eicr": {
+        "own": [
+            "/assets/images/page-types/jobs/eicr.jpg",
+            "/assets/images/page-types/jobs/eicr-2.jpg"
+        ]
+    },
+    "type-jobs-addressable-fire-alarm": {
+        "own": [
+            "/assets/images/page-types/jobs/addressable-fire-alarm.jpg",
+            "/assets/images/page-types/jobs/addressable-fire-alarm-2.jpg"
+        ]
+    },
+    "type-jobs-aov-service": {
+        "own": [
+            "/assets/images/page-types/jobs/aov-service.jpg",
+            "/assets/images/page-types/jobs/aov-service-2.jpg"
+        ]
     }
 }

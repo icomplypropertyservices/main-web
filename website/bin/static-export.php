@@ -1010,10 +1010,6 @@ function icomplyPrettyUrlRedirects(): string
 /thankyou/               /thank-you  301
 /pages/residential       /pages/landlords 301
 /pages/residential/      /pages/landlords 301
-/pages/keywords/air-source-heat-pumps-service-agreement   /pages/services/heating  301
-/pages/keywords/air-source-heat-pumps-service-agreement/  /pages/services/heating  301
-/pages/keywords/bs-5306-extinguisher-service-cost         /pages/services/fire-extinguishers  301
-/pages/keywords/bs-5306-extinguisher-service-cost/        /pages/services/fire-extinguishers  301
 /pages/keywords/loft-conversion-fixed-price-package       /pages/services/loft-conversions  301
 /pages/keywords/loft-conversion-fixed-price-package/      /pages/services/loft-conversions  301
 __LIVE_404_REDIRECTS__

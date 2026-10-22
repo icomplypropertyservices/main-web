@@ -1486,6 +1486,31 @@ function manufacturerTagsHtml(string $serviceSlug): string {
  * Linked brand image cards for a service (all brands when available).
  * @param int $limit 0 = all brands for service
  */
+function icomplyManufacturerPhotoAlt(string $src, string $fallback): string
+{
+    static $alts = null;
+    if ($alts === null) {
+        $alts = [];
+        $file = (defined('SITE_ROOT') ? SITE_ROOT : __DIR__) . '/data/hero-image-credits.json';
+        $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        if (is_array($doc)) {
+            foreach ($doc as $row) {
+                if (!is_array($row)) {
+                    continue;
+                }
+                $path = (string)($row['file'] ?? '');
+                $alt = trim((string)($row['alt'] ?? ''));
+                if ($path !== '' && $alt !== '') {
+                    $alts[$path] = $alt;
+                }
+            }
+        }
+    }
+    $path = (string)preg_replace('#^https?://[^/]+#i', '', $src);
+    $path = (string)strtok($path, '?');
+    return $alts[$path] ?? $fallback;
+}
+
 function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     $slugs = getManufacturerImageSlugs($serviceSlug);
     // Prefer full by_service list so every mentioned brand has a card
@@ -1524,6 +1549,10 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         if ($serviceSlug !== '' && is_file(__DIR__ . $perService)) {
             $src = $perService;
             $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' on site; see ' . html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' products';
+        }
+        $described = icomplyManufacturerPhotoAlt($src, '');
+        if ($described !== '') {
+            $alt = $described;
         }
         $img = '';
         if ($src !== '') {

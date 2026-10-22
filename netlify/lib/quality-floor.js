@@ -658,7 +658,9 @@ function dedupeRepeatedPhotos(html) {
   const matches = [...text.matchAll(re)].filter((match) => /\/assets\/images\/.+\.(?:jpe?g|webp)(?:$|\?)/i.test(match[1]));
   const groups = new Map();
   for (const match of matches) {
-    const key = match[1].split("?")[0];
+    let key = match[1].split("?")[0].replace(/^https?:\/\/[^/]+/i, "");
+    const widthHash = key.match(/\/opt\/([a-f0-9]{8,})-\d+\.webp$/i);
+    if (widthHash) key = `opt:${widthHash[1]}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(match);
   }
@@ -814,7 +816,10 @@ function replaceImgSrc(attrs, src) {
   next = next.replace(/\s+onerror\s*=\s*"[^"]*"/gi, "");
   next = next.replace(/\sdata-credit="[^"]*"/gi, "");
   next = next.replace(/\sdata-credit-stamped="[^"]*"/gi, "");
-  const label = imageAlt(src) || "Photograph";
+  const described = imageAlt(src);
+  const currentAlt = (String(attrs).match(/\balt\s*=\s*"([^"]*)"/i) || [])[1] || "";
+  const keptAlt = neutralAlt(currentAlt);
+  const label = described || (keptAlt && keptAlt !== "Photograph" ? keptAlt : "Photograph");
   if (/\balt\s*=/.test(next)) next = next.replace(/\balt\s*=\s*"[^"]*"/i, `alt="${escapeHtml(label)}"`);
   else next += ` alt="${escapeHtml(label)}"`;
   return next;
@@ -850,6 +855,11 @@ function confineImages(html, path) {
     // A brand used on several services has one photo per service. Keep that photo on its own service page.
     const brandSvc = origin.match(/\/assets\/images\/manufacturers\/[a-z0-9-]+--([a-z0-9-]+)\.jpe?g$/i);
     if (brandSvc && brandSvc[1] === wantFamily) return `<img${next}>`;
+    // A brand photo with no per-service file stays on the card. Paxton has one file per service, so the shared photo does not.
+    const brandOnly = origin.match(/\/assets\/images\/manufacturers\/([a-z0-9-]+)\.jpe?g$/i);
+    if (brandOnly && !Object.prototype.hasOwnProperty.call(imageManifest, `/assets/images/manufacturers/${brandOnly[1].toLowerCase()}--${wantFamily}.jpg`)) {
+      return `<img${next}>`;
+    }
     const family = imageFamily(src);
     const placeholder = isPlaceholderImage(src);
     const product = family === "products" || /\/(?:products|shop)\//i.test(src);
