@@ -64,20 +64,26 @@ for r, _, fs in os.walk(dist):
                     _o = re.search(r'/assets/images/opt/([0-9a-f]{12})-\d+\.webp', _fig.group(0))
                     _src = OPT2SRC.get(_o.group(1), '') if _o else ''
                     hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _src)
-            if hm and hm.group(1) in dir2fam: pf = dir2fam[hm.group(1)] if dir2fam[hm.group(1)] in ALT else pf
-            if pf in ALT: files.append((fp, pf))
+            hf = dir2fam.get(hm.group(1)) if hm else None
+            hf = hf if hf in ALT else None
+            if pf is None and hf:
+                files.append((fp, hf, False)); continue   # no family in the URL: follow the hero figure (does not count for owners)
+            if pf in ALT and hf and hf != pf:
+                continue   # URL family and hero family disagree: leave the page's own photos untouched
+            if pf in ALT: files.append((fp, pf, True))
 use = collections.defaultdict(collections.Counter)
-for fp, pf in files:
+for fp, pf, own in files:
+    if not own: continue
     s = open(fp, encoding='utf-8', errors='replace').read()
     for m in IMG.finditer(s):
         for k in tag_keys(m.group(0)): use[k][pf] += 1
 owner = {k: c.most_common(1)[0][0] for k, c in use.items()}
 changed = tags = 0
-for fp, pf in files:
+for fp, pf, own in files:
     s = open(fp, encoding='utf-8', errors='replace').read(); ph = fp_photo[pf]; n = [0]
     def fix(m):
         t = m.group(0)
-        if not any(owner.get(k) != pf for k in tag_keys(t)): return t
+        if not any(owner.get(k) not in (None, pf) for k in tag_keys(t)): return t
         n[0] += 1
         if m.group(1).lower() == 'source':
             return SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
