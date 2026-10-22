@@ -198,6 +198,15 @@
     "The quickest way to reach us is by phone or WhatsApp on 07517 806082. Messages and emails to icomplypropertyservices@gmail.com are answered the same working day, and urgent faults such as a fire alarm stuck in alarm or a barrier stuck shut are prioritised.",
     "For a quote, send the address, the type of building, what you need and when the current certificate or service runs out. Photos of panels, rating plates and the problem area help us send the right engineer with the right parts."
    ]
+  },
+  "package|bundle|let-ready|workplace": {
+   "name": "compliance packages",
+   "p": [
+    "A package groups the checks a property needs into one booking, so the visits, paperwork and reminders line up. Before booking, list what the property already has and when each item runs out: gas safety record, EICR, EPC, fire alarm and emergency lighting service, PAT, legionella assessment and fire risk assessment.",
+    "Let-ready work focuses on what a landlord must have before a tenant moves in: a current gas safety record, a satisfactory EICR, an EPC of band E or above, and working smoke and carbon monoxide alarms tested on the first day of the tenancy. A missing item can delay the move-in date, so we check the full list when we quote.",
+    "Workplace packages cover what an employer or business tenant is responsible for: a written fire risk assessment where five or more people work, fire alarm and emergency lighting servicing, extinguisher servicing, PAT testing, and an electrical installation inspection, usually every five years.",
+    "Items that a package does not cover, such as remedial work found during testing, are quoted separately and itemised. You decide what goes ahead, and the paperwork is updated once the work is complete."
+   ]
   }
  },
  "general": [
