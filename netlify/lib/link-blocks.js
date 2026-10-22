@@ -8,7 +8,7 @@
  * A  Parent hubs, including /pages/areas/{town}
  * B  Related services (or sibling keywords / jobs / brands) in the same town
  * C  Nearby Greater Manchester towns for the same leaf (borough adjacency)
- * D  Jobs and service guides
+ * D  Jobs and keyword guides
  * E  Manufacturer hubs for the trade
  * F  Quote, packages, commercial, resources, directories
  *

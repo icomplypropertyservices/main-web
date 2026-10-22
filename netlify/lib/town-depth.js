@@ -335,7 +335,7 @@ const CHECK = {
 
 const BATCH = [
   "If you also manage property in {n}, say so. Each address gets its own quote, but nearby sites can sometimes share a diary day.",
-  "Managing agents with buildings in {t} and {n} can send the addresses together. They are still quoted one by one, each with its own written quote.",
+  "Managing agents with buildings in {t} and {n} can send the addresses together. They are still quoted one by one, each with its own free written quote.",
   "The places nearest to {t} on our town list are {n}. A second site there is a separate scope, not an add-on to this one.",
   "Portfolios often cross boundaries: {t} sits close to {n}. List every address in one message and each gets its own written scope.",
 ];
@@ -391,7 +391,7 @@ export function townDepthBlock({ slug, town, subject, service, names = null, ext
   }
   if (Array.isArray(ocs) && ocs.length) {
     const ck = choose(CHECK[fam] || CHECK.building, seed, "check");
-    if (ck) paras.push(`${fill(ck, { t: town, s: subject, o: list(ocs.slice(0, 4), "or") })} Phone or WhatsApp 07517806082, or email icomplypropertyservices@gmail.com. ${priceFrom ? `${subject} from ${priceFrom}, confirmed in a written quote.` : "The quote is price on application."}`);
+    if (ck) paras.push(`${fill(ck, { t: town, s: subject, o: list(ocs.slice(0, 4), "or") })} Phone or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com. ${priceFrom ? `${subject} from ${priceFrom}, confirmed in a free written quote.` : "The quote is price on application."}`);
   }
   if (names && Number.isFinite(lat) && Number.isFinite(lng)) {
     const here = { lat, lng };

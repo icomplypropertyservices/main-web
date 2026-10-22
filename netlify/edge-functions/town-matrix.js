@@ -1,4 +1,3 @@
-import { keywordTwinIntent } from "../lib/keyword-twin.js";
 import { scrubMeta } from "../lib/scrub-meta.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
@@ -10,10 +9,179 @@ import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "..
  * on the Greater Manchester core. Other places stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
-import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
-import { buildingDualExempt, renderBuildingDualTown } from "../lib/building-dual.js";
+import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
+import { withContactWidgets } from "../lib/contact-widgets.js";
+import { heroCta } from "../lib/hero-cta.js";
+import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
+import { applyMoneyCtr } from "../lib/money-ctr.js";
+import { townFactsBlock } from "../lib/town-facts.js";
+import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
+import { townDepthBlock } from "../lib/town-depth.js";
+import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
+import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
+import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
+import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
+import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
+import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
+import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
+import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
+
+// Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
+// render them index,follow so the rankings are kept.
+const GSC_KEEP = new Set(gscKeepDoc.paths || []);
+const SERVE_UPGRADE = new Set(serveUpgradeDoc.paths || []);
+// Retired service URLs the upgrade queue asked to serve as 200 town pages.
+// Images come from the live heating family. The public path stays the requested slug.
+const UPGRADE_SERVICE = {
+  "solar-thermal": "heating",
+  "ground-source-heat-pumps": "heating",
+};
+const CTR_PHONE = "07517 806082";
+
+function ctrPriceFrom(slug) {
+  const s = String(slug || "");
+  if (/eicr|electrical-(safety|inspection|installation-condition)|landlord-electrical/.test(s)) return "£160";
+  return "";
+}
+
+export function ctrTitle(subject, town, slug) {
+  const price = ctrPriceFrom(slug);
+  const opts = [];
+  if (price) {
+    opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
+    opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    opts.push(`${subject} ${town} from ${price}`);
+  }
+  opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
+  opts.push(`${subject} in ${town} | Same/Next-Day`);
+  opts.push(`${subject} ${town} | Same/Next-Day`);
+  opts.push(`${subject} in ${town} | iComply`);
+  for (const o of opts) if (o.length <= 60) return o;
+  const room = 60 - " | iComply".length - String(town).length - 1;
+  const kept = shortenSubject(subject, room);
+  return `${kept ? `${kept} ` : ""}${town} | iComply`;
+}
+
+const HAND_TRADES = new Set(["demolition", "driveways", "fencing", "drainage"]);
+
+function handTrade(slug, subject) {
+  return HAND_TRADES.has(String(slug || "")) || /\b(demolition|driveways|fencing|drainage)\b/i.test(String(subject || ""));
+}
+
+function paperworkLine(slug, subject) {
+  return handTrade(slug, subject) ? "Written notes after the visit" : "Certificates and reports emailed after the visit";
+}
+
+function nearestNeighbourNames(townSlug, places) {
+  const here = townCoords[townSlug];
+  if (!Array.isArray(here) || !places) return null;
+  return Object.keys(places)
+    .filter((slug) => slug !== townSlug && Array.isArray(townCoords[slug]) && places[slug] && places[slug].name)
+    .map((slug) => ({
+      name: places[slug].name,
+      miles: haversineMiles(
+        { lat: here[0], lng: here[1] },
+        { lat: townCoords[slug][0], lng: townCoords[slug][1] },
+      ),
+    }))
+    .filter((row) => row.miles <= 12)
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, 3)
+    .map((row) => row.name);
+}
+
+// Drop words from the middle, keeping the first and the last ("installation" vs
+// "replacement"), so long keyword titles stay distinct and keep the town.
+function shortenSubject(subject, room) {
+  const words = String(subject).split(/\s+/).filter(Boolean);
+  while (words.length > 2 && words.join(" ").length > room) words.splice(1, 1);
+  const out = words.join(" ");
+  return out.length <= room ? out : "";
+}
+
+function fitTownTitle(subject, place) {
+  const suffix = " | iComply";
+  const candidates = [
+    `${subject} in ${place}${suffix}`,
+    `${subject}, ${place}${suffix}`,
+    `${place} ${subject}${suffix}`,
+  ];
+  for (const title of candidates) {
+    if (title.length >= 15 && title.length <= 60) return title;
+  }
+  // Too long: trim the subject, never the town, so each town page keeps its own title.
+  const room = 60 - suffix.length - String(place).length - 1;
+  const kept = shortenSubject(subject, room);
+  const title = kept ? `${kept} ${place}${suffix}` : `${place}${suffix}`;
+  return title.length <= 60 ? title : `${String(place).slice(0, 48).trim()}${suffix}`;
+}
+
+export function ctrDescription(subject, town, slug, gas) {
+  const price = ctrPriceFrom(slug);
+  const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
+  const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
+  const paper = handTrade(slug, subject) ? " Free written quote." : " Free written quote, certificates emailed.";
+  for (const d of [
+    `${lead}${who}${paper} Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead} Same/next-day. Call ${CTR_PHONE}.`,
+  ]) if (d.length <= 155) return d;
+  return clampMeta(`${lead} Same/next-day. Call ${CTR_PHONE}.`);
+}
+
+const FIRE_P0 = new Set(fireAlarmFamily.p0 || []);
+const FIRE_HUBS = new Set(fireAlarmFamily.hubs || []);
+const MAINLAND_TOWNS = (mainlandTownDoc.towns || []).filter((town) => town && town.slug && Number(town.population) > 10000);
+const MAINLAND = new Map(MAINLAND_TOWNS.map((town) => [town.slug, town]));
+const NEAREST_MAINLAND = new Map();
+
+function haversineMiles(a, b) {
+  const earth = 3958.8;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLon = ((b.lng - a.lng) * Math.PI) / 180;
+  const lat1 = (a.lat * Math.PI) / 180;
+  const lat2 = (b.lat * Math.PI) / 180;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon / 2) ** 2;
+  return earth * (2 * Math.atan2(Math.sqrt(h), Math.sqrt(Math.max(0, 1 - h))));
+}
+
+function nearestMainland(slug, limit = 12) {
+  const key = `${slug}:${limit}`;
+  if (NEAREST_MAINLAND.has(key)) return NEAREST_MAINLAND.get(key);
+  const here = MAINLAND.get(slug);
+  if (!here) return [];
+  const ranked = MAINLAND_TOWNS
+    .filter((town) => town.slug !== slug)
+    .map((town) => ({ town, miles: haversineMiles(here, town) }))
+    .filter((row) => row.miles <= 12)
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, limit)
+    .map((row) => row.town);
+  NEAREST_MAINLAND.set(key, ranked);
+  return ranked;
+}
+
+function fireInstallerNationwide(keyword, town) {
+  return FIRE_P0.has(keyword) && MAINLAND.has(town);
+}
+
+const FIRE_DUTY = "Design, installation and commissioning follow BS 5839, carried out by experienced fire alarm engineers.";
+const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
+
+const SERVICE_HUB_ALIAS = {
+  "eicr": "/pages/jobs/eicr",
+  "eicr-certificate": "/pages/jobs/eicr",
+  "eicrs": "/pages/jobs/eicr",
+  "electrical-safety": "/pages/jobs/eicr",
+  "pat": "/pages/services/pat-testing",
+  "gas-safety": "/pages/services/gas-systems",
+  "gas-safety-certificate": "/pages/services/gas-systems",
+  "fra": "/pages/services/fire-risk-assessments",
+  "fire-risk-assessment": "/pages/services/fire-risk-assessments",
+  "ev-charging": "/pages/services/ev-chargers",
+};
 
 const RESERVED = new Set([
   "keywords", "services", "areas", "manufacturers", "resources", "packages",
@@ -51,22 +219,6 @@ const AUDIENCES = [
   "housing associations",
 ];
 
-// Building trades: homeowner/landlord searchers ("plasterer manchester"), not
-// facilities buyers. Trade nouns match what people type into Google.
-const BUILD_TRADES = {
-  plastering: "Plasterers",
-  kitchens: "Kitchen Fitters",
-  extensions: "Extension Builders",
-  joinery: "Joiners",
-  "loft-conversions": "Loft Conversion Builders",
-  renovation: "Renovation Builders",
-  "building-maintenance": "Builders",
-  bathrooms: "Bathroom Fitters",
-  bricklaying: "Bricklayers",
-  "dry-lining": "Dryliners",
-};
-const BUILD_AUDIENCES = ["homeowners", "landlords", "homeowners and landlords"];
-
 const VISIT_STYLES = [
   "a planned daytime visit",
   "an out-of-hours attendance where the site cannot close",
@@ -75,7 +227,7 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
+const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
 
 function stripBriefTokens(text) {
   return String(text || "")
@@ -174,8 +326,6 @@ function resolvePlace(townSlug, catalogue) {
 }
 
 export function renderTownPage(input) {
-  const dual = renderBuildingDualTown(input);
-  if (dual) return dual;
   const catalogue = input.catalogue || {};
   const keywords = catalogue.keywords || {};
   const services = catalogue.services || {};
@@ -208,7 +358,7 @@ export function renderTownPage(input) {
       focus: [
         `${subject} parts identified before the visit`,
         "Free written quote before work starts",
-        "Certificates and reports emailed after the visit",
+        paperworkLine(serviceSlug, subject),
       ],
       gas: serviceSlug === "gas-systems",
     };
@@ -224,7 +374,7 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a free written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
         "Free written quote before work starts",
@@ -248,7 +398,7 @@ export function renderTownPage(input) {
         focus: [
           "Same-day and next-day slots where available",
           "Free written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          paperworkLine(serviceSlug, subject),
         ],
         gas,
         synthetic: true,
@@ -279,7 +429,7 @@ export function renderTownPage(input) {
         : [
           `Survey and scope for ${serviceName}`,
           "Free written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          paperworkLine(serviceSlug, subject),
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
     };
@@ -324,8 +474,8 @@ export function renderTownPage(input) {
   // Jack: every real page is indexable. Never emit noindex here.
   const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
-  const buildTrade = kind === "service" ? BUILD_TRADES[serviceSlug] : null;
-  const audience = buildTrade ? pick(BUILD_AUDIENCES, seed) : pick(AUDIENCES, seed);
+  const lockEarly = tradesHas(String(input.keyword || "")) || tradesHas(String(input.job || "")) || tradesIsNewService(String(input.service || ""));
+  const audience = lockEarly ? "homeowners and landlords" : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
   const rankedNeighbours = nearestNeighbourNames(townSlug, catalogue.places || {});
   const neighbours = Array.isArray(rankedNeighbours)
@@ -343,31 +493,142 @@ export function renderTownPage(input) {
     : `We work on homes, shops, offices and industrial units across ${place.name}.`;
   const focus = (keyword.focus && keyword.focus.length ? keyword.focus : [`Scope agreed before ${subject} starts`]).slice(0, 4);
   const canonical = `https://icomplypropertyservices.co.uk${path}`;
-  const h1 = buildTrade
-    ? `${buildTrade} in ${place.name}`
-    : `${subject} for ${audience} in ${place.name}`;
+  const h1 = `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
-  const twin = kind === "keyword" ? keywordTwinIntent(input.keyword, subject, place.name) : null;
-  const title = twin ? twin.title : (buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug));
-  const description = twin ? twin.desc : ctrDescription(subject, place.name, ctrSlug, ctrGas);
-  // Plastering / plasterboard / dry-lining pages show their own credited photo.
-  const plasterText = kind === "manufacturer" ? "" : `${path} ${serviceSlug || ""}`;
-  const imageSlug = /dry-?lining/.test(plasterText) ? "dry-lining" : /plaster|skim/.test(plasterText) ? "plastering" : (IMAGE_SLUG[serviceSlug] || serviceSlug);
+  let title = ctrTitle(subject, place.name, ctrSlug);
+  const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
+  const imageFamily = UPGRADE_SERVICE[serviceSlug] || serviceSlug;
+  const imageSlug = IMAGE_SLUG[imageFamily] || imageFamily;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
     ? gmTownBlurb(kind, kind === "keyword" ? input.keyword : serviceSlug, townSlug)
     : null;
   let prose = packed && packed.blurb ? stripBriefTokens(packed.blurb) : "";
-  const packedLead = prose
-    ? `${packed && packed.h2 ? `<h2>${escapeHtml(stripBriefTokens(packed.h2))}</h2>` : ""}<p>${escapeHtml(prose)}</p>`
-    : "";
-  const localOnly = [place.housing ? housing : "", place.industry ? industry : "", place.population ? pop : ""]
-    .filter(Boolean)
-    .join(" ");
-  const paragraphs = prose ? [] : (localOnly ? [localOnly] : []);
+  if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
+    prose = `${prose} ${GAS_SENTENCE}`;
+  }
+  const proseService = String(serviceName).replace(/\b([A-Z])([a-z]+)/g, (m, first, rest) => first.toLowerCase() + rest);
+  const qualityCtx = {
+    kind,
+    seed,
+    place: place.name,
+    subject: kind === "manufacturer" ? `${subject} ${proseService}` : subject,
+    service: proseService,
+    audience,
+    visit,
+    near,
+    housing,
+    industry,
+    pop,
+    gas,
+    blurb: prose,
+  };
+  const closeQPages = input.closeQPages && typeof input.closeQPages === "object" ? input.closeQPages : null;
+  const pageSlug = kind === "keyword"
+    ? input.keyword
+    : kind === "job"
+      ? input.job
+      : kind === "service"
+        ? serviceSlug
+        : "";
+  const pe = closeQPages && pageSlug ? closeQPages[`${kind}/${pageSlug}/${townSlug}`] : null;
+  // Facts-only local block (council, postcodes, wards, travel, census) for every service family.
+  const facts = townFactsBlock({
+    slug: townSlug,
+    town: place.name,
+    subject,
+    service: serviceSlug,
+    names: MAINLAND,
+    hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
+  });
+  if (facts) qualityCtx.short = true;
+  if (pe && typeof pe.body === "string" && pe.body.trim()) {
+    // Lean pages keep the first two authored paragraphs; the rest is a service guide repeated in every town.
+    qualityCtx.peBody = facts ? pe.body.trim().split(/\n\s*\n/).slice(0, 2).join("\n\n") : pe.body;
+  }
+  if (pe && Array.isArray(pe.faqs)) {
+    qualityCtx.peFaqs = pe.faqs;
+  }
+  const preferredHero = "";
+  const poolOverride = (kind === "keyword" || kind === "job") ? poolOverrides[`${kind === "job" ? "jobs" : "keywords"}/${pageSlug}`] : "";
+  const poolKey = poolOverride
+    ? poolOverride
+    : kind === "keyword"
+    ? `type-keywords-${serviceSlug || "building-maintenance"}`
+    : kind === "job"
+      ? `type-jobs-${serviceSlug || "building-maintenance"}`
+      : serviceSlug === "aov"
+        ? "aov"
+        : serviceSlug === "aov-air-handling"
+          ? "aov-air-handling"
+          : "";
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero, poolKey);
+  let proseHtml = thinProseHtml(qualityCtx);
+  const faqs = thinFaqs(qualityCtx).slice();
+  if (fireTown || fireFamily) {
+    const county = place.county ? `${place.county}, ` : "";
+    const population = place.population
+      ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
+      : "";
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a free written quote.`)}</p>`;
+  }
+  if (fireTown) {
+    faqs.push([
+      `Do you cover ${place.name} for ${subject}?`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a free written quote.`,
+    ]);
+  }
+  if (facts) {
+    faqs.unshift(...facts.faqs);
+    // CLOSE-Q1: lean pages sat at 540-700 words; add town-specific depth (>= 800 total).
+    const depth = townDepthBlock({
+      slug: townSlug,
+      town: place.name,
+      subject,
+      service: serviceSlug,
+      names: MAINLAND,
+      nation: place.country || "",
+      extra: depthBankParagraphs(qualityCtx, 4),
+      // G9: list-price pages (EICR from £160) never carry a POA line.
+      priceFrom: ctrPriceFrom(ctrSlug) || ctrPriceFrom(input.keyword || "") || ctrPriceFrom(input.job || "") || (/from £160\b/.test(`${title} ${description} ${proseHtml}`) ? "£160" : ""),
+    });
+    // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
+    const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
+    // Never lead with the facts block: its "{town}: council..." heading would sit straight under the H1.
+    const orders = [[0, 1, 2], [0, 2, 1], [2, 0, 1], [2, 1, 0]];
+    proseHtml = orders[mix32(hashStr(`order|${townSlug}|${subject}`)) % orders.length].map((i) => blocks[i]).join("");
+    const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
+    faqs.push(...faqs.splice(0, shift));
+  }
+  const lockSlug = kind === "keyword"
+    ? String(input.keyword || "")
+    : kind === "job"
+      ? String(input.job || "")
+      : kind === "service"
+        ? String(serviceSlug || "")
+        : "";
+  const lockPage = lockSlug !== "" && (tradesHas(lockSlug) || (kind === "service" && tradesIsNewService(lockSlug)));
+  let tradesGallery = "";
+  if (lockPage) {
+    title = fitTownTitle(subject, place.name);
+    proseHtml += tradesProseHtml(lockSlug, place.name, townSlug) + tradesLinkHtml(lockSlug, townSlug);
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqs.push(...extraFaqs);
+    tradesGallery = tradesImages(lockSlug, place.name).html;
+  }
+  let faqBlock = (fireTown || fireFamily || facts)
+    ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
+      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
+    )).join("")}</section>`
+    : thinFaqHtml(qualityCtx);
+  if (lockPage && !(fireTown || fireFamily || facts)) {
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqBlock += `<section id="faq" class="faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${extraFaqs.map(([q, a]) => (
+      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
+    )).join("")}</section>`;
+  }
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -400,26 +661,7 @@ export function renderTownPage(input) {
   crumbItems.push({ label: `${subject} in ${place.name}` });
   const crumbs = breadcrumbHtml(crumbItems);
 
-  const bits = proseSentences(prose || localOnly);
-  const faqs = [];
-  if (bits[0]) {
-    faqs.push([`What is particular about ${subject} in ${place.name}?`, bits[0]]);
-  }
-  if (bits[1]) {
-    faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
-  }
-  if (bits[2]) {
-    faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
-  }
-  const faqHtml = faqs.map(([q, a]) => (
-    `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
-  )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  const poaLine = `The quote for ${subject} in ${place.name} is price on application (POA).`;
-  const complianceHtml = `<p>${escapeHtml(poaLine)}</p>${
-    gas && !/iComply is not Gas Safe registered/i.test(prose) ? `<p>${escapeHtml(GAS_SENTENCE)}</p>` : ""
-  }`;
-  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("") + complianceHtml;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -482,7 +724,8 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(twin ? `${subject} in ${place.name}${twin.h1Tail}` : h1)}</h1>
+<h1>${escapeHtml(h1)}</h1>${heroCta(h1)}
+${tradesGallery}
 ${images.html}
 <article id="local-copy">
 ${proseHtml}
@@ -561,11 +804,11 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withAnalytics(withContactWidgets(finishLinks(scrubMeta(rendered.html), rendered.path || ""))), {
+  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      ...PAGE_CACHE,
+      "cache-control": "public, max-age=3600",
       "x-robots-tag": rendered.robots,
     },
   });
@@ -612,7 +855,7 @@ async function loadCatalogue(origin) {
 const PLACE_ALIAS_BARRIERS = {"trafford":"hale-trafford","tameside":"hyde-tameside","shaw":"shaw-oldham","milnrow":"rochdale","pendlebury":"swinton-salford","cadishead":"irlam","chorlton":"manchester","withington":"manchester","crosby":"crosby-sefton","ince":"ince-in-makerfield","thornton-cleveleys":"cleveleys","ainsdale":"southport","ambleside":"kendal","appleton":"warrington","birchwood":"warrington","burscough":"ormskirk","carnforth":"lancaster","clayton-le-moors":"accrington","cockermouth":"workington","culcheth":"warrington","dalton-in-furness":"barrow-in-furness","frodsham":"runcorn","garstang":"preston-preston","halton":"runcorn","handforth":"wilmslow","helsby":"runcorn","holmes-chapel":"crewe","hoylake":"wallasey","keswick":"workington","kirkham":"blackpool","longridge":"preston-preston","maryport":"workington","millom":"barrow-in-furness","penketh":"warrington","rainford":"st-helens-st-helens","risley":"warrington","rossendale":"rawtenstall","shevington":"wigan","stockton-heath":"warrington","tarporley":"chester","tarvin":"chester","wesham":"blackpool","whalley":"blackburn-blackburn-with-darwen","windermere":"kendal"};
 const PLACE_ALIAS_AOV = {"worsley":"walkden","wythenshawe":"manchester","pendlebury":"salford","cadishead":"eccles","trafford":"hale-trafford","chorlton":"manchester","withington":"manchester","tameside":"hyde-tameside","shaw":"shaw-oldham"};
 
-export function placeAliasRedirect(path) {
+function placeAliasRedirect(path) {
   let m = path.match(/^\/pages\/(barriers|aov)\/([a-z0-9-]+)$/);
   if (!m) return null;
   const family = m[1];
@@ -626,13 +869,9 @@ export function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
-  if (buildingDualExempt(path)) return null;
+  if (GSC_KEEP.has(path) || SERVE_UPGRADE.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (m && RETIRED_KEYWORD[m[1]]) return RETIRED_KEYWORD[m[1]];
-  if (GSC_KEEP.has(path)) return null;
   if (m) {
-    // Margin DEEP hubs: dual-ring 269 (manufacturer heads: GM core 60 only).
-    if (isMarginDeep(m[1])) return marginDeepKeepsTown(m[1], m[2]) ? null : `/pages/keywords/${m[1]}`;
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
   }
@@ -644,88 +883,24 @@ export function nonGmMatrixRedirect(path) {
   if (m) return isLocalTown(m[1]) ? null : "/pages/areas";
   m = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (!m || RESERVED.has(m[1]) || NATIONWIDE_TOWN.has(m[1]) || isLocalTown(m[2])) return null;
-  return SERVICE_HUB_ALIAS[m[1]] || `/pages/services/${m[1]}`;
-}
-
-// GSC 21 Oct (§5): 616 first-load 5xx on town pages (cold renders during crawl
-// bursts). Rendered pages are cached at Netlify's edge for a day and served
-// stale while they refresh, so most crawls never hit a cold render. If a render
-// still fails or runs long, the response is a 503 with Retry-After (not
-// cached), never another page's HTML.
-const PAGE_CACHE = {
-  "cache-control": "public, max-age=3600",
-  "netlify-cdn-cache-control": "public, s-maxage=86400, stale-while-revalidate=604800, durable",
-};
-const RENDER_BUDGET_MS = 8000;
-const APEX = "https://icomplypropertyservices.co.uk";
-
-export function fallbackHubPath(path) {
-  let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/[a-z0-9-]+$/);
-  if (m) return `/pages/keywords/${m[1].split("--")[0]}`;
-  m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
-  if (m) return "/pages/keywords";
-  m = path.match(/^\/pages\/(manufacturers|jobs)\/([a-z0-9-]+)\/[a-z0-9-]+$/);
-  if (m) return `/pages/${m[1]}/${m[2]}`;
-  m = path.match(/^\/pages\/(areas)\/[a-z0-9-]+$/);
-  if (m) return "/pages/areas";
-  m = path.match(/^\/pages\/([a-z0-9-]+)\/[a-z0-9-]+$/);
-  if (m) return `/pages/services/${m[1]}`;
-  return "/pages/services";
-}
-
-async function fallbackResponse(url, path) {
-  // SEO 21 Oct (fix 4): never serve another page's HTML (and canonical) at this
-  // URL. A 503 with Retry-After makes Google retry later; nothing is canonicalised away.
-  return new Response("Temporarily unavailable, please retry shortly.", {
-    status: 503,
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "retry-after": "60",
-      "cache-control": "no-store",
-      "netlify-cdn-cache-control": "no-store",
-    },
-  });
+  return `/pages/services/${m[1]}`;
 }
 
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
-  // AOV + Barriers DEEP wins the canonical: overlapping job×town → keyword×town (or the hub).
-  const deepJobTo = aovBarriersDeepJobRedirect(path);
-  if (deepJobTo) {
-    return Response.redirect(new URL(deepJobTo, url.origin).toString(), 301);
+  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
+  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
+  if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
+    return Response.redirect(new URL(path + url.search, url.origin).toString(), 301);
   }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
-    return Response.redirect(new URL(aliasTo, origin).toString(), 301);
-  }
-  const securityTo = securityJobRedirect(path);
-  if (securityTo) {
-    return Response.redirect(new URL(securityTo, origin).toString(), 301);
-  }
-  const tradeTo = tradeSlugRedirect(path);
-  if (tradeTo) {
-    return Response.redirect(new URL(tradeTo, origin).toString(), 301);
+    return Response.redirect(new URL(aliasTo, url.origin).toString(), 301);
   }
   const matrixTo = nonGmMatrixRedirect(path);
   if (matrixTo) {
-    return Response.redirect(new URL(matrixTo, origin).toString(), 301);
-  }
-  // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
-  // duplicates on /pages/keywords/x/). Exported files never use the slash form.
-  const wwwHost = url.host !== new URL(APEX).host;
-  if (path !== "/" && !path.startsWith("/matrix-sitemap") && (url.pathname !== path || wwwHost)) {
-    const clean = new URL(path + url.search, origin);
-    try {
-      const probe = await fetch(clean, { redirect: "manual" });
-      const loc = probe.headers.get("location");
-      if (probe.status >= 300 && probe.status < 400 && loc) {
-        return Response.redirect(new URL(loc, origin).toString(), 301);
-      }
-    } catch {
-      // fall through to the plain canonical redirect
-    }
-    return Response.redirect(clean.toString(), 301);
+    return Response.redirect(new URL(matrixTo, url.origin).toString(), 301);
   }
   // AOV, barriers and fire-family town HTML is exported. Do not replace it
   // with the Greater Manchester matrix renderer.
@@ -788,43 +963,16 @@ export default async (request, context) => {
       });
     }
   }
-  // Batch 1 (2026-10-21): Manchester building work, homeowner template with hero call CTA.
-  const b1 = batch1Match(path);
-  if (b1) {
-    const page = renderBatch1(b1);
-    if (page) {
-      return new Response(withAnalytics(withContactWidgets(finishLinks(scrubMeta(page.html), path))), {
-        status: 200,
-        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
-      });
-    }
+  // These two keyword guides are built as static pages. Passing them through stops
+  // the matrix sending them to /pages/areas. Every other /pages/keywords/{slug}
+  // keeps the matrix route (an edge-rendered hub or a single 301 to a live page).
+  if (/^\/pages\/keywords\/(?:air-source-heat-pumps-service-agreement|bs-5306-extinguisher-service-cost)$/.test(path)) {
+    return context.next();
   }
   const manufacturerMatch = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const serviceMatch = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
-  if (keywordMatch || jobMatch) {
-    try {
-      const rich = await renderManchesterElectricalPage({
-        origin: url.origin,
-        surface: keywordMatch ? "keyword" : "job",
-        slug: (keywordMatch || jobMatch)[1],
-        town: (keywordMatch || jobMatch)[2],
-      });
-      if (rich) {
-        return new Response(rich, {
-          status: 200,
-          headers: {
-            "content-type": "text/html; charset=utf-8",
-            "cache-control": "public, max-age=3600",
-            "x-robots-tag": "index, follow",
-          },
-        });
-      }
-    } catch {
-      // Thin matrix renderer remains the fallback when the P0 spec is unavailable.
-    }
-  }
   if (!manufacturerMatch && !jobMatch && !keywordMatch && !serviceMatch) {
     return context.next();
   }
@@ -862,10 +1010,7 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    if (isMarginDeep(keywordMatch[1])) {
-      rendered = renderMarginDeepTown(keywordMatch[1], keywordMatch[2]);
-    }
-    if (!rendered && p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
@@ -876,8 +1021,8 @@ export default async (request, context) => {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
       }
       if (hub.status === 404) {
-        // GSC 21 Oct (A3): no 410 + noindex. One hop to the live keyword index.
-        return Response.redirect(new URL("/pages/keywords", url.origin).toString(), 301);
+        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
+        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
       }
     }
     if (!rendered) {
@@ -941,15 +1086,15 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(withAnalytics(applySeoBasics(applyMoneyCtr(path, withContactWidgets(finishLinks(scrubMeta(rendered.html), path))), { authored: Boolean(moneyCtrPage(path)) })), {
+  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
-      ...PAGE_CACHE,
+      "cache-control": "public, max-age=3600",
       "x-robots-tag": rendered.robots,
     },
   });
-}
+};
 
 export const config = {
   path: [
@@ -966,7 +1111,6 @@ export const config = {
     "/pages/:section/",
     "/pages/",
     "/matrix-sitemap/:part",
-    "/shop",
   ],
   // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
   // proxied through this function. Their aliases live in netlify.toml.
@@ -981,12 +1125,3 @@ export const config = {
     "/pages/packages/hmo-fire-package/",
   ],
 };
-
-// QM #156 (broken_internal_link): a sibling /pages/ link that would 301 (retired keyword, out-of-area
-// town, trade alias) becomes plain text, then the shared under-H1 CTA / breadcrumb / photo pass runs.
-function finishLinks(html, path) {
-  const out = String(html).replace(/<a\b[^>]*\bhref="(\/pages\/[a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g, (m0, href, text) => {
-    try { return (nonGmMatrixRedirect(href) || tradeSlugRedirect(href)) ? text : m0; } catch { return m0; }
-  });
-  return finishPage(out, path);
-}

@@ -13,7 +13,6 @@ import { creditName, manifestHas } from "./quality-floor.js";
  * Page Enrichment swaps copy and image files at the data-pe-slot hooks
  * documented in docs/pe-quality-bar-slots.md. Do not add a second OG helper.
  */
-import { photoCreditCaption } from "./photo-credits.js";
 import fragments from "../../website/data/quality-bar-prose.json" with { type: "json" };
 
 const ORIGIN = "https://icomplypropertyservices.co.uk";
@@ -24,24 +23,12 @@ export function imageFamilyOf(slug) {
   return null;
 }
 
-// Networking / IT pack services: all three images stay on IT, network, Wi-Fi and cabling work.
-const PACK_THIRD = {
-  "it-support": "networking",
-  networking: "structured-cabling",
-  wifi: "networking",
-  "structured-cabling": "networking-photo",
-};
-
-const POOL = [
-  "building-maintenance",
-  "fire-alarms",
-  "electrical",
-  "cctv",
-  "access-control",
-  "emergency-lighting",
-  "gas-systems",
-  "door-entry",
-];
+/** Two extra photos for `slug`, taken from that service's own pool. */
+export function familyPicks(slug, seed) {
+  const family = aliasFamily(slug);
+  const picks = pickImages(`${slug}|${seed}`, family, 3);
+  return [picks[1] || picks[0], picks[2] || picks[0]];
+}
 
 export function escapeHtml(value) {
   return String(value)
@@ -180,40 +167,32 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
     const picked = [];
     for (const image of peImages) {
       if (!image || typeof image.src !== "string" || !image.src.trim()) continue;
-      // QM #158: later slots must be the hero service's own photos (no fire-alarms shot on an FRA page).
-      if (picked.length) {
-        const hb = (picked[0].src.match(/\/assets\/images\/services\/([a-z0-9-]+)\.jpg/) || [])[1];
-        const ib = (image.src.trim().match(/\/assets\/images\/services\/([a-z0-9-]+)\.jpg/) || [])[1];
-        const own = hb ? (imageFamilies.service_photos || {})[hb] : null;
-        if (ib && Array.isArray(own) && !own.includes(ib)) continue;
-      }
       picked.push({ src: image.src.trim(), alt: String(image.alt || "") });
       if (picked.length === 3) break;
     }
     if (picked.length === 3) {
       const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
       const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-        + picked.map((image, index) => (
-          `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
-        )).join("")
-        + photoCreditCaption(picked.map((image) => image.src))
+        + picked.map((image, index) => {
+          const credit = creditName(image.src);
+          const attr = credit ? ` data-credit="${escapeHtml(credit)}"` : "";
+          return `<img data-pe-slot="${slots[index]}"${attr} src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`;
+        }).join("")
         + `</figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
   }
   const slug = String(serviceSlug || "fire-alarms");
-  const primary = `/assets/images/services/${slug}.jpg`;
-  const packThird = PACK_THIRD[slug];
-  let second = PHOTO.has(slug) || packThird
-    ? `/assets/images/services/${slug}-photo.jpg`
-    : `/assets/images/services/${POOL[seed % POOL.length]}.jpg`;
-  if (second === primary) second = "/assets/images/services/building-maintenance.jpg";
-  let third = packThird
-    ? `/assets/images/services/${packThird}.jpg`
-    : `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
-  if (third === primary || third === second) third = "/assets/images/services/cctv.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/electrical.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/access-control.jpg";
+  const family = poolKey || aliasFamily(slug);
+  const picks = pickImages(`${slug}/${placeName}`, family, 3);
+  let primary = poolKey || family === "aov" || family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  if (preferredHero && manifestHas(preferredHero)) primary = preferredHero;
+  const second = picks[1] || primary;
+  const third = picks[2] || second;
+  const creditAttr = (src) => {
+    const name = creditName(src);
+    return name ? ` data-credit="${escapeHtml(name)}"` : "";
+  };
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
@@ -224,10 +203,13 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
   ];
   const seen = new Set();
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + (extra[0] ? `<img data-pe-slot="q2-image-work" src="${extra[0]}" alt="${escapeHtml(altWork)}" width="1200" height="630">` : "")
-    + (extra[1] ? `<img data-pe-slot="q2-image-context" src="${extra[1]}" alt="${escapeHtml(altContext)}" width="1200" height="630">` : "")
-    + photoCreditCaption([primary, ...extra.slice(0, 2)])
+    + slots.filter(([, src]) => {
+      if (!src || seen.has(src)) return false;
+      seen.add(src);
+      return true;
+    }).map(([slot, src, alt]) => (
+      `<img data-pe-slot="${slot}"${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="630">`
+    )).join("")
     + `</figure>`;
   return {
     html,
@@ -259,7 +241,7 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `We send a written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
+      `We send a free written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,

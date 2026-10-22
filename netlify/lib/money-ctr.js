@@ -7,15 +7,8 @@
  * statically exported pages. Never touches robots, canonical or sitemap.
  */
 import doc from "../../website/data/money-ctr-c1-c15.json" with { type: "json" };
-// GSC 21 Oct upgrade queue (scripts/gsc-2026-10-21/build_upgrade_pages.py). C1-C15 win on overlap.
-import gscDoc from "../../website/data/gsc-upgrade-2026-10-21.json" with { type: "json" };
 
-// GSC rankings upgrade 22 Oct (scripts/gsc-2026-10-22/build_rank_upgrade.py): wins over C1-C15 and 21 Oct.
-import rankDoc from "../../website/data/gsc-upgrade-2026-10-22.json" with { type: "json" };
-
-const PAGES = { ...(gscDoc.pages || {}), ...(doc.pages || {}), ...(rankDoc.pages || {}) };
-const INBOUND = rankDoc.inbound || {};
-const GAS_PATH = /gas|boiler|cp12|lgsr|heating|flue|cooker|hob/;
+const PAGES = doc.pages || {};
 const SITE = "https://icomplypropertyservices.co.uk";
 
 function esc(value) {
@@ -51,48 +44,10 @@ export function moneyCtrPage(path) {
   return PAGES[path] || null;
 }
 
-/** Hub -> upgraded page links (22 Oct queue). Idempotent; skips links the page already has. */
-export function applyRankInbound(path, html) {
-  const list = INBOUND[path];
-  if (!list || typeof html !== "string" || html.includes('data-pe-slot="rank-inbound"')) return html;
-  const have = internalHrefs(html);
-  const add = list.filter(([href]) => href !== path && !have.has(href));
-  if (!add.length) return html;
-  const nav = `<nav class="money-ctr-links" data-pe-slot="rank-inbound" aria-label="Popular local pages" style="max-width:72rem;margin:2rem auto;padding:0 1rem"><h2>Popular local pages</h2><ul>${add.map(([href, label]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join("")}</ul></nav>`;
-  for (const anchor of ["<footer", "</body>"]) {
-    const i = html.indexOf(anchor);
-    if (i !== -1) return html.slice(0, i) + nav + html.slice(i);
-  }
-  return html;
-}
-
-/** 22 Oct pages: add Service / FAQPage JSON-LD only where the page has none. */
-export function rankSchema(path, page, html) {
-  if (!page || page.brief !== "GSC-2026-10-22") return "";
-  const ld = (html.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || []).join(" ");
-  const out = [];
-  const url = SITE + path;
-  if (!/"@type"\s*:\s*"Service"/.test(ld)) {
-    out.push({ "@context": "https://schema.org", "@type": "Service", name: String(page.title).split(" | ")[0], url, description: page.meta,
-      provider: { "@type": "LocalBusiness", name: "iComply Property Services", telephone: "07517 806082", email: "icomplypropertyservices@gmail.com", url: SITE },
-      areaServed: page.town || "Greater Manchester and the North West" });
-  }
-  if (!/"@type"\s*:\s*"FAQPage"/.test(ld) && Array.isArray(page.faqs) && page.faqs.length) {
-    out.push({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: page.faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
-  }
-  return out.map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, "\\u003c")}</script>`).join("");
-}
-
-export function applyMoneyCtr(path, rawHtml) {
-  const html = applyRankInbound(path, rawHtml);
+export function applyMoneyCtr(path, html) {
   const page = PAGES[path];
   if (!page || typeof html !== "string") return html;
-  let out = html;
-  // SEO #158: non-gas 22 Oct pages drop the footer Gas Systems list.
-  if (page.brief === "GSC-2026-10-22" && !GAS_PATH.test(path)) out = out.replace(/<details class="foot-sub"><summary>Gas Systems<\/summary>[\s\S]*?<\/details>/, "");
-  const schema = rankSchema(path, page, out);
-  if (schema) out = /<\/head>/i.test(out) ? out.replace(/<\/head>/i, schema + "</head>") : out + schema;
-  out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);
+  let out = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);
   out = setMeta(out, "name", "description", page.meta);
   out = setMeta(out, "property", "og:title", page.title);
   out = setMeta(out, "property", "og:description", page.meta);
