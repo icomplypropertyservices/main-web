@@ -58,7 +58,9 @@ export function ctrTitle(subject, town, slug) {
   opts.push(`${subject} ${town} | Same/Next-Day`);
   opts.push(`${subject} in ${town} | iComply`);
   for (const o of opts) if (o.length <= 60) return o;
-  return `${`${subject} ${town}`.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
+  const room = 60 - " | iComply".length - String(town).length - 1;
+  const kept = shortenSubject(subject, room);
+  return `${kept ? `${kept} ` : ""}${town} | iComply`;
 }
 
 const HAND_TRADES = new Set(["demolition", "driveways", "fencing", "drainage"]);
@@ -89,6 +91,15 @@ function nearestNeighbourNames(townSlug, places) {
     .map((row) => row.name);
 }
 
+// Drop words from the middle, keeping the first and the last ("installation" vs
+// "replacement"), so long keyword titles stay distinct and keep the town.
+function shortenSubject(subject, room) {
+  const words = String(subject).split(/\s+/).filter(Boolean);
+  while (words.length > 2 && words.join(" ").length > room) words.splice(1, 1);
+  const out = words.join(" ");
+  return out.length <= room ? out : "";
+}
+
 function fitTownTitle(subject, place) {
   const suffix = " | iComply";
   const candidates = [
@@ -99,14 +110,10 @@ function fitTownTitle(subject, place) {
   for (const title of candidates) {
     if (title.length >= 15 && title.length <= 60) return title;
   }
-  const words = `${subject} ${place}`.split(/\s+/).filter(Boolean);
-  let kept = "";
-  for (const word of words) {
-    const next = kept ? `${kept} ${word}` : word;
-    if (next.length + suffix.length > 60) break;
-    kept = next;
-  }
-  const title = `${kept || place}${suffix}`;
+  // Too long: trim the subject, never the town, so each town page keeps its own title.
+  const room = 60 - suffix.length - String(place).length - 1;
+  const kept = shortenSubject(subject, room);
+  const title = kept ? `${kept} ${place}${suffix}` : `${place}${suffix}`;
   return title.length <= 60 ? title : `${String(place).slice(0, 48).trim()}${suffix}`;
 }
 

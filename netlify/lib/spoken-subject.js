@@ -15,12 +15,6 @@ const ACRONYM = {
   fd30: "FD30", fd60: "FD60", anpr: "ANPR", nvr: "NVR", dvr: "DVR", ppm: "PPM", gsm: "GSM",
 };
 
-const VERB = {
-  fit: "fitting", fitting: "fitting", swap: "replacement", replace: "replacement",
-  replacement: "replacement", install: "installation", installation: "installation",
-  repair: "repair", repairs: "repairs", service: "servicing", servicing: "servicing",
-  build: "construction",
-};
 
 function sentenceToken(part, index) {
   const lower = String(part).toLowerCase();
@@ -32,12 +26,21 @@ function sentenceToken(part, index) {
 export function naturalizeSlug(slug) {
   const parts = String(slug).split("-").filter(Boolean);
   if (!parts.length) return "";
+  // Only verbs with no sibling slug are rewritten ("consumer-unit-swap" -> replacement,
+  // "retaining-wall-build" -> construction). install/installation stay as written so the
+  // two keyword pages keep different titles.
+  const VERB = { swap: "replacement", build: "construction" };
   const last = parts[parts.length - 1].toLowerCase();
-  if (VERB[last]) parts[parts.length - 1] = VERB[last];
+  if (parts.length > 1 && VERB[last]) parts[parts.length - 1] = VERB[last];
   const out = [];
   for (let i = 0; i < parts.length; i++) {
     if (parts[i].toLowerCase() === "d" && String(parts[i + 1] || "").toLowerCase() === "h") {
       out.push("D+H");
+      i += 1;
+      continue;
+    }
+    if (parts[i].toLowerCase() === "k" && String(parts[i + 1] || "").toLowerCase() === "rend") {
+      out.push("K Rend");
       i += 1;
       continue;
     }
@@ -91,10 +94,14 @@ export function spokenSubject(slug, name) {
   const titled = titleCaseSlug(slug);
   const given = String(name || "").trim();
   if (!given || given.toLowerCase() !== titled.toLowerCase()) return given || titled;
+  // Only an exact topic may replace the slug; a family-level topic would give
+  // "coving-cost" and "coving-near-me" the same name, title and H1.
   const topic = TOPICS[slug];
   if (topic) {
-    const lead = String(topic).split(/\s+is\s+/i)[0].replace(/^(?:an|a)\s+/i, "").trim();
-    if (lead && lead.length >= 3 && lead.length <= 48 && !/[.?!,:]/.test(lead)) {
+    // Use the topic only when it opens "X is ...": otherwise the lead is a sentence fragment.
+    const opener = String(topic).match(/^(.*?)\s+is\s+/i);
+    const lead = opener ? opener[1].replace(/^(?:an|a)\s+/i, "").trim() : "";
+    if (lead && lead.length >= 3 && lead.length <= 48 && lead.split(/\s+/).length <= 6 && !/[.?!,:]/.test(lead)) {
       return lead.charAt(0).toUpperCase() + lead.slice(1);
     }
   }
