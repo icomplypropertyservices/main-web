@@ -694,22 +694,6 @@
     "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
   },
   {
-    "file": "/assets/images/services/fire-stopping.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Nortown_casistas_3_pipe_firestops.jpg",
-    "title": "File:Nortown casistas 3 pipe firestops.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Achim Hering",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
-  },
-  {
-    "file": "/assets/images/services/fire-compartmentation.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Piping_floor_penetrations_nortown_casitas.jpg",
-    "title": "File:Piping floor penetrations nortown casitas.jpg",
-    "license": "CC BY 3.0",
-    "artist": "Achim Hering",
-    "license_url": "https://creativecommons.org/licenses/by/3.0"
-  },
-  {
     "file": "/assets/images/services/fire-suppression.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:FM-200_fire_suppression_system_at_NERSC.jpg",
     "title": "File:FM-200 fire suppression system at NERSC.jpg",
@@ -1467,6 +1451,38 @@
     "license": "CC0",
     "artist": "Georg Pik",
     "alt": "Control panel for heat and smoke vents"
+  },
+  {
+    "file": "/assets/images/services/fire-stopping.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3m_fs195_ppd_nortown_casistas.jpg",
+    "title": "File:3m fs195 ppd nortown casistas.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "file": "/assets/images/services/fire-compartmentation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pillowinst.jpg",
+    "title": "File:Pillowinst.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "license_url": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Infrared_St_Margaret%27s_church_Paston_Norfolk_2_(3710057668).jpg",
+    "title": "File:Infrared St Margaret's church Paston Norfolk 2 (3710057668).jpg",
+    "license": "CC BY 2.0",
+    "artist": "David from Colorado Springs, United States",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "file": "/assets/images/families/building-surveys-photo.jpg"
+  },
+  {
+    "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Gent 1102 Manual Call Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ps14159",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "/assets/images/services/fire-alarms-callpoint.jpg"
   },
   {
     "file": "/assets/images/families/fire-photo-gas.jpg",

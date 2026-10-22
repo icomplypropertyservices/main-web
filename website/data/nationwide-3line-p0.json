@@ -363,7 +363,7 @@
       "name": "Commercial Fire Alarm Installation",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -373,7 +373,7 @@
       "service": "fire-alarms",
       "name": "Commercial Fire Alarm Installer",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg"
       ]
@@ -386,7 +386,7 @@
       "images": [
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-alarms-callpoint.jpg"
       ]
     },
     {
@@ -396,7 +396,7 @@
       "name": "Domestic Fire Alarm Installer",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -452,7 +452,7 @@
       "images": [
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-alarms-callpoint.jpg"
       ]
     },
     {
@@ -462,7 +462,7 @@
       "name": "Emergency Fire Alarm Installation",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -472,7 +472,7 @@
       "service": "fire-alarms",
       "name": "Emergency Fire Alarm Installer",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg"
       ]
@@ -484,8 +484,7 @@
       "name": "Emergency Lighting Installation",
       "images": [
         "/assets/images/services/emergency-lighting.jpg",
-        "/assets/images/services/emergency-lighting-photo.jpg",
-        "/assets/images/services/fire-alarms.jpg"
+        "/assets/images/services/emergency-lighting-photo.jpg"
       ]
     },
     {
@@ -495,7 +494,7 @@
       "name": "Fire Alarm Engineer",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -505,7 +504,7 @@
       "service": "fire-alarms",
       "name": "Fire Alarm Engineer Near Me",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg"
       ]
@@ -518,7 +517,7 @@
       "images": [
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-alarms-callpoint.jpg"
       ]
     },
     {
@@ -528,7 +527,7 @@
       "name": "Fire Alarm Installation",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -538,7 +537,7 @@
       "service": "fire-alarms",
       "name": "Fire Alarm Installation Near Me",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg"
       ]
@@ -551,7 +550,7 @@
       "images": [
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-alarms-callpoint.jpg"
       ]
     },
     {
@@ -561,7 +560,7 @@
       "name": "Fire Alarm Installer Near Me",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -571,7 +570,7 @@
       "service": "fire-alarms",
       "name": "Fire Alarm Installers",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg"
       ]
@@ -584,7 +583,7 @@
       "images": [
         "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-alarms-callpoint.jpg"
       ]
     },
     {
@@ -593,8 +592,6 @@
       "service": "fire-doors",
       "name": "Fire Door Installation",
       "images": [
-        "/assets/images/services/fire-compartmentation.jpg",
-        "/assets/images/services/fire-stopping.jpg",
         "/assets/images/services/fire-doors.jpg"
       ]
     },
@@ -604,9 +601,7 @@
       "service": "fire-doors",
       "name": "Fire Door Installer",
       "images": [
-        "/assets/images/services/fire-stopping.jpg",
-        "/assets/images/services/fire-doors.jpg",
-        "/assets/images/services/fire-compartmentation.jpg"
+        "/assets/images/services/fire-doors.jpg"
       ]
     },
     {
@@ -615,9 +610,7 @@
       "service": "fire-extinguishers",
       "name": "Fire Extinguisher Service",
       "images": [
-        "/assets/images/services/fire-extinguishers.jpg",
-        "/assets/images/services/fire-signage.jpg",
-        "/assets/images/services/fire-alarms.jpg"
+        "/assets/images/services/fire-extinguishers.jpg"
       ]
     },
     {
@@ -627,7 +620,7 @@
       "name": "Fire Protection Company",
       "images": [
         "/assets/images/services/fire-alarms-photo.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
+        "/assets/images/services/fire-alarms-callpoint.jpg",
         "/assets/images/services/fire-alarms.jpg"
       ]
     },
@@ -637,7 +630,6 @@
       "service": "fire-risk-assessments",
       "name": "Fire Risk Assessment",
       "images": [
-        "/assets/images/services/fire-doors.jpg",
         "/assets/images/services/fire-risk-assessments.jpg",
         "/assets/images/services/fire-risk-assessments-photo.jpg"
       ]
@@ -648,9 +640,7 @@
       "service": "fire-stopping",
       "name": "Fire Stopping Installer",
       "images": [
-        "/assets/images/services/fire-stopping.jpg",
-        "/assets/images/services/fire-compartmentation.jpg",
-        "/assets/images/services/fire-doors.jpg"
+        "/assets/images/services/fire-stopping.jpg"
       ]
     },
     {
@@ -659,8 +649,6 @@
       "service": "fire-suppression",
       "name": "Fire Suppression Installer",
       "images": [
-        "/assets/images/services/kitchen-fire-suppression.jpg",
-        "/assets/images/services/sprinkler-systems.jpg",
         "/assets/images/services/fire-suppression.jpg"
       ]
     },
@@ -824,8 +812,6 @@
       "service": "sprinkler-systems",
       "name": "Sprinkler System Installer",
       "images": [
-        "/assets/images/services/fire-suppression.jpg",
-        "/assets/images/services/fire-alarms.jpg",
         "/assets/images/services/sprinkler-systems.jpg"
       ]
     },
