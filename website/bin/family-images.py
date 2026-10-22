@@ -49,6 +49,9 @@ for r, _, fs in os.walk(dist):
             fp = os.path.join(r, f); u = '/' + os.path.relpath(fp, dist).rsplit('.', 1)[0]
             u = re.sub(r'/index$', '', u) or '/'
             pf = page_family(u)
+            # The hero service photo's family wins over URL words (e.g. a windows-doors page whose URL says fire-door).
+            hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', open(fp, encoding='utf-8', errors='replace').read())
+            if hm and hm.group(1) in dir2fam: pf = dir2fam[hm.group(1)] if dir2fam[hm.group(1)] in ALT else pf
             if pf in ALT: files.append((fp, pf))
 use = collections.defaultdict(collections.Counter)
 for fp, pf in files:
