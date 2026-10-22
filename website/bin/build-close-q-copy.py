@@ -922,7 +922,7 @@ def main() -> None:
                 "quotes that are price on application, with no published call-out fee",
             )
             row["focus_points"] = [
-                point.replace("with transparent fixed pricing", ", price on application")
+                point.replace("with transparent written quotes", ", price on application")
                 for point in row.get("focus_points") or []
             ]
         if slug == "access-control-near-me":
@@ -931,7 +931,7 @@ def main() -> None:
                 "a quote that is price on application",
             )
             row["focus_points"] = [
-                point.replace("with fixed pricing", ", price on application")
+                point.replace("with written quotes", ", price on application")
                 for point in row.get("focus_points") or []
             ]
         if slug == "gas-safety-certificate":

@@ -126,7 +126,7 @@ $faqs = [
     // Quotes
     [
         'cat' => 'Quotes & pricing',
-        'q' => 'Are quotes free, and are they always a fixed price?',
+        'q' => 'Are quotes free, and are they always a written quote?',
         'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
         'link' => ['/contact.php', 'Request a free quote'],
     ],

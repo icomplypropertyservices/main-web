@@ -14,7 +14,7 @@ for root, _, files in os.walk(dist):
 for sm in glob.glob(f'{dist}/sitemap*.xml') + glob.glob(f'{dist}/sitemaps/*.xml'):
     for u in re.findall(r'<loc>https?://[^/<]+([^<]*)</loc>', open(sm, errors='ignore').read()):
         known.add(u.rstrip('/') or '/')
-parents = {k.rsplit('/', 1)[0] for k in known if k.count('/') >= 4}
+parents = {k.rsplit('/', 1)[0] for k in known if k.count('/') >= 3}
 rd = f'{dist}/_redirects'
 if os.path.exists(rd):
     for l in open(rd, errors='ignore'):
@@ -34,8 +34,10 @@ for root, _, files in os.walk(dist):
             k = re.sub(r'\.php$', '', m.group(1)).rstrip('/') or '/'
             # Only a keyword/service x town link whose family is published but whose town is not
             # (not exported, not in the sitemap, not a _redirects source). Edge-only hubs stay linked.
-            if k in known or '*' in k or k.count('/') < 4 or k.rsplit('/', 1)[0] not in parents:
+            if k in known or '*' in k or k.count('/') < 3 or k.rsplit('/', 1)[0] not in parents:
                 return m.group(0)
+            if k.count('/') == 3 and '/pages/areas/' + k.rsplit('/', 1)[1] not in known:
+                return m.group(0)  # /pages/<x>/<slug> that is not a service x town (edge-only hubs stay linked)
             n[0] += 1
             town = k.rsplit('/', 1)[1]
             for alt in ('/pages/areas/' + town, k.rsplit('/', 1)[0]):
