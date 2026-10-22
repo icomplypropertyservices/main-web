@@ -20,7 +20,7 @@ def walk(v):
     elif isinstance(v, dict): [walk(x) for x in v.values()]
     elif isinstance(v, list): [walk(x) for x in v]
 walk(pools)
-for d in ('services', 'page-types'):
+for d in ('services', 'page-types', 'manufacturers'):
     for p in glob.glob(f'{ROOT}/assets/images/{d}/**/*.jp*g', recursive=True):
         files.add('/' + os.path.relpath(p, ROOT).replace(os.sep, '/'))
 files = sorted(f for f in files if os.path.exists(ROOT + f))
@@ -32,6 +32,7 @@ def stem(f):
 def owner(f):
     # page-type photos are all owned by a page type, so judge them by the service their file names
     if '/page-types/' in f: return stem(f)
+    if '--' in os.path.basename(f): return os.path.basename(f).rsplit('.', 1)[0].split('--')[1]
     return owners.get(f) or stem(f)
 def feats(f):
     im = cv2.imread(ROOT + f, cv2.IMREAD_GRAYSCALE)
