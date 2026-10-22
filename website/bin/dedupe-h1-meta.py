@@ -50,9 +50,26 @@ def mk_meta(h1):
         body = body[:-1] + ' today.' if body.endswith('.') else body + '.'
     return body[:155]
 fix_md = set(fp for fps in mdg.values() if len(fps) > 1 for fp in fps)
+TT = re.compile(r'(<title>)(.*?)(</title>)', re.S | re.I)
+ttg = collections.defaultdict(list)
+for fp in files:
+    if '/pages/keywords/' not in fp: continue
+    s0 = open(fp, encoding='utf-8', errors='replace').read(); m = TT.search(s0)
+    if m: ttg[re.sub(r'\s+', ' ', m.group(2)).strip().lower()].append(fp)
+fix_tt = {}
+for k, fps in ttg.items():
+    if len(fps) < 2: continue
+    for fp in fps:   # keyword town twins whose long town name squeezed the keyword out: title from keyword + town slugs
+        kw, town = fp.rsplit('/', 2)[-2], os.path.basename(fp)[:-4]
+        kwn = title(kw).replace(' For ', ' for ').replace(' Same Day', ' Same-Day')
+        tn = '-'.join(w.capitalize() if w not in ('in', 'under', 'upon', 'on', 'le', 'by') else w for w in town.split('-'))
+        t = f'{kwn} {tn} | iComply'
+        fix_tt[fp] = t if len(t) <= 70 else f'{kwn} {tn}'
 n1 = n2 = 0
-for fp in set(fix_h1) | fix_md:
+for fp in set(fix_h1) | fix_md | set(fix_tt):
     s = open(fp, encoding='utf-8', errors='replace').read()
+    if fp in fix_tt:
+        s = TT.sub(lambda m: m.group(1) + html.escape(fix_tt[fp]) + m.group(3), s, count=1)
     if fp in fix_h1:
         q = fix_h1[fp]
         s = H1.sub(lambda m: m.group(1) + m.group(2).rstrip() + html.escape(q) + m.group(3), s, count=1); n1 += 1

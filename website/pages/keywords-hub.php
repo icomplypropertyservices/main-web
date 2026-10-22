@@ -27,6 +27,10 @@ $reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_P
 $canonicalUrl = str_contains($reqPath, '/pages/keywords-hub')
     ? url('/pages/keywords-hub.php')
     : url('/pages/keywords');
+if (str_contains($reqPath, '/pages/keywords-hub')) {
+    // QM #157: same document at a second URL gets its own title.
+    $pageTitle = 'All Service Guides A-Z | Fire, Electrical, Security & Building Topics';
+}
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
