@@ -369,7 +369,17 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
 {
     // Jack 20 Oct: only photos from the page's own service (or, outside service_photos, its family).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
-    $slug = icomplyPlasterImageSlug($altPrefix, $slug);
+    // Networking / IT pack: keep all three images on IT, network, Wi-Fi and cabling work.
+    $packThird = [
+        'it-support' => 'networking',
+        'networking' => 'structured-cabling',
+        'wifi' => 'networking',
+        'structured-cabling' => 'networking-photo',
+    ];
+    if (isset($packThird[$slug])) {
+        $photo[] = $slug;
+        $pool = [$packThird[$slug]];
+    }
     $primary = '/assets/images/services/' . $slug . '.jpg';
     $extra = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
     $src = static function (string $path): string {

@@ -263,10 +263,13 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    require_once __DIR__ . '/quality-bar.php';
-    $kwImgService = icomplyPlasterImageSlug($slug, (string)$serviceSlug);
-    $kwImg = url($kwImgService !== (string)$serviceSlug ? '/assets/images/services/' . $kwImgService . '.jpg' : icomplyKeywordImagePath($slug, (string)$serviceSlug));
-    $svcImg = url('/assets/images/services/' . $kwImgService . '.jpg');
+    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
+    // Pack keywords without their own photo use the service photo, so og:image never 404s.
+    if (!empty($meta['sections']) && !is_file(SITE_ROOT . '/assets/images/keywords/' . $slug . '.jpg')
+        && is_file(SITE_ROOT . '/assets/images/services/' . $serviceSlug . '.jpg')) {
+        $kwImg = $svcImg;
+    }
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
         $gallery = icomplyNationwide3lineImages($slug);
@@ -287,17 +290,12 @@ function keywordTemplatePlaceholders(
             $metaDesc = icomplyNationwide3lineMeta($name, 'the UK mainland');
         }
     }
-    if (function_exists('icomplyMarginDeepIsP0') && icomplyMarginDeepIsP0($slug)) {
-        $deepGallery = icomplyMarginDeepImages($slug);
-        if (count($deepGallery) >= 3) {
-            $kwImg = url($deepGallery[0]);
-            $inlineImg = url($deepGallery[1]);
-            $svcImg = url($deepGallery[2]);
+    $sectionsHtml = '';
+    if (!empty($meta['sections'])) {
+        if (!function_exists('icomplyNetworkingItSectionsHtml')) {
+            require_once SITE_ROOT . '/includes/networking-it.php';
         }
-        $deepCopy = icomplyMarginDeepCopy($slug);
-        $seoTitle = (string)($deepCopy['seo_title'] ?? $seoTitle);
-        $metaDesc = (string)($deepCopy['meta_desc'] ?? $metaDesc);
-        $serviceName = (string)(icomplyMarginDeepPackFor($slug)['trade_label'] ?? $serviceName);
+        $sectionsHtml = icomplyNetworkingItSectionsHtml($meta['sections']);
     }
     // Prefer keyword image path; template onerror falls back to service
 
@@ -326,6 +324,7 @@ function keywordTemplatePlaceholders(
         'KEYWORD_IMAGE' => $kwImg,
         'KEYWORD_INLINE' => $inlineImg,
         'SERVICE_IMAGE' => $svcImg,
+        'KEYWORD_SECTIONS_HTML' => $sectionsHtml,
     ];
 }
 

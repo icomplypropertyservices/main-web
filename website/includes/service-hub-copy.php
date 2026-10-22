@@ -16,6 +16,13 @@ if (is_file($buildingHubCopy)) {
 function icomplyServiceHubCopy(string $slug): ?array
 {
     $slug = areaSlug($slug);
+    if (!function_exists('icomplyNetworkingItServiceHubCopy')) {
+        require_once __DIR__ . '/networking-it.php';
+    }
+    $networkingIt = icomplyNetworkingItServiceHubCopy($slug);
+    if ($networkingIt !== null) {
+        return $networkingIt;
+    }
     if ($slug === 'gas-systems' && function_exists('icomplyGasServicePageCopy')) {
         return icomplyGasServicePageCopy();
     }
@@ -171,6 +178,13 @@ function icomplyServiceHubCopy(string $slug): ?array
 function icomplyServiceHubLinks(string $slug): array
 {
     $slug = areaSlug($slug);
+    if (!function_exists('icomplyNetworkingItServiceHubLinks')) {
+        require_once __DIR__ . '/networking-it.php';
+    }
+    $networkingItLinks = icomplyNetworkingItServiceHubLinks($slug);
+    if ($networkingItLinks) {
+        return $networkingItLinks;
+    }
     if (function_exists('icomplyBuildingHubLinks')) {
         $buildingLinks = icomplyBuildingHubLinks($slug);
         if ($buildingLinks) {

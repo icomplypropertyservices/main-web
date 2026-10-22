@@ -65,7 +65,8 @@
     "pat-testing": "PAT Testing",
     "legionella-risk-assessment": "Legionella Risk Assessment",
     "asbestos-survey": "Asbestos Survey",
+    "it-support": "IT Support",
     "networking": "Networking",
-    "structured-cabling": "Data Cabling",
-    "wifi": "Wi-Fi & Mesh Wi-Fi"
+    "wifi": "Wi-Fi & Bluetooth",
+    "structured-cabling": "Structured Cabling"
 }

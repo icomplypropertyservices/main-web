@@ -25,7 +25,8 @@ $bad = static function (string $message) use (&$fail): void {
 $catalogue = icomplyKeywordVariantCatalogue();
 $counts = icomplyKeywordVariantCounts($catalogue);
 $services = $catalogue['services'];
-$expectedServices = count(getServices());
+// Networking/Wi-Fi/IT P0 pack services are deliberately kept off the 10k variant matrix (deferred).
+$expectedServices = count(getServices()) - (function_exists('icomplyNetworkingItServiceSlugs') ? count(icomplyNetworkingItServiceSlugs()) : 0);
 if (count($services) !== $expectedServices) {
     $bad('service count ' . count($services) . ' != ' . $expectedServices);
 }

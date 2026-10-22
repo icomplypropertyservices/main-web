@@ -24,19 +24,24 @@ export function imageFamilyOf(slug) {
   return null;
 }
 
-/** Two extra photos for `slug`, taken from that service's own pool. */
-export function familyPicks(slug, seed) {
-  const own = (imageFamilies.service_photos || {})[slug];
-  // SEO 20 Oct: building-trade slugs show only their own photo(s).
-  if (Array.isArray(own)) return own.filter((b) => b !== slug).slice(0, 2);
-  const fam = imageFamilies.families[imageFamilyOf(slug) || "building"];
-  const rest = fam.filter((b) => b !== slug && b !== `${slug}-photo`);
-  const n = rest.length;
-  const off = n ? Math.abs(Number(seed) || 0) % n : 0;
-  const rotated = rest.slice(off).concat(rest.slice(0, off));
-  const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
-  return picks.slice(0, 2);
-}
+// Networking / IT pack services: all three images stay on IT, network, Wi-Fi and cabling work.
+const PACK_THIRD = {
+  "it-support": "networking",
+  networking: "structured-cabling",
+  wifi: "networking",
+  "structured-cabling": "networking-photo",
+};
+
+const POOL = [
+  "building-maintenance",
+  "fire-alarms",
+  "electrical",
+  "cctv",
+  "access-control",
+  "emergency-lighting",
+  "gas-systems",
+  "door-entry",
+];
 
 export function escapeHtml(value) {
   return String(value)
@@ -198,8 +203,17 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
   }
   const slug = String(serviceSlug || "fire-alarms");
   const primary = `/assets/images/services/${slug}.jpg`;
-  // Jack 20 Oct: only photos from the page's own service family (no CCTV on an EICR page).
-  const extra = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
+  const packThird = PACK_THIRD[slug];
+  let second = PHOTO.has(slug) || packThird
+    ? `/assets/images/services/${slug}-photo.jpg`
+    : `/assets/images/services/${POOL[seed % POOL.length]}.jpg`;
+  if (second === primary) second = "/assets/images/services/building-maintenance.jpg";
+  let third = packThird
+    ? `/assets/images/services/${packThird}.jpg`
+    : `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
+  if (third === primary || third === second) third = "/assets/images/services/cctv.jpg";
+  if (third === primary || third === second) third = "/assets/images/services/electrical.jpg";
+  if (third === primary || third === second) third = "/assets/images/services/access-control.jpg";
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;

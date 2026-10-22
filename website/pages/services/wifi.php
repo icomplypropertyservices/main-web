@@ -1,4 +1,4 @@
 <?php
-/** Network pack hub. Copy: data/network-pack-hubs.json (bin/build-network-pack.py). */
-require_once __DIR__ . '/../../includes/network-pack.php';
-renderNetworkPackHub('service/wifi');
+/** Networking / IT service hub. Copy: data/networking-it-pack.json (bin/build-networking-it-pack.py). */
+require_once __DIR__ . '/../../includes/render.php';
+renderServiceHubPage('wifi');
