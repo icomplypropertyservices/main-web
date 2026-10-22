@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/nationwide-3line.php';
 require_once __DIR__ . '/fire-alarm-installer.php';
+require_once __DIR__ . '/margin-deep.php';
 
 /** @return list<array{slug:string,name:string,bucket:string}> */
 function icomplyDualRingTownRows(): array
@@ -190,6 +191,10 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     }
 
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
+        // Margin DEEP hubs: dual-ring 269 town pages (manufacturer heads: GM core 60 only).
+        if (icomplyMarginDeepIsP0($m[1])) {
+            return icomplyMarginDeepKeepsTown($m[1], $m[2]) ? null : '/pages/keywords/' . $m[1];
+        }
         if (icomplyNationwide3lineNationwidePath($path) || icomplyFireAlarmInstallerNationwidePath($path)) {
             return null;
         }

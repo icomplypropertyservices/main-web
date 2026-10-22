@@ -13,14 +13,8 @@ import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.j
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
-import { withContactWidgets } from "../lib/contact-widgets.js";
-import { applyMoneyCtr, moneyCtrPage } from "../lib/money-ctr.js";
-import { applySeoBasics } from "../lib/seo-basics.js";
-import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
-import { townFactsBlock } from "../lib/town-facts.js";
-import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
-import { townDepthBlock } from "../lib/town-depth.js";
-import { networkPackMatch, networkPackHubFor, renderNetworkPackTown } from "../lib/network-pack.js";
+import { isMarginDeep, marginDeepKeepsTown, marginDeepRedirect, renderMarginDeepTown } from "../lib/margin-deep.js";
+import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
@@ -923,6 +917,8 @@ export function nonGmMatrixRedirect(path) {
   if (m && RETIRED_KEYWORD[m[1]]) return RETIRED_KEYWORD[m[1]];
   if (GSC_KEEP.has(path)) return null;
   if (m) {
+    // Margin DEEP hubs: dual-ring 269 (manufacturer heads: GM core 60 only).
+    if (isMarginDeep(m[1])) return marginDeepKeepsTown(m[1], m[2]) ? null : `/pages/keywords/${m[1]}`;
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
   }
@@ -980,39 +976,9 @@ async function fallbackResponse(url, path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
-  // /shop is a directory hub: one 301 to the slash form the static file lives at.
-  if (url.pathname === "/shop") return Response.redirect(new URL("/shop/" + url.search, APEX).toString(), 301);
-  if (url.pathname === "/shop/") return context.next(); // never strip the slash here (would loop)
-  if (path.startsWith("/matrix-sitemap")) return renderMatrix(request, context);
-  let timer;
-  try {
-    const res = await Promise.race([
-      renderMatrix(request, context),
-      new Promise((resolve) => {
-        timer = setTimeout(() => resolve(null), RENDER_BUDGET_MS);
-      }),
-    ]);
-    if (res && res.status < 500) return res;
-    return fallbackResponse(url, path);
-  } catch {
-    return fallbackResponse(url, path);
-  } finally {
-    clearTimeout(timer);
-  }
-  // Network pack: render its town set; a pack slug outside its town set 301s
-  // to the hub (one hop). cctv-remote-viewing-setup keeps its 269 matrix towns.
-  const np = networkPackMatch(path);
-  if (np) {
-    const rendered = np.ok ? renderNetworkPackTown(np) : null;
-    if (rendered) {
-      return new Response(withContactWidgets(scrubMeta(rendered.html)), {
-        status: 200,
-        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": rendered.robots },
-      });
-    }
-    if (!(np.kind === "keyword" && np.slug === "cctv-remote-viewing-setup" && isLocalTown(np.town))) {
-      return Response.redirect(new URL(networkPackHubFor(np), url.origin).toString(), 301);
-    }
+  const deepTo = marginDeepRedirect(path);
+  if (deepTo) {
+    return Response.redirect(new URL(deepTo, url.origin).toString(), 301);
   }
   const aliasTo = placeAliasRedirect(path);
   if (aliasTo) {
@@ -1159,7 +1125,10 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+    if (isMarginDeep(keywordMatch[1])) {
+      rendered = renderMarginDeepTown(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered && p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {

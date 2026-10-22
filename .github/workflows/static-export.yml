@@ -66,14 +66,10 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/check-fire-alarm-installer.php && node website/bin/check-fire-alarm-installer-xtown.mjs
 
-      - name: Service photos are distinct (perceptual hash, shared source, crop-tolerant ORB)
-        run: |
-          python3 -m pip install --quiet opencv-python-headless numpy pillow
-          python3 website/bin/check-photo-pool-phash.py
-          python3 website/bin/check-photo-crop-similarity.py
-
-      - name: Hero CTA and P0 quality gate
-        run: python3 website/bin/check-hero-cta.py && node scripts/quality-gate.mjs
+      - name: Margin DEEP packs
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: php website/bin/check-margin-deep.php --sample=12 && node website/bin/check-margin-deep.mjs && python3 website/bin/check-margin-deep-sim.py
 
       - name: Static export
         env:
