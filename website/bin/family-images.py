@@ -30,7 +30,7 @@ for f in ALT:
     fp_photo[f] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[f],
                        credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
 # SEO 22 Oct: services where the family photo is a loose fit get their own credited Commons photo.
-SVC_ALT = {'landscaping': 'Planted garden border with bark mulch', 'facilities-management': 'Maintenance worker servicing a washroom'}
+SVC_ALT = {'landscaping': 'Planted garden border with bark mulch', 'building-surveys': 'Thermal imaging survey of a church building', 'facilities-management': 'Maintenance worker servicing a washroom'}
 for sv in SVC_ALT:
     rel = f'/assets/images/families/{sv}-photo.jpg'
     if rel in man:

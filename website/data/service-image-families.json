@@ -28,7 +28,8 @@
    "dry-risers",
    "smoke-co-alarms",
    "evacuation-alerts",
-   "aov-control-panel-1"
+   "aov-control-panel-1",
+   "fire-alarms-callpoint"
   ],
   "security": [
    "cctv",
@@ -181,7 +182,8 @@
   ],
   "fire-alarms": [
    "fire-alarms",
-   "fire-alarms-photo"
+   "fire-alarms-photo",
+   "fire-alarms-callpoint"
   ],
   "fire-risk-assessments": [
    "fire-risk-assessments",
