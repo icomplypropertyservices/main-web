@@ -462,6 +462,7 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
     if ($family === 'barriers') {
         $html .= '<p class="mt-3"><a class="inline-flex items-center font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/products.php'), ENT_QUOTES, 'UTF-8') . '">CAME GARD 5m packs →</a></p>';
     }
+    $altSuffix = $family === 'aov' ? ' smoke control' : ($family === 'barriers' ? ' barrier' : ' nameplate');
     $partners = array_values(array_filter($rows, static fn($r) => !empty($r['partner'])));
     $others = array_values(array_filter($rows, static fn($r) => empty($r['partner'])));
     // Rotate the non-partner list per town so the brand strip is not one identical block on every page.
@@ -474,10 +475,7 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
         $html .= '<article class="bg-white border-[#ff6b00] border-2 rounded-2xl p-4" data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '">';
-        $plate = icomplyTownNameplateImg($row['slug'], $label, 'mfr-nameplate w-full h-20 object-contain', 320, 160);
-        if ($plate !== '') {
-            $html .= '<a href="' . $href . '">' . $plate . '</a>';
-        }
+        $html .= '<a href="' . $href . '"><img class="mfr-nameplate w-full h-20 object-contain" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="' . $label . $altSuffix . '" width="320" height="160" loading="lazy"></a>';
         $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a> <span class="text-xs font-semibold uppercase text-[#ff6b00]">Partner</span>';
         $html .= '<a class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a></article>';
     }
@@ -485,8 +483,7 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
     foreach ($others as $row) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
-        $plate = icomplyTownNameplateImg($row['slug'], $label, 'inline h-5 w-10 object-contain mr-1 align-middle', 40, 20);
-        $html .= '<li data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '"><a class="inline-block px-3 py-1 border rounded-full hover:border-[#ff6b00]" href="' . $href . '" data-specify-brand="' . $label . '">' . $plate . $label . '</a></li>';
+        $html .= '<li data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '"><a class="inline-block px-3 py-1 border rounded-full hover:border-[#ff6b00]" href="' . $href . '" data-specify-brand="' . $label . '"><img class="inline h-5 w-10 object-contain mr-1 align-middle" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ($altSuffix === ' nameplate' ? '' : $altSuffix) . '" width="40" height="20" loading="lazy">' . $label . '</a></li>';
     }
     $html .= '</ul>';
     $html .= '</section>';
@@ -569,12 +566,11 @@ function icomplyTownCsrf(): string
 function icomplyRenderTownHub(string $family): void
 {
     $towns = icomplyUkTowns();
-    $title = $family === 'barriers' ? 'Vehicle barrier towns' : 'AOV and smoke control towns';
-    $pageTitle = $family === 'barriers' ? 'Barrier towns | CAME partner' : 'AOV towns | smoke control';
-    $metaTitleExact = true;
+    $title = $family === 'barriers' ? 'Vehicle barrier installers by UK town' : 'AOV and smoke control by town';
+    $pageTitle = $family === 'barriers' ? 'Vehicle Barrier Installers by UK Town | CAME Partner' : $title;
     $metaDesc = $family === 'barriers'
-        ? 'Town-by-town vehicle barrier pages from the CAME partner hub. Not the barriers service page. Call 07517 806082.'
-        : 'Town-by-town AOV and smoke-control pages. Not the AOV service page. Call 07517 806082.';
+        ? 'Find your town: CAME partner vehicle barrier supply, fitting and repair pages for every UK mainland town over 10,000 people. Call 07517 806082.'
+        : 'AOV and smoke-control pages for every UK mainland town with population over 10,000. Phone 07517 806082.';
     $metaKeywords = $family === 'barriers'
         ? 'CAME barriers, vehicle barriers, car park barrier, UK towns'
         : 'AOV, smoke control, automatic opening vent, UK towns';
@@ -711,7 +707,9 @@ function icomplyRenderTownPage(string $family, string $slug): void
     $edit = icomplyTownEditorial($family, $town);
     $ctx = $edit['ctx'];
     $csrf = icomplyTownCsrf();
-    $place = $ctx['name'] . ', ' . $ctx['county'];
+    // Never repeat the town ('Stockport, Stockport'): add the county only when it differs.
+    $county = trim((string)($ctx['county'] ?? ''));
+    $place = ($county === '' || strcasecmp($county, (string)$ctx['name']) === 0) ? (string)$ctx['name'] : $ctx['name'] . ', ' . $county;
     if ($family === 'barriers') {
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';

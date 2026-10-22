@@ -12,6 +12,19 @@ $metaKeywords = $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '.php');
 
+require_once SITE_ROOT . '/includes/building-batch1.php';
+$b1Hub = icomplyB1IsKeyword((string)$KEYWORD_SLUG);
+if ($b1Hub) {
+    $b1Label = (string) (icomplyB1Data()['keywords'][(string)$KEYWORD_SLUG] ?? $KEYWORD_NAME);
+    $pageTitle = icomplyB1HubTitle($b1Label);
+    $metaDesc = icomplyB1HubMeta($b1Label, icomplyB1Family('keyword', (string)$KEYWORD_SLUG) === 'gas');
+}
+if ($b1Hub && ($b1Img = icomplyB1Photo('keyword', (string)$KEYWORD_SLUG)) !== '') {
+    $ogImage = $b1Img; $KEYWORD_IMAGE = $b1Img;
+    $b1Set = icomplyB1Data()['photos'][icomplyB1Family('keyword', (string)$KEYWORD_SLUG)] ?? [];
+    $KEYWORD_INLINE = $b1Set[1]['src'] ?? $b1Img;
+    $SERVICE_IMAGE = $b1Set[2]['src'] ?? $b1Img;
+}
 $keywordName = $KEYWORD_NAME;
 $keywordH1 = !empty($KEYWORD_H1) ? $KEYWORD_H1 : $KEYWORD_NAME;
 $keywordSlug = $KEYWORD_SLUG;
@@ -108,6 +121,7 @@ require SITE_ROOT . '/includes/header.php';
              onerror="this.src=$SERVICE_IMAGE">
         <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/75"></div>
     </div>
+    <?php if (!empty($b1Hub)): ?><div class="absolute bottom-0 right-0 z-10 max-w-xl text-right"><?= icomplyB1Credit((string)$KEYWORD_IMAGE, 'px-3 py-1 text-[11px] text-white/80 bg-[#0B1F3A]/80 [&_a]:text-white') ?></div><?php endif; ?>
     <div class="relative max-w-7xl mx-auto px-6 py-14 md:py-20">
         <nav class="text-xs text-white/70 mb-5 flex flex-wrap gap-2" aria-label="Breadcrumb">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a><span class="text-white/40">/</span>
@@ -125,6 +139,7 @@ require SITE_ROOT . '/includes/header.php';
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-[1.08] drop-shadow-lg">
             <?= htmlspecialchars($keywordH1, ENT_QUOTES, 'UTF-8') ?>
         </h1>
+        <?php if ($b1Hub) echo icomplyB1HeroCta((string)$keywordName); ?>
         <p class="mt-5 text-lg md:text-xl text-white max-w-2xl leading-relaxed font-medium drop-shadow">
             <?= htmlspecialchars($KEYWORD_INTRO, ENT_QUOTES, 'UTF-8') ?>
         </p>
@@ -213,11 +228,13 @@ if (function_exists('accessControlLaneKeywordStrip')) {
                          class="w-full h-52 object-cover" loading="lazy"
                          onerror="this.src=$SERVICE_IMAGE">
                     <div class="p-3 bg-[#0B1F3A] text-white text-sm font-semibold text-center"><?= htmlspecialchars($KEYWORD_NAME, ENT_QUOTES, 'UTF-8') ?></div>
+                    <?= !empty($b1Hub) ? icomplyB1Credit((string)($KEYWORD_INLINE ?? $KEYWORD_IMAGE), 'px-3 py-2 text-xs text-zinc-700 bg-white') : '' ?>
                 </div>
                 <div class="rounded-3xl overflow-hidden border-2 border-zinc-300 shadow-md bg-zinc-200">
-                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> by iComply"
+                    <img src="<?= htmlspecialchars($SERVICE_IMAGE, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?><?= !empty($b1Hub) ? ' (example photo)' : ' by iComply' ?>"
                          class="w-full h-40 object-cover" loading="lazy">
                     <div class="p-3 bg-white text-[#0B1F3A] text-sm font-semibold text-center border-t-2 border-zinc-200"><?= htmlspecialchars($SERVICE_NAME, ENT_QUOTES, 'UTF-8') ?> service</div>
+                    <?= !empty($b1Hub) ? icomplyB1Credit((string)$SERVICE_IMAGE, 'px-3 py-2 text-xs text-zinc-700 bg-white') : '' ?>
                 </div>
             </div>
         </div>
@@ -392,6 +409,7 @@ echo '</section>';
     </div>
 </section>
 
+<?php if ($b1Hub) echo icomplyB1TownLinks('keyword', (string)$keywordSlug); ?>
 <!-- RELATED KEYWORDS same service -->
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-14">

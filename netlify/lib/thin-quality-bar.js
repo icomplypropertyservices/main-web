@@ -13,6 +13,7 @@ import { creditName, manifestHas } from "./quality-floor.js";
  * Page Enrichment swaps copy and image files at the data-pe-slot hooks
  * documented in docs/pe-quality-bar-slots.md. Do not add a second OG helper.
  */
+import { photoCreditCaption } from "./photo-credits.js";
 import fragments from "../../website/data/quality-bar-prose.json" with { type: "json" };
 
 const ORIGIN = "https://icomplypropertyservices.co.uk";
@@ -25,9 +26,16 @@ export function imageFamilyOf(slug) {
 
 /** Two extra photos for `slug`, taken from that service's own pool. */
 export function familyPicks(slug, seed) {
-  const family = aliasFamily(slug);
-  const picks = pickImages(`${slug}|${seed}`, family, 3);
-  return [picks[1] || picks[0], picks[2] || picks[0]];
+  const own = (imageFamilies.service_photos || {})[slug];
+  // SEO 20 Oct: building-trade slugs show only their own photo(s).
+  if (Array.isArray(own)) return own.filter((b) => b !== slug).slice(0, 2);
+  const fam = imageFamilies.families[imageFamilyOf(slug) || "building"];
+  const rest = fam.filter((b) => b !== slug && b !== `${slug}-photo`);
+  const n = rest.length;
+  const off = n ? Math.abs(Number(seed) || 0) % n : 0;
+  const rotated = rest.slice(off).concat(rest.slice(0, off));
+  const picks = (fam.includes(`${slug}-photo`) ? [`${slug}-photo`] : []).concat(rotated);
+  return picks.slice(0, 2);
 }
 
 export function escapeHtml(value) {
@@ -173,26 +181,18 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
     if (picked.length === 3) {
       const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
       const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-        + picked.map((image, index) => {
-          const credit = creditName(image.src);
-          const attr = credit ? ` data-credit="${escapeHtml(credit)}"` : "";
-          return `<img data-pe-slot="${slots[index]}"${attr} src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`;
-        }).join("")
+        + picked.map((image, index) => (
+          `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
+        )).join("")
+        + photoCreditCaption(picked.map((image) => image.src))
         + `</figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
   }
   const slug = String(serviceSlug || "fire-alarms");
-  const family = poolKey || aliasFamily(slug);
-  const picks = pickImages(`${slug}/${placeName}`, family, 3);
-  let primary = poolKey || family === "aov" || family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
-  if (preferredHero && manifestHas(preferredHero)) primary = preferredHero;
-  const second = picks[1] || primary;
-  const third = picks[2] || second;
-  const creditAttr = (src) => {
-    const name = creditName(src);
-    return name ? ` data-credit="${escapeHtml(name)}"` : "";
-  };
+  const primary = `/assets/images/services/${slug}.jpg`;
+  // Jack 20 Oct: only photos from the page's own service family (no CCTV on an EICR page).
+  const extra = familyPicks(slug, seed).map((b) => `/assets/images/services/${b}.jpg`);
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
@@ -203,13 +203,10 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
   ];
   const seen = new Set();
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + slots.filter(([, src]) => {
-      if (!src || seen.has(src)) return false;
-      seen.add(src);
-      return true;
-    }).map(([slot, src, alt]) => (
-      `<img data-pe-slot="${slot}"${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="630">`
-    )).join("")
+    + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
+    + (extra[0] ? `<img data-pe-slot="q2-image-work" src="${extra[0]}" alt="${escapeHtml(altWork)}" width="1200" height="630">` : "")
+    + (extra[1] ? `<img data-pe-slot="q2-image-context" src="${extra[1]}" alt="${escapeHtml(altContext)}" width="1200" height="630">` : "")
+    + photoCreditCaption([primary, ...extra.slice(0, 2)])
     + `</figure>`;
   return {
     html,

@@ -1,6 +1,6 @@
 <?php
 /**
- * KEYWORDS_INDEX_V2 — keyword guides directory (handcrafted; generators skip overwrite).
+ * KEYWORDS_INDEX_V2 — service guides directory (handcrafted; generators skip overwrite).
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';
@@ -23,7 +23,7 @@ foreach ($keywords as $meta) {
 }
 
 $categories = getServiceCategories();
-$pageTitle = 'Keyword Guides | Fire Safety, Professional & Construction Topics';
+$pageTitle = 'Service Guides | Fire Safety, Professional & Construction Topics';
 $metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across Greater Manchester.';
 $metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
@@ -45,7 +45,7 @@ require SITE_ROOT . '/includes/header.php';
         <nav class="text-xs text-white/50 mb-6 flex flex-wrap gap-2 items-center">
             <a href="<?= rtrim(SITE_URL, '/') ?>/" class="hover:text-white">Home</a>
             <span>/</span>
-            <span class="text-white/80">Keyword Guides</span>
+            <span class="text-white/80">Service Guides</span>
         </nav>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>

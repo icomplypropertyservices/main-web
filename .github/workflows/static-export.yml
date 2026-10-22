@@ -48,7 +48,7 @@ jobs:
       - name: SEO matrix + sitemap hygiene
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
-        run: php website/bin/check-seo-matrix.php && php website/bin/check-sitemap.php && php website/bin/test-electrical-gas-matrix.php && php website/bin/test-area-hubs-mcr-burnley.php && php website/bin/check-open-job-lanes.php
+        run: php website/bin/check-seo-matrix.php && php website/bin/check-sitemap.php && php website/bin/test-electrical-gas-matrix.php && php website/bin/test-area-hubs-mcr-burnley.php && php website/bin/check-open-job-lanes.php && php website/bin/check-security-dual-ring.php && node website/bin/check-security-dual-ring.mjs
 
       - name: FRA From £350 wording (Jack 19 Oct)
         run: php website/bin/check-fra-from-350.php
@@ -109,3 +109,14 @@ jobs:
 
       - name: Fire-family service x town depth (>=800 words, sample similarity <=0.70)
         run: python3 website/bin/check-fire-family-depth.py dist
+
+      - name: No 'keyword guide' wording anywhere in the build
+        run: python3 website/bin/check-keyword-guide-wording.py dist
+
+      - name: Security keyword x town words + uniqueness (SEO PR145, 15 intents x 20 towns)
+        run: |
+          TOWN_SAMPLE_ONLY=security node website/bin/render-town-sample.mjs dist /tmp/town-sample
+          python3 website/bin/check-town-words.py /tmp/town-sample
+
+      - name: Batch 1 Manchester building pages (hero call CTA, titles, meta, photos, links, similarity)
+        run: node website/bin/render-batch1.mjs /tmp/batch1 && python3 website/bin/check-batch1.py /tmp/batch1 dist && python3 website/bin/check-images-exist.py /tmp/batch1

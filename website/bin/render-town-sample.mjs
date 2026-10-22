@@ -40,6 +40,33 @@ for (const [kind, slug] of SPECS) {
     rows.push({ kind, slug, town, file, robots: r.robots || "" });
   }
 }
+// SEO PR145: the 15 new security keyword intents, on a 20-town spread across the 269-town
+// security ring (incl. the two borough pages and the closest neighbour pairs), so
+// check-town-words enforces >= 800 words and worst-pair <= 0.70 for each intent.
+const SECURITY_TOWNS_SAMPLE = ["tameside", "trafford", "chapel-allerton", "flint", "leeds", "chorley", "hale", "timperley",
+  "kearsley", "little-lever", "macclesfield", "prestwich", "brighouse", "rastrick", "ossett", "wakefield", "buckley", "mold",
+  "morecambe", "prestatyn"];
+const SECURITY_SPECS = ["emergency-cctv-repair", "emergency-access-control-repair", "emergency-alarm-call-out", "24-hour-cctv-engineer",
+  "same-day-cctv-repair", "same-day-alarm-repair", "security-systems-near-me", "security-system-installation", "anpr-installation",
+  "anpr-near-me", "access-control-emergency", "intruder-alarm-emergency", "door-entry-near-me", "cctv-installers-near-me",
+  "alarm-installers-near-me"];
+for (const slug of SECURITY_SPECS) {
+  for (const town of SECURITY_TOWNS_SAMPLE) {
+    const r = (p0KeepsTown(slug, town) && renderNationwideP0Town(slug, town)) || renderTownPage({ kind: "keyword", keyword: slug, town, catalogue, closeQPages });
+    if (!r || !r.html) { console.error(`render-town-sample: no page for keyword ${slug}/${town}`); process.exitCode = 1; continue; }
+    const file = `security__${slug}__${town}.html`;
+    fs.writeFileSync(path.join(out, file), r.html);
+    rows.push({ kind: "keyword", slug, town, file, robots: r.robots || "" });
+  }
+}
+// SEO PR145: the 15 security keyword hubs themselves, compared hub-vs-hub (all 105 pairs <= 0.70, >= 800 words).
+for (const slug of SECURITY_SPECS) {
+  const src = path.join(dist, "pages/keywords", `${slug}.php`);
+  if (!fs.existsSync(src)) { console.error(`render-town-sample: missing hub ${src}`); process.exitCode = 1; continue; }
+  const file = `security__hub__${slug}.html`;
+  fs.copyFileSync(src, path.join(out, file));
+  rows.push({ kind: "security-hub", slug: "all-15", town: slug, file, robots: "" });
+}
 // Wide pass (no similarity): every dual-ring town for each group, plus one
 // manufacturer, so doubled words, noindex and the word floor are checked on
 // all 269 towns and every page type.
@@ -59,5 +86,9 @@ for (const [kind, slug] of wideSpecs) {
     rows.push({ kind, slug, town, file, robots: r.robots || "", wide: true, words: kind !== "manufacturer" });
   }
 }
-fs.writeFileSync(path.join(out, "index.json"), JSON.stringify(rows));
+// TOWN_SAMPLE_ONLY=security limits the index to the security keyword sample (PR145 branch, whose
+// base predates the GM depth copy from #146/#147; the release branch runs the full index).
+const only = process.env.TOWN_SAMPLE_ONLY || "";
+const indexRows = only ? rows.filter((r) => r.file.startsWith(`${only}__`)) : rows;
+fs.writeFileSync(path.join(out, "index.json"), JSON.stringify(indexRows));
 console.log(`render-town-sample: ${rows.length} pages -> ${out}`);

@@ -9,9 +9,9 @@ $fraFrom = icomplyLandlordGuideMoney('fra');
 
 $pageTitle = 'Fire risk assessment for HMOs | Stockport & MCR';
 $metaTitleExact = true;
-$metaDesc = 'FRA support for HMO and shared housing landlords in Stockport and Greater Manchester. Competent assessment — guide from ' . $fraFrom . ', fixed quote after scope.';
+$metaDesc = 'FRA support for HMO and shared housing landlords in Stockport and Greater Manchester. Competent assessment — from ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA. Written quote after scope.';
 $ogTitle = 'Fire risk assessment for HMOs';
-$ogDescription = 'FRA for HMO landlords — guide from ' . $fraFrom . '. Not legal advice.';
+$ogDescription = 'FRA for HMO landlords — from ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA. Not legal advice.';
 $ogImage = rtrim(SITE_URL, '/') . '/assets/images/services/fire-risk-assessments.jpg';
 $ogImageAlt = 'Fire risk assessment for HMOs and shared housing — iComply Property Services';
 $canonicalUrl = url('/pages/jobs/fire-risk-assessment');
@@ -27,7 +27,7 @@ $landing = [
     'proof' => [
         'Stockport-based',
         'Greater Manchester / North West',
-        'Guide from ' . $fraFrom,
+        'From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA',
     ],
     'crumbs' => [
         ['name' => 'Services', 'href' => '/pages/services'],
@@ -65,7 +65,7 @@ $landing = [
         ],
         [
             'title' => 'Fixed quote after scope',
-            'text' => 'FRA alone, or a coordinated plan with related checks where diary capacity allows. Guide from **' . $fraFrom . '**, then a **fixed quote** once scope is agreed. Related installs stay separate unless included in that scope.',
+            'text' => 'FRA alone, or a coordinated plan with related checks where diary capacity allows. **From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA**, then a **written quote** once scope is agreed. Related installs stay separate unless included in that scope.',
         ],
         [
             'title' => 'Assess and file the actions',
@@ -97,11 +97,11 @@ $landing = [
         ],
         [
             'q' => 'Do you cover commercial buildings as well as HMOs?',
-            'a' => 'Ask us to scope it. Commercial and other multi-occupied buildings are fact-specific under the Fire Safety Order. Tell us the building type, floors and borough. The guide is ' . $fraFrom . ' where the assessment is in scope; the fixed quote follows that scope. The service page is linked above; this landing does not replace it.',
+            'a' => 'Ask us to scope it. Commercial and other multi-occupied buildings are fact-specific under the Fire Safety Order. Tell us the building type, floors and borough. From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA; the written quote follows the scope. The service page is linked above; this landing does not replace it.',
         ],
         [
             'q' => 'Will you quote a fixed price up front?',
-            'a' => 'The published guide is ' . $fraFrom . '. You get a fixed price after scope is agreed. Alarms, emergency lighting and extinguishers are quoted separately unless they are included in an agreed package.',
+            'a' => 'From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA. You get a written quote after scope is agreed. Alarms, emergency lighting and extinguishers are quoted separately unless they are included in an agreed package.',
         ],
     ],
     'links' => [
@@ -125,7 +125,7 @@ $landing = [
         ],
     ],
     'ctaTitle' => 'Request an FRA quote',
-    'ctaText' => 'Tell us HMO size, floors and borough (Stockport, Manchester or other North West), or describe a commercial / multi-occupied building so we can say whether it is in scope. Guide from **' . $fraFrom . '**. The fixed price follows what is included.',
+    'ctaText' => 'Tell us HMO size, floors and borough (Stockport, Manchester or other North West), or describe a commercial / multi-occupied building so we can say whether it is in scope. **From ' . $fraFrom . ' for a typical 6-bed HMO in the North West; other properties POA**. The written quote follows what is included.',
 ];
 
 $landing['gmTopic'] = 'Fire risk assessment';

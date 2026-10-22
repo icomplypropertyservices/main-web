@@ -1,0 +1,342 @@
+{
+ "keywords": {
+  "24-hour-gas-engineer": "24 Hour Gas Engineer",
+  "annual-gas-safety-certificate": "Annual Gas Safety Certificate",
+  "boiler-breakdown": "Boiler Breakdown",
+  "boiler-breakdown-repair": "Boiler Breakdown Repair",
+  "boiler-installation": "Boiler Installation",
+  "boiler-repair": "Boiler Repair",
+  "boiler-replacement": "Boiler Replacement",
+  "boiler-service": "Boiler Service",
+  "brickwork-repairs": "Brickwork Repairs",
+  "combi-boiler-installation": "Combi Boiler Installation",
+  "combi-boiler-replacement": "Combi Boiler Replacement",
+  "cp12": "CP12 Gas Safety Certificate",
+  "cp12-certificate": "CP12 Certificate",
+  "damp-proofing": "Damp Proofing",
+  "emergency-gas-engineer": "Emergency Gas Engineer",
+  "emergency-plumber": "Emergency Plumber",
+  "external-rendering": "External Rendering",
+  "fd30-fire-door": "FD30 Fire Doors",
+  "fd60-fire-door": "FD60 Fire Doors",
+  "fire-door-inspection": "Fire Door Inspection",
+  "fire-door-installation": "Fire Door Installation",
+  "fire-door-installer": "Fire Door Installer",
+  "fire-door-repair": "Fire Door Repair",
+  "fire-door-survey": "Fire Door Survey",
+  "garden-wall-building": "Garden Wall Building",
+  "gas-engineer": "Gas Engineer",
+  "gas-engineer-near-me": "Local Gas Engineer",
+  "gas-safe-engineer": "Gas Safety Engineer",
+  "gas-safety-certificate": "Gas Safety Certificate",
+  "house-renovation": "House Renovation",
+  "landlord-gas-certificate": "Landlord Gas Certificate",
+  "landlord-gas-safety-certificate": "Landlord Gas Safety Certificate",
+  "loft-conversion": "Loft Conversion",
+  "monocouche-render": "Monocouche Render",
+  "plasterboard-installation": "Plasterboard Installation",
+  "plumber-near-me": "Local Plumber",
+  "rising-damp-treatment": "Rising Damp Treatment"
+ },
+ "services": {
+  "bathrooms": "Bathroom Fitters",
+  "brickwork": "Bricklayers",
+  "damp-proofing": "Damp Proofing Specialists",
+  "extensions": "Extension Builders",
+  "flooring": "Floor Fitters",
+  "joinery": "Joiners",
+  "kitchens": "Kitchen Fitters",
+  "landscaping": "Landscapers",
+  "loft-conversions": "Loft Conversion Builders",
+  "painting-decorating": "Painters and Decorators",
+  "plastering": "Plasterers",
+  "plumbing": "Plumbers",
+  "property-refurbishment-pm": "Property Refurbishment",
+  "rendering": "Renderers",
+  "renovation": "Renovation Builders",
+  "roofing": "Roofers",
+  "tiling": "Tilers",
+  "windows-doors": "Window and Door Fitters"
+ },
+ "gm60": [
+  [
+   "altrincham",
+   "Altrincham"
+  ],
+  [
+   "ashton-under-lyne",
+   "Ashton-under-Lyne"
+  ],
+  [
+   "atherton",
+   "Atherton"
+  ],
+  [
+   "bolton",
+   "Bolton"
+  ],
+  [
+   "bramhall",
+   "Bramhall"
+  ],
+  [
+   "bury",
+   "Bury"
+  ],
+  [
+   "cadishead",
+   "Cadishead"
+  ],
+  [
+   "chadderton",
+   "Chadderton"
+  ],
+  [
+   "cheadle",
+   "Cheadle"
+  ],
+  [
+   "cheadle-hulme",
+   "Cheadle Hulme"
+  ],
+  [
+   "chorlton",
+   "Chorlton"
+  ],
+  [
+   "denton",
+   "Denton"
+  ],
+  [
+   "didsbury",
+   "Didsbury"
+  ],
+  [
+   "droylsden",
+   "Droylsden"
+  ],
+  [
+   "dukinfield",
+   "Dukinfield"
+  ],
+  [
+   "eccles",
+   "Eccles"
+  ],
+  [
+   "failsworth",
+   "Failsworth"
+  ],
+  [
+   "farnworth",
+   "Farnworth"
+  ],
+  [
+   "hazel-grove",
+   "Hazel Grove"
+  ],
+  [
+   "heywood",
+   "Heywood"
+  ],
+  [
+   "horwich",
+   "Horwich"
+  ],
+  [
+   "hyde",
+   "Hyde"
+  ],
+  [
+   "irlam",
+   "Irlam"
+  ],
+  [
+   "kearsley",
+   "Kearsley"
+  ],
+  [
+   "lees",
+   "Lees"
+  ],
+  [
+   "leigh",
+   "Leigh"
+  ],
+  [
+   "little-lever",
+   "Little Lever"
+  ],
+  [
+   "littleborough",
+   "Littleborough"
+  ],
+  [
+   "manchester",
+   "Manchester"
+  ],
+  [
+   "marple",
+   "Marple"
+  ],
+  [
+   "middleton",
+   "Middleton"
+  ],
+  [
+   "milnrow",
+   "Milnrow"
+  ],
+  [
+   "mossley",
+   "Mossley"
+  ],
+  [
+   "oldham",
+   "Oldham"
+  ],
+  [
+   "pendlebury",
+   "Pendlebury"
+  ],
+  [
+   "prestwich",
+   "Prestwich"
+  ],
+  [
+   "radcliffe",
+   "Radcliffe"
+  ],
+  [
+   "rochdale",
+   "Rochdale"
+  ],
+  [
+   "romiley",
+   "Romiley"
+  ],
+  [
+   "royton",
+   "Royton"
+  ],
+  [
+   "saddleworth",
+   "Saddleworth"
+  ],
+  [
+   "sale",
+   "Sale"
+  ],
+  [
+   "salford",
+   "Salford"
+  ],
+  [
+   "shaw",
+   "Shaw"
+  ],
+  [
+   "stalybridge",
+   "Stalybridge"
+  ],
+  [
+   "stockport",
+   "Stockport"
+  ],
+  [
+   "stretford",
+   "Stretford"
+  ],
+  [
+   "swinton",
+   "Swinton"
+  ],
+  [
+   "tameside",
+   "Tameside"
+  ],
+  [
+   "trafford",
+   "Trafford"
+  ],
+  [
+   "tyldesley",
+   "Tyldesley"
+  ],
+  [
+   "uppermill",
+   "Uppermill"
+  ],
+  [
+   "urmston",
+   "Urmston"
+  ],
+  [
+   "walkden",
+   "Walkden"
+  ],
+  [
+   "westhoughton",
+   "Westhoughton"
+  ],
+  [
+   "whitefield",
+   "Whitefield"
+  ],
+  [
+   "wigan",
+   "Wigan"
+  ],
+  [
+   "withington",
+   "Withington"
+  ],
+  [
+   "worsley",
+   "Worsley"
+  ],
+  [
+   "wythenshawe",
+   "Wythenshawe"
+  ]
+ ],
+ "keyword_family": {
+  "24-hour-gas-engineer": "gas",
+  "annual-gas-safety-certificate": "gas",
+  "boiler-breakdown": "gas",
+  "boiler-breakdown-repair": "gas",
+  "boiler-installation": "gas",
+  "boiler-repair": "gas",
+  "boiler-replacement": "gas",
+  "boiler-service": "gas",
+  "brickwork-repairs": "brickwork",
+  "combi-boiler-installation": "gas",
+  "combi-boiler-replacement": "gas",
+  "cp12": "gas",
+  "cp12-certificate": "gas",
+  "damp-proofing": "damp-proofing",
+  "emergency-gas-engineer": "gas",
+  "emergency-plumber": "plumbing",
+  "external-rendering": "rendering",
+  "fd30-fire-door": "fire-doors",
+  "fd60-fire-door": "fire-doors",
+  "fire-door-inspection": "fire-doors",
+  "fire-door-installation": "fire-doors",
+  "fire-door-installer": "fire-doors",
+  "fire-door-repair": "fire-doors",
+  "fire-door-survey": "fire-doors",
+  "garden-wall-building": "brickwork",
+  "gas-engineer": "gas",
+  "gas-engineer-near-me": "gas",
+  "gas-safe-engineer": "gas",
+  "gas-safety-certificate": "gas",
+  "house-renovation": "renovation",
+  "landlord-gas-certificate": "gas",
+  "landlord-gas-safety-certificate": "gas",
+  "loft-conversion": "loft-conversions",
+  "monocouche-render": "rendering",
+  "plasterboard-installation": "plastering",
+  "plumber-near-me": "plumbing",
+  "rising-damp-treatment": "damp-proofing"
+ }
+}

@@ -165,6 +165,8 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     </div>
 </section>
 
+<?php require_once SITE_ROOT . '/includes/building-batch1.php'; echo icomplyB1HomeBlock(); ?>
+
 <!-- SERVICES BY CATEGORY -->
 <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">

@@ -211,6 +211,7 @@ $required = [
     '/renewals',
     '/renewals/thanks',
     '/pages/about',
+    '/pages/photo-credits',
     '/pages/areas',
     '/pages/manufacturers',
     '/pages/resources',
@@ -222,6 +223,10 @@ foreach ($routes as $i => $path) {
     $result = icomplyRenderExportRoute($path);
     if (isset($result['html']) && is_string($result['html']) && function_exists('icomplyPerfRewriteHtml')) {
         $result['html'] = icomplyPerfRewriteHtml($result['html']);
+    }
+    if (isset($result['html']) && is_string($result['html'])) {
+        require_once SITE_ROOT . '/includes/photo-credits.php';
+        $result['html'] = icomplyPhotoCreditInject($result['html']);
     }
     $status = $result['status'];
     $html = $result['html'];
@@ -1120,8 +1125,8 @@ __MATRIX_REDIRECTS__
 
 # Barrier town pages are files under /pages/barriers/. Force the hub redirect
 # and the town pretty URL so a directory does not 301 the leaf.
-/pages/barriers          /pages/barriers.php           200!
-/pages/barriers/         /pages/barriers.php           200!
+/pages/barriers          /pages/barriers.php          200!
+/pages/barriers/         /pages/barriers.php          200!
 /pages/barriers/:slug    /pages/barriers/:slug.php     200!
 /pages/barriers/:slug/   /pages/barriers/:slug.php     200!
 
@@ -1144,14 +1149,13 @@ TXT;
     }
     $txt = str_replace("__LIVE_404_REDIRECTS__\n", icomplyLive404RedirectLines(), $base);
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
-    // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
-    $upgradeRedirects = '';
-    $upgradeFile = SITE_ROOT . '/data/seo-upgrade/product-redirects.txt';
-    if (is_file($upgradeFile)) {
-        $upgradeRedirects = "\n# SEO upgrade: dead product and retired service URLs, one hop.\n"
-            . trim((string)file_get_contents($upgradeFile)) . "\n";
+    if (!function_exists('securityDualRingRedirectLines')) {
+        require_once SITE_ROOT . '/includes/security-dual-ring.php';
     }
-    return icomplyPlaceAliasRedirectLines()
+    // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
+    // Security job twins 301 to their keyword equivalents (first match wins).
+    return securityDualRingRedirectLines()
+        . icomplyPlaceAliasRedirectLines()
         . rtrim($txt, "\r\n") . "\n"
         . $upgradeRedirects
         . icomplyAovLegacyRedirectLines()

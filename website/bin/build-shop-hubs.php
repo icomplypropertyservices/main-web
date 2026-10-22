@@ -617,7 +617,7 @@ function icomplyShopPage(string $current, array $hero, string $main, array $ctx)
         . '<p>' . icomplyH($hero['lead']) . '</p>'
         . (isset($hero['meta']) ? '<p class="hero-meta">' . icomplyH($hero['meta']) . '</p>' : '')
         . '</div></section>'
-        . '<main id="main">' . $main . '</main>'
+        . '<main id="main">' . $main . icomplyShopExtraCopy($current) . '</main>'
         . '<footer class="site-footer"><div class="wrap footer-inner">'
         . '<div>iComply Property Services · 17 Woodlands Park Road, Offerton, Stockport SK2 5DE</div>'
         . '<div><a href="https://shop.icomplypropertyservices.co.uk/">Shopify checkout</a> · <a href="https://icomplypropertyservices.co.uk/contact">Free quote</a> · <a href="mailto:' . icomplyH((string)$ctx['enquire_email']) . '">Enquire</a></div>'
@@ -734,4 +734,36 @@ function icomplyCopyShopStatic(string $src, string $dest): void
             copy($file->getPathname(), $target);
         }
     }
+}
+
+/** Plain guide copy for the thin shop hubs (SF 2026-10-21). No prices beyond Shopify; gas wording fixed. */
+function icomplyShopExtraCopy(string $current): string
+{
+    $copy = [
+        'index' => [
+            'How to use iComply Supplies',
+            [
+                'iComply Supplies is the trade counter for the parts we fit every week: fire alarm panels and detectors, AOV and smoke vent controls, emergency lighting batteries, fire-rated cable, barrier and gate automation, door entry and intercom kits. Each category page lists the live products from our Shopify store, with the price exactly as Shopify publishes it. Where there is no list price, the product is POA and we confirm it in writing.',
+                'Not sure which part you need? Send a photo of the existing panel, detector, controller or nameplate to 07517 806082 on WhatsApp, or email icomplypropertyservices@gmail.com. We check compatibility with the system already on the wall before you order, so a replacement detector matches the panel protocol and a barrier arm matches the motor.',
+                'Every part can be supplied on its own for your own engineer, or supplied and fitted by our team from Stockport. Fitting is quoted after we know the site, with Same/Next-Day visits across Greater Manchester where the job allows. Checkout for listed items stays on shop.icomplypropertyservices.co.uk.',
+            ],
+        ],
+        'gas' => [
+            'Gas parts and gas work',
+            [
+                'There are no gas products listed in the online store yet, so this page has nothing to add to a basket. When a gas part is published on Shopify it will appear here automatically with its Shopify price.',
+                'If you need a gas part now, tell us the appliance make, model and the part number from the old part or the manual. We source it and confirm the price before ordering; anything without a list price is POA. Gas work, including fitting any part, is carried out by Gas Safe registered engineers.',
+                'For landlords we also arrange the annual gas safety record and boiler servicing across Greater Manchester, with Same/Next-Day slots where available. If you smell gas, call the National Gas Emergency Service on 0800 111 999 first. For everything else, call or WhatsApp 07517 806082 or email icomplypropertyservices@gmail.com.',
+            ],
+        ],
+    ];
+    if (!isset($copy[$current])) {
+        return '';
+    }
+    [$h2, $paras] = $copy[$current];
+    $out = '<section class="section" data-shop-copy="1"><div class="wrap"><h2>' . icomplyH($h2) . '</h2>';
+    foreach ($paras as $p) {
+        $out .= '<p>' . icomplyH($p) . '</p>';
+    }
+    return $out . '</div></section>';
 }

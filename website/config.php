@@ -744,8 +744,8 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
-                ['Who carries out the gas safety check?', 'Gas work is carried out by Gas Safe registered engineers.'],
-                ['Who carries out the gas work?', 'Gas work is carried out by Gas Safe registered engineers. The engineer shows a Gas Safe ID card on arrival.'],
+                ['Who carries out the gas safety check?', $legal],
+                ['Does iComply hold a Gas Safe registration?', 'Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
             ];
         }
         if ($slug === 'same-day-eicr') {
@@ -916,6 +916,15 @@ function getMajorKeywords(): array {
         require_once __DIR__ . '/includes/money-hub-depth.php';
     }
     $normalized = icomplyMoneyHubDepthApplyKeywords($normalized);
+    if (!function_exists('securityDualRingApplyKeywords')) {
+        $securityPack = __DIR__ . '/includes/security-dual-ring.php';
+        if (is_file($securityPack)) {
+            require_once $securityPack;
+        }
+    }
+    if (function_exists('securityDualRingApplyKeywords')) {
+        $normalized = securityDualRingApplyKeywords($normalized);
+    }
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);

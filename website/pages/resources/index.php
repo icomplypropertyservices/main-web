@@ -1,6 +1,6 @@
 <?php
 /**
- * Resources & guides hub — articles, keyword guides and audience landing links.
+ * Resources & guides hub — articles, service guides and audience landing links.
  */
 require_once __DIR__ . '/../../config.php';
 require_once SITE_ROOT . '/includes/share.php';

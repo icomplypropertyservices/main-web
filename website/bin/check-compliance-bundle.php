@@ -100,9 +100,7 @@ foreach ([$bundleHtml, $packHtml] as $html) {
         $canonicals[] = $m[1];
     }
 }
-$ok(count($canonicals) === 2 && $canonicals[0] !== $canonicals[1], 'bundle and landlord pack are each self-canonical');
-$ok(str_contains($canonicals[0] ?? '', '/pages/packages/compliance-bundle'), 'bundle canonical path is the bundle URL');
-$ok(str_contains($canonicals[1] ?? '', '/pages/packages/landlord-pack'), 'landlord-pack canonical is itself');
+$ok(count($canonicals) === 2 && str_contains($canonicals[0], '/pages/packages/compliance-bundle') && str_contains($canonicals[1], '/pages/packages/landlord-pack'), 'each conversion URL is self-canonical');
 $ok(str_contains($bundleHtml, '"price":"561"') && str_contains($packHtml, '"price":"561"'), 'Offer schema price is 561');
 $ok(str_contains($bundleHtml, 'name="service"') && str_contains($bundleHtml, $bundle['service_value']), 'quote form selects the pack');
 

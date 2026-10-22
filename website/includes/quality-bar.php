@@ -324,44 +324,54 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
  *
  * @return array{html:string,hero:string,og:string}
  */
-/** @return array{0:string,1:string} two extra photos from the slug's own image family */
+/**
+ * Up to two extra photos for $slug. A slug listed in service_photos shows only
+ * its own photos (SEO 20 Oct: no plastering photo on kitchens/flooring/...);
+ * other slugs draw from their family list.
+ *
+ * @return list<string>
+ */
 function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
 {
-    static $fams = null;
-    if ($fams === null) {
+    static $doc = null;
+    if ($doc === null) {
         $doc = json_decode((string)@file_get_contents(SITE_ROOT . '/data/service-image-families.json'), true);
-        $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
+        if (!is_array($doc)) {
+            $doc = [];
+        }
     }
+    $own = $doc['service_photos'][$slug] ?? null;
+    if (is_array($own)) {
+        return array_slice(array_values(array_filter($own, static fn ($b) => $b !== $slug)), 0, 2);
+    }
+    $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
     $fam = $fams['building'] ?? [];
     foreach ($fams as $list) {
         if (in_array($slug, $list, true)) { $fam = $list; break; }
     }
-    // Only this service's own photos. A shared family file becomes one image
-    // across unrelated services once the optimiser hashes the bytes.
-    unset($seed);
-    return [$slug, $slug];
+    $rest = array_values(array_filter($fam, static fn ($b) => $b !== $slug && $b !== $slug . '-photo'));
+    $n = count($rest);
+    $off = $n ? $seed % $n : 0;
+    $rot = array_merge(array_slice($rest, $off), array_slice($rest, 0, $off));
+    $picks = array_merge(in_array($slug . '-photo', $fam, true) ? [$slug . '-photo'] : [], $rot);
+    return array_slice($picks, 0, 2);
+}
+
+/** Plastering / plasterboard / dry-lining pages show their own credited photo (never another family's). */
+function icomplyPlasterImageSlug(string $text, string $fallback): string
+{
+    if (preg_match('/dry[- ]?lining/i', $text)) return 'dry-lining';
+    if (preg_match('/plaster|skim/i', $text)) return 'plastering';
+    return $fallback;
 }
 
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
 {
-    // Jack 20 Oct: only photos from the page's own service family (website/data/service-image-families.json).
+    // Jack 20 Oct: only photos from the page's own service (or, outside service_photos, its family).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
-    if (!function_exists('icomplyImagePick')) {
-        require_once __DIR__ . '/image-pool.php';
-    }
-    $family = $slug === 'aov' ? 'aov-air-handling' : $slug;
-    $picks = icomplyImagePick($altPrefix . '|' . $family, $family, 3);
-    $primary = $family === 'aov-air-handling' ? $picks[0] : '/assets/images/services/' . $slug . '.jpg';
-    $second = $picks[1] ?? $primary;
-    $third = $picks[2] ?? $second;
-    $creditFor = static function (string $src): string {
-        if (!function_exists('icomplyQualityFloorCreditName')) {
-            require_once __DIR__ . '/quality-floor.php';
-        }
-        return function_exists('icomplyQualityFloorCreditName')
-            ? icomplyQualityFloorCreditName($src)
-            : '';
-    };
+    $slug = icomplyPlasterImageSlug($altPrefix, $slug);
+    $primary = '/assets/images/services/' . $slug . '.jpg';
+    $extra = icomplyServiceImageFamilyPicks($slug, abs(crc32($slug)));
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
@@ -371,10 +381,12 @@ function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string 
         return $name !== '' ? ' data-credit="' . $h($name) . '"' : '';
     };
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero"' . $creditAttr($primary) . ' src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work"' . $creditAttr($second) . ' src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ', equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context"' . $creditAttr($third) . ' src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ', site context') . '" width="1200" height="630">'
-        . '</figure>';
+        . '<img data-pe-slot="q2-image-hero" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">';
+    $slots = [['q2-image-work', ' — equipment'], ['q2-image-context', ' — site context']];
+    foreach ($extra as $i => $b) {
+        $html .= '<img data-pe-slot="' . $slots[$i][0] . '" src="' . $h($src('/assets/images/services/' . $b . '.jpg')) . '" alt="' . $h($altPrefix . $slots[$i][1]) . '" width="1200" height="630">';
+    }
+    $html .= '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];
 }
