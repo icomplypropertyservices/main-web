@@ -47,8 +47,9 @@ for root, _, files in os.walk(dist):
                 return m.group(0)  # /pages/<x>/<slug> that is not a service x town (edge-only hubs stay linked)
             n[0] += 1
             town = k.rsplit('/', 1)[1]
-            for alt in ('/pages/areas/' + town, k.rsplit('/', 1)[0]):
-                if alt in known:
+            fam = k.rsplit('/', 1)[0]
+            for alt in ('/pages/areas/' + town, '/pages/services/' + fam.rsplit('/', 1)[1], fam):
+                if alt in known and (alt.startswith('/pages/areas/') or os.path.exists(dist + alt + '.php') or os.path.exists(dist + alt + '/index.html')):
                     return m.group(0).replace(m.group(1), alt, 1)
             return m.group(2)
         t = A.sub(fix, s)
