@@ -21,6 +21,8 @@ FAMS = json.load(open(os.path.join(root, 'data/service-image-families.json')))['
 D2F = {d: f for f, ds in FAMS.items() for d in ds}
 def svc(sub, s):
     if sub == 'keywords' and KW.get(s): s = KW[s]
+    elif sub == 'keywords':   # keyword lists outside keywords.json (barriers, access control): service named in the slug
+        s = next((d for d in sorted(D2F, key=len, reverse=True) if '-photo' not in d and d.rstrip('s') in s), s)
     if sub == 'families': s = re.sub(r'-photo(-[a-z]+)?$', '', s) + '#fam'
     return re.sub(r'-(photo|context|callpoint|[0-9]+)$', '', s)
 def dh(g):
