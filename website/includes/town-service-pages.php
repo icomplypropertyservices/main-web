@@ -880,3 +880,19 @@ function icomplyDispatchTownPath(string $path): bool
     }
     return false;
 }
+
+function icomplyDisambiguatedTownName(string $name, string $slug): string
+{
+    $plain = strtolower(trim((string)preg_replace('/[^a-z0-9]+/', '-', $name), '-'));
+    if ($slug === '' || $slug === $plain) {
+        return $name;
+    }
+    if (preg_match('/^' . preg_quote($plain, '/') . '-(.+)$/', $slug, $m)) {
+        $tail = (string)$m[1];
+        if ($tail === $plain) {
+            return $name . ' (' . $name . ')';
+        }
+        return $name . ', ' . ucwords(str_replace('-', ' ', $tail));
+    }
+    return $name . ' (' . ucwords(str_replace('-', ' ', $slug)) . ')';
+}

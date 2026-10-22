@@ -1635,7 +1635,6 @@ function serviceImageUrl(string $slug): string {
  * the parent service image (then the shared fire-alarms photo).
  */
 function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
-    unset($serviceSlug);
     if (!function_exists('icomplyImagePick')) {
         $pool = SITE_ROOT . '/includes/image-pool.php';
         if (is_file($pool)) {

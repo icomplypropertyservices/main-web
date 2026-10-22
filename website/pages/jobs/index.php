@@ -109,6 +109,7 @@ require SITE_ROOT . '/includes/header.php';
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
                 $name = $job['name'] ?? ucwords(str_replace('-', ' ', $slug));
+                $hubHref = $job['href'] ?? ('/pages/jobs/' . $slug);
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
                 <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url($hubHref)) ?>"><?= $h($name) ?></a>
