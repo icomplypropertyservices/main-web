@@ -1436,5 +1436,36 @@
     "license": "Public domain",
     "artist": "YellowstoneNPS",
     "license_url": "https://creativecommons.org/publicdomain/mark/1.0/"
+  },
+  {
+    "file": "/assets/images/services/building-surveys.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_01.jpg",
+    "title": "File:Under Renovation house in Mid-City New Orleans - 01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Bart Everson"
+  },
+  {
+    "file": "/assets/images/services/fire-risk-assessments.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:037_Fire_safety_-_fire_escape_stairs_in_Rotterdam%2C_Netherlands.jpg",
+    "title": "File:037 Fire safety - fire escape stairs in Rotterdam, Netherlands.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Marek Ślusarczyk ( Tupungato ) Photo portfolio",
+    "alt": "037 Fire safety - fire escape stairs in Rotterdam, Netherlands"
+  },
+  {
+    "file": "/assets/images/services/fire-risk-assessments-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:037_Fire_safety_-_fire_escape_stairs_in_Rotterdam%2C_Netherlands.jpg",
+    "title": "File:037 Fire safety - fire escape stairs in Rotterdam, Netherlands.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Marek Ślusarczyk ( Tupungato ) Photo portfolio",
+    "alt": "037 Fire safety - fire escape stairs in Rotterdam, Netherlands"
+  },
+  {
+    "file": "/assets/images/services/aov-control-panel-1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:VENTZ_control_panel_for_heat_and_smoke_vents_%2801%29.jpg",
+    "title": "File:VENTZ control panel for heat and smoke vents (01).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik",
+    "alt": "Control panel for heat and smoke vents"
   }
 ]
