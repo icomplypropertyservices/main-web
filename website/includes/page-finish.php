@@ -64,6 +64,23 @@ function icomplyFinishPage(string $html, string $path): string
         $fig = '<figure data-pe-slot="q2-image-hero" data-photo-slot="real-photo" class="pf-hero" style="margin:0 0 1.1rem"><img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8') . '" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem">' . icomplyFinishCaption($src) . '</figure>';
         $html = preg_replace('/(<div class="hero-cta" data-cta="hero">.*?<\/div>)/s', '$1' . $fig, $html, 1) ?? $html;
     }
+    if (stripos($html, 'faqpage') === false && $h1 !== '' && stripos($html, '</main>') !== false) {
+        $t = $h1;
+        $qa = [
+            ['How do I get a quote for ' . $t . '?', 'Call or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com with the address, the type of property and a few photos. We reply the same working day with a written quote or the questions we need answered first.'],
+            ['How soon can an engineer attend?', 'Same-day and next-day slots are often available from our Stockport base. Further afield we confirm the date when we quote, and we tell you before booking if a visit needs a second engineer or out-of-hours access.'],
+            ['What paperwork do I get afterwards?', 'You get a written record of what was inspected, installed or repaired, with any certificate the work requires, emailed after the visit so it can go straight into the building file.'],
+        ];
+        $vis = '<section class="pf-faq max-w-7xl mx-auto px-6 py-8"><h2 class="text-2xl font-semibold">Questions about ' . htmlspecialchars($t, ENT_QUOTES, 'UTF-8') . '</h2>';
+        $ents = [];
+        foreach ($qa as [$q, $a]) {
+            $vis .= '<h3 class="mt-4 font-semibold">' . htmlspecialchars($q, ENT_QUOTES, 'UTF-8') . '</h3><p class="mt-1">' . htmlspecialchars($a, ENT_QUOTES, 'UTF-8') . '</p>';
+            $ents[] = ['@type' => 'Question', 'name' => $q, 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $a]];
+        }
+        $vis .= '</section><script type="application/ld+json">' . json_encode(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $ents], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
+        $pos = strripos($html, '</main>');
+        $html = substr($html, 0, $pos) . $vis . substr($html, $pos);
+    }
     if (preg_match('/<body\b.*<img\b/is', $html) && !preg_match('/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i', $html)) {
         $p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
         $html = preg_match('/<\/main>/i', $html) ? (preg_replace('/<\/main>/i', $p . '</main>', $html, 1) ?? $html) : (preg_replace('/<footer\b/i', $p . '<footer', $html, 1) ?? $html);
