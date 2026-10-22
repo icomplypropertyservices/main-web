@@ -240,9 +240,9 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
   if (!hub || !pack || !place) return null;
   const name = pack.name || hub.name;
   const townName = place.name;
-  const localTown = isGmTown(townSlug) || isLocalTown(townSlug);
-  const title = p0Title(name, townName, localTown);
-  const description = p0Description(name, townName, localTown);
+  // Jack (19 Oct): titles and metas keep Same/Next-Day on every town page.
+  const title = p0Title(name, townName);
+  const description = p0Description(name, townName);
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
   const imageService = hub.service === "aov" ? "aov-air-handling" : (hub.service || "fire-alarms");
   const pool = imageService === "aov-air-handling"

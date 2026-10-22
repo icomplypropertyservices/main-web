@@ -504,7 +504,7 @@ export function renderTownPage(input) {
   const h1 = `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  let title = ctrTitle(subject, place.name, ctrSlug, isGmTown(townSlug) || isLocalTown(townSlug));
+  let title = ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
   const imageFamily = UPGRADE_SERVICE[serviceSlug] || serviceSlug;
   const imageSlug = IMAGE_SLUG[imageFamily] || imageFamily;
