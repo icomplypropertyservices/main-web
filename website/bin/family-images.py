@@ -22,7 +22,7 @@ def page_family(u):
     if 'roof' in s: return 'roofing'
     return None
 ALT = {'fire': 'Fire alarm manual call point', 'gas': 'Wall-mounted gas boiler in a kitchen', 'security': 'CCTV cameras on a building',
-       'electrical': 'Consumer unit with RCD protection', 'building': 'Building under renovation with scaffolding', 'compliance': 'Asbestos warning label'}
+       'electrical': 'Consumer unit with RCD protection', 'building': 'Building under renovation with scaffolding', 'compliance': 'Terraced rented houses on a residential street'}
 fp_photo = {}
 for f in ALT:
     rel = f'/assets/images/families/{f}-photo.jpg'

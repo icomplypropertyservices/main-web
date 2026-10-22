@@ -584,15 +584,6 @@
     "family": "building"
   },
   {
-    "file": "/assets/images/families/compliance-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
     "file": "/assets/images/services/brickwork.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Zambia_-Bricklayer.jpg",
     "title": "File:Zambia -Bricklayer.jpg (cropped 1280x720, same photo as b1/brickwork-1.jpg)",
@@ -1756,51 +1747,6 @@
     "family": "building"
   },
   {
-    "file": "/assets/images/families/compliance-photo-fire.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg (crop)",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
-    "file": "/assets/images/families/compliance-photo-gas.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg (crop)",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
-    "file": "/assets/images/families/compliance-photo-security.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg (crop)",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
-    "file": "/assets/images/families/compliance-photo-electrical.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg (crop)",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
-    "file": "/assets/images/families/compliance-photo-building.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
-    "title": "File:Asbestos warning label.jpg (crop)",
-    "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
-  },
-  {
     "file": "/assets/images/services/fire-signage.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Derbion_fire_exit_sign_-_4_July_2025.jpg",
     "title": "File:Derbion fire exit sign - 4 July 2025.jpg",
@@ -1841,5 +1787,14 @@
     "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
     "license": "CC BY-SA 2.0",
     "artist": "Roger A Smith"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Terraced_Houses,_Manchester_Road_-_geograph.org.uk_-_2162890.jpg",
+    "title": "File:Terraced Houses, Manchester Road - geograph.org.uk - 2162890.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Robert Wade",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "family": "compliance"
   }
 ]
