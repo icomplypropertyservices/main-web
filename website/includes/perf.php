@@ -89,7 +89,10 @@ function icomplyPerfRewriteImg(string $tag, bool &$gaveHigh, array &$seen): stri
     $attrs = [];
     foreach ($matches as $one) {
         $name = strtolower($one[1]);
-        $raw = $one[2] !== '' ? $one[2] : ($one[3] !== '' ? $one[3] : ($one[4] ?? ''));
+        $quoted = $one[2] ?? '';
+        $single = $one[3] ?? '';
+        $bare = $one[4] ?? '';
+        $raw = $quoted !== '' ? $quoted : ($single !== '' ? $single : $bare);
         $attrs[$name] = html_entity_decode((string)$raw, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     }
     if (!isset($attrs['src']) || $attrs['src'] === '') {
@@ -155,12 +158,33 @@ function icomplyPerfRewriteImg(string $tag, bool &$gaveHigh, array &$seen): stri
         $attrs['onerror'] = "this.onerror=null;this.src='" . $fallback . "'";
     }
     $attrs['data-perf'] = '1';
+    $existingCredit = trim((string)($attrs['data-credit'] ?? ''));
+    if ($existingCredit === '' || $existingCredit === 'iComply Property Services') {
+        $credit = '';
+        if (function_exists('icomplyQualityFloorCreditName') && !empty($attrs['src'])) {
+            $credit = icomplyQualityFloorCreditName((string)$attrs['src']);
+        }
+        if ($credit !== '') {
+            $attrs['data-credit'] = $credit;
+        } else {
+            unset($attrs['data-credit']);
+        }
+    }
     return icomplyPerfRenderTag($tag, $attrs);
 }
 
 function icomplyPerfRewriteHtml(string $html): string
 {
-    if ($html === '' || stripos($html, '<img') === false) {
+    if ($html === '') {
+        return $html;
+    }
+    if (!function_exists('icomplyApplyQualityFloor')) {
+        require_once __DIR__ . '/quality-floor.php';
+    }
+    if (function_exists('icomplyApplyQualityFloor')) {
+        $html = icomplyApplyQualityFloor($html);
+    }
+    if (stripos($html, '<img') === false) {
         return $html;
     }
     $gaveHigh = false;

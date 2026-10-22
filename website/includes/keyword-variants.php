@@ -40,7 +40,7 @@ function icomplyKeywordVariantModifiers(): array
         ['slug' => 'near-me', 'label' => 'Near me', 'title' => 'Near me', 'note' => 'Local engineers from our Stockport base, covering Greater Manchester and beyond.'],
         ['slug' => 'same-day', 'label' => 'Same day', 'title' => 'Same day', 'note' => 'Same-day visits are often available. Call 07517 806082 early in the day and we will confirm the slot.'],
         ['slug' => '24-hour', 'label' => '24 hour', 'title' => '24 hour', 'note' => 'Send your enquiry any time, day or night. We reply as soon as an engineer is available.'],
-        ['slug' => 'cheap', 'label' => 'Cheap', 'title' => 'Cheap', 'note' => 'Competitive, fixed written quotes with no hidden extras.'],
+        ['slug' => 'cheap', 'label' => 'Cheap', 'title' => 'Cheap', 'note' => 'Competitive, free written quotes with no hidden extras.'],
         ['slug' => 'local', 'label' => 'Local', 'title' => 'Local', 'note' => 'Local engineers from our Stockport base, covering every Greater Manchester town.'],
         ['slug' => 'stockport', 'label' => 'Stockport', 'title' => 'Stockport', 'note' => 'Based in Offerton, Stockport, so Stockport jobs are on our doorstep.'],
         ['slug' => 'manchester', 'label' => 'Manchester', 'title' => 'Manchester', 'note' => 'We cover Manchester and every Greater Manchester town from our Stockport base.'],
@@ -71,7 +71,7 @@ function icomplyKeywordVariantScopes(): array
 function icomplyKeywordVariantIntents(): array
 {
     return [
-        ['slug' => 'quote', 'label' => 'Quote', 'title' => 'Quote', 'note' => 'Get a fixed written quote. Send the address and a few photos and we will come back to you quickly.'],
+        ['slug' => 'quote', 'label' => 'Quote', 'title' => 'Quote', 'note' => 'Get a free written quote. Send the address and a few photos and we will come back to you quickly.'],
         ['slug' => 'book', 'label' => 'Book', 'title' => 'Book', 'note' => 'Book a visit. We confirm the date as soon as you accept the quote.'],
         ['slug' => 'arrange', 'label' => 'Arrange', 'title' => 'Arrange', 'note' => 'We arrange the visit around access, tenants and opening hours.'],
         ['slug' => 'find', 'label' => 'Find', 'title' => 'Find', 'note' => 'Looking for a reliable engineer in Greater Manchester? We cover every town from Stockport.'],

@@ -25,7 +25,7 @@ $aovUrl = url('/pages/services/aov-air-handling.php');
 $barriersUrl = url('/products.php') . '#barriers';
 $contactUrl = url('/contact.php');
 $trust = [
-    ['title' => 'Call ' . PHONE, 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
+    ['title' => 'Call ' . icomplyPhoneDisplay(), 'text' => 'Phone or WhatsApp — same Stockport team', 'href' => $phoneHref],
     ['title' => 'AOV & barriers first', 'text' => 'Smoke control and 5m barrier packs are the priority quotes'],
     ['title' => 'Phone, WhatsApp or form', 'text' => 'Send the postcode and property type to start a quote', 'href' => $contactUrl],
     ['title' => 'Scoped quotes', 'text' => 'Written figure after scope — AOV install and barrier install are POA'],
@@ -64,7 +64,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <div class="home-hero-cta">
                 <a class="btn-hero-accent" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">AOV &amp; smoke control</a>
                 <a class="btn-hero-light" href="<?= htmlspecialchars($barriersUrl, ENT_QUOTES, 'UTF-8') ?>">Barriers</a>
-                <a class="btn-hero-light" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a class="btn-hero-light" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a class="btn-hero-wa" href="<?= htmlspecialchars($waHref, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener">WhatsApp</a>
                 <a class="btn-hero-ghost" href="#quote">Get a quote</a>
                 <a class="btn-hero-ghost" href="<?= htmlspecialchars($contactUrl, ENT_QUOTES, 'UTF-8') ?>">Contact form</a>
@@ -79,7 +79,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <div><strong><?= count($areas) ?>+</strong> towns</div>
                 <div><strong><?= number_format($kwCount) ?>+</strong> guides</div>
             </div>
-            <p class="home-hero-fine">Stockport SK2 5DE · Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?> · AOV and barrier install are POA</p>
+            <p class="home-hero-fine">Stockport SK2 5DE · Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?> · AOV and barrier install are POA</p>
         </div>
         <div class="home-hero-cards">
             <a class="home-hero-card home-hero-card--priority" href="<?= htmlspecialchars($aovUrl, ENT_QUOTES, 'UTF-8') ?>">
@@ -116,9 +116,9 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
 
 <section class="bg-[#0B1F3A] text-white border-y border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-10">
-        <p class="text-xs uppercase tracking-[3px] text-[#ffb27a] font-semibold">Priority services</p>
+        <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Priority services</p>
         <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mt-2">Barriers and AOV</h2>
-        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+        <p class="mt-3 text-white/80 max-w-3xl">Vehicle and parking barriers are covered across Greater Manchester, with Came as the partner brand and a full manufacturer list. AOV and smoke control stays the paired life-safety priority. Manchester and Stockport are covered from the Stockport yard on the car park barrier job. Quotes are on application. Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
         <div class="mt-6 flex flex-wrap gap-2">
             <a class="px-4 py-2 rounded-full bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/barriers.php') ?>">Barriers hub</a>
             <a class="px-4 py-2 rounded-full bg-white text-[#0B1F3A] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV &amp; smoke control</a>
@@ -201,7 +201,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <a href="<?= url('/pages/services/' . $slug . '.php') ?>"
                class="service-card group bg-white border border-zinc-200 rounded-3xl overflow-hidden hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="h-36 bg-zinc-100 overflow-hidden">
-                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?> in Greater Manchester and the North West — iComply Property Services"
+                    <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars(trim(html_entity_decode((string)$name, ENT_QUOTES | ENT_HTML5, 'UTF-8')) . ' in Greater Manchester and the North West', ENT_QUOTES, 'UTF-8') ?>"
                          class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy"
                          onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
                 </div>
@@ -222,7 +222,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div>
-                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local SEO guides</div>
+                <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local service guides</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">EICR, gas, fire, Legionella, asbestos &amp; more by town</h2>
                 <p class="mt-2 text-zinc-600 max-w-2xl">
                     Every guide has a dedicated page for each Greater Manchester town — e.g.
@@ -289,7 +289,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                class="group bg-white border border-zinc-200 rounded-3xl p-6 md:p-8 hover:border-[#ff6b00] hover:shadow-lg transition flex flex-col">
                 <div class="w-12 h-12 rounded-2xl bg-[#0B1F3A]/10 text-[#0B1F3A] font-bold flex items-center justify-center text-lg group-hover:bg-[#ff6b00] group-hover:text-white transition">L</div>
                 <h3 class="mt-5 font-semibold text-xl text-black tracking-tight">Landlords &amp; agents</h3>
-                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages — not a separate invented product.</p>
+                <p class="mt-2 text-sm text-zinc-600 flex-1">EICR, CP12 / gas, FRA, Legionella, asbestos, voids, kitchens and bathrooms for portfolios. HMO work is quoted through existing landlord packages.</p>
                 <span class="mt-5 text-sm font-semibold text-[#ff6b00]">Landlord compliance →</span>
             </a>
             <a href="<?= url('/pages/commercial.php') ?>"
@@ -381,7 +381,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <h3 class="text-2xl font-semibold tracking-tight">Need a compliance package?</h3>
             <p class="mt-3 text-white/80">Combine EICR, gas, FRA, water hygiene, asbestos surveys, security and refurb works into one visit schedule for landlords and facilities teams.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quoted multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
             </ul>
@@ -423,7 +423,7 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request your free quote</h2>
-            <p class="mt-3 text-zinc-600">Send the postcode, property type and what is on site. All quotes are fixed-price after scope is agreed.</p>
+            <p class="mt-3 text-zinc-600">Send the postcode, property type and what is on site. All quotes are written after scope is agreed.</p>
         </div>
 
         <form name="contact" method="POST" action="/contact" data-netlify="true" data-contact-form="home" netlify-honeypot="bot-field" class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm" aria-label="Free quote form">

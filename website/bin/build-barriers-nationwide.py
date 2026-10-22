@@ -10,7 +10,7 @@ Scotland: NRS mid-2020 locality estimates.
 Isle of Wight settlements are omitted (not mainland). Northern Ireland is not
 in these mainland sources and is not given a page.
 
-Does not invent landmarks for census towns. Each page's substance is that
+Each page's substance is that
 settlement's own published counts.
 """
 from __future__ import annotations
@@ -145,7 +145,7 @@ def implication(industry: str, housing: str) -> str:
     elif "transport" in ind or "storage" in ind:
         base = "Transport and storage is the largest industry group, which usually means depot mouths and longer vehicles. Loop detectors have to suit the wheelbase. The public highway is still not the site."
     elif "health" in ind or "social work" in ind:
-        base = "Human health and social work leads employment. A barrier only belongs on a private staff car park if that estate instructs us. We do not assume a hospital contract from the census industry label."
+        base = "Human health and social work leads employment. A barrier only belongs on a private staff car park if that estate instructs us."
     elif ind.startswith("education") or "education" in ind:
         base = "Education is the largest industry group. Campus staff parking can need a barrier. The road outside a school gate does not."
     elif "accommodation" in ind or "food" in ind:
@@ -164,12 +164,14 @@ def implication(industry: str, housing: str) -> str:
         base = f"The largest industry group is {industry}. Any barrier has to sit on land that employer or landlord controls."
     if "flat" in house or "maisonette" in house or "apartment" in house:
         extra = " Flats are the largest accommodation group, so basement and podium ramps are the housing form that actually needs a boom."
+    elif "semi-detached" in house:
+        extra = " Semi-detached houses lead the stock, which points to suburban private car parks rather than city-centre podiums."
     elif "detached" in house:
-        extra = " Detached houses lead the housing mix, so communal booms are less common than on flatted estates. We do not invent a podium that the census says is not the main housing form."
+        extra = " Detached houses lead the housing mix, so communal booms are less common than on flatted estates."
     elif "terraced" in house:
         extra = " Terraced housing leads the stock. Street frontages are a poor place for a boom. Private yards behind that housing are the sites worth surveying."
     else:
-        extra = " Semi-detached houses lead the stock, which points to suburban private car parks rather than city-centre podiums."
+        extra = ""
     return base + extra
 
 
@@ -201,7 +203,7 @@ def ew_reading(p) -> str:
         f"{occ_bit}{emp_bit} "
         f"{implication(lead_ind, lead_house)} "
         f"Counts are rounded to the nearest 5 and very small cells may have been suppressed by ONS. "
-        f"A barrier survey is on application and only for a private lane. This readout does not invent a business park."
+        f"A barrier survey is on application and only for a private lane."
     )
 
 
@@ -232,7 +234,6 @@ def scotland_reading(p) -> str:
         f"{comma(bands['working'])} aged 16 to 64, and {comma(bands['over65'])} aged 65 and over "
         f"({u16}%, {w}% and {o}%). "
         f"{shape} "
-        f"This page uses the locality estimate, not a guessed business-park name. "
         f"Attendance from Stockport is a planned mainland visit. The quote is on application after the lane is known."
     )
 
@@ -241,7 +242,7 @@ def london_reading(p) -> str:
     note = LONDON_NOTES[p["name"]]
     return (
         f"{p['name']} had {comma(p['population'])} usual residents at Census 2021 (local authority {p['code']}). "
-        f"ONS does not separate Greater London into built-up areas the way it does for the rest of England and Wales, so this page uses the borough count rather than inventing a town boundary. "
+        f"ONS does not separate Greater London into built-up areas the way it does for the rest of England and Wales, so the figure here is the borough count. "
         f"{note} "
         f"Travel from Stockport is a planned London day. The fee is on application after a lane survey."
     )
@@ -502,6 +503,24 @@ def assert_unique(rows):
             raise SystemExit("too many pages share one skeleton")
 
 
+DOUBLED_NAME = re.compile(r"\b([A-Z][\w' -]*?) \(([^()]+)\)")
+
+
+def tidy_doubled_names(value):
+    """P2-20-6: 'St Helens (St. Helens)' repeats the town; keep 'St Helens'."""
+    def fix(m):
+        a = re.sub(r"[^a-z]", "", m.group(1).lower())
+        b = re.sub(r"[^a-z]", "", m.group(2).lower())
+        return m.group(1) if a.endswith(b) or b == a else m.group(0)
+    if isinstance(value, str):
+        return DOUBLED_NAME.sub(fix, value)
+    if isinstance(value, list):
+        return [tidy_doubled_names(v) for v in value]
+    if isinstance(value, dict):
+        return {k: (v if k == "slug" else tidy_doubled_names(v)) for k, v in value.items()}
+    return value
+
+
 def main():
     rows = collect_ew()
     print("england wales", len(rows))
@@ -513,6 +532,7 @@ def main():
     add_neighbours(rows)
     assert_unique(rows)
     rows.sort(key=lambda r: (r["country"], r["region"], r["name"]))
+    rows = tidy_doubled_names(rows)
     # Drop bulky nulls for scotland/london already present.
     path = DATA / "barriers-places.json"
     path.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n")

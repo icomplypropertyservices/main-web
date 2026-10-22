@@ -39,10 +39,10 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "GBP",
-        "url": "<?= url('/contact.php') ?>"
+        "url": "<?= url('/contact.php') ?>",
+        "itemOffered": {"@type": "Service", "name": "{{SERVICE_NAME}} in {{AREA}}", "areaServed": "{{AREA}}"}
       },
       "brand": {"@type": "Brand", "name": <?= json_encode(SITE_NAME) ?>}
     },
@@ -74,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        iComply Property Services designs, installs, commissions and maintains <strong>Automatic Opening Vent (AOV)</strong> and <strong>air handling</strong> systems across <strong>{{AREA}}</strong> and the wider North West. From natural smoke ventilation on stairwells and façades to mechanical extraction, pressurisation and AHU control, our engineers deliver BS EN 12101-compliant solutions with fixed-price quotes and full certification.
+        iComply Property Services designs, installs, commissions and maintains <strong>Automatic Opening Vent (AOV)</strong> and <strong>air handling</strong> systems across <strong>{{AREA}}</strong> and the wider North West. From natural smoke ventilation on stairwells and façades to mechanical extraction, pressurisation and AHU control, our engineers deliver BS EN 12101-compliant solutions with written quotes and full certification.
     </p>
 
     <!-- PARAGRAPH 2 -->

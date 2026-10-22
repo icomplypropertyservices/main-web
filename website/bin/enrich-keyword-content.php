@@ -77,7 +77,7 @@ $serviceCopy = [
 $openers = [
     'Looking for expert {kw} support across the North West?',
     'Need reliable {kw} from a local Stockport-based team?',
-    'Searching for professional {kw} with clear fixed-price quotes?',
+    'Searching for professional {kw} with clear written quotes?',
     'Want {kw} handled by engineers who work to current UK standards?',
     'Planning {kw} for a landlord, commercial or multi-site property?',
 ];
@@ -85,7 +85,7 @@ $openers = [
 $middles = [
     'iComply Property Services {verb} {kw} as part of our {svc} range, working to {std}.',
     'Our engineers {verb} {kw} for {who}, with documentation that stands up to audits and insurers.',
-    'From first survey to final paperwork, we {verb} {kw} with transparent scope and fixed pricing after agreement.',
+    'From first survey to final paperwork, we {verb} {kw} with transparent scope and a free written quote after agreement.',
     'We specialise in {kw} alongside related {svc} works, so one team can cover install, service and certification.',
 ];
 
@@ -139,7 +139,7 @@ foreach ($keywords as $slug => &$meta) {
     if (empty($meta['meta_desc']) || strlen((string)$meta['meta_desc']) < 80) {
         $meta['meta_desc'] = substr(
             $name . ' across Greater Manchester & the North West. iComply ' . $c['verb']
-            . ' with fixed-price quotes, ' . $c['std'] . ' focus and local engineers from Stockport.',
+            . ' with written quotes, ' . $c['std'] . ' focus and local engineers from Stockport.',
             0,
             158
         );
@@ -147,7 +147,7 @@ foreach ($keywords as $slug => &$meta) {
 
     if (empty($meta['focus_points']) || !is_array($meta['focus_points'])) {
         $meta['focus_points'] = [
-            'Survey, specification and fixed-price quote for ' . $name,
+            'Survey, specification and written quote for ' . $name,
             'Install, upgrade or remedial works by local North West engineers',
             'Testing and ' . $c['docs'],
             'Manufacturer-aware support within our ' . $svcName . ' service',
@@ -170,7 +170,7 @@ foreach ($keywords as $slug => &$meta) {
             ],
             [
                 'How do I get a quote for ' . $name . '?',
-                'Use the form on this page, call, or WhatsApp with postcode, property type and any brand already on site.',
+                '',
             ],
         ];
     }

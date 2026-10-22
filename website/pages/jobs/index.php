@@ -45,16 +45,16 @@ $groups = [
 
 $faqs = [
     [
-        'Do you publish fixed prices on job pages?',
-        'No. Every job type is quoted as POA after we know the building, access and certificate scope. We do not show £ bands or “from £X” on these pages.',
+        'Do you publish prices on job pages?',
+        'Most job types are price on application, quoted in writing once we know the building, the access and the certificate needed. Where a service has a list price, the service page shows it.',
     ],
     [
         'Is gas work available?',
-        'Yes. Gas safety and CP12 visits are offered. They are carried out by Gas Safe registered engineers. iComply is not itself described as Gas Safe registered.',
+        'Yes. Gas safety and CP12 visits are offered, carried out by Gas Safe registered engineers.',
     ],
     [
-        'Which towns get job×town pages?',
-        'Towns in the dual ring (Greater Manchester plus 50 miles of Manchester and of Burnley) have job×town URLs. Manufacturer×town pages stay on the Greater Manchester core. Start from the hub, then pick your town (Stockport is linked on each card as a working example).',
+        'Do you cover my town?',
+        'We cover Greater Manchester and towns across the North West from our Stockport base, and AOV, barrier and fire work UK-wide. Open the job you need, then pick your town from the list on that guide.',
     ],
     [
         'How do I request a visit?',
@@ -70,7 +70,7 @@ $email = defined('EMAIL') ? EMAIL : 'icomplypropertyservices@gmail.com';
 
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-5xl mx-auto px-6 py-14">
         <nav class="text-xs text-white/60 mb-4" aria-label="Breadcrumb">
             <a class="hover:text-white" href="<?= $h(rtrim(SITE_URL, '/') . '/') ?>">Home</a>
@@ -78,22 +78,23 @@ require SITE_ROOT . '/includes/header.php';
             <span>Jobs</span>
         </nav>
         <h1 class="text-4xl font-semibold tracking-tight">Job types for Greater Manchester property work</h1>
-        <p class="mt-4 text-lg text-white/80 max-w-3xl">iComply Property Services lists the job types we arrange from Stockport across Greater Manchester. Each hub explains the visit, the paperwork and how we quote. Pricing is always price on application (POA) after the building and scope are known — never a published pound figure.</p>
+        <p class="mt-4 text-lg text-white/80 max-w-3xl">iComply Property Services lists the job types we arrange from Stockport across Greater Manchester. Each guide explains the visit, the paperwork and how we quote. Most jobs are price on application (POA), quoted once the building and scope are known.</p>
     </div>
 </section>
 <main class="max-w-5xl mx-auto px-6 py-12">
-    <p class="text-zinc-700 leading-relaxed max-w-3xl">Use this index to reach the right hub before you request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517 806082, email icomplypropertyservices@gmail.com, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>. Footer and citation pages must keep Cheshire in the Stockport address.</p>
+    <p class="text-zinc-700 leading-relaxed max-w-3xl">Find the job you need, then request a date. Landlord and HMO jobs sit beside fire alarm maintenance, FRAs, electrical testing, gas safety and access hardware. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Barrier and maglock work is scoped on site so lane lengths, loops and power are clear before a quote. Call 07517 806082, email icomplypropertyservices@gmail.com, or use <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a>.</p>
 
     <?php foreach ($groups as $group => $jobs): ?>
     <section class="related-links mt-12" aria-label="<?= $h($group) ?>">
-        <h2 class="text-2xl font-semibold text-[#061828]"><?= $h($group) ?></h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]"><?= $h($group) ?></h2>
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
-                $name = ucwords(str_replace('-', ' ', $slug));
+                // Keep acronyms upright in card titles (HMO, FRA, EICR, CP12, BS 5839, PPM, CAME GARD GT4).
+                $name = preg_replace_callback('/\\b(Hmo|Fra|Eicr|Cp12|Bs|Ppm|Aov|Cctv|Anpr|Gt4|Gard|Came)\\b/', static fn($m) => strtoupper($m[1]), ucwords(str_replace('-', ' ', $slug)));
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
+                <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
                 <p class="mt-1 text-sm text-zinc-600"><?= $h($job['blurb']) ?></p>
                 <p class="mt-2 text-sm"><a class="text-[#ff6b00] font-medium" href="<?= $h(url('/pages/jobs/' . $slug . '/stockport')) ?>"><?= $h($name) ?> in Stockport</a></p>
             </li>
@@ -102,12 +103,40 @@ require SITE_ROOT . '/includes/header.php';
     </section>
     <?php endforeach; ?>
 
+    <?php
+    require_once SITE_ROOT . '/includes/nationwide-p0-jobs.php';
+    $nationwideGroups = [
+        'aov-smoke' => 'AOV and smoke control — UK-wide',
+        'barrier' => 'Barriers — UK-wide',
+        'fire' => 'Fire — UK-wide',
+    ];
+    $nationwideItems = [];
+    foreach (nationwideP0IndexItems() as $item) {
+        $nationwideItems[$item['line']][] = $item;
+    }
+    ?>
+    <section class="mt-12" aria-label="Nationwide job types">
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Nationwide AOV, barrier and fire job types</h2>
+        <p class="mt-3 text-zinc-700 leading-relaxed max-w-3xl">These three lines are arranged UK-wide from our Stockport base at 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Price on application after survey. Pick the job below for what it covers and how the visit runs.</p>
+        <?php foreach ($nationwideGroups as $lineKey => $lineLabel): ?>
+        <h3 class="mt-8 text-xl font-semibold text-[#0B1F3A]"><?= $h($lineLabel) ?></h3>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-3">
+            <?php foreach ($nationwideItems[$lineKey] ?? [] as $item): ?>
+            <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
+                <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url($item['href'])) ?>"><?= $h($item['label']) ?></a>
+                <p class="mt-1 text-sm text-zinc-600"><?= $h($item['card']) ?></p>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endforeach; ?>
+    </section>
+
     <section class="mt-12" aria-label="Questions">
-        <h2 class="text-2xl font-semibold text-[#061828]">Questions</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Questions</h2>
         <div class="mt-6 space-y-4">
             <?php foreach ($faqs as [$question, $answer]): ?>
             <details class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <summary class="font-semibold text-[#061828] cursor-pointer"><?= $h($question) ?></summary>
+                <summary class="font-semibold text-[#0B1F3A] cursor-pointer"><?= $h($question) ?></summary>
                 <p class="mt-2 text-zinc-700"><?= $h($answer) ?></p>
             </details>
             <?php endforeach; ?>
@@ -115,9 +144,9 @@ require SITE_ROOT . '/includes/header.php';
     </section>
 
     <section class="mt-12 bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-        <h2 class="text-2xl font-semibold text-[#061828]">Request a POA quote</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">Request a POA quote</h2>
         <p class="mt-3 text-zinc-700"><a class="text-[#ff6b00] font-semibold" href="tel:<?= $h(preg_replace('/\s+/', '', $phone)) ?>"><?= $h($phone) ?></a> · <a class="text-[#ff6b00] font-semibold" href="mailto:<?= $h($email) ?>"><?= $h($email) ?></a> · <a class="text-[#ff6b00] font-semibold" href="<?= $h(url('/contact')) ?>">https://icomplypropertyservices.co.uk/contact</a></p>
-        <p class="mt-2 text-zinc-700">Quote line: “POA fixed quote after scope”.</p>
+        <p class="mt-2 text-zinc-700">Quote line: “a free written quote after scope”.</p>
     </section>
 </main>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

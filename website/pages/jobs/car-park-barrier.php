@@ -25,7 +25,7 @@ renderJobArticle([
     'faqs' => [
         ['Do you have a separate barrier page for Manchester or Burnley?', 'No. Both towns are covered from Stockport on this job. The survey and the quote are for the lane, not for a town name.'],
         ['Is a maglock part of the barrier price?', 'No. A pedestrian door lock is a different job. We will say so on the quote if the site has both.'],
-        ['How is a car park barrier priced?', 'Price on application after the lane survey. Boom length, power, loops and safety devices change the figure. Nothing is priced on this page.'],
+        ['How is a car park barrier priced?', 'Price on application after the lane survey. Boom length, power, loops and safety devices change the figure. '],
     ],
     'links' => [
         ['/pages/jobs/came-gard-gt4', 'CAME Gard GT4'],

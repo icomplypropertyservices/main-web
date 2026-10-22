@@ -13,15 +13,31 @@ import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
 import { withContactWidgets } from "../lib/contact-widgets.js";
+import { heroCta } from "../lib/hero-cta.js";
+import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
+import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { townFactsBlock } from "../lib/town-facts.js";
-import { thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
+import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
+import { townDepthBlock } from "../lib/town-depth.js";
 import fireAlarmFamily from "../../website/data/fire-alarm-installer-family.json" with { type: "json" };
 import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with { type: "json" };
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
+import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
+import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
+import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
+import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
+import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
 
 // Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
 // render them index,follow so the rankings are kept.
 const GSC_KEEP = new Set(gscKeepDoc.paths || []);
+const SERVE_UPGRADE = new Set(serveUpgradeDoc.paths || []);
+// Retired service URLs the upgrade queue asked to serve as 200 town pages.
+// Images come from the live heating family. The public path stays the requested slug.
+const UPGRADE_SERVICE = {
+  "solar-thermal": "heating",
+  "ground-source-heat-pumps": "heating",
+};
 const CTR_PHONE = "07517 806082";
 
 function ctrPriceFrom(slug) {
@@ -43,18 +59,75 @@ export function ctrTitle(subject, town, slug) {
   opts.push(`${subject} ${town} | Same/Next-Day`);
   opts.push(`${subject} in ${town} | iComply`);
   for (const o of opts) if (o.length <= 60) return o;
-  return `${`${subject} ${town}`.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
+  const room = 60 - " | iComply".length - String(town).length - 1;
+  const kept = shortenSubject(subject, room);
+  return `${kept ? `${kept} ` : ""}${town} | iComply`;
+}
+
+const HAND_TRADES = new Set(["demolition", "driveways", "fencing", "drainage"]);
+
+function handTrade(slug, subject) {
+  return HAND_TRADES.has(String(slug || "")) || /\b(demolition|driveways|fencing|drainage)\b/i.test(String(subject || ""));
+}
+
+function paperworkLine(slug, subject) {
+  return handTrade(slug, subject) ? "Written notes after the visit" : "Certificates and reports emailed after the visit";
+}
+
+function nearestNeighbourNames(townSlug, places) {
+  const here = townCoords[townSlug];
+  if (!Array.isArray(here) || !places) return null;
+  return Object.keys(places)
+    .filter((slug) => slug !== townSlug && Array.isArray(townCoords[slug]) && places[slug] && places[slug].name)
+    .map((slug) => ({
+      name: places[slug].name,
+      miles: haversineMiles(
+        { lat: here[0], lng: here[1] },
+        { lat: townCoords[slug][0], lng: townCoords[slug][1] },
+      ),
+    }))
+    .filter((row) => row.miles <= 12)
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, 3)
+    .map((row) => row.name);
+}
+
+// Drop words from the middle, keeping the first and the last ("installation" vs
+// "replacement"), so long keyword titles stay distinct and keep the town.
+function shortenSubject(subject, room) {
+  const words = String(subject).split(/\s+/).filter(Boolean);
+  while (words.length > 2 && words.join(" ").length > room) words.splice(1, 1);
+  const out = words.join(" ");
+  return out.length <= room ? out : "";
+}
+
+function fitTownTitle(subject, place) {
+  const suffix = " | iComply";
+  const candidates = [
+    `${subject} in ${place}${suffix}`,
+    `${subject}, ${place}${suffix}`,
+    `${place} ${subject}${suffix}`,
+  ];
+  for (const title of candidates) {
+    if (title.length >= 15 && title.length <= 60) return title;
+  }
+  // Too long: trim the subject, never the town, so each town page keeps its own title.
+  const room = 60 - suffix.length - String(place).length - 1;
+  const kept = shortenSubject(subject, room);
+  const title = kept ? `${kept} ${place}${suffix}` : `${place}${suffix}`;
+  return title.length <= 60 ? title : `${String(place).slice(0, 48).trim()}${suffix}`;
 }
 
 export function ctrDescription(subject, town, slug, gas) {
   const price = ctrPriceFrom(slug);
   const lead = `${subject} in ${town}${price ? ` from ${price}` : ""}.`;
   const who = gas ? " Same/next-day visits, carried out by Gas Safe registered engineers." : " Same/next-day engineers from our Stockport team.";
+  const paper = handTrade(slug, subject) ? " Free written quote." : " Free written quote, certificates emailed.";
   for (const d of [
-    `${lead}${who} Fixed written quote, certificates emailed. Call or WhatsApp ${CTR_PHONE}.`,
+    `${lead}${who}${paper} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead}${who} Call or WhatsApp ${CTR_PHONE}.`,
     `${lead} Same/next-day. Call ${CTR_PHONE}.`,
-  ]) if (d.length <= 160) return d;
+  ]) if (d.length <= 155) return d;
   return clampMeta(`${lead} Same/next-day. Call ${CTR_PHONE}.`);
 }
 
@@ -82,6 +155,7 @@ function nearestMainland(slug, limit = 12) {
   const ranked = MAINLAND_TOWNS
     .filter((town) => town.slug !== slug)
     .map((town) => ({ town, miles: haversineMiles(here, town) }))
+    .filter((row) => row.miles <= 12)
     .sort((a, b) => a.miles - b.miles)
     .slice(0, limit)
     .map((row) => row.town);
@@ -172,6 +246,12 @@ function hashStr(value) {
   return h >>> 0;
 }
 
+function mix32(h) {
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35);
+  return (h ^ (h >>> 16)) >>> 0;
+}
+
 function pick(list, seed) {
   return list[seed % list.length];
 }
@@ -182,6 +262,18 @@ function escapeHtml(value) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function fixTownArticle(html, place) {
+  const name = String(place || "").trim();
+  if (!/^[A-Za-z]/.test(name)) return html;
+  const vowel = /^[aeiou]/i.test(name);
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return String(html).replace(new RegExp(`\\b(a|an)\\s+(${escaped})\\b`, "gi"), (_, art, town) => {
+    const want = vowel ? "an" : "a";
+    const cased = art[0] === art[0].toUpperCase() ? want.charAt(0).toUpperCase() + want.slice(1) : want;
+    return `${cased} ${town}`;
+  });
 }
 
 function titleCaseSlug(slug) {
@@ -198,9 +290,9 @@ function words(text) {
 
 function clampMeta(text) {
   const clean = String(text).replace(/\s+/g, " ").trim();
-  if (clean.length <= 158) return clean;
-  const cut = clean.slice(0, 158).replace(/\s+\S*$/, "");
-  return cut.length >= 40 ? cut : clean.slice(0, 158);
+  if (clean.length <= 155) return clean;
+  const cut = clean.slice(0, 155).replace(/\s+\S*$/, "");
+  return cut.length >= 40 ? cut : clean.slice(0, 155);
 }
 
 function jsonLd(value) {
@@ -265,8 +357,8 @@ export function renderTownPage(input) {
       intro: `We service, repair and maintain ${subject} equipment for landlords, agents and commercial sites, with engineers based in Stockport.`,
       focus: [
         `${subject} parts identified before the visit`,
-        "Fixed written quote before work starts",
-        "Certificates and reports emailed after the visit",
+        "Free written quote before work starts",
+        paperworkLine(serviceSlug, subject),
       ],
       gas: serviceSlug === "gas-systems",
     };
@@ -282,10 +374,10 @@ export function renderTownPage(input) {
     keyword = {
       name: subject,
       service: serviceSlug,
-      intro: `${subject} carried out by our ${serviceName} engineers, with a fixed written quote for your building.`,
+      intro: `${subject} carried out by our ${serviceName} engineers, with a free written quote for your building.`,
       focus: job.focus && job.focus.length ? job.focus : [
         "Same-day and next-day slots where available",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clear written report after the visit",
       ],
       gas: Boolean(job.gas) || serviceSlug === "gas-systems",
@@ -305,21 +397,23 @@ export function renderTownPage(input) {
         intro: "",
         focus: [
           "Same-day and next-day slots where available",
-          "Fixed written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          "Free written quote before work starts",
+          paperworkLine(serviceSlug, subject),
         ],
         gas,
         synthetic: true,
       };
     }
-    serviceSlug = keyword.service || "electrical";
+    const mappedService = keywordServices[input.keyword] || keywordFallback[input.keyword] || keyword.service || "building-maintenance";
+    serviceSlug = mappedService === "aov" ? "aov-air-handling" : mappedService;
     serviceName = labels[serviceSlug] || titleCaseSlug(serviceSlug);
     subject = keyword.name;
     nationwideFlag = isFamilyService(serviceSlug, catalogue);
     path = `/pages/keywords/${input.keyword}/${input.town}`;
   } else {
     serviceSlug = input.service;
-    serviceName = labels[serviceSlug];
+    const upgradeFamily = UPGRADE_SERVICE[serviceSlug] || "";
+    serviceName = labels[serviceSlug] || (upgradeFamily ? titleCaseSlug(serviceSlug) : "");
     if (!serviceName || RESERVED.has(serviceSlug)) return null;
     keywordKnown = true;
     const related = (serviceKeywords[serviceSlug] || [])[0];
@@ -334,14 +428,31 @@ export function renderTownPage(input) {
         ? relatedKw.focus
         : [
           `Survey and scope for ${serviceName}`,
-          "Fixed written quote before work starts",
-          "Certificates and reports emailed after the visit",
+          "Free written quote before work starts",
+          paperworkLine(serviceSlug, subject),
         ],
       gas: serviceSlug === "gas-systems" || Boolean(relatedKw && relatedKw.gas),
     };
     subject = serviceName;
     nationwideFlag = isFamilyService(serviceSlug, catalogue);
     path = `/pages/${serviceSlug}/${input.town}`;
+  }
+
+  if (kind === "job" || kind === "keyword") {
+    const spokenSlug = kind === "job" ? input.job : input.keyword;
+    const previous = subject;
+    subject = spokenSubject(spokenSlug, subject);
+    if (keyword) {
+      const rewrite = (value) => (previous && previous !== subject
+        ? String(value || "").split(previous).join(subject)
+        : value);
+      keyword = {
+        ...keyword,
+        name: subject,
+        intro: rewrite(keyword.intro),
+        focus: Array.isArray(keyword.focus) ? keyword.focus.map((item) => rewrite(item)) : keyword.focus,
+      };
+    }
   }
 
   const townSlug = input.town;
@@ -363,10 +474,14 @@ export function renderTownPage(input) {
   // Jack: every real page is indexable. Never emit noindex here.
   const robots = "index, follow";
   const seed = hashStr(`${kind}|${subject}|${serviceSlug}|${townSlug}`);
-  const audience = pick(AUDIENCES, seed);
+  const lockEarly = tradesHas(String(input.keyword || "")) || tradesHas(String(input.job || "")) || tradesIsNewService(String(input.service || ""));
+  const audience = lockEarly ? "homeowners and landlords" : pick(AUDIENCES, seed);
   const visit = pick(VISIT_STYLES, seed >>> 3);
-  const neighbours = Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean) : [];
-  const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
+  const rankedNeighbours = nearestNeighbourNames(townSlug, catalogue.places || {});
+  const neighbours = Array.isArray(rankedNeighbours)
+    ? rankedNeighbours
+    : (Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean).slice(0, 3) : []);
+  const near = neighbours.length ? neighbours.join(", ") : "other published towns";
   const pop = place.population
     ? `${place.name} is home to about ${Number(place.population).toLocaleString("en-GB")} people.`
     : `We work across ${place.name} every week.`;
@@ -381,9 +496,10 @@ export function renderTownPage(input) {
   const h1 = `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  const title = ctrTitle(subject, place.name, ctrSlug);
+  let title = ctrTitle(subject, place.name, ctrSlug);
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
-  const imageSlug = IMAGE_SLUG[serviceSlug] || serviceSlug;
+  const imageFamily = UPGRADE_SERVICE[serviceSlug] || serviceSlug;
+  const imageSlug = IMAGE_SLUG[imageFamily] || imageFamily;
 
   const gas = keyword.gas || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const packed = (kind === "keyword" || kind === "service")
@@ -435,7 +551,20 @@ export function renderTownPage(input) {
   if (pe && Array.isArray(pe.faqs)) {
     qualityCtx.peFaqs = pe.faqs;
   }
-  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null);
+  const preferredHero = "";
+  const poolOverride = (kind === "keyword" || kind === "job") ? poolOverrides[`${kind === "job" ? "jobs" : "keywords"}/${pageSlug}`] : "";
+  const poolKey = poolOverride
+    ? poolOverride
+    : kind === "keyword"
+    ? `type-keywords-${serviceSlug || "building-maintenance"}`
+    : kind === "job"
+      ? `type-jobs-${serviceSlug || "building-maintenance"}`
+      : serviceSlug === "aov"
+        ? "aov"
+        : serviceSlug === "aov-air-handling"
+          ? "aov-air-handling"
+          : "";
+  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero, poolKey);
   let proseHtml = thinProseHtml(qualityCtx);
   const faqs = thinFaqs(qualityCtx).slice();
   if (fireTown || fireFamily) {
@@ -443,23 +572,63 @@ export function renderTownPage(input) {
     const population = place.population
       ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
       : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`)}</p>`;
+    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a free written quote.`)}</p>`;
   }
   if (fireTown) {
     faqs.push([
       `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a fixed written quote.`,
+      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a free written quote.`,
     ]);
   }
   if (facts) {
-    proseHtml += facts.html;
     faqs.unshift(...facts.faqs);
+    // CLOSE-Q1: lean pages sat at 540-700 words; add town-specific depth (>= 800 total).
+    const depth = townDepthBlock({
+      slug: townSlug,
+      town: place.name,
+      subject,
+      service: serviceSlug,
+      names: MAINLAND,
+      nation: place.country || "",
+      extra: depthBankParagraphs(qualityCtx, 4),
+      // G9: list-price pages (EICR from £160) never carry a POA line.
+      priceFrom: ctrPriceFrom(ctrSlug) || ctrPriceFrom(input.keyword || "") || ctrPriceFrom(input.job || "") || (/from £160\b/.test(`${title} ${description} ${proseHtml}`) ? "£160" : ""),
+    });
+    // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
+    const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
+    // Never lead with the facts block: its "{town}: council..." heading would sit straight under the H1.
+    const orders = [[0, 1, 2], [0, 2, 1], [2, 0, 1], [2, 1, 0]];
+    proseHtml = orders[mix32(hashStr(`order|${townSlug}|${subject}`)) % orders.length].map((i) => blocks[i]).join("");
+    const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
+    faqs.push(...faqs.splice(0, shift));
   }
-  const faqBlock = (fireTown || fireFamily || facts)
+  const lockSlug = kind === "keyword"
+    ? String(input.keyword || "")
+    : kind === "job"
+      ? String(input.job || "")
+      : kind === "service"
+        ? String(serviceSlug || "")
+        : "";
+  const lockPage = lockSlug !== "" && (tradesHas(lockSlug) || (kind === "service" && tradesIsNewService(lockSlug)));
+  let tradesGallery = "";
+  if (lockPage) {
+    title = fitTownTitle(subject, place.name);
+    proseHtml += tradesProseHtml(lockSlug, place.name, townSlug) + tradesLinkHtml(lockSlug, townSlug);
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqs.push(...extraFaqs);
+    tradesGallery = tradesImages(lockSlug, place.name).html;
+  }
+  let faqBlock = (fireTown || fireFamily || facts)
     ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
       `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
     )).join("")}</section>`
     : thinFaqHtml(qualityCtx);
+  if (lockPage && !(fireTown || fireFamily || facts)) {
+    const extraFaqs = tradesFaqs(lockSlug, place.name);
+    faqBlock += `<section id="faq" class="faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${extraFaqs.map(([q, a]) => (
+      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
+    )).join("")}</section>`;
+  }
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -538,7 +707,7 @@ export function renderTownPage(input) {
     ],
   };
 
-  const html = `<!DOCTYPE html>
+  const html = fixTownArticle(`<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -555,12 +724,13 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(h1)}</h1>${heroCta(h1)}
+${tradesGallery}
 ${images.html}
 <article id="local-copy">
 ${proseHtml}
 ${focusHtml ? `<ul>${focusHtml}</ul>` : ""}
-${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">${escapeHtml(subject)} guide</a> · <a href="/pages/services/fire-alarms">Fire alarms</a> · <a href="/pages/keywords">Keyword guides</a>${isGmTown(townSlug) ? ` · <a href="/pages/areas/${escapeHtml(townSlug)}">Property services in ${escapeHtml(place.name)}</a>` : ` · <a href="/pages/areas/stockport">Stockport area hub</a>`}</p><h2>Nearby mainland towns</h2><ul>${nearestMainland(townSlug, 12).map((near) => `<li><a href="/pages/keywords/${escapeHtml(input.keyword)}/${escapeHtml(near.slug)}">${escapeHtml(subject)} in ${escapeHtml(near.name)}</a></li>`).join("")}</ul>` : ""}
+${fireTown ? `<p>Parent: <a href="/pages/keywords/${escapeHtml(input.keyword)}">${escapeHtml(subject)} guide</a> · <a href="/pages/services/fire-alarms">Fire alarms</a> · <a href="/pages/keywords">Service guides</a>${isGmTown(townSlug) ? ` · <a href="/pages/areas/${escapeHtml(townSlug)}">Property services in ${escapeHtml(place.name)}</a>` : ` · <a href="/pages/areas/stockport">Stockport area hub</a>`}</p><h2>Nearby mainland towns</h2><ul>${nearestMainland(townSlug, 12).map((near) => `<li><a href="/pages/keywords/${escapeHtml(input.keyword)}/${escapeHtml(near.slug)}">${escapeHtml(subject)} in ${escapeHtml(near.name)}</a></li>`).join("")}</ul>` : ""}
 ${relatedHtml}
 ${faqBlock}
 </article>
@@ -568,7 +738,7 @@ ${MATRIX_FOOTER}
 </main>
 ${MATRIX_SITE_FOOTER}
 </body>
-</html>`;
+</html>`, place.name);
 
   return {
     html,
@@ -699,7 +869,7 @@ function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
-  if (GSC_KEEP.has(path)) return null;
+  if (GSC_KEEP.has(path) || SERVE_UPGRADE.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
@@ -793,6 +963,11 @@ export default async (request, context) => {
       });
     }
   }
+  // These two keyword guides are real pages. Every other /pages/keywords/{slug}
+  // with no built file is a trades hub when one exists, otherwise one 301.
+  if (/^\/pages\/keywords\/(?:air-source-heat-pumps-service-agreement|bs-5306-extinguisher-service-cost)$/.test(path)) {
+    return context.next();
+  }
   const manufacturerMatch = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -837,9 +1012,9 @@ export default async (request, context) => {
     if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
-    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]]) {
+    if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
       // Unknown keyword (retired slug): 410 Gone, like a dead hub,
-      // instead of a 200 noindex soft 404.
+      // instead of a 200 noindex soft 404. Lock slugs stay indexable.
       const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
       if ((hub.status === 301 || hub.status === 308) && hub.headers.get("location")) {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
@@ -870,11 +1045,38 @@ export default async (request, context) => {
   if (!rendered) {
     const fallback = await context.next();
     if (fallback.status !== 404) return fallback;
+    if (serviceMatch && TRADE_ALIAS[serviceMatch[1]] && isLocalTown(serviceMatch[2])) {
+      const dest = `/pages/${TRADE_ALIAS[serviceMatch[1]]}/${serviceMatch[2]}`;
+      return Response.redirect(new URL(dest, url.origin).toString(), 301);
+    }
+    if (serviceMatch && (serviceMatch[1] === "keywords" || serviceMatch[1] === "jobs") && tradesHas(serviceMatch[2])) {
+      const hubHtml = renderTradesHub(serviceMatch[2]);
+      if (hubHtml) {
+        return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml))), {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    }
     // Unknown brand/job/service in a town path (old slugs, /pages/undefined/x):
     // 301 to the closest live hub rather than a 404.
     let to = "/pages/areas";
     const svcHub = path.match(/^\/pages\/services\/([a-z0-9-]+)$/);
-    if (svcHub) {
+    const kwHub = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
+    if (kwHub) {
+      // Keyword guide with no built page: one 301 to its live service page, else the guides index.
+      const svc = keywordServices[kwHub[1]] || keywordFallback[kwHub[1]] || "";
+      to = "/pages/keywords";
+      if (svc) {
+        const svcPath = SERVICE_HUB_ALIAS[svc] || `/pages/services/${svc}`;
+        const probe = await fetch(new URL(svcPath, url.origin), { method: "HEAD", redirect: "manual" }).catch(() => null);
+        if (probe && probe.status === 200) to = svcPath;
+      }
+    } else if (svcHub) {
       // /pages/services/<slug> with no exported hub: send to the live service page, never to /pages/areas.
       to = SERVICE_HUB_ALIAS[svcHub[1]] || "/pages/services";
     } else if (manufacturerMatch) to = "/pages/manufacturers";
@@ -883,7 +1085,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -911,5 +1113,14 @@ export const config = {
   ],
   // Static AOV/barrier town pages (~420 KB) 502'd intermittently when
   // proxied through this function. Their aliases live in netlify.toml.
-  excludedPath: ["/pages/aov/*", "/pages/barriers/*"],
+  excludedPath: [
+    "/pages/aov/*",
+    "/pages/barriers/*",
+    // Wave-1 package 301s live in _redirects; the edge fallback would
+    // otherwise 301 these unknown "service/town" paths to /pages/areas.
+    "/pages/packages/landlord-essentials",
+    "/pages/packages/landlord-essentials/",
+    "/pages/packages/hmo-fire-package",
+    "/pages/packages/hmo-fire-package/",
+  ],
 };

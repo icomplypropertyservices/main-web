@@ -80,7 +80,7 @@ return [
         'heading' => 'Service is a repeatable list, written down',
         'paragraphs' => [
             'Each visit checks local isolators, panel condition, fault history if the controller stores it, and a functional run in auto. Findings go on the sheet with as-found and as-left.',
-            'Intervals come from the manufacturer note or the FM specification. We will not invent a statutory “every AHU, every 90 days” rule on a web page.',
+            'Intervals come from the manufacturer note or the FM specification. ',
         ],
     ],
     'aov-actuator' => [
@@ -191,7 +191,7 @@ return [
     'aov-installation' => [
         'heading' => 'Install follows a fire strategy that already exists',
         'paragraphs' => [
-            'We fit vents, actuators, the panel, manual controls and the alarm interface to the positions and free area the strategy sets out. We do not invent a smoke-control design on site to win the order.',
+            'We fit vents, actuators, the panel, manual controls and the alarm interface to the positions and free area the strategy sets out. ',
             'If there is no strategy, the honest next step is a designer or fire engineer, then an install. Wiring a roof light because the block “should have one” is not an installation method we will sign.',
         ],
     ],
@@ -373,7 +373,7 @@ return [
     'fire-rated-aov' => [
         'heading' => 'Fire resistance and free area are different questions',
         'paragraphs' => [
-            'Some ventilators are also fire-resisting closures when shut. The test evidence belongs to the product as installed, including the frame and the seal. We do not invent a fire rating for a vent that has no plate and no paperwork.',
+            'Some ventilators are also fire-resisting closures when shut. The test evidence belongs to the product as installed, including the frame and the seal. ',
             'If the rating is unknown we write “not established on site” and you can take that to the designer. Guessing FD30 on a roof hatch helps nobody.',
         ],
     ],

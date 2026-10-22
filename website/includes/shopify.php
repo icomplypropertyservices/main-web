@@ -177,7 +177,7 @@ function shopifyCardFromManufacturerProduct(array $p, string $mfrSlug, string $m
         'title' => $p['title'] ?? ($mfrName . ' product'),
         'blurb' => $p['blurb'] ?? '',
         'price' => $p['price'] ?? 'POA',
-        'image' => $p['image'] ?? (function_exists('manufacturerImageUrl') ? manufacturerImageUrl($mfrSlug) : ('/assets/images/manufacturers/' . $mfrSlug . '.jpg')),
+        'image' => $p['image'] ?? (function_exists('manufacturerImageUrl') ? manufacturerImageUrl($mfrSlug, 'fire-alarms', true) : ('/assets/images/manufacturers/' . $mfrSlug . '.jpg')),
         'handle' => $p['handle'] ?? '',
         'shopify_product_id' => $p['shopify_product_id'] ?? '',
         'badge' => $p['badge'] ?? '',

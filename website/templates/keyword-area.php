@@ -51,11 +51,11 @@ $h = static function ($s): string {
     'url' => $canonicalUrl,
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 
-<section class="relative overflow-hidden bg-[#061828] text-white">
+<section class="relative overflow-hidden bg-[#0B1F3A] text-white">
     <div class="absolute inset-0">
         <img src="<?= $h($KEYWORD_IMAGE) ?>" alt="<?= $h(($KEYWORD_NAME ?? 'Compliance') . ' in ' . ($AREA ?? 'the North West')) ?>" class="w-full h-full object-cover opacity-30" loading="eager"
              onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#061828] via-[#061828]/95 to-[#061828]/80"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/95 to-[#0B1F3A]/80"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 py-12 md:py-16">
         <nav class="text-xs text-white/70 mb-4 flex flex-wrap gap-2">
@@ -72,13 +72,13 @@ $h = static function ($s): string {
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
-            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Fixed-price quotes.' ?> Stockport-based team covering the North West.
+            <?= $poaService ? 'POA after scope · no catalogue fee.' : 'Written quotes.' ?> Stockport-based team covering the North West.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"
                target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 font-bold text-white shadow-lg">WhatsApp</a>
-            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#061828] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold shadow-lg"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -87,10 +87,10 @@ $h = static function ($s): string {
     <div class="max-w-7xl mx-auto px-6 py-12 md:py-16 grid lg:grid-cols-5 gap-10">
         <div class="lg:col-span-3">
             <div class="bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 shadow-sm">
-                <h2 class="text-2xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> for properties in <?= $h($AREA) ?></h2>
+                <h2 class="text-2xl font-bold text-[#0B1F3A]"><?= $h($KEYWORD_NAME) ?> for properties in <?= $h($AREA) ?></h2>
                 <p class="mt-4 text-lg text-zinc-900 leading-relaxed font-medium"><?= $h($KEYWORD_INTRO) ?></p>
                 <p class="mt-4 text-lg text-zinc-900 leading-relaxed">
-                    Serving <strong class="text-[#061828]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
+                    Serving <strong class="text-[#0B1F3A]"><?= $h($AREA) ?></strong>: <?= $h($KEYWORD_BODY) ?>
                 </p>
                 <p class="mt-4 text-base text-zinc-900 leading-relaxed">
                     Searching for <strong><?= $h($KEYWORD_NAME) ?> near <?= $h($AREA) ?></strong>? Book iComply for install, service, testing or certification.
@@ -111,10 +111,10 @@ $h = static function ($s): string {
                 $gmPacked = icomplyGmTownBlurb((string)$keywordSlug, (string)$areaSlugVal, 'keyword');
                 if (is_array($gmPacked) && ($gmPacked['blurb'] ?? '') !== ''):
                 ?>
-                <h3 class="mt-8 text-xl font-bold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['h2'], ENT_QUOTES, 'UTF-8') ?></h3>
+                <h3 class="mt-8 text-xl font-bold text-[#0B1F3A]"><?= htmlspecialchars((string)$gmPacked['h2'], ENT_QUOTES, 'UTF-8') ?></h3>
                 <p class="mt-3 text-base text-zinc-900 leading-relaxed"><?= icomplyGmBriefHtml((string)$gmPacked['blurb']) ?></p>
                 <?php if (($gmPacked['cta'] ?? '') !== ''): ?>
-                <p class="mt-2 text-sm font-semibold text-[#061828]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
+                <p class="mt-2 text-sm font-semibold text-[#0B1F3A]"><?= htmlspecialchars((string)$gmPacked['cta'], ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endif; ?>
                 <?php endif; ?>
                 <?= icomplyGmEnrichmentHtml([
@@ -147,7 +147,7 @@ $h = static function ($s): string {
             <div class="mt-6 grid sm:grid-cols-3 gap-4">
                 <?php foreach (['Install' => 'New works in ' . $AREA, 'Service' => 'Repairs & maintenance', 'Certify' => 'Compliance paperwork'] as $t => $d): ?>
                 <div class="p-5 bg-white border-2 border-zinc-300 rounded-2xl shadow-sm">
-                    <div class="font-bold text-[#061828] text-lg"><?= $h($t) ?></div>
+                    <div class="font-bold text-[#0B1F3A] text-lg"><?= $h($t) ?></div>
                     <p class="text-sm text-zinc-800 mt-1 font-medium"><?= $h($d) ?></p>
                 </div>
                 <?php endforeach; ?>
@@ -157,9 +157,9 @@ $h = static function ($s): string {
             <div class="rounded-3xl overflow-hidden border-2 border-zinc-400 shadow-md">
                 <img src="<?= $h($KEYWORD_INLINE ?? $KEYWORD_IMAGE) ?>" alt="<?= $h($KEYWORD_NAME . ' equipment in ' . $AREA) ?>" class="w-full h-48 object-cover" loading="eager"
                      onerror="this.src='<?= $h($SERVICE_IMAGE) ?>'">
-                <div class="bg-[#061828] text-white p-3 text-center font-bold text-sm"><?= $h($KEYWORD_NAME) ?> · <?= $h($AREA) ?></div>
+                <div class="bg-[#0B1F3A] text-white p-3 text-center font-bold text-sm"><?= $h($KEYWORD_NAME) ?> · <?= $h($AREA) ?></div>
             </div>
-            <div class="bg-[#061828] text-white rounded-3xl p-6 shadow-lg">
+            <div class="bg-[#0B1F3A] text-white rounded-3xl p-6 shadow-lg">
                 <h3 class="text-xl font-bold">Quote — <?= $h($AREA) ?></h3>
                 <p class="mt-2 text-white/95 text-sm font-medium">Visit dates follow the diary. Include postcode &amp; brand.</p>
                 <a href="#quote" class="inline-block mt-4 px-5 py-3 bg-[#ff6b00] rounded-xl font-bold">Request quote</a>
@@ -175,21 +175,23 @@ $h = static function ($s): string {
 
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-xl font-bold text-[#061828]"><?= $h($KEYWORD_NAME) ?> nearby</h2>
+        <?php
+            require_once SITE_ROOT . '/includes/town-facts.php';
+            $towns = icomplyTownsWithinMiles((string)$areaSlugVal, array_values($allAreas), 12.0, 10);
+        if ($towns):
+        ?>
+        <h2 class="text-xl font-bold text-[#0B1F3A]"><?= $h($KEYWORD_NAME) ?> nearby</h2>
         <div class="mt-4 flex flex-wrap gap-2">
             <?php
-            $towns = array_values(array_filter(
-                ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Liverpool', 'Preston', 'Warrington', 'Chester', 'Blackpool'],
-                fn($t) => in_array($t, $allAreas, true) && $t !== $areaName
-            ));
             foreach ($towns as $t):
             ?>
             <a href="<?= url('/pages/keywords/' . rawurlencode($KEYWORD_SLUG) . '/' . areaSlug($t) . '.php') ?>"
-               class="px-4 py-2 bg-[#061828] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00]">
+               class="px-4 py-2 bg-[#0B1F3A] text-white rounded-full text-sm font-semibold hover:bg-[#ff6b00]">
                 in <?= $h($t) ?>
             </a>
             <?php endforeach; ?>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -197,7 +199,7 @@ $h = static function ($s): string {
 
 <section id="quote" class="bg-zinc-100 border-t-2 border-zinc-300">
     <div class="max-w-3xl mx-auto px-6 py-14">
-        <h2 class="text-3xl font-bold text-[#061828] text-center"><?= $h($KEYWORD_NAME) ?> in <?= $h($AREA) ?></h2>
+        <h2 class="text-3xl font-bold text-[#0B1F3A] text-center"><?= $h($KEYWORD_NAME) ?> in <?= $h($AREA) ?></h2>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white border-2 border-zinc-300 rounded-3xl p-6 md:p-8 space-y-4 shadow-md"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

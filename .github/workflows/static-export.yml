@@ -50,6 +50,9 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/check-seo-matrix.php && php website/bin/check-sitemap.php && php website/bin/test-electrical-gas-matrix.php && php website/bin/test-area-hubs-mcr-burnley.php && php website/bin/check-open-job-lanes.php
 
+      - name: FRA From £350 wording (Jack 19 Oct)
+        run: php website/bin/check-fra-from-350.php
+
       - name: Town matrix page uniqueness
         run: node website/bin/check-matrix-pages.mjs
 
@@ -63,6 +66,15 @@ jobs:
           SITE_URL: https://icomplypropertyservices.co.uk
         run: php website/bin/check-fire-alarm-installer.php && node website/bin/check-fire-alarm-installer-xtown.mjs
 
+      - name: Service photos are distinct (perceptual hash, shared source, crop-tolerant ORB)
+        run: |
+          python3 -m pip install --quiet opencv-python-headless numpy pillow
+          python3 website/bin/check-photo-pool-phash.py
+          python3 website/bin/check-photo-crop-similarity.py
+
+      - name: Hero CTA and P0 quality gate
+        run: python3 website/bin/check-hero-cta.py && node scripts/quality-gate.mjs
+
       - name: Static export
         env:
           SITE_URL: https://icomplypropertyservices.co.uk
@@ -74,3 +86,26 @@ jobs:
 
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
+
+      - name: Thin x town prose words + uniqueness (CLOSE-Q1)
+        run: node website/bin/render-town-sample.mjs dist /tmp/town-sample && python3 website/bin/check-town-words.py /tmp/town-sample && python3 website/bin/check-town-price-gas.py /tmp/town-sample
+
+      - name: Service pages use only their own service photos
+        run: node website/bin/check-service-images.mjs dist
+
+      - name: Money-page CTR briefs C1-C15 (titles, metas, depth, links, robots, canonical, sitemap)
+        env:
+          SITE_URL: https://icomplypropertyservices.co.uk
+        run: node website/bin/check-money-ctr.mjs dist
+
+      - name: W1a nationwide job hubs (words, self-canonical, uniqueness)
+        run: php website/bin/check-nationwide-p0-jobs.php && python3 website/bin/check-w1a-hub-uniqueness.py dist
+
+      - name: Site-wide banned phrases + barrier census copy
+        run: python3 website/bin/check-barriers-copy.py dist
+
+      - name: Every img and og:image on exported pages exists
+        run: python3 website/bin/check-images-exist.py dist
+
+      - name: Fire-family service x town depth (>=800 words, sample similarity <=0.70)
+        run: python3 website/bin/check-fire-family-depth.py dist

@@ -286,7 +286,7 @@ function gasJobLaneRender(string $slug): void
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl"><?= htmlspecialchars((string)$page['lede'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#book" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Book CP12 — <?= htmlspecialchars($price['amount'], ENT_QUOTES, 'UTF-8') ?></a>
-                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waHref, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
             </div>
         </div>
@@ -405,7 +405,7 @@ function gasJobLaneRender(string $slug): void
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mt-2"><?= htmlspecialchars($heading, ENT_QUOTES, 'UTF-8') ?></h2>
         <p class="mt-3 text-white/80"><?= htmlspecialchars($sub, ENT_QUOTES, 'UTF-8') ?></p>
         <div class="mt-6 flex flex-wrap gap-3">
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <a href="<?= htmlspecialchars($waHref, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp the £85 CP12</a>
         </div>
         <div class="mt-8">
@@ -413,7 +413,7 @@ function gasJobLaneRender(string $slug): void
         </div>
         <p class="mt-8 text-sm text-white/80 leading-relaxed">
             iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
-            · <a class="underline" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            · <a class="underline" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             · <a class="underline" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a>
         </p>
     </div>

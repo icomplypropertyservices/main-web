@@ -39,10 +39,10 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "GBP",
-        "url": "<?= url('/contact.php') ?>"
+        "url": "<?= url('/contact.php') ?>",
+        "itemOffered": {"@type": "Service", "name": "{{SERVICE_NAME}} in {{AREA}}", "areaServed": "{{AREA}}"}
       },
       "brand": {"@type": "Brand", "name": <?= json_encode(SITE_NAME) ?>}
     },
@@ -74,7 +74,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        iComply Property Services provides complete <strong>BS 5266 emergency lighting</strong> design, installation, commissioning, testing and maintenance across <strong>{{AREA}}</strong> and the wider North West. We cover self-contained LED luminaires, central battery systems, exit signage and open-area illumination so escape routes remain safe during power failure — with fixed-price quotes and full compliance documentation on every job.
+        iComply Property Services provides complete <strong>BS 5266 emergency lighting</strong> design, installation, commissioning, testing and maintenance across <strong>{{AREA}}</strong> and the wider North West. We cover self-contained LED luminaires, central battery systems, exit signage and open-area illumination so escape routes remain safe during power failure — with written quotes and full compliance documentation on every job.
     </p>
 
     <!-- PARAGRAPH 2 -->

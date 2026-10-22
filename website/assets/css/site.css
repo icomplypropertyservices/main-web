@@ -1,16 +1,16 @@
 /* iComply high-contrast theme.
    Tailwind v2 CDN does not honour arbitrary colours like bg-[#0B1F3A].
    This sheet supplies those colours, dark surfaces, and readable type.
-   Locked tokens: navy #0B1F3A, orange #FF6B00, ink #0F172A, muted #5B6472,
-   white #FFFFFF, surface #F4F6F9. */
+   Locked tokens: navy #0B1F3A, orange #FF6B00, ink #0B1F3A, muted #5B6472,
+   white #FFFFFF, surface #ffffff. */
 
 :root {
   --brand: #0B1F3A;
-  --brand-ink: #0F172A;
-  --ink: #0F172A;
+  --brand-ink: #0B1F3A;
+  --ink: #0B1F3A;
   --muted: #5B6472;
   --white: #FFFFFF;
-  --surface: #F4F6F9;
+  --surface: #ffffff;
   --brand-deep: #071422;
   --brand-card: #12263a;
   --brand-elev: #17314a;
@@ -35,7 +35,7 @@ body {
 
 /* Make the arbitrary brand utilities used across PHP templates actually paint. */
 [class*="bg-[#0B1F3A]"],
-[class*="bg-[#061828]"] { background-color: #0B1F3A !important; }
+[class*="bg-[#0B1F3A]"] { background-color: #0B1F3A !important; }
 [class*="bg-[#ff6b00]"],
 [class*="bg-[#FF6B00]"] { background-color: #FF6B00 !important; color: #fff !important; }
 [class*="text-[#0B1F3A]"] { color: #0B1F3A !important; }
@@ -69,7 +69,7 @@ body.theme-dark .nav-panel-inner {
 
 /* Keep high-contrast white buttons in heroes */
 body.theme-dark a.bg-white[class*="text-[#0B1F3A]"],
-body.theme-dark a.bg-white[class*="text-[#061828]"] {
+body.theme-dark a.bg-white[class*="text-[#0B1F3A]"] {
   background-color: #fff !important;
   color: #0B1F3A !important;
 }
@@ -89,7 +89,7 @@ body.theme-dark .panel-light h2,
 body.theme-dark .panel-light h3,
 body.theme-dark .panel-light .text-black {
   background-color: #f4f7fb !important;
-  color: #0f172a !important;
+  color: #0B1F3A !important;
 }
 body.theme-dark .panel-light p,
 body.theme-dark .panel-light .text-zinc-600 {
@@ -330,14 +330,18 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   top: 0;
   z-index: 50;
 }
+.mega-header, .mx-top, .site-header, .matrix-header { max-width: 100%; overflow-x: clip; }
 .mega-bar {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0.7rem 1rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
+.mega-logo { min-width: 0; }
+.mega-wordmark { min-width: 0; }
 .mega-logo {
   display: flex; align-items: center; gap: 0.5rem;
   color: #fff !important; font-weight: 700; letter-spacing: -0.03em;
@@ -437,7 +441,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ffb27a;
+  color: #ff6b00;
   font-weight: 700;
 }
 .mega-featured-link {
@@ -460,7 +464,7 @@ h1, h2, h3 { letter-spacing: -0.03em; }
 .mega-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); gap: 1rem; }
 .mega-col-title {
   margin: 0 0 0.45rem; font-size: 0.68rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: #ffb27a; font-weight: 700;
+  text-transform: uppercase; color: #ff6b00; font-weight: 700;
 }
 .mega-col a, .mega-letters a {
   display: block; color: #f4f7fb; text-decoration: none;
@@ -547,6 +551,12 @@ h1, h2, h3 { letter-spacing: -0.03em; }
   .mega-phone-short, .mega-quote-short { display: inline; }
   .mega-phone, .mega-quote { padding: 0.48rem 0.65rem; font-size: 0.75rem; }
   .mega-burger { min-width: 2.75rem; padding: 0.42rem 0.55rem; }
+  .mega-tools { margin-left: auto; max-width: 100%; }
+}
+@media (max-width: 380px) {
+  .mega-quote { display: none; }
+  .mega-wordmark { font-size: 0.95rem; }
+  .mx-call { margin-left: 0; }
 }
 @media (min-width: 1024px) {
   .mega-desktop { display: flex; }
@@ -677,7 +687,7 @@ body.mega-drawer-open { overflow: hidden; }
 section.relative.overflow-hidden.text-white {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(165deg, #0B1F3A 0%, #0f172a 55%, #071422 100%) !important;
+  background: linear-gradient(165deg, #0B1F3A 0%, #0B1F3A 55%, #071422 100%) !important;
   color: #f8fafc !important;
 }
 .page-hero h1,
@@ -697,7 +707,7 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 .home-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(165deg, #0B1F3A 0%, #0f172a 55%, #071422 100%);
+  background: linear-gradient(165deg, #0B1F3A 0%, #0B1F3A 55%, #071422 100%);
   color: #f8fafc;
 }
 .home-hero::before {
@@ -772,7 +782,7 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
   display: flex; flex-wrap: wrap; gap: 0.85rem 1.1rem;
   margin-top: 0.95rem; font-size: 0.875rem; font-weight: 700;
 }
-.home-hero-links a { color: #ffb27a !important; text-decoration: none; }
+.home-hero-links a { color: #ff6b00 !important; text-decoration: none; }
 .home-hero-links a:hover { color: #fff !important; }
 .home-hero-stats {
   display: flex; flex-wrap: wrap; gap: 1.5rem;
@@ -813,7 +823,7 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
 }
 .mega-featured-title {
   margin: 0 0 0.35rem; font-size: 0.68rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: #ffb27a; font-weight: 800;
+  text-transform: uppercase; color: #ff6b00; font-weight: 800;
 }
 .mega-featured-link {
   display: block; color: #fff; font-weight: 800; text-decoration: none; padding: 0.2rem 0;
@@ -948,7 +958,7 @@ section.relative.overflow-hidden.text-white > .absolute[style*="radial-gradient"
   align-items: center;
   min-height: 4.75rem;
   padding: 0.35rem 0.55rem;
-  background: #f4f6f9;
+  background: #ffffff;
   border-radius: 0.95rem;
   overflow: hidden;
   line-height: 0;
@@ -1035,3 +1045,8 @@ ul.mfr-lines { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; }
 .mfr-towns ul { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0.6rem 0 0; }
 .mfr-towns a { display: inline-block; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.8rem; text-decoration: none; }
 body.theme-dark .mfr-kit th, body.theme-dark .mfr-kit td { border-bottom-color: rgba(255,255,255,0.12); }
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.35rem 0 1.1rem; }
+.hero-cta a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0.55rem 1rem; border-radius: 0.55rem; font-weight: 700; text-decoration: none; color: #fff !important; }
+.hero-cta a.call { background: #FF6B00; }
+.hero-cta a.wa { background: #128C7E; }

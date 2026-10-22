@@ -1,10 +1,11 @@
 /**
  * Facts-only local block for edge keyword x town and manufacturer x town pages.
  * Data: website/data/town-geo-slim.json (postcodes.io / ONSPD; census from ONS 2021).
- * No invented reviews, projects, response times or statistics.
+
  */
 import geo from "../../website/data/town-geo-slim.json" with { type: "json" };
 import laCensus from "./la-census-slim.json" with { type: "json" };
+import { geoRow } from "./town-depth.js";
 
 const YARD = { lat: 53.3925, lng: -2.1265 };
 const DIRS = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"];
@@ -36,19 +37,19 @@ function hash(s) {
 }
 
 export function hasTownFacts(slug) {
-  return Boolean(geo[slug]);
+  return Boolean(geoRow(slug));
 }
 
 /** names: Map slug -> {name} of towns that have a page in this family. */
 export function nearestTowns(slug, names, limit = 6) {
-  const g = geo[slug];
+  const g = geoRow(slug);
   if (!g) return [];
   const here = { lat: g[5], lng: g[6] };
   const out = [];
   for (const [s, row] of Object.entries(geo)) {
     if (s === slug || !names.has(s)) continue;
     const m = miles(here, { lat: row[5], lng: row[6] });
-    if (m < 0.5 || m > 35) continue;
+    if (m < 0.5 || m > 12) continue;
     out.push({ slug: s, name: names.get(s).name || s, miles: m, dir: bearing(here, { lat: row[5], lng: row[6] }) });
   }
   out.sort((a, b) => a.miles - b.miles);
@@ -83,12 +84,11 @@ function serviceLine(service, town, c, council) {
  * @returns {{html:string, faqs:Array<[string,string]>}|null}
  */
 export function townFactsBlock({ slug, town, subject, service, hrefFor, names }) {
-  const g = geo[slug];
+  const g = geoRow(slug);
   if (!g) return null;
   const [council, county, ocs, wards, cons, lat, lng, census, districts] = g;
   const seed = hash(`${slug}|${subject}`);
   const mi = Math.round(miles(YARD, { lat, lng }));
-  const dir = bearing(YARD, { lat, lng });
   const paras = [];
   let lead = slug === "london" ? `This page covers London; the centre point we measure from is in ${council || "Westminster"}.` : council ? `${town} sits in the ${council} council area${county && county !== council ? `, ${county}` : ""}.` : `${town}${county ? ` is in ${county}` : ""}.`;
   if (ocs.length) {
@@ -107,8 +107,8 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
     paras.push(dl.map(([oc, ws, c]) => `${oc} takes in ${list(ws)}.`).join(" "));
   }
   paras.push(mi <= 3
-    ? `Our yard at Offerton, Stockport SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
-    : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "We cover it as a normal day visit, with travel included in the quote." : mi <= 90 ? "We plan visits at that distance into set days, with travel included in the quote." : "Travel is included in the quote before anything is booked."}`);
+    ? `Our yard at 17 Woodlands Park Road, Offerton, SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
+    : `Travel from our office at 17 Woodlands Park Road, Offerton, SK2 5DE is about ${mi} miles. ${mi <= 25 ? "We cover it as a normal day visit, with travel included in the quote." : mi <= 90 ? "We plan visits at that distance into set days, with travel included in the quote." : "Travel is included in the quote before anything is booked."}`);
   if (census) {
     const line = serviceLine(service, town, census, council);
     if (line) paras.push(line);
@@ -132,10 +132,11 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   const faqs = [];
   if (ocs.length) {
     faqs.push([`Do you cover ${list(ocs.slice(0, 3))} for ${subject.toLowerCase()}?`,
-      `Yes. ${list(ocs)} are covered by our Stockport team, about ${mi} miles away. Send the full postcode and a photo, or call 07517 806082.`]);
+      `Yes. ${list(ocs)} are covered from our Offerton office. Travel is about ${mi} miles and is included in the written quote. Send the full postcode and a photo, or call 07517 806082.`]);
   }
   if (near.length) {
-    faqs.push([`Can a ${town} visit be combined with nearby sites?`,
+    const townArticle = /^[aeiou]/i.test(town) ? "an" : "a";
+    faqs.push([`Can ${townArticle} ${town} visit be combined with nearby sites?`,
       `Often. The nearest other places we cover are ${list(near.slice(0, 3).map((n) => `${n.name} (${Math.max(1, Math.round(n.miles))} ${Math.max(1, Math.round(n.miles)) === 1 ? "mile" : "miles"} ${n.dir})`))}.`]);
   }
   return { html, faqs };

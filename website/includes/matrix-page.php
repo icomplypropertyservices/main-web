@@ -67,8 +67,8 @@ function icomplyMatrixShared(): array
 
     $home = rtrim(SITE_URL, '/') . '/';
     $css = assetUrl('/assets/css/site.css');
-    $phone = defined('PHONE') ? PHONE : '';
-    $phoneHref = 'tel:' . preg_replace('/\s+/', '', $phone);
+    $phone = function_exists('icomplyPhoneDisplay') ? icomplyPhoneDisplay() : (defined('PHONE') ? PHONE : '');
+    $phoneHref = 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? (string)PHONE : $phone);
     $wa = defined('WHATSAPP') ? WHATSAPP : '';
 
     $s = [
@@ -89,7 +89,7 @@ function icomplyMatrixShared(): array
     return $s;
 }
 
-function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow', string $imagePath = '/assets/images/services/fire-alarms.jpg'): string
+function icomplyMatrixChromeStart(string $title, string $desc, string $canonical, string $robots = 'index, follow', string $imagePath = '/assets/images/services/fire-alarms.jpg', string $serviceSlug = ''): string
 {
     $s = icomplyMatrixShared();
     $t = icomplyMatrixH($title);
@@ -100,7 +100,8 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
     $brand = icomplyMatrixH($s['brand']);
     $phone = icomplyMatrixH($s['phone']);
     $phoneHref = icomplyMatrixH($s['phoneHref']);
-    return '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
+    $mega = in_array($serviceSlug, ['fencing', 'drainage', 'driveways', 'demolition', 'roofing'], true);
+    $head = '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'
         . '<meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<meta name="theme-color" content="#0B1F3A">'
         . '<meta name="robots" content="' . icomplyMatrixH($robots) . '">'
@@ -113,8 +114,11 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
         . '<meta property="og:url" content="' . $c . '">'
         . '<meta property="og:image" content="' . icomplyMatrixH(icomply_absolute_url($imagePath)) . '">'
         . '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/utilities.css')) . '">'
-        . '<link rel="stylesheet" href="' . $css . '">'
-        . '<script type="application/ld+json">' . json_encode([
+        . '<link rel="stylesheet" href="' . $css . '">';
+    if ($mega) {
+        $head .= '<link rel="stylesheet" href="' . icomplyMatrixH(assetUrl('/assets/css/site.css')) . '">';
+    }
+    $head .= '<script type="application/ld+json">' . json_encode([
             '@context' => 'https://schema.org',
             '@type' => 'LocalBusiness',
             '@id' => 'https://icomplypropertyservices.co.uk/#business',
@@ -125,7 +129,14 @@ function icomplyMatrixChromeStart(string $title, string $desc, string $canonical
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => '17 Woodlands Park Road, Offerton', 'addressLocality' => 'Stockport', 'postalCode' => 'SK2 5DE', 'addressCountry' => 'GB'],
             'areaServed' => ['Greater Manchester', 'North West England'],
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) . '</script>'
-        . '</head><body class="matrix-page bg-zinc-50 text-black">'
+        . '</head><body class="matrix-page bg-zinc-50 text-black">';
+    if ($mega) {
+        if (!function_exists('icomplyMegaHeaderHtml')) {
+            require_once __DIR__ . '/site-nav.php';
+        }
+        return $head . icomplyMegaHeaderHtml();
+    }
+    return $head
         . '<header class="matrix-header">'
         . '<div class="matrix-wrap py-3 flex flex-wrap items-center justify-between gap-3 text-sm">'
         . '<a class="font-semibold text-lg" href="' . $home . '">' . $brand . '</a>'
@@ -153,7 +164,7 @@ function icomplyMatrixChromeEnd(string $footNote = ''): string
         . '<div class="flex flex-wrap gap-4">'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['svcHub']) . '">All services</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['areasHub']) . '">All areas</a>'
-        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All keyword guides</a>'
+        . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['kwHub']) . '">All service guides</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH(url('/pages/site-map.php')) . '">Site map / full inventory</a>'
         . '<a class="text-[#ff6b00]" href="' . icomplyMatrixH($s['contact']) . '">Contact / POA quote</a>'
         . '</div>'
@@ -196,10 +207,11 @@ function icomplyMatrixNearestAreas(array $areas, string $slug, string $service, 
         }
         $dy = ($g[5] - $me[5]) * 69.0;
         $dx = ($g[6] - $me[6]) * 69.0 * cos(deg2rad((float)$me[5]));
-        $rows[] = [$dx * $dx + $dy * $dy, $a];
-    }
-    if (count($rows) < 10) {
-        return null;
+        $miles = sqrt($dx * $dx + $dy * $dy);
+        if ($miles > 12.0) {
+            continue;
+        }
+        $rows[] = [$miles, $a];
     }
     usort($rows, static fn($x, $y) => $x[0] <=> $y[0]);
     return array_map(static fn($r) => $r[1], array_slice($rows, 0, $limit));
@@ -228,6 +240,9 @@ function icomplyMatrixOtherServicesInTown(string $serviceSlug, string $areaName,
         if (!isset($areaSets[$slug][$areaName])) {
             continue;
         }
+        if (function_exists('icomplyTownPublishedForService') && !icomplyTownPublishedForService((string)$slug, $town)) {
+            continue;
+        }
         $links .= '<a class="area-chip" href="' . icomplyMatrixH(url('/pages/' . $slug . '/' . $town)) . '">'
             . icomplyMatrixH($name . ' in ' . $areaName) . '</a>';
         if (++$n >= $limit) {
@@ -243,12 +258,18 @@ function icomplyMatrixOtherServicesInTown(string $serviceSlug, string $areaName,
 
 function icomplyMatrixKeywordChips(string $serviceSlug): string
 {
+    if (!function_exists('icomplySpokenLinkLabel')) {
+        require_once __DIR__ . '/related.php';
+    }
     $s = icomplyMatrixShared();
     $kws = $s['kwByService'][$serviceSlug] ?? [];
     $html = '<div class="chip-cloud">';
     foreach ($kws as $slug => $name) {
+        $label = function_exists('icomplySpokenLinkLabel')
+            ? icomplySpokenLinkLabel((string)$slug, (string)$name)
+            : (string)$name;
         $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $slug)) . '">'
-            . icomplyMatrixH($name) . '</a>';
+            . icomplyMatrixH($label) . '</a>';
     }
     $html .= '</div>';
     return $html;
@@ -270,7 +291,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     $poa = function_exists('isPoaService') && isPoaService($svcSlug);
     $priceLine = $poa
         ? 'Price on application after we confirm property type, access and scope.'
-        : 'Fixed written quote once we confirm the scope.';
+        : 'Free written quote once we confirm the scope.';
 
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
@@ -308,7 +329,10 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
     }
-    $kwImagePath = '/assets/images/services/' . $svcSlug . '.jpg';
+    if (!function_exists('icomplyImagePick')) {
+        require_once SITE_ROOT . '/includes/image-pool.php';
+    }
+    $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, icomplyPageImageKey('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal), 1)[0];
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
@@ -388,19 +412,19 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '</article>';
 
     $kwNear = icomplyMatrixNearestAreas($s['areas'], $areaSlugVal, $svcSlug);
-    if ($kwNear !== null) {
+    if ($kwNear !== null && $kwNear !== []) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">The ' . count($kwNear) . ' nearest of ' . count($s['areas']) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">All towns for ' . icomplyMatrixH($kwName) . '</a>.</p>'
             . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/'), $kwNear)
             . '</section>';
-    } else {
+    } elseif ($kwNear === null) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
             . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
             . '</section>';
     }
 
-    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' keyword guides</h2>'
+    $html .= '<section><h2 class="text-2xl font-semibold mb-3">All ' . icomplyMatrixH($svcName) . ' service guides</h2>'
         . '<p class="text-sm text-zinc-600 mb-4">Every topic under this service, each with the same full town list.</p>'
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
@@ -424,10 +448,10 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     $areaSlugVal = areaSlug($areaName);
     $poa = function_exists('isPoaService') && isPoaService($serviceSlug);
     $priceLine = $poa
-        ? 'Fixed written quote before any work starts.'
+        ? 'Free written quote before any work starts.'
         : 'Written quote after scope is agreed.';
     if ($serviceSlug === 'fire-risk-assessments' && function_exists('fraGuidePrice')) {
-        $priceLine = 'Guide price ' . fraGuidePrice() . ' for a standard assessment on UK mainland. Larger premises confirmed in writing.';
+        $priceLine = (function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.');
     }
     if (!function_exists('icomplyGmTownBlurb')) {
         $gmBlurbs = SITE_ROOT . '/includes/gm-blurbs.php';
@@ -467,9 +491,13 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             $areaPairs[] = ['name' => (string)$area, 'slug' => areaSlug((string)$area)];
         }
     }
-    $townHub = in_array($areaName, getAreas(), true)
+    $areaPairs = array_values(array_filter($areaPairs, static function ($a) use ($serviceSlug) {
+        $slug = (string)($a['slug'] ?? '');
+        return $slug !== '' && (!function_exists('icomplyTownPublishedForService') || icomplyTownPublishedForService($serviceSlug, $slug));
+    }));
+    $townHub = (function_exists('icomplyLocalTownSlug') && icomplyLocalTownSlug($areaSlugVal))
         ? url('/pages/areas/' . $areaSlugVal)
-        : $canonical;
+        : url('/pages/areas');
 
     if (!function_exists('icomplyGmBriefHtml')) {
         require_once SITE_ROOT . '/includes/gm-enrichment.php';
@@ -482,8 +510,18 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     }
     $tier1 = function_exists('icomplyTier1ServiceArticle') ? icomplyTier1ServiceArticle($serviceSlug, $areaName) : '';
     $svcImagePath = '/assets/images/services/' . $serviceSlug . '.jpg';
-    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath);
+    if ($serviceSlug === 'aov' || $serviceSlug === 'aov-air-handling') {
+        if (!function_exists('icomplyImagePick')) {
+            require_once SITE_ROOT . '/includes/image-pool.php';
+        }
+        $poolKey = $serviceSlug === 'aov' ? 'aov' : 'aov-air-handling';
+        $svcImagePath = icomplyImagePick('/pages/' . $serviceSlug . '/' . $areaSlugVal, $poolKey, 2)[0];
+    }
+    $heroCredit = $serviceSlug === 'demolition' ? ' data-credit="Tomwsulcer (CC0)" data-credit-stamped="1"' : '';
+    $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $svcImagePath, $serviceSlug);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
+        . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800"' . $heroCredit . '>'
+        . ($serviceSlug === 'demolition' ? '<p class="image-credit">Image credit: Tomwsulcer (CC0)</p>' : '')
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($areaName) . ' · ' . icomplyMatrixH($coverageLabel) . '</p>'
         . '<h1>' . icomplyMatrixH($svcName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'
@@ -491,7 +529,11 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'
         . '<a class="matrix-cta matrix-cta-light" href="' . icomplyMatrixH($s['phoneHref']) . '">' . icomplyMatrixH($s['phone']) . '</a>'
         . '</div>'
-        . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH($standards) . ' · ' . icomplyMatrixH($priceLine) . '</p>'
+        . '<p class="mt-4 text-sm text-white/60">' . icomplyMatrixH(
+            ($priceLine !== '' && !preg_match('/written quote/i', $standards))
+                ? ($standards !== '' ? $standards . ' · ' . $priceLine : $priceLine)
+                : $standards
+        ) . '</p>'
         . '</div></section>';
 
     $packedHeading = is_array($packed) && ($packed['h2'] ?? '') !== ''
@@ -513,6 +555,9 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             'imageAlt' => $svcName . ' in ' . $areaName,
         ])
         : '';
+    if (!function_exists('icomplyFireFamilyDepthHtml')) {
+        require_once SITE_ROOT . '/includes/fire-family-depth.php';
+    }
     if (!function_exists('icomplyQualityBarThinBlock')) {
         require_once SITE_ROOT . '/includes/quality-bar.php';
     }
@@ -532,6 +577,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         . '<h2 class="text-2xl font-semibold">' . icomplyMatrixH($packedHeading) . '</h2>'
         . $svcEnrich
         . $svcQuality
+        . ($ownsMainland ? icomplyFireFamilyDepthHtml($serviceSlug, $svcName, $areaName) : '')
         . icomplyTownFactsHtml(areaSlug($areaName), $areaName, $svcName, $serviceSlug)
         . '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($blurb) . '</p>'
         . ($packedCta !== '' ? '<p class="text-zinc-700 leading-relaxed">' . icomplyMatrixH($packedCta) . '</p>' : '')
@@ -548,13 +594,16 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     // more nearest-town links so every lean page still clears 80 internals.
     $otherSvc = icomplyMatrixOtherServicesInTown($serviceSlug, $areaName);
     $otherCount = substr_count($otherSvc, 'class="area-chip"');
-    $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug, $otherCount < 24 ? 52 + (24 - $otherCount) : 40);
-    if ($svNear !== null) {
+    $smokeTown = icomplyMatrixSmokeCoSameTown($serviceSlug, $areaName);
+    // Smoke & CO towns with few live same-town checks take extra nearest-town links instead.
+    $smokeShort = $serviceSlug === 'smoke-co-alarms' ? max(0, 10 - substr_count($smokeTown, 'class="area-chip"')) : 0;
+    $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug, ($otherCount < 24 ? 52 + (24 - $otherCount) : 40) + $smokeShort);
+    if ($svNear !== null && $svNear !== []) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">The ' . count($svNear) . ' nearest of ' . count($areaPairs) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . ' hub</a>.</p>'
             . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $svNear)
             . '</section>';
-    } else {
+    } elseif ($svNear === null) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' towns.</p>'
             . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)
@@ -563,6 +612,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
 
     if ($svNear !== null) {
         $html .= $otherSvc;
+        $html .= $smokeTown;
         $kwAll = icomplyMatrixShared()['kwByService'][$serviceSlug] ?? [];
         $kwKeys = array_keys($kwAll);
         $off = $kwKeys ? crc32(areaSlug($areaName)) % count($kwKeys) : 0;
@@ -571,7 +621,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         foreach ($pickKw as $k) {
             $html .= '<a class="kw-chip" href="' . icomplyMatrixH(url('/pages/keywords/' . $k)) . '">' . icomplyMatrixH($kwAll[$k]) . '</a>';
         }
-        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All keyword guides</a></p></section></main>';
+        $html .= '</div><p class="text-sm mt-2"><a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords')) . '">All service guides</a></p></section></main>';
     } else {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">All keywords for this service</h2>'
             . icomplyMatrixKeywordChips($serviceSlug)
@@ -583,4 +633,49 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
         : '';
     $html .= icomplyMatrixChromeEnd($foot);
     return $html;
+}
+
+
+/**
+ * Smoke & CO alarm town pages: same-town landlord checks that sit alongside the alarm
+ * duty (CO alarm, gas safety record, EICR, fire risk assessment, HMO fire safety).
+ * Only links URLs that stay live for that town (no 301 to a hub).
+ */
+function icomplyMatrixSmokeCoSameTown(string $serviceSlug, string $areaName): string
+{
+    if ($serviceSlug !== 'smoke-co-alarms') {
+        return '';
+    }
+    if (!function_exists('icomplyNonGmMatrixRedirect')) {
+        require_once SITE_ROOT . '/includes/gm-crawl.php';
+    }
+    $town = areaSlug($areaName);
+    $targets = [
+        ['keywords', 'smoke-alarm-installation', 'Smoke alarm installation'],
+        ['keywords', 'carbon-monoxide-alarm-installation', 'Carbon monoxide alarm installation'],
+        ['keywords', 'carbon-monoxide-flue-check', 'Carbon monoxide flue check'],
+        ['keywords', 'smoke-detector-installation-commercial', 'Commercial smoke detectors'],
+        ['keywords', 'fire-alarm-installer', 'Fire alarm installer'],
+        ['jobs', 'landlord-compliance', 'Landlord compliance'],
+        ['jobs', 'landlord-gas-safety', 'Landlord gas safety'],
+        ['jobs', 'gas-safety-cp12', 'Gas safety record (CP12)'],
+        ['jobs', 'eicr', 'EICR'],
+        ['jobs', 'fire-risk-assessment', 'Fire risk assessment'],
+        ['jobs', 'hmo-fire-safety', 'HMO fire safety'],
+        ['jobs', 'hmo-compliance', 'HMO compliance'],
+        ['jobs', 'fire-alarm-call-out', 'Fire alarm call-out'],
+    ];
+    $chips = '';
+    foreach ($targets as [$kind, $slug, $label]) {
+        $path = '/pages/' . $kind . '/' . $slug . '/' . $town;
+        if (icomplyNonGmMatrixRedirect($path) !== null) {
+            continue;
+        }
+        $chips .= '<a class="area-chip" href="' . icomplyMatrixH(url($path)) . '">' . icomplyMatrixH($label . ' in ' . $areaName) . '</a>';
+    }
+    if ($chips === '') {
+        return '';
+    }
+    return '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH('Landlord safety checks in ' . $areaName) . '</h2>'
+        . '<div class="chip-cloud">' . $chips . '</div></section>';
 }

@@ -26,7 +26,7 @@ $faqs = [
     [
         'cat' => 'Electrical & EICR',
         'q' => 'What is an EICR and how often do I need one?',
-        'a' => 'An Electrical Installation Condition Report (EICR) is an inspection and test of the fixed wiring against BS 7671. For private rented homes in England, the usual rule is a satisfactory report at intervals of no more than 5 years, given to the tenant, and a new one before a tenancy if the current report has run out. The inspector can recommend a shorter interval. Commercial premises follow risk, insurer and client requirements. This is not legal advice. We issue the report for the inspection we carry out and quote remedials where C1, C2 or FI codes appear. We do not name a competent-person scheme on this page.',
+        'a' => 'An Electrical Installation Condition Report (EICR) is an inspection and test of the fixed wiring against BS 7671. For private rented homes in England, the usual rule is a satisfactory report at intervals of no more than 5 years, given to the tenant, and a new one before a tenancy if the current report has run out. The inspector can recommend a shorter interval. Commercial premises follow risk, insurer and client requirements. This is not legal advice. We issue the report for the inspection we carry out and quote remedials where C1, C2 or FI codes appear. ',
     ],
     [
         'cat' => 'Electrical & EICR',
@@ -55,7 +55,7 @@ $faqs = [
     [
         'cat' => 'Emergency lighting',
         'q' => 'How often does emergency lighting need testing?',
-        'a' => 'BS 5266 is the usual UK reference. The responsible person normally keeps a monthly function test and a full-duration test at least once a year. We can quote a testing programme, LED conversions and new installations for escape routes, open areas and high-risk task areas, and we leave the test records for those visits. We do not invent a legal monthly visit for a home that has no emergency lighting system.',
+        'a' => 'BS 5266 is the usual UK reference. The responsible person normally keeps a monthly function test and a full-duration test at least once a year. We can quote a testing programme, LED conversions and new installations for escape routes, open areas and high-risk task areas, and we leave the test records for those visits. ',
         'link' => ['/pages/services/emergency-lighting.php', 'Emergency lighting services'],
     ],
     [
@@ -127,7 +127,7 @@ $faqs = [
     [
         'cat' => 'Quotes & pricing',
         'q' => 'Are quotes free, and are they always a fixed price?',
-        'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known — we do not invent a catalogue fee. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
+        'a' => 'Asking for a quote does not cost a fee. Where the scope is clear from what you send, we confirm a written price. Legionella, asbestos surveys and any job that depends on access or plant condition are priced after that scope is known. A quote can change if the site differs from the description. Paperwork covers the work in the quote, not a scheme membership.',
         'link' => ['/contact.php', 'Request a free quote'],
     ],
     [
@@ -139,7 +139,7 @@ $faqs = [
     [
         'cat' => 'Shop & products',
         'q' => 'What can I buy in the iComply shop?',
-        'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. Prices and stock on a product page are the store’s, not figures we invent on this FAQ. If checkout is not connected, ask us and we will say so.',
+        'a' => 'The trade shop lists kits, parts and products. Checkout is the Shopify store when it is connected. If checkout is not connected, ask us and we will say so.',
         'link' => ['/shop/index.php', 'Visit the shop'],
     ],
     [
@@ -188,7 +188,7 @@ $faqs = [
     [
         'cat' => 'Accreditations',
         'q' => 'Are you NICEIC, BAFE or Gas Safe registered as a company?',
-        'a' => 'This page does not claim NICEIC, BAFE, CHAS, SafeContractor, UKAS, a company Gas Safe registration number, or an EPC assessor accreditation number. Gas work is only booked when the engineer who attends is on the Gas Safe Register for that appliance — ask for the ID and check the register. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
+        'a' => 'Gas work is carried out by Gas Safe registered engineers. Your engineer will show their Gas Safe ID card on arrival, and you can check it at gassaferegister.co.uk. We do not claim NICEIC, BAFE, CHAS, SafeContractor or UKAS membership here. An energy performance certificate has to be produced by an accredited assessor; we do not print that number here. Electrical, fire and emergency-lighting paperwork is for the visit we complete. If you need a named scheme member and we cannot show that registration, we will say so before you book. Call ' . PHONE . '.',
         'link' => ['/pages/about.php', 'About iComply'],
     ],
 ];
@@ -269,7 +269,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Straight answers on EICR, BS&nbsp;5839 fire alarms, emergency lighting, gas safety, CCTV, access control,
-                fire risk assessments, construction, quotes and coverage. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                fire risk assessments, construction, quotes and coverage. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
                 We do not list scheme badges we cannot verify.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
@@ -394,7 +394,7 @@ require SITE_ROOT . '/includes/header.php';
             <a href="<?= url('/contact.php') ?>" class="service-card bg-zinc-50 border rounded-3xl p-6 hover:border-[#ff6b00] transition">
                 <div class="text-2xl mb-3">✉️</div>
                 <div class="font-semibold text-black text-lg">Contact / free quote</div>
-                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Send the postcode and property type to start a quote.</p>
+                <p class="mt-2 text-sm text-zinc-600">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>, WhatsApp or the form. Send the postcode and property type to start a quote.</p>
                 <div class="mt-4 text-sm font-semibold text-[#ff6b00]">Get a quote →</div>
             </a>
         </div>
@@ -415,21 +415,21 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Still have a question?</h2>
-            <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
+            <p class="mt-3 text-white/75">Tell us your postcode and the job. Written quotes from Stockport — call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>. Some visits are priced only after a survey.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
                 <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=Hi%20iComply%2C%20I%20have%20a%20compliance%20question"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839, BS 5266 and BS 7671 as job references — not scheme memberships</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and records for the work agreed</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= (int)$areaCount ?>+ towns on our North West list</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form. Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Phone, WhatsApp or form. Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></li>
         </ul>
     </div>
 </section>

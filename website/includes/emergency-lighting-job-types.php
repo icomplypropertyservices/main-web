@@ -197,7 +197,7 @@ function emergencyLightingSynthesizeCopy(string $name): array
         'faq' => [
             [
                 'How is ' . $name . ' quoted?',
-                'We survey the site and send a POA quote. The price depends on fitting count, access and whether remedials are included. Nothing is invented up front.',
+                'We survey the site and send a POA quote. The price depends on fitting count, access and whether remedials are included. ',
             ],
             [
                 'Which standard applies to ' . $name . '?',
@@ -343,7 +343,7 @@ function emergencyLightingRenderJobPage(
         'EL_SERVICE_SLUG' => $serviceSlug,
         'EL_RELATED_SLUG' => $relatedSlug,
         'EL_RELATED_NAME' => $relatedName,
-        'EL_IMAGE' => url('/assets/images/keywords/' . $slug . '.jpg'),
+        'EL_IMAGE' => url(function_exists('icomplyKeywordImagePath') ? icomplyKeywordImagePath($slug, 'emergency-lighting') : '/assets/images/services/emergency-lighting.jpg'),
         'EL_SERVICE_IMAGE' => url('/assets/images/services/' . $serviceSlug . '.jpg'),
         'EL_MANUFACTURER_TAGS' => function_exists('manufacturerTagsHtml') ? manufacturerTagsHtml($serviceSlug) : '',
         'EL_CSRF' => (string)$_SESSION['csrf'],

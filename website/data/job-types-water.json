@@ -43,7 +43,7 @@
       "focus_points": [
         "Water Supply (Water Fittings) Regulations 1999",
         "We look at what is installed, name the likely fluid category, and say whether notification is worth raising with the water undertaker.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -87,7 +87,7 @@
       "focus_points": [
         "Regulation 5 of the Water Fittings Regulations",
         "We help write a plain description of the fitting, the address and the intended use so you can notify.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We are not the undertaker and we do not grant consent on their behalf."
       ],
       "secondaries": [
@@ -131,7 +131,7 @@
       "focus_points": [
         "Regulation 5 notification",
         "We list what is changing on the supply and which drawing or photo supports the notice.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A completed form is still the occupier's or contractor's notice, not an iComply approval stamp."
       ],
       "secondaries": [
@@ -175,7 +175,7 @@
       "focus_points": [
         "Backflow protection under the Water Fittings Regulations",
         "We walk taps, hoses, appliances and tanks and note where a check valve or an air gap is the fitting that matches the risk.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The survey is a written note for your quote, not a statutory certificate."
       ],
       "secondaries": [
@@ -219,7 +219,7 @@
       "focus_points": [
         "Double check valves for defined fluid categories",
         "We fit or replace a double check valve only where the category and the manufacturer's data support it, then record the location.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not publish a valve price and we do not claim a test-scheme membership."
       ],
       "secondaries": [
@@ -263,7 +263,7 @@
       "focus_points": [
         "Hose-union bib taps and check valves",
         "We check the bib tap has the right check valve and that the hose can be removed and hung so it drains.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A check valve does not make a garden hose safe to leave submerged."
       ],
       "secondaries": [
@@ -307,7 +307,7 @@
       "focus_points": [
         "Reduced pressure zone (RPZ) backflow preventers",
         "We describe whether an RPZ is the device being asked for, where it would sit, and who should notify.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -351,7 +351,7 @@
       "focus_points": [
         "Fluid categories 1 to 5",
         "We assign a working category to each outlet we can see and match it to an air gap or a mechanical device in the quote.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The category note is our scoping opinion, not an undertaker determination."
       ],
       "secondaries": [
@@ -395,7 +395,7 @@
       "focus_points": [
         "Fluid category 5 protection",
         "We look for a visible air break between the wholesome supply and the higher-risk cistern or trough.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We will say if the gap is missing rather than sell a valve that does not meet the category."
       ],
       "secondaries": [
@@ -417,7 +417,7 @@
       "h1": "Type AA Air Gap",
       "meta_desc": "Type AA Air Gap across the North West. Type AA air gaps. Price on application from Stockport.",
       "intro": "Type AA Air Gap is scoped from Stockport for plant rooms with unrestricted discharge. A Type AA gap is an unrestricted discharge above a spillover, with the inlet clear of the receiving vessel. The figure is price on application once we know the supply and the access.",
-      "body": "Type AA air gaps. We measure the visible break and photograph it for the file when access allows. We do not invent a millimetre figure if we have not seen the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Type AA air gaps. We measure the visible break and photograph it for the file when access allows. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Type AA Air Gap visit?",
@@ -433,14 +433,14 @@
         ],
         [
           "What will you not claim?",
-          "We do not invent a millimetre figure if we have not seen the fitting."
+          ""
         ]
       ],
       "focus_points": [
         "Type AA air gaps",
         "We measure the visible break and photograph it for the file when access allows.",
-        "Fixed written quote before work starts",
-        "We do not invent a millimetre figure if we have not seen the fitting."
+        "Free written quote before work starts",
+        ""
       ],
       "secondaries": [
         "Type AA Air Gap North West",
@@ -483,7 +483,7 @@
       "focus_points": [
         "Type AB air gaps with weir overflow",
         "We check the inlet, the weir and whether the overflow can actually discharge if the level rises.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A lid on the cistern does not create the air gap by itself."
       ],
       "secondaries": [
@@ -527,7 +527,7 @@
       "focus_points": [
         "Hose union taps under the Water Fittings Regulations",
         "We replace the bib tap assembly and confirm the check valve is in the new fitting, not buried in the hose.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Parts are POA after we see the wall, the supply and whether the pipe is internal lead."
       ],
       "secondaries": [
@@ -571,7 +571,7 @@
       "focus_points": [
         "Outside taps and backflow",
         "We set out isolation, the check valve and how the pipe is clipped so it can be drained in frost.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This is separate from any water-company meter or boundary box, which we do not own."
       ],
       "secondaries": [
@@ -615,7 +615,7 @@
       "focus_points": [
         "Temporary filling loops",
         "We check the double check arrangement and whether the loop is left connected when the maker says it should come off.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Boiler combustion work, where it arises, is quoted separately and only where we are competent to do it."
       ],
       "secondaries": [
@@ -659,7 +659,7 @@
       "focus_points": [
         "Washing machine connections",
         "We fit the valve and hose restraint and confirm the cold feed is wholesome water, not a tank-fed spare.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not price a machine. The visit is the fitting."
       ],
       "secondaries": [
@@ -703,7 +703,7 @@
       "focus_points": [
         "Dishwasher cold feeds",
         "We install the servicing valve and hose so the appliance can be isolated without shutting the whole kitchen.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Appliance warranty registration is the owner's step, not ours."
       ],
       "secondaries": [
@@ -747,7 +747,7 @@
       "focus_points": [
         "Bidets and submerged inlets",
         "We identify the inlet type and specify an air gap or the device the category needs before anyone connects it.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We will decline a connection that would leave a spray nozzle below the flood level."
       ],
       "secondaries": [
@@ -791,7 +791,7 @@
       "focus_points": [
         "Shower hoses and backflow",
         "We check the hose length, the retaining clip and the mixer arrangement, then quote a restraint or a different hose.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This is a fittings visit, not a Legionella sample."
       ],
       "secondaries": [
@@ -835,7 +835,7 @@
       "focus_points": [
         "Bath fillers below the rim",
         "We look at the spout height against the rim and say whether the set should be changed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not certify a bath as compliant from a photograph alone."
       ],
       "secondaries": [
@@ -879,7 +879,7 @@
       "focus_points": [
         "WC cisterns and air gaps",
         "We check the inlet valve, the overflow and the air break when a cistern is changed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A new flush valve is POA. We do not sell a 'water regs certificate' product."
       ],
       "secondaries": [
@@ -923,7 +923,7 @@
       "focus_points": [
         "Rainwater and wholesome water separation",
         "We trace the two systems, look for unmarked links, and specify physical separation plus labelling.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not commission a harvesting controller as part of this advice unless that scope is written separately."
       ],
       "secondaries": [
@@ -967,7 +967,7 @@
       "focus_points": [
         "Greywater reuse",
         "We survey the reuse pipe, the backup mains top-up and whether that top-up has an air gap.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Treatment performance of a greywater unit is the manufacturer's claim, not ours."
       ],
       "secondaries": [
@@ -1011,7 +1011,7 @@
       "focus_points": [
         "Irrigation supplies",
         "We find the point where irrigation leaves the wholesome pipe and specify the air gap or device before the zone valves.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Sprinkler design for fire is a different service."
       ],
       "secondaries": [
@@ -1055,7 +1055,7 @@
       "focus_points": [
         "Commercial sinks, hoses and glasswashers",
         "We list each hose and submerged inlet and quote protection per point rather than one valve for the whole kitchen.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Grease-trap servicing is not included unless you ask for it as a separate scope."
       ],
       "secondaries": [
@@ -1099,7 +1099,7 @@
       "focus_points": [
         "Softeners on a wholesome supply",
         "We check the installation against that layout and whether a drinking branch is taken off before the softener.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not claim the softener makes water 'healthier'."
       ],
       "secondaries": [
@@ -1143,7 +1143,7 @@
       "focus_points": [
         "Building Regulations hot-water storage and water fittings",
         "We describe the cylinder, the discharge route and which notice is actually being asked for.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -1187,7 +1187,7 @@
       "focus_points": [
         "Site-wide water fittings review",
         "We walk what we can access and mark rooms we could not enter so the quote is honest about gaps.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Inaccessible risers stay listed as not seen."
       ],
       "secondaries": [
@@ -1231,7 +1231,7 @@
       "focus_points": [
         "Landlord water fittings",
         "We produce a short written list of fittings that need action and those that can stay.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "It is not an EICR, a gas record, or a Legionella risk assessment."
       ],
       "secondaries": [
@@ -1275,7 +1275,7 @@
       "focus_points": [
         "Shared-house water fittings",
         "We survey the fittings and separate anything that is really a Legionella control question.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Licence paperwork is the council's process. We only supply the fittings note you ask us for."
       ],
       "secondaries": [
@@ -1319,7 +1319,7 @@
       "focus_points": [
         "New kitchen water fittings",
         "We check each feed, the wastes, and any pull-out spray before the kitchen is boxed in.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Joinery and worktops are not this visit."
       ],
       "secondaries": [
@@ -1363,7 +1363,7 @@
       "focus_points": [
         "New bathroom water fittings",
         "We review the set-out before tiling so a submerged inlet is not sealed in.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not issue a completion certificate for Building Control."
       ],
       "secondaries": [
@@ -1407,7 +1407,7 @@
       "focus_points": [
         "Tea boilers and water boilers",
         "We specify the valve and the drain-down point and keep the boiler manufacturer's vent requirements intact.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Electrical connection of the boiler is quoted only if it is in the same written scope."
       ],
       "secondaries": [
@@ -1451,7 +1451,7 @@
       "focus_points": [
         "Pool fill points",
         "We look at how the pool is topped up and quote a proper air break if the hose is the current method.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Pool chemistry and plant servicing are outside this fittings visit."
       ],
       "secondaries": [
@@ -1495,7 +1495,7 @@
       "focus_points": [
         "Vehicle wash-down",
         "We trace the wash tap back to the branch and specify category-appropriate separation.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Trade effluent consent, if the yard drains to sewer, is not something we grant."
       ],
       "secondaries": [
@@ -1539,7 +1539,7 @@
       "focus_points": [
         "Pull-out spray taps",
         "We confirm the tap is a suitable fitting and that the hose weight retracts it out of the bowl.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We will not fit a spray tap that cannot clear the flood level if the category needs it clear."
       ],
       "secondaries": [
@@ -1583,7 +1583,7 @@
       "focus_points": [
         "Boiling and chilled tap modules",
         "We check isolation, the vent or expansion the maker requires, and that the waste can take a discharge.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Scald risk is explained. We do not claim the tap is a steriliser."
       ],
       "secondaries": [
@@ -1627,7 +1627,7 @@
       "focus_points": [
         "Chilled drinking taps",
         "We locate the branch, the drain and the overflow before the joinery is finished.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Filter-change contracts are optional and quoted separately if you want them."
       ],
       "secondaries": [
@@ -1649,7 +1649,7 @@
       "h1": "Water Undertaker Notification Pack",
       "meta_desc": "Water Undertaker Notification Pack across the North West. Notices to the local water undertaker. Price on application from Stockport.",
       "intro": "Water Undertaker Notification Pack is scoped from Stockport for contractors preparing a notice. Undertakers ask for address, description, drawings and sometimes a start date. The figure is price on application once we know the supply and the access.",
-      "body": "Notices to the local water undertaker. We assemble photos, a fitting list and a one-page description you can attach to their form. Their reference number, if they issue one, is theirs. We do not invent an approval number. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Notices to the local water undertaker. We assemble photos, a fitting list and a one-page description you can attach to their form. Their reference number, if they issue one, is theirs. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Water Undertaker Notification Pack visit?",
@@ -1665,14 +1665,14 @@
         ],
         [
           "What will you not claim?",
-          "Their reference number, if they issue one, is theirs. We do not invent an approval number."
+          "Their reference number, if they issue one, is theirs. "
         ]
       ],
       "focus_points": [
         "Notices to the local water undertaker",
         "We assemble photos, a fitting list and a one-page description you can attach to their form.",
-        "Fixed written quote before work starts",
-        "Their reference number, if they issue one, is theirs. We do not invent an approval number."
+        "Free written quote before work starts",
+        "Their reference number, if they issue one, is theirs. "
       ],
       "secondaries": [
         "Water Undertaker Notification Pack North West",
@@ -1715,7 +1715,7 @@
       "focus_points": [
         "Water fittings contraventions",
         "We read the letter with you, inspect that point, and quote the fitting change they have described.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not negotiate the legal notice for you or promise it will be withdrawn."
       ],
       "secondaries": [
@@ -1759,7 +1759,7 @@
       "focus_points": [
         "Schedules of water fittings",
         "We compare the proposed valve, tap or air gap with the category and the installation layout.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not add products to a manufacturer's approval directory."
       ],
       "secondaries": [
@@ -1803,7 +1803,7 @@
       "focus_points": [
         "Provision of wholesome drinking water",
         "We fit the outlet, the servicing valve and a label that says it is drinking water.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not test the water to a Drinking Water Inspectorate chemistry list."
       ],
       "secondaries": [
@@ -1847,7 +1847,7 @@
       "focus_points": [
         "Wholesome water at the tap",
         "We trace whether the kitchen tap is on the rising main or on a cold-water tank and say which outlets to use for drinking.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This is not a medical opinion about the water."
       ],
       "secondaries": [
@@ -1891,7 +1891,7 @@
       "focus_points": [
         "A dedicated mains drinking tap",
         "We branch off the rising main before any tank or softener and fit a labelled tap.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Lead on that rising main, if we find it, is quoted as its own job."
       ],
       "secondaries": [
@@ -1935,7 +1935,7 @@
       "focus_points": [
         "Kitchen taps used for drinking",
         "We confirm the feed, fit a servicing valve if there is none, and flush the new fitting to waste.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Taste after a new tap is often the fitting settling. We do not call that a contamination incident without evidence."
       ],
       "secondaries": [
@@ -1979,7 +1979,7 @@
       "focus_points": [
         "Drinking water for people at work",
         "We agree a location with a drain, fit the point, and label it.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Welfare regulations are the employer's duty. We provide the fitting they ask for."
       ],
       "secondaries": [
@@ -2023,7 +2023,7 @@
       "focus_points": [
         "Welfare drinking water",
         "We put the outlet in the welfare room, on the wholesome supply, with isolation.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Portable cabin water is quoted only after we see how the cabin is fed."
       ],
       "secondaries": [
@@ -2067,7 +2067,7 @@
       "focus_points": [
         "Pupil drinking points",
         "We survey the feed and quote the outlet. We keep the work away from a lesson changeover if you tell us the times.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not write the school's water-safety policy."
       ],
       "secondaries": [
@@ -2111,7 +2111,7 @@
       "focus_points": [
         "Drinking outlets in care settings",
         "We identify which outlets are mains-fed and which are tank-fed, then quote labels and any missing valves.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Clinical water advice and Legionella control stay on the Legionella service if you need them."
       ],
       "secondaries": [
@@ -2155,7 +2155,7 @@
       "focus_points": [
         "Dead legs on a wholesome pipe",
         "We find the branch and quote a cut-back to the live pipe rather than leaving another cap.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not sample for bacteria unless that is a separate agreed scope."
       ],
       "secondaries": [
@@ -2199,7 +2199,7 @@
       "focus_points": [
         "Internal lead pipework",
         "We replace the internal lead we can access and flush the new pipe to waste before it is used for drinking.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not promise a blood-lead or laboratory result."
       ],
       "secondaries": [
@@ -2243,7 +2243,7 @@
       "focus_points": [
         "Recognising lead pipe",
         "We inspect the incoming pipe at the stop tap and tell you whether what we can see is lead.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A buried incoming pipe we cannot see stays recorded as not inspected."
       ],
       "secondaries": [
@@ -2287,7 +2287,7 @@
       "focus_points": [
         "Barrier pipe where the ground is contaminated",
         "We ask what the ground report says before we specify the pipe. Without that report we do not guess a contamination class.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not write the geo-environmental report."
       ],
       "secondaries": [
@@ -2331,7 +2331,7 @@
       "focus_points": [
         "Cross connections",
         "We trace mains, tank, rainwater and fire supplies only as far as access allows and mark any link we find.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Fire main alterations are quoted separately from a drinking-water survey."
       ],
       "secondaries": [
@@ -2375,7 +2375,7 @@
       "focus_points": [
         "Labelling water that is not for drinking",
         "We label the non-drinking pipes we can reach and list pipes we could not confirm.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Labels do not treat the water. They only say what the pipe is for."
       ],
       "secondaries": [
@@ -2419,7 +2419,7 @@
       "focus_points": [
         "Rainwater outlets",
         "We fit a label and, if the tap is a hose union indoors, quote its removal or relocation.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not convert rainwater into drinking water."
       ],
       "secondaries": [
@@ -2463,7 +2463,7 @@
       "focus_points": [
         "Garden taps",
         "We confirm the indoor drinking tap and make sure the garden tap is not the only outlet people use for cooking.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This visit does not include a hose-hygiene chemistry test."
       ],
       "secondaries": [
@@ -2507,7 +2507,7 @@
       "focus_points": [
         "Boosters on a drinking supply",
         "We inspect the break tank or the direct feed and quote only the arrangement we can see.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Water-company pressure complaints are raised with the undertaker. We do not speak as them."
       ],
       "secondaries": [
@@ -2551,7 +2551,7 @@
       "focus_points": [
         "Break tanks",
         "We look at the lid, the screen, the air gap and whether drinking outlets are actually downstream.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Cleaning a tank is a separate quoted task if the inspection shows it is needed."
       ],
       "secondaries": [
@@ -2573,7 +2573,7 @@
       "h1": "Stored Drinking Water Turnover",
       "meta_desc": "Stored Drinking Water Turnover across the North West. Turnover of stored wholesome water. Price on application from Stockport.",
       "intro": "Stored Drinking Water Turnover is scoped from Stockport for sites that store wholesome water. Stored drinking water needs to move. A tank that only feeds a rarely used tap is a poor drinking store. The figure is price on application once we know the supply and the access.",
-      "body": "Turnover of stored wholesome water. We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement. We do not set a bacterial sampling frequency on this page. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Turnover of stored wholesome water. We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Stored Drinking Water Turnover visit?",
@@ -2589,14 +2589,14 @@
         ],
         [
           "What will you not claim?",
-          "We do not set a bacterial sampling frequency on this page."
+          ""
         ]
       ],
       "focus_points": [
         "Turnover of stored wholesome water",
         "We map which outlets the tank feeds and whether a mains drinking tap would be the simpler arrangement.",
-        "Fixed written quote before work starts",
-        "We do not set a bacterial sampling frequency on this page."
+        "Free written quote before work starts",
+        ""
       ],
       "secondaries": [
         "Stored Drinking Water Turnover North West",
@@ -2639,7 +2639,7 @@
       "focus_points": [
         "Direct mains drinking outlets",
         "We confirm the cold tap is before the boiler and not a hot outlet being used for drinking.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Boiler servicing is not included."
       ],
       "secondaries": [
@@ -2683,7 +2683,7 @@
       "focus_points": [
         "Complaints about water at the tap",
         "We help you tell those two apart and, where the undertaker must attend, we do not pretend to replace them.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not offer a compensation claim service."
       ],
       "secondaries": [
@@ -2727,7 +2727,7 @@
       "focus_points": [
         "Flushing after plumbing work",
         "We flush at the new outlet with the aerator removed and tell you when it is reasonable to use it for drinking again.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "If the colour returns the next day from every tap, that points back to the incoming supply."
       ],
       "secondaries": [
@@ -2771,7 +2771,7 @@
       "focus_points": [
         "Taste after fittings work",
         "We return, flush, and check we have not connected onto a heating or rainwater pipe.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not send a taste panel result. If a laboratory is needed it is named at quote stage."
       ],
       "secondaries": [
@@ -2815,7 +2815,7 @@
       "focus_points": [
         "Flush to waste before first use",
         "We include that flush in the fitting visit and record which outlets were run.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Flushing is not disinfection and it is not a chlorination certificate."
       ],
       "secondaries": [
@@ -2859,7 +2859,7 @@
       "focus_points": [
         "Sampling wholesome water",
         "We coordinate a visit around an agreed outlet. The laboratory and the method are named in the quote.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -2903,7 +2903,7 @@
       "focus_points": [
         "Two different water questions",
         "We say which of the two you have described before we book, and we do not blend them into one vague 'water test'.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Legionella sampling, if it is justified, stays on the Legionella service and is still POA."
       ],
       "secondaries": [
@@ -2947,7 +2947,7 @@
       "focus_points": [
         "Tea points",
         "We re-feed the point from a live wholesome branch when the current tee is wrong.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not supply the kettle."
       ],
       "secondaries": [
@@ -2991,7 +2991,7 @@
       "focus_points": [
         "Shared kitchens",
         "We service that outlet and note any tank feed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Access to the kitchen is arranged with the agent before we book."
       ],
       "secondaries": [
@@ -3035,7 +3035,7 @@
       "focus_points": [
         "Student house kitchen taps",
         "We confirm the kitchen feed, replace a failed tap only if that is the fault, and flush it.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "End-of-tenancy cleaning is not included."
       ],
       "secondaries": [
@@ -3079,7 +3079,7 @@
       "focus_points": [
         "Warehouse welfare",
         "We fit or recommission that outlet on the wholesome supply.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Forklift wash-down hoses are a separate backflow item if they share the branch."
       ],
       "secondaries": [
@@ -3123,7 +3123,7 @@
       "focus_points": [
         "Temporary welfare cabins",
         "We look at the temporary connection and the cabin branch you show us.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Street-opening permits and standpipe licences are the undertaker's or the council's, not a product we sell."
       ],
       "secondaries": [
@@ -3167,7 +3167,7 @@
       "focus_points": [
         "Lets that stand empty",
         "We identify the drinking tap, flush it to waste after a void, and separate any Legionella scope if the tank and showers need it.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not offer a 'cottage water certificate'."
       ],
       "secondaries": [
@@ -3211,7 +3211,7 @@
       "focus_points": [
         "Check-in drinking water",
         "We run that tap, check the servicing valve, and leave a one-line note for the inventory pack.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The note is not a warranty of future water quality."
       ],
       "secondaries": [
@@ -3233,11 +3233,11 @@
       "h1": "Under-sink Filter Advice",
       "meta_desc": "Under-sink Filter Advice across the North West. Point-of-use filters. Price on application from Stockport.",
       "intro": "Under-sink Filter Advice is scoped from Stockport for kitchens considering a filter. A filter is a fitting on the drinking branch. It needs isolation, a change plan and a waste if the maker requires one. The figure is price on application once we know the supply and the access.",
-      "body": "Point-of-use filters. We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants. Cartridge subscriptions are not assumed. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Point-of-use filters. We install the housing you have chosen and record the model. Cartridge subscriptions are not assumed. This is not a Drinking Water Inspectorate chemistry suite and it is not a Legionella sampling visit. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Under-sink Filter Advice visit?",
-          "We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants."
+          "We install the housing you have chosen and record the model. "
         ],
         [
           "Who is Under-sink Filter Advice for?",
@@ -3254,8 +3254,8 @@
       ],
       "focus_points": [
         "Point-of-use filters",
-        "We install the housing you have chosen and record the model. We do not invent a removal percentage for contaminants.",
-        "Fixed written quote before work starts",
+        "We install the housing you have chosen and record the model. ",
+        "Free written quote before work starts",
         "Cartridge subscriptions are not assumed."
       ],
       "secondaries": [
@@ -3299,7 +3299,7 @@
       "focus_points": [
         "A hard-water drinking branch",
         "We take that branch off before the softener and label both taps.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not advise that softened water is unsafe. We only separate the feeds you asked for."
       ],
       "secondaries": [
@@ -3343,7 +3343,7 @@
       "focus_points": [
         "Reach and knee space at a drinking point",
         "We fit the outlet to the height and projection agreed on site with you.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not certify the whole building against an access standard."
       ],
       "secondaries": [
@@ -3387,7 +3387,7 @@
       "focus_points": [
         "Pantry taps",
         "We rework the branch so the drinking tap is on a live wholesome feed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Joinery of the pantry is by others."
       ],
       "secondaries": [
@@ -3431,7 +3431,7 @@
       "focus_points": [
         "A hose end left under water",
         "We fit a hanger or a break and explain why the hose comes off after use.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This is a contamination path, not a reason to sample the bucket."
       ],
       "secondaries": [
@@ -3475,7 +3475,7 @@
       "focus_points": [
         "Flushing after a leak repair",
         "We flush the repaired branch and the kitchen tap and tell you if the incoming supply is still discoloured.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Drying-out and plaster repairs are not part of the flush."
       ],
       "secondaries": [
@@ -3519,7 +3519,7 @@
       "focus_points": [
         "What this lane does not include",
         "We explain the difference, offer the fittings visit you may actually need, and only liaise with a laboratory if you still want samples.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "No suite is bundled into this page and no price is listed."
       ],
       "secondaries": [
@@ -3563,7 +3563,7 @@
       "focus_points": [
         "Cold water storage cisterns",
         "We inspect the lid, the screen and the overflow and quote replacements where they are missing.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "If the tank also feeds a drinking tap we say so, because that changes the priority."
       ],
       "secondaries": [
@@ -3607,7 +3607,7 @@
       "focus_points": [
         "Overflow and warning pipes",
         "We trace the pipe to its outlet and quote a screen or a re-route if it discharges into the roof void.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A drip may also be a failed ballvalve, which we price only after we see it."
       ],
       "secondaries": [
@@ -3651,7 +3651,7 @@
       "focus_points": [
         "Screened vents and overflows",
         "We fit a screen that still lets the cistern breathe and does not block the warning pipe.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Screen mesh is a fitting, not a sterilisation."
       ],
       "secondaries": [
@@ -3695,7 +3695,7 @@
       "focus_points": [
         "Insulation of stored cold water",
         "We check the jacket, the lid insulation and whether pipework next to the tank is protected.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not quote a heat-loss calculation."
       ],
       "secondaries": [
@@ -3739,7 +3739,7 @@
       "focus_points": [
         "Internal stop taps",
         "We free or replace the internal stop tap and prove it holds.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The boundary stop tap in the pavement is a water-company fitting. We liaise. We do not replace their box as if it were ours."
       ],
       "secondaries": [
@@ -3783,7 +3783,7 @@
       "focus_points": [
         "Servicing valves",
         "We fit a servicing valve on the supply to that tap where the pipe allows.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "If the pipe is lead, the valve is not fitted onto lead without the lead job being scoped."
       ],
       "secondaries": [
@@ -3827,7 +3827,7 @@
       "focus_points": [
         "Rising mains inside the building",
         "We repair the section we can access and record if the rest of the incoming pipe is lead or buried.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Excavation outside the building line is a different scope."
       ],
       "secondaries": [
@@ -3849,7 +3849,7 @@
       "h1": "Isolation Valve on a Wholesome Supply",
       "meta_desc": "Isolation Valve on a Wholesome Supply across the North West. Branch isolation. Price on application from Stockport.",
       "intro": "Isolation Valve on a Wholesome Supply is scoped from Stockport for fit-outs adding a branch. Every new branch on the drinking supply should be isolatable without draining the building. The figure is price on application once we know the supply and the access.",
-      "body": "Branch isolation. We fit the valve at the point the branch leaves the live pipe. Valve brand is confirmed in the quote. It is not listed as a price here. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "Branch isolation. We fit the valve at the point the branch leaves the live pipe. Valve brand is confirmed in the quote. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Isolation Valve on a Wholesome Supply visit?",
@@ -3865,14 +3865,14 @@
         ],
         [
           "What will you not claim?",
-          "Valve brand is confirmed in the quote. It is not listed as a price here."
+          "Valve brand is confirmed in the quote. "
         ]
       ],
       "focus_points": [
         "Branch isolation",
         "We fit the valve at the point the branch leaves the live pipe.",
-        "Fixed written quote before work starts",
-        "Valve brand is confirmed in the quote. It is not listed as a price here."
+        "Free written quote before work starts",
+        "Valve brand is confirmed in the quote. "
       ],
       "secondaries": [
         "Isolation Valve on a Wholesome Supply North West",
@@ -3915,7 +3915,7 @@
       "focus_points": [
         "Mains-fed combination boilers",
         "We note that there is no cold tank and then survey the fittings that are still on the mains.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Gas work on the boiler is not bundled into this note."
       ],
       "secondaries": [
@@ -3959,7 +3959,7 @@
       "focus_points": [
         "Discharge from unvented storage",
         "We walk the route from the tundish to the termination and say if it is missing, uphill, or into a soil pipe it should not use.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -4003,7 +4003,7 @@
       "focus_points": [
         "Tundishes",
         "We check it is visible and that the pipe downstream can take the flow.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not hide a tundish behind a new panel."
       ],
       "secondaries": [
@@ -4047,7 +4047,7 @@
       "focus_points": [
         "Pressure reducing valves",
         "We measure roughly with the gauge we bring, then quote a reducing valve only if the installation needs one.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not sell a valve because the street pressure might be high on another day."
       ],
       "secondaries": [
@@ -4091,7 +4091,7 @@
       "focus_points": [
         "Thermostatic mixing valves",
         "We check the valve is accessible for servicing and that the outlet it feeds is a sensible one.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         ""
       ],
       "secondaries": [
@@ -4135,7 +4135,7 @@
       "focus_points": [
         "Shower mixers",
         "We replace the mixer and valves where agreed and set the hose so it cannot lie in the tray.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Electric showers are an electrical scope as well and are quoted as such."
       ],
       "secondaries": [
@@ -4179,7 +4179,7 @@
       "focus_points": [
         "Bath fillers",
         "We check the spout against the rim before the bath is silicone-sealed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not sign off a bathroom installer we did not appoint."
       ],
       "secondaries": [
@@ -4223,7 +4223,7 @@
       "focus_points": [
         "Kitchen mixers",
         "We connect the mixer the right way round and flush it.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Worktop cut-outs are by the kitchen fitter."
       ],
       "secondaries": [
@@ -4267,7 +4267,7 @@
       "focus_points": [
         "WC inlet valves",
         "We replace the inlet valve and prove the overflow still discharges where it can be seen.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A quiet fill is not a compliance claim."
       ],
       "secondaries": [
@@ -4311,7 +4311,7 @@
       "focus_points": [
         "Cistern overflows",
         "We re-terminate the overflow to a visible point and fit a screen if it is open to insects.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The roof leak you might also have is only included if it is the same pipe."
       ],
       "secondaries": [
@@ -4355,7 +4355,7 @@
       "focus_points": [
         "Isolation inside, check valve at the tap",
         "We fit the indoor valve and confirm the check valve at the bib tap.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "This is the fittings version of an outside tap, not a landscaping job."
       ],
       "secondaries": [
@@ -4399,7 +4399,7 @@
       "focus_points": [
         "Flexible connectors",
         "We replace tired hoses and clip them so they cannot drop into a sink or a gully.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not leave a longer hose 'in case' it is useful later."
       ],
       "secondaries": [
@@ -4443,7 +4443,7 @@
       "focus_points": [
         "Restraining appliance hoses",
         "We fit the restraint and the valve and show the occupier how to isolate.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A new appliance is not supplied."
       ],
       "secondaries": [
@@ -4487,7 +4487,7 @@
       "focus_points": [
         "Voids",
         "We check those fittings, isolate what should be isolated, and flush the drinking tap when the supply is on.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Boarding-up and lock changes are not included."
       ],
       "secondaries": [
@@ -4531,7 +4531,7 @@
       "focus_points": [
         "A repeatable fittings note",
         "We use one note format across the portfolio so an agent can compare them.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Each address is still POA. There is no per-house menu price."
       ],
       "secondaries": [
@@ -4575,7 +4575,7 @@
       "focus_points": [
         "A short briefing for agents",
         "We brief the team at the office or on a block and leave a one-page reminder.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "The briefing is not a qualification and not a scheme enrolment."
       ],
       "secondaries": [
@@ -4619,7 +4619,7 @@
       "focus_points": [
         "Evidence after an escape of water",
         "We photograph the fitting, describe the repair and list what we did not open.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not complete the insurer's admission of liability."
       ],
       "secondaries": [
@@ -4663,7 +4663,7 @@
       "focus_points": [
         "Review after other trades have left",
         "We review the fittings that are visible and list anything that would need a panel off.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not dismantle another contractor's work without your written go-ahead."
       ],
       "secondaries": [
@@ -4707,7 +4707,7 @@
       "focus_points": [
         "Booster sets",
         "We inspect those and quote a repair only for the part that has failed.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "A full pump replacement is a separate figure after the inspection."
       ],
       "secondaries": [
@@ -4751,7 +4751,7 @@
       "focus_points": [
         "Instantaneous water heaters",
         "We check the feed, the isolation and the outlet spout against that layout.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Gas or electric connection is only in scope when it is written in the quote."
       ],
       "secondaries": [
@@ -4795,7 +4795,7 @@
       "focus_points": [
         "Point-of-use heaters",
         "We fit the valves and confirm the basin tap is not being described as the kitchen drinking tap.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Descaling is included only if the quote says so."
       ],
       "secondaries": [
@@ -4839,7 +4839,7 @@
       "focus_points": [
         "Scale reducers and softeners",
         "We explain which device is on the drawing and where a drinking bypass would sit.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not promise softer skin or a limescale-free kettle."
       ],
       "secondaries": [
@@ -4883,7 +4883,7 @@
       "focus_points": [
         "Internal meters",
         "We advise whether the leak is on your side of the meter and quote only the pipe we own as the occupier's installer.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Meter exchange is the undertaker's job."
       ],
       "secondaries": [
@@ -4927,7 +4927,7 @@
       "focus_points": [
         "Boundary stop taps",
         "We locate the internal tap, and if the street valve is the one that has failed we tell you to contact the undertaker with the address.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not charge a call-out as if we were the water company."
       ],
       "secondaries": [
@@ -4971,7 +4971,7 @@
       "focus_points": [
         "Contamination into a cistern",
         "We photograph the lid and screen and quote the cover that actually fits the cistern.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not sample the tank for a chemistry list on this visit."
       ],
       "secondaries": [
@@ -5015,7 +5015,7 @@
       "focus_points": [
         "Riser valves",
         "We survey the valves that exist and quote the missing ones we can reach.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Risers behind locked riser doors need the agent's access."
       ],
       "secondaries": [
@@ -5059,7 +5059,7 @@
       "focus_points": [
         "HMO kitchen taps",
         "We replace the tap and valves when they have failed and flush before the room is handed back.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Licence conditions are confirmed by you. We do not interpret the HMO licence as a fittings standard of our own."
       ],
       "secondaries": [
@@ -5103,7 +5103,7 @@
       "focus_points": [
         "Bath fills in care settings",
         "We check the filler, the isolation and any blending valve that is already there.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "Moving-and-handling equipment is not our supply."
       ],
       "secondaries": [
@@ -5147,7 +5147,7 @@
       "focus_points": [
         "The water fitting at a dental chair",
         "We look at that connection and the category it implies. Clinical waterline treatment stays with the practice.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not set a dental infection-control protocol."
       ],
       "secondaries": [
@@ -5191,7 +5191,7 @@
       "focus_points": [
         "Temporary supplies",
         "We describe the fitting. The standpipe licence, if the water comes from a hydrant, is applied for by the person the undertaker requires.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not hire a standpipe out as a licensed hydrant."
       ],
       "secondaries": [
@@ -5235,7 +5235,7 @@
       "focus_points": [
         "Identifying wholesome pipe",
         "We trace and label the wholesome pipe we can prove, and we leave unknown pipes marked as unknown.",
-        "Fixed written quote before work starts",
+        "Free written quote before work starts",
         "We do not repaint a whole plant room unless that is the quoted work."
       ],
       "secondaries": [
@@ -5257,7 +5257,7 @@
       "h1": "Water Regs Log for Landlords",
       "meta_desc": "Water Regs Log for Landlords across the North West. A landlord water-fittings log. Price on application from Stockport.",
       "intro": "Water Regs Log for Landlords is scoped from Stockport for landlords who want a file note. The log records the drinking tap, the outside tap, any tank, and the date we looked. The figure is price on application once we know the supply and the access.",
-      "body": "A landlord water-fittings log. We fill that note after the visit. It is a record of what we saw. It is not a Water Regulations approval and it is not a renewal date we invented. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
+      "body": "A landlord water-fittings log. We fill that note after the visit. It is a record of what we saw. Parts and labour are price on application after we see the fitting. We cover Greater Manchester, Cheshire, Lancashire and the wider North West from Stockport.",
       "faq": [
         [
           "What happens on a Water Regs Log for Landlords visit?",
@@ -5273,14 +5273,14 @@
         ],
         [
           "What will you not claim?",
-          "It is not a Water Regulations approval and it is not a renewal date we invented."
+          ""
         ]
       ],
       "focus_points": [
         "A landlord water-fittings log",
         "We fill that note after the visit. It is a record of what we saw.",
-        "Fixed written quote before work starts",
-        "It is not a Water Regulations approval and it is not a renewal date we invented."
+        "Free written quote before work starts",
+        ""
       ],
       "secondaries": [
         "Water Regs Log for Landlords North West",

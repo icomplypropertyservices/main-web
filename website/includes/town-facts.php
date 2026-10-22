@@ -46,7 +46,6 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
     [$council, $county, $ocs, $wards, $cons, $lat, $lng, $census, $dists] = $g + [null, null, [], [], '', 0, 0, null, []];
     require_once SITE_ROOT . '/includes/town-depth.php';
     $mi = (int)round(townDepthMiles(TOWN_DEPTH_YARD[0], TOWN_DEPTH_YARD[1], (float)$lat, (float)$lng));
-    $dir = townDepthBearing(TOWN_DEPTH_YARD[0], TOWN_DEPTH_YARD[1], (float)$lat, (float)$lng);
     $seed = crc32($slug . '|' . $service);
     $p = [];
     $lead = $council ? "{$town} sits in the {$council} council area" . ($county && $county !== $council ? ", {$county}" : '') . '.' : "{$town}" . ($county ? " is in {$county}" : '') . '.';
@@ -69,8 +68,8 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
         $p[] = implode(' ', array_map(static fn($d) => $d[0] . ' takes in ' . townDepthList((array)$d[1]) . '.', $dl));
     }
     $p[] = $mi <= 3
-        ? "Our yard at Offerton, Stockport SK2 5DE is close by, so visits in {$town} fit around other local work."
-        : "{$town} is about {$mi} miles {$dir} of our Offerton, Stockport SK2 5DE yard in a straight line. " . ($mi <= 25 ? 'That is a day visit, with travel as a small line on the quote.' : 'Travel is written on the quote.');
+        ? "Our yard at 17 Woodlands Park Road, Offerton, SK2 5DE is close by, so visits in {$town} fit around other local work."
+        : "Travel from our office at 17 Woodlands Park Road, Offerton, SK2 5DE is about {$mi} miles. " . ($mi <= 25 ? 'That is a day visit, with travel as a small line on the quote.' : 'Travel is written on the quote.');
     if (is_array($census)) {
         [$flats, $social, $ind, $indPct, $scope] = $census + [null, null, null, null, null];
         $where = ($scope === 'la' || $scope === 'las') ? "the {$council} council area (whole authority)" : $town;
@@ -100,4 +99,42 @@ function icomplyTownFactsHtml(string $slug, string $town, string $subject, strin
         $out .= '<p class="text-zinc-700 leading-relaxed">' . $h($para) . '</p>';
     }
     return $out . '</section>';
+}
+
+/**
+ * Published town names within $maxMiles of $slug. Empty when the page town has no coordinates.
+ *
+ * @param list<string> $names
+ * @return list<string>
+ */
+function icomplyTownsWithinMiles(string $slug, array $names, float $maxMiles = 12.0, int $limit = 10): array
+{
+    $me = icomplyTownFactsGeo($slug);
+    if (!$me || !isset($me[5], $me[6])) {
+        return [];
+    }
+    $rows = [];
+    foreach ($names as $name) {
+        $name = (string)$name;
+        if ($name === '') {
+            continue;
+        }
+        $other = function_exists('areaSlug') ? areaSlug($name) : strtolower(trim(preg_replace('/[^a-z0-9]+/i', '-', $name) ?? '', '-'));
+        if ($other === '' || $other === $slug) {
+            continue;
+        }
+        $g = icomplyTownFactsGeo($other);
+        if (!$g || !isset($g[5], $g[6])) {
+            continue;
+        }
+        $dy = ((float)$g[5] - (float)$me[5]) * 69.0;
+        $dx = ((float)$g[6] - (float)$me[6]) * 69.0 * cos(deg2rad((float)$me[5]));
+        $miles = sqrt($dx * $dx + $dy * $dy);
+        if ($miles < 0.5 || $miles > $maxMiles) {
+            continue;
+        }
+        $rows[] = [$miles, $name];
+    }
+    usort($rows, static fn($a, $b) => $a[0] <=> $b[0]);
+    return array_map(static fn($row) => $row[1], array_slice($rows, 0, $limit));
 }

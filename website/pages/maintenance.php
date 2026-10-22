@@ -87,7 +87,7 @@ $benefits = [
 
 $howItWorks = [
     ['1', 'Share your systems', 'Site list, panel / NVR brands, last service dates and preferred visit windows.'],
-    ['2', 'Agree the SLA', 'We propose visit frequency, inclusions and fixed-price cover after scope is clear.'],
+    ['2', 'Agree the SLA', 'We propose visit frequency, inclusions and quoted cover after scope is clear.'],
     ['3', 'Service & document', 'Engineers attend on schedule, complete works and issue audit-ready reports.'],
 ];
 
@@ -202,7 +202,7 @@ require SITE_ROOT . '/includes/header.php';
                 ready for insurers, auditors and facilities records.
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Budgetable annual cover with fixed-price quotes after survey</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Budgetable annual cover with written quotes after survey</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Multi-site scheduling for FM teams and portfolio landlords</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Manufacturer-aware engineers across major panel and NVR brands</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">✓</span> Remedials and upgrades quoted clearly when systems need work</li>
@@ -402,7 +402,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — we will reply with a quote.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a planned maintenance contract quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -420,7 +420,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a maintenance contract quote</h2>
             <p class="mt-3 text-zinc-600">
                 Tell us which systems (fire, emergency lighting, nurse call, CCTV), site count and last service dates.
-                All contracts are quoted fixed-price after scope is agreed — no obligation.
+                All contracts are quoted quoted after scope is agreed — no obligation.
             </p>
         </div>
         <?= icomplyQuoteFormOpen('bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm') ?>
@@ -462,7 +462,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <a href="<?= url('/pages/packages.php') ?>"
                class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#ff6b00]">View packages</a>
         </div>

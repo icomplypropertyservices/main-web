@@ -1,0 +1,953 @@
+{
+  "families": {
+    "plastering": {
+      "work": "plastering",
+      "guide": "Plastering in a lived-in house is mostly making a flat, sound surface that paint and paper will sit on. We skim ceilings and walls, replaster rooms that have blown, run coving and cornice, take Artex off where it is safe to do so, dot-and-dab dry lining, and patch the hole left by a leak or a removed wall light. A full-house plaster is a different job from a patch: the whole room is protected, the old material is cut back to a sound edge, and the new coat is ruled flat. We talk you through bonding coat, hardwall and multi-finish in ordinary words. We do not ask you to choose a brand from a catalogue. The free survey looks at how hollow the old plaster is, whether the ceiling is lath and plaster or board, and how we get boards up the stairs.",
+      "paragraphs": [
+        "Skimming is a thin finish coat over sound plaster or new board. If the background is live, we do not skim over it and hope. We cut the loose material out and dub it back out so the skim has something to hold.",
+        "Coving and cornice hide the joint between wall and ceiling and they also crack when the ceiling moves. A repair is a short length let into the old run, not a smear of filler along the whole room.",
+        "Artex removal is dusty. We protect the room, check what the texture is stuck to, and skim the ceiling afterwards so you are not left with a scarred board.",
+        "Dry lining and dot-and-dab suit walls that are out of true. The boards need a proper fix and the sockets need extending. We do not leave the electrician with a box buried in the dab.",
+        "Patch plastering after a leak has to go past the stain, not just over it. We stop when the surrounding plaster is firm. A small patch that flashes through paint is a failed patch.",
+        "Lath and plaster ceilings in older {place} houses can be tired. We will say if a board-and-skim replacement is the honest repair rather than another skim on laths that have let go.",
+        "Venetian and polished plaster are decorative finishes. They need a flat background and a sample agreed before the room is committed. They are not a way to hide a moving crack.",
+        "Full-house plastering is sequenced around the other trades. Joiners, electricians and the decorator all need the plaster hard before they return. We write that order into the quote."
+      ],
+      "checks": [
+        "whether the ceiling is plasterboard or lath and plaster",
+        "hollow patches you can hear when you tap the wall",
+        "how furniture and carpets will be protected",
+        "where the boards and the mixer will stand",
+        "sockets and switches that need a temporary drop",
+        "cracks that are still moving and should not be skimmed over",
+        "Artex or other texture and what it is bonded to",
+        "the drying time before paint, usually longer than people expect",
+        "coving mitres at bays and chimney breasts",
+        "access up a tight staircase with long boards",
+        "whether a landlord needs the room back for a tenant on a named day",
+        "making good around a new doorway or a removed wall"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Plaster is a finish, not a way of hiding damp. If the wall is wet we say so and we do not skim over it."
+      },
+      "fallback": "Skimming is a thin finish coat over sound plaster or new board. If the background is live, we do not skim over it and hope. We cut the loose material out and dub it back out so the skim has something to hold."
+    },
+    "rendering": {
+      "work": "rendering",
+      "guide": "Rendering is the outside coat on a wall: sand and cement, silicone, monocouche, K-rend, acrylic or a Tyrolean finish. It keeps weather off the masonry and it is also what the street sees. We re-render whole elevations, patch cracks, remove pebble-dash that has let go, and paint render that is sound but tired. A render quote without looking at the substrate is a guess. We check whether the old coat is hollow, whether the wall has had cavity insulation, and where the water is getting in. Pebble-dash removal is noisy and it marks the brick underneath, so we agree the finish before we start. Silicone and monocouche are through-coloured. A patch in those systems has to be planned or it will show.",
+      "paragraphs": [
+        "K-rend and other thin-coat systems need a clean, stable background and the beads and stops the manufacturer expects. We do not trowel a branded name onto dusty old render.",
+        "Pebble-dash removal leaves a rough face. The new coat has to be thick enough to hide that, or the brick pattern ghosts through.",
+        "Hairline cracks in render are often movement or a bad day-joint. We cut out to a line that can be made good, rather than painting a crack and calling it repaired.",
+        "Render and external wall insulation are related but they are not the same visit. If the wall is insulated we do not fix through it without knowing what is behind.",
+        "Painting render is only worth doing when the coat is stuck. We tap the elevation first. Hollow render gets cut out.",
+        "Sills, bellcasts and the joint with the damp course decide whether the wall sheds water or drinks it. They are on the survey.",
+        "A coloured render patch on a {place} semi will show if the batch does not match. We talk about that before you choose a patch over a full elevation.",
+        "Scaffold or a safe tower is part of the job on anything above the ground floor. We do not quote a price that pretends the ladders are free."
+      ],
+      "checks": [
+        "hollow render you can hear when it is tapped",
+        "cracks at window corners and at floor lines",
+        "the finish you want: smooth, textured, or through-coloured",
+        "pebble-dash or Tyrolean that is loose",
+        "where rainwater runs off the cills",
+        "whether the wall has cavity insulation",
+        "paint that is peeling because the coat behind it is wet",
+        "access for scaffold and where it stands",
+        "neighbouring boundaries and shared walls",
+        "the colour match on a patch",
+        "ground level and the damp-proof course",
+        "plants, paths and drives that the droppings will hit"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We match the system to the wall. A cheap coat on a wet substrate fails, and we will not sell you that."
+      },
+      "fallback": "K-rend and other thin-coat systems need a clean, stable background and the beads and stops the manufacturer expects. We do not trowel a branded name onto dusty old render."
+    },
+    "bricklaying": {
+      "work": "bricklaying",
+      "guide": "Bricklaying for a house is garden walls, boundary repairs, repointing, lintels, spalled bricks, chimney rebuilds, brick arches and blockwork. New brickwork has to be tied, level and in the right mortar. Old brickwork in {place} is often soft brick and lime, and a hard cement point drives the damp into the face and the brick spalls. We look at the mortar before we price repointing. A garden wall that leans is not a repoint. It may need rebuilding, and we say which. Lintel replacement means propping. We do not cut a slot under a load and hope. Wall ties and brick arches are separate from a simple point, and they are named if the survey finds them.",
+      "paragraphs": [
+        "Repointing is raked out to a proper depth and packed, not smeared over the old joint. Smear pointing cracks off and looks poor.",
+        "Lime mortar suits older soft brick. We use it where the wall was built that way, and we do not default to a bag of strong cement.",
+        "Spalled bricks are cut out and matched as closely as the yard allows. A bright new brick in a weathered wall is agreed with you first.",
+        "A leaning garden wall is measured. If it is past a safe lean we rebuild it rather than point it and leave the lean.",
+        "Chimney rebuilds need roof access and a weather plan. The stack is taken down to sound brick and rebuilt, flaunched and flued as agreed.",
+        "Blockwork for an extension or a garage is set out from the drawing, not from a chalk line on the day with no check.",
+        "Brick arches over openings sag when the mortar has gone. The repair is propped and rebuilt, not pointed from a ladder in the rain.",
+        "Lintels are specified for the span and the load. We do not bed a too-short concrete lintel because it was on the van."
+      ],
+      "checks": [
+        "the mortar type, lime or cement",
+        "bricks that are spalled or blown",
+        "whether a wall leans or is merely stained",
+        "piers and coping on a garden wall",
+        "propping if a lintel or an opening is involved",
+        "matching brick for patches",
+        "foundations on a new wall, even a low one",
+        "who owns a boundary before we rebuild it",
+        "access for materials along a terrace entry",
+        "chimney flashing if the stack is touched",
+        "wall ties if the cavity is open",
+        "making good the inside if we stitch a crack"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Pointing is not a cosmetic smear. If the joint is not raked out, the new mortar falls off."
+      },
+      "fallback": "Repointing is raked out to a proper depth and packed, not smeared over the old joint. Smear pointing cracks off and looks poor."
+    },
+    "extensions": {
+      "work": "extensions",
+      "guide": "A house extension is a single storey, a double storey, a rear, a side return, a wrap-around, a kitchen extension, a garage conversion, a porch or an orangery. The building work is the shell, the opening-up, the roof, the floor and the making good. Planning and building regulations are part of the conversation, not a surprise at the end. We survey the garden, the drains, the neighbour's wall and the way into the site. A side return in a terrace is tight. A wrap-around changes the kitchen and the living room together. We write what is in the quote: excavations, brick or block, the roof type, the steel if a wall comes out, and who does the kitchen at the end. We do not hand you a brochure price for 'an extension'.",
+      "paragraphs": [
+        "Single-storey rear extensions are the common job. The drain run under the new floor is found before we dig, not after the concrete is in.",
+        "Double-storey work needs a proper design for the foundations and the joint with the existing roof. We will not start from a sketch on a napkin.",
+        "Side-return extensions steal the side alley. We check headroom, the neighbour's gutter and how materials get to the back.",
+        "Garage conversions fail when the floor is too low, the walls are single skin and the roof is a flimsy asbestos or felt lid. We say so on the survey.",
+        "A porch is small and still needs a damp course, a roof that does not dump water on the step, and a door that actually fits.",
+        "Steels for a knock-through are calculated and the padstones are sized. We do not bed a beam on a single brick and call it done.",
+        "The quote separates shell from fit-out when you want it that way, so the kitchen and the plaster are not hidden inside one vague line.",
+        "Neighbours get told before the digger arrives. Party-wall matters are flagged. We do not pretend they are optional on a terrace."
+      ],
+      "checks": [
+        "drains under the proposed floor",
+        "the neighbour's foundations and gutters",
+        "access for muck and materials",
+        "whether you want shell only or a finished room",
+        "the steel if a wall is coming out",
+        "roof type: flat, tiled, or a lantern",
+        "building regulations and who is inspecting",
+        "how long the kitchen will be out of use",
+        "electrics and the consumer unit capacity",
+        "the floor level against the garden",
+        "asbestos in an old garage roof",
+        "where the family will live during the dusty weeks"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We build the extension we surveyed. A fixed brochure price with no drawing is not a quote."
+      },
+      "fallback": "Single-storey rear extensions are the common job. The drain run under the new floor is found before we dig, not after the concrete is in."
+    },
+    "loft-conversions": {
+      "work": "loft conversions",
+      "guide": "A loft conversion is a dormer, a hip-to-gable, a mansard, a Velux room-in-the-roof, or the simpler boarding and ladder that makes the loft usable without calling it a bedroom. The structure is the job: joists that were not designed for a bedroom, the stairs, the fire door, the insulation and the way out. We survey the loft, the landing and the roof pitch before we talk about a dormer. A hip-to-gable changes the outside of the house and the neighbour's view of the roof. A Velux conversion keeps the roofline and only works if the headroom is already there. Boarding and a ladder are honest jobs when a full conversion is more than you need. We do not sell you a bedroom that fails the headroom.",
+      "paragraphs": [
+        "Dormers need a structural opening in the roof and a proper cheek and roof. We do not bolt a timber box to rafters and hope.",
+        "Hip-to-gable conversions change the gable wall. Party-wall and the tile match are discussed before the scaffold goes up.",
+        "Mansards are heavier and less common on ordinary semis. If the roof is not suitable we say so.",
+        "Velux loft rooms live or die on headroom and the stair. We measure both on the survey.",
+        "Loft boarding for storage is not a conversion. We still check the joists before we load them with board and boxes.",
+        "A loft ladder has to land somewhere safe on the landing. We do not cut a hole over the stairwell.",
+        "Insulation and ventilation stop the new room sweating. They are in the quote, not an extra on the last day.",
+        "Fire separation and the stair enclosure are explained in plain words. A bedroom in the loft without a proper way down is not finished."
+      ],
+      "checks": [
+        "headroom at the ridge and at the eaves",
+        "the existing joist size and spacing",
+        "where the stairs can land",
+        "the water tank and the electrics already in the loft",
+        "tile type and whether a dormer will match",
+        "party-wall neighbours",
+        "insulation and how the roof will breathe",
+        "the fire door and the landing",
+        "scaffold and how long it stands",
+        "whether you need storage only or a room",
+        "velux positions and the rafters they cut",
+        "what you will do for a toilet if the room is a bedroom"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We measure the loft before we name the type of conversion. Headroom is not a feeling.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We measure the loft before we name the type of conversion. Headroom is not a feeling."
+      },
+      "fallback": "Dormers need a structural opening in the roof and a proper cheek and roof. We do not bolt a timber box to rafters and hope."
+    },
+    "kitchens": {
+      "work": "kitchens",
+      "guide": "Kitchen fitting is the units, the worktops, the splashback, the sink, the doors and the making good when the old kitchen comes out. It is also the moment the plumber and the electrician have to be in the right order. We fit kitchens you have bought and we refit tired ones: new doors, a new worktop, a tiled splashback. A full installation includes levelling the units, scribing to uneven walls, and connecting the appliances we agreed. We do not plumb gas ourselves as if we were the Gas Safe engineer. Gas work is carried out by Gas Safe registered engineers. The free survey in {place} checks the walls, the floor, the waste and whether the consumer unit can take the oven and the hob.",
+      "paragraphs": [
+        "Worktops are templated when the units are in, not guessed from an old plan. A stone top that is wrong is an expensive mistake.",
+        "Kitchen door replacement freshens a sound carcase. We hinge and align. We do not hang new doors on carcasses that are falling apart.",
+        "Splashbacks in tile or panel need a flat wall. We pack or board first if the plaster is blown behind the tiles.",
+        "A renovation that keeps the layout is quicker than a move-everything refit. We say which one your waste and your electrics will actually allow.",
+        "Plumbing for a sink or a dishwasher is part of the fit when it is on the quote. We test the waste before we push the unit back.",
+        "End panels, cornice and pelmet are the bits that make a kitchen look finished. They are listed, not forgotten.",
+        "We protect floors and we take the old kitchen away if that was agreed. A hallway full of old units is not a finished job.",
+        "Landlords refitting between tenancies need a date. We book the electrician and the decorator around that date rather than leaving you to chase three people."
+      ],
+      "checks": [
+        "whether the units are supply-only or ours to fit",
+        "the waste position and the water stop tap",
+        "appliance ratings and the consumer unit",
+        "gas hobs, which are carried out by Gas Safe registered engineers",
+        "wall condition behind the old tiles",
+        "worktop material and joints",
+        "how long you can be without a sink",
+        "the floor, if it is out of level",
+        "extraction and where the duct can go",
+        "lighting under the wall units",
+        "old units leaving the house",
+        "the tenant date if the house is a rental"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We fit what was surveyed. Moving a sink across the room is a different quote because the waste is a different quote."
+      },
+      "fallback": "Worktops are templated when the units are in, not guessed from an old plan. A stone top that is wrong is an expensive mistake."
+    },
+    "bathrooms": {
+      "work": "bathrooms",
+      "guide": "Bathroom fitting covers a full refit, a bath swap, an en-suite, a wet room, a walk-in shower and a disabled adaptation. Water, waste, ventilation and the tray or the bath have to agree with each other. We strip out, move wastes where the joists allow, board and tank wet areas, and fit the suite you chose. Electric showers are an electrical job as well as a plumbing one, and they are on the quote when you want one. We do not use a CCTV photograph or a plastering photograph to show a bathroom. The survey looks at the floor, the stack, the fan and whether the ceiling below is someone's living room. A wet room needs a fall and a drain. A walk-in shower needs a tray that does not rock.",
+      "paragraphs": [
+        "Wet rooms fail at the tanking and the fall, not at the tiles. We get the floor right before anyone picks a tile.",
+        "A bath replacement in a {place} terrace often means a door that is narrower than the bath. We measure the route in, not just the room.",
+        "En-suites stolen from a bedroom need a waste that can fall to the stack. If it cannot, we say so before the stud wall goes up.",
+        "Walk-in showers need a solid tray, a screen that meets the tray, and a fan that actually extracts.",
+        "Disabled adaptations are about the person who will use the room: rails, the shower seat, the door swing. We ask, we do not guess.",
+        "Tiles are a separate trade page, but a bathroom is not finished with bare board. The quote says who is tiling.",
+        "Extract fans are part of stopping the mould coming back. We duct them outside, not into the loft to sweat on the joists.",
+        "Landlords want a bathroom a tenant can use on a date. We test the wastes and the fan before we call it done."
+      ],
+      "checks": [
+        "the route a bath or a tray takes into the house",
+        "joist direction before a waste is moved",
+        "the soil stack and the fall",
+        "ventilation to outside air",
+        "tanking on wet walls and floors",
+        "electric shower supply and isolation",
+        "ceiling condition in the room below",
+        "who is tiling and when",
+        "the door swing in a small room",
+        "mould that is really a fan problem",
+        "whether the floor is timber or concrete",
+        "a tenant moving back on a named day"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. A bathroom is waterproofing and waste first, and the suite second. Pretty tiles on a flat tray with no fall will leak."
+      },
+      "fallback": "Wet rooms fail at the tanking and the fall, not at the tiles. We get the floor right before anyone picks a tile."
+    },
+    "joinery": {
+      "work": "joinery",
+      "guide": "Joinery and carpentry in a house is doors, skirting, architrave, stairs, stud walls, built-in wardrobes and decking. A joiner hangs a door so it latches, scribes skirting to a floor that is not flat, and builds a stud wall that is straight and ready for plasterboard. Fire doors are a particular job: the leaf, the closers, the gaps and the ironmongery have to match the reason the door is there. We do not plane a fire door to nothing and leave the closer off. Stair repairs deal with creaks, broken spindles and treads that have gone. Decking is set out, ventilated and fixed so it does not rock. The survey in {place} measures the openings and the floors before we cut anything.",
+      "paragraphs": [
+        "Door hanging includes the lining if the old one is out of square. A new door in a twisted frame will always look wrong.",
+        "Skirting and architrave are scribed and mitred. We do not fill a 15 mm gap and call it a fit.",
+        "Stud walls are set out from the drawing, nogged for the plasterboard, and headed out for doors. Sockets are marked so the electrician is not guessing.",
+        "Built-in wardrobes are made to the alcove, including the ceiling that is not level. We agree shelves and hanging rail before we cut the board.",
+        "Stair repairs start with what is loose. We do not carpet over a moving tread and hope the creak goes.",
+        "Decking needs airflow underneath and a frame that is not sitting in soil. We set the falls so water leaves the house wall.",
+        "Internal doors in a rental are often slammed out of alignment. We rehang and adjust before we replace a door that is still sound.",
+        "Fire door fitting is explained in plain words: why the gaps matter and why the closer stays on."
+      ],
+      "checks": [
+        "opening sizes, not a guess from the old door",
+        "floors that run out and affect skirting",
+        "fire door rating if one is required",
+        "where a stud wall meets the ceiling",
+        "stair winders and what is actually loose",
+        "decking levels against the damp course",
+        "alcove widths for wardrobes",
+        "ironmongery you want to keep",
+        "decorating after the joinery",
+        "access for long lengths of timber",
+        "landlord standards between tenancies",
+        "making good plaster where a frame is eased"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Joinery is measured and scribed. A door that does not latch is not finished.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Joinery is measured and scribed. A door that does not latch is not finished."
+      },
+      "fallback": "Door hanging includes the lining if the old one is out of square. A new door in a twisted frame will always look wrong."
+    },
+    "flooring": {
+      "work": "flooring",
+      "guide": "Flooring is laminate, LVT, engineered wood, vinyl, sanding, levelling, screed, and the joist or subfloor repairs that have to happen first. A pretty floor on a bouncing or damp subfloor fails. We check moisture, level and movement before we name the product. Laminate needs expansion gaps. LVT needs a flat floor or the joints show every bump. Engineered wood moves with the room and needs the right acclimatising. Sanding an original floor is only worth it when the boards are thick enough. Screed and levelling compound are the unglamorous part that makes the finish look right. Joist repairs are opened up, sistered or replaced, and boarded again.",
+      "paragraphs": [
+        "Laminate over an uneven floor drums and the joints open. We level first or we tell you the floor is the wrong choice.",
+        "LVT is only as flat as the floor under it. Trowel ridges and old adhesive show through.",
+        "Engineered boards need a dry subfloor. We test. We do not stick wood to a damp slab and hope.",
+        "Floor sanding creates dust. We protect the stairs and we stop if the boards are too thin to sand again.",
+        "Vinyl in a bathroom or a kitchen needs a sound floor and sealed edges. It is not a cure for a rotten chipboard.",
+        "Screeding a room is a level and a dry-time. Furniture goes back when it is ready, not when the calendar says so.",
+        "Joist repair means lifting boards. We agree how much of the room is opened before we start.",
+        "Subfloor boards that are soft over a leaking pipe get replaced, and the leak is named rather than boarded over."
+      ],
+      "checks": [
+        "moisture in the slab or the timber",
+        "how far the floor is out of level",
+        "skirting off or left on",
+        "doors that will need easing",
+        "furniture and who moves it",
+        "adhesive left from an old vinyl",
+        "underfloor heating if there is any",
+        "the stair nosing at the landing",
+        "expansion gaps at pipes",
+        "a tenant's date to move back",
+        "waste removal of the old floor",
+        "thresholds between rooms"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We will not lay a finish on a floor that moves or is wet. The survey is where that is found.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We will not lay a finish on a floor that moves or is wet. The survey is where that is found."
+      },
+      "fallback": "Laminate over an uneven floor drums and the joints open. We level first or we tell you the floor is the wrong choice."
+    },
+    "tiling": {
+      "work": "tiling",
+      "guide": "Tiling is wall tiles, floor tiles, bathroom and kitchen splashbacks, porcelain, and regrouting when the tiles are sound but the joints are not. The background has to be flat and, in a wet area, tanked. We set out so you are not left with a sliver against the door. Porcelain needs the right adhesive and the right trowel. Regrouting is cutting out the old joint, not painting over mould. A bathroom retile often follows a leak, so we look at the boards behind before we stick new tiles to a soft wall.",
+      "paragraphs": [
+        "Wall tiles on blown plaster fall off. We strip back to a sound face or we board.",
+        "Floor tiles need a flat, stiff floor. A timber floor that bounces will crack grout however nice the tile is.",
+        "Bathroom tiling starts after the tray and the tanking, not before.",
+        "Kitchen splashbacks are set out from the worktop. Sockets are cut neatly, not chewed out.",
+        "Porcelain is harder on tools and on the adhesive. We do not fix it with a leftover tub from a ceramic job.",
+        "Regrouting a mouldy joint without a fan still working means the mould comes back. We say if the fan is the real job.",
+        "Movement joints at the tray and at internal corners stop the grout cracking in a month.",
+        "We agree the layout, including any feature tile, before the first row goes on."
+      ],
+      "checks": [
+        "flatness of the wall or floor",
+        "tanking in wet zones",
+        "tile size and how it sets out",
+        "trim colour at external corners",
+        "grout colour",
+        "sockets and valves that need cutting",
+        "the tray or bath already fitted",
+        "floor stiffness",
+        "adhesive suitable for the tile",
+        "who is supplying the tiles",
+        "drying time before the shower is used",
+        "mould in old grout and the fan"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Tiles are stuck to a prepared background. We do not tile over paint that is already letting go."
+      },
+      "fallback": "Wall tiles on blown plaster fall off. We strip back to a sound face or we board."
+    },
+    "decorating": {
+      "work": "decorating",
+      "guide": "Painting and decorating is interior rooms, exteriors, wallpaper, end-of-tenancy decoration and the mould wash that has to happen before new paint. A decorator's quote depends on the surface: new plaster, old paper, stained ceilings, rotten exterior timber. We prepare. We do not roll emulsion over greasy kitchen walls and call it two coats. Wallpaper is lined where it needs it. Exterior painting includes the putty, the bare timber and the parts you cannot see from the path. End-of-tenancy work is agreed against the inventory, not against a hope that one coat hides five years.",
+      "paragraphs": [
+        "New plaster needs a mist coat. Skipping it is why the first proper coat flashes.",
+        "Stained ceilings from a leak are sealed before they are painted, or the stain returns.",
+        "Wallpaper stripping can pull the plaster face off. We test a patch and we tell you if the wall then needs a skim.",
+        "Exterior joinery is rubbed down, filled and primed. Paint on rotten timber is not a repair.",
+        "End-of-tenancy decorating is listed room by room so you and the agent can see what was done.",
+        "Commercial decorating is booked around the people using the building. We agree which rooms are empty on which day.",
+        "Mould is cleaned and the cause is named. Paint is not a mould treatment.",
+        "Colour changes over dark paint need more coats. The quote says so rather than surprising you."
+      ],
+      "checks": [
+        "new plaster or old paint",
+        "wallpaper to come off",
+        "stains and whether they are dry",
+        "exterior timber condition",
+        "access for high stairwells",
+        "colours and who is supplying paint",
+        "furniture moved or covered",
+        "an inventory if it is a rental",
+        "mould and ventilation",
+        "how many rooms in one visit",
+        "gloss work on doors and skirting",
+        "the date a tenant returns"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Preparation is the job. Two coats on a dirty wall will not last, and we will not pretend it will."
+      },
+      "fallback": "New plaster needs a mist coat. Skipping it is why the first proper coat flashes."
+    },
+    "groundworks": {
+      "work": "groundworks",
+      "guide": "Groundworks is the digging: foundations, excavation, site clearance, concrete bases, retaining walls and the landscaping that follows. Water and the ground conditions decide the job. We do not price a foundation from a photograph of a lawn. A concrete base for a shed is not the same as a base for an extension. Retaining walls hold ground up and they need drainage behind them or they lean. Clearance includes what leaves the site. Landscaping after the dig is levels, topsoil and a surface you can walk on, agreed before we cart the spoil away.",
+      "paragraphs": [
+        "Foundations are dug to the depth the design needs, and we stop if the ground is not what everyone expected.",
+        "Excavation next to a neighbour's wall is careful and it is discussed. Undermining a party wall is not a surprise we spring.",
+        "A concrete base is level, thick enough, and on a compacted bed. A thin skin of concrete on soft ground cracks.",
+        "Retaining walls get weep holes or a drain. A pretty wall with wet clay behind it moves.",
+        "Site clearance is priced by what is there: sheds, spoil, green waste. We look first.",
+        "Levels against the house damp course matter. We do not build the garden up over the DPC.",
+        "Access for a mini digger through a terrace entry is often the real constraint. We measure the gate.",
+        "Spoil stays or goes. The quote says which, because carting muck away is a cost."
+      ],
+      "checks": [
+        "the gate width for a machine",
+        "drain runs we might cut",
+        "neighbour's wall and foundations",
+        "damp-proof course height",
+        "what the base is for",
+        "spoil leaving the site",
+        "services in the ground, including your own electric",
+        "retaining height",
+        "topsoil put back or not",
+        "concrete thickness",
+        "weather and a wet clay site",
+        "who marks the lawn we must not track over"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We dig what was set out. A foundation price without a look at the ground is not a price.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We dig what was set out. A foundation price without a look at the ground is not a price."
+      },
+      "fallback": "Foundations are dug to the depth the design needs, and we stop if the ground is not what everyone expected."
+    },
+    "drainage": {
+      "work": "drainage",
+      "guide": "Drainage work for a house is blocked drains, repairs, unblocking, CCTV surveys of the pipe (a camera in the drain, not a security camera), soakaways, relining, gullies and manholes. A smell or a slow sink can be a trap, a collapse or a root. We do not quote a new drain run because a gulley is full of leaves. The survey, often with a camera, shows the pipe. Emergency call-outs are for sewage where it should not be, or a drain that is flooding the garden in the rain. Relining suits a pipe that is cracked but still in line. A collapse is a dig. Soakaways are sized to the roof they serve and to the ground they sit in.",
+      "paragraphs": [
+        "Blocked drains are cleared and then, if it blocked for a reason, we camera them. Clearing the same roots every month is not a repair.",
+        "A CCTV drain survey is a recording of the pipe. You can see the crack, the offset or the root. It is not a guess from the manhole.",
+        "Gully repairs stop the path water going into the house. We reset or replace the pot and the pipe that leaves it.",
+        "Manhole repairs are frames, covers and benching. A rocking cover on a {place} pavement is a trip and a rattle.",
+        "Soakaways fail when they are too small or the ground is clay. We say if a soakaway is the wrong answer.",
+        "Relining avoids a dig across a drive when the pipe is a candidate for it. If it is collapsed, we excavate.",
+        "Emergency drainage is about stopping the damage today and booking the proper repair, not about a permanent patch at midnight.",
+        "We mark where the pipe runs before anyone digs the garden. Hitting your own drain is an avoidable mess."
+      ],
+      "checks": [
+        "where the smell or the flood actually is",
+        "manholes we can lift",
+        "whether it is foul or rain water",
+        "trees near the run",
+        "a camera survey or a simple clear",
+        "the drive or path we might dig",
+        "shared drains with a neighbour",
+        "soakaway ground, clay or gravel",
+        "gullies at the foot of downpipes",
+        "covers that rock",
+        "a backup into the kitchen in heavy rain",
+        "access for a jetter"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. A camera in a drain tells the truth. We do not dig the garden on a hunch, and we do not call a drain survey CCTV security."
+      },
+      "fallback": "Blocked drains are cleared and then, if it blocked for a reason, we camera them. Clearing the same roots every month is not a repair."
+    },
+    "driveways": {
+      "work": "driveways",
+      "guide": "Driveways and the paving around them are block paving, tarmac, resin, imprinted concrete, patios and dropped kerbs. The base is the job. A pretty block on a soft base sinks, and a resin drive on a cracked tarmac telegraphs every crack. We look at levels, the damp course of the house, and where the water will go. A dropped kerb is a council matter as well as a building one, and we tell you that before you think the quote includes the pavement. Patios are falls away from the house. Repairs to sinking blocks are lifted, the base made good, and the blocks relaid, not just sanded over.",
+      "paragraphs": [
+        "Block paving is edge-restrained. Without a proper edge the drive creeps into the garden.",
+        "Tarmac needs a sound base and a thickness. A skim coat over rubble does not last a winter.",
+        "Resin is only as good as the surface under it. We repair that surface first.",
+        "Imprinted concrete is a finish and a slab. Cracks and colour are discussed before it is poured, not after.",
+        "A patio against the house falls away from the wall. We do not lay flags that tip water into the air brick.",
+        "Dropped kerbs need the right permission. We do not cut the pavement and hope.",
+        "Paving repairs match as well as the old stock allows. We show you the closest block before we order a pallet.",
+        "Drainage of the drive is part of the quote. A new impermeable drive that dumps water on the neighbour is a bad drive."
+      ],
+      "checks": [
+        "levels against the damp course",
+        "where rainwater will go",
+        "the existing base, if we are overlaying",
+        "edge restraints",
+        "a dropped kerb and the council",
+        "manholes in the drive",
+        "the colour and the block you want",
+        "access for wagons of aggregate",
+        "gates and the width of the car",
+        "patio falls",
+        "trees and roots under the area",
+        "a neighbour's lower garden"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. The base and the falls matter more than the colour of the block. We price those, not a photograph of someone else's drive."
+      },
+      "fallback": "Block paving is edge-restrained. Without a proper edge the drive creeps into the garden."
+    },
+    "fencing": {
+      "work": "fencing",
+      "guide": "Fencing is panels, close-board, concrete posts, repairs and garden gates. A fence is only as good as the posts. We set posts in the right ground, to a depth that holds, and we do not spike a post into rubble and call it a boundary. Close-board is built on site to follow a slope. Panel fences are quicker and they still need posts that are plumb. Repairs replace the rotten post rather than nailing a new panel to it. Gates are hung to the post that can carry them, with a brace that does not sag. Who owns the boundary is your question to answer; we will not move a fence onto a neighbour because it looks tidier.",
+      "paragraphs": [
+        "Concrete posts outlast timber in wet {place} clay. We talk about that where the old posts have rotted at the ground.",
+        "Close-board follows the slope. Stepping a panel fence is the alternative, and it looks different. We agree which.",
+        "A gate needs a slamming post and a hanging post that are not already loose.",
+        "Panel replacement on rotten gravel boards and soft posts is a waste. We replace what has failed.",
+        "Arris rails and boards on a close-board run are the repair when the posts are still sound.",
+        "We ask about the neighbour before we take a run of fence down. A surprise demolition of a shared boundary is not how we work.",
+        "Gravel boards keep the panel out of the soil. Skipping them is why the bottom of the fence rots.",
+        "The quote says the height, the style and who is taking the old timber away."
+      ],
+      "checks": [
+        "who owns the boundary",
+        "post condition at ground level",
+        "the slope",
+        "gates and the width of the opening",
+        "gravel boards",
+        "concrete or timber posts",
+        "the neighbour's plants on the line",
+        "access along the run",
+        "old concrete that is still sound",
+        "height you are allowed and want",
+        "waste timber",
+        "whether the dog can get out while the fence is down"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Posts first, panels second. A new panel on a rotten post is not a repair.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Posts first, panels second. A new panel on a rotten post is not a repair."
+      },
+      "fallback": "Concrete posts outlast timber in wet {place} clay. We talk about that where the old posts have rotted at the ground."
+    },
+    "damp": {
+      "work": "damp proofing",
+      "guide": "Damp proofing for a house is finding why the wall is wet, then doing the thing that stops it. Rising damp, penetrating damp, condensation, a failed damp-proof course, tanking, basement waterproofing, cavity wall ties, mould, dry rot and woodworm are not one product. Condensation is often ventilation and heating, not an injection. Penetrating damp is a gutter, a pointing failure or a high garden. Rising damp is a specific diagnosis, not a label for every tide mark. We survey. An emergency visit is for water that is damaging the house today. Tanking a wet basement is a system, with the floor and the walls thought about together. We do not sell an injection cream for a leaking gutter.",
+      "paragraphs": [
+        "A damp survey is the first job. It includes the outside: gutters, ground levels, pointing, and the cavity if we can see it.",
+        "Condensation mould in a bedroom is often the fan, the cold wall and the way the room is used. We treat the cause.",
+        "Penetrating damp shows after rain. We look at the elevation in the weather, not only at the stain indoors.",
+        "A damp-proof course injection is offered when the diagnosis supports it, not as a default.",
+        "Tanking and basement waterproofing are designed. A painted slurry on a wet wall with no drainage is not a system.",
+        "Cavity wall ties and debris in the cavity bridge damp. If that is the cause, an injection will not fix it.",
+        "Dry rot and woodworm need the timber opened up enough to see the extent. We do not spray a skirting and leave the joist.",
+        "Mould is cleaned after the moisture is dealt with. Painting over it is not the treatment."
+      ],
+      "checks": [
+        "gutters and downpipes",
+        "ground levels against the wall",
+        "the existing damp-proof course",
+        "condensation or a true damp path",
+        "salt staining",
+        "timber that is soft",
+        "ventilation and the fan",
+        "a basement or a cellar",
+        "cavity insulation or rubble",
+        "how long the stain has been there",
+        "a tenant's health concerns, explained plainly",
+        "what we will not inject"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We diagnose first. Injection cream is not the answer to a blocked gutter.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We diagnose first. Injection cream is not the answer to a blocked gutter."
+      },
+      "fallback": "A damp survey is the first job. It includes the outside: gutters, ground levels, pointing, and the cavity if we can see it."
+    },
+    "insulation": {
+      "work": "insulation",
+      "guide": "Insulation work is the loft, the cavity, internal wall insulation, external wall insulation and the underfloor quilt that stops a suspended floor being cold. It is also spray-foam removal, which is its own job because foam in a roof can hide rotten timber and can cause trouble when you sell. We do not pump a cavity that is full of rubble or already damp. A loft top-up is straightforward when the loft is empty and dangerous when it is full of boarding, tanks and old wiring. Internal insulation loses a little room and needs a careful vapour check. External insulation changes the look of the house and the details at windows and sills. We survey the loft and the walls before we name a thickness.",
+      "paragraphs": [
+        "Loft insulation is laid so the eaves can still breathe. Blocking the ventilation causes the condensation the insulation was meant to avoid.",
+        "Cavity wall insulation is only for a cavity that is suitable. We check. A wet or rubble-filled cavity is a no.",
+        "Internal wall insulation is detailed at the reveals and the floor so you do not create a cold strip and a mould line.",
+        "External wall insulation is a system with beads, sills and a render. It is not a slab stuck on and forgotten.",
+        "Underfloor insulation in a suspended floor needs access and a still-sound joist. We do not staple quilt to rotten timber.",
+        "Spray foam removal is slow and it is dusty. We inspect the rafters as the foam comes off and we tell you what we find.",
+        "Boarding a loft after insulating it needs a raised platform so the quilt is not crushed.",
+        "Electrics and downlights in an insulated ceiling are checked so a lamp is not buried in quilt."
+      ],
+      "checks": [
+        "eaves ventilation",
+        "what is already in the cavity",
+        "the loft hatch and boarding",
+        "tanks and pipes that need lagging",
+        "downlights and wiring",
+        "internal room sizes if we line the walls",
+        "the outside appearance if we insulate outside",
+        "spray foam and the rafters under it",
+        "access under a suspended floor",
+        "moisture already in the wall",
+        "a mortgage or sale that has asked about foam",
+        "the thickness you actually have room for"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. Insulation that blocks ventilation or covers a damp wall creates a new problem. The survey is there to stop that."
+      },
+      "fallback": "Loft insulation is laid so the eaves can still breathe. Blocking the ventilation causes the condensation the insulation was meant to avoid."
+    },
+    "windows-doors": {
+      "work": "windows and doors",
+      "guide": "Windows and doors for a house means uPVC, double glazing, composite doors, bifolds, French doors, patio doors, sash repairs and misted units. A window quote is the opening, the glass, the trickle vents and the making good of the plaster inside. Misted glass is a failed sealed unit and it can often be replaced without a whole new frame, if the frame is sound. Sash windows in older {place} houses are repaired and draught-proofed when the timber is worth keeping. We measure twice. A bifold that does not match the structural opening is a steel and a lintel conversation, not just a door conversation. We do not leave you with torn plaster and a promise.",
+      "paragraphs": [
+        "uPVC replacements include the sill and the seal to the damp course. A window that leaks at the sill was fitted, not manufactured, badly.",
+        "Misted units are measured to the frame. We do not order glass from a photo of the condensation.",
+        "Composite doors need a square opening and a threshold that does not trip. We check the letterbox and the lock you want.",
+        "Bifold and patio doors are heavy. The lintel and the floor track are part of the survey.",
+        "Sash repair is cords, weights or springs, staff beads and draught seals. Replacement is the honest answer when the timber is gone.",
+        "French doors onto a garden need a threshold that keeps rain out and a floor inside that can take the track.",
+        "We agree the colour, the handle colour and which rooms are in the quote. A whole-house price that misses the bay is not a whole-house price.",
+        "Making good inside is plaster and a decorator's edge. The quote says whether that is included."
+      ],
+      "checks": [
+        "opening sizes including the bay",
+        "misted units or rotten frames",
+        "sills and the damp course",
+        "lintels over wide doors",
+        "sash cords and the weights",
+        "the colour and the handles",
+        "internal plaster damage",
+        "trickle vents",
+        "a lock suited to a rental",
+        "scaffold or a safe ladder",
+        "lead or asbestos on a very old frame",
+        "who is decorating afterwards"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We measure the opening. A window ordered from a guess will not fit, and we will not ask you to live with the gap."
+      },
+      "fallback": "uPVC replacements include the sill and the seal to the damp course. A window that leaks at the sill was fitted, not manufactured, badly."
+    },
+    "demolition": {
+      "work": "demolition",
+      "guide": "Demolition in a house is usually internal: a wall removal, a knock-through, a chimney breast, a strip-out, or taking down what an extension is replacing. It is controlled, propped and cleaned, not a sledgehammer on a Saturday. Load-bearing walls need a design and a beam. Chimney breasts need the stack thought about above, including the neighbour's half on a party wall. Strip-outs for a landlord clear the kitchen or the bathroom so the next trade can start. Rubbish leaves the house. We do not fill the front garden and call that removed. Structural repairs and steel beams sit with this work when the opening is the point of the job.",
+      "paragraphs": [
+        "A knock-through is a beam, padstones and the making good. The dusty day is the short part.",
+        "Load-bearing wall removal is not decided by tapping the wall. If we are not sure, we open a small hole and we get it designed.",
+        "Chimney breast removal includes how the stack above is supported. Leaving a stack standing on fresh air is not an option.",
+        "Strip-out protects floors you are keeping and isolates services before anything is cut.",
+        "Internal demolition dust travels. We screen doorways and we agree which rooms stay liveable.",
+        "Steel beam installation is the size on the design, bedded properly, fire-protected as the design asks.",
+        "Rubbish is bagged and removed. The quote says so.",
+        "Party-wall neighbours are told. A breast on a shared chimney is a conversation before it is a hammer."
+      ],
+      "checks": [
+        "whether the wall is load-bearing",
+        "the beam design",
+        "padstones and the brick they sit on",
+        "the chimney stack above",
+        "party wall",
+        "services in the wall",
+        "dust protection",
+        "floors to keep",
+        "rubbish removal",
+        "how long the room is open",
+        "props and how long they stay",
+        "plaster and decoration after"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We prop and we design openings. Knocking a wall out because it 'feels thin' is how ceilings crack."
+      },
+      "fallback": "A knock-through is a beam, padstones and the making good. The dusty day is the short part."
+    },
+    "general-building": {
+      "work": "building work",
+      "guide": "General building is the work that holds a house together between the specialist trades: a builder for a renovation, property maintenance, structural repairs, steels, building-regulations work, a handyman day that is actually a proper repair, and refurbishment for a landlord. An HMO conversion build is the walls, the fire doors, the kitchen and the rooms a licence expects, quoted from a survey rather than a template. We are the people who turn up, protect the house, and leave it so the decorator or the tenant can use it. Maintenance is the gutter, the door, the patch of ceiling and the fence, booked as one visit when that saves you three call-outs. We write what is included.",
+      "paragraphs": [
+        "A house renovation is sequenced. Strip-out, structure, first fix, plaster, second fix, decoration. Skipping the order costs you weeks.",
+        "Property maintenance for landlords is a list. Send the list. We price the list, not a vague 'sort the house'.",
+        "Structural repairs are opened up enough to see the timber or the crack. We do not sister a joist we have not looked at.",
+        "Handyman work is the smaller end of the same standard. If the job is really a rewire or a roof, we say so.",
+        "Building regulations work is inspected. We do not hide a beam behind plaster the day before an inspection we have not booked.",
+        "Refurbishment between tenancies is dated. You get the keys back when the list is done.",
+        "We coordinate the electrician and the plasterer when they are both on the quote, so you are not the project manager.",
+        "Free surveys are how we stop the quote being a work of fiction. Photos help. They do not replace the visit."
+      ],
+      "checks": [
+        "the list of what you actually want done",
+        "which rooms stay occupied",
+        "keys and alarms",
+        "the order of trades",
+        "building control if it applies",
+        "a tenant date",
+        "structural timber we cannot see yet",
+        "waste",
+        "parking for the van in {place}",
+        "neighbours",
+        "what success looks like on the last day",
+        "the photos that will not show the whole storey"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. A builder's quote is a list. If it is not on the list, it is not in the price, and we would rather write the list first."
+      },
+      "fallback": "A house renovation is sequenced. Strip-out, structure, first fix, plaster, second fix, decoration. Skipping the order costs you weeks."
+    },
+    "roofing": {
+      "work": "roofing",
+      "guide": "Roofing for a house is leaks, tiles, slate, flat roofs in felt, GRP and EPDM, leadwork, chimneys, gutters, fascias, soffits and the Velux or skylight that lets in more than light. A roof leak is traced. We do not slap mastic on a slipped tile and call it repaired if the valley or the flashing is the real path. Flat roofs are a system: the deck, the upstands, the outlets and the covering. GRP and fibreglass suit some decks. EPDM and rubber suit others. Felt and torch-on still have a place. We say which, after we have stood on the roof or seen it properly. Emergency call-outs stop water entering today. The permanent repair is quoted in daylight. Chimney pointing, lead flashing, ridge tiles, verges and dry-ridge systems are named separately because they fail separately. Gutters and fascias keep the water off the wall. A new roof with a blocked outlet still leaks.",
+      "paragraphs": [
+        "GRP flat roofs need a dry deck and the right weather window. We do not lay resin onto a wet board.",
+        "EPDM is a single sheet. The details at the outlet and the upstand are where it succeeds or fails.",
+        "Felt roofs are layered and the laps matter. A patch is cut back to sound felt, not stuck on the dirt.",
+        "Slate and tile repairs include the reason the slate slipped: a nail, a batten, a cracked slate beside it.",
+        "Lead flashing and valleys are dressed, not glued. Cement fillets on a chimney crack and we do not sell them as lead.",
+        "Gutters are reset to fall, and downpipes are checked. A new gutter that ponds will overflow into the fascia.",
+        "Fascia and soffit replacement is the timber or the uPVC, the ventilation, and the gutter put back on a straight line.",
+        "Velux and skylight work includes the flashing kit for that roof, not a generic collar of lead and hope."
+      ],
+      "checks": [
+        "where the water is appearing inside",
+        "the roof covering: tile, slate, felt, GRP, EPDM",
+        "valley and chimney lead",
+        "ridge and hip mortar or a dry system",
+        "gutters and outlets",
+        "fascia rot",
+        "access and scaffold",
+        "a flat roof deck that is soft",
+        "moss holding water",
+        "storm damage and what the insurer has asked for",
+        "Velux age and the flashing",
+        "whether anyone is under the drip tonight"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We find the leak. Flat roofs, lead and gutters are different jobs and the quote says which one you are buying."
+      },
+      "fallback": "GRP flat roofs need a dry deck and the right weather window. We do not lay resin onto a wet board."
+    },
+    "electrical": {
+      "work": "electrical work",
+      "guide": "Electrical work in a home is rewires, consumer units, EV chargers, outdoor sockets, garden and security lighting, fault finding, EICRs, extra sockets, downlights, smoke alarms and electric showers. An EICR is listed from £160. Everything else on this page is quoted after we see the house. A full rewire is a different disruption from a partial rewire or a new socket. Consumer unit upgrades replace the old fuse board and are tested. Fault finding is the tripping circuit, not a new board sold because we have not looked. Security lighting and garden lighting are cabled properly, not an extension lead across the lawn. Smoke and heat alarms are sited and, where they should be, interlinked. Electric showers need a supply that can take them. We certify the work we do. Part P and minor works are explained in plain words when they apply.",
+      "paragraphs": [
+        "A full rewire opens floors and chases walls. We agree how you will live in the house while it happens.",
+        "A partial rewire keeps what is sound and replaces what is not. We test before we condemn a cable we have not seen.",
+        "Consumer unit changes include the labelling and the test sheet. You get the certificate.",
+        "EV charger installation looks at the supply, the earthing and where the cable can run without becoming a trip hazard.",
+        "Outdoor sockets and garden lights are on the right protection. A socket behind a wet tap is refused.",
+        "Security lighting is aimed so it lights your path and not your neighbour's bedroom. PIR settings are shown to you.",
+        "Downlights in a loft need covers or fire hoods where the ceiling requires them, and they are not buried in new insulation without a thought.",
+        "An electric shower that keeps tripping is often the cable or the unit, and we find which before we sell you both."
+      ],
+      "checks": [
+        "the consumer unit and its age",
+        "circuits that trip",
+        "the earthing",
+        "where an EV cable can run",
+        "loft insulation around lights",
+        "smoke alarm positions",
+        "the shower rating",
+        "bonded pipework",
+        "a landlord EICR date",
+        "access under floors",
+        "garden routes for lighting cable",
+        "certificates you need for a sale or a licence"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. EICRs are from £160. Other electrical work is quoted from a look at the board and the job, not from a guess on the phone."
+      },
+      "fallback": "A full rewire opens floors and chases walls. We agree how you will live in the house while it happens."
+    },
+    "aov": {
+      "work": "AOV and smoke control",
+      "guide": "AOV and smoke control is the equipment that opens a vent, runs a fan or holds a smoke path when there is a fire. In ordinary buildings that is a roof vent, a stairwell louvre, a window actuator, a smoke shaft, a damper, or a mechanical extract. The panel, the batteries, the call point and the link to the fire alarm are part of the system, not extras. We install, replace motors and actuators, change panels, and service, test, repair and maintain what is already there. Brands we work on include Colt, SE Controls, D+H and WindowMaster, and others when the kit on the wall is one we can support. A stuck-open roof vent is both a leak and a failed vent. An emergency visit makes it safe and we quote the part in daylight. We describe the visit as the work we actually carried out. Servicing is a recorded test, not a glance from the landing.",
+      "paragraphs": [
+        "Natural smoke ventilation uses the buoyancy of smoke and an opening at the top of the stair. Mechanical extract uses fans. They are not interchangeable because a drawing said 'AOV'.",
+        "Window actuators and AOV motors fail on their own. We replace the motor or the actuator we found, and we test it from the panel.",
+        "A panel replacement includes the batteries, the zones and the cause-and-effect you already have. We do not wipe a working strategy because the box is new.",
+        "Smoke shafts and dampers are inspected and tested. A damper that does not move is written up, not tick-boxed.",
+        "Louvre vents and roof vents need to close against weather as well as open on a fire signal. We check both.",
+        "Stairwell vents are tested when the stair can be managed. We agree that before we fill the stair with a test.",
+        "Servicing is scheduled. You get a note of what passed, what failed, and what we did not pretend to test.",
+        "Car-park ventilation and pressurisation are different systems again. The quote names the one in your building."
+      ],
+      "checks": [
+        "the panel brand and a photo of it",
+        "whether the vent is stuck open or shut",
+        "roof access and edge protection",
+        "batteries and their date",
+        "the fire-alarm interface",
+        "window actuators on each floor",
+        "smoke dampers we can reach",
+        "a stair that is in use",
+        "previous test sheets",
+        "Colt, SE Controls, D+H or WindowMaster kit",
+        "a roof vent that is stuck open and letting rain in",
+        "who must be told before a test"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We service and repair the smoke control system that is on the building. We write down the test we actually carried out.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We service and repair the smoke control system that is on the building. We write down the test we actually carried out."
+      },
+      "fallback": "Natural smoke ventilation uses the buoyancy of smoke and an opening at the top of the stair. Mechanical extract uses fans. They are not interchangeable because a drawing said 'AOV'."
+    },
+    "aov-manufacturers": {
+      "work": "AOV equipment",
+      "guide": "Manufacturer work on smoke vents is Colt, SE Controls, D+H, WindowMaster, and the other names that turn up on panels and actuators, including GEZE, Bilco, Brakel, Gilberts, Actulux and Aumuller where that is the kit fitted. We are not the factory. We attend the building, identify the product from the label, and service, repair or replace the part the survey supports. A Colt vent and an SE Controls panel are not a guess from the street. Bring the photo of the label. D+H actuators and WindowMaster motors are replaced like-for-like when that is the right repair, and the panel is tested afterwards. If the product is obsolete we say so and we quote the closest honest replacement, with the interface to the fire alarm included in the conversation.",
+      "paragraphs": [
+        "Colt roof vents and louvres are identified from the plate, not from a similar-looking hatch.",
+        "SE Controls panels have their own menus and battery arrangements. We follow that panel, not a generic checklist.",
+        "D+H actuators are matched to the window and the chain or the spindle that is there.",
+        "WindowMaster motors are set up so the window still closes and seals, not only so it opens once.",
+        "A mixer of brands on one stair is common. The quote lists each one we are being asked to touch.",
+        "Obsolete panels are replaced with the cause-and-effect written down first.",
+        "We keep the test record with the building manager or the landlord who booked us.",
+        "Spares are ordered against the label. A wrong actuator shipped to {place} helps nobody."
+      ],
+      "checks": [
+        "a photograph of the product label",
+        "the panel model",
+        "how many vents are on the system",
+        "batteries",
+        "the window size and the actuator stroke",
+        "whether the fire alarm triggers the vent",
+        "roof access",
+        "obsolete kit",
+        "who holds the old test sheets",
+        "mixed brands on one site",
+        "the leak from a vent that will not shut",
+        "a date the stair can be tested"
+      ],
+      "intents": {
+        "guide": "This page is the homeowner and landlord guide to {name}. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "near": "You searched {name} because you want someone who will come to {place}. We work from Offerton in Stockport and we book {work} around the people who live there. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "cost": "The honest answer on {name} is that the price follows the building. We survey {place} for free and write the quote before any work starts. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "quote": "Ask for {name} with the address, a photo and whether anyone is in the house. The written quote for {place} names what is included. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "emergency": "If {name} cannot wait, call 07517 806082, say {place}, and tell us what has failed. We will say if a same-day visit is realistic. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "installers": "{name} means the people who do the work, not a directory. We survey {place} and the same enquiry is the one we come back to finish. We work on the brand that is fitted. The label decides the part, not a guess.",
+        "servicing": "{name} is the follow-up visit: check, adjust, or repair what was agreed. You get a short note of what we found in {place}. We work on the brand that is fitted. The label decides the part, not a guess."
+      },
+      "fallback": "Colt roof vents and louvres are identified from the plate, not from a similar-looking hatch."
+    }
+  },
+  "topics": {
+    "coving": "Coving is the decorative moulding where the wall meets the ceiling. We run new lengths, mitre the corners and repair cracked or sagging cornice. A repair is let into the existing run so the profile matches. Filler smeared along a crack is not a coving repair.",
+    "cornice-repair": "Cornice repair matches the existing profile, cuts out the failed length and joins the new piece so the eye does not stop at the patch. We look at whether the ceiling behind it is moving before we stick anything back.",
+    "artex": "Artex and textured coatings are removed or skimmed over once we know what they are stuck to. The room is protected. You are left with a flat ceiling, not a half-scraped texture.",
+    "grp-roofing": "GRP, sometimes called fibreglass, is a resin flat-roof system laid over a dry, sound deck. Trims, outlets and the weather on the day all matter. We do not lay it on a soft or wet board.",
+    "fibreglass-roofing": "Fibreglass roofing is the same family as GRP: a laminated roof on a prepared deck, with the edge trims doing as much work as the flat. We survey the deck first.",
+    "epdm-roofing": "EPDM is a rubber sheet. The sheet is only as good as the outlet, the upstand and the deck it is stuck or laid on. We detail those rather than stretching a membrane over a ponding roof.",
+    "rubber-roofing": "Rubber roofing is a single-ply sheet, usually EPDM. Seams and the detail at the wall are the bits that leak if they are rushed. We look at the falls before we cover them up.",
+    "security-lighting": "Security lighting is an external light, often with a PIR, aimed at your path or drive. It is cabled from a proper point, not plugged into a trailing lead. We aim it so it does not blaze into the house next door.",
+    "aov-motor": "An AOV motor opens and closes the vent. When it fails, the vent sticks open, stuck shut, or moves and does not make the limit. We identify the motor from the label and test it from the panel after it is changed.",
+    "aov-actuator": "A window actuator is the device on the smoke vent or the stair window. Replacement includes the chain or spindle and a test that the window still shuts tight against the weather.",
+    "smoke-damper": "A smoke damper sits in the duct or the shaft and must move when the system asks it to. Testing is a look at the damper moving, not a tick on a sheet from the plant room doorway.",
+    "louvre": "A louvre vent is the bladed opening, often on a stair or a roof plant position. It has to open on the fire signal and close afterwards so the stair is not left open to the rain.",
+    "eicr": "An EICR is the electrical inspection of the installation. It is listed from £160. You get the report. Remedial work is a separate quote, not bundled in without being asked for.",
+    "consumer-unit": "A consumer unit upgrade replaces the fuse board, labels the circuits and is tested. We do not change a board to hide a fault we have not found.",
+    "ev-charger": "An EV charger needs a look at the supply, the earth and a safe route for the cable to the drive. The unit is commissioned and you are shown how it is isolated.",
+    "wet-room": "A wet room is a tanked floor with a fall to a drain, not tiles on a flat bathroom floor. The tanking and the waste are the job. The tiles come after.",
+    "damp-proof": "A damp-proof course is only part of a damp diagnosis. We check gutters, ground levels and the cavity before we talk about injection.",
+    "loft-conversion": "A loft conversion is stairs, structure, insulation and a room that has the headroom. We measure before we name it a dormer, a hip-to-gable or a Velux room.",
+    "kitchen-fit": "Kitchen fitting is units, worktops and services in the right order. Gas connections are carried out by Gas Safe registered engineers.",
+    "flat-roof": "A flat roof is the deck, the falls, the outlets and the covering, whether that covering is felt, GRP or EPDM. We do not cover a rotten deck.",
+    "gutter": "Guttering is the falls, the outlets and the brackets. A gutter full of silt or a downpipe that is disconnected will wet the wall no matter how new the tiles are.",
+    "fascia": "Fascias and soffits are the boards at the eaves. Replacement includes putting the gutter back on a straight line and keeping the roof ventilation.",
+    "chimney": "Chimney work is repointing, flaunching, pots, cowls, lead flashings and, where agreed, taking a stack down. Roof access is part of the quote.",
+    "lead": "Leadwork is flashings, valleys and soakers, dressed to the roof. Cement smeared where lead should be is not leadwork and we will not sell it as such.",
+    "smoke-vent": "A smoke vent is the opening that lets smoke out of the stair or the corridor. It has a panel, a power supply and a reason it opens. We test that chain, not just the hatch.",
+    "smoke-control": "Smoke control is the whole arrangement: vents, fans, dampers, shafts and the panel. Servicing records what moved and what did not.",
+    "rewire": "A rewire replaces the cables and the accessories that are in the scope, and it is tested. We agree how much of the house is open at once.",
+    "downlight": "Downlights are cut into the ceiling, wired, and fitted with the hoods or covers the ceiling needs. They are not buried in insulation without a plan.",
+    "electric-shower": "An electric shower needs a cable and a supply that can take the kilowatts, plus an isolator you can reach. If the old cable is the fault, we say so.",
+    "fence": "Fencing stands or falls on the posts. We set posts that will hold the panel or the close-board, and we hang gates on posts that are not already loose.",
+    "block-paving": "Block paving is a base, an edge and a fall. The blocks are the last layer. A soft base will sink however neat the pattern looks on day one.",
+    "drainage": "Drainage repairs start with where the water is going. A camera survey shows a crack or a root. We do not dig up a drive without that, unless the collapse is already obvious.",
+    "extension": "An extension is foundations, walls, a roof and an opening into the house you already live in. Drains and the neighbour's wall are checked before the dig.",
+    "render": "Rendering is the coat on the outside wall. We find out whether the old coat is hollow and whether the wall is damp before we put a new coat over it.",
+    "plaster": "Plastering makes a flat surface for decoration. We do not skim over damp or over plaster that is hollow and live."
+  }
+}

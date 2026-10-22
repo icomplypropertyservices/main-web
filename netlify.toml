@@ -1286,6 +1286,7 @@
   force = true
 
 # Retired keyword hubs. Exact paths only, so /pages/keywords/{slug}/{town} stays on the matrix.
+# These two are not forced: the exported guide is served when the file exists.
 [[redirects]]
   from = "/pages/keywords/air-source-heat-pumps-service-agreement"
   to = "/pages/services/heating"

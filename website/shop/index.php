@@ -61,7 +61,7 @@ require SITE_ROOT . '/includes/header.php';
         </a>
         <a href="/shop/gas/" class="p-6 bg-white border rounded-3xl hover:border-[#FF6B00]">
             <h3 class="font-semibold text-lg text-[#0B1F3A]">Gas</h3>
-            <p class="text-sm text-[#5B6472] mt-2">Enquire / POA until live gas SKUs exist.</p>
+            <p class="text-sm text-[#5B6472] mt-2">No live gas SKUs yet. Ask for a written quote.</p>
         </a>
     </div>
 </section>

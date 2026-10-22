@@ -1,9 +1,10 @@
 // Sitewide WhatsApp bubble + AI chat launcher for edge-rendered pages.
 // Source of truth: website/includes/contact-widgets.html (JSON copy refreshed by static-export).
 import widgets from "../../website/data/contact-widgets.json" with { type: "json" };
+import { applyQualityFloor } from "./quality-floor.js";
 
 export function withContactWidgets(html) {
-  const s = String(html);
+  const s = applyQualityFloor(String(html));
   if (s.includes("<!--icomply-widgets-->")) return s;
   let w = widgets.html || "";
   if (s.includes('class="wa-float"')) w = w.replace(/<a class="icw-wa"[\s\S]*?<\/a>\n/, "");

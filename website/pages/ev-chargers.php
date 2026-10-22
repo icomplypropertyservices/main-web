@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'EV Charger Installation | Rolec, Myenergi, Easee & Ohme';
-$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — BS 7671 certified, load assessment and fixed-price quotes.';
+$metaDesc = 'Professional EV charger installation across Stockport, Greater Manchester and the North West. Rolec, Myenergi, Easee and Ohme charge points — BS 7671 certified, load assessment and written quotes.';
 $metaKeywords = 'EV charger installation, Rolec EV, Myenergi zappi, Easee charger, Ohme Home Pro, electric vehicle charge point North West, home EV charger Stockport, workplace EV charging Manchester, BS 7671 EV install';
 $ogImage = url('/assets/images/keywords/ev-charger-installation.jpg');
 $canonicalUrl = url('/pages/ev-chargers.php');
@@ -60,13 +60,13 @@ $included = [
 $trust = [
     ['title' => 'BS 7671 installs', 'text' => 'Every charge point certified to current wiring regs'],
     ['title' => 'Leading brands', 'text' => 'Rolec, Myenergi, Easee & Ohme supported'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope after survey — no hidden extras'],
+    ['title' => 'Written quotes', 'text' => 'Clear scope after survey — no hidden extras'],
     ['title' => 'North West coverage', 'text' => 'Stockport-based · ' . count($areas) . '+ towns'],
 ];
 
 $howItWorks = [
     ['1', 'Tell us the site', 'Postcode, property type, preferred brand (or “advise me”), parking layout and any solar / three-phase notes.'],
-    ['2', 'Survey & fixed quote', 'We confirm supply capacity, cable route and unit choice — then issue a clear fixed-price proposal.'],
+    ['2', 'Survey & fixed quote', 'We confirm supply capacity, cable route and unit choice — then issue a clear written proposal.'],
     ['3', 'Install & certify', 'Engineers fit the charger, commission the unit and issue electrical certification with a full handover.'],
 ];
 
@@ -380,7 +380,7 @@ require SITE_ROOT . '/includes/header.php';
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All areas →</a>
                 <a href="<?= url('/pages/services/electrical.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Electrical service →</a>
-                <a href="<?= url('/pages/keywords/ev-charger-installation.php') ?>" class="text-sm font-semibold text-[#ff6b00]">EV keyword guide →</a>
+                <a href="<?= url('/pages/keywords/ev-charger-installation.php') ?>" class="text-sm font-semibold text-[#ff6b00]">EV charger guide →</a>
             </div>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
@@ -388,7 +388,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form — include postcode, brand preference and single- or three-phase supply if known.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need an EV charger installation quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -406,7 +406,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request an EV charger quote</h2>
             <p class="mt-3 text-zinc-600">
                 Tell us the postcode, preferred brand (Rolec / Myenergi / Easee / Ohme / advise me) and property type.
-                All quotes are fixed-price after scope is agreed.
+                All quotes are written after scope is agreed.
             </p>
         </div>
 
@@ -449,7 +449,7 @@ require SITE_ROOT . '/includes/header.php';
         </form>
 
         <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>
             <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>

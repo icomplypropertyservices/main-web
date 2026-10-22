@@ -179,13 +179,13 @@ SITES = [
     "a commissioning slot booked only after the scope is signed",
     "a defect list instead of a pretend certificate",
     "a parent service page the enquiry can start from",
-    "related keyword guides for the same trade",
-    "no BAFE badge and no NSI badge on this page",
+    "related service guides for the same trade",
+    "no BAFE badge and no NSI badge",
     "a price that stays on application until the building is known",
     "the Stockport workshop address when a location is needed",
     "Greater Manchester area hubs where the town is on that list",
     "TOP 5000 coverage for this nationwide keyword",
-    "a page that does not invent a day rate",
+    "a written quote rather than a day rate",
 ]
 
 
@@ -307,7 +307,7 @@ STANDARDS = {
         "An automatic opening vent is not assumed to work because a magnet dropped out. The fire-alarm interface, the battery, the actuator and the free area are recorded."
     ),
     "barriers": (
-        "Vehicle and parking barriers on this page are for private land. A public highway is a different job and is not quoted from this guide. "
+        "A public highway is a different job and is not quoted from this guide. "
         "Lane width, duty cycle, safety devices and who owns the land are agreed before a boom is specified. iComply is a CAME partner for the Gard range. Other brands already on a site can be serviced without a false partnership claim."
     ),
     "fire-alarms": (
@@ -316,7 +316,7 @@ STANDARDS = {
     ),
     "emergency-lighting": (
         "Emergency lighting is specified against BS 5266 and the escape routes the fire strategy already names. "
-        "A failed fitting is a maintenance visit. A missing design is a survey. The two are not given one invented price."
+        "A failed fitting is a maintenance visit. A missing design is a survey. "
     ),
     "fire-doors": (
         "Fire door work follows BS 8214 and the rating of the door that is actually in the opening. "
@@ -324,7 +324,7 @@ STANDARDS = {
     ),
     "fire-extinguishers": (
         "Extinguisher servicing follows BS 5306 practice for the types on site. "
-        "The visit lists what was seen. It does not invent a scheme badge."
+        "The visit lists what was seen. "
     ),
     "fire-risk-assessments": (
         "A fire risk assessment records the premises as found and the actions that follow. "
@@ -350,7 +350,7 @@ ANGLES = {
     "near-me": "Near me means the town page for the place you searched, with travel from Stockport included in the quote rather than hidden.",
     "emergency": "An emergency visit makes the immediate fault safe or open, then books the lasting repair. It is not a promise of an unscoped overnight rebuild.",
     "repair": "Repair starts from the fault that is there. Parts are identified before they are ordered. The quote stays on application.",
-    "maintenance": "Maintenance is a planned visit with a result the dutyholder can file. It is not a rolling contract invented on this page.",
+    "maintenance": "Maintenance is a planned visit with a result the dutyholder can file. ",
     "service": "Service means the agreed inspection and the notes that come back. Defects are listed. They are not quietly absorbed into a fixed fee.",
     "company": "A company enquiry is for the trade as a whole. The first reply names which service page the work sits on.",
     "assessment": "An assessment is a written record of the premises. It recommends work. It does not pretend the work is already done.",
@@ -377,7 +377,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
     paras = [
         (
             f"{name} is arranged from the Stockport workshop for {place}. "
-            f"The enquiry this page is written for is {site}. {angle} "
+            f"{angle} "
             f"{standard} The quote is price on application after the scope is written down. "
             f""
         ),
@@ -389,8 +389,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"at {NAP}. Nearby places on the same town list include {near}."
         ),
         (
-            f"{place} sits in {county}, {region}. Published population context for this page is {pop}. "
-            f"That figure is context for travel and building mix. It is not a claim that every street has already been surveyed. "
+            f"{place} sits in {county}, {region}. "
             f"{name} follows the building in front of the engineer. A {site} is scoped on its own drawings and its own access, "
             f"not by swapping a town name into a national script and calling it local."
         ),
@@ -409,7 +408,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Where a specialist ticket is required, that ticket is named in the quote."
         ),
         (
-            f"Paperwork is part of {name}, not an optional extra invented after the invoice. "
+            f"Paperwork is part of {name}, not an optional extra added after the invoice. "
             f"The dutyholder should be able to file the note, the test sheet or the commissioning record with the building. "
             f"Zone charts, device lists and user notes are updated when the work changed them. "
             f"A missing historical certificate is reported as missing. "
@@ -423,18 +422,11 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
             f"Call 07517 806082, WhatsApp us or use the contact form. Say whether the building is occupied."
         ),
         (
-            f"Coverage for this keyword is the UK mainland TOP 5000 towns by population, England, Scotland and Wales. "
-            f"{place} is on that list when this is a town page, or the guide is the nationwide hub when it is not. "
-            f"Greater Manchester area hubs stay in place for local services, including the ten marketing places that are not in the TOP 5000 population cut. "
-            f"Those ten are not dropped from the local area list. They are simply not the driver for this nationwide keyword family. "
-            f"Manufacturer pages stay on the Greater Manchester core. This keyword does not widen that manufacturer matrix."
+            f"We cover {name} across mainland England, Scotland and Wales from our Stockport base. "
+            f"Greater Manchester towns also have their own local pages for our other services, and each town page shows the travel and local details for that place."
         ),
         (
-            f"Internal links from {name} go to the parent {parent} service, to related keyword guides in the same P0 set, "
-            f"and to the town page when the place is published. "
-            f"AOV and smoke-control enquiries can also open the AOV town pages. Barrier enquiries can open the barrier town pages. "
-            f"Fire alarm enquiries open the fire alarm service. Doors, extinguishers, emergency lighting, stopping, suppression and sprinklers stay on their own service pages "
-            f"when that is the work, so a fire-protection company enquiry is not forced into a single product."
+            f"When the work belongs to a different service, such as fire doors, emergency lighting or sprinklers, we say so and point you to that service so the quote covers the right work."
         ),
         (
             f"What {name} does not include is as important as what it does. "
@@ -502,7 +494,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         "maintenance": (
             f"Maintenance for {name} is booked as a round or a single site. "
             f"The interval comes from the fire strategy, the manufacturer note or the insurer's request. "
-            f"This page does not invent a universal twice-yearly rule and then sell it as law."
+            f""
         ),
         "installation": (
             f"A new {name} is designed before it is fitted. "
@@ -521,7 +513,7 @@ def essay(slug: str, name: str, place: str, county: str, region: str, pop: str, 
         "company": (
             f"A fire-protection company search often mixes alarms, doors, extinguishers and stopping. "
             f"This guide starts with {parent} and links the other services. "
-            f"You can ask for more than one trade. Each trade is scoped. None is given a made-up package price."
+            f"You can ask for more than one trade. Each trade is scoped. "
         ),
         "assessment": (
             f"The assessment visit needs access to the places the risk actually sits: plant, stairs, stores and bedrooms used as offices. "

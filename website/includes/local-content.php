@@ -27,7 +27,7 @@ function area_profile(string $area): array {
             'Manchester' => ['districts' => 'M1–M40', 'region' => 'Greater Manchester core', 'stock' => 'city-centre apartments, Victorian terraces, commercial offices and multi-let stock', 'travel' => 'typically under 40 minutes from our Stockport base', 'focus' => 'high-rise residential, retail and office compliance'],
             'Salford' => ['districts' => 'M3, M5–M7, M50', 'region' => 'Greater Manchester', 'stock' => 'MediaCity offices, new-build apartments and industrial estates', 'travel' => 'typically under 35 minutes from Stockport', 'focus' => 'mixed-use and multi-tenant buildings'],
             'Stockport' => ['districts' => 'SK1–SK8', 'region' => 'Greater Manchester', 'stock' => 'suburban housing, industrial units and town-centre retail', 'travel' => 'local Stockport coverage from SK2', 'focus' => 'landlord portfolios and SME commercial sites'],
-            'Bolton' => ['districts' => 'BL1–BL7', 'region' => 'Greater Manchester', 'stock' => 'terraced housing, mills converted to commercial and retail parks', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'landlord and light-industrial compliance'],
+            'Bolton' => ['districts' => 'BL1–BL7', 'region' => 'Greater Manchester', 'stock' => 'terraced houses, converted mills and retail parks', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'landlord and light-industrial compliance'],
             'Oldham' => ['districts' => 'OL1–OL9', 'region' => 'Greater Manchester', 'stock' => 'terraced streets, industrial estates and local authority stock', 'travel' => 'typically 35–50 minutes from Stockport', 'focus' => 'residential portfolios and warehouse units'],
             'Rochdale' => ['districts' => 'OL11–OL16', 'region' => 'Greater Manchester', 'stock' => 'mixed housing, town retail and industrial estates', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'landlords, agents and SME facilities'],
             'Bury' => ['districts' => 'BL9, M25–M26', 'region' => 'Greater Manchester', 'stock' => 'suburban homes, retail and light industry', 'travel' => 'typically 40–55 minutes from Stockport', 'focus' => 'residential and high-street commercial'],
@@ -226,17 +226,20 @@ function seo_unique_intro(string $serviceName, string $slug, string $area): stri
     $standards = implode(', ', array_slice(service_standards($slug), 0, 3));
     $seed = area_seed($area, $slug . 'intro');
     $openers = [
-        "If you manage property in {$area} ({$p['districts']}), reliable {$serviceName} is not optional — it is how you stay audit-ready.",
+        "{$serviceName} in {$area} ({$p['districts']}) is scoped to the building, then written up so the file matches the visit.",
         "For {$serviceName} in {$area}, iComply Property Services supports landlords, agents and businesses across {$p['region']}.",
-        "{$area} sites — from {$p['stock']} — need {$serviceName} that matches UK standards and real building use.",
+        "In {$area}, the buildings we usually see are {$p['stock']}. {$serviceName} has to suit that stock and the standards that apply to the building.",
         "Searching for {$serviceName} near {$area}? Our Stockport team covers {$p['districts']} with documented install and service work.",
     ];
+    $handTrade = in_array($slug, ['fencing', 'drainage', 'demolition', 'driveways', 'brickwork', 'plastering', 'roofing', 'painting-decorating'], true);
     $mid = (function_exists('isPoaService') && isPoaService($slug))
         ? "We scope {$serviceName} against {$standards} for the system or building you actually have — written notes for the file, not a catalogue install. {$angle}"
-        : "We design, install, maintain and certificate {$serviceName} with attention to {$standards}. {$angle}";
+        : ($handTrade
+            ? "We survey, quote and carry out {$serviceName} with attention to {$standards}. {$angle}"
+            : "We design, install, maintain and certify {$serviceName} with attention to {$standards}. {$angle}");
     $close = (function_exists('isPoaService') && isPoaService($slug))
-        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a fixed written quote once we confirm the scope."
-        : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free; fixed pricing is used whenever the scope is clear after survey or photos.";
+        ? "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. You get a free written quote once we confirm the scope."
+        : "Travel to {$area} is {$p['travel']}. Typical focus in this area: {$p['focus']}. Quotes are free. The written price follows the survey or the photos.";
     return pick_seeded($openers, $seed, 0) . ' ' . $mid . ' ' . $close;
 }
 
@@ -265,7 +268,7 @@ function seo_unique_why(string $serviceName, string $area): array {
         "Stockport SK2 base with scheduled {$area} attendance ({$p['travel']})",
         "Paperwork landlords, freeholders and insurers in {$p['region']} expect to see",
         "{$serviceName} plus related fire/electrical/security trades under one contractor",
-        "Clear scope — fixed-price quotes when survey/photos define the works",
+        "Clear scope — written quotes when survey/photos define the works",
         "Experience with {$p['stock']} typical of {$area}",
         "Visit dates in {$area} follow the diary and site access",
         "Remedial advice prioritised so {$area} sites pass the next inspection first time where practical",

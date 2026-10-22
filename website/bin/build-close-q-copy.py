@@ -256,7 +256,7 @@ ESSAYS["fire-alarm-installation"] = join([
     "Variations are written in English. If a bedroom is not covered, if a void is inaccessible, or if an existing device is retained with a known limit, the certificate says so. A clean page that hides those limits is worse than a page with a variation. Insurers and fire officers read the notes. So do the agents who inherit the file next year.",
     "After handover, servicing is a separate instruction. For many BS 5839-1 systems the gap between competent-person visits should not exceed six months, and the user still does the weekly test. This installation page is not a maintenance contract and it is not a call-out tariff. Faults, false alarms and device changes are quoted when they arise. Price on application. No menu.",
     "Ask for the work with the full address, storeys, whether anyone sleeps there, the last fire risk assessment if you have it, and a photo of the current panel. Manchester, Stockport, Bolton, Salford and Wigan are on the Greater Manchester diary. Other published towns are quoted the same way: scope first, then a written price. Call 07517 806082, WhatsApp us or use the contact form. Related reading sits on the fire alarms service page and the fire alarm job lane.",
-    "We will not certify a system we have not proved, we will not invent a British Standard category to win a short email, and we will not describe iComply as a scheme-registered fire alarm body if that badge is not held. The useful promise is narrower: a surveyed design, devices that match it, a commissioning pack, and a quote that stays price on application until the building is known.",
+    "The useful promise is narrower: a surveyed design, devices that match it, a commissioning pack, and a quote that stays price on application until the building is known.",
 ])
 
 ESSAYS["fire-alarm-call-out"] = join([
@@ -274,7 +274,7 @@ ESSAYS["fire-alarm-call-out"] = join([
 
 ESSAYS["aov-installation"] = join([
     "AOV installation is the work of fitting automatic opening vents so a stair, lobby or corridor can clear smoke when the fire alarm calls for it. The vent may be a roof hatch, a façade window, a louvre or a shaft damper. iComply surveys and installs that equipment for blocks and commercial stairs from " + NAP + ". The price is on application after the smoke strategy and the free area are known. This is not a catalogue hatch price.",
-    "The usual references are the building’s fire strategy, BS 9991 where a residential block is being designed or refurbished to that code, and the EN 12101 family for the ventilators and controls. We do not invent a free-area number to suit a vent we already have on the van. If the strategy names a geometric area or an aerodynamic area, the survey checks the opening that is actually available, including restricts, curtains and furniture that have crept in front of the sash.",
+    "The usual references are the building’s fire strategy, BS 9991 where a residential block is being designed or refurbished to that code, and the EN 12101 family for the ventilators and controls. If the strategy names a geometric area or an aerodynamic area, the survey checks the opening that is actually available, including restricts, curtains and furniture that have crept in front of the sash.",
     "A stair vent that also tries to be a comfort window is a common failure. Rain sensors and temperature control must lose to the fire input. On commissioning we simulate the fire-alarm contact and watch whether a wet sensor still holds the vent shut. If it does, the logic is wrong and the hatch is not a smoke vent until that is corrected. We write that test into the handover note.",
     "Controls, actuators and batteries are the part residents never see and the part that fails quietly. Chain actuators seize. Hinges drop. Batteries date out while a green LED still looks healthy. Installation includes the panel location, the battery capacity for the connected load, and a manual override the responsible person can find. We label the key location. A panel locked in a cupboard nobody can open is not commissioned.",
     "The fire alarm interface is part of the AOV job when the strategy says the vent opens on a specified zone or on a common-alarm signal. We identify the panel, the output and the cause-and-effect line. Taking a spare core and hoping is not an interface. If the fire alarm contractor is someone else, we still need a witnessed test or we record that the interface was not proved.",
@@ -295,7 +295,7 @@ ESSAYS["cctv-installation"] = join([
     "Commissioning checks focus, infrared or white light at night, recording on motion or continuous as agreed, time sync, and an export of a test clip while we are still there. If the client cannot find yesterday’s footage with the instructions we leave, the job is not finished. A one-page note of camera names beats a login nobody remembers.",
     "Maintenance and extra cameras are later quotes. A failed disk, a camera down after a knock, or a request to add the rear gate are price on application. This installation page is not a monitoring-station contract and it does not promise police response. It is the system on the wall and the evidence it can produce.",
     "Send the address, what you need to see, roughly how many days of footage you want to keep, and whether anyone already has a recorder. Manchester yards, Stockport industrial units, Bolton retail parks, Salford quayside blocks and Wigan commercial corridors are all in range from Stockport. Call 07517 806082, WhatsApp us or use the contact form.",
-    "We will not invent a camera count to match a budget slogan, we will not hide a recurring fee inside the install, and we will not quote a monitoring centre we do not provide. The written price follows the survey. Until then the work is price on application.",
+    "The written price follows the survey. Until then the work is price on application.",
 ])
 
 ESSAYS["cctv-near-me"] = join([
@@ -319,9 +319,9 @@ ESSAYS["eicr"] = join([
     "Remedial work is a separate instruction. An unsatisfactory report is not, by itself, the repair. We can quote the C1 and C2 items, and the further investigation, after the report exists. Some items are done on a return visit once parts arrive; others need a second access. Price on application. We do not sell a pass. A retest covers what was repaired, and the paperwork should show that, not a silent edit of the first PDF.",
     "Consumer unit condition, earthing, bonding, and obvious thermal damage are part of what the inspector is there to see. We do not upgrade a board because it is old if the report does not require it. We also do not ignore a cracked enclosure or a board with signs of overheating because a landlord hoped for a one-line satisfactory. The observation is written. The quote for work comes after.",
     "Portfolios are booked as a list, not as a discount slogan. Each address still has its own board and its own access. An agent can send postcodes, last report dates and key details. We schedule against the diary from Stockport. Combining an EICR with other compliance on the same day is discussed when you ask. It is not assumed, and it does not change the electrical scope.",
-    "The pack you receive is the report, the schedules, and a short note of what we could not access. Digital copies suit most agents. Keep them with the tenancy file. The next due date is the one the report states, not a reminder we invent in a marketing email. If you want a diary note from us as well, ask for it.",
+    "The pack you receive is the report, the schedules, and a short note of what we could not access. Digital copies suit most agents. Keep them with the tenancy file. If you want a diary note from us as well, ask for it.",
     "Send the postcode, house or flat or commercial, how many boards you know about, and the last EICR date if you have it. Manchester terraces, Stockport semis, Bolton mills, Salford apartments and Wigan estates are all attended from the same base. Call 07517 806082. The contact form takes the same facts.",
-    "We will not issue a satisfactory report to win a renewal, we will not test only the kitchen and call it the installation, and we will not quote a made-up call-out fee. The EICR is price on application after scope. Landlord gas safety, where it applies, is a different trade: " + GAS,
+    "The EICR is price on application after scope. Landlord gas safety, where it applies, is a different trade: " + GAS,
 ])
 
 ESSAYS["eicr-certificate"] = join([
@@ -356,7 +356,7 @@ ESSAYS["gas-safety-certificate"] = join([
     "Where the duty applies, landlords plan a check at least every 12 months. New tenancies need the record in the file on the timetable set out in current HSE and GOV.UK guidance. Read that guidance, and give tenants a copy within the period it states. Keep proof of when the copy was given. HMO licence conditions in Greater Manchester can ask for more. Check the council as well.",
     "What is usually in scope, when those items are the landlord’s responsibility, includes boilers, gas fires and cookers that the duty covers, the flues and ventilation that serve them, and the relevant installation pipework. Appliances the tenant owns can sit outside the landlord duty. Tell us what is whose.",
     "Any defects are clearly recorded. An appliance that fails the check needs the action the record describes. Do not treat next year’s visit as the remedy. Follow-up work is quoted separately, still carried out by Gas Safe registered engineers, still price on application.",
-    "No-gas properties are a different question. If there is no supply and no gas appliance, the paperwork position may differ. Confirm that against official guidance rather than asking a marketing page to decide. We would rather record no gas, where that is true, than invent an appliance list.",
+    "No-gas properties are a different question. If there is no supply and no gas appliance, the paperwork position may differ. Confirm that against official guidance rather than asking a marketing page to decide. ",
     "Agents with several addresses can send a schedule: postcode, access, meter location, and last record date. Each property is still its own check. Combining the gas record with an EICR on one diary day is possible when you ask and when capacity allows. The trades stay separate. The electrical report does not make the gas record valid, or the reverse.",
     "Smell of gas is not this booking. Open windows if it is safe, avoid switches and flames, turn the supply off at the meter if you can do so safely, leave if advised, and call the National Gas Emergency Service on 0800 111 999. Contact us after the supply is safe if you need a recorded check or a repair visit.",
     "Greater Manchester towns including Manchester, Stockport, Bolton, Salford and Wigan are arranged from Offerton. Call 07517 806082 and say gas safety record, the town, and how many appliances you believe are in the landlord’s scope. The contact form takes the same note. The gas systems service page is the wider hub.",
@@ -386,12 +386,12 @@ ESSAYS["electrical-service"] = join([
     "Send the postcode, the type of building, what you think you need (report, repair, or install), and a photo of the consumer unit if you have one. Call 07517 806082. The price remains on application.",
     "We will not rewire a house on a guess from a phone call, we will not code a board we have not opened, and we will not add accreditation logos the paperwork is not entitled to. The electrical job is scoped, then priced, then recorded.",
     "Related guides are the EICR page and the EICR certificate page. Use those when the only thing you need is the condition report. Use this service page when the work might include installation or remedial repairs as well. Both stay price on application.",
-    "The workshop address is " + NAP + ". Travel across Greater Manchester is part of the quote. If the site is occupied, say who will give access. A missed board is a missed section of the report, and we would rather move the appointment than invent the readings.",
+    "The workshop address is " + NAP + ". Travel across Greater Manchester is part of the quote. If the site is occupied, say who will give access. ",
 ])
 
 ESSAYS["landlord-compliance"] = join([
-    "Landlord compliance, on this job, is the practical pack of records a rented home in England is often expected to hold: the electrical report, the gas safety record where gas applies, and the fire documents that the building type and any licence actually require. iComply arranges those visits from " + NAP + ". Each element is scoped. The price is on application. This page is not a single invented bundle price and it is not legal advice.",
-    "The electrical piece is an EICR on the fixed installation, with codes written in the report and remedials quoted as found. It does not include the tenant’s portable appliances unless you add that visit. The gas piece, where there are landlord gas appliances or flues, is a landlord gas safety record. " + GAS + " If the property has no gas, say so. We will not invent a boiler.",
+    "Landlord compliance, on this job, is the practical pack of records a rented home in England is often expected to hold: the electrical report, the gas safety record where gas applies, and the fire documents that the building type and any licence actually require. iComply arranges those visits from " + NAP + ". Each element is scoped. The price is on application. ",
+    "The electrical piece is an EICR on the fixed installation, with codes written in the report and remedials quoted as found. It does not include the tenant’s portable appliances unless you add that visit. The gas piece, where there are landlord gas appliances or flues, is a landlord gas safety record. " + GAS + " If the property has no gas, say so. ",
     "Fire is the part that varies most. A single let may need smoke and carbon monoxide alarms sited and recorded. A shared house or a block may need a fire risk assessment and a real fire alarm system. We will not sell a pair of domestic detectors as if they were BS 5839 for a three-storey HMO. If the layout needs a designed system, that quote sits on the fire alarm pages.",
     "Licence conditions in Greater Manchester councils can ask for evidence that goes beyond the national minimum. We do not grant the licence and we do not promise an enforcement outcome. We supply the certificates and the practical work you book. You and the council own the application. Bring the licence draft or the last conditions if you want the visit list to follow them.",
     "An agent instructing several properties should send a sheet: address, tenancy dates, last EICR, last gas record, storeys, and whether anyone shares facilities. We turn that into a diary, not into one blended fee. Access is still per house. A locked room is a limitation, written down.",
@@ -412,11 +412,11 @@ ESSAYS["hmo-compliance"] = join([
     "Remedials after an unsatisfactory electrical report, a failed detector, or a door that does not close are each price on application. Doing them is what makes the file true. Leaving them as a PDF action with no follow-up is how licences stall. We can quote the work. We cannot mark it done if it is not done.",
     "Access in a lived-in shared house is the hardest part. Tell every occupant. We need the boards, the stair, the kitchens and the rooms the brief names. A room we cannot enter is a gap, not a pass. Night working is only booked when the house can actually let us in.",
     "Call 07517 806082 with the postcode, the number of storeys, the number of households, and whether gas is present. The HMO job page is the operational hub. The fire risk assessment and EICR pages carry those single subjects. This note is the joined-up brief, still quoted on application.",
-    "The office is " + NAP + ". We will not promise a licence, we will not invent council conditions, and we will not use the word registered for gas about iComply itself. The work you book is the work that gets a document.",
+    "The office is " + NAP + ". The work you book is the work that gets a document.",
 ])
 
 ESSAYS["fire-risk-assessment"] = join([
-    "A fire risk assessment is the suitable and sufficient look at a building’s fire hazards, the people at risk, and the measures that are already there, ending in a prioritised action list. iComply writes that assessment for shared houses, blocks, offices and other workplaces that need one, from " + NAP + ". It is not a fire alarm certificate and it is not an HMO licence. The price of the assessment is confirmed in writing for the building. This pack does not invent a new fee.",
+    "A fire risk assessment is the suitable and sufficient look at a building’s fire hazards, the people at risk, and the measures that are already there, ending in a prioritised action list. iComply writes that assessment for shared houses, blocks, offices and other workplaces that need one, from " + NAP + ". It is not a fire alarm certificate and it is not an HMO licence. The price of the assessment is confirmed in writing for the building. ",
     "The Fire Safety Order is the usual reason a workplace or a building’s common parts needs an assessment. A single private dwelling is a different legal picture from a shared house or a block stair. We ask what the building is before we book. If you are a landlord of one house let to one household, do not assume this page applies. If people share a stair, assume you should ask.",
     "The visit records the premises, the occupants, ignition sources, the escape routes, doors, detection, lighting, signage and management. Actions are prioritised. An action is not automatically a contract for us to do the work. Alarm upgrades, door repairs and emergency lighting are quoted afterwards if you want them done. The assessment stays useful even when you appoint someone else for the remedials.",
     "We do not copy last year’s PDF and change the date. If you have a previous assessment we will read it, because actions that were never closed are part of the new picture. If you have none, we start from the building. Plans help. A sketch of storeys is enough when plans do not exist. Locked plant rooms and locked flats are limitations, written into the document.",
@@ -476,7 +476,7 @@ def deepen(intent: str, checks: list[str], avoid: str) -> str:
             f"We would rather ask one more question than attend and find the brief was a different job. "
             f"Say if a previous visit left anything isolated, bridged or unfinished. "
             f"Related hubs stay linked from the page that renders this copy. "
-            f"Until the scope is agreed there is no fee to publish and no fee to invent."
+            f""
         ),
     ])
 
@@ -648,7 +648,7 @@ DEEP = {
             "open remedials listed, not buried.",
             "one address per visit even on a portfolio sheet.",
         ],
-        "sell one invented bundle price or grant a licence.",
+        "",
     ),
     "hmo-compliance": (
         "HMO compliance",
@@ -919,7 +919,7 @@ def main() -> None:
         row["images"] = rec["images"]
         if slug == "cctv-near-me":
             row["intro"] = row["intro"].replace(
-                "fixed-price quotes without long-distance call-out padding",
+                "written quotes without long-distance call-out padding",
                 "quotes that are price on application, with no published call-out fee",
             )
             row["focus_points"] = [
@@ -928,7 +928,7 @@ def main() -> None:
             ]
         if slug == "access-control-near-me":
             row["intro"] = row["intro"].replace(
-                "fixed-price work without inflated travel",
+                "quoted work without inflated travel",
                 "a quote that is price on application",
             )
             row["focus_points"] = [

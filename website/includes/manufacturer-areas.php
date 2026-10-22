@@ -290,7 +290,7 @@ function manufacturerLocalIntro(array $entry, string $area): string
     $openers = [
         "{$brand} work in {$area} starts from the label on the equipment. The range named first on the survey is {$line['label']}.",
         "A {$area} call that says {$brand} still needs the generation: {$line['label']}, or {$lineB['label']} if the building was extended later.",
-        "{$area} ({$p['districts']}) is {$p['stock']}. {$brand} jobs there are scoped around {$line['label']} before a second range is offered.",
+        "{$area} ({$p['districts']}) has {$p['stock']}. {$brand} jobs there are scoped around {$line['label']} before a second range is offered.",
         "From the Stockport workshop, {$area} is {$p['travel']}. The {$brand} note names {$line['label']} so the quote matches the kit, not a catalogue guess.",
         "The usual {$area} brief is {$p['focus']}. Where the system is {$brand}, the survey starts on {$line['label']}.",
         "{$p['region']} buildings around {$area} often mix {$brand} generations. We separate {$line['label']} from {$lineB['label']} before ordering parts.",
@@ -302,7 +302,7 @@ function manufacturerLocalIntro(array $entry, string $area): string
         'Spares are matched to the range on site rather than a lookalike from another maker.',
         'Interfaces to doors, vents or barriers are checked before the job is signed off.',
         'Keys, access equipment and a person on site are agreed before the diary slot.',
-        'Install labour is not given a made-up figure on this page. The quote follows the survey.',
+        'The quote follows the survey.',
         'Battery, fuse and safety-device checks are written down even when the main kit looks healthy.',
     ];
     $closers = [
@@ -362,7 +362,7 @@ function manufacturerAreaMeta(array $entry, string $area): string
     $scope = manufacturerCoverageMode($entry) === 'nationwide'
         ? 'North West town list'
         : 'Greater Manchester';
-    $desc = $brand . ' in ' . $area . ' (' . $p['districts'] . '). ' . $line . '. Install and service. ' . $scope . '. Written quote, no invented install fee.';
+    $desc = $brand . ' in ' . $area . ' (' . $p['districts'] . '). ' . $line . '. Install and service. ' . $scope . '. ';
     if (strlen($desc) > 165) {
         $desc = $brand . ' in ' . $area . '. ' . $line . '. ' . $scope . '. Written quote after survey.';
     }
@@ -430,8 +430,16 @@ function manufacturerGallery(array $entry, string $area): array
         }
         $items[] = ['src' => $src, 'alt' => $alt];
     };
+    $usedPerService = false;
+    foreach ($entry['services'] ?? [] as $svc) {
+        $per = '/assets/images/manufacturers/' . $slug . '--' . $svc . '.jpg';
+        if (is_file(SITE_ROOT . $per)) {
+            $push(url($per), $brand . ' ' . (getServices()[$svc] ?? $svc) . ' equipment');
+            $usedPerService = true;
+        }
+    }
     $rel = '/assets/images/manufacturers/' . $slug . '.jpg';
-    if (is_file(SITE_ROOT . $rel)) {
+    if (!$usedPerService && is_file(SITE_ROOT . $rel)) {
         $push(url($rel), $brand . ' equipment used on ' . $area . ' surveys');
     }
     foreach (['.jpg', '.png'] as $ext) {
@@ -439,18 +447,6 @@ function manufacturerGallery(array $entry, string $area): array
         if (is_file(SITE_ROOT . $svc)) {
             $push(url($svc), (getServices()[$primary] ?? $primary) . ' work in ' . $area);
             break;
-        }
-    }
-    if (!function_exists('getKeywordImages')) {
-        // config already loaded
-    }
-    foreach (array_slice(getKeywordImages($primary), 0, 2) as $kw) {
-        foreach (['.jpg', '.png'] as $ext) {
-            $path = '/assets/images/keywords/' . $kw . $ext;
-            if (is_file(SITE_ROOT . $path)) {
-                $push(url($path), $brand . ' related ' . str_replace('-', ' ', (string)$kw) . ' in ' . $area);
-                break;
-            }
         }
     }
     if (in_array('aov-air-handling', $entry['services'] ?? [], true)) {

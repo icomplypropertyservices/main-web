@@ -37,7 +37,7 @@ require SITE_ROOT . '/includes/header.php';
                 If your work is careful and consistent, we would like to hear from you.
             </p>
             <p class="mt-4 text-sm text-white/70">
-                Call <a class="text-[#ff6b00] font-semibold" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                Call <a class="text-[#ff6b00] font-semibold" href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </p>
         </div>
     </div>

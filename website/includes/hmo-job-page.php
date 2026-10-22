@@ -187,7 +187,7 @@ function hmoJobRender(string $id): void
             <?php
             $steps = [
                 ['Tell us the house', 'Postcode, bedrooms, storeys, gas or no gas, and which certificates are due.'],
-                ['We confirm the list price', 'A typical 6-bed in the North West uses the figures on this page. Anything else is confirmed before you are booked.'],
+                ['We confirm the list price', 'Anything else is confirmed before you are booked.'],
                 ['You get the pack', 'Reports for the work that was booked, ready for the agent file. The licence application stays with you and the council.'],
             ];
             $n = 1;

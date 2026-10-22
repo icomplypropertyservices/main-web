@@ -1,0 +1,340 @@
+{
+ "_doc": "Each service page only shows its own slug, slug-photo and slug-context photos. Bytes are unique so the optimiser cannot collapse unrelated services onto one image.",
+ "families": {
+  "electrical": [
+   "electrical",
+   "electrical-photo",
+   "electrical-context"
+  ],
+  "ev-chargers": [
+   "ev-chargers",
+   "ev-chargers-photo",
+   "ev-chargers-context"
+  ],
+  "gas-systems": [
+   "gas-systems",
+   "gas-systems-photo",
+   "gas-systems-context"
+  ],
+  "nurse-call": [
+   "nurse-call",
+   "nurse-call-photo",
+   "nurse-call-context"
+  ],
+  "fire-alarms": [
+   "fire-alarms",
+   "fire-alarms-photo",
+   "fire-alarms-context"
+  ],
+  "emergency-lighting": [
+   "emergency-lighting",
+   "emergency-lighting-photo",
+   "emergency-lighting-context"
+  ],
+  "aov-air-handling": [
+   "aov-air-handling",
+   "aov-air-handling-photo",
+   "aov-air-handling-context"
+  ],
+  "fire-risk-assessments": [
+   "fire-risk-assessments",
+   "fire-risk-assessments-photo",
+   "fire-risk-assessments-context"
+  ],
+  "fire-extinguishers": [
+   "fire-extinguishers",
+   "fire-extinguishers-photo",
+   "fire-extinguishers-context"
+  ],
+  "fire-doors": [
+   "fire-doors",
+   "fire-doors-photo",
+   "fire-doors-context"
+  ],
+  "fire-stopping": [
+   "fire-stopping",
+   "fire-stopping-photo",
+   "fire-stopping-context"
+  ],
+  "fire-suppression": [
+   "fire-suppression",
+   "fire-suppression-photo",
+   "fire-suppression-context"
+  ],
+  "sprinkler-systems": [
+   "sprinkler-systems",
+   "sprinkler-systems-photo",
+   "sprinkler-systems-context"
+  ],
+  "dry-risers": [
+   "dry-risers",
+   "dry-risers-photo",
+   "dry-risers-context"
+  ],
+  "fire-signage": [
+   "fire-signage",
+   "fire-signage-photo",
+   "fire-signage-context"
+  ],
+  "evacuation-alerts": [
+   "evacuation-alerts",
+   "evacuation-alerts-photo",
+   "evacuation-alerts-context"
+  ],
+  "kitchen-fire-suppression": [
+   "kitchen-fire-suppression",
+   "kitchen-fire-suppression-photo",
+   "kitchen-fire-suppression-context"
+  ],
+  "fire-compartmentation": [
+   "fire-compartmentation",
+   "fire-compartmentation-photo",
+   "fire-compartmentation-context"
+  ],
+  "intruder-alarm": [
+   "intruder-alarm",
+   "intruder-alarm-photo",
+   "intruder-alarm-context"
+  ],
+  "cctv": [
+   "cctv",
+   "cctv-photo",
+   "cctv-context"
+  ],
+  "access-control": [
+   "access-control",
+   "access-control-photo",
+   "access-control-context"
+  ],
+  "barriers": [
+   "barriers",
+   "barriers-photo",
+   "barriers-context"
+  ],
+  "door-entry": [
+   "door-entry",
+   "door-entry-photo",
+   "door-entry-context"
+  ],
+  "intercoms": [
+   "intercoms",
+   "intercoms-photo",
+   "intercoms-context"
+  ],
+  "landlord-compliance": [
+   "landlord-compliance",
+   "landlord-compliance-photo",
+   "landlord-compliance-context"
+  ],
+  "facilities-management": [
+   "facilities-management",
+   "facilities-management-photo",
+   "facilities-management-context"
+  ],
+  "building-maintenance": [
+   "building-maintenance",
+   "building-maintenance-photo",
+   "building-maintenance-context"
+  ],
+  "project-management": [
+   "project-management",
+   "project-management-photo",
+   "project-management-context"
+  ],
+  "building-surveys": [
+   "building-surveys",
+   "building-surveys-photo",
+   "building-surveys-context"
+  ],
+  "cdm-support": [
+   "cdm-support",
+   "cdm-support-photo",
+   "cdm-support-context"
+  ],
+  "property-refurbishment-pm": [
+   "property-refurbishment-pm",
+   "property-refurbishment-pm-photo",
+   "property-refurbishment-pm-context"
+  ],
+  "compliance-consultancy": [
+   "compliance-consultancy",
+   "compliance-consultancy-photo",
+   "compliance-consultancy-context"
+  ],
+  "kitchens": [
+   "kitchens",
+   "kitchens-photo",
+   "kitchens-context"
+  ],
+  "bathrooms": [
+   "bathrooms",
+   "bathrooms-photo",
+   "bathrooms-context"
+  ],
+  "renovation": [
+   "renovation",
+   "renovation-photo",
+   "renovation-context"
+  ],
+  "plastering": [
+   "plastering",
+   "plastering-photo",
+   "plastering-context"
+  ],
+  "tiling": [
+   "tiling",
+   "tiling-photo",
+   "tiling-context"
+  ],
+  "painting-decorating": [
+   "painting-decorating",
+   "painting-decorating-photo",
+   "painting-decorating-context"
+  ],
+  "joinery": [
+   "joinery",
+   "joinery-photo",
+   "joinery-context"
+  ],
+  "carpentry": [
+   "carpentry",
+   "carpentry-photo",
+   "carpentry-context"
+  ],
+  "flooring": [
+   "flooring",
+   "flooring-photo",
+   "flooring-context"
+  ],
+  "plumbing": [
+   "plumbing",
+   "plumbing-photo",
+   "plumbing-context"
+  ],
+  "water-wras": [
+   "water-wras",
+   "water-wras-photo",
+   "water-wras-context"
+  ],
+  "heating": [
+   "heating",
+   "heating-photo",
+   "heating-context"
+  ],
+  "roofing": [
+   "roofing",
+   "roofing-photo",
+   "roofing-context"
+  ],
+  "drainage": [
+   "drainage",
+   "drainage-photo",
+   "drainage-context"
+  ],
+  "driveways": [
+   "driveways",
+   "driveways-photo",
+   "driveways-context"
+  ],
+  "fencing": [
+   "fencing",
+   "fencing-photo",
+   "fencing-context"
+  ],
+  "demolition": [
+   "demolition",
+   "demolition-photo",
+   "demolition-context"
+  ],
+  "brickwork": [
+   "brickwork",
+   "brickwork-photo",
+   "brickwork-context"
+  ],
+  "dry-lining": [
+   "dry-lining",
+   "dry-lining-photo",
+   "dry-lining-context"
+  ],
+  "loft-conversions": [
+   "loft-conversions",
+   "loft-conversions-photo",
+   "loft-conversions-context"
+  ],
+  "extensions": [
+   "extensions",
+   "extensions-photo",
+   "extensions-context"
+  ],
+  "insulation": [
+   "insulation",
+   "insulation-photo",
+   "insulation-context"
+  ],
+  "damp-proofing": [
+   "damp-proofing",
+   "damp-proofing-photo",
+   "damp-proofing-context"
+  ],
+  "windows-doors": [
+   "windows-doors",
+   "windows-doors-photo",
+   "windows-doors-context"
+  ],
+  "rendering": [
+   "rendering",
+   "rendering-photo",
+   "rendering-context"
+  ],
+  "groundworks": [
+   "groundworks",
+   "groundworks-photo",
+   "groundworks-context"
+  ],
+  "landscaping": [
+   "landscaping",
+   "landscaping-photo",
+   "landscaping-context"
+  ],
+  "electrics-first-fix": [
+   "electrics-first-fix",
+   "electrics-first-fix-photo",
+   "electrics-first-fix-context"
+  ],
+  "commercial-fit-out": [
+   "commercial-fit-out",
+   "commercial-fit-out-photo",
+   "commercial-fit-out-context"
+  ],
+  "epc": [
+   "epc",
+   "epc-photo",
+   "epc-context"
+  ],
+  "smoke-co-alarms": [
+   "smoke-co-alarms",
+   "smoke-co-alarms-photo",
+   "smoke-co-alarms-context"
+  ],
+  "pat-testing": [
+   "pat-testing",
+   "pat-testing-photo",
+   "pat-testing-context"
+  ],
+  "legionella-risk-assessment": [
+   "legionella-risk-assessment",
+   "legionella-risk-assessment-photo",
+   "legionella-risk-assessment-context"
+  ],
+  "asbestos-survey": [
+   "asbestos-survey",
+   "asbestos-survey-photo",
+   "asbestos-survey-context"
+  ],
+  "building-maintenance-photo": [
+   "building-maintenance-photo",
+   "building-maintenance-photo-photo",
+   "building-maintenance-photo-context"
+  ]
+ }
+}

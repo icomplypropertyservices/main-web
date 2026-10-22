@@ -99,7 +99,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="flex flex-wrap gap-3 shrink-0">
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                class="modern-btn px-6 py-3.5 rounded-2xl text-white font-semibold">
-                <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
             </a>
             <a href="<?= url('/contact.php') ?>"
                class="px-6 py-3.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#ff6b00] hover:text-[#ff6b00] transition">

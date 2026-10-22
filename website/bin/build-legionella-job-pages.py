@@ -25,7 +25,7 @@ SERVICE = "legionella-risk-assessment"
 BANNED = (
     "ukas",
     "£",
-    "fixed-price",
+    "quoted",
     "fixed price",
     "guaranteed legionella",
     "disease-free",

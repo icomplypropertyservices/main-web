@@ -17,6 +17,15 @@ if (function_exists('hubPageVisuals')) {
         $ogImage = (string)$areaHero['src'];
     }
 }
+$engineerRel = '/assets/images/real-job/areas.jpg';
+if (is_file(SITE_ROOT . $engineerRel)) {
+    $areaHero = [
+        'src' => url($engineerRel),
+        'alt' => 'Property compliance engineer with test tools',
+        'fit' => 'cover',
+    ];
+    $ogImage = (string)$areaHero['src'];
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
@@ -138,12 +147,12 @@ $schema = [
                        target="_blank" rel="noopener"
                        class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">WhatsApp</a>
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($allServices) ?></span> core services</div>
                     <div><span class="text-white font-semibold text-xl block">Diary</span> appointments*</div>
-                    <div><span class="text-white font-semibold text-xl block">Fixed-price</span> quotes</div>
+                    <div><span class="text-white font-semibold text-xl block">Quoted</span> quotes</div>
                 </div>
                 <p class="mt-3 text-[11px] text-white/40">*Subject to engineer capacity and site access.</p>
             </div>
@@ -159,7 +168,13 @@ $schema = [
                 <?php endif; ?>
             <div class="grid grid-cols-2 gap-3">
                 <?php
-                $heroCards = array_slice($allServices, 0, 4, true);
+                $heroCardOrder = ['electrical', 'fire-alarms', 'emergency-lighting', 'access-control'];
+                $heroCards = [];
+                foreach ($heroCardOrder as $heroSlug) {
+                    if (isset($allServices[$heroSlug])) {
+                        $heroCards[$heroSlug] = $allServices[$heroSlug];
+                    }
+                }
                 foreach ($heroCards as $slug => $name):
                 ?>
                 <a href="<?= htmlspecialchars(exportedServiceLocalUrl($slug, $AREA, 'area'), ENT_QUOTES, 'UTF-8') ?>"
@@ -188,9 +203,8 @@ $schema = [
                 FRA in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> — <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
-                Suitable and sufficient fire risk assessment for this town. Guide price
-                <?= htmlspecialchars(function_exists('fraGuidePrice') ? fraGuidePrice() : '£350', ENT_QUOTES, 'UTF-8') ?>
-                for a standard FRA. UK mainland coverage. Larger premises are confirmed in writing.
+                Suitable and sufficient fire risk assessment for this town.
+                <?= htmlspecialchars((function_exists('fraFromLine') ? fraFromLine() : 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.'), ENT_QUOTES, 'UTF-8') ?>
             </p>
         </div>
         <a href="<?= htmlspecialchars(url('/pages/fire-risk-assessments/' . $areaSlugVal . '.php'), ENT_QUOTES, 'UTF-8') ?>"
@@ -231,19 +245,16 @@ $schema = [
                 Compliance engineers for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>
             </h2>
             <p class="mt-5 text-lg text-zinc-700 leading-relaxed">
-                Property compliance for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> uses outward codes
-                <strong><?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?></strong>
-                in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
+                Property compliance for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?> uses outward codes <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> in <?= htmlspecialchars($areaProfile['region'], ENT_QUOTES, 'UTF-8') ?>.
                 The buildings we usually see are <?= htmlspecialchars($areaProfile['stock'], ENT_QUOTES, 'UTF-8') ?>.
-                Local priority on this page: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
+                Our local focus: <?= htmlspecialchars($areaProfile['focus'], ENT_QUOTES, 'UTF-8') ?>.
                 Fire alarms, AOV and smoke control, nurse call, and vehicle barriers are covered here.
-                Other trades are indexed when the town is in Greater Manchester.
+                Other trades are covered across Greater Manchester.
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 The office is 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Visits in
                 <?= htmlspecialchars($areaProfile['districts'], ENT_QUOTES, 'UTF-8') ?> are diary-booked.
-                Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
-                We do not print a NICEIC or Gas Safe registration number on this town page.
+                Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
             </p>
         </div>
         <?php require_once SITE_ROOT . '/includes/town-depth.php'; $areaHasGeo = townDepthGeo(areaSlug($AREA)) !== null; ?>
@@ -252,7 +263,7 @@ $schema = [
             <?php if (!$areaHasGeo): ?>
             <p class="mt-3 text-white/80">Combine EICR, fire alarms and emergency lighting into one visit schedule for landlords and FM teams in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.</p>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fixed-price multi-service quotes</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Quoted multi-service quotes</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Full documentation for audits &amp; insurers</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Maintenance contracts available</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> WhatsApp, phone or form — send the postcode to start a quote</li>
@@ -304,7 +315,7 @@ echo icomplyTownDeepHtml(areaSlug($AREA), $AREA, 'property compliance', 'propert
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Services in <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Everything we do locally</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is fixed and written. Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Every service has a page for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?>. Every quote is a free written quote. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service hubs →</a>
         </div>
@@ -408,7 +419,7 @@ echo icomplyQualityBarFaqHtml(
                target="_blank" rel="noopener"
                class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp for <?= htmlspecialchars($AREA, ENT_QUOTES, 'UTF-8') ?></a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -463,4 +474,8 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         </form>
     </div>
 </section>
-<?php require SITE_ROOT . '/includes/footer.php'; ?>
+<?php
+require_once SITE_ROOT . '/includes/upgrade-orphan-links.php';
+echo icomplyUpgradeOrphanLinksForTown((string)($AREA_SLUG ?? ''));
+require SITE_ROOT . '/includes/footer.php';
+?>

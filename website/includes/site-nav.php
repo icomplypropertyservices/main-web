@@ -118,7 +118,7 @@ function icomplyNavCatalog(): array
             ['href' => url('/sitemap.xml'), 'label' => 'XML sitemap'],
         ],
         'home' => rtrim(SITE_URL, '/') . '/',
-        'phone' => defined('PHONE') ? PHONE : '',
+        'phone' => function_exists('icomplyPhoneDisplay') ? icomplyPhoneDisplay() : (defined('PHONE') ? PHONE : ''),
         'phoneHref' => 'tel:' . preg_replace('/\s+/', '', defined('PHONE') ? PHONE : ''),
         'whatsapp' => defined('WHATSAPP') ? WHATSAPP : '',
         'email' => defined('EMAIL') ? EMAIL : '',

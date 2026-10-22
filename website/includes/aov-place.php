@@ -86,7 +86,7 @@ function aovPlaceIntro(array $t): string
     $seed = crc32($name . '|' . $nation);
     $lead = [
         "{$name} ({$region}, {$nation}) has a published usual-resident population of {$pop} in {$year}. Source: {$source}. That figure is residents, not a count of blocks with smoke vents.",
-        "For smoke-vent quotes in {$name} we start from the published geography: {$region}, {$nation}, {$pop} usual residents in {$year} ({$source}). We do not invent a local depot to match the place name.",
+        "For smoke-vent quotes in {$name} we start from the published geography: {$region}, {$nation}, {$pop} usual residents in {$year} ({$source}). ",
         "{$pop} people were the published usual residents of {$name} in {$year}. The place sits in {$region}, {$nation}. The source line is {$source}.",
     ][$seed % 3];
 

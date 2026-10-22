@@ -43,10 +43,10 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "GBP",
-        "url": "<?= url('/contact.php') ?>"
+        "url": "<?= url('/contact.php') ?>",
+        "itemOffered": {"@type": "Service", "name": "{{SERVICE_NAME}} in {{AREA}}", "areaServed": "{{AREA}}"}
       },
       "brand": {"@type": "Brand", "name": <?= json_encode(SITE_NAME) ?>}
     },
@@ -78,7 +78,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 1 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        iComply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver fixed-price quotes, appointments booked when the diary allows, and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
+        iComply Property Services provides complete <strong>nurse call system</strong> design, installation, commissioning, maintenance and certification across <strong>{{AREA}}</strong> and the wider North West. Our engineers deliver written quotes, appointments booked when the diary allows, and full HTM 08-03 compliant documentation for care homes, hospitals and assisted living facilities.
     </p>
 
     <!-- PARAGRAPH 2 -->

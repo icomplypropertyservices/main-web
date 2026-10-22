@@ -63,6 +63,41 @@ function icomplyLocalTownSlug(string $areaOrSlug): bool
     return $slug !== '' && isset($set[$slug]);
 }
 
+/**
+ * True when a service×town URL is actually published.
+ * Fire-family services use the mainland list. Every other service stays on the 269 dual-ring towns.
+ */
+function icomplyTownPublishedForService(string $serviceSlug, string $areaOrSlug): bool
+{
+    $slug = function_exists('areaSlug') ? areaSlug($areaOrSlug) : strtolower(trim($areaOrSlug));
+    if ($slug === '') {
+        return false;
+    }
+    if (function_exists('serviceOwnsMainlandAreas') && serviceOwnsMainlandAreas($serviceSlug)) {
+        static $mainland = null;
+        if ($mainland === null) {
+            $mainland = [];
+            if (function_exists('getMainlandAreaRecords')) {
+                foreach (getMainlandAreaRecords() as $row) {
+                    if (!is_array($row)) {
+                        continue;
+                    }
+                    $name = (string)($row['name'] ?? '');
+                    if ($name === '') {
+                        continue;
+                    }
+                    $mainland[function_exists('areaSlug') ? areaSlug($name) : strtolower($name)] = true;
+                }
+            }
+        }
+        if ($serviceSlug === 'aov-air-handling') {
+            return isset($mainland[$slug]);
+        }
+        return isset($mainland[$slug]) || icomplyLocalTownSlug($slug);
+    }
+    return icomplyLocalTownSlug($slug);
+}
+
 function icomplyLocalTownName(string $areaOrSlug): ?string
 {
     static $names = null;
@@ -157,6 +192,23 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyLocalTownSlug($m[1]) ? null : '/pages/areas';
+    }
+    if (preg_match('#^/pages/aov-air-handling/([a-z0-9\-]+)$#', $path, $m)) {
+        $built = false;
+        if (function_exists('getMainlandAreaRecords')) {
+            foreach (getMainlandAreaRecords() as $row) {
+                if (!is_array($row)) {
+                    continue;
+                }
+                $name = (string)($row['name'] ?? '');
+                $rowSlug = function_exists('areaSlug') ? areaSlug($name) : strtolower($name);
+                if ($rowSlug === $m[1]) {
+                    $built = true;
+                    break;
+                }
+            }
+        }
+        return $built ? null : '/pages/services/aov-air-handling';
     }
     if (icomplyNationwideTownPath($path)) {
         return null;

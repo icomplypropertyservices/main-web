@@ -1,4 +1,29 @@
 <?php
+
+if (!function_exists('icomplyKeywordImagePath')) {
+    /**
+     * 2026-10-20: keyword hero image that exists on disk. Some keywords had no
+     * /assets/images/keywords/{slug}.jpg, so pages pointed at a missing file.
+     */
+    function icomplyKeywordImagePath(string $slug, string $serviceSlug = ''): string
+    {
+        unset($serviceSlug);
+        $root = defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__);
+        if (!function_exists('icomplyImagePick')) {
+            $pool = $root . '/includes/image-pool.php';
+            if (is_file($pool)) {
+                require_once $pool;
+            }
+        }
+        if (function_exists('icomplyImagePick')) {
+            $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, icomplyPageImageKey('/pages/keywords/' . $slug), 1)[0] ?? '');
+            if ($rel !== '' && is_file($root . $rel)) {
+                return $rel;
+            }
+        }
+        return '/assets/images/real-job/directory-hub.jpg';
+    }
+}
 /**
  * Runtime page renderer — single source of truth for combo / keyword / area hubs.
  *
@@ -12,7 +37,7 @@ require_once __DIR__ . '/access-control-nationwide.php';
 if (!function_exists('shopifyCardFromManufacturerProduct')) {
     /**
      * Used when includes/shopify.php is still the placeholder and has no card helper.
-     * No prices are invented.
+
      */
     function shopifyCardFromManufacturerProduct(array $product, string $brandSlug, string $brandName): string
     {
@@ -172,12 +197,12 @@ function keywordTemplatePlaceholders(
     }
     $intro = (string)($meta['intro'] ?? "Professional {$name} from iComply Property Services across the North West.");
     $body = (string)($meta['body'] ?? "We install, service and certify {$name} as part of our {$serviceName} range for landlords, FM teams and commercial sites.");
-    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Fixed-price quotes. Local engineers.");
+    $metaDesc = (string)($meta['meta_desc'] ?? "{$name} across Greater Manchester & the North West. Written quotes. Local engineers.");
     $seoKw = (string)($meta['seo_keywords'] ?? getSeoKeywords($serviceSlug, $areaName));
 
     $focusHtml = '';
     $points = $meta['focus_points'] ?? [
-        "Survey and fixed-price quote for {$name}",
+        "Survey and written quote for {$name}",
         'Local North West engineers from Stockport',
         'Testing and compliance documentation',
         "Manufacturer-aware {$serviceName} support",
@@ -211,7 +236,7 @@ function keywordTemplatePlaceholders(
         $q = htmlspecialchars((string)$faq[0], ENT_QUOTES, 'UTF-8');
         $a = htmlspecialchars((string)$faq[1], ENT_QUOTES, 'UTF-8');
         $faqHtml .= '<details class="bg-white border-2 border-zinc-300 rounded-2xl p-5 group">'
-            . '<summary class="font-bold text-[#061828] cursor-pointer list-none flex justify-between gap-3">'
+            . '<summary class="font-bold text-[#0B1F3A] cursor-pointer list-none flex justify-between gap-3">'
             . $q . '<span class="text-[#ff6b00] text-xl leading-none">+</span></summary>'
             . '<p class="mt-3 text-sm text-zinc-900 leading-relaxed font-medium">' . $a . '</p></details>';
     }
@@ -238,7 +263,7 @@ function keywordTemplatePlaceholders(
             'mainEntity' => $faqEntities,
         ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    $kwImg = url('/assets/images/keywords/' . $slug . '.jpg');
+    $kwImg = url(icomplyKeywordImagePath($slug, (string)$serviceSlug));
     $svcImg = url('/assets/images/services/' . $serviceSlug . '.jpg');
     $inlineImg = $kwImg;
     if (function_exists('icomplyNationwide3lineIsP0') && icomplyNationwide3lineIsP0($slug)) {
@@ -443,7 +468,29 @@ function renderManufacturerPage(string $mfrSlug): void {
     if (!$products) {
         $productsHtml = '<p class="text-zinc-600 col-span-full">Contact us for ' . htmlspecialchars($entry['name'], ENT_QUOTES, 'UTF-8') . ' pricing and availability, or <a class="text-[#ff6b00] font-semibold" href="' . htmlspecialchars(url('/shop/index.php'), ENT_QUOTES, 'UTF-8') . '">browse the shop</a>.</p>';
     } else {
-        foreach ($products as $p) {
+        foreach ($products as $productIndex => $p) {
+            $brandServices = array_values($entry['services'] ?? []);
+            $cardService = $brandServices[$productIndex % max(1, count($brandServices))] ?? '';
+            $perService = '/assets/images/manufacturers/' . $entry['slug'] . '--' . $cardService . '.jpg';
+            $perIndexed = '/assets/images/manufacturers/' . $entry['slug'] . '--' . $cardService . '-' . ($productIndex + 1) . '.jpg';
+            if ($cardService !== '' && is_file(SITE_ROOT . $perIndexed)) {
+                $p['image'] = $perIndexed;
+            } elseif ($cardService !== '' && is_file(SITE_ROOT . $perService)) {
+                $p['image'] = $perService;
+            } else {
+                $current = (string)($p['image'] ?? '');
+                $currentPath = (string)(parse_url($current, PHP_URL_PATH) ?: $current);
+                $currentRel = '/' . ltrim($currentPath, '/');
+                $currentIsPhoto = $currentRel !== '/'
+                    && is_file(SITE_ROOT . $currentRel)
+                    && (bool)preg_match('/\.jpe?g$/i', $currentRel);
+                if (!$currentIsPhoto && $cardService !== '') {
+                    $familyPhoto = manufacturerFamilyPhoto($cardService);
+                    if ($familyPhoto !== '') {
+                        $p['image'] = $familyPhoto;
+                    }
+                }
+            }
             $productsHtml .= shopifyCardFromManufacturerProduct($p, $entry['slug'], $entry['name']);
         }
     }

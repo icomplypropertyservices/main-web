@@ -81,7 +81,7 @@ require SITE_ROOT . '/includes/header.php';
                 <a href="<?= url('/pages/keywords/rising-arm-barrier.php') ?>" class="text-[#ff6b00] hover:underline">rising arm barriers</a>
                 or the <a href="<?= url('/pages/jobs/came-gard-gt4') ?>" class="text-[#ff6b00] hover:underline">CAME Gard GT4</a> page.
                 Manchester and Burnley are covered from Stockport on that job.
-                Phone <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>.
+                Phone <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.
             </p>
         </div>
 
@@ -183,7 +183,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="border border-white/40 px-8 py-3.5 rounded-2xl font-semibold hover:bg-white/10">WhatsApp us</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-               class="border border-white/40 px-8 py-3.5 rounded-2xl font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="border border-white/40 px-8 py-3.5 rounded-2xl font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 

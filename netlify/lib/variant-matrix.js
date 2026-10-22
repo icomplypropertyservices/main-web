@@ -1,4 +1,5 @@
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
+import { heroCta } from "./hero-cta.js";
 /**
  * Decode the compact keyword-variant catalogue written by
  * website/includes/keyword-variants.php. Stem is the fastest radix so every
@@ -36,12 +37,12 @@ function titleCaseSlug(slug) {
 
 function clampMeta(text) {
   const clean = String(text).replace(/\s+/g, " ").trim();
-  if (clean.length <= 158 && clean.length >= 40) return clean;
+  if (clean.length <= 155 && clean.length >= 40) return clean;
   if (clean.length < 40) {
-    return `${clean} Price on application for Greater Manchester.`.slice(0, 158);
+    return `${clean} Written quote for Greater Manchester. Call 07517 806082.`.slice(0, 155);
   }
-  const cut = clean.slice(0, 158).replace(/\s+\S*$/, "");
-  return cut.length >= 40 ? cut : clean.slice(0, 158);
+  const cut = clean.slice(0, 155).replace(/\s+\S*$/, "");
+  return cut.length >= 40 ? cut : clean.slice(0, 155);
 }
 
 function jsonLd(value) {
@@ -207,7 +208,7 @@ function localSentences(place, parsed) {
   const focus = place.focus || name;
   return [
     `${name} is covered from Stockport for ${subject}. The building stock is ${stock}.`,
-    `${name} outward codes on this page are ${districts}. ${subject} for ${aud} uses that place, not a UK-wide script.`,
+    `${subject} for ${aud} uses that place, not a UK-wide script.`,
     `${focus} is the local note for ${name}. ${mod} does not move the address outside Greater Manchester.`,
     `${service} in ${name} follows the ${scope} scope. ${districts} is how this ${name} page is told apart from the next town.`,
     `${intent} is the request type for ${subject} in ${name}. The ${stock} can change access, so the visit is quoted after the scope.`,
@@ -262,7 +263,7 @@ function pageHtml(options) {
       `Published variant pages use a double hyphen in the keyword slug and a Greater Manchester town.`,
       `iComply arranges the visit from the Stockport office. The figure is agreed after the building is seen.`,
       `Say which building in ${placeName} you mean and what the visit has to cover.`,
-      `There is no price list on this page. Cheap, emergency and next day are enquiry types on the published variants, not a published rate.`,
+      ` Cheap, emergency and next day are enquiry types on the published variants, not a published rate.`,
       `${placeName} stays on the Greater Manchester list when the town is one of the published area pages.`,
     ];
   const extras = [
@@ -311,7 +312,7 @@ function pageHtml(options) {
   const faqs = [
     [`Do you cover ${placeName} for ${subject}?`, `Yes, where ${placeName} is in Greater Manchester. The quote is price on application once the building and the ${scope.label} scope are known.`],
     [`Who carries out ${subject} in ${placeName}?`, gas ? GAS_SENTENCE : `The ${placeName} visit is scoped to the building named on the enquiry. The figure follows that scope.`],
-    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "" : "No fixed price is published for this visit."}`],
+    [`How is ${subject} priced in ${placeName}?`, `The quote is price on application. ${modifier.slug === "cheap" ? "" : "Price on application for this visit."}`],
   ];
   const schema = {
     "@context": "https://schema.org",
@@ -359,7 +360,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(h1)}</h1>${heroCta(h1)}
 <figure>
 <img src="${imageSrc}" alt="${escapeHtml(imageAlt)}" width="1400" height="900">
 </figure>

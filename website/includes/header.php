@@ -15,18 +15,38 @@ if (!empty($metaTitleExact)) {
 } else {
     $documentTitle = $hasBrandInTitle ? $rawPageTitle : ($rawPageTitle . ' | iComply Property Services');
 }
+if (!function_exists('icomplyCapPlain')) {
+    function icomplyCapPlain(string $text, int $max): string
+    {
+        $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
+        $len = function_exists('mb_strlen') ? mb_strlen($text) : strlen($text);
+        if ($len <= $max) {
+            return $text;
+        }
+        $cut = function_exists('mb_substr') ? mb_substr($text, 0, $max) : substr($text, 0, $max);
+        $sp = function_exists('mb_strrpos') ? mb_strrpos($cut, ' ') : strrpos($cut, ' ');
+        if ($sp !== false && $sp > (int)($max * 0.55)) {
+            $cut = function_exists('mb_substr') ? mb_substr($cut, 0, $sp) : substr($cut, 0, $sp);
+        }
+        return rtrim($cut, " .,;:-");
+    }
+}
+$documentTitle = icomplyCapPlain($documentTitle, 60);
 $pageTitleSafe = htmlspecialchars($documentTitle, ENT_QUOTES, 'UTF-8');
 $ogTitleRaw = trim((string)($ogTitle ?? ''));
 if ($ogTitleRaw === '') {
-    $ogTitleRaw = $rawPageTitle;
+    $ogTitleRaw = $documentTitle;
 }
+$ogTitleRaw = icomplyCapPlain($ogTitleRaw, 60);
 $ogTitleSafe = htmlspecialchars($ogTitleRaw, ENT_QUOTES, 'UTF-8');
-$metaDescRaw = $metaDesc ?? 'iComply Property Services — property maintenance and compliance across Greater Manchester and the North West: EICR, gas, fire, kitchens, renovations, CCTV, Legionella and asbestos. Offerton, Stockport SK2 5DE.';
+$metaDescRaw = $metaDesc ?? 'Property maintenance and compliance from Stockport. Call 07517 806082 for a written quote.';
+$metaDescRaw = icomplyCapPlain((string)$metaDescRaw, 155);
 $metaDescSafe = htmlspecialchars($metaDescRaw, ENT_QUOTES, 'UTF-8');
 $ogDescRaw = trim((string)($ogDescription ?? ''));
 if ($ogDescRaw === '') {
     $ogDescRaw = $metaDescRaw;
 }
+$ogDescRaw = icomplyCapPlain($ogDescRaw, 155);
 $ogDescSafe = htmlspecialchars($ogDescRaw, ENT_QUOTES, 'UTF-8');
 $metaKeywordsSafe = htmlspecialchars(
     $metaKeywords ?? 'property maintenance, landlord compliance, EICR, gas safety, fire risk assessment, kitchens, renovations, CCTV, legionella, asbestos, Stockport, Manchester',
@@ -92,11 +112,15 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         $ogImage = 'https://' . substr($ogImage, 7);
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
-    $ogAltSafe = htmlspecialchars(
-        $ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West'),
-        ENT_QUOTES,
+    $ogAltRaw = html_entity_decode(
+        (string)($ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West')),
+        ENT_QUOTES | ENT_HTML5,
         'UTF-8'
     );
+    if (str_contains($ogAltRaw, '&amp;')) {
+        $ogAltRaw = html_entity_decode($ogAltRaw, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
+    $ogAltSafe = htmlspecialchars($ogAltRaw, ENT_QUOTES, 'UTF-8');
     ?>
     <meta property="og:image" content="<?= $ogImageSafe ?>">
     <meta property="og:image:secure_url" content="<?= $ogImageSafe ?>">
@@ -160,6 +184,16 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        // Consent Mode v2: everything denied until the visitor accepts. Set
+        // before any Google tag so no tag on the page (including a host-level
+        // injected snippet) can store cookies or send identified hits first.
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            wait_for_update: 500
+        });
         window.__icomplyAnalytics = {
             ga: <?= json_encode($gaId) ?>,
             aw: <?= json_encode($awId) ?>,
@@ -167,6 +201,12 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
             load: function () {
                 if (window.__icomplyAnalyticsLoaded) return;
                 window.__icomplyAnalyticsLoaded = true;
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
                 if (this.gtm) {
                     var gtmS = document.createElement('script');
                     gtmS.async = true;

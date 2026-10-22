@@ -60,7 +60,7 @@ require SITE_ROOT . '/includes/header.php';
             </a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">
-                Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
             </a>
             <a href="<?= url('/contact.php') ?>"
                class="px-8 py-4 rounded-2xl border border-white/40 font-semibold hover:bg-white/10">
@@ -85,7 +85,7 @@ require SITE_ROOT . '/includes/header.php';
             $steps = [
                 ['1', 'We review your request', 'Service, postcode and details you sent — no spam, just a clear scope.'],
                 ['2', 'We contact you', 'By phone or email after we have read the enquiry.'],
-                ['3', 'Fixed-price quote', 'Clear price after scope is agreed, then we book engineers.'],
+                ['3', 'Written quote', 'Clear price after scope is agreed, then we book engineers.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
             <div class="bg-zinc-50 border rounded-3xl p-6 text-center">
@@ -114,7 +114,7 @@ require SITE_ROOT . '/includes/header.php';
         <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
            class="group block bg-white border rounded-3xl p-8 hover:border-[#ff6b00] transition shadow-sm">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold mb-2">Speak to us</div>
-            <h2 class="text-2xl font-semibold text-black group-hover:text-[#ff6b00]">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></h2>
+            <h2 class="text-2xl font-semibold text-black group-hover:text-[#ff6b00]">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></h2>
             <p class="mt-3 text-zinc-600 text-sm">Mon–Fri 08:00–18:00. Based in Stockport, covering the North West.</p>
             <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-2xl modern-btn text-white font-semibold text-sm">
                 Tap to call →

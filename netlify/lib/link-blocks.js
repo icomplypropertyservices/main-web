@@ -18,8 +18,17 @@
  * files are not guessed here (some GM localities 404 on those templates).
  */
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
+import areasMainland from "../../website/data/areas-mainland.json" with { type: "json" };
+import { BOROUGH_GEO } from "./town-depth.js";
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
+import { spokenPlace, spokenSubject } from "./spoken-subject.js";
+
+function mainlandAreaSlug(name) {
+  return String(name || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+const AOV_BUILT = new Set((Array.isArray(areasMainland) ? areasMainland : []).map((row) => mainlandAreaSlug(row && row.name)).filter(Boolean));
 
 const GM_TOWNS = [
   ["altrincham", "Altrincham"],
@@ -117,9 +126,7 @@ const CLUSTERS = [
 ];
 
 const HUB_SKIP = new Set([
-  "air-source-heat-pumps-service-agreement",
   "loft-conversion-fixed-price-package",
-  "bs-5306-extinguisher-service-cost",
 ]);
 
 const RESERVED = new Set([
@@ -147,6 +154,24 @@ export function isLocalTown(slug) {
 
 export function gmTownName(slug) {
   return GM_NAME[slug] || "";
+}
+
+function nearestPlaceSlugs(townSlug, places, limit = 8) {
+  const here = townCoords[townSlug];
+  if (!Array.isArray(here) || !places) return [];
+  return Object.keys(places)
+    .filter((slug) => slug !== townSlug && places[slug] && places[slug].name && Array.isArray(townCoords[slug]))
+    .map((slug) => ({
+      slug,
+      name: places[slug].name,
+      miles: milesApart(
+        { lat: here[0], lng: here[1] },
+        { lat: townCoords[slug][0], lng: townCoords[slug][1] },
+      ),
+    }))
+    .filter((row) => row.miles <= 12)
+    .sort((a, b) => a.miles - b.miles)
+    .slice(0, limit);
 }
 
 export function adjacentGmSlugs(townSlug, limit = 12) {
@@ -238,7 +263,7 @@ function leafHref(kind, ids, townSlug) {
  */
 const LEAN_COVERAGE = 24;
 function geoOf(slug) {
-  const g = townGeo[slug];
+  const g = townGeo[slug] || BOROUGH_GEO[slug];
   return g && Number.isFinite(g[5]) && Number.isFinite(g[6]) ? { lat: g[5], lng: g[6] } : null;
 }
 function milesApart(a, b) {
@@ -259,10 +284,16 @@ function nearestSlice(items, townSlug, size) {
     .map((row) => row[2]);
 }
 
+function spokenLinkLabel(slug, name, townName = "") {
+  const spoken = spokenSubject(slug, name);
+  const place = spokenPlace(townName);
+  return place ? `${spoken} in ${place}` : spoken;
+}
+
 export function matrixRelatedHtml(catalogue, identity) {
   const kind = identity.kind || "service";
   const townSlug = identity.townSlug || "";
-  const townName = identity.townName || gmTownName(townSlug) || "Greater Manchester";
+  const townName = spokenPlace(identity.townName || gmTownName(townSlug) || "Greater Manchester");
   const subject = identity.subject || "This work";
   const serviceSlug = identity.serviceSlug || "";
   const serviceName = identity.serviceName || serviceLabel(catalogue, serviceSlug) || "Property services";
@@ -277,7 +308,7 @@ export function matrixRelatedHtml(catalogue, identity) {
   const parents = [];
   if (kind === "keyword" || kind === "variant") {
     parents.push({ href: `/pages/keywords/${identity.keyword}`, label: `${subject} guide` });
-    parents.push({ href: "/pages/keywords", label: "All keyword guides" });
+    parents.push({ href: "/pages/keywords", label: "All service guides" });
   } else if (kind === "job") {
     parents.push({ href: `/pages/jobs/${identity.job}`, label: `${subject}` });
     parents.push({ href: "/pages/jobs", label: "All job types" });
@@ -299,14 +330,19 @@ export function matrixRelatedHtml(catalogue, identity) {
   parents.push({ href: "/pages/areas", label: "Greater Manchester areas" });
 
   const sameTown = [];
-  if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant") {
+  // P2-20-5 (2026-10-20): manufacturer x town pages also link the related services in
+  // the same town, so thinner brand catalogues (ABB, Allegion, CDVI...) clear 80 links.
+  if (kind === "service" || kind === "keyword" || kind === "job" || kind === "variant" || kind === "manufacturer") {
     // CLOSE-Q8: lean town pages link every related service in the same town (16), not 8.
     for (const slug of relatedServiceSlugs(catalogue, serviceSlug, identity.lean ? 16 : 8)) {
       const name = serviceLabel(catalogue, slug);
       // Service×town pages outside the dual-ring towns 301 (or are not
       // exported), so never link them from a town page.
       if (!name || !townSlug || !isLocalTown(townSlug)) continue;
-      sameTown.push({ href: `/pages/${slug}/${townSlug}`, label: `${name} in ${townName}` });
+      const href = slug === "aov-air-handling" && !AOV_BUILT.has(townSlug)
+        ? "/pages/services/aov-air-handling"
+        : `/pages/${slug}/${townSlug}`;
+      sameTown.push({ href, label: `${name} in ${townName}` });
     }
   }
   if (kind === "keyword" || kind === "variant") {
@@ -316,14 +352,14 @@ export function matrixRelatedHtml(catalogue, identity) {
       if (!townSlug) continue;
       sameTown.push({
         href: `/pages/keywords/${slug}/${townSlug}`,
-        label: `${keywords[slug].name} in ${townName}`,
+        label: spokenLinkLabel(slug, keywords[slug].name, townName),
       });
     }
   }
   if (kind === "job") {
     for (const [slug, job] of Object.entries(jobs)) {
       if (slug === identity.job || !job || job.service !== serviceSlug || !townSlug) continue;
-      sameTown.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
+      sameTown.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: spokenLinkLabel(slug, job.name, townName) });
       if (sameTown.length >= 8) break;
     }
   }
@@ -337,16 +373,23 @@ export function matrixRelatedHtml(catalogue, identity) {
 
   const nearby = [];
   const coverage = [];
-  const nearSet = new Set(adjacentGmSlugs(townSlug, 12));
+  const distanceNear = nearestPlaceSlugs(townSlug, catalogue.places || {}, 8);
+  for (const town of distanceNear) {
+    nearby.push({
+      href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
+      label: `${subject} in ${spokenPlace(town.name)}`,
+      slug: town.slug,
+    });
+  }
+  const nearSet = new Set(distanceNear.map((town) => town.slug));
   for (const town of gmTowns) {
     if (!town.slug || town.slug === townSlug) continue;
     const item = {
       href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
-      label: `${subject} in ${town.name}`,
+      label: `${subject} in ${spokenPlace(town.name)}`,
       slug: town.slug,
     };
-    if (nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
-    else coverage.push(item);
+    if (!nearSet.has(town.slug)) coverage.push(item);
   }
 
   const cross = [];
@@ -355,10 +398,10 @@ export function matrixRelatedHtml(catalogue, identity) {
     const row = keywords[slug];
     if (!row) continue;
     if (!HUB_SKIP.has(slug)) {
-      cross.push({ href: `/pages/keywords/${slug}`, label: row.name });
+      cross.push({ href: `/pages/keywords/${slug}`, label: spokenLinkLabel(slug, row.name) });
     }
     if (townSlug && isLocalTown(townSlug) && kind !== "keyword" && kind !== "variant") {
-      cross.push({ href: `/pages/keywords/${slug}/${townSlug}`, label: `${row.name} in ${townName}` });
+      cross.push({ href: `/pages/keywords/${slug}/${townSlug}`, label: spokenLinkLabel(slug, row.name, townName) });
     }
   }
   const jobEntries = Object.entries(jobs).filter(([, job]) => job && job.service === serviceSlug);
@@ -366,8 +409,8 @@ export function matrixRelatedHtml(catalogue, identity) {
   const jobList = (jobEntries.length ? jobEntries : jobFallback).slice(0, 4);
   for (const [slug, job] of jobList) {
     if (kind === "job" && slug === identity.job) continue;
-    cross.push({ href: `/pages/jobs/${slug}`, label: job.name });
-    if (townSlug && isLocalTown(townSlug)) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: `${job.name} in ${townName}` });
+    cross.push({ href: `/pages/jobs/${slug}`, label: spokenLinkLabel(slug, job.name) });
+    if (townSlug && isLocalTown(townSlug)) cross.push({ href: `/pages/jobs/${slug}/${townSlug}`, label: spokenLinkLabel(slug, job.name, townName) });
   }
   if (kind !== "job") cross.push({ href: "/pages/jobs", label: "Job types" });
 
@@ -411,11 +454,15 @@ export function matrixRelatedHtml(catalogue, identity) {
 }
 
 export function breadcrumbHtml(items) {
-  const parts = items.filter((item) => item && item.label).map((item, index) => {
-    if (!item.href || index === items.length - 1) {
-      return `<span>${escapeHtml(item.label)}</span>`;
-    }
-    return `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`;
+  const list = items.filter((item) => item && item.label);
+  const parts = list.map((item, index) => {
+    const name = escapeHtml(item.label);
+    const last = index === list.length - 1;
+    const href = item.href && !last ? escapeHtml(item.href) : "";
+    const body = href
+      ? `<a itemprop="item" href="${href}"><span itemprop="name">${name}</span></a>`
+      : `<span itemprop="name">${name}</span>`;
+    return `<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">${body}<meta itemprop="position" content="${index + 1}"></li>`;
   });
-  return `<nav aria-label="Breadcrumb">${parts.join(" / ")}</nav>`;
+  return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol itemscope itemtype="https://schema.org/BreadcrumbList">${parts.join("")}</ol></nav>`;
 }

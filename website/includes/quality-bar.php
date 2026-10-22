@@ -212,11 +212,17 @@ function icomplyQualityBarHash(string $value): int
     return $h;
 }
 
+function icomplyQualityBarArticle(string $subject): string
+{
+    return preg_match('/^[aeiou]/i', trim($subject)) ? 'an' : 'a';
+}
+
 function icomplyQualityBarFill(string $template, array $ctx): string
 {
-    return strtr($template, [
+    $subject = (string)($ctx['subject'] ?? '');
+    $text = strtr($template, [
         '{place}' => (string)($ctx['place'] ?? ''),
-        '{subject}' => (string)($ctx['subject'] ?? ''),
+        '{subject}' => $subject,
         '{service}' => (string)($ctx['service'] ?? ''),
         '{audience}' => (string)($ctx['audience'] ?? 'landlords'),
         '{visit}' => (string)($ctx['visit'] ?? 'a planned daytime visit'),
@@ -224,7 +230,29 @@ function icomplyQualityBarFill(string $template, array $ctx): string
         '{housing}' => (string)($ctx['housing'] ?? ''),
         '{industry}' => (string)($ctx['industry'] ?? ''),
         '{pop}' => (string)($ctx['pop'] ?? ''),
+        '{article}' => icomplyQualityBarArticle($subject),
     ]);
+    $service = (string)($ctx['service'] ?? '');
+    $hand = in_array($service, ['demolition', 'driveways', 'fencing', 'drainage'], true)
+        || preg_match('/\b(demolition|driveways|fencing|drainage)\b/i', $subject);
+    if (!$hand) {
+        return $text;
+    }
+    return str_replace(
+        [
+            'Certificates are emailed to you.',
+            'Certificates are emailed',
+            'your certificate or report',
+            'You get the certificate or report issued',
+        ],
+        [
+            'The written quote is emailed to you.',
+            'The written quote is emailed',
+            'your written quote',
+            'You get the written notes',
+        ],
+        $text
+    );
 }
 
 /**
@@ -257,7 +285,21 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
             $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill($raw, $ctx)) . '</p>';
         }
     }
-    if (!$short) {
+    // Fire-family pages without town facts carry their own depth section, so keep a
+    // seeded 8 of the 24 bank paragraphs; the full set repeats word for word across towns.
+    $cap = (int)($ctx['bankCap'] ?? 0);
+    if ($cap > 0) {
+        $head = ($blurb !== '') ? [array_shift($parts)] : [];
+        $keyed = [];
+        foreach ($parts as $i => $html) {
+            $keyed[$i] = hexdec(substr(md5($seed . '#' . $i), 0, 7));
+        }
+        asort($keyed);
+        $keep = array_slice(array_keys($keyed), 0, $cap);
+        sort($keep);
+        $parts = array_merge($head, array_map(static fn($i) => $parts[$i], $keep));
+    }
+    if (!$short && $cap === 0) {
         $parts[] = '<p>' . icomplyQualityBarH(icomplyQualityBarFill(
             '{pop} {housing} {industry} Places named alongside {place} include {near}.',
             $ctx
@@ -282,40 +324,56 @@ function icomplyQualityBarThinProseHtml(string $kind, array $ctx): string
  *
  * @return array{html:string,hero:string,og:string}
  */
+/** @return array{0:string,1:string} two extra photos from the slug's own image family */
+function icomplyServiceImageFamilyPicks(string $slug, int $seed): array
+{
+    static $fams = null;
+    if ($fams === null) {
+        $doc = json_decode((string)@file_get_contents(SITE_ROOT . '/data/service-image-families.json'), true);
+        $fams = is_array($doc['families'] ?? null) ? $doc['families'] : ['building' => ['building-maintenance', 'renovation', 'plastering']];
+    }
+    $fam = $fams['building'] ?? [];
+    foreach ($fams as $list) {
+        if (in_array($slug, $list, true)) { $fam = $list; break; }
+    }
+    // Only this service's own photos. A shared family file becomes one image
+    // across unrelated services once the optimiser hashes the bytes.
+    unset($seed);
+    return [$slug, $slug];
+}
+
 function icomplyQualityBarImages(string $serviceSlug, string $altPrefix, string $slot = 'q2-content-images'): array
 {
-    $photo = [
-        'access-control', 'aov-air-handling', 'cctv', 'door-entry', 'electrical',
-        'emergency-lighting', 'fire-alarms', 'fire-risk-assessments', 'gas-systems',
-        'intercoms', 'intruder-alarm', 'nurse-call',
-    ];
-    $pool = [
-        'building-maintenance', 'fire-alarms', 'electrical', 'cctv',
-        'access-control', 'emergency-lighting', 'gas-systems', 'door-entry',
-    ];
+    // Jack 20 Oct: only photos from the page's own service family (website/data/service-image-families.json).
     $slug = $serviceSlug !== '' ? $serviceSlug : 'fire-alarms';
-    $primary = '/assets/images/services/' . $slug . '.jpg';
-    $second = in_array($slug, $photo, true)
-        ? '/assets/images/services/' . $slug . '-photo.jpg'
-        : '/assets/images/services/' . $pool[abs(crc32($slug)) % count($pool)] . '.jpg';
-    if ($second === $primary) {
-        $second = '/assets/images/services/building-maintenance.jpg';
+    if (!function_exists('icomplyImagePick')) {
+        require_once __DIR__ . '/image-pool.php';
     }
-    $third = '/assets/images/services/' . $pool[(abs(crc32($slug)) + 3) % count($pool)] . '.jpg';
-    if ($third === $primary || $third === $second) {
-        $third = '/assets/images/services/cctv.jpg';
-    }
-    if ($third === $primary || $third === $second) {
-        $third = '/assets/images/services/electrical.jpg';
-    }
+    $family = $slug === 'aov' ? 'aov-air-handling' : $slug;
+    $picks = icomplyImagePick($altPrefix . '|' . $family, $family, 3);
+    $primary = $family === 'aov-air-handling' ? $picks[0] : '/assets/images/services/' . $slug . '.jpg';
+    $second = $picks[1] ?? $primary;
+    $third = $picks[2] ?? $second;
+    $creditFor = static function (string $src): string {
+        if (!function_exists('icomplyQualityFloorCreditName')) {
+            require_once __DIR__ . '/quality-floor.php';
+        }
+        return function_exists('icomplyQualityFloorCreditName')
+            ? icomplyQualityFloorCreditName($src)
+            : '';
+    };
     $src = static function (string $path): string {
         return function_exists('url') ? url($path) : $path;
     };
     $h = 'icomplyQualityBarH';
+    $creditAttr = static function (string $file) use ($creditFor, $h): string {
+        $name = $creditFor($file);
+        return $name !== '' ? ' data-credit="' . $h($name) . '"' : '';
+    };
     $html = '<figure class="quality-bar-images" data-pe-slot="' . $h($slot) . '">'
-        . '<img data-pe-slot="q2-image-hero" src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-work" src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ' — equipment') . '" width="1200" height="630">'
-        . '<img data-pe-slot="q2-image-context" src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ' — site context') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-hero"' . $creditAttr($primary) . ' src="' . $h($src($primary)) . '" alt="' . $h($altPrefix) . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-work"' . $creditAttr($second) . ' src="' . $h($src($second)) . '" alt="' . $h($altPrefix . ', equipment') . '" width="1200" height="630">'
+        . '<img data-pe-slot="q2-image-context"' . $creditAttr($third) . ' src="' . $h($src($third)) . '" alt="' . $h($altPrefix . ', site context') . '" width="1200" height="630">'
         . '</figure>';
     $og = function_exists('icomply_absolute_url') ? icomply_absolute_url($primary) : $primary;
     return ['html' => $html, 'hero' => $primary, 'og' => $og];
@@ -367,19 +425,15 @@ function icomplyQualityBarAreaFaqs(string $areaName): array
     return [
         [
             'How do I request a quote for work in ' . $areaName . '?',
-            'Tell us the postcode, the property type and the system. We will send a fixed written quote for ' . $areaName . ' once the scope is clear.',
+            'Tell us the postcode, the property type and the system. We will send a free written quote for ' . $areaName . ' once the scope is clear.',
         ],
         [
             'Where is iComply based for ' . $areaName . ' visits?',
             'The office is ' . ICOMPLY_NAP . '. Visits in ' . $areaName . ' are diary-booked from that Stockport base.',
         ],
         [
-            'Who carries out landlord gas safety checks?',
-            ICOMPLY_GAS_ENGINEERS . ' ' . ICOMPLY_GAS_NOT_REGISTERED,
-        ],
-        [
             'Which services are listed for ' . $areaName . '?',
-            'This page links the services published for ' . $areaName . '. Fire protection, electrical, security and building work are quoted after a survey. Price on application.',
+            'Services we offer in ' . $areaName . '. Fire protection, electrical, security and building work are quoted after a survey. Price on application.',
         ],
     ];
 }
@@ -514,12 +568,16 @@ function icomplyQualityBarThinBlock(
         'pop' => '',
         'gas' => $gas,
         'blurb' => $blurb,
+        'bankCap' => ($kind === 'service' && function_exists('isFireSafetyService') && isFireSafetyService($serviceSlug)) ? 8 : 0,
         // Town-facts pages carry real local facts, so keep the generic template prose short.
         'short' => function_exists('icomplyTownFactsGeo') && icomplyTownFactsEnabled($serviceSlug)
             && icomplyTownFactsGeo(areaSlug($place)) !== null,
     ];
     $faqs = [
-        ['How is ' . $subject . ' in ' . $place . ' quoted?', 'The quote is price on application after the scope names the building and the access.'],
+        ['How is ' . $subject . ' in ' . $place . ' quoted?', $serviceSlug === 'fire-risk-assessments'
+            // G9 + SEO scorecard PR147 C10: FRA has a list price, so lead with it.
+            ? 'From £350 for a typical 6-bed HMO; other buildings are price on application once we know the scope.'
+            : 'The quote is price on application after the scope names the building and the access.'],
         ['Where is the team that covers ' . $place . ' based?', 'Visits are arranged from ' . ICOMPLY_NAP . '.'],
         ['What should be sent before a ' . $place . ' visit?', 'Send the postcode, the property type and anything already known about the installation.'],
     ];
@@ -554,16 +612,16 @@ function icomplyQualityBarAovProseHtml(): string
     $paragraphs = [
         'An automatic opening vent is a ventilator that opens when the fire strategy says it should. On most of the buildings we are asked about, that is a roof hatch or a façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. The vent is life-safety equipment. We treat the work as fire protection and quote it across the UK from our Stockport yard. This index lists the town pages. It is not a depot map and it is not a catalogue of fixed install prices.',
         'The visit we can actually describe is a test of the equipment that is already there, or an install that has a written scope. Full travel of the vents the strategy names, the manual point at the landing, battery standby, and the fire-alarm contact are the usual checks. A green panel with a seized roof lid is a fail. We write down what moved and what did not. We do not turn a failed travel test into a pass because the panel lamp is healthy.',
-        'We do not invent a smoke-control design, a free-area calculation or a scheme certificate. If there is no fire strategy, the next step is a fire engineer, then an install. Naming BS EN 12101-2 for natural smoke ventilators, BS EN 12101-10 for power supplies, BS EN 12101-3 when the kit is a powered fan, or BS 9991 where a residential strategy cites it, is not a claim that we are accredited to that standard.',
-        'Supply kits are described on the AOV service hub. Installation, adaptation and engineer attendance on this page are price on application. No pound figure is printed here. A quote names the vent, the panel, the access and whether the job is test-only or supply and fit. Occupied stairs, scaffold and a lid that has to come off a roof are scope, not small print added after someone is already on site.',
+        'If there is no fire strategy, the next step is a fire engineer, then an install. Naming BS EN 12101-2 for natural smoke ventilators, BS EN 12101-10 for power supplies, BS EN 12101-3 when the kit is a powered fan, or BS 9991 where a residential strategy cites it, is not a claim that we are accredited to that standard.',
+        'Supply kits are described on the AOV service hub. No pound figure is printed here. A quote names the vent, the panel, the access and whether the job is test-only or supply and fit. Occupied stairs, scaffold and a lid that has to come off a roof are scope, not small print added after someone is already on site.',
         'Town pages exist for published places with a usual-resident count that meets the list we publish, including Manchester and Burnley, which carry extra local notes. Smaller places are still quoted. They do not get a cloned town URL. A town page is not a store and it is not a promise that an engineer lives in that town. Travel is scheduled from Stockport. Attendance dates follow the diary. They are not a contract on this index.',
         'Natural vents and powered smoke fans are different jobs. A roof hatch that opens on a fire signal is not the same instruction as a shaft fan with a duty and standby arrangement. The enquiry should say which one the building has. If the file only says “AOV”, we ask for a photograph of the panel and of the vent before we pretend to know the scope. Interface wiring to the fire alarm is part of that question. A panel swap that drops the contact is a common reason a vent no longer opens.',
         'Weather and access decide whether a visit is realistic. Pennine rain and exposed lids seize roof hatches. A lid that will not close is both a leak and a failed smoke vent. We will not sign the vent as healthy because someone closed it by hand once. Roof access, edge protection and whether the stair can be taken out of use for the test are stated before the date is agreed. If the building cannot offer that access, the visit moves.',
         'Paperwork stays with the person who booked. We supply the test record we agreed to write. We are not the Building Safety Regulator and we do not file a safety case for the accountable person. Higher-risk residential buildings may need that record. Asking us for the record is not the same as asking us to take the statutory role. The quote says which document we will leave and which we will not.',
         'Brands are listed on the service hub so a caretaker can match a panel name. Wordmarks there are name plates for scanning the set. They are not partnership badges and they are not a claim that every manufacturer has appointed us. If a spare is a supply-only kit, fitting is included only when the quote says so. Disposal of a failed actuator is included only when the quote says so.',
-        'To ask for a quote, send the town, the postcode, the stair or corridor, the panel brand, and whether the vent is stuck open or shut. Phone if the stair vent is stuck and people are in the building. The form on this page logs the enquiry. It does not dispatch an engineer by itself. We do not publish a reply-time promise or a 24-hour contract. The correspondence address is ' . ICOMPLY_NAP . '.',
-        'This index sits beside the AOV service hub, not instead of it. The hub explains the equipment and the guides. These town links exist so a search for a place resolves to a page about that place. Fire-protection coverage on those pages is UK-wide because smoke control is quoted nationwide. Other trades on this website keep their own town rules. Do not read an AOV town link as permission to invent a non-fire service page for the same place.',
-        'What we will not do on the back of this index: invent a price, invent an accreditation, or copy one town’s paragraph onto the next with only the name swapped. Each town page is its own URL. This index is the directory. If you are a landlord, an agent or a facilities manager, say who will meet the engineer and who will hold the record. The quote is price on application after that is clear.',
+        'To ask for a quote, send the town, the postcode, the stair or corridor, the panel brand, and whether the vent is stuck open or shut. Phone if the stair vent is stuck and people are in the building. It does not dispatch an engineer by itself. We do not publish a reply-time promise or a 24-hour contract. The correspondence address is ' . ICOMPLY_NAP . '.',
+        'This index sits beside the AOV service hub, not instead of it. The hub explains the equipment and the guides. These town links exist so a search for a place resolves to a page about that place. Fire-protection coverage on those pages is UK-wide because smoke control is quoted nationwide. Other trades on this website keep their own town rules. ',
+        'Each town page is its own URL. This index is the directory. If you are a landlord, an agent or a facilities manager, say who will meet the engineer and who will hold the record. The quote is price on application after that is clear.',
     ];
     $html = '';
     foreach ($paragraphs as $paragraph) {

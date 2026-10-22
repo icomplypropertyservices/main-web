@@ -70,7 +70,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-5 text-lg text-white/80 max-w-2xl"><?= htmlspecialchars($guide['lede'], ENT_QUOTES, 'UTF-8') ?></p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Request a quote</a>
-                <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold hover:bg-zinc-100"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>
     </div>

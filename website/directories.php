@@ -117,7 +117,7 @@ $renderRows = static function (array $rows) use ($h): void {
         $url = (string)$row['url'];
         $live = $url !== '' && preg_match('#^https?://#', $url);
         echo '<li class="px-5 py-4">';
-        echo '<div class="font-semibold text-[#061828]">' . $h((string)$row['platform']) . '</div>';
+        echo '<div class="font-semibold text-[#0B1F3A]">' . $h((string)$row['platform']) . '</div>';
         if ($live) {
             echo '<a class="text-[#ff6b00] font-medium break-all" href="' . $h($url) . '">' . $h($url) . '</a>';
         } else {
@@ -133,7 +133,7 @@ $renderRows = static function (array $rows) use ($h): void {
 
 require SITE_ROOT . '/includes/header.php';
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <nav class="text-xs text-white/60 mb-4" aria-label="Breadcrumb">
             <a class="hover:text-white" href="<?= $h(rtrim(SITE_URL, '/') . '/') ?>">Home</a>
@@ -141,13 +141,13 @@ require SITE_ROOT . '/includes/header.php';
             <span>Listings and directories</span>
         </nav>
         <h1 class="text-4xl font-semibold tracking-tight">Find us online</h1>
-        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, Cheshire, and arranges compliance and property work across Greater Manchester. Use this page for the official name, address and phone we keep consistent across directories. Quotes are price on application. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.</p>
+        <p class="mt-4 text-lg text-white/80">iComply Property Services is based in Offerton, Stockport, Cheshire, and arranges compliance and property work across Greater Manchester. Use this page for the official name, address and phone we keep consistent across directories. Quotes are price on application.</p>
     </div>
 </section>
 <main class="max-w-3xl mx-auto px-6 py-12 space-y-12">
     <section aria-labelledby="nap-heading">
-        <h2 id="nap-heading" class="text-2xl font-semibold text-[#061828]">Name, address and phone</h2>
-        <dl class="mt-4 bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-3 text-[#061828]">
+        <h2 id="nap-heading" class="text-2xl font-semibold text-[#0B1F3A]">Name, address and phone</h2>
+        <dl class="mt-4 bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-3 text-[#0B1F3A]">
             <div><dt class="text-xs uppercase tracking-wide text-zinc-500">Name</dt><dd class="font-semibold"><?= $h(defined('SITE_NAME') ? SITE_NAME : 'iComply Property Services') ?></dd></div>
             <div><dt class="text-xs uppercase tracking-wide text-zinc-500">Address</dt><dd><?= $h($nap) ?></dd></div>
             <div><dt class="text-xs uppercase tracking-wide text-zinc-500">Phone</dt><dd><a class="text-[#ff6b00] font-semibold" href="tel:<?= $h(preg_replace('/\s+/', '', $phone)) ?>"><?= $h($phone) ?></a></dd></div>
@@ -155,17 +155,18 @@ require SITE_ROOT . '/includes/header.php';
         </dl>
     </section>
     <section aria-labelledby="official-heading">
-        <h2 id="official-heading" class="text-2xl font-semibold text-[#061828]">Official profiles</h2>
+        <h2 id="official-heading" class="text-2xl font-semibold text-[#0B1F3A]">Official profiles</h2>
         <p class="mt-2 text-zinc-600">Profiles we publish ourselves. A row without a link is waiting for the public URL.</p>
         <?php $renderRows($official); ?>
     </section>
     <section aria-labelledby="directories-heading">
-        <h2 id="directories-heading" class="text-2xl font-semibold text-[#061828]">Directories</h2>
+        <h2 id="directories-heading" class="text-2xl font-semibold text-[#0B1F3A]">Directories</h2>
         <p class="mt-2 text-zinc-600">Directory listings use the address above. New confirmed URLs are added from the citations log. Nothing is shown as a link until that URL exists.</p>
+        <p class="mt-4 text-zinc-700 leading-relaxed">A listing is useful when the trading name, street address and phone match this page. The published details are iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE, phone 07517 806082, email icomplypropertyservices@gmail.com. If a directory still shows a retired number, follow the details here and send the listing address through the contact form so the office can ask the publisher to correct it. A row stays as text, without a link, until the citations log has a public URL. That is not a claim that a profile already exists. Official profiles are accounts opened by the office. Directory rows are third-party pages that repeat the same name, address and phone. Written quotes for property work are price on application and are confirmed before a visit is booked.</p>
         <?php $renderRows($directories); ?>
     </section>
     <section class="related-links" aria-label="Related pages">
-        <h2 class="text-2xl font-semibold text-[#061828]">On this website</h2>
+        <h2 class="text-2xl font-semibold text-[#0B1F3A]">On this website</h2>
         <ul class="mt-4 flex flex-wrap gap-3">
             <li><a class="px-4 py-2 border rounded-full text-sm font-semibold hover:border-[#ff6b00]" href="<?= $h(url('/contact')) ?>">Contact / quote</a></li>
             <li><a class="px-4 py-2 border rounded-full text-sm font-semibold hover:border-[#ff6b00]" href="<?= $h(url('/pages/about')) ?>">About</a></li>

@@ -66,15 +66,14 @@ function icomplyFooterHtml(): string
         $kwDrop .= '</details>';
     }
 
-    $matrixDrop = '<p class="foot-note">Every keyword hub has a page for every town (' . $kwCount . ' × ' . $areaCount . '). Open a hub, then pick the town — we do not dump 200,000 links here.</p>';
-    $matrixDrop .= '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';
+    $matrixDrop = '<details class="foot-sub"><summary>Open a keyword hub (then pick a town)</summary><div class="foot-links">';
     foreach ($n['featuredKw'] as $slug => $name) {
         if (function_exists('seo_unverified_badge_label') && seo_unverified_badge_label((string)$name)) {
             continue;
         }
         $matrixDrop .= icomplyNavLink(url('/pages/keywords/' . rawurlencode((string)$slug) . '.php'), (string)$name);
     }
-    $matrixDrop .= icomplyNavLink(url('/pages/keywords/index.php'), 'Full keyword index →');
+    $matrixDrop .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides →');
     $matrixDrop .= '</div></details>';
     $matrixDrop .= '<details class="foot-sub"><summary>Open an area page (then pick a keyword)</summary><div class="foot-links">';
     foreach ($n['popularAreas'] as $area) {
@@ -139,7 +138,7 @@ function icomplyFooterHtml(): string
   <div class="foot-wrap">
     <div class="foot-nap">
       <div class="foot-brand">{$brand}</div>
-      <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. Every quote is fixed and written before work starts. Call {$phone}.</p>
+      <p>Property compliance — electrical, fire, water hygiene and asbestos surveys across Greater Manchester and the North West. You get a free written quote before work starts. Call {$phone}.</p>
       <p><span class="foot-label">Phone</span> <a href="{$phoneHref}">{$phone}</a></p>
       <p><span class="foot-label">Email</span> <a href="mailto:{$email}">{$email}</a></p>
       <p><span class="foot-label">Address</span> 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE</p>

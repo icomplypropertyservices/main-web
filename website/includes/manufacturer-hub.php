@@ -194,7 +194,7 @@ function renderManufacturerAreaPage(string $mfrSlug, string $areaSlugVal): void
     $primary = $entry['services'][0] ?? 'fire-alarms';
     $ogImage = manufacturerLogoUrl($slug);
     if ($ogImage === '') {
-        $ogImage = manufacturerImageUrl($slug, $primary);
+        $ogImage = manufacturerImageUrl($slug, $primary, true);
     }
 
     require SITE_ROOT . '/includes/header.php';

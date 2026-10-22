@@ -47,7 +47,7 @@ function icomplyMegaHeaderHtml(): string
     foreach ($n['qualityHubs'] as $hub) {
         $hubCols .= icomplyNavLink($hub['href'], $hub['label']);
     }
-    $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides →', 'mega-more');
+    $hubCols .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides →', 'mega-more');
     $hubCols .= icomplyNavLink(url('/pages/site-map.php'), 'HTML site map →', 'mega-more');
     $hubCols .= '</div>';
 
@@ -87,7 +87,7 @@ function icomplyMegaHeaderHtml(): string
     $areaCount = count($n['areas']);
 
     return <<<HTML
-<header class="site-header mega-header" data-site-header>
+<header class="site-header mega-header" data-site-header data-mega-nav="1">
   <div class="mega-bar">
     <a class="mega-logo" href="{$home}">
       <img src="{$logo}" width="36" height="36" alt="iComply" class="mega-logo-img" decoding="async">
@@ -145,8 +145,8 @@ function icomplyMegaHeaderHtml(): string
       <a class="nav-link" href="{$contact}">Contact</a>
     </nav>
     <div class="mega-tools">
-      <a class="mega-phone" href="{$phoneHref}">{$phone}</a>
-      <a class="mega-quote" href="{$contact}">Get a quote</a>
+      <a class="mega-phone" href="{$phoneHref}" aria-label="Call {$phone}"><span class="mega-phone-full">{$phone}</span><span class="mega-phone-short">Call</span></a>
+      <a class="mega-quote" href="{$contact}"><span class="mega-quote-full">Get a quote</span><span class="mega-quote-short">Quote</span></a>
       <button type="button" class="mega-burger" id="nav-toggle" aria-expanded="false" aria-controls="mega-drawer">Menu</button>
     </div>
   </div>
@@ -191,7 +191,7 @@ function icomplyMobileDrawerHtml(array $n): string
     foreach ($n['qualityHubs'] as $hub) {
         $svc .= icomplyNavLink($hub['href'], $hub['label']);
     }
-    $svc .= icomplyNavLink(url('/pages/keywords/index.php'), 'All keyword guides');
+    $svc .= icomplyNavLink(url('/pages/keywords/index.php'), 'All service guides');
     $svc .= '</div></details>';
 
     $areas = '<a class="drawer-all" href="' . icomplyNavH(url('/pages/areas/index.php')) . '">All ' . count($n['areas']) . ' areas →</a>';

@@ -161,7 +161,7 @@ CLUSTERS = {
     "showers": "Shower plumbing is the valve, the waste and the water feed. Electric-shower electrics stay with an electrician.",
     "appliances": "Appliance plumbing is the isolation valve, the hose and the waste. We do not repair the machine.",
     "toilets": "WC work is the fill, the flush, the pan connector and the close-couple joint. We do not move a soil stack on a repair.",
-    "landlord": "Landlord plumbing is the repair that was reported, written up per address. We do not invent a compliance certificate the job does not produce.",
+    "landlord": "Landlord plumbing is the repair that was reported, written up per address. ",
     "firstfix": "First fix is tested pipework and wastes left capped or connected to the agreed point. We do not sign off Building Control.",
     "commercial": "Light-commercial plumbing is the failed outlet in a washroom, tea point or welfare room. It is not a water-hygiene sampling visit.",
     "valves": "Valve and cistern work uses the fitting that matches the pressure and the cistern. We do not cap an overflow to hide a passing valve.",

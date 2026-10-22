@@ -346,8 +346,6 @@ function routerHandleRequest(): void {
         '/thanks' => '/thank-you',
         '/thankyou' => '/thank-you',
         '/pages/residential' => '/pages/landlords',
-        '/pages/keywords/air-source-heat-pumps-service-agreement' => '/pages/services/heating',
-        '/pages/keywords/bs-5306-extinguisher-service-cost' => '/pages/services/fire-extinguishers',
         '/pages/keywords/loft-conversion-fixed-price-package' => '/pages/services/loft-conversions',
         '/blog' => '/pages/resources',
         '/news' => '/pages/resources',
@@ -362,6 +360,19 @@ function routerHandleRequest(): void {
         header('Location: ' . url($legacyAliases[$path]), true, 301);
         icomplyRequestExit();
         return;
+    }
+
+    // P0 job slug that already has a keyword hub: one canonical URL.
+    if (preg_match('#^/pages/jobs/([a-z0-9\-]+)$#', $path, $p0JobMatch)) {
+        if (!function_exists('nationwideP0KeywordRedirect')) {
+            require_once __DIR__ . '/nationwide-p0-jobs.php';
+        }
+        $p0Target = nationwideP0KeywordRedirect($p0JobMatch[1]);
+        if ($p0Target !== null) {
+            header('Location: ' . url($p0Target), true, 301);
+            icomplyRequestExit();
+            return;
+        }
     }
 
     // Home

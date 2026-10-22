@@ -62,7 +62,7 @@
         ],
         [
           "Is the price on the website?",
-          "No. Home EV charger work is enquire / POA. No invented figures on this page."
+          "No. Home EV charger work is enquire / POA. "
         ]
       ]
     },
@@ -94,7 +94,7 @@
         ],
         [
           "How is commercial work priced?",
-          "Enquire / POA. Bay count, civils and supply upgrades change the figure. Nothing is priced on this page."
+          "Enquire / POA. Bay count, civils and supply upgrades change the figure. "
         ]
       ]
     },
@@ -126,7 +126,7 @@
         ],
         [
           "What does it cost?",
-          "POA after survey. Enquire — we do not print a 7 kW tariff or install fee here."
+          "POA after survey. "
         ]
       ]
     },
@@ -189,7 +189,7 @@
           "No. Connector type has to match the vehicles. We confirm that before the unit is ordered."
         ],
         [
-          "Is tethered more expensive on this page?",
+          "",
           "We do not publish a comparison price. Both types are POA. Enquire and the written quote shows the unit we specified."
         ]
       ]
@@ -221,7 +221,7 @@
           "Often, when staff cars use different leads. A single-vehicle home may prefer tethered. We advise at survey."
         ],
         [
-          "Do you sell the loose lead on this page?",
+          "",
           "No shop price is published here. The install is POA. Leads are specified with the quote if you need them."
         ]
       ]
@@ -234,14 +234,14 @@
       "seo_title": "Smart EV Charger Install | App Scheduling",
       "h1": "Smart EV Charger",
       "intro": "A smart EV charger can schedule charging, report sessions and sometimes follow a tariff window. The electrical install is still a BS 7671 job — the app does not replace protection or certification.",
-      "body": "We connect the unit, walk through the app at handover, and leave you able to start a charge without calling us. Wi-Fi or hard-wired data needs are noted at survey. Smart features are included in the POA description of the unit, not priced as a menu on this page. Enquire if you want scheduling.",
+      "body": "We connect the unit, walk through the app at handover, and leave you able to start a charge without calling us. Wi-Fi or hard-wired data needs are noted at survey. Enquire if you want scheduling.",
       "meta_desc": "Smart EV Charger across Greater Manchester and the North West. App control and scheduled charging. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "Smart EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
         "App handover as part of commissioning",
         "Scheduling explained, not assumed",
         "Data connection checked at survey",
-        "POA — no subscription fees invented here"
+        "POA: subscription costs confirmed in writing"
       ],
       "faq": [
         [
@@ -250,7 +250,7 @@
         ],
         [
           "Will you set up off-peak times?",
-          "We show you how. Your energy tariff and account stay yours. We do not invent a saving figure."
+          "We show you how. Your energy tariff and account stay yours. "
         ],
         [
           "Are app subscriptions included?",
@@ -318,7 +318,7 @@
         ],
         [
           "Which brands divert solar?",
-          "Some do, including certain Myenergi units. We specify after we see your inverter, not from a logo on this page."
+          "Some do, including certain Myenergi units. "
         ]
       ]
     },
@@ -393,7 +393,7 @@
       "related": "ev-charger-installation",
       "seo_title": "Wallbox EV Charger | Wall-Mounted Install",
       "h1": "Wallbox EV Charger",
-      "intro": "Wallbox EV charger on this page means a wall-mounted charge point — a unit fixed to a suitable wall, not a pedestal in the bay. The brand name Wallbox is one option among others.",
+      "intro": "The brand name Wallbox is one option among others.",
       "body": "We check the wall construction, fixing zone, and cable entry so the unit is not bridging a damp course badly or sitting where a bumper will hit it. Electrical design is unchanged: dedicated circuit, Section 722 protection, certificate. POA after we see the wall. Enquire with a photo of the proposed fixing point.",
       "meta_desc": "Wallbox EV Charger across Greater Manchester and the North West. Wall-mounted charge point. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "Wallbox EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
@@ -542,7 +542,7 @@
         ],
         [
           "How many bays can one board feed?",
-          "As many as load management and the intake allow. We will not invent a bay count from the car park size alone."
+          "As many as load management and the intake allow. "
         ]
       ]
     },
@@ -586,7 +586,7 @@
       "seo_title": "Landlord EV Charger | Rental Bay Install",
       "h1": "Landlord EV Charger",
       "intro": "A landlord EV charger is a charge point on a rental house or a bay you control, with paperwork an agent can file next to the electrical certificate.",
-      "body": "We still survey capacity and earthing. A let does not change Section 722. We note who will own the unit and who may use the app account so a change of tenant is not a mystery. Every quote is fixed and written. Enquire with the tenancy address and whether the bay is allocated.",
+      "body": "We still survey capacity and earthing. A let does not change Section 722. We note who will own the unit and who may use the app account so a change of tenant is not a mystery. Every quote is a free written quote. Enquire with the tenancy address and whether the bay is allocated.",
       "meta_desc": "Landlord EV Charger across Greater Manchester and the North West. Charge point for a rental property parking bay. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "Landlord EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
@@ -682,7 +682,7 @@
       "seo_title": "Myenergi Zappi EV Charger Install | North West",
       "h1": "Myenergi Zappi EV Charger",
       "intro": "A Myenergi Zappi EV charger is a smart unit we install and certificate. Solar divert is only part of the scope when you already have compatible generation.",
-      "body": "We set the device up, check CT clamp positions where divert is required, and hand over the app. If there is no solar, the Zappi still works as a charge point and we do not invent a PV saving. Installation is POA. Enquire with whether you have PV and the consumer unit location.",
+      "body": "We set the device up, check CT clamp positions where divert is required, and hand over the app. Installation is POA. Enquire with whether you have PV and the consumer unit location.",
       "meta_desc": "Myenergi Zappi EV Charger across Greater Manchester and the North West. Zappi install, including solar divert where the kit exists. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "Myenergi Zappi EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
@@ -701,7 +701,7 @@
           "If you want hot-water divert as well, say so. It is a separate device and is quoted POA, not assumed."
         ],
         [
-          "Is Zappi priced on this page?",
+          "",
           "No. Enquire for a POA install figure."
         ]
       ]
@@ -810,19 +810,19 @@
       "seo_title": "EV Charger Maintenance | Planned Checks",
       "h1": "EV Charger Maintenance",
       "intro": "EV charger maintenance is a planned visit: terminals, glands, RCD test where it is safe to do so, lead and holster condition, and a note for the site file.",
-      "body": "Workplaces with several bays get more value from a scheduled visit than a house with one unit, but both can be maintained. We do not invent a legal service interval. The visit is POA and the checklist is agreed first. Enquire with how many points are on the site.",
+      "body": "Workplaces with several bays get more value from a scheduled visit than a house with one unit, but both can be maintained. The visit is POA and the checklist is agreed first. Enquire with how many points are on the site.",
       "meta_desc": "EV Charger Maintenance across Greater Manchester and the North West. Planned check of existing charge points. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "EV Charger Maintenance, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
         "Terminals, glands, lead and holster inspected",
         "Functional checks agreed in the scope",
         "Written note for the site file",
-        "POA — no invented annual contract price"
+        "POA"
       ],
       "faq": [
         [
           "How often must a charger be serviced?",
-          "There is no single interval we will invent. Manufacturer guidance and how hard the bay is used decide the visit."
+          "Manufacturer guidance and how hard the bay is used decide the visit."
         ],
         [
           "Does maintenance include repairs?",
@@ -894,7 +894,7 @@
         ],
         [
           "Do you dispose of the old unit?",
-          "We agree that on the quote. We do not print a disposal fee here."
+          "We agree that on the quote. "
         ]
       ]
     },
@@ -1085,7 +1085,7 @@
           "Then the upstream device has to be compatible. We follow the manufacturer, not a habit."
         ],
         [
-          "Do you sell RCDs on this page?",
+          "",
           "No trade price is listed. The device is part of the POA install."
         ]
       ]
@@ -1098,7 +1098,7 @@
       "seo_title": "DNO Notification for EV Chargers | What We Prepare",
       "h1": "DNO Notification EV Charger",
       "intro": "DNO notification for an EV charger is the notice the distribution network operator may require before or after a charge point is connected. iComply prepares the electrical information. We are not the DNO.",
-      "body": "Whether a job is notify or apply-before-connect depends on the supply and the equipment. We tell you which path the survey shows and what information we can submit. Approval, reinforcement and any DNO charge are the network's, not a figure we invent. Our work to prepare and install is POA. Enquire with the postcode and the MPAN if you have the bill to hand.",
+      "body": "Whether a job is notify or apply-before-connect depends on the supply and the equipment. We tell you which path the survey shows and what information we can submit. Approval, reinforcement and any DNO charge are the network'Our work to prepare and install is POA. Enquire with the postcode and the MPAN if you have the bill to hand.",
       "meta_desc": "DNO Notification EV Charger across Greater Manchester and the North West. Network-operator notice for a charge point. POA — enquire after survey. iComply, Stockport.",
       "seo_keywords": "DNO Notification EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
@@ -1135,7 +1135,7 @@
       "seo_keywords": "OZEV EV Charger, EV charger, BS 7671 Section 722, North West, Stockport, POA",
       "focus_points": [
         "Current scheme rules checked at survey, not assumed",
-        "No grant amount printed on this page",
+        "Grants confirmed case by case",
         "Install still quoted POA if no grant applies",
         "Eligibility is not guaranteed"
       ],

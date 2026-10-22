@@ -171,12 +171,12 @@ function icomplyMfrFaqs(string $serviceSlug): array
         return [
             ['Are you a CAME barrier partner?', 'Yes. New barrier supply on these pages is through CAME. The five published 5m pack prices are supply only, ex VAT. Installation is quoted after survey.'],
             ['Can you repair a barrier from another manufacturer?', 'We will look at existing booms from the brands listed. Parts and labour are POA. If a safe repair is not realistic we say so and can quote a CAME replacement.'],
-            ['How is installation priced?', 'Civils, power, loops and commissioning are confirmed in a fixed written quote after a quick survey. CAME supply packs show their prices on this site.'],
+            ['How is installation priced?', 'Civils, power, loops and commissioning are confirmed in a free written quote after a quick survey. CAME supply packs show their prices on this site.'],
         ];
     }
     if (areaSlug($serviceSlug) === 'aov-air-handling') {
         return [
-            ['Which AOV manufacturers do you work on?', 'Every brand in the manufacturer grid on this page. If your panel is not listed, call 07517 806082 and we will say whether we can attend it.'],
+            ['Which AOV manufacturers do you work on?', 'If your panel is not listed, call 07517 806082 and we will say whether we can attend it.'],
             ['Are brand prices listed?', 'No. The iComply AOV equipment kit list is separate and ex VAT. Manufacturer supply and all installation are POA after survey.'],
             ['Can you service a system that is already fitted?', 'Yes, once we have identified the manufacturer and the fault. We do not guess a model from a photo of a closed vent.'],
         ];
@@ -191,11 +191,11 @@ function icomplyMfrServiceCopy(string $serviceSlug): ?array
         return [
             'intro' => [
                 'iComply supplies vehicle barriers as a CAME partner and services existing booms from the other manufacturers listed below. The only prices on this page are the CAME 5m supply packs already published for BAR-5M-STD, BAR-5M-VIDEX, BAR-5M-PAXTON, BAR-5M-GSM and BAR-5M-ALLIN.',
-                'Installation, induction loops, safety edges, power and commissioning are quoted after we see the lane. We do not invent a call-out fee. Phone 07517 806082.',
+                'Installation, induction loops, safety edges, power and commissioning are quoted after we see the lane. Phone 07517 806082.',
             ],
             'pillars' => [
                 ['title' => 'CAME partner supply', 'text' => 'New lanes are specified on CAME. Pack prices below are supply only, ex VAT.'],
-                ['title' => 'Existing barriers', 'text' => 'We fault-find the other brands on this page when a safe repair is still realistic.'],
+                ['title' => 'Existing barriers', 'text' => ''],
                 ['title' => 'Survey before install', 'text' => 'Lane width, loops, power and safety devices are priced after the visit, not from a menu.'],
             ],
         ];

@@ -234,7 +234,7 @@ function hmoJobCards(): array
 }
 
 /**
- * Lines that match the approved 6-bed North West list. No invented figures.
+ * Lines that match the approved 6-bed North West list. 
  *
  * @return list<array{name:string,price:string,note:string}>
  */

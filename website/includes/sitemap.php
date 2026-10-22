@@ -160,10 +160,7 @@ function icomplySitemapEntries(): array
         if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
             return;
         }
-        // /pages/barriers 301s to the barriers service hub. Town files stay.
-        if ($path === '/pages/barriers') {
-            return;
-        }
+        // /pages/barriers is the town directory and is self-canonical.
         if (preg_match('#^/pages/nurse-call/[a-z0-9\-]+$#', $path)) {
             return;
         }
@@ -283,9 +280,23 @@ function icomplySitemapEntries(): array
     $add('/pages/keywords/car-park-barrier-access', '0.8');
 
     // Resource articles that exist on the publish root (not source-only).
+    if (!function_exists('nationwideP0KeywordRedirect')) {
+        $p0Jobs = SITE_ROOT . '/includes/nationwide-p0-jobs.php';
+        if (is_file($p0Jobs)) {
+            require_once $p0Jobs;
+        }
+    }
     foreach (glob($publish . '/pages/jobs/*.php') ?: [] as $jobFile) {
         $base = basename($jobFile, '.php');
         if ($base === 'index') {
+            continue;
+        }
+        // Keyword hub is the canonical URL. Do not also list the job path.
+        if (function_exists('nationwideP0KeywordRedirect') && nationwideP0KeywordRedirect($base) !== null) {
+            continue;
+        }
+        // Kept job hub whose rel=canonical is its keyword twin: sitemap carries canonical locs only.
+        if (function_exists('nationwideP0JobIsNonCanonical') && nationwideP0JobIsNonCanonical($base)) {
             continue;
         }
         $add('/pages/jobs/' . $base, '0.8');

@@ -18,7 +18,9 @@ $siteDefaults = [
     'ADMIN_USER' => 'admin',
     // Never commit real passwords — set ADMIN_PASS in config.local.php
     'ADMIN_PASS' => '',
-    'GA_MEASUREMENT_ID' => '',
+    // GA4 property. Loaded only by the consent-gated loader in includes/header.php
+    // (never hardcoded in <head>). GA_MEASUREMENT_ID env still overrides.
+    'GA_MEASUREMENT_ID' => 'G-RN048B7861',
     'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)
@@ -420,6 +422,16 @@ function icomplyPathIsIndexable(string $path): bool
     if ($path === '') {
         $path = '/';
     }
+    // P0-CTR-MONEY C1-C15 money pages are always index,follow (SEO brief 2026-10-19; Jack: never noindex).
+    if (!function_exists('icomplyMoneyCtrPages')) {
+        $moneyCtr = __DIR__ . '/includes/money-ctr.php';
+        if (is_file($moneyCtr)) {
+            require_once $moneyCtr;
+        }
+    }
+    if (function_exists('icomplyMoneyCtrPages') && isset(icomplyMoneyCtrPages()[$path])) {
+        return true;
+    }
     if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
         if ((function_exists('icomplyNationwide3lineIndexablePath')
                 && icomplyNationwide3lineIndexablePath($path))
@@ -649,6 +661,17 @@ function icomplyScrubCustomerCopy(string $text): string
     $text = str_replace('I' . 'comply', 'iComply', $text);
     $text = preg_replace('/\bsame-day\b/iu', 'scheduled', $text) ?? $text;
     $text = preg_replace('/\bsame day\b/iu', 'scheduled', $text) ?? $text;
+    $carried = 'Gas work is carried out by Gas Safe registered engineers';
+    $text = preg_replace('/\bIs iComply Gas Safe\??/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/\b(?:Are|Is)\b[^?\n]{0,90}Gas Safe registered\?/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/Does iComply hold a Gas Safe registration\?/iu', 'Who carries out the gas work?', $text) ?? $text;
+    $text = preg_replace('/\bYes\.\s*Gas work is (?:undertaken|carried out) by Gas Safe registered engineers[^.]*\./iu', $carried . '.', $text) ?? $text;
+    $text = preg_replace('/iComply(?: Property Services)? (?:supply|supplies|provide|provides|arrange|arranges) Gas Safe registered engineers/iu', $carried . '. iComply arranges the visit', $text) ?? $text;
+    $text = preg_replace('/Our Gas Safe registered engineers/iu', 'The engineers booked for the job', $text) ?? $text;
+    $text = preg_replace('/What we will not do[^.]*Gas Safe registered[^.]*\./iu', $carried . '.', $text) ?? $text;
+    $text = preg_replace('/describe iComply as Gas Safe registered/iu', 'leave the Gas Safe registration with the attending engineer', $text) ?? $text;
+    $text = preg_replace('/\biComply is Gas Safe registered\b/iu', $carried, $text) ?? $text;
+    $text = preg_replace('/\bNo\.\s*Gas appliance work is by Gas Safe registered engineers\./iu', $carried . '.', $text) ?? $text;
     return $text;
 }
 
@@ -711,18 +734,18 @@ function icomplyApplyCustomerKeywordCopy(array $keywords): array
         }
         if (in_array($slug, $gasSlugs, true)) {
             $shown = $label !== '' ? $label : (string)($row['name'] ?? 'Gas safety');
-            $row['intro'] = $shown . '. ' . $legal;
-            $row['body'] = 'Book from Stockport SK2 when the diary allows. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Call 07517 806082.';
-            $row['meta_desc'] = $legal;
+            $row['intro'] = $shown . '. Gas work is carried out by Gas Safe registered engineers. iComply arranges the visit from Stockport.';
+            $row['body'] = $shown . ' is booked from 17 Woodlands Park Road, Offerton, Stockport SK2 5DE. Tell us the postcode and the appliances. Electrical, fire, water hygiene and asbestos work on the same property is quoted separately. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
+            $row['meta_desc'] = $shown . '. Gas work is carried out by Gas Safe registered engineers. Call 07517 806082.';
             $row['focus_points'] = [
-                'Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers',
-                'Same-day and next-day slots where available',
-                'Fixed written quote from our Stockport team',
+                'Gas work is carried out by Gas Safe registered engineers',
+                'Scheduled visits where the diary allows',
+                'Written quote from our Stockport team',
                 'Certificates emailed after the visit',
             ];
             $row['faq'] = [
-                ['Who carries out the gas safety check?', $legal],
-                ['Does iComply hold a Gas Safe registration?', 'No. Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers.'],
+                ['Who carries out the gas safety check?', 'Gas work is carried out by Gas Safe registered engineers.'],
+                ['Who carries out the gas work?', 'Gas work is carried out by Gas Safe registered engineers. The engineer shows a Gas Safe ID card on arrival.'],
             ];
         }
         if ($slug === 'same-day-eicr') {
@@ -889,6 +912,10 @@ function getMajorKeywords(): array {
     if (function_exists('openJobLanesApply')) {
         $normalized = openJobLanesApply($normalized);
     }
+    if (!function_exists('icomplyMoneyHubDepthApplyKeywords')) {
+        require_once __DIR__ . '/includes/money-hub-depth.php';
+    }
+    $normalized = icomplyMoneyHubDepthApplyKeywords($normalized);
     $normalized = icomplyApplyCustomerKeywordCopy($normalized);
     if (function_exists('icomplyNationwide3lineApplyKeywords')) {
         $normalized = icomplyNationwide3lineApplyKeywords($normalized);
@@ -1238,6 +1265,16 @@ function getSeoKeywords(string $service, string $area = ''): string {
     return $area !== '' ? "{$base} {$area}, {$area} electrician, {$area} fire safety" : $base;
 }
 
+/** Visible UK mobile format. tel: links keep the digits in PHONE. */
+function icomplyPhoneDisplay(): string
+{
+    $digits = preg_replace('/\D+/', '', defined('PHONE') ? (string)PHONE : '');
+    if (is_string($digits) && strlen($digits) === 11) {
+        return substr($digits, 0, 5) . ' ' . substr($digits, 5);
+    }
+    return defined('PHONE') ? (string)PHONE : '';
+}
+
 /** Canonical service blurbs / standards (data/service-meta.json) */
 function getServiceMeta(string $slug = ''): array {
     $all = loadJsonData('service-meta', []);
@@ -1449,6 +1486,31 @@ function manufacturerTagsHtml(string $serviceSlug): string {
  * Linked brand image cards for a service (all brands when available).
  * @param int $limit 0 = all brands for service
  */
+function icomplyManufacturerPhotoAlt(string $src, string $fallback): string
+{
+    static $alts = null;
+    if ($alts === null) {
+        $alts = [];
+        $file = (defined('SITE_ROOT') ? SITE_ROOT : __DIR__) . '/data/hero-image-credits.json';
+        $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        if (is_array($doc)) {
+            foreach ($doc as $row) {
+                if (!is_array($row)) {
+                    continue;
+                }
+                $path = (string)($row['file'] ?? '');
+                $alt = trim((string)($row['alt'] ?? ''));
+                if ($path !== '' && $alt !== '') {
+                    $alts[$path] = $alt;
+                }
+            }
+        }
+    }
+    $path = (string)preg_replace('#^https?://[^/]+#i', '', $src);
+    $path = (string)strtok($path, '?');
+    return $alts[$path] ?? $fallback;
+}
+
 function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
     $slugs = getManufacturerImageSlugs($serviceSlug);
     // Prefer full by_service list so every mentioned brand has a card
@@ -1480,11 +1542,45 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
             ? url('/pages/manufacturers/' . $slug . '.php')
             : url('/pages/manufacturers/index.php');
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms'), ENT_QUOTES, 'UTF-8');
+        $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+        $alt = html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' logo';
+        // A brand that serves several services gets a separate photo per service, so one photo is not reused across them.
+        $perService = '/assets/images/manufacturers/' . $slug . '--' . $serviceSlug . '.jpg';
+        static $brandHome = null;
+        if ($brandHome === null) {
+            $heroFile = __DIR__ . '/data/manufacturer-hero-images.json';
+            $brandHome = is_file($heroFile) ? (json_decode((string)file_get_contents($heroFile), true) ?: []) : [];
+        }
+        $home = (string)($brandHome[$slug]['service'] ?? '');
+        if ($serviceSlug !== '' && is_file(__DIR__ . $perService)) {
+            $src = $perService;
+            $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' on site; see ' . html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' products';
+        } elseif ($serviceSlug !== '' && $home !== '' && $home !== $serviceSlug && preg_match('#\.(?:jpe?g|png|webp)(?:$|\?)#i', $src)) {
+            // A brand photo belongs to the brand's own service. On other services the card is text only,
+            // so one photo is not repeated across unrelated service pages.
+            $src = '';
+        }
+        $cardPath = (string)(parse_url($src, PHP_URL_PATH) ?: $src);
+        $cardIsMark = $src === '' || (bool)preg_match('/\.(?:svg|png)$/i', $cardPath);
+        if ($cardIsMark && $serviceSlug !== '') {
+            $familyPhoto = manufacturerFamilyPhoto($serviceSlug);
+            if ($familyPhoto !== '') {
+                $src = $familyPhoto;
+                $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' equipment';
+            }
+        }
+        $described = icomplyManufacturerPhotoAlt($src, '');
+        if ($described !== '') {
+            $alt = $described;
+        }
+        $img = '';
+        if ($src !== '') {
+            $img = '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . '" width="640" height="360" '
+                . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
+                . 'onerror="this.src=\'' . $fallback . '\'">';
+        }
         $html .= '<a href="' . $href . '" class="bg-white border-2 border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] hover:shadow-md transition block group">'
-            . '<img src="' . $src . '" alt="' . $label . ' products and service — iComply" width="640" height="360" '
-            . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
-            . 'onerror="this.src=\'' . $fallback . '\'">'
+            . $img
             . '<div class="p-3 text-sm text-black text-center font-semibold">' . $label
             . ' <span class="text-[#ff6b00]">→</span></div>'
             . '</a>';
@@ -1536,11 +1632,20 @@ function serviceImageUrl(string $slug): string {
  * the parent service image (then the shared fire-alarms photo).
  */
 function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
-    $rel = '/assets/images/keywords/' . $slug . '.jpg';
-    if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
-        return url($rel);
+    unset($serviceSlug);
+    if (!function_exists('icomplyImagePick')) {
+        $pool = SITE_ROOT . '/includes/image-pool.php';
+        if (is_file($pool)) {
+            require_once $pool;
+        }
     }
-    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+    if (function_exists('icomplyImagePick')) {
+        $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, icomplyPageImageKey('/pages/keywords/' . $slug), 1)[0] ?? '');
+        if ($rel !== '' && is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return url('/assets/images/real-job/directory-hub.jpg');
 }
 
 /**
@@ -1552,11 +1657,46 @@ function servicePhotoUrl(string $slug): string {
 }
 
 /**
+ * Photograph for a service family. Brand cards use this when the brand file
+ * is a logo or a labelled diagram, so Aiphone and C-TEC are not the picture
+ * on every other family.
+ */
+function manufacturerFamilyPhoto(string $serviceSlug): string
+{
+    $serviceSlug = $serviceSlug === 'aov' ? 'aov-air-handling' : $serviceSlug;
+    $candidates = [];
+    if ($serviceSlug === 'aov-air-handling') {
+        $candidates[] = '/assets/images/services/aov-smoke-vent.jpg';
+    }
+    if ($serviceSlug !== '') {
+        $candidates[] = '/assets/images/services/' . $serviceSlug . '.jpg';
+    }
+    foreach ($candidates as $rel) {
+        if (is_file(SITE_ROOT . $rel)) {
+            return url($rel);
+        }
+    }
+    return '';
+}
+
+/**
  * Brand photo only. Do not borrow a service stock frame — that made every
  * logo-less card on a lane look like the same picture.
  * $fallbackService is unused and kept so existing call sites stay valid.
  */
-function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms'): string {
+function manufacturerImageUrl(string $slug, string $fallbackService = 'fire-alarms', bool $onManufacturerPage = false): string {
+    // assa-abloy.svg is the manufacturer-page logo only. The same basename
+    // was being repeated on service, shop and town pages.
+    if ($slug === 'assa-abloy' && !$onManufacturerPage) {
+        return '';
+    }
+    // One shared brand file must not be the card on every service family.
+    if ($fallbackService !== '') {
+        $perService = '/assets/images/manufacturers/' . $slug . '--' . $fallbackService . '.jpg';
+        if (is_file(SITE_ROOT . $perService)) {
+            return url($perService);
+        }
+    }
     foreach (['svg', 'jpg', 'png', 'webp'] as $ext) {
         $rel = '/assets/images/manufacturers/' . $slug . '.' . $ext;
         if (is_file(SITE_ROOT . $rel)) {

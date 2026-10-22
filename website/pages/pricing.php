@@ -7,7 +7,7 @@ require_once __DIR__ . '/../config.php';
 require_once SITE_ROOT . '/includes/share.php';
 
 $pageTitle = 'Pricing Guide | POA Estimates North West';
-$metaDesc = 'Transparent property compliance pricing guide for Greater Manchester and the North West. EICR, gas safety, fire alarm service, emergency lighting tests, CCTV and more — POA estimates clearly labelled as guide only, not a quote. Free fixed-price quotes.';
+$metaDesc = 'Transparent property compliance pricing guide for Greater Manchester and the North West. EICR, gas safety, fire alarm service, emergency lighting tests, CCTV and more — POA estimates clearly labelled as guide only, not a quote. Free written quotes.';
 $metaKeywords = 'EICR cost North West, gas safety certificate price, fire alarm service cost, emergency lighting test price, CCTV camera install cost, property compliance pricing Manchester, Stockport';
 $ogImage = url('/assets/images/services/electrical.jpg');
 $canonicalUrl = url('/pages/pricing.php');
@@ -129,12 +129,12 @@ $categories = [
         'name' => 'Fire risk assessment',
         'icon' => '📋',
         'service_slug' => 'fire-risk-assessments',
-        'intro' => 'Published guide for a standard fire risk assessment on UK mainland. Larger or higher-risk premises are confirmed in writing before the visit.',
+        'intro' => 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.',
         'items' => [
             [
                 'name' => 'Standard fire risk assessment',
                 'from' => '£350',
-                'typical' => 'Guide price for a standard FRA. Complex, multi-storey or sleeping-risk buildings are scoped before attendance.',
+                'typical' => 'From £350 for a typical 6-bed HMO in the North West; other properties, nationwide and multi-site jobs are POA.',
                 'includes' => 'Site walk, written suitable-and-sufficient FRA, prioritised action plan',
             ],
         ],
@@ -348,7 +348,7 @@ require SITE_ROOT . '/includes/header.php';
                 <strong class="text-amber-100">Important:</strong> Every figure on this page is a
                 <strong class="text-white">guide estimate only</strong>, not a fixed price or formal quotation.
                 Final prices depend on site survey, system condition and agreed scope. You always receive a
-                <strong class="text-white">fixed-price quote</strong> before work starts.
+                <strong class="text-white">written quote</strong> before work starts.
             </div>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#guide" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">View guide prices</a>
@@ -393,7 +393,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="text-amber-950/80">
             Prices are indicative UK North West market ballparks (ex VAT where applicable unless stated on your quote).
             They are <strong>not</strong> offers, catalogues or binding quotes. Site conditions, access, parts,
-            out-of-hours work and remedials can increase or decrease the final figure. Request a free fixed-price quote for certainty.
+            out-of-hours work and remedials can increase or decrease the final figure. Request a free written quote for certainty.
         </p>
     </div>
 </section>
@@ -566,15 +566,15 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
         <div class="max-w-xl">
             <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Ready for a real number?</h2>
             <p class="mt-3 text-white/80">
-                Free fixed-price quotes for landlords, agents and facilities teams across
+                Free written quotes for landlords, agents and facilities teams across
                 <?= count($areas) ?>+ North West towns. No obligation — guide prices never replace a site-specific quote.
             </p>
         </div>
         <div class="flex flex-wrap gap-3 shrink-0">
             <a href="#quote" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request free quote</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
-            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a fixed price quote (saw the pricing guide)') ?>"
+               class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a written quote quote (saw the pricing guide)') ?>"
                target="_blank" rel="noopener"
                class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
         </div>
@@ -620,10 +620,10 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
 <section id="quote" class="bg-zinc-50 border-t">
     <div class="max-w-3xl mx-auto px-6 py-16 md:py-20">
         <div class="text-center mb-10">
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free fixed-price quote</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free written quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Convert a guide price into a real quote</h2>
             <p class="mt-3 text-zinc-600">
-                Tell us the service and postcode — we’ll return a fixed-price proposal after scope is agreed.
+                Tell us the service and postcode — we’ll return a written proposal after scope is agreed.
                 The figures above remain <strong class="text-black">guide only</strong> until then.
             </p>
         </div>
@@ -657,9 +657,9 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
             <textarea name="message" rows="4" required maxlength="5000"
                       placeholder="Postcode, property type, number of circuits/appliances/cameras, system brands, preferred dates…"
                       class="w-full border px-5 py-3.5 rounded-2xl"></textarea>
-            <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Request fixed-price quote</button>
+            <button type="submit" class="w-full modern-btn text-white py-4 text-lg font-semibold rounded-2xl">Request written quote</button>
             <p class="text-center text-xs text-zinc-500">
-                Submitting this form requests a quote — it does not accept the guide prices on this page as a contract.
+                Submitting this form requests a quote — it does not accept the guide prices shown here as a contract.
                 By submitting you agree to our
                 <a href="<?= url('/privacy.php') ?>" class="underline hover:text-black">Privacy Policy</a>
                 and
@@ -667,11 +667,11 @@ echo icomplyComplianceBundleCrossSellHtml('pricing');
             </p>
         </form>
         <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a fixed price quote (pricing guide)') ?>"
+            <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a written quote quote (pricing guide)') ?>"
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

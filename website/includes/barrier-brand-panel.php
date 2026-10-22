@@ -257,7 +257,7 @@ function camePartnerPanelHtml(string $context = 'barriers'): string
         'access-control' => 'Door access and a vehicle lane are often the same project. Barrier supply on those jobs is through our CAME partnership.',
         'manufacturers' => 'CAME is the barrier partner in this directory. Other barrier makers are listed with their own product lines.',
         'products' => 'The 5m packs below are published CAME supply prices. Installation is POA. Other lengths and other manufacturers are quoted after survey.',
-        default => 'Barrier projects lead with CAME. Other manufacturers on this page are linked with their own product lines.',
+        default => 'Barrier projects lead with CAME. ',
     };
     return '<section class="max-w-7xl mx-auto px-6 py-10" aria-label="CAME partner">'
         . '<div class="grid lg:grid-cols-5 gap-8 items-center bg-white border-2 border-[#ff6b00] rounded-3xl p-6 md:p-8">'
@@ -330,7 +330,7 @@ function barrierBrandGridHtml(string $areaName = ''): string
         : 'Barrier manufacturers';
     $intro = $areaName !== ''
         ? 'Every rising-arm and parking barrier maker we install is linked for ' . $areaName . '. CAME is the partner. Tunstall is not a barrier brand.'
-        : 'Every rising-arm and parking barrier maker we install is on this page. CAME is the partner. Open a manufacturer for the product lines, or use the CAME lane builder. Tunstall is not listed.';
+        : 'CAME is the partner. Open a manufacturer for the product lines, or use the CAME lane builder. Tunstall is not listed.';
     return '<section class="max-w-7xl mx-auto px-6 py-12" id="barrier-manufacturers">'
         . '<div class="mb-8">'
         . '<div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Manufacturers</div>'
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded",function(){
       note.textContent="Published 5m CAME supply price for "+pack.sku+" ("+pack.label+"), ex VAT. Installation POA.";
     }else{
       price.textContent="Quote after survey";
-      note.textContent="No catalogue supply price for this length. Installation is POA. We do not invent a figure.";
+      note.textContent="No catalogue supply price for this length. Installation is POA.";
     }
   }
   document.querySelectorAll("input[name=boom],input[name=came_addon]").forEach(function(el){el.addEventListener("change",sync);});

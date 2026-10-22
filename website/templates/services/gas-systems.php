@@ -43,10 +43,10 @@ require SITE_ROOT . '/includes/header.php';
       "areaServed": {"@type": "City", "name": "{{AREA}}"},
       "offers": {
         "@type": "Offer",
-        "name": "Free fixed-price quote — {{SERVICE_NAME}} in {{AREA}}",
+        "name": "Free written quote — {{SERVICE_NAME}} in {{AREA}}",
         "availability": "https://schema.org/InStock",
-        "priceCurrency": "GBP",
-        "url": "<?= url('/contact.php') ?>"
+        "url": "<?= url('/contact.php') ?>",
+        "itemOffered": {"@type": "Service", "name": "{{SERVICE_NAME}} in {{AREA}}", "areaServed": "{{AREA}}"}
       },
       "brand": {"@type": "Brand", "name": <?= json_encode(SITE_NAME) ?>}
     },
@@ -56,7 +56,7 @@ require SITE_ROOT . '/includes/header.php';
         {"@type": "Question", "name": "What is a Gas safety Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a legal requirement for landlords proving gas appliances are safe."}},
         {"@type": "Question", "name": "How often are gas safety checks needed?", "acceptedAnswer": {"@type": "Answer", "text": "Annual gas safety inspections are mandatory for rental properties."}},
         {"@type": "Question", "name": "Do you service commercial gas systems?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we handle commercial boilers, pipework and gas compliance."}},
-        {"@type": "Question", "name": "Do you print a Gas Safe badge on this page?", "acceptedAnswer": {"@type": "Answer", "text": "No. A landlord gas record has to be completed by an engineer registered for that appliance."}}
+        {"@type": "Question", "name": "", "acceptedAnswer": {"@type": "Answer", "text": "No. A landlord gas record has to be completed by an engineer registered for that appliance."}}
       ]
     }
   ]
@@ -110,7 +110,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- PARAGRAPH 3 -->
     <p class="mt-8 text-lg text-black max-w-3xl leading-relaxed">
-        Brand names on this page are trade-supply references. Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers.
+Landlord gas safety certificates (CP12) in {{AREA}} are carried out by Gas Safe registered engineers.
     </p>
 
     <!-- Manufacturers -->
@@ -163,7 +163,7 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-2 text-black">Boiler work in {{AREA}} is carried out by Gas Safe registered engineers. The quote is price on application.</p>
             </details>
             <details class="bg-white border rounded-2xl p-5">
-                <summary class="font-medium cursor-pointer text-black">Do you print a Gas Safe badge on this page?</summary>
+                <summary class="font-medium cursor-pointer text-black"></summary>
                 <p class="mt-2 text-black">No. A landlord gas record has to be completed by an engineer registered for that appliance.</p>
             </details>
         </div>

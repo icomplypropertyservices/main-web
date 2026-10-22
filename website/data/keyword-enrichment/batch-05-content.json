@@ -1,11 +1,11 @@
 {
   "ahu-panel": {
-    "intro": "Need a dependable AHU panel surveyed, repaired or replaced across Greater Manchester and the wider North West? iComply Property Services design, install and commission air-handling control panels for commercial blocks, industrial sites and multi-tenant estates. From Stockport we support AHU panels linked to fans, dampers, sensors and BMS interfaces, with clear fixed-price quotes after survey and documentation your facilities team can file with insurers and landlords.",
+    "intro": "Need a dependable AHU panel surveyed, repaired or replaced across Greater Manchester and the wider North West? iComply Property Services design, install and commission air-handling control panels for commercial blocks, industrial sites and multi-tenant estates. From Stockport we support AHU panels linked to fans, dampers, sensors and BMS interfaces, with clear written quotes after survey and documentation your facilities team can file with insurers and landlords.",
     "body": "An AHU panel is the electrical heart of many air-handling plants: it sequences motors, interlocks safety devices and presents faults to building management systems. Our engineers diagnose failed contactors, relays, MCBs, transformers and control boards, then either repair in situ or supply a replacement panel built to the site’s load and control philosophy. We work alongside AOV and smoke-control packages where the same riser or plant room serves both comfort ventilation and fire strategy. Based in Stockport (SK2), we cover Cheshire, Lancashire, Merseyside and Cumbria with planned maintenance and reactive call-outs. Tell us the panel make, photos of the wiring diagram and your postcode to start a quote.",
-    "meta_desc": "AHU panel install, repair & commissioning across Greater Manchester & the North West. iComply engineers from Stockport. Fixed-price quotes.",
+    "meta_desc": "AHU panel install, repair & commissioning across Greater Manchester & the North West. iComply engineers from Stockport. Written quotes.",
     "focus_points": [
       "Survey of existing AHU panel, controls and safety interlocks",
-      "Repair, retrofit or full panel replacement with fixed-price scope",
+      "Repair, retrofit or full panel replacement with a written scope",
       "Commissioning, labelling and handover records for FM and auditors",
       "Integration support for fans, dampers, sensors and BMS signals"
     ],
@@ -52,7 +52,7 @@
     "seo_keywords": "AHU inverter drive, AHU VSD, air handling unit inverter, fan speed drive, HVAC inverter install, AHU drive commissioning, inverter drive North West, Manchester AHU VSD, Stockport"
   },
   "ahu-commissioning": {
-    "intro": "Want AHU commissioning handled by engineers who work to practical UK plant and smoke-control expectations? iComply commission air-handling units after install, refurbishment or major component changes, verifying electrical safety, control sequences, interlocks and documentation. We support commercial landlords, industrial sites and apartment blocks across Greater Manchester from our Stockport base with clear fixed-price commissioning scopes.",
+    "intro": "Want AHU commissioning handled by engineers who work to practical UK plant and smoke-control expectations? iComply commission air-handling units after install, refurbishment or major component changes, verifying electrical safety, control sequences, interlocks and documentation. We support commercial landlords, industrial sites and apartment blocks across Greater Manchester from our Stockport base with clear quoted commissioning scopes.",
     "body": "Commissioning is more than a power-up: it proves that the AHU starts, stops and fails safe as designed. Our process typically includes visual inspection, insulation and continuity checks where required, motor rotation, damper end-switch verification, sensor calibration checks, sequence of operation tests and record sheets your consultant or principal contractor can sign off. Where AHUs form part of a smoke or AOV strategy, we coordinate with fire cause-and-effect testing so ventilation modes align with the fire strategy. Post-commissioning we can enrol plant on a maintenance plan to protect warranties and reduce call-outs. Cover extends across Cheshire, Lancashire, Merseyside and Cumbria. Share drawings, panel schedules and access windows when you enquire.",
     "meta_desc": "AHU commissioning for commercial & industrial plant across the North West. iComply Stockport — sequences, interlocks & handover packs.",
     "focus_points": [
@@ -104,7 +104,7 @@
     "seo_keywords": "air handling unit certification, AHU certification, AHU test certificate, HVAC compliance North West, AHU service certificate, Manchester AHU inspection, Stockport"
   },
   "hvac-electrical-installation": {
-    "intro": "Planning HVAC electrical installation for new plant, a refurbishment or a multi-tenant block? iComply design and install power and controls for AHUs, fan coils, condensers and associated plant to BS 7671, with coordination for isolation, containment and labelling that facilities teams can live with. Stockport-based engineers deliver fixed-price quotes after survey across Greater Manchester and the North West.",
+    "intro": "Planning HVAC electrical installation for new plant, a refurbishment or a multi-tenant block? iComply design and install power and controls for AHUs, fan coils, condensers and associated plant to BS 7671, with coordination for isolation, containment and labelling that facilities teams can live with. Stockport-based engineers deliver written quotes after survey across Greater Manchester and the North West.",
     "body": "HVAC electrical work often fails when plant is powered without adequate local isolation, correctly rated protection or thought-through control cabling. We install supply circuits, local isolators, panel feeds, field wiring to sensors and actuators, and cable management suitable for plant rooms and risers. Where smoke vents or AOVs share infrastructure, we keep life-safety circuits distinct and documented. Testing includes dead and live tests appropriate to the scope, with installation certificates when the job includes new circuits. Ideal for mechanical contractors needing a reliable electrical team, and for landlords modernising ageing plant. Cover spans Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "HVAC electrical installation to BS 7671 — AHU, fans & plant power. iComply Stockport, Greater Manchester & North West.",
     "focus_points": [
@@ -130,7 +130,7 @@
     "seo_keywords": "HVAC electrical installation, AHU electrical install, plant room electrics, HVAC wiring North West, BS 7671 HVAC, Manchester HVAC electrical, Stockport plant electrics"
   },
   "air-handling-system-repair": {
-    "intro": "Need fast, professional air handling system repair when fans stop, panels trip or dampers fail mid-shift? iComply diagnose and repair commercial and industrial air-handling systems across the North West, restoring ventilation with transparent scope and fixed pricing after assessment. From Stockport we support landlords, factories and multi-site FM teams who cannot afford prolonged downtime.",
+    "intro": "Need fast, professional air handling system repair when fans stop, panels trip or dampers fail mid-shift? iComply diagnose and repair commercial and industrial air-handling systems across the North West, restoring ventilation with transparent scope and a free written quote after assessment. From Stockport we support landlords, factories and multi-site FM teams who cannot afford prolonged downtime.",
     "body": "Common faults include burned contactors, failed drive modules, seized actuators, dirty or collapsed filters triggering trips, sensor drift and water damage to outdoor control gear. Our engineers arrive with diagnostic tools, isolate safely, identify root cause and either repair on the day or order genuine-equivalent parts with a clear follow-up plan. Temporary safe isolation can keep other plant online while critical components are replaced. We also advise when repair is uneconomic versus panel or drive replacement. After repair we retest sequences and leave notes for your logbook. Reactive cover across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria — send fault photos and any BMS alarms when you call.",
     "meta_desc": "Air handling system repair across Greater Manchester & the North West. iComply reactive AHU engineers from Stockport.",
     "focus_points": [
@@ -156,7 +156,7 @@
     "seo_keywords": "air handling system repair, AHU repair, HVAC repair North West, air handling unit fault, AHU breakdown, Manchester AHU repair, Stockport HVAC engineer"
   },
   "commercial-ahu-maintenance": {
-    "intro": "Want commercial AHU maintenance that keeps plant reliable, efficient and audit-ready? iComply deliver planned preventive maintenance for air-handling units serving offices, retail, healthcare annexes and multi-tenant blocks across Greater Manchester. Visits cover electrical checks, control verification, drive inspection and documentation your FM software can store — with fixed-price contracts from our Stockport team.",
+    "intro": "Want commercial AHU maintenance that keeps plant reliable, efficient and audit-ready? iComply deliver planned preventive maintenance for air-handling units serving offices, retail, healthcare annexes and multi-tenant blocks across Greater Manchester. Visits cover electrical checks, control verification, drive inspection and documentation your FM software can store — with quoted contracts from our Stockport team.",
     "body": "Reactive-only strategies cost more in emergency call-outs and tenant complaints. Our commercial AHU maintenance programmes schedule filter regime reminders (where in scope), electrical tightness checks, contactor and terminal inspections, inverter cooling path checks, sensor sanity checks and damper free-movement tests. We record defects with photos and prioritise life-safety related issues first. Multi-site packages align visit windows so regional managers see consistent standards. We can combine AHU PPM with AOV and smoke vent servicing where the estate uses both. Cover includes Cheshire, Lancashire, Merseyside and Cumbria. Ask for a sample schedule matched to your plant list.",
     "meta_desc": "Commercial AHU maintenance contracts — planned PPM, records & repairs. iComply Stockport & North West coverage.",
     "focus_points": [
@@ -208,7 +208,7 @@
     "seo_keywords": "industrial air handling unit, industrial AHU, factory AHU service, industrial HVAC electrics, warehouse air handling, AHU North West, Manchester industrial AHU"
   },
   "nurse-call-system-installation": {
-    "intro": "Need nurse call system installation for a care home, nursing home, clinic or supported living scheme? iComply design and install wired, wireless and IP nurse call systems guided by HTM 08-03 principles, with commissioning, staff training and handover packs. From Stockport we deliver fixed-price installs across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria for care providers and healthcare estates teams.",
+    "intro": "Need nurse call system installation for a care home, nursing home, clinic or supported living scheme? iComply design and install wired, wireless and IP nurse call systems guided by HTM 08-03 principles, with commissioning, staff training and handover packs. From Stockport we deliver quoted installs across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria for care providers and healthcare estates teams.",
     "body": "A well-specified nurse call install starts with room schedules, call types, staff response routes and integration needs — not a box of random call points. We survey existing cabling where upgrades are planned, propose call points, pull cords, over-door lights, panels and optional staff attack or disabled WC alarms, then install and commission with full functional tests. Wireless options reduce disruption in occupied homes; wired and IP systems suit new builds and major refurbishments. After go-live we can place the system on a maintenance contract so reliability and compliance records stay current. Manufacturer-aware support helps when your estate already standardises on a particular brand.",
     "meta_desc": "Nurse call system installation for care homes & healthcare. HTM 08-03-aware installs — Stockport & North West.",
     "focus_points": [
@@ -234,7 +234,7 @@
     "seo_keywords": "nurse call system installation, nurse call install, care home nurse call install, hospital nurse call installation, HTM 08-03 install, nurse call North West, Manchester nurse call"
   },
   "nurse-call-system-maintenance": {
-    "intro": "Want nurse call system maintenance that keeps residents safe and CQC evidence tidy? iComply provide planned preventive maintenance for care homes, nursing homes and healthcare sites across the North West. Visits include call point tests, panel checks, battery condition, indicator verification and written PPM records — with fixed-price contracts from our Stockport engineers.",
+    "intro": "Want nurse call system maintenance that keeps residents safe and CQC evidence tidy? iComply provide planned preventive maintenance for care homes, nursing homes and healthcare sites across the North West. Visits include call point tests, panel checks, battery condition, indicator verification and written PPM records — with quoted contracts from our Stockport engineers.",
     "body": "Nurse call failures erode trust and create regulatory risk. Our maintenance programmes schedule regular functional tests of bedroom points, bathrooms, pull cords, over-door lights, reset points and central panels, plus checks on power supplies and backup batteries. We log defects, replace failed pear leads or call points where contracted, and advise on end-of-life systems that need upgrade. Multi-home groups benefit from standardised visit reports and priority response under the same agreement. We maintain a wide range of legacy and modern systems and can combine nurse call PPM with disabled toilet alarms and staff attack devices. Cover spans Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Nurse call system maintenance & PPM contracts for care homes. iComply Stockport — North West coverage.",
     "focus_points": [
@@ -390,7 +390,7 @@
     "seo_keywords": "nurse call panel, nurse call control panel, care home call panel, nurse call indicator panel, panel repair North West, Manchester nurse call panel"
   },
   "emergency-nurse-call": {
-    "intro": "Want emergency nurse call provision that residents and staff can trust under pressure? iComply design, install and maintain emergency nurse call routes — high-priority calls, bathroom emergencies and staff assistance — for care homes and healthcare premises across the North West. HTM 08-03-aware layouts, clear indicators and reliable panels form the core of our fixed-price proposals from Stockport.",
+    "intro": "Want emergency nurse call provision that residents and staff can trust under pressure? iComply design, install and maintain emergency nurse call routes — high-priority calls, bathroom emergencies and staff assistance — for care homes and healthcare premises across the North West. HTM 08-03-aware layouts, clear indicators and reliable panels form the core of our written proposals from Stockport.",
     "body": "Emergency nurse call is about prioritisation and certainty: the right people must know where help is needed without ambiguity. We configure call priorities, ensure bathroom and WC alarms escalate correctly, test sounders and over-door lights, and verify that resets only occur at the point of care where policy requires it. Systems can include staff attack buttons for lone workers and integration with existing nurse call panels. After incidents we can retest affected circuits and document findings for managers. Cover across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria with reactive repair options.",
     "meta_desc": "Emergency nurse call design, install & repair for care settings. iComply Stockport — North West coverage.",
     "focus_points": [
@@ -442,7 +442,7 @@
     "seo_keywords": "hospital nurse call system, hospital nurse call, HTM 08-03 nurse call, healthcare nurse call North West, ward call system, Manchester hospital nurse call"
   },
   "care-home-nurse-call": {
-    "intro": "Looking for care home nurse call that is simple for staff, reliable for residents and defensible at inspection? iComply specialise in care home nurse call design, install, upgrade and maintenance across the North West. We balance cost, disruption and HTM 08-03 good practice for nursing and residential homes, with fixed-price surveys from our Stockport team.",
+    "intro": "Looking for care home nurse call that is simple for staff, reliable for residents and defensible at inspection? iComply specialise in care home nurse call design, install, upgrade and maintenance across the North West. We balance cost, disruption and HTM 08-03 good practice for nursing and residential homes, with quoted surveys from our Stockport team.",
     "body": "Care homes need systems that work when corridors are busy and staffing is stretched: clear tones, accurate room indication and devices residents can actually use. We specify bedroom points, en-suite pull cords, lounge and corridor coverage, over-door lights and optional wander or staff attack add-ons. Wireless installs often suit occupied homes; full rewires suit major refurbishments. Managers receive training, test records and a maintenance path so the system does not quietly degrade. Multi-home groups can standardise brands and reporting. Coverage: Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Care home nurse call install, upgrade & PPM. Resident-safe systems across Greater Manchester & the North West.",
     "focus_points": [
@@ -546,7 +546,7 @@
     "seo_keywords": "nurse call pendant, care home pendant alarm, portable nurse call, nurse call fob, pendant nurse call North West, Manchester"
   },
   "pull-cord-nurse-call": {
-    "intro": "Want pull cord nurse call points that residents can reach in bathrooms and bedrooms — installed, repaired and regularly tested? iComply fit and service pull cord nurse call devices for care homes and healthcare sites across Greater Manchester. Our Stockport team ensures cords, switches and indicators work reliably with fixed-price maintenance options.",
+    "intro": "Want pull cord nurse call points that residents can reach in bathrooms and bedrooms — installed, repaired and regularly tested? iComply fit and service pull cord nurse call devices for care homes and healthcare sites across Greater Manchester. Our Stockport team ensures cords, switches and indicators work reliably with quoted maintenance options.",
     "body": "Pull cords are simple but safety-critical: a broken cord, sticky switch or poorly sited unit can leave a resident unable to call for help. We install cords at correct heights, with free travel and visible over-door or panel indication, and we replace frayed or yellowed cords before they fail. Bathroom installs consider wet environments and reset locations per policy. During PPM we operate every cord and log results. Reactive repairs restore isolated failures without waiting for the next service visit. Cover includes Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Pull cord nurse call install, repair & testing for care homes. iComply engineers — Stockport & North West.",
     "focus_points": [
@@ -754,7 +754,7 @@
     "seo_keywords": "nurse call compliance, care home nurse call compliance, HTM nurse call compliance, nurse call audit, call system compliance North West, Manchester"
   },
   "nurse-call-commissioning": {
-    "intro": "Need nurse call commissioning after a new install or major upgrade so every call path is proven before go-live? iComply commission nurse call systems for care and healthcare clients across Greater Manchester, verifying devices, panels, indicators, power supplies and integrations. Fixed-price commissioning scopes and handover packs from our Stockport team.",
+    "intro": "Need nurse call commissioning after a new install or major upgrade so every call path is proven before go-live? iComply commission nurse call systems for care and healthcare clients across Greater Manchester, verifying devices, panels, indicators, power supplies and integrations. Quoted commissioning scopes and handover packs from our Stockport team.",
     "body": "Commissioning closes the gap between ‘installed’ and ‘safe to use’. We walk the building, operate each device, confirm panel messages and over-door lights, validate priorities, test backups and document results. Staff training on day/night modes, resets and fault reporting is included so the system is used correctly from day one. Where paging or IP software is present, we run end-to-end scenarios. Snags are listed and cleared or scheduled before sign-off. Ideal for principal contractors needing a specialist commissioning team. Cover extends across Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Nurse call commissioning & handover for care and healthcare projects. iComply Stockport — North West.",
     "focus_points": [
@@ -832,7 +832,7 @@
     "seo_keywords": "touch screen nurse call, nurse call touch screen, staff station nurse call, IP nurse call display, care home touch panel North West"
   },
   "staff-attack-alarm": {
-    "intro": "Need a staff attack alarm system so lone workers and care staff can summon help discreetly or urgently? iComply design, install and maintain staff attack (staff assist) alarms for care homes, clinics and supported living across the North West. Fixed-price surveys from Stockport cover fixed buttons, portable fobs and integration with nurse call panels.",
+    "intro": "Need a staff attack alarm system so lone workers and care staff can summon help discreetly or urgently? iComply design, install and maintain staff attack (staff assist) alarms for care homes, clinics and supported living across the North West. Quoted surveys from Stockport cover fixed buttons, portable fobs and integration with nurse call panels.",
     "body": "Staff attack alarms protect people who support vulnerable or unpredictable service users. We specify discrete wall buttons, portable devices, clear staff indication and reset procedures that prevent accidental silencing. Systems can stand alone or integrate with nurse call for unified response. Coverage surveys ensure portable devices work in gardens, car parks and remote wings where risk is often highest. Training and drill support help embed procedures. PPM tests devices and batteries on a schedule. Serving Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria with reactive repair options.",
     "meta_desc": "Staff attack alarm install & maintenance for care settings. Discrete panic & assist — iComply North West.",
     "focus_points": [
@@ -884,7 +884,7 @@
     "seo_keywords": "emergency assistance alarm, disabled WC assistance alarm, toilet alarm system, assistance alarm install, accessible toilet alarm North West"
   },
   "disabled-toilet-alarm": {
-    "intro": "Need a disabled toilet alarm fitted, repaired or periodically tested? iComply install disabled toilet (accessible WC) alarm kits with pull cords, reset buttons, power supplies and over-door lights for commercial landlords, care homes and public buildings across the North West. Stockport engineers deliver neat installs and fixed-price multi-site programmes.",
+    "intro": "Need a disabled toilet alarm fitted, repaired or periodically tested? iComply install disabled toilet (accessible WC) alarm kits with pull cords, reset buttons, power supplies and over-door lights for commercial landlords, care homes and public buildings across the North West. Stockport engineers deliver neat installs and quoted multi-site programmes.",
     "body": "A disabled toilet alarm is a simple life-safety aid that is too often left broken. We supply and fit compliant-style kits, replace stretched cords, failed sounders and tired neon indicators with modern LEDs, and ensure the reset is inside the WC so staff must attend. For multi-storey buildings we label zones clearly at staff points. Integration with nurse call is available in care settings. PPM visits operate each alarm and record results for FM compliance folders. Reactive call-outs restore failed units quickly across Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Disabled toilet alarm install, repair & testing. Accessible WC alarms — iComply Stockport & North West.",
     "focus_points": [
@@ -962,11 +962,11 @@
     "seo_keywords": "nurse call near me, nurse call engineer near me, local nurse call North West, nurse call Stockport, nurse call Manchester, care home nurse call near me"
   },
   "nurse-call-maintenance-contract": {
-    "intro": "Want a nurse call maintenance contract with clear visit schedules, priority repairs and audit-ready paperwork? iComply offer fixed-price nurse call maintenance contracts for care homes, nursing homes and healthcare sites across the North West. From Stockport we bundle PPM, reactive cover options and parts arrangements so managers can budget and sleep easier.",
+    "intro": "Want a nurse call maintenance contract with clear visit schedules, priority repairs and audit-ready paperwork? iComply offer quoted nurse call maintenance contracts for care homes, nursing homes and healthcare sites across the North West. From Stockport we bundle PPM, reactive cover options and parts arrangements so managers can budget and sleep easier.",
     "body": "A good maintenance contract is more than a yearly tick: it defines test frequency, response targets, included labour, spare parts handling and reporting format. We tailor contracts to bed numbers, system type (wired, wireless, IP) and group policies. Visits include functional testing, panel and battery checks, defect logs and recommendations. Contract customers typically receive priority in the diary when faults arise. Multi-site agreements standardise SLAs across your estate. Optional add-ons cover disabled toilet alarms, staff attack and wander alerts under one invoice. Serving Greater Manchester, Cheshire, Lancashire, Merseyside and Cumbria.",
     "meta_desc": "Nurse call maintenance contract — PPM, priority repairs & records. iComply Stockport & North West care estates.",
     "focus_points": [
-      "Fixed-price PPM schedules matched to your estate",
+      "Quoted PPM schedules matched to your estate",
       "Priority reactive response options for contract clients",
       "Standardised reports for multi-home groups",
       "Optional bundling of WC, staff attack and wander systems"

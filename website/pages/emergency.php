@@ -123,7 +123,7 @@ $faqs = [
     ],
     [
         'q' => 'Do you publish a call-out price?',
-        'a' => 'No. Emergency attendance is price on application. Out-of-hours work usually carries a premium. The terms are explained on the phone so you can decide before an engineer sets off. We do not list a pound call-out fee on this page.',
+        'a' => 'No. Emergency attendance is price on application. Out-of-hours work usually carries a premium. The terms are explained on the phone so you can decide before an engineer sets off.',
     ],
     [
         'q' => 'What should I do if I smell gas?',
@@ -239,7 +239,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white text-lg shadow-lg shadow-orange-900/30">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                        Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                     </a>
                     <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>"
                        target="_blank" rel="noopener"
@@ -279,7 +279,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                     </div>
                     <div>
                         <div class="text-xs text-white/80 uppercase tracking-wider">Call now</div>
-                        <div class="text-xl font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="text-xl font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></div>
                     </div>
                 </a>
                 <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>"
@@ -357,7 +357,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             </p>
         </div>
         <div class="flex flex-wrap gap-2">
-            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-full bg-[#ff6b00] text-white text-sm font-semibold hover:bg-orange-600"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-5 py-2.5 rounded-full bg-[#ff6b00] text-white text-sm font-semibold hover:bg-orange-600"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full bg-green-600 text-white text-sm font-semibold hover:bg-green-500">WhatsApp</a>
         </div>
     </div>
@@ -422,7 +422,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 shrink-0">
-                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold text-center hover:bg-[#ff6b00] transition">Call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold text-center hover:bg-[#ff6b00] transition">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl bg-green-600 text-white text-sm font-semibold text-center hover:bg-green-500">WhatsApp</a>
             </div>
         </div>
@@ -541,7 +541,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <p class="mt-3 text-white/80">For live faults, phone and WhatsApp beat the form. We confirm a window and POA terms before travel.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -558,7 +558,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Log a 24-hour or follow-up job</h2>
             <p class="mt-3 text-zinc-600">
                 For a <strong>live fault</strong>,
-                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold hover:underline">call <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-[#ff6b00] font-semibold hover:underline">call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 or
                 <a href="<?= htmlspecialchars($waUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener" class="text-green-700 font-semibold hover:underline">WhatsApp</a>
                 first. This form logs a within-24-hours request or a planned follow-up. It does not dispatch an engineer by itself.

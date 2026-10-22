@@ -136,6 +136,13 @@ if (!function_exists('fraLanePages')) {
                         ],
                     ],
                 ],
+                // SEO/Jack 2026-10-20: the from-price FAQ must render on /pages/jobs/fra itself (visible + FAQPage schema).
+                'faqs' => [
+                    [
+                        'q' => 'Is £350 a from-price?',
+                        'a' => 'Yes. From £350 for a typical 6-bed HMO in the North West; other buildings are price on application once we know the scope.',
+                    ],
+                ],
             ],
             'fra' => [
                 'path' => '/pages/jobs/fire-risk-assessment',
@@ -172,7 +179,7 @@ if (!function_exists('fraLanePages')) {
                 'faqs' => [
                     [
                         'q' => 'Is £350 a from-price?',
-                        'a' => 'No. £350 is the list for a typical North West 6-bed HMO. A portfolio discount can reduce the unit price. Other buildings are not this list.',
+                        'a' => 'Yes. From £350 for a typical 6-bed HMO in the North West; other buildings are price on application once we know the scope.',
                     ],
                     [
                         'q' => 'Does the pack add £350 on top of £561?',
@@ -501,7 +508,7 @@ require SITE_ROOT . '/includes/header.php';
     </ul>
     <p class="mt-8 text-sm text-white">
         iComply Property Services, 17 Woodlands Park Road, Offerton, Stockport SK2 5DE
-        · <a class="underline text-white" href="tel:+447517806082">07517806082</a>
+        · <a class="underline text-white" href="tel:+447517806082">07517 806082</a>
         · <a class="underline text-white" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a>
     </p>
 </section>

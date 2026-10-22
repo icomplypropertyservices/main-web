@@ -123,8 +123,8 @@ function icomplyGmServicePack(string $slug): array
             'points' => [
                 'Boiler type, age and whether the property is occupied',
                 'Service, repair or replacement scoped separately',
-                'No catalogue boiler price on this page',
-                'POA fixed quote after scope',
+                'Boiler price on application',
+                'The written price follows the survey, not a tariff on this page.',
             ],
             'gas' => true,
             'siblings' => ['gas-systems', 'plumbing', 'electrical', 'landlord-compliance'],
@@ -156,7 +156,7 @@ function icomplyGmServicePack(string $slug): array
             'job' => 'car-park-barrier',
         ],
         'aov-air-handling' => [
-            'summary' => 'Smoke control and AOV visits start from the vents, the control panel and the cause-and-effect the building was actually designed with. We do not invent a category the panel does not support.',
+            'summary' => 'Smoke control and AOV visits start from the vents, the control panel and the cause-and-effect the building was actually designed with. ',
             'points' => [
                 'Vent locations, manual controls and the panel log',
                 'Interfaces with the fire alarm confirmed before a test',
@@ -308,7 +308,7 @@ function icomplyGmServicePack(string $slug): array
             'Address, access and the outcome you need on the file',
             'Survey or attendance only for the items on the quote',
             'Paperwork labelled for the agent or dutyholder',
-            'POA fixed quote after scope',
+            'The written price follows the survey, not a tariff on this page.',
         ],
         'gas' => false,
         'siblings' => ['electrical', 'fire-alarms', 'emergency-lighting', 'landlord-compliance'],
@@ -410,7 +410,7 @@ function icomplyGmFaqHtml(string $heading, array $faqs, string $chrome): string
         if ($chrome === 'matrix') {
             $items .= '<details class="matrix-card"><summary>' . $h($q) . '</summary><p>' . $h($a) . '</p></details>';
         } else {
-            $items .= '<details class="bg-white border border-zinc-200 rounded-2xl p-4"><summary class="font-semibold text-[#061828] cursor-pointer">'
+            $items .= '<details class="bg-white border border-zinc-200 rounded-2xl p-4"><summary class="font-semibold text-[#0B1F3A] cursor-pointer">'
                 . $h($q) . '</summary><p class="mt-2 text-sm text-zinc-700 leading-relaxed">' . $h($a) . '</p></details>';
         }
     }
@@ -426,7 +426,7 @@ function icomplyGmFaqHtml(string $heading, array $faqs, string $chrome): string
         return $schema . '<section class="gm-faq" aria-label="Questions"><h2 class="text-2xl font-semibold">'
             . $h($heading) . '</h2><div class="mt-4 space-y-3">' . $items . '</div></section>';
     }
-    return $schema . '<section class="gm-faq mt-8" aria-label="Questions"><h2 class="text-2xl font-bold text-[#061828]">'
+    return $schema . '<section class="gm-faq mt-8" aria-label="Questions"><h2 class="text-2xl font-bold text-[#0B1F3A]">'
         . $h($heading) . '</h2><div class="mt-4 space-y-3">' . $items . '</div></section>';
 }
 
@@ -473,7 +473,7 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
         if ($chrome === 'matrix') {
             $items .= '<a class="text-[#ff6b00] font-semibold" href="' . $h($href) . '">' . $h($label) . '</a>';
         } else {
-            $items .= '<a class="px-4 py-2 bg-white border border-zinc-200 rounded-full text-sm font-semibold text-[#061828] hover:border-[#ff6b00]" href="'
+            $items .= '<a class="px-4 py-2 bg-white border border-zinc-200 rounded-full text-sm font-semibold text-[#0B1F3A] hover:border-[#ff6b00]" href="'
                 . $h($href) . '">' . $h($label) . '</a>';
         }
     }
@@ -481,7 +481,7 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
         return '<section><h2 class="text-2xl font-semibold">' . $h($heading) . '</h2><p class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">'
             . $items . '</p></section>';
     }
-    return '<section class="mt-8"><h2 class="text-2xl font-bold text-[#061828]">' . $h($heading)
+    return '<section class="mt-8"><h2 class="text-2xl font-bold text-[#0B1F3A]">' . $h($heading)
         . '</h2><div class="mt-4 flex flex-wrap gap-2">' . $items . '</div></section>';
 }
 
@@ -490,6 +490,55 @@ function icomplyGmLinksHtml(string $heading, array $links, string $chrome): stri
  * @param list<array{0:string,1:string}> $extraFaqs
  * @return array{0:string,1:string}[]
  */
+function icomplyGmPhotoAsk(string $serviceSlug): string
+{
+    $asks = [
+        'demolition' => 'photos of the wall, the chimney or the room to be stripped',
+        'driveways' => 'photos of the drive, the levels and the kerb',
+        'patios' => 'photos of the patio, the levels and the drainage',
+        'fencing' => 'photos of the run, the posts and any gate',
+        'drainage' => 'photos of the gully, the manhole and where the water sits',
+        'roofing' => 'photos of the slope, the leak and the gutter',
+        'electrical' => 'photos of the consumer unit and the circuit that has failed',
+        'aov-air-handling' => 'photos of the vent, the actuator and the control panel',
+        'aov' => 'photos of the vent, the actuator and the control panel',
+        'heating' => 'photos of the boiler and the programmer, taken from a safe distance',
+        'gas-systems' => 'photos of the appliance and the flue, taken from a safe distance',
+        'barriers' => 'photos of the barrier arm, the cabinet and the lane',
+        'plumbing' => 'photos of the pipe, the leak and the fitting',
+        'windows-doors' => 'photos of the frame, the opening and the damaged section',
+        'kitchens' => 'photos of the units, the services and the room',
+        'bathrooms' => 'photos of the room, the fittings and the leak',
+        'plastering' => 'photos of the wall, the ceiling and the damaged area',
+        'brickwork' => 'photos of the brickwork, the crack and the mortar',
+        'joinery' => 'photos of the timber, the opening and the repair',
+        'dry-lining' => 'photos of the wall, the ceiling and the board',
+        'renovation' => 'photos of the rooms and what you want changed',
+        'building-maintenance' => 'photos of the defect and the access to it',
+        'cctv' => 'photos of the camera positions and the recorder',
+        'intruder-alarm' => 'photos of the alarm panel, the keypad and a detector',
+        'fire-alarms' => 'photos of the fire panel, a detector and a call point',
+        'fire-doors' => 'photos of the door, the closer and the frame',
+        'nurse-call' => 'photos of the nurse-call panel, a call point and the corridor',
+        'legionella-risk-assessment' => 'photos of the tanks, the outlets and the plant room',
+        'asbestos-survey' => 'photos of the material from a safe distance, without disturbing it',
+        'ev-chargers' => 'photos of the consumer unit, the parking bay and the cable route',
+        'water-wras' => 'photos of the incoming main, the meter and the outlets',
+        'commercial-fit-out' => 'photos of the unit, the services and the layout',
+        'landscaping' => 'photos of the garden, the levels and the access',
+        'garden-clearance' => 'photos of the garden, the waste and the access',
+        'garden-maintenance' => 'photos of the garden, the beds and the access',
+        'landlord-compliance' => 'photos of the areas the certificates need to cover',
+        'painting-decorating' => 'photos of the rooms and the surfaces to be painted',
+        'loft-conversions' => 'photos of the loft, the hatch and the stair position',
+    ];
+    if (isset($asks[$serviceSlug])) {
+        return $asks[$serviceSlug];
+    }
+    $name = trim(str_replace('-', ' ', $serviceSlug));
+    return $name !== '' ? 'photos of the ' . $name . ' and the access to it' : 'photos of the failed part and the access to it';
+}
+
 function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug, bool $gas, array $extraFaqs, string $localProse = ''): array
 {
     $place = $townName;
@@ -502,7 +551,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         $faqs[] = ['What is particular about ' . $topic . ' in ' . $townName . '?', trim($sentences[0] . ' ' . ($sentences[1] ?? ''))];
         $faqs[] = [
             'How do I get a quote for ' . $topic . ' in ' . $townName . '?',
-            'Send the address, a few photos and what you need covered, and we will reply with a fixed written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
+            'Send the address, a few photos and what you need covered, and we will reply with a free written quote. Call or WhatsApp 07517 806082. Same-day and next-day slots are often available.',
         ];
         if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
             $faqs[] = [
@@ -512,7 +561,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
         } else {
             $faqs[] = [
                 'How is the ' . $townName . ' price decided?',
-                'Every job gets a fixed written quote based on the building, the access and what needs doing, with travel from Stockport included.',
+                'Every job gets a free written quote based on the building, the access and what needs doing, with travel from Stockport included.',
             ];
         }
         return array_slice($faqs, 0, 4);
@@ -524,7 +573,7 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     }
     $faqs[] = [
         'How is ' . $topic . ' quoted in ' . $townName . '?',
-        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a fixed written quote.',
+        'Send the ' . $place . ' address, access notes and what you need on the file. We reply with a free written quote.',
     ];
     if ($gas || $serviceSlug === 'gas-systems' || $serviceSlug === 'heating') {
         $faqs[] = [
@@ -534,12 +583,12 @@ function icomplyGmBuildFaqs(string $topic, string $townName, string $serviceSlug
     } else {
         $faqs[] = [
             'What should I send before a ' . $townName . ' visit?',
-            'The postcode in ' . $place . ', whether anyone is living there, and photos of the panel, board or door if you have them. That keeps the first visit to the agreed scope.',
+            'The postcode in ' . $place . ', whether anyone is living there, and ' . icomplyGmPhotoAsk($serviceSlug) . '. That keeps the first visit to the agreed scope.',
         ];
     }
     $faqs[] = [
         'Where is the ' . $townName . ' page linked from?',
-        'Use the ' . $townName . ' area hub for every local service, or the contact form for a POA fixed quote after scope. The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.',
+        'Use the ' . $townName . ' area hub for every local service, or the contact form for a free written quote after scope. The office is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE.',
     ];
     return array_slice($faqs, 0, 6);
 }
@@ -595,7 +644,7 @@ function icomplyGmEnrichmentHtml(array $ctx): string
         $districts = trim((string)($profile['districts'] ?? ''));
         $local = '';
         if ($stock !== '') {
-            $local = $townName . ($districts !== '' ? ' (' . $districts . ')' : '') . ' is ' . $stock . '. ';
+            $local = $townName . ($districts !== '' ? ' (' . $districts . ')' : '') . ' has ' . $stock . '. ';
         }
         if ($chrome === 'matrix') {
             $html .= '<div class="space-y-3"><p>' . $h($local . $pack['summary']) . '</p><ul class="list-disc pl-5 space-y-1">';
@@ -662,7 +711,7 @@ function icomplyGmEnrichmentHtml(array $ctx): string
     $links[] = ['href' => url('/contact'), 'label' => 'POA quote'];
     $html .= icomplyGmLinksHtml('Related pages for ' . $townName, $links, $chrome);
 
-    $cta = 'POA fixed quote after scope. Call ' . (defined('PHONE') ? PHONE : '07517806082')
+    $cta = 'a free written quote after scope. Call ' . (defined('PHONE') ? PHONE : '07517806082')
         . ' or use the contact form with the ' . $townName . ' postcode.';
     if ($gas) {
         $cta .= ' Gas work is carried out by Gas Safe registered engineers.';
@@ -705,8 +754,8 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         if ($kw !== '') {
             $bits[] = '<a class="text-[#ff6b00] font-semibold" href="' . $h($kw) . '">Local guide</a>';
         }
-        $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#061828]">' . $h($topic . ' in ' . $town)
-            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. POA fixed quote after scope.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
+        $cards .= '<article class="border border-zinc-200 rounded-2xl p-4 bg-white"><h3 class="font-semibold text-[#0B1F3A]">' . $h($topic . ' in ' . $town)
+            . '</h3><p class="mt-2 text-sm text-zinc-700">Book ' . $h($town) . ' from the Stockport office. The written price follows the survey.</p><p class="mt-3 flex flex-wrap gap-3 text-sm">' . implode('', array_map(static function (string $bit): string {
                 return '<span>' . $bit . '</span>';
             }, $bits)) . '</p></article>';
     }
@@ -717,8 +766,8 @@ function icomplyGmJobTownStripHtml(string $topic, array $towns, string $serviceS
         ? ' Gas work is carried out by Gas Safe registered engineers.'
         : '';
     return '<section class="max-w-7xl mx-auto px-6 py-16" aria-label="Greater Manchester towns"><div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Greater Manchester</div>'
-        . '<h2 class="text-3xl font-semibold tracking-tight mt-2 text-[#061828]">Town pages that are already live</h2>'
-        . '<p class="mt-3 max-w-3xl text-zinc-700">These links go to the area hub, the service page and the keyword guide for each town. Job pages stay on the hub above.'
+        . '<h2 class="text-3xl font-semibold tracking-tight mt-2 text-[#0B1F3A]">Town pages that are already live</h2>'
+        . '<p class="mt-3 max-w-3xl text-zinc-700">Links to the area hub, the service page and the service guide for each town.'
         . $h($gasNote) . '</p>'
         . '<div class="mt-8 grid md:grid-cols-2 gap-4">' . $cards . '</div></section>';
 }

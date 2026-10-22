@@ -1,3 +1,6 @@
+import imageFamilies from "../../website/data/service-image-families.json" with { type: "json" };
+import { aliasFamily, pickImages } from "./image-pool.js";
+import { creditName, manifestHas } from "./quality-floor.js";
 /**
  * CLOSE-Q1 / Q2 / Q3 shared floor for the edge ×town renderer
  * (netlify/edge-functions/town-matrix.js → renderTownPage).
@@ -14,31 +17,18 @@ import fragments from "../../website/data/quality-bar-prose.json" with { type: "
 
 const ORIGIN = "https://icomplypropertyservices.co.uk";
 
-const PHOTO = new Set([
-  "access-control",
-  "aov-air-handling",
-  "cctv",
-  "door-entry",
-  "electrical",
-  "emergency-lighting",
-  "fire-alarms",
-  "fire-risk-assessments",
-  "gas-systems",
-  "intercoms",
-  "intruder-alarm",
-  "nurse-call",
-]);
+/** Family of a service image slug (falls back to building for unknown slugs). */
+export function imageFamilyOf(slug) {
+  for (const [name, list] of Object.entries(imageFamilies.families)) if (list.includes(slug)) return name;
+  return null;
+}
 
-const POOL = [
-  "building-maintenance",
-  "fire-alarms",
-  "electrical",
-  "cctv",
-  "access-control",
-  "emergency-lighting",
-  "gas-systems",
-  "door-entry",
-];
+/** Two extra photos for `slug`, taken from that service's own pool. */
+export function familyPicks(slug, seed) {
+  const family = aliasFamily(slug);
+  const picks = pickImages(`${slug}|${seed}`, family, 3);
+  return [picks[1] || picks[0], picks[2] || picks[0]];
+}
 
 export function escapeHtml(value) {
   return String(value)
@@ -48,8 +38,29 @@ export function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
+function articleFor(value) {
+  return /^[aeiou]/i.test(String(value || "").trim()) ? "an" : "a";
+}
+
+function handTrade(ctx) {
+  const service = String(ctx.service || "");
+  const subject = String(ctx.subject || "");
+  return ["demolition", "driveways", "fencing", "drainage"].includes(service)
+    || /\b(demolition|driveways|fencing|drainage)\b/i.test(subject);
+}
+
+function softenHandTrade(text, ctx) {
+  if (!handTrade(ctx)) return text;
+  return String(text)
+    .replace(/Certificates are emailed to you\./gi, "The written quote is emailed to you.")
+    .replace(/Certificates are emailed/gi, "The written quote is emailed")
+    .replace(/your certificate or report/gi, "your written quote")
+    .replace(/You get the certificate or report issued/gi, "You get the written notes")
+    .replace(/certificates emailed/gi, "a written quote emailed");
+}
+
 function fill(template, ctx) {
-  return String(template)
+  const text = String(template)
     .replaceAll("{place}", ctx.place)
     .replaceAll("{subject}", ctx.subject)
     .replaceAll("{service}", ctx.service)
@@ -58,12 +69,18 @@ function fill(template, ctx) {
     .replaceAll("{near}", ctx.near)
     .replaceAll("{housing}", ctx.housing)
     .replaceAll("{industry}", ctx.industry)
-    .replaceAll("{pop}", ctx.pop);
+    .replaceAll("{pop}", ctx.pop)
+    .replaceAll("{article}", articleFor(ctx.subject));
+  return softenHandTrade(text, ctx);
 }
 
 function mixIndex(seed, pass, bankIndex, length) {
   let h = (seed ^ Math.imul(bankIndex + 1, 0x9e3779b9) ^ Math.imul(pass + 1, 0x85ebca6b)) >>> 0;
-  h = Math.imul(h ^ (h >>> 16), 0x45d9f3b) >>> 0;
+  // Full murmur3 finaliser: the old single round left the low bits (the ones
+  // % length reads) almost fixed, so neighbouring towns picked the same variants.
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b) >>> 0;
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35) >>> 0;
+  h = (h ^ (h >>> 16)) >>> 0;
   return h % length;
 }
 
@@ -124,7 +141,28 @@ function absoluteOg(src) {
   return `${ORIGIN}${path}`;
 }
 
-export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
+/**
+ * CLOSE-Q1 (2026-10-19): extra bank paragraphs for lean town pages. Picks
+ * `count` of the later banks (price, access, neighbours, standards, follow-up,
+ * instructing client) by seed, so two towns rarely share the same pick.
+ * @returns {string[]} plain-text paragraphs
+ */
+export function depthBankParagraphs(ctx, count = 3) {
+  const banks = fragments.banks || [];
+  const pool = [4, 5, 6, 7, 8, 9].filter((i) => banks[i] && banks[i].length);
+  const seed = ctx.seed >>> 0;
+  const ranked = pool
+    .map((i) => [mixIndex(seed, 7, i, 1 << 30), i])
+    .sort((a, b) => a[0] - b[0])
+    .slice(0, count)
+    .map((r) => r[1]);
+  return ranked.map((i) => {
+    const text = fill(banks[i][mixIndex(seed, 3, i, banks[i].length)], ctx).replace(/\s+/g, " ").trim();
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  });
+}
+
+export function thinImages(serviceSlug, subject, placeName, seed, peImages, preferredHero = "", poolKey = "") {
   if (Array.isArray(peImages)) {
     const picked = [];
     for (const image of peImages) {
@@ -135,30 +173,43 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
     if (picked.length === 3) {
       const slots = ["q2-image-hero", "q2-image-work", "q2-image-context"];
       const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-        + picked.map((image, index) => (
-          `<img data-pe-slot="${slots[index]}" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`
-        )).join("")
+        + picked.map((image, index) => {
+          const credit = creditName(image.src);
+          const attr = credit ? ` data-credit="${escapeHtml(credit)}"` : "";
+          return `<img data-pe-slot="${slots[index]}"${attr} src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" width="1200" height="630">`;
+        }).join("")
         + `</figure>`;
       return { html, heroSrc: picked[0].src, ogImage: absoluteOg(picked[0].src) };
     }
   }
   const slug = String(serviceSlug || "fire-alarms");
-  const primary = `/assets/images/services/${slug}.jpg`;
-  let second = PHOTO.has(slug)
-    ? `/assets/images/services/${slug}-photo.jpg`
-    : `/assets/images/services/${POOL[seed % POOL.length]}.jpg`;
-  if (second === primary) second = "/assets/images/services/building-maintenance.jpg";
-  let third = `/assets/images/services/${POOL[(seed + 3) % POOL.length]}.jpg`;
-  if (third === primary || third === second) third = "/assets/images/services/cctv.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/electrical.jpg";
-  if (third === primary || third === second) third = "/assets/images/services/access-control.jpg";
+  const family = poolKey || aliasFamily(slug);
+  const picks = pickImages(`${slug}/${placeName}`, family, 3);
+  let primary = poolKey || family === "aov" || family === "aov-air-handling" ? picks[0] : `/assets/images/services/${slug}.jpg`;
+  if (preferredHero && manifestHas(preferredHero)) primary = preferredHero;
+  const second = picks[1] || primary;
+  const third = picks[2] || second;
+  const creditAttr = (src) => {
+    const name = creditName(src);
+    return name ? ` data-credit="${escapeHtml(name)}"` : "";
+  };
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
+  const slots = [
+    ["q2-image-hero", primary, altHero],
+    ["q2-image-work", second, altWork],
+    ["q2-image-context", third, altContext],
+  ];
+  const seen = new Set();
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero" src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work" src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context" src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + slots.filter(([, src]) => {
+      if (!src || seen.has(src)) return false;
+      seen.add(src);
+      return true;
+    }).map(([slot, src, alt]) => (
+      `<img data-pe-slot="${slot}"${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="630">`
+    )).join("")
     + `</figure>`;
   return {
     html,
@@ -190,7 +241,7 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `We send a fixed written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
+      `We send a free written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,

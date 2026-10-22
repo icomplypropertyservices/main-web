@@ -12,15 +12,15 @@ $h = static function (string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 };
 ?>
-<section class="bg-[#061828] text-white">
+<section class="bg-[#0B1F3A] text-white">
     <div class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-            <p class="text-xs uppercase tracking-[3px] text-[#ffb080]">Fire protection · nationwide</p>
+            <p class="text-xs uppercase tracking-[3px] text-[#ff6b00]">Fire protection · nationwide</p>
             <h1 class="mt-3 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">Automatic opening vents.<br><span class="text-[#ff6b00]">The stair has to open.</span></h1>
             <p class="mt-5 text-lg text-white/80 max-w-xl">An AOV is a ventilator that opens on a fire signal: usually a roof hatch or façade vent at the head of a stair, sometimes a corridor or lobby opening into a smoke shaft. It is life-safety equipment, so we treat it as fire protection and quote it across the UK from our Stockport yard.</p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="#quote">Get a written quote</a>
-                <a class="px-6 py-3 rounded-2xl bg-white text-[#061828] font-semibold" href="<?= $h(aovPhoneHref()) ?>">Call <?= $h((string)PHONE) ?></a>
+                <a class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="<?= $h(aovPhoneHref()) ?>">Call <?= $h((string)PHONE) ?></a>
                 <a class="px-6 py-3 rounded-2xl border border-white/30 font-semibold" href="#kit">Kit wizard</a>
                 <a class="px-6 py-3 rounded-2xl border border-white/30 font-semibold" href="<?= $h(url('/pages/aov')) ?>"><?= (int)$placeCount ?> town pages</a>
             </div>
@@ -36,7 +36,7 @@ $h = static function (string $s): string {
     </article>
     <article class="p-6 border border-zinc-200 rounded-3xl">
         <h2 class="text-xl font-semibold">What we will not sign</h2>
-        <p class="mt-3 text-zinc-700">We do not invent a smoke-control design, a free-area calculation or a scheme certificate. If there is no fire strategy, the next step is a fire engineer, then an install.</p>
+        <p class="mt-3 text-zinc-700">If there is no fire strategy, the next step is a fire engineer, then an install.</p>
     </article>
     <article class="p-6 border border-zinc-200 rounded-3xl">
         <h2 class="text-xl font-semibold">Where the pages are</h2>

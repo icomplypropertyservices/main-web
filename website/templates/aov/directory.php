@@ -21,7 +21,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="mt-4 text-white/80 max-w-3xl">Each page is a place with a published usual-resident count of at least 10,000: ONS built-up areas in England and Wales (2019), NRS Scottish localities (the public 2020 list used here starts at 15,010), and Northern Ireland settlements of 10,000 or more. Smoke vents are fire protection, so the service is quoted nationwide. A town page is not a depot.</p>
         <div class="mt-6 flex flex-wrap gap-3">
             <a class="px-6 py-3 rounded-2xl bg-[#ff6b00] font-semibold" href="<?= url('/pages/services/aov-air-handling.php') ?>">AOV service hub</a>
-            <a class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', (string)PHONE), ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold" href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', (string)PHONE), ENT_QUOTES, 'UTF-8') ?>">Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
         <label class="mt-8 block text-sm font-semibold">Find a place
             <input id="aov-town-filter" type="search" placeholder="Type a town, city or county" class="mt-2 w-full max-w-md text-black px-4 py-3 rounded-xl border-0">

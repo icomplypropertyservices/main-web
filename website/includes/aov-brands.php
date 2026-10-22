@@ -25,7 +25,7 @@ function aovManufacturers(): array
         ['slug' => 'flaktgroup', 'name' => 'FlaktGroup', 'line' => 'Fans and air-handling units, not a stair chain actuator.'],
         ['slug' => 'systemair', 'name' => 'Systemair', 'line' => 'Extract and supply fans and their controls.'],
         ['slug' => 'kingspan-air', 'name' => 'Kingspan Air', 'line' => 'Ventilation products listed against this service. Confirm the badge on site before parts are ordered.'],
-        ['slug' => 'brooks', 'name' => 'Brooks', 'line' => 'Listed for smoke-vent work. We match the part to the label, not the logo on this page.'],
+        ['slug' => 'brooks', 'name' => 'Brooks', 'line' => 'Listed for smoke-vent work. '],
         ['slug' => 'ventilux', 'name' => 'Ventilux', 'line' => 'Listed on the AOV set. If the panel is actually emergency lighting, that is a different visit.'],
         ['slug' => 'assa-abloy', 'name' => 'Assa Abloy', 'line' => 'Door and vent hardware when that is what the smoke strategy names. Not every Assa product is an AOV.'],
     ];
@@ -33,6 +33,9 @@ function aovManufacturers(): array
 
 function aovBrandWordmarkUrl(string $slug): string
 {
+    if ($slug === 'assa-abloy') {
+        return '';
+    }
     $svg = '/assets/images/manufacturers/' . $slug . '.svg';
     if (is_file(SITE_ROOT . $svg)) {
         return url($svg);
@@ -47,11 +50,14 @@ function aovBrandGridHtml(): string
     $html = '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">';
     foreach (aovManufacturers() as $brand) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $brand['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
-        $src = htmlspecialchars(aovBrandWordmarkUrl($brand['slug']), ENT_QUOTES, 'UTF-8');
+        $src = aovBrandWordmarkUrl($brand['slug']);
         $name = htmlspecialchars($brand['name'], ENT_QUOTES, 'UTF-8');
         $line = htmlspecialchars($brand['line'], ENT_QUOTES, 'UTF-8');
+        $img = $src !== ''
+            ? '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#ffffff]" loading="lazy">'
+            : '';
         $html .= '<a href="' . $href . '" class="bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-[#ff6b00] transition block">'
-            . '<img src="' . $src . '" alt="' . $name . ' wordmark" width="320" height="120" class="w-full h-24 object-cover bg-[#f7f4ef]" loading="lazy">'
+            . $img
             . '<div class="p-4"><div class="font-semibold text-black">' . $name . '</div>'
             . '<p class="mt-1 text-sm text-zinc-600">' . $line . '</p>'
             . '<span class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]">Brand page and spares →</span></div></a>';
@@ -102,7 +108,7 @@ function aovKitWizardHtml(string $context): string
     $kits = aovKitChoices();
     $json = htmlspecialchars(json_encode($kits, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8');
     $products = htmlspecialchars(url('/products.php') . '#aov-kits', ENT_QUOTES, 'UTF-8');
-    $phone = htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8');
+    $phone = htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8');
     $tel = htmlspecialchars(aovPhoneHref(), ENT_QUOTES, 'UTF-8');
     $cards = '';
     foreach ($kits as $kit) {
@@ -122,7 +128,7 @@ function aovKitWizardHtml(string $context): string
   <div class="max-w-7xl mx-auto px-6 py-14">
     <p class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Equipment</p>
     <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Choose a supply kit, or describe the fault</h2>
-    <p class="mt-3 text-zinc-600 max-w-3xl">List prices are for the supply SKUs Jack locked. Installation, access equipment, commissioning and multi-visit work are priced after we know the building. These name plates are ours. We are not an approved partner of any brand on this page, and we do not hold a BAFE or FIRAS badge for smoke control.</p>
+    <p class="mt-3 text-zinc-600 max-w-3xl">List prices are for the supply SKUs Jack locked. Installation, access equipment, commissioning and multi-visit work are priced after we know the building. These name plates are ours. </p>
     <form class="mt-6 grid md:grid-cols-2 gap-4 bg-white border border-zinc-200 rounded-3xl p-5" data-aov-wizard-form>
       <label class="block text-sm font-semibold text-black">What do you need?
         <select name="need" class="mt-2 w-full border border-zinc-300 rounded-xl px-3 py-3 font-normal" data-aov-need>

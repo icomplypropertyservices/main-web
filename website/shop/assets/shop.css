@@ -1,11 +1,11 @@
 :root {
   --navy: #0B1F3A;
   --orange: #FF6B00;
-  --ink: #0F172A;
+  --ink: #0B1F3A;
   --muted: #5B6472;
   --muted-dark: #BAC4D2;
   --white: #FFFFFF;
-  --surface: #F4F6F9;
+  --surface: #ffffff;
   --border: #D7DEE8;
   --shadow: 0 10px 28px rgba(11, 31, 58, 0.08);
   --radius: 16px;
@@ -283,6 +283,10 @@ button { font: inherit; }
   color: var(--white);
 }
 .btn-orange:hover { filter: brightness(1.05); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.hero-cta a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border-radius: 999px; font-weight: 700; text-decoration: none; color: #fff; }
+.hero-cta a.call { background: #FF6B00; }
+.hero-cta a.wa { background: #128C7E; }
 .btn-ghost {
   background: var(--white);
   color: var(--navy);
@@ -383,7 +387,7 @@ button { font: inherit; }
 .mfr-line-grid:has(> .mfr-line-card:only-child) > .mfr-line-card {
   display: grid; grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr); align-items: center; gap: 16px 20px;
 }
-.mfr-line-logo { display: flex; align-items: center; min-height: 76px; padding: 6px 8px; background: #F4F6F9; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; line-height: 0; }
+.mfr-line-logo { display: flex; align-items: center; min-height: 76px; padding: 6px 8px; background: #ffffff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; line-height: 0; }
 .mfr-line-logo img { display: block; width: auto; max-width: 100%; height: 64px; object-fit: contain; object-position: left center; background: transparent; }
 .mfr-line-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .mfr-line-brand { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }

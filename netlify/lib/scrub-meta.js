@@ -12,10 +12,24 @@ const PHRASES = [
   [/POA quote — no invented fee list/g, "Price on application"],
 ];
 const SENTENCE = new RegExp(String.raw`(^|[.!?]\s+|>\s*)([^.!?"<>]*?(?:${META})[^.!?"<>]*[.!?])`, "gi");
+function capAt(text, max) {
+  const clean = String(text).replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  const sp = cut.lastIndexOf(" ");
+  const out = sp > max * 0.55 ? cut.slice(0, sp) : cut;
+  return out.replace(/[\s.,;:\-]+$/g, "");
+}
+
 export function scrubMeta(html) {
   let out = String(html);
   for (const [re, rep] of PHRASES) out = out.replace(re, rep);
   let prev;
   do { prev = out; out = out.replace(SENTENCE, (m, lead) => (lead.trim().startsWith(">") ? lead.replace(/\s+$/, "") : lead.replace(/\s+$/, " "))); } while (out !== prev);
-  return out.replace(/<p>\s*<\/p>/g, "").replace(/ +<\/(p|li|summary)>/g, "</$1>");
+  out = out.replace(/<p>\s*<\/p>/g, "").replace(/ +<\/(p|li|summary)>/g, "</$1>");
+  out = out.replace(/<title>([^<]*)<\/title>/i, (_, text) => `<title>${capAt(text, 60)}</title>`);
+  out = out.replace(/(<meta\s+name="description"\s+content=")([^"]*)(")/i, (_, open, text, close) => open + capAt(text, 155) + close);
+  out = out.replace(/(<meta\s+property="og:title"\s+content=")([^"]*)(")/i, (_, open, text, close) => open + capAt(text, 60) + close);
+  out = out.replace(/(<meta\s+property="og:description"\s+content=")([^"]*)(")/i, (_, open, text, close) => open + capAt(text, 155) + close);
+  return out;
 }

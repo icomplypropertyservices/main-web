@@ -5,7 +5,7 @@
  * Keyword hubs: /pages/keywords/<slug> from data/ev-chargers-jobs.json
  *
  * Existing keyword copy is kept when it is already filled in.
- * This lane always owns service=ev-chargers. POA only — no invented £.
+ * This lane always owns service=ev-chargers. 
  */
 declare(strict_types=1);
 
@@ -132,7 +132,7 @@ function evChargersJobsApply(array $keywords): array
         if (!is_array($faqs)) {
             $faqs = [];
         }
-        $poaQ = 'Is ' . $merged['name'] . ' priced on this page?';
+        $poaQ = 'Is ' . $merged['name'] . '';
         $hasPoa = false;
         foreach ($faqs as $existingFaq) {
             if (is_array($existingFaq) && strcasecmp((string)($existingFaq[0] ?? ''), $poaQ) === 0) {

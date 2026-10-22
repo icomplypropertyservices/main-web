@@ -83,7 +83,7 @@ $howWeWork = [
     ],
     [
         'n' => '2',
-        'title' => 'Fixed-price quote',
+        'title' => 'Written quote',
         'text' => 'We confirm scope, standards and timeline. Clear price, no jargon — revised only if site conditions differ from what was described.',
     ],
     [
@@ -100,7 +100,7 @@ $howWeWork = [
 
 $trust = [
     ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266, gas safety & more'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, documentation and certification'],
+    ['title' => 'Written quotes', 'text' => 'Clear scope, documentation and certification'],
     ['title' => count($areas) . '+ towns', 'text' => 'Greater Manchester, Cheshire, Lancs, Merseyside & Cumbria'],
 ];
 
@@ -335,7 +335,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
                        class="px-8 py-4 rounded-2xl bg-[#0B1F3A] text-white font-semibold hover:bg-[#ff6b00] transition">
-                        <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 </div>
             </div>
@@ -350,7 +350,7 @@ require SITE_ROOT . '/includes/header.php';
                         <dt class="text-white/50 text-xs uppercase tracking-wider">Phone</dt>
                         <dd class="mt-1">
                             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>" class="text-white hover:text-[#ff6b00] font-medium text-lg">
-                                <?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>
                             </a>
                         </dd>
                     </div>
@@ -403,7 +403,7 @@ require SITE_ROOT . '/includes/header.php';
         <div>
             <h2 class="text-3xl font-semibold tracking-tight">Ready for the same standard of service?</h2>
             <p class="mt-3 text-white/75">
-                Free fixed-price quotes from Stockport-based engineers — we will reply with a quote.
+                Free written quotes from Stockport-based engineers — we will reply with a quote.
             </p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= url('/contact.php') ?>" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold">Request a quote</a>
@@ -411,7 +411,7 @@ require SITE_ROOT . '/includes/header.php';
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl border border-white/30 font-semibold hover:bg-white/10"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             </div>
         </div>
         <ul class="space-y-3 text-sm text-white/90">

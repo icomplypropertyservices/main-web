@@ -60,6 +60,37 @@ function icomplyMatrixRememberPlace(array &$bySlug, string $slug, array $row, in
 /**
  * @return array{selected:array<string,array<string,mixed>>,available:int,remaining:int,skipped_duplicates:int}
  */
+/** @return array<string, array{0:float,1:float}> */
+function icomplyMatrixCoords(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    $file = SITE_ROOT . '/data/town-coords-slim.json';
+    $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    if (!is_array($decoded)) {
+        return $map;
+    }
+    foreach ($decoded as $slug => $pair) {
+        if (!is_array($pair) || count($pair) < 2) {
+            continue;
+        }
+        $map[icomplyMatrixSlug((string)$slug)] = [(float)$pair[0], (float)$pair[1]];
+    }
+    return $map;
+}
+
+function icomplyMatrixMiles(float $lat1, float $lng1, float $lat2, float $lng2): float
+{
+    $earth = 3958.8;
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLng = deg2rad($lng2 - $lng1);
+    $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
+    return $earth * (2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a))));
+}
+
 function icomplyMatrixSelectPlaces(int $wanted): array
 {
     $bySlug = [];
@@ -257,25 +288,63 @@ function icomplyMatrixSelectPlaces(int $wanted): array
     foreach ($chosen as $row) {
         $names[$row['slug']] = (string)$row['name'];
     }
+    $nameToSlug = [];
+    foreach ($names as $slug => $name) {
+        $nameToSlug[$name] = $slug;
+    }
+    $coords = icomplyMatrixCoords();
     foreach ($chosen as $row) {
+        $here = $coords[$row['slug']] ?? null;
+        $withinTwelve = static function (string $name) use ($coords, $here, $nameToSlug): bool {
+            if (!is_array($here)) {
+                return true;
+            }
+            $slug = $nameToSlug[$name] ?? '';
+            $there = $slug !== '' ? ($coords[$slug] ?? null) : null;
+            if (!is_array($there)) {
+                return false;
+            }
+            return icomplyMatrixMiles((float)$here[0], (float)$here[1], (float)$there[0], (float)$there[1]) <= 12.0;
+        };
         $neighbours = [];
         foreach ($row['neighbours'] as $neighbour) {
             $neighbourSlug = icomplyMatrixSlug((string)$neighbour);
+            $candidate = '';
             if ($neighbourSlug !== '' && isset($names[$neighbourSlug]) && $neighbourSlug !== $row['slug']) {
-                $neighbours[] = $names[$neighbourSlug];
+                $candidate = $names[$neighbourSlug];
             } elseif (is_string($neighbour) && $neighbour !== '' && !isset($bySlug[icomplyMatrixSlug($neighbour)])) {
-                $neighbours[] = $neighbour;
+                $candidate = $neighbour;
             }
+            if ($candidate === '' || !$withinTwelve($candidate)) {
+                continue;
+            }
+            $neighbours[] = $candidate;
             if (count($neighbours) >= 3) {
                 break;
             }
         }
-        if (count($neighbours) < 2) {
+        if (count($neighbours) < 3 && is_array($here)) {
+            $ranked = [];
             foreach ($chosen as $other) {
-                if ($other['slug'] === $row['slug'] || ($other['region'] ?? '') !== ($row['region'] ?? '')) {
+                $there = $coords[$other['slug']] ?? null;
+                if ($other['slug'] === $row['slug'] || !is_array($there)) {
                     continue;
                 }
-                $neighbours[] = (string)$other['name'];
+                $miles = icomplyMatrixMiles($here[0], $here[1], $there[0], $there[1]);
+                if ($miles > 12) {
+                    continue;
+                }
+                $ranked[] = [
+                    'name' => (string)$other['name'],
+                    'miles' => $miles,
+                ];
+            }
+            usort($ranked, static fn (array $a, array $b): int => $a['miles'] <=> $b['miles']);
+            foreach ($ranked as $near) {
+                if (in_array($near['name'], $neighbours, true)) {
+                    continue;
+                }
+                $neighbours[] = $near['name'];
                 if (count($neighbours) >= 3) {
                     break;
                 }
@@ -431,6 +500,32 @@ function icomplyMatrixJobRecords(): array
             'nationwide' => $row[3],
         ];
     }
+    $lockFile = SITE_ROOT . '/data/seo-lock/p0-index.json';
+    if (is_file($lockFile)) {
+        $lock = json_decode((string)file_get_contents($lockFile), true);
+        foreach ((array)($lock['rows'] ?? []) as $slug => $meta) {
+            if (!is_array($meta) || ($meta['kind'] ?? '') !== 'job') {
+                continue;
+            }
+            $slug = icomplyMatrixSlug((string)$slug);
+            if ($slug === '' || isset($out[$slug])) {
+                continue;
+            }
+            $service = icomplyMatrixSlug((string)($meta['service'] ?? 'building-maintenance'));
+            if ($service === '') {
+                $service = 'building-maintenance';
+            }
+            $family = (string)($meta['family'] ?? '');
+            $nationwide = in_array($service, ['fire-alarms', 'barriers', 'aov-air-handling'], true) || $family === 'aov';
+            $name = trim((string)($meta['name'] ?? ''));
+            $out[$slug] = [
+                'name' => $name !== '' ? $name : ucwords(str_replace('-', ' ', $slug)),
+                'service' => $service,
+                'gas' => false,
+                'nationwide' => $nationwide,
+            ];
+        }
+    }
     return $out;
 }
 
@@ -525,6 +620,40 @@ function icomplyMatrixCatalogueRecords(): array
                 ];
                 $serviceKeywords[$service][] = $slug;
             }
+        }
+    }
+
+    $lockFile = SITE_ROOT . '/data/seo-lock/p0-index.json';
+    if (is_file($lockFile)) {
+        $lock = json_decode((string)file_get_contents($lockFile), true);
+        foreach ((array)($lock['rows'] ?? []) as $slug => $meta) {
+            if (!is_array($meta) || ($meta['kind'] ?? 'keyword') === 'job') {
+                continue;
+            }
+            $slug = icomplyMatrixSlug((string)$slug);
+            if ($slug === '' || isset($keywords[$slug])) {
+                continue;
+            }
+            $service = icomplyMatrixSlug((string)($meta['service'] ?? 'building-maintenance'));
+            if ($service === '') {
+                $service = 'building-maintenance';
+            }
+            $name = trim((string)($meta['name'] ?? ''));
+            if ($name === '') {
+                $name = ucwords(str_replace('-', ' ', $slug));
+            }
+            $keywords[$slug] = [
+                'name' => $name,
+                'service' => $service,
+                'intro' => $name . ' for homeowners and landlords. Free survey and a written quote before any work starts.',
+                'focus' => [
+                    'Free survey on site',
+                    'Written quote before work starts',
+                    'Homeowners and landlords',
+                ],
+                'gas' => false,
+            ];
+            $serviceKeywords[$service][] = $slug;
         }
     }
 
@@ -639,7 +768,13 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     if ($perPlace < 1) {
         throw new RuntimeException('Town matrix catalogue is empty');
     }
-    $placesNeeded = (int)ceil(max(1, ICOMPLY_MATRIX_URL_TARGET - $hubs) / $perPlace);
+    if (!function_exists('icomplyDualRingTownRows')) {
+        require_once __DIR__ . '/gm-crawl.php';
+    }
+    // Every dual-ring town is published even when keyword×town exceeds the
+    // million-URL planning target. Slicing the list drops towns from the sitemap.
+    $dualRingCount = count(icomplyDualRingTownRows());
+    $placesNeeded = max($dualRingCount, (int)ceil(max(1, ICOMPLY_MATRIX_URL_TARGET - $hubs) / $perPlace));
     $placePick = icomplyMatrixSelectPlaces($placesNeeded);
     $places = $placePick['selected'];
     if (count($places) < 1) {

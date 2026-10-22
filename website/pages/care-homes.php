@@ -83,7 +83,7 @@ $trust = [
     ['title' => 'Care-home ready', 'text' => 'Nurse call, fire, lighting, access & CCTV under one partner'],
     ['title' => 'HTM & BS standards', 'text' => 'HTM 08-03, BS 5839, BS 5266 and fire-override access'],
     ['title' => 'Manufacturer brands', 'text' => 'Courtney Thorne, Static Systems, Intercall & more'],
-    ['title' => 'Fixed-price quotes', 'text' => 'Clear scope, certification and multi-home options'],
+    ['title' => 'Written quotes', 'text' => 'Clear scope, certification and multi-home options'],
 ];
 
 // Nurse-call manufacturers from featured list + catalog (Courtney Thorne first)
@@ -198,7 +198,7 @@ $careFaqs = [
     ],
     [
         'q' => 'Do you publish a nurse call price?',
-        'a' => 'No. Nurse call, fire and the other care-home jobs on this page are quoted after a survey. Bed count, brand and whether the home is occupied change the visit. Nothing on this page is a fixed package price.',
+        'a' => 'No. Bed count, brand and whether the home is occupied change the visit. ',
     ],
     [
         'q' => 'Are you a CQC inspector?',
@@ -210,7 +210,7 @@ $careFaqs = [
     ],
     [
         'q' => 'Which nurse call brands do you service?',
-        'a' => 'Courtney Thorne is the usual starting point, alongside other nurse call brands listed on this page when we hold a manufacturer page for them. Send a photo of the panel if the badge is worn.',
+        'a' => 'Send a photo of the panel if the badge is worn.',
     ],
 ];
 
@@ -593,7 +593,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
                 <p class="mt-4 text-zinc-600 leading-relaxed">
                     Based in Offerton, Stockport, iComply Property Services supports care homes, nursing homes and
                     supported living across Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria.
-                    We focus on clear scope, fixed-price quotes and documentation that stands up to CQC visits,
+                    We focus on clear scope, written quotes and documentation that stands up to CQC visits,
                     fire risk assessments and insurer audits.
                 </p>
                 <div class="mt-8 grid sm:grid-cols-2 gap-4">
@@ -650,7 +650,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
             <?php
             $steps = [
                 ['1', 'Tell us about the home', 'Site type, bed count, existing nurse call / fire brands, cert due dates and access notes — form, phone or WhatsApp.'],
-                ['2', 'Fixed-price quote', 'We confirm scope (nurse call, fire, emergency lighting, access, CCTV) and a clear install or maintenance price.'],
+                ['2', 'Written quote', 'We confirm scope (nurse call, fire, emergency lighting, access, CCTV) and a clear install or maintenance price.'],
                 ['3', 'Attend, certify, support', 'Engineers complete the work, issue certificates and keep planned maintenance on schedule.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
@@ -736,7 +736,7 @@ $homeUrl = rtrim(SITE_URL, '/') . '/';
         </form>
 
         <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>
             <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>

@@ -886,6 +886,7 @@ if (!str_contains($headerFile, '/shop/assets/*.css')) {
  */
 $canonBad = 0;
 $canonSeen = 0;
+// G10: no job-hub → keyword-twin allow-list; every job hub must be self-canonical.
 $canonIter = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($dist, FilesystemIterator::SKIP_DOTS)
 );
@@ -941,9 +942,7 @@ foreach ($canonIter as $canonFile) {
     }
     $canonSeen++;
     $allowed = $page === $canonPath
-        || ($page === '/pages/products' && $canonPath === '/products')
-        || ($page === '/pages/packages/landlord-pack' && $canonPath === '/pages/packages/compliance-bundle')
-        || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack');
+        || ($page === '/pages/products' && $canonPath === '/products');
     if (!$allowed) {
         $canonBad++;
         if ($canonBad <= 8) {
@@ -953,10 +952,45 @@ foreach ($canonIter as $canonFile) {
 }
 if ($canonBad === 0 && $canonSeen > 1000) {
     $pass++;
-    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; /pages/products → /products only)\n";
+    echo "[PASS] canonicals are self-referencing ({$canonSeen} pages; only /pages/products → /products is excepted)\n";
 } else {
     $fail++;
     echo "[FAIL] canonical mismatches={$canonBad} checked={$canonSeen}\n";
+}
+
+// CLOSE-Q6 (2026-10-19): /pages/aov is a full hub, not a bare town list.
+$aovFile = $dist . '/pages/aov.php';
+$aovHtml = is_file($aovFile) ? (string)file_get_contents($aovFile) : '';
+if ($aovHtml !== '') {
+    $aovBody = preg_replace('#<(header|nav|footer|script|style)\b.*?</\1>#is', ' ', $aovHtml) ?? '';
+    preg_match_all('#<(p|h[1-4]|summary|dt|dd)\b[^>]*>(.*?)</\1>#is', $aovBody, $aovM);
+    $aovWords = str_word_count(html_entity_decode(strip_tags(implode(' ', $aovM[2] ?? []))), 0, "0123456789'’-");
+    $aovFaq = substr_count($aovHtml, 'class="faq-item"');
+    $aovImg = preg_match_all('#<img\b[^>]*data-pe-slot="q2-image-#i', $aovHtml);
+    $aovMeta = str_contains($aovHtml, 'name="description"') && str_contains($aovHtml, 'rel="canonical"')
+        && str_contains($aovHtml, 'og:image" content="https://') && str_contains($aovHtml, 'FAQPage');
+    if ($aovWords >= 800 && $aovFaq >= 5 && $aovImg >= 3 && $aovMeta && !str_contains($aovHtml, 'info@')) {
+        $pass++;
+        echo "[PASS] /pages/aov hub: {$aovWords} prose words, {$aovFaq} FAQs, {$aovImg} images, full meta\n";
+    } else {
+        $fail++;
+        echo "[FAIL] /pages/aov hub: words={$aovWords} faq={$aovFaq} images={$aovImg} meta=" . ($aovMeta ? 'ok' : 'missing') . "\n";
+    }
+} else {
+    $fail++;
+    echo "[FAIL] /pages/aov not exported\n";
+}
+
+// P0-NEW-5 (2026-10-19): legacy /areas/{town} 301s to /pages/areas/{town}.
+$toml = (string)@file_get_contents($repoRoot . '/netlify.toml');
+if (preg_match('#from = "/areas/:town"\s+to = "/pages/areas/:town"\s+status = 301\s+force = true#', $toml)
+    && preg_match('#from = "/areas/:town/"\s+to = "/pages/areas/:town"\s+status = 301#', $toml)
+    && !preg_match('#to = "/areas#', $toml)) {
+    $pass++;
+    echo "[PASS] netlify.toml 301s /areas/:town → /pages/areas/:town (no reverse rule)\n";
+} else {
+    $fail++;
+    echo "[FAIL] netlify.toml /areas/:town 301 missing or looped\n";
 }
 
 echo str_repeat('=', 56) . "\n";

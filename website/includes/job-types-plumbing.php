@@ -134,7 +134,7 @@ function jobTypesPlumbingPageHubHtml(string $slug, array $meta): string
     $links = [
         [url('/pages/services/index.php') . '#construction', 'Construction & Fit-Out hub'],
         [url('/pages/services/plumbing.php') . '#plumbing-job-types', 'Plumbing service hub'],
-        [url('/pages/keywords/index.php'), 'Keyword guide hub'],
+        [url('/pages/keywords/index.php'), 'All service guides'],
         [url('/pages/areas/index.php'), 'Area hubs'],
     ];
     $related = keywordSlug((string)($meta['related'] ?? ''));
@@ -178,7 +178,7 @@ function jobTypesPlumbingServiceIndexHtml(): string
     $html = '<div id="plumbing-job-types" class="mt-8 scroll-mt-24" data-plumbing-job-index="1">';
     $html .= '<h3 class="text-xl font-semibold text-black">Plumbing job types</h3>';
     $html .= '<p class="mt-2 text-sm text-zinc-600 max-w-2xl">All ' . count($jobs)
-        . ' plumbing guides. Each one links back here, to the area hubs, and to a related job. Every job gets a fixed written quote.</p>';
+        . ' plumbing guides. Each one links back here, to the area hubs, and to a related job. Every job gets a free written quote.</p>';
     $html .= '<div class="mt-4 flex flex-wrap gap-2">';
     foreach ($jobs as $job) {
         if (!is_array($job)) {

@@ -1,0 +1,3663 @@
+{
+ "note": "P0-CTR-MONEY C1-C15 (SEO brief /workspace/icomply-ops/seo/MONEY-PAGE-CTR-BRIEFS-2026-10-19.md). Titles/metas are the brief's exact strings. Links are targets verified 200 + index,follow at build time. Same/Next-Day restored in titles that carried it on main (C2, C3, C12) per Jack 19 Oct / SEO-MANAGER-RULES §7, which overrides the brief strings. 2026-10-20 (SEO scorecard PR147): Same/Next-Day restored in all 15 C-titles (main b3675d0 carries it on all 15); C10 keeps main's from £350 framing to match its body copy.",
+ "pages": {
+  "/pages/keywords/emergency-lighting-installation/rochdale": {
+   "brief": "C1",
+   "kind": "xtown",
+   "title": "Emergency Lighting Installation Rochdale | Same/Next-Day",
+   "meta": "Emergency lighting installation in Rochdale for landlords and commercial sites. BS 5266 design and test. From Stockport. Call 07517 806082.",
+   "h2": "Planning an emergency lighting installation in Rochdale",
+   "paras": [
+    "Rochdale has a wide spread of buildings that need escape lighting: converted mills split into units, terraced HMOs, shops on Yorkshire Street and the Wheatsheaf area, and newer blocks of flats near the town centre. Each of those needs a different layout, so an installation here starts with a walk of the escape routes rather than a fitting count taken from a drawing.",
+    "The survey records every route a person would use to leave the building, the stair cores, changes of direction, final exits, fire alarm call points and firefighting equipment. Those points set where luminaires and exit signs go. Open areas larger than the BS 5266 threshold get anti-panic lighting, and plant rooms or lift motor rooms get standby cover where the building needs it.",
+    "We then agree the type of system with you. Self-contained fittings with their own batteries suit most small blocks and shops in Rochdale because they need no central battery room. Larger mixed sites sometimes suit a central battery system, and some clients prefer self-test fittings so the monthly function test is logged without a person walking every corridor. We set out the trade-offs in the written quote so you can choose.",
+    "On site the work is planned around occupied buildings. Circuits are taken from the local lighting circuit so the fitting sees a mains failure on that area, wiring is fire-rated where the design calls for it, and each fitting is labelled. Once fitted, every luminaire is given a full rated-duration discharge test, usually three hours, before the paperwork is issued.",
+    "You receive a completion certificate, a marked-up plan showing each fitting, the test results and a logbook for the monthly checks. If an older system is already in place we can survey it first and tell you which fittings can stay, which need new batteries and which areas have no cover at all, so you only pay for what the building needs. Pricing is a written quote after the survey."
+   ],
+   "faqs": [
+    [
+     "What does BS 5266 require for a building in Rochdale?",
+     "BS 5266-1 sets out where escape lighting is needed, how bright it must be on the escape route and how long it must run after a mains failure. In most rented and commercial buildings that means lighting along escape routes, at exits and stairs, and over safety equipment, with a three-hour duration in premises that may be reoccupied."
+    ],
+    [
+     "How often must emergency lighting be tested after installation?",
+     "A short functional test each month and a full rated-duration test once a year. The results go in the logbook we leave with you, and we can carry out the annual test for you if you prefer."
+    ],
+    [
+     "What does the installation certificate include?",
+     "The certificate covers the design, the installation and the commissioning test, with a plan of the fittings and the discharge test results, so the responsible person has a record for the fire risk assessment."
+    ],
+    [
+     "How long does an installation take in a small block?",
+     "A small block of flats with one stair core is often fitted in a day or two, depending on access and the wiring route. The survey confirms the time before work starts."
+    ]
+   ],
+   "faqHeading": "Questions answered for Rochdale",
+   "hubs": [
+    "/pages/areas/rochdale",
+    "/pages/keywords/emergency-lighting-installation",
+    "/pages/services/emergency-lighting",
+    "/pages/services/fire-alarms",
+    "/pages/emergency-lighting-compliance",
+    "/pages/keywords/emergency-lighting-test",
+    "/pages/keywords/emergency-lighting-design"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More emergency lighting installation and related pages near Rochdale",
+   "links": [
+    [
+     "/pages/areas/rochdale",
+     "Rochdale property compliance"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation",
+     "Emergency Lighting Installation"
+    ],
+    [
+     "/pages/services/emergency-lighting",
+     "Emergency lighting tests"
+    ],
+    [
+     "/pages/services/fire-alarms",
+     "Fire Alarms"
+    ],
+    [
+     "/pages/emergency-lighting-compliance",
+     "Emergency Lighting Compliance"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test",
+     "Emergency Lighting Test"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design",
+     "Emergency Lighting Design"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/rochdale",
+     "Emergency Lighting Test in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/rochdale",
+     "Emergency Lighting Design in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/rochdale",
+     "Emergency Lighting Annual Test in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-maintenance/rochdale",
+     "Emergency Lighting Maintenance in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-repair/rochdale",
+     "Emergency Lighting Repair in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-certificate/rochdale",
+     "Emergency Lighting Certificate in Rochdale"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/rochdale",
+     "Fire Alarm Installation in Rochdale"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installer/rochdale",
+     "Fire Alarm Installer in Rochdale"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/rochdale",
+     "Fire Risk Assessment in Rochdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/littleborough",
+     "Emergency Lighting Installation in Littleborough"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/royton",
+     "Emergency Lighting Installation in Royton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/middleton",
+     "Emergency Lighting Installation in Middleton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/chadderton",
+     "Emergency Lighting Installation in Chadderton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/oldham",
+     "Emergency Lighting Installation in Oldham"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/bury",
+     "Emergency Lighting Installation in Bury"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/bacup",
+     "Emergency Lighting Installation in Bacup"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/lees",
+     "Emergency Lighting Installation in Lees"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ramsbottom",
+     "Emergency Lighting Installation in Ramsbottom"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/hollinwood",
+     "Emergency Lighting Installation in Hollinwood"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/todmorden",
+     "Emergency Lighting Installation in Todmorden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/whitefield",
+     "Emergency Lighting Installation in Whitefield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/uppermill",
+     "Emergency Lighting Installation in Uppermill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/failsworth",
+     "Emergency Lighting Installation in Failsworth"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/rawtenstall",
+     "Emergency Lighting Installation in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/saddleworth",
+     "Emergency Lighting Installation in Saddleworth"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/prestwich",
+     "Emergency Lighting Installation in Prestwich"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/radcliffe",
+     "Emergency Lighting Installation in Radcliffe"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/haslingden",
+     "Emergency Lighting Installation in Haslingden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ashton-under-lyne",
+     "Emergency Lighting Installation in Ashton-under-Lyne"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/droylsden",
+     "Emergency Lighting Installation in Droylsden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/little-lever",
+     "Emergency Lighting Installation in Little Lever"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/manchester",
+     "Emergency Lighting Installation in Manchester"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/stalybridge",
+     "Emergency Lighting Installation in Stalybridge"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/dukinfield",
+     "Emergency Lighting Installation in Dukinfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/salford",
+     "Emergency Lighting Installation in Salford"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/kearsley",
+     "Emergency Lighting Installation in Kearsley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/farnworth",
+     "Emergency Lighting Installation in Farnworth"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/denton",
+     "Emergency Lighting Installation in Denton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/swinton",
+     "Emergency Lighting Installation in Swinton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/bolton",
+     "Emergency Lighting Installation in Bolton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/eccles",
+     "Emergency Lighting Installation in Eccles"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/hyde",
+     "Emergency Lighting Installation in Hyde"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/little-hulton",
+     "Emergency Lighting Installation in Little Hulton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/walkden",
+     "Emergency Lighting Installation in Walkden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/accrington",
+     "Emergency Lighting Installation in Accrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/burnley",
+     "Emergency Lighting Installation in Burnley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/stretford",
+     "Emergency Lighting Installation in Stretford"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/elland",
+     "Emergency Lighting Installation in Elland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/darwen",
+     "Emergency Lighting Installation in Darwen"
+    ],
+    [
+     "/pages/areas/littleborough",
+     "Property services in Littleborough"
+    ],
+    [
+     "/pages/areas/royton",
+     "Property services in Royton"
+    ],
+    [
+     "/pages/areas/middleton",
+     "Property services in Middleton"
+    ],
+    [
+     "/pages/areas/chadderton",
+     "Property services in Chadderton"
+    ],
+    [
+     "/pages/areas/oldham",
+     "Property services in Oldham"
+    ],
+    [
+     "/pages/areas/bury",
+     "Property services in Bury"
+    ],
+    [
+     "/pages/areas/bacup",
+     "Property services in Bacup"
+    ],
+    [
+     "/pages/areas/lees",
+     "Property services in Lees"
+    ],
+    [
+     "/pages/areas/ramsbottom",
+     "Property services in Ramsbottom"
+    ],
+    [
+     "/pages/areas/hollinwood",
+     "Property services in Hollinwood"
+    ],
+    [
+     "/pages/areas/todmorden",
+     "Property services in Todmorden"
+    ],
+    [
+     "/pages/areas/whitefield",
+     "Property services in Whitefield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/littleborough",
+     "Emergency Lighting Test in Littleborough"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/littleborough",
+     "Emergency Lighting Design in Littleborough"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/royton",
+     "Emergency Lighting Test in Royton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/royton",
+     "Emergency Lighting Design in Royton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/middleton",
+     "Emergency Lighting Test in Middleton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/middleton",
+     "Emergency Lighting Design in Middleton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/chadderton",
+     "Emergency Lighting Test in Chadderton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/chadderton",
+     "Emergency Lighting Design in Chadderton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/oldham",
+     "Emergency Lighting Test in Oldham"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/oldham",
+     "Emergency Lighting Design in Oldham"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/bury",
+     "Emergency Lighting Test in Bury"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/bury",
+     "Emergency Lighting Design in Bury"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/bacup",
+     "Emergency Lighting Test in Bacup"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/bacup",
+     "Emergency Lighting Design in Bacup"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/lees",
+     "Emergency Lighting Test in Lees"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/lees",
+     "Emergency Lighting Design in Lees"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/ramsbottom",
+     "Emergency Lighting Test in Ramsbottom"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/ramsbottom",
+     "Emergency Lighting Design in Ramsbottom"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/hollinwood",
+     "Emergency Lighting Test in Hollinwood"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/hollinwood",
+     "Emergency Lighting Design in Hollinwood"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/todmorden",
+     "Emergency Lighting Test in Todmorden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/todmorden",
+     "Emergency Lighting Design in Todmorden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/whitefield",
+     "Emergency Lighting Test in Whitefield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/whitefield",
+     "Emergency Lighting Design in Whitefield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/uppermill",
+     "Emergency Lighting Test in Uppermill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/uppermill",
+     "Emergency Lighting Design in Uppermill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/failsworth",
+     "Emergency Lighting Test in Failsworth"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/failsworth",
+     "Emergency Lighting Design in Failsworth"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/rawtenstall",
+     "Emergency Lighting Test in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/rawtenstall",
+     "Emergency Lighting Design in Rawtenstall"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/eicr/waddington": {
+   "brief": "C2",
+   "kind": "xtown",
+   "title": "EICR Waddington from £160 | Same/Next-Day | 07517 806082",
+   "meta": "EICR in Waddington from £160 for landlords and managers. Free written quote, certificates emailed. From Stockport. Call 07517 806082.",
+   "h2": "Booking an EICR for a property in Waddington",
+   "paras": [
+    "Waddington is a small Ribble Valley village near Clitheroe, with stone cottages, a few converted farm buildings and a handful of shops and holiday lets. Many of those properties have older wiring that has been altered over the years, which is exactly what an Electrical Installation Condition Report is designed to pick up.",
+    "An EICR is an inspection and test of the fixed wiring: the consumer unit, circuits, sockets, light fittings, earthing and bonding. The electrician samples circuits, tests insulation resistance, earth fault loop impedance and RCD operation, and checks for damage, overheating and wear. Portable appliances are not part of an EICR.",
+    "The report gives each observation a code. C1 means danger present and needs action straight away. C2 means potentially dangerous and must be put right. C3 means improvement recommended. FI means further investigation is needed. A report with any C1, C2 or FI is unsatisfactory, and we tell you plainly what the remedial work involves and quote for it separately.",
+    "For private landlords, the regulations require an EICR at least every five years and a copy for each tenant within 28 days of the inspection. Holiday lets and commercial premises in Waddington are usually inspected on a similar cycle, guided by insurers and the type of use. We email the certificate as a PDF so it can be passed straight to tenants or your letting agent.",
+    "Pricing starts from £160 for a typical small property, with a free written quote before work so larger houses or extra circuits are agreed in advance. Access is arranged with you or the tenant, and power is off only for short periods while each circuit is tested."
+   ],
+   "faqs": [
+    [
+     "What does an EICR cover?",
+     "The fixed electrical installation: consumer unit, circuits, sockets, switches, light fittings, earthing and bonding. It does not cover portable appliances, which are a separate PAT test."
+    ],
+    [
+     "How long does an EICR take for a flat?",
+     "A one or two bedroom flat usually takes two to four hours, depending on the number of circuits and how easy the consumer unit is to reach."
+    ],
+    [
+     "When does a landlord need a new EICR?",
+     "At least every five years, or sooner if the previous report says so. Tenants must get a copy within 28 days of the inspection, and new tenants before they move in."
+    ],
+    [
+     "What do C1, C2 and C3 mean?",
+     "C1 is danger present, C2 is potentially dangerous, and C3 is an improvement recommended. C1 and C2 make the report unsatisfactory until remedial work is done and confirmed."
+    ]
+   ],
+   "faqHeading": "Questions answered for Waddington",
+   "hubs": [
+    "/pages/keywords/eicr",
+    "/pages/jobs/eicr",
+    "/pages/services/electrical",
+    "/pages/electrical-safety-landlords",
+    "/pages/landlord-certificates",
+    "/pages/keywords/eicr-testing",
+    "/pages/keywords/eicr-certificate"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More eicr and related pages near Waddington",
+   "links": [
+    [
+     "/pages/keywords/eicr",
+     "EICR"
+    ],
+    [
+     "/pages/jobs/eicr",
+     "EICR for landlords"
+    ],
+    [
+     "/pages/services/electrical",
+     "EICR and rewires"
+    ],
+    [
+     "/pages/electrical-safety-landlords",
+     "Electrical Safety for Landlords"
+    ],
+    [
+     "/pages/landlord-certificates",
+     "Landlord Certificates"
+    ],
+    [
+     "/pages/keywords/eicr-testing",
+     "EICR Testing"
+    ],
+    [
+     "/pages/keywords/eicr-certificate",
+     "EICR certificate"
+    ],
+    [
+     "/pages/keywords/eicr-testing/waddington",
+     "EICR Testing in Waddington"
+    ],
+    [
+     "/pages/keywords/eicr/clitheroe",
+     "EICR in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr/great-harwood",
+     "EICR in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr/padiham",
+     "EICR in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr/brierfield",
+     "EICR in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr/accrington",
+     "EICR in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr/burnley",
+     "EICR in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr/nelson",
+     "EICR in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr/barnoldswick",
+     "EICR in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr/blackburn",
+     "EICR in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr/colne",
+     "EICR in Colne"
+    ],
+    [
+     "/pages/keywords/eicr/darwen",
+     "EICR in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr/haslingden",
+     "EICR in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr/rawtenstall",
+     "EICR in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr/preston",
+     "EICR in Preston"
+    ],
+    [
+     "/pages/keywords/eicr/bacup",
+     "EICR in Bacup"
+    ],
+    [
+     "/pages/keywords/eicr/clayton-le-woods",
+     "EICR in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr/ramsbottom",
+     "EICR in Ramsbottom"
+    ],
+    [
+     "/pages/keywords/eicr/skipton",
+     "EICR in Skipton"
+    ],
+    [
+     "/pages/keywords/eicr/leyland",
+     "EICR in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr/todmorden",
+     "EICR in Todmorden"
+    ],
+    [
+     "/pages/keywords/eicr/cross-hills",
+     "EICR in Cross Hills"
+    ],
+    [
+     "/pages/keywords/eicr/chorley",
+     "EICR in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr/lancaster",
+     "EICR in Lancaster"
+    ],
+    [
+     "/pages/keywords/eicr/bury",
+     "EICR in Bury"
+    ],
+    [
+     "/pages/keywords/eicr/horwich",
+     "EICR in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr/keighley",
+     "EICR in Keighley"
+    ],
+    [
+     "/pages/keywords/eicr/fylde",
+     "EICR in Fylde"
+    ],
+    [
+     "/pages/keywords/eicr/bolton",
+     "EICR in Bolton"
+    ],
+    [
+     "/pages/keywords/eicr/littleborough",
+     "EICR in Littleborough"
+    ],
+    [
+     "/pages/keywords/eicr/rochdale",
+     "EICR in Rochdale"
+    ],
+    [
+     "/pages/keywords/eicr/morecambe",
+     "EICR in Morecambe"
+    ],
+    [
+     "/pages/keywords/eicr/little-lever",
+     "EICR in Little Lever"
+    ],
+    [
+     "/pages/keywords/eicr/heysham",
+     "EICR in Heysham"
+    ],
+    [
+     "/pages/keywords/eicr/radcliffe",
+     "EICR in Radcliffe"
+    ],
+    [
+     "/pages/keywords/eicr/farnworth",
+     "EICR in Farnworth"
+    ],
+    [
+     "/pages/keywords/eicr/poulton-le-fylde",
+     "EICR in Poulton-le-Fylde"
+    ],
+    [
+     "/pages/keywords/eicr/whitefield",
+     "EICR in Whitefield"
+    ],
+    [
+     "/pages/keywords/eicr/bingley",
+     "EICR in Bingley"
+    ],
+    [
+     "/pages/keywords/eicr/westhoughton",
+     "EICR in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr/ilkley",
+     "EICR in Ilkley"
+    ],
+    [
+     "/pages/areas/clitheroe",
+     "Property services in Clitheroe"
+    ],
+    [
+     "/pages/areas/great-harwood",
+     "Property services in Great Harwood"
+    ],
+    [
+     "/pages/areas/padiham",
+     "Property services in Padiham"
+    ],
+    [
+     "/pages/areas/brierfield",
+     "Property services in Brierfield"
+    ],
+    [
+     "/pages/areas/accrington",
+     "Property services in Accrington"
+    ],
+    [
+     "/pages/areas/burnley",
+     "Property services in Burnley"
+    ],
+    [
+     "/pages/areas/nelson",
+     "Property services in Nelson"
+    ],
+    [
+     "/pages/areas/barnoldswick",
+     "Property services in Barnoldswick"
+    ],
+    [
+     "/pages/areas/blackburn",
+     "Property services in Blackburn"
+    ],
+    [
+     "/pages/areas/colne",
+     "Property services in Colne"
+    ],
+    [
+     "/pages/areas/darwen",
+     "Property services in Darwen"
+    ],
+    [
+     "/pages/areas/haslingden",
+     "Property services in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr-testing/clitheroe",
+     "EICR Testing in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/clitheroe",
+     "EICR Certificate in Clitheroe"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/clitheroe",
+     "Electrical Inspection and Testing in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr-testing/great-harwood",
+     "EICR Testing in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/great-harwood",
+     "EICR Certificate in Great Harwood"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/great-harwood",
+     "Electrical Inspection and Testing in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr-testing/padiham",
+     "EICR Testing in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/padiham",
+     "EICR Certificate in Padiham"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/padiham",
+     "Electrical Inspection and Testing in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr-testing/brierfield",
+     "EICR Testing in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/brierfield",
+     "EICR Certificate in Brierfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/brierfield",
+     "Electrical Inspection and Testing in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/accrington",
+     "EICR Testing in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/accrington",
+     "EICR Certificate in Accrington"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/accrington",
+     "Electrical Inspection and Testing in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr-testing/burnley",
+     "EICR Testing in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/burnley",
+     "EICR Certificate in Burnley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/burnley",
+     "Electrical Inspection and Testing in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/nelson",
+     "EICR Testing in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/nelson",
+     "EICR Certificate in Nelson"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/nelson",
+     "Electrical Inspection and Testing in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr-testing/barnoldswick",
+     "EICR Testing in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/barnoldswick",
+     "EICR Certificate in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/barnoldswick",
+     "Electrical Inspection and Testing in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr-testing/blackburn",
+     "EICR Testing in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/blackburn",
+     "EICR Certificate in Blackburn"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/blackburn",
+     "Electrical Inspection and Testing in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr-testing/colne",
+     "EICR Testing in Colne"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/colne",
+     "EICR Certificate in Colne"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/colne",
+     "Electrical Inspection and Testing in Colne"
+    ],
+    [
+     "/pages/keywords/eicr-testing/darwen",
+     "EICR Testing in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/darwen",
+     "EICR Certificate in Darwen"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/darwen",
+     "Electrical Inspection and Testing in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr-testing/haslingden",
+     "EICR Testing in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/haslingden",
+     "EICR Certificate in Haslingden"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/haslingden",
+     "Electrical Inspection and Testing in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr-testing/rawtenstall",
+     "EICR Testing in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/rawtenstall",
+     "EICR Certificate in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/rawtenstall",
+     "Electrical Inspection and Testing in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr-testing/preston",
+     "EICR Testing in Preston"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/preston",
+     "EICR Certificate in Preston"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/preston",
+     "Electrical Inspection and Testing in Preston"
+    ],
+    [
+     "/pages/keywords/eicr-testing/bacup",
+     "EICR Testing in Bacup"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/bacup",
+     "EICR Certificate in Bacup"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/bacup",
+     "Electrical Inspection and Testing in Bacup"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/eicr-testing/waddington": {
+   "brief": "C3",
+   "kind": "xtown",
+   "title": "EICR Testing Waddington from £160 | Same/Next-Day",
+   "meta": "EICR testing in Waddington from £160. Written quote before work, certificates emailed. From Stockport. Call 07517 806082.",
+   "h2": "How EICR testing is carried out in Waddington",
+   "paras": [
+    "EICR testing in Waddington covers village houses, barn conversions, the school and community buildings, and small commercial units along the road to Clitheroe. The test method is the same in each, but the time taken varies with the age of the wiring and how many circuits there are.",
+    "Testing starts with a visual check with the power on: the condition of the consumer unit, signs of heat damage, missing covers, cable routes and the main earthing and bonding to gas and water pipes. The installation is then isolated circuit by circuit for dead tests, which include continuity of protective conductors, ring circuit continuity and insulation resistance between conductors.",
+    "With power restored, live tests measure earth fault loop impedance and prospective fault current, and every RCD is tripped with a test instrument to check it disconnects within the required time. Results are entered on the schedule of test results so the next electrician can compare readings over time.",
+    "In older stone properties the most common findings are missing RCD protection, a lack of supplementary bonding in bathrooms, damaged accessories and earthing that does not meet current standards. Each finding is coded C1, C2, C3 or FI, and the summary page states whether the installation is satisfactory for continued use.",
+    "The report is usually written up and emailed within a couple of working days of the visit. Testing is from £160 for a typical small property, confirmed in a written quote before anyone attends. If remedial work is needed, it is quoted separately and a confirmation certificate is issued once it is done."
+   ],
+   "faqs": [
+    [
+     "What tests are carried out during EICR testing?",
+     "Continuity, insulation resistance, polarity, earth fault loop impedance, prospective fault current and RCD trip times, plus a visual inspection of the whole fixed installation."
+    ],
+    [
+     "How soon do I get the report?",
+     "The report is normally emailed within a couple of working days of the inspection, as a PDF you can forward to tenants or your agent."
+    ],
+    [
+     "Will the power be off all day?",
+     "No. Power is isolated one circuit at a time for the dead tests, so most of the property stays live for most of the visit."
+    ]
+   ],
+   "faqHeading": "Questions answered for Waddington",
+   "hubs": [
+    "/pages/keywords/eicr-testing",
+    "/pages/keywords/eicr",
+    "/pages/jobs/eicr",
+    "/pages/services/electrical",
+    "/pages/electrical-safety-landlords",
+    "/pages/keywords/eicr-certificate",
+    "/pages/landlord-certificates"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More eicr testing and related pages near Waddington",
+   "links": [
+    [
+     "/pages/keywords/eicr-testing",
+     "EICR Testing"
+    ],
+    [
+     "/pages/keywords/eicr",
+     "EICR"
+    ],
+    [
+     "/pages/jobs/eicr",
+     "EICR for landlords"
+    ],
+    [
+     "/pages/services/electrical",
+     "EICR and rewires"
+    ],
+    [
+     "/pages/electrical-safety-landlords",
+     "Electrical Safety for Landlords"
+    ],
+    [
+     "/pages/keywords/eicr-certificate",
+     "EICR certificate"
+    ],
+    [
+     "/pages/landlord-certificates",
+     "Landlord Certificates"
+    ],
+    [
+     "/pages/keywords/eicr/waddington",
+     "EICR in Waddington"
+    ],
+    [
+     "/pages/keywords/eicr-testing/clitheroe",
+     "EICR Testing in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr-testing/great-harwood",
+     "EICR Testing in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr-testing/padiham",
+     "EICR Testing in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr-testing/brierfield",
+     "EICR Testing in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/accrington",
+     "EICR Testing in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr-testing/burnley",
+     "EICR Testing in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/nelson",
+     "EICR Testing in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr-testing/barnoldswick",
+     "EICR Testing in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr-testing/blackburn",
+     "EICR Testing in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr-testing/colne",
+     "EICR Testing in Colne"
+    ],
+    [
+     "/pages/keywords/eicr-testing/darwen",
+     "EICR Testing in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr-testing/haslingden",
+     "EICR Testing in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr-testing/rawtenstall",
+     "EICR Testing in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr-testing/preston",
+     "EICR Testing in Preston"
+    ],
+    [
+     "/pages/keywords/eicr-testing/bacup",
+     "EICR Testing in Bacup"
+    ],
+    [
+     "/pages/keywords/eicr-testing/clayton-le-woods",
+     "EICR Testing in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ramsbottom",
+     "EICR Testing in Ramsbottom"
+    ],
+    [
+     "/pages/keywords/eicr-testing/skipton",
+     "EICR Testing in Skipton"
+    ],
+    [
+     "/pages/keywords/eicr-testing/leyland",
+     "EICR Testing in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr-testing/todmorden",
+     "EICR Testing in Todmorden"
+    ],
+    [
+     "/pages/keywords/eicr-testing/cross-hills",
+     "EICR Testing in Cross Hills"
+    ],
+    [
+     "/pages/keywords/eicr-testing/chorley",
+     "EICR Testing in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/lancaster",
+     "EICR Testing in Lancaster"
+    ],
+    [
+     "/pages/keywords/eicr-testing/bury",
+     "EICR Testing in Bury"
+    ],
+    [
+     "/pages/keywords/eicr-testing/horwich",
+     "EICR Testing in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr-testing/keighley",
+     "EICR Testing in Keighley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/fylde",
+     "EICR Testing in Fylde"
+    ],
+    [
+     "/pages/keywords/eicr-testing/bolton",
+     "EICR Testing in Bolton"
+    ],
+    [
+     "/pages/keywords/eicr-testing/littleborough",
+     "EICR Testing in Littleborough"
+    ],
+    [
+     "/pages/keywords/eicr-testing/rochdale",
+     "EICR Testing in Rochdale"
+    ],
+    [
+     "/pages/keywords/eicr-testing/morecambe",
+     "EICR Testing in Morecambe"
+    ],
+    [
+     "/pages/keywords/eicr-testing/little-lever",
+     "EICR Testing in Little Lever"
+    ],
+    [
+     "/pages/keywords/eicr-testing/heysham",
+     "EICR Testing in Heysham"
+    ],
+    [
+     "/pages/keywords/eicr-testing/radcliffe",
+     "EICR Testing in Radcliffe"
+    ],
+    [
+     "/pages/keywords/eicr-testing/farnworth",
+     "EICR Testing in Farnworth"
+    ],
+    [
+     "/pages/keywords/eicr-testing/poulton-le-fylde",
+     "EICR Testing in Poulton-le-Fylde"
+    ],
+    [
+     "/pages/keywords/eicr-testing/whitefield",
+     "EICR Testing in Whitefield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/bingley",
+     "EICR Testing in Bingley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/westhoughton",
+     "EICR Testing in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ilkley",
+     "EICR Testing in Ilkley"
+    ],
+    [
+     "/pages/areas/clitheroe",
+     "Property services in Clitheroe"
+    ],
+    [
+     "/pages/areas/great-harwood",
+     "Property services in Great Harwood"
+    ],
+    [
+     "/pages/areas/padiham",
+     "Property services in Padiham"
+    ],
+    [
+     "/pages/areas/brierfield",
+     "Property services in Brierfield"
+    ],
+    [
+     "/pages/areas/accrington",
+     "Property services in Accrington"
+    ],
+    [
+     "/pages/areas/burnley",
+     "Property services in Burnley"
+    ],
+    [
+     "/pages/areas/nelson",
+     "Property services in Nelson"
+    ],
+    [
+     "/pages/areas/barnoldswick",
+     "Property services in Barnoldswick"
+    ],
+    [
+     "/pages/areas/blackburn",
+     "Property services in Blackburn"
+    ],
+    [
+     "/pages/areas/colne",
+     "Property services in Colne"
+    ],
+    [
+     "/pages/areas/darwen",
+     "Property services in Darwen"
+    ],
+    [
+     "/pages/areas/haslingden",
+     "Property services in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr/clitheroe",
+     "EICR in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/clitheroe",
+     "EICR Certificate in Clitheroe"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/clitheroe",
+     "Electrical Inspection and Testing in Clitheroe"
+    ],
+    [
+     "/pages/keywords/eicr/great-harwood",
+     "EICR in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/great-harwood",
+     "EICR Certificate in Great Harwood"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/great-harwood",
+     "Electrical Inspection and Testing in Great Harwood"
+    ],
+    [
+     "/pages/keywords/eicr/padiham",
+     "EICR in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/padiham",
+     "EICR Certificate in Padiham"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/padiham",
+     "Electrical Inspection and Testing in Padiham"
+    ],
+    [
+     "/pages/keywords/eicr/brierfield",
+     "EICR in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/brierfield",
+     "EICR Certificate in Brierfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/brierfield",
+     "Electrical Inspection and Testing in Brierfield"
+    ],
+    [
+     "/pages/keywords/eicr/accrington",
+     "EICR in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/accrington",
+     "EICR Certificate in Accrington"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/accrington",
+     "Electrical Inspection and Testing in Accrington"
+    ],
+    [
+     "/pages/keywords/eicr/burnley",
+     "EICR in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/burnley",
+     "EICR Certificate in Burnley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/burnley",
+     "Electrical Inspection and Testing in Burnley"
+    ],
+    [
+     "/pages/keywords/eicr/nelson",
+     "EICR in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/nelson",
+     "EICR Certificate in Nelson"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/nelson",
+     "Electrical Inspection and Testing in Nelson"
+    ],
+    [
+     "/pages/keywords/eicr/barnoldswick",
+     "EICR in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/barnoldswick",
+     "EICR Certificate in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/barnoldswick",
+     "Electrical Inspection and Testing in Barnoldswick"
+    ],
+    [
+     "/pages/keywords/eicr/blackburn",
+     "EICR in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/blackburn",
+     "EICR Certificate in Blackburn"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/blackburn",
+     "Electrical Inspection and Testing in Blackburn"
+    ],
+    [
+     "/pages/keywords/eicr/colne",
+     "EICR in Colne"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/colne",
+     "EICR Certificate in Colne"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/colne",
+     "Electrical Inspection and Testing in Colne"
+    ],
+    [
+     "/pages/keywords/eicr/darwen",
+     "EICR in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/darwen",
+     "EICR Certificate in Darwen"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/darwen",
+     "Electrical Inspection and Testing in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr/haslingden",
+     "EICR in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/haslingden",
+     "EICR Certificate in Haslingden"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/haslingden",
+     "Electrical Inspection and Testing in Haslingden"
+    ],
+    [
+     "/pages/keywords/eicr/rawtenstall",
+     "EICR in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/rawtenstall",
+     "EICR Certificate in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/rawtenstall",
+     "Electrical Inspection and Testing in Rawtenstall"
+    ],
+    [
+     "/pages/keywords/eicr/preston",
+     "EICR in Preston"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/preston",
+     "EICR Certificate in Preston"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/preston",
+     "Electrical Inspection and Testing in Preston"
+    ],
+    [
+     "/pages/keywords/eicr/bacup",
+     "EICR in Bacup"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/bacup",
+     "EICR Certificate in Bacup"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/bacup",
+     "Electrical Inspection and Testing in Bacup"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/eicr-certificate/appley-bridge": {
+   "brief": "C5",
+   "kind": "xtown",
+   "title": "EICR Certificate Appley Bridge from £160 | Same/Next-Day",
+   "meta": "EICR certificate in Appley Bridge from £160 for landlords and managing agents. Free written quote. Certificates emailed. Call 07517 806082.",
+   "h2": "EICR certificates for landlords and agents in Appley Bridge",
+   "paras": [
+    "Appley Bridge sits between Wigan and Parbold along the Leeds and Liverpool Canal, with commuter semis, older terraces near the station and a growing number of rented homes managed by agents in Wigan and Skelmersdale. An EICR certificate is the document those landlords and agents need to show the fixed wiring has been inspected and tested.",
+    "The certificate is the Electrical Installation Condition Report itself. It records the extent of the inspection, any limitations such as rooms that could not be accessed, the observations with their codes, the schedule of test results and an overall result of satisfactory or unsatisfactory. A satisfactory report is what tenants and local authorities ask to see.",
+    "For managing agents with several homes in Appley Bridge and nearby Shevington, Standish and Parbold, we can group inspections by area so visits are planned on the same day where tenants allow. Each property gets its own report and a single summary list showing which addresses passed, which need remedial work and the next due date for each.",
+    "Tenants receive a copy of the report, and agents usually keep the PDF on their file with the gas safety record and EPC. If a report is unsatisfactory, the remedial work is quoted separately. Once it is complete, a confirmation certificate is issued so the file shows the installation is now safe for continued use.",
+    "Certificates are from £160 for a typical small property, with a free written quote agreed before the visit. Larger houses, HMOs or blocks with communal supplies are priced from the number of circuits and boards, and we say so before booking."
+   ],
+   "faqs": [
+    [
+     "Can you book inspections across a whole portfolio?",
+     "Yes. Send the list of addresses and we group visits by area, issue one report per property and a summary showing results and next due dates."
+    ],
+    [
+     "What documents do tenants receive?",
+     "A copy of the full EICR, and a confirmation certificate if remedial work was needed. Landlords must give the copy within 28 days of the inspection."
+    ],
+    [
+     "What if a room cannot be accessed?",
+     "It is recorded as a limitation on the report. We can return to complete it so the report covers the whole installation."
+    ]
+   ],
+   "faqHeading": "Questions answered for Appley Bridge",
+   "hubs": [
+    "/pages/keywords/eicr-certificate",
+    "/pages/keywords/eicr",
+    "/pages/jobs/eicr",
+    "/pages/services/electrical",
+    "/pages/electrical-safety-landlords",
+    "/pages/landlord-certificates",
+    "/pages/keywords/eicr-testing"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More eicr certificate and related pages near Appley Bridge",
+   "links": [
+    [
+     "/pages/keywords/eicr-certificate",
+     "EICR certificate"
+    ],
+    [
+     "/pages/keywords/eicr",
+     "EICR"
+    ],
+    [
+     "/pages/jobs/eicr",
+     "EICR for landlords"
+    ],
+    [
+     "/pages/services/electrical",
+     "EICR and rewires"
+    ],
+    [
+     "/pages/electrical-safety-landlords",
+     "Electrical Safety for Landlords"
+    ],
+    [
+     "/pages/landlord-certificates",
+     "Landlord Certificates"
+    ],
+    [
+     "/pages/keywords/eicr-testing",
+     "EICR Testing"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/appley-bridge",
+     "Electrical Inspection and Testing in Appley Bridge"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/skelmersdale",
+     "EICR Certificate in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/wigan",
+     "EICR Certificate in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ince-in-makerfield",
+     "EICR Certificate in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/hindley",
+     "EICR Certificate in Hindley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/chorley",
+     "EICR Certificate in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ormskirk",
+     "EICR Certificate in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/abram",
+     "EICR Certificate in Abram"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ashton-in-makerfield",
+     "EICR Certificate in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/horwich",
+     "EICR Certificate in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/haydock",
+     "EICR Certificate in Haydock"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/westhoughton",
+     "EICR Certificate in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/leyland",
+     "EICR Certificate in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/clayton-le-woods",
+     "EICR Certificate in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/golborne",
+     "EICR Certificate in Golborne"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/st-helens",
+     "EICR Certificate in St Helens"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/kirkby",
+     "EICR Certificate in Kirkby"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/maghull",
+     "EICR Certificate in Maghull"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/leigh",
+     "EICR Certificate in Leigh"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/atherton",
+     "EICR Certificate in Atherton"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/newton-le-willows",
+     "EICR Certificate in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/prescot",
+     "EICR Certificate in Prescot"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/whiston",
+     "EICR Certificate in Whiston"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/tyldesley",
+     "EICR Certificate in Tyldesley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/rainhill",
+     "EICR Certificate in Rainhill"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/fazakerley",
+     "EICR Certificate in Fazakerley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/bolton",
+     "EICR Certificate in Bolton"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/huyton",
+     "EICR Certificate in Huyton"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/west-derby",
+     "EICR Certificate in West Derby"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/southport",
+     "EICR Certificate in Southport"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/preston",
+     "EICR Certificate in Preston"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/little-hulton",
+     "EICR Certificate in Little Hulton"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/great-sankey",
+     "EICR Certificate in Great Sankey"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/knotty-ash",
+     "EICR Certificate in Knotty Ash"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/farnworth",
+     "EICR Certificate in Farnworth"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/darwen",
+     "EICR Certificate in Darwen"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/litherland",
+     "EICR Certificate in Litherland"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/old-swan",
+     "EICR Certificate in Old Swan"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/walkden",
+     "EICR Certificate in Walkden"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/warrington",
+     "EICR Certificate in Warrington"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/little-lever",
+     "EICR Certificate in Little Lever"
+    ],
+    [
+     "/pages/areas/skelmersdale",
+     "Property services in Skelmersdale"
+    ],
+    [
+     "/pages/areas/wigan",
+     "Property services in Wigan"
+    ],
+    [
+     "/pages/areas/ince-in-makerfield",
+     "Property services in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/areas/hindley",
+     "Property services in Hindley"
+    ],
+    [
+     "/pages/areas/chorley",
+     "Property services in Chorley"
+    ],
+    [
+     "/pages/areas/ormskirk",
+     "Property services in Ormskirk"
+    ],
+    [
+     "/pages/areas/abram",
+     "Property services in Abram"
+    ],
+    [
+     "/pages/areas/ashton-in-makerfield",
+     "Property services in Ashton in Makerfield"
+    ],
+    [
+     "/pages/areas/horwich",
+     "Property services in Horwich"
+    ],
+    [
+     "/pages/areas/haydock",
+     "Property services in Haydock"
+    ],
+    [
+     "/pages/areas/westhoughton",
+     "Property services in Westhoughton"
+    ],
+    [
+     "/pages/areas/leyland",
+     "Property services in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr/skelmersdale",
+     "EICR in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr-testing/skelmersdale",
+     "EICR Testing in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/skelmersdale",
+     "Electrical Inspection and Testing in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr/wigan",
+     "EICR in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr-testing/wigan",
+     "EICR Testing in Wigan"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/wigan",
+     "Electrical Inspection and Testing in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr/ince-in-makerfield",
+     "EICR in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ince-in-makerfield",
+     "EICR Testing in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ince-in-makerfield",
+     "Electrical Inspection and Testing in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr/hindley",
+     "EICR in Hindley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/hindley",
+     "EICR Testing in Hindley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/hindley",
+     "Electrical Inspection and Testing in Hindley"
+    ],
+    [
+     "/pages/keywords/eicr/chorley",
+     "EICR in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/chorley",
+     "EICR Testing in Chorley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/chorley",
+     "Electrical Inspection and Testing in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr/ormskirk",
+     "EICR in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ormskirk",
+     "EICR Testing in Ormskirk"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ormskirk",
+     "Electrical Inspection and Testing in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr/abram",
+     "EICR in Abram"
+    ],
+    [
+     "/pages/keywords/eicr-testing/abram",
+     "EICR Testing in Abram"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/abram",
+     "Electrical Inspection and Testing in Abram"
+    ],
+    [
+     "/pages/keywords/eicr/ashton-in-makerfield",
+     "EICR in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ashton-in-makerfield",
+     "EICR Testing in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ashton-in-makerfield",
+     "Electrical Inspection and Testing in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr/horwich",
+     "EICR in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr-testing/horwich",
+     "EICR Testing in Horwich"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/horwich",
+     "Electrical Inspection and Testing in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr/haydock",
+     "EICR in Haydock"
+    ],
+    [
+     "/pages/keywords/eicr-testing/haydock",
+     "EICR Testing in Haydock"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/haydock",
+     "Electrical Inspection and Testing in Haydock"
+    ],
+    [
+     "/pages/keywords/eicr/westhoughton",
+     "EICR in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr-testing/westhoughton",
+     "EICR Testing in Westhoughton"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/westhoughton",
+     "Electrical Inspection and Testing in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr/leyland",
+     "EICR in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr-testing/leyland",
+     "EICR Testing in Leyland"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/leyland",
+     "Electrical Inspection and Testing in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr/clayton-le-woods",
+     "EICR in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr-testing/clayton-le-woods",
+     "EICR Testing in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/clayton-le-woods",
+     "Electrical Inspection and Testing in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr/golborne",
+     "EICR in Golborne"
+    ],
+    [
+     "/pages/keywords/eicr-testing/golborne",
+     "EICR Testing in Golborne"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/golborne",
+     "Electrical Inspection and Testing in Golborne"
+    ],
+    [
+     "/pages/keywords/eicr/st-helens",
+     "EICR in St Helens"
+    ],
+    [
+     "/pages/keywords/eicr-testing/st-helens",
+     "EICR Testing in St Helens"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/st-helens",
+     "Electrical Inspection and Testing in St Helens"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/emergency-lighting-design/burscough": {
+   "brief": "C9",
+   "kind": "xtown",
+   "title": "Emergency Lighting Design Burscough | Same/Next-Day",
+   "meta": "Emergency lighting design in Burscough for landlords, agents and commercial sites. BS 5266-aware layouts. From Stockport. Call 07517 806082.",
+   "h2": "What emergency lighting design involves for Burscough buildings",
+   "paras": [
+    "Burscough has a mix of buildings that need escape lighting designed rather than guessed: the industrial estate off Tollgate Road, Burscough Wharf's shops and cafes, care settings, and converted houses let as flats. Design is the step that decides where every fitting goes and why, before any cable is run.",
+    "A design starts with the building's escape strategy, usually taken from the fire risk assessment. We mark escape routes, stairs, changes of level and direction, final exits, fire alarm call points, first aid points and firefighting equipment, because BS 5266 expects each of those to be lit. Open areas above the size threshold get anti-panic lighting so people can reach a route.",
+    "Spacing is then worked out from the photometric data of the chosen fitting and the mounting height, so the route meets the minimum lighting level along its centre line. Exit signs are placed so a sign is visible from every point on the route. The output is a drawing and a schedule listing each fitting, its type and its duration.",
+    "Design is separate from installation and testing. Design is the plan. Installation is fitting and wiring it. The annual test is the yearly full-duration discharge test once it is in. Some Burscough clients only need a design to hand to their own electrician, others want us to carry it through, and both are fine.",
+    "For existing buildings we often review an older system against the current layout, because partitions and changes of use leave dark corners. You receive a marked-up plan of gaps and the fittings that can stay. All work is quoted in writing after the survey."
+   ],
+   "faqs": [
+    [
+     "What is the difference between design, installation and the annual test?",
+     "Design is the drawn layout and schedule of fittings. Installation is fitting and wiring it to that design. The annual test is the yearly three-hour discharge test of the installed system."
+    ],
+    [
+     "Do I need a new design if I change the layout?",
+     "Usually yes. New partitions, a change of use or extra exits can leave parts of the escape route without enough light, so the layout should be reviewed."
+    ],
+    [
+     "Can my own electrician install from your design?",
+     "Yes. The drawing and schedule are written so any competent electrician can install to them, and we can commission and test afterwards if you want."
+    ]
+   ],
+   "faqHeading": "Questions answered for Burscough",
+   "hubs": [
+    "/pages/keywords/emergency-lighting-design",
+    "/pages/services/emergency-lighting",
+    "/pages/keywords/emergency-lighting-installation",
+    "/pages/keywords/emergency-lighting-test",
+    "/pages/emergency-lighting-compliance",
+    "/pages/services/fire-alarms",
+    "/pages/services/fire-risk-assessments"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More emergency lighting design and related pages near Burscough",
+   "links": [
+    [
+     "/pages/keywords/emergency-lighting-design",
+     "Emergency Lighting Design"
+    ],
+    [
+     "/pages/services/emergency-lighting",
+     "Emergency lighting tests"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation",
+     "Emergency Lighting Installation"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test",
+     "Emergency Lighting Test"
+    ],
+    [
+     "/pages/emergency-lighting-compliance",
+     "Emergency Lighting Compliance"
+    ],
+    [
+     "/pages/services/fire-alarms",
+     "Fire Alarms"
+    ],
+    [
+     "/pages/services/fire-risk-assessments",
+     "Fire risk assessments (POA)"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/burscough",
+     "Emergency Lighting Installation in Burscough"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/burscough",
+     "Fire Alarm Installation in Burscough"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/burscough",
+     "Fire Risk Assessment in Burscough"
+    ],
+    [
+     "/pages/keywords/eicr/burscough",
+     "EICR in Burscough"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/ormskirk",
+     "Emergency Lighting Design in Ormskirk"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/skelmersdale",
+     "Emergency Lighting Design in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/maghull",
+     "Emergency Lighting Design in Maghull"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/southport",
+     "Emergency Lighting Design in Southport"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/kirkby",
+     "Emergency Lighting Design in Kirkby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/wigan",
+     "Emergency Lighting Design in Wigan"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/leyland",
+     "Emergency Lighting Design in Leyland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/formby",
+     "Emergency Lighting Design in Formby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/clayton-le-woods",
+     "Emergency Lighting Design in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/chorley",
+     "Emergency Lighting Design in Chorley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/fazakerley",
+     "Emergency Lighting Design in Fazakerley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/ince-in-makerfield",
+     "Emergency Lighting Design in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/litherland",
+     "Emergency Lighting Design in Litherland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/st-helens",
+     "Emergency Lighting Design in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/ashton-in-makerfield",
+     "Emergency Lighting Design in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/haydock",
+     "Emergency Lighting Design in Haydock"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/hindley",
+     "Emergency Lighting Design in Hindley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/bootle",
+     "Emergency Lighting Design in Bootle"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/prescot",
+     "Emergency Lighting Design in Prescot"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/west-derby",
+     "Emergency Lighting Design in West Derby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/abram",
+     "Emergency Lighting Design in Abram"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/horwich",
+     "Emergency Lighting Design in Horwich"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/lytham-st-annes",
+     "Emergency Lighting Design in Lytham St Annes"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/whiston",
+     "Emergency Lighting Design in Whiston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/knotty-ash",
+     "Emergency Lighting Design in Knotty Ash"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/preston",
+     "Emergency Lighting Design in Preston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/huyton",
+     "Emergency Lighting Design in Huyton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/rainhill",
+     "Emergency Lighting Design in Rainhill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/old-swan",
+     "Emergency Lighting Design in Old Swan"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/golborne",
+     "Emergency Lighting Design in Golborne"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/westhoughton",
+     "Emergency Lighting Design in Westhoughton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/childwall",
+     "Emergency Lighting Design in Childwall"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/liverpool",
+     "Emergency Lighting Design in Liverpool"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/newton-le-willows",
+     "Emergency Lighting Design in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/leigh",
+     "Emergency Lighting Design in Leigh"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/atherton",
+     "Emergency Lighting Design in Atherton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/wallasey",
+     "Emergency Lighting Design in Wallasey"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/woolton",
+     "Emergency Lighting Design in Woolton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/mossley-hill",
+     "Emergency Lighting Design in Mossley Hill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/birkenhead",
+     "Emergency Lighting Design in Birkenhead"
+    ],
+    [
+     "/pages/areas/ormskirk",
+     "Property services in Ormskirk"
+    ],
+    [
+     "/pages/areas/skelmersdale",
+     "Property services in Skelmersdale"
+    ],
+    [
+     "/pages/areas/maghull",
+     "Property services in Maghull"
+    ],
+    [
+     "/pages/areas/southport",
+     "Property services in Southport"
+    ],
+    [
+     "/pages/areas/kirkby",
+     "Property services in Kirkby"
+    ],
+    [
+     "/pages/areas/wigan",
+     "Property services in Wigan"
+    ],
+    [
+     "/pages/areas/leyland",
+     "Property services in Leyland"
+    ],
+    [
+     "/pages/areas/formby",
+     "Property services in Formby"
+    ],
+    [
+     "/pages/areas/clayton-le-woods",
+     "Property services in Clayton-le-Woods"
+    ],
+    [
+     "/pages/areas/chorley",
+     "Property services in Chorley"
+    ],
+    [
+     "/pages/areas/fazakerley",
+     "Property services in Fazakerley"
+    ],
+    [
+     "/pages/areas/ince-in-makerfield",
+     "Property services in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ormskirk",
+     "Emergency Lighting Installation in Ormskirk"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/ormskirk",
+     "Emergency Lighting Test in Ormskirk"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/skelmersdale",
+     "Emergency Lighting Installation in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/skelmersdale",
+     "Emergency Lighting Test in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/maghull",
+     "Emergency Lighting Installation in Maghull"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/maghull",
+     "Emergency Lighting Test in Maghull"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/southport",
+     "Emergency Lighting Installation in Southport"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/southport",
+     "Emergency Lighting Test in Southport"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/kirkby",
+     "Emergency Lighting Installation in Kirkby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/kirkby",
+     "Emergency Lighting Test in Kirkby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/wigan",
+     "Emergency Lighting Installation in Wigan"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/wigan",
+     "Emergency Lighting Test in Wigan"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/leyland",
+     "Emergency Lighting Installation in Leyland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/leyland",
+     "Emergency Lighting Test in Leyland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/formby",
+     "Emergency Lighting Installation in Formby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/formby",
+     "Emergency Lighting Test in Formby"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/clayton-le-woods",
+     "Emergency Lighting Installation in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/clayton-le-woods",
+     "Emergency Lighting Test in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/chorley",
+     "Emergency Lighting Installation in Chorley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/chorley",
+     "Emergency Lighting Test in Chorley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/fazakerley",
+     "Emergency Lighting Installation in Fazakerley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/fazakerley",
+     "Emergency Lighting Test in Fazakerley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ince-in-makerfield",
+     "Emergency Lighting Installation in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/ince-in-makerfield",
+     "Emergency Lighting Test in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/litherland",
+     "Emergency Lighting Installation in Litherland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/litherland",
+     "Emergency Lighting Test in Litherland"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/st-helens",
+     "Emergency Lighting Installation in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/st-helens",
+     "Emergency Lighting Test in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ashton-in-makerfield",
+     "Emergency Lighting Installation in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/ashton-in-makerfield",
+     "Emergency Lighting Test in Ashton in Makerfield"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/fire-risk-assessments/westhoughton": {
+   "brief": "C10",
+   "kind": "xtown",
+   "title": "Fire Risk Assessment Westhoughton from £350 | Same/Next-Day",
+   "meta": "Fire risk assessments in Westhoughton from £350 for a typical 6-bed HMO, other properties POA. Written report and action plan. Call 07517 806082.",
+   "h2": "Fire risk assessments for Westhoughton premises",
+   "paras": [
+    "Westhoughton, between Bolton and Wigan, has terraced streets converted to flats and HMOs, shops along Market Street, small industrial units around Chequerbent and community buildings used in the evenings. The Regulatory Reform (Fire Safety) Order 2005 requires the responsible person for each of those non-domestic parts to have a suitable and sufficient fire risk assessment.",
+    "The assessment is a walk of the premises with the person who runs them. We look at sources of ignition and fuel, who is at risk and where, the means of escape, fire doors, detection and alarm, emergency lighting, signage, firefighting equipment and how the building is managed day to day. In blocks of flats the common parts are assessed, and the Fire Safety (England) Regulations 2022 add duties such as flat entrance door checks.",
+    "Findings are written into a report with an action plan. Each action is ranked by risk with a suggested timescale, so the urgent items are clear and the lower priority ones can be planned. The report states the scope, any areas that could not be inspected and the recommended review date.",
+    "Small premises such as a single shop or a converted house with a few flats usually take an hour or two on site, with the report following within a few working days. Larger or more complex sites take longer, and we confirm the time when we quote. Pricing is on application and agreed in writing before the visit.",
+    "If the action plan calls for work, such as fire door repairs, emergency lighting or alarm upgrades, we can quote for it, but you are free to use any competent contractor. The assessment should be reviewed regularly and whenever the building, its use or its occupants change."
+   ],
+   "faqs": [
+    [
+     "Which Westhoughton premises need a fire risk assessment?",
+     "Any non-domestic premises, including shops, offices, workshops, community buildings and the common parts of flats and HMOs."
+    ],
+    [
+     "How long does an assessment take for small premises?",
+     "Usually an hour or two on site for a small shop or converted house, with the written report following within a few working days."
+    ],
+    [
+     "What happens after the assessment?",
+     "You get an action plan ranked by risk. You carry out the actions, using us or any competent contractor, and review the assessment when things change."
+    ]
+   ],
+   "faqHeading": "Questions answered for Westhoughton",
+   "hubs": [
+    "/pages/areas/westhoughton",
+    "/pages/services/fire-risk-assessments",
+    "/pages/fire-risk-assessment",
+    "/pages/keywords/fire-risk-assessment",
+    "/pages/services/fire-alarms",
+    "/pages/services/emergency-lighting",
+    "/pages/services/fire-doors"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More fire risk assessment and related pages near Westhoughton",
+   "links": [
+    [
+     "/pages/areas/westhoughton",
+     "Westhoughton property compliance"
+    ],
+    [
+     "/pages/services/fire-risk-assessments",
+     "Fire risk assessments (POA)"
+    ],
+    [
+     "/pages/fire-risk-assessment",
+     "Fire Risk Assessment"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment",
+     "Fire Risk Assessment"
+    ],
+    [
+     "/pages/services/fire-alarms",
+     "Fire Alarms"
+    ],
+    [
+     "/pages/services/emergency-lighting",
+     "Emergency lighting tests"
+    ],
+    [
+     "/pages/services/fire-doors",
+     "Fire door surveys"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/westhoughton",
+     "Fire Risk Assessment in Westhoughton"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/westhoughton",
+     "Fire Alarm Installation in Westhoughton"
+    ],
+    [
+     "/pages/keywords/fire-door-survey/westhoughton",
+     "Fire Door Survey in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr/westhoughton",
+     "EICR in Westhoughton"
+    ],
+    [
+     "/pages/fire-risk-assessments/ince-in-makerfield",
+     "Fire risk assessment in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/fire-risk-assessments/abram",
+     "Fire risk assessment in Abram"
+    ],
+    [
+     "/pages/fire-risk-assessments/little-hulton",
+     "Fire risk assessment in Little Hulton"
+    ],
+    [
+     "/pages/fire-risk-assessments/clayton-le-woods",
+     "Fire risk assessment in Clayton-le-Woods"
+    ],
+    [
+     "/pages/areas/atherton",
+     "Property services in Atherton"
+    ],
+    [
+     "/pages/areas/hindley",
+     "Property services in Hindley"
+    ],
+    [
+     "/pages/areas/tyldesley",
+     "Property services in Tyldesley"
+    ],
+    [
+     "/pages/areas/leigh",
+     "Property services in Leigh"
+    ],
+    [
+     "/pages/areas/horwich",
+     "Property services in Horwich"
+    ],
+    [
+     "/pages/areas/ince-in-makerfield",
+     "Property services in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/areas/abram",
+     "Property services in Abram"
+    ],
+    [
+     "/pages/areas/bolton",
+     "Property services in Bolton"
+    ],
+    [
+     "/pages/areas/little-hulton",
+     "Property services in Little Hulton"
+    ],
+    [
+     "/pages/areas/wigan",
+     "Property services in Wigan"
+    ],
+    [
+     "/pages/areas/farnworth",
+     "Property services in Farnworth"
+    ],
+    [
+     "/pages/areas/walkden",
+     "Property services in Walkden"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/atherton",
+     "Fire Risk Assessment in Atherton"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/atherton",
+     "Fire Alarm Installation in Atherton"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/hindley",
+     "Fire Risk Assessment in Hindley"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/hindley",
+     "Fire Alarm Installation in Hindley"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/tyldesley",
+     "Fire Risk Assessment in Tyldesley"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/tyldesley",
+     "Fire Alarm Installation in Tyldesley"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/leigh",
+     "Fire Risk Assessment in Leigh"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/leigh",
+     "Fire Alarm Installation in Leigh"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/horwich",
+     "Fire Risk Assessment in Horwich"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/horwich",
+     "Fire Alarm Installation in Horwich"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/ince-in-makerfield",
+     "Fire Risk Assessment in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/ince-in-makerfield",
+     "Fire Alarm Installation in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/abram",
+     "Fire Risk Assessment in Abram"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/abram",
+     "Fire Alarm Installation in Abram"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/bolton",
+     "Fire Risk Assessment in Bolton"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/bolton",
+     "Fire Alarm Installation in Bolton"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/little-hulton",
+     "Fire Risk Assessment in Little Hulton"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/little-hulton",
+     "Fire Alarm Installation in Little Hulton"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/wigan",
+     "Fire Risk Assessment in Wigan"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/wigan",
+     "Fire Alarm Installation in Wigan"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/farnworth",
+     "Fire Risk Assessment in Farnworth"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/farnworth",
+     "Fire Alarm Installation in Farnworth"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/walkden",
+     "Fire Risk Assessment in Walkden"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/walkden",
+     "Fire Alarm Installation in Walkden"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/golborne",
+     "Fire Risk Assessment in Golborne"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/golborne",
+     "Fire Alarm Installation in Golborne"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/kearsley",
+     "Fire Risk Assessment in Kearsley"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/kearsley",
+     "Fire Alarm Installation in Kearsley"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/little-lever",
+     "Fire Risk Assessment in Little Lever"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/little-lever",
+     "Fire Alarm Installation in Little Lever"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/eicr/burscough": {
+   "brief": "C12",
+   "kind": "xtown",
+   "title": "EICR Burscough from £160 | Same/Next-Day | 07517 806082",
+   "meta": "EICR in Burscough from £160 for landlords and commercial tenants. Free written quote, certificates emailed. Call 07517 806082.",
+   "h2": "EICRs for rented homes and units in Burscough",
+   "paras": [
+    "Burscough, near Ormskirk in West Lancashire, has two railway stations, a busy village centre around Burscough Wharf and an industrial estate with warehouse and light-industrial units. Landlords of the houses and flats, and tenants of the commercial units, are the people who most often need an EICR here.",
+    "For a rented home the inspection covers the consumer unit, each circuit, sockets, switches, light fittings, earthing and bonding. Circuits are tested for continuity, insulation resistance and fault loop impedance, and RCDs are trip-tested. The result is a report coded C1, C2, C3 or FI with an overall satisfactory or unsatisfactory result.",
+    "Commercial units on the estate often have three-phase supplies, distribution boards for machinery and high-bay lighting. Leases commonly put the duty to maintain the installation on the tenant, and insurers usually ask for a current EICR. Inspection intervals for commercial premises are typically up to five years, or shorter where use is heavy, and we record the recommended date on the report.",
+    "Where a report is unsatisfactory, the remedial items are listed in plain English and quoted separately, so you can decide how to proceed. Once the work is done, a confirmation certificate goes on file with the original report.",
+    "EICRs start from £160 for a typical small property. Commercial units and larger houses are given a free written quote first, based on the number of boards and circuits. Reports are emailed as PDFs for tenants, agents and insurers."
+   ],
+   "faqs": [
+    [
+     "Do commercial tenants in Burscough need an EICR?",
+     "Often yes. Many leases make the tenant responsible for the installation, and insurers usually ask for a current report."
+    ],
+    [
+     "How long is an EICR valid for a rented home?",
+     "Up to five years for private rented homes, or sooner if the report recommends it."
+    ],
+    [
+     "What happens if my report is unsatisfactory?",
+     "The C1, C2 and FI items are quoted separately. Once they are put right, a confirmation certificate is issued."
+    ]
+   ],
+   "faqHeading": "Questions answered for Burscough",
+   "hubs": [
+    "/pages/keywords/eicr",
+    "/pages/jobs/eicr",
+    "/pages/services/electrical",
+    "/pages/electrical-safety-landlords",
+    "/pages/landlord-certificates",
+    "/pages/keywords/eicr-testing",
+    "/pages/keywords/eicr-certificate"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More eicr and related pages near Burscough",
+   "links": [
+    [
+     "/pages/keywords/eicr",
+     "EICR"
+    ],
+    [
+     "/pages/jobs/eicr",
+     "EICR for landlords"
+    ],
+    [
+     "/pages/services/electrical",
+     "EICR and rewires"
+    ],
+    [
+     "/pages/electrical-safety-landlords",
+     "Electrical Safety for Landlords"
+    ],
+    [
+     "/pages/landlord-certificates",
+     "Landlord Certificates"
+    ],
+    [
+     "/pages/keywords/eicr-testing",
+     "EICR Testing"
+    ],
+    [
+     "/pages/keywords/eicr-certificate",
+     "EICR certificate"
+    ],
+    [
+     "/pages/keywords/eicr-testing/burscough",
+     "EICR Testing in Burscough"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/burscough",
+     "Emergency Lighting Design in Burscough"
+    ],
+    [
+     "/pages/keywords/eicr/ormskirk",
+     "EICR in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr/skelmersdale",
+     "EICR in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr/maghull",
+     "EICR in Maghull"
+    ],
+    [
+     "/pages/keywords/eicr/southport",
+     "EICR in Southport"
+    ],
+    [
+     "/pages/keywords/eicr/kirkby",
+     "EICR in Kirkby"
+    ],
+    [
+     "/pages/keywords/eicr/wigan",
+     "EICR in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr/leyland",
+     "EICR in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr/formby",
+     "EICR in Formby"
+    ],
+    [
+     "/pages/keywords/eicr/clayton-le-woods",
+     "EICR in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr/chorley",
+     "EICR in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr/fazakerley",
+     "EICR in Fazakerley"
+    ],
+    [
+     "/pages/keywords/eicr/ince-in-makerfield",
+     "EICR in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr/litherland",
+     "EICR in Litherland"
+    ],
+    [
+     "/pages/keywords/eicr/st-helens",
+     "EICR in St Helens"
+    ],
+    [
+     "/pages/keywords/eicr/ashton-in-makerfield",
+     "EICR in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr/haydock",
+     "EICR in Haydock"
+    ],
+    [
+     "/pages/keywords/eicr/hindley",
+     "EICR in Hindley"
+    ],
+    [
+     "/pages/keywords/eicr/bootle",
+     "EICR in Bootle"
+    ],
+    [
+     "/pages/keywords/eicr/prescot",
+     "EICR in Prescot"
+    ],
+    [
+     "/pages/keywords/eicr/west-derby",
+     "EICR in West Derby"
+    ],
+    [
+     "/pages/keywords/eicr/abram",
+     "EICR in Abram"
+    ],
+    [
+     "/pages/keywords/eicr/horwich",
+     "EICR in Horwich"
+    ],
+    [
+     "/pages/keywords/eicr/lytham-st-annes",
+     "EICR in Lytham St Annes"
+    ],
+    [
+     "/pages/keywords/eicr/whiston",
+     "EICR in Whiston"
+    ],
+    [
+     "/pages/keywords/eicr/knotty-ash",
+     "EICR in Knotty Ash"
+    ],
+    [
+     "/pages/keywords/eicr/preston",
+     "EICR in Preston"
+    ],
+    [
+     "/pages/keywords/eicr/huyton",
+     "EICR in Huyton"
+    ],
+    [
+     "/pages/keywords/eicr/rainhill",
+     "EICR in Rainhill"
+    ],
+    [
+     "/pages/keywords/eicr/old-swan",
+     "EICR in Old Swan"
+    ],
+    [
+     "/pages/keywords/eicr/golborne",
+     "EICR in Golborne"
+    ],
+    [
+     "/pages/keywords/eicr/westhoughton",
+     "EICR in Westhoughton"
+    ],
+    [
+     "/pages/keywords/eicr/childwall",
+     "EICR in Childwall"
+    ],
+    [
+     "/pages/keywords/eicr/liverpool",
+     "EICR in Liverpool"
+    ],
+    [
+     "/pages/keywords/eicr/newton-le-willows",
+     "EICR in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/eicr/leigh",
+     "EICR in Leigh"
+    ],
+    [
+     "/pages/keywords/eicr/atherton",
+     "EICR in Atherton"
+    ],
+    [
+     "/pages/keywords/eicr/wallasey",
+     "EICR in Wallasey"
+    ],
+    [
+     "/pages/keywords/eicr/woolton",
+     "EICR in Woolton"
+    ],
+    [
+     "/pages/keywords/eicr/mossley-hill",
+     "EICR in Mossley Hill"
+    ],
+    [
+     "/pages/keywords/eicr/birkenhead",
+     "EICR in Birkenhead"
+    ],
+    [
+     "/pages/areas/ormskirk",
+     "Property services in Ormskirk"
+    ],
+    [
+     "/pages/areas/skelmersdale",
+     "Property services in Skelmersdale"
+    ],
+    [
+     "/pages/areas/maghull",
+     "Property services in Maghull"
+    ],
+    [
+     "/pages/areas/southport",
+     "Property services in Southport"
+    ],
+    [
+     "/pages/areas/kirkby",
+     "Property services in Kirkby"
+    ],
+    [
+     "/pages/areas/wigan",
+     "Property services in Wigan"
+    ],
+    [
+     "/pages/areas/leyland",
+     "Property services in Leyland"
+    ],
+    [
+     "/pages/areas/formby",
+     "Property services in Formby"
+    ],
+    [
+     "/pages/areas/clayton-le-woods",
+     "Property services in Clayton-le-Woods"
+    ],
+    [
+     "/pages/areas/chorley",
+     "Property services in Chorley"
+    ],
+    [
+     "/pages/areas/fazakerley",
+     "Property services in Fazakerley"
+    ],
+    [
+     "/pages/areas/ince-in-makerfield",
+     "Property services in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ormskirk",
+     "EICR Testing in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ormskirk",
+     "EICR Certificate in Ormskirk"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ormskirk",
+     "Electrical Inspection and Testing in Ormskirk"
+    ],
+    [
+     "/pages/keywords/eicr-testing/skelmersdale",
+     "EICR Testing in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/skelmersdale",
+     "EICR Certificate in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/skelmersdale",
+     "Electrical Inspection and Testing in Skelmersdale"
+    ],
+    [
+     "/pages/keywords/eicr-testing/maghull",
+     "EICR Testing in Maghull"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/maghull",
+     "EICR Certificate in Maghull"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/maghull",
+     "Electrical Inspection and Testing in Maghull"
+    ],
+    [
+     "/pages/keywords/eicr-testing/southport",
+     "EICR Testing in Southport"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/southport",
+     "EICR Certificate in Southport"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/southport",
+     "Electrical Inspection and Testing in Southport"
+    ],
+    [
+     "/pages/keywords/eicr-testing/kirkby",
+     "EICR Testing in Kirkby"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/kirkby",
+     "EICR Certificate in Kirkby"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/kirkby",
+     "Electrical Inspection and Testing in Kirkby"
+    ],
+    [
+     "/pages/keywords/eicr-testing/wigan",
+     "EICR Testing in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/wigan",
+     "EICR Certificate in Wigan"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/wigan",
+     "Electrical Inspection and Testing in Wigan"
+    ],
+    [
+     "/pages/keywords/eicr-testing/leyland",
+     "EICR Testing in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/leyland",
+     "EICR Certificate in Leyland"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/leyland",
+     "Electrical Inspection and Testing in Leyland"
+    ],
+    [
+     "/pages/keywords/eicr-testing/formby",
+     "EICR Testing in Formby"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/formby",
+     "EICR Certificate in Formby"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/formby",
+     "Electrical Inspection and Testing in Formby"
+    ],
+    [
+     "/pages/keywords/eicr-testing/clayton-le-woods",
+     "EICR Testing in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/clayton-le-woods",
+     "EICR Certificate in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/clayton-le-woods",
+     "Electrical Inspection and Testing in Clayton-le-Woods"
+    ],
+    [
+     "/pages/keywords/eicr-testing/chorley",
+     "EICR Testing in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/chorley",
+     "EICR Certificate in Chorley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/chorley",
+     "Electrical Inspection and Testing in Chorley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/fazakerley",
+     "EICR Testing in Fazakerley"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/fazakerley",
+     "EICR Certificate in Fazakerley"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/fazakerley",
+     "Electrical Inspection and Testing in Fazakerley"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ince-in-makerfield",
+     "EICR Testing in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ince-in-makerfield",
+     "EICR Certificate in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ince-in-makerfield",
+     "Electrical Inspection and Testing in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-testing/litherland",
+     "EICR Testing in Litherland"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/litherland",
+     "EICR Certificate in Litherland"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/litherland",
+     "Electrical Inspection and Testing in Litherland"
+    ],
+    [
+     "/pages/keywords/eicr-testing/st-helens",
+     "EICR Testing in St Helens"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/st-helens",
+     "EICR Certificate in St Helens"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/st-helens",
+     "Electrical Inspection and Testing in St Helens"
+    ],
+    [
+     "/pages/keywords/eicr-testing/ashton-in-makerfield",
+     "EICR Testing in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/eicr-certificate/ashton-in-makerfield",
+     "EICR Certificate in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/electrical-inspection-and-testing/ashton-in-makerfield",
+     "Electrical Inspection and Testing in Ashton in Makerfield"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/emergency-lighting-annual-test/warrington": {
+   "brief": "C13",
+   "kind": "xtown",
+   "title": "Emergency Lighting Annual Test Warrington | Same/Next-Day",
+   "meta": "Emergency lighting annual test in Warrington for commercial and industrial sites. Certificates after testing. From Stockport. Call 07517 806082.",
+   "h2": "Emergency lighting testing, inspection and maintenance in Warrington",
+   "paras": [
+    "Warrington has a large stock of distribution warehouses at Birchwood, Omega and Winwick Quay, offices in the town centre and Westbrook, and blocks of flats along the river. All of them need emergency lighting tested and checked so it works when the mains fails.",
+    "The annual test is a full rated-duration discharge test, usually three hours. Each fitting is put onto battery and has to stay lit for the full period. Fittings that fail early, flicker or do not light at all are recorded with their location, and the most common causes are tired batteries, failed lamps or LED drivers, and damaged charge indicators.",
+    "Monthly checks are shorter. Each fitting is switched to battery briefly to confirm it lights, and the result goes in the logbook. Many Warrington sites have the monthly check done by their own staff, with the annual test and inspection done by us. Where self-test fittings are fitted we read and record their status instead.",
+    "Inspection goes alongside testing. We check that fittings still cover the escape routes after any layout changes, that exit signs point the right way, that high-bay areas in warehouses are covered, and that the logbook is up to date. Maintenance, such as battery and lamp replacement, is quoted after the test so you can see exactly which fittings need work.",
+    "After the test you receive a certificate, the test results and a list of any defects with their locations. Repairs and battery replacements are priced on application once the test shows what is needed. Testing in occupied buildings is timed so the system has recharged before the building is in use."
+   ],
+   "faqs": [
+    [
+     "What is the difference between the monthly check and the annual test?",
+     "The monthly check is a short switch to battery to confirm each fitting lights. The annual test runs every fitting on battery for its full rated duration, usually three hours."
+    ],
+    [
+     "What does an emergency lighting inspection cover?",
+     "Coverage of escape routes, exit signs, fitting condition, logbook records and any changes to the building since the last test."
+    ],
+    [
+     "How much does emergency lighting testing cost in Warrington?",
+     "It depends on the number of fittings and access. We give a written price on application after seeing the site or a fitting list."
+    ],
+    [
+     "Can you maintain failed fittings after the test?",
+     "Yes. Failed batteries, lamps and fittings are listed with locations and quoted, and re-tested once replaced."
+    ]
+   ],
+   "faqHeading": "Questions answered for Warrington",
+   "hubs": [
+    "/pages/areas/warrington",
+    "/pages/keywords/emergency-lighting-annual-test",
+    "/pages/services/emergency-lighting",
+    "/pages/keywords/emergency-lighting-test",
+    "/pages/emergency-lighting-compliance",
+    "/pages/services/fire-alarms",
+    "/pages/keywords/emergency-lighting-installation"
+   ],
+   "linkTarget": 88,
+   "linksHeading": "More emergency lighting annual test and related pages near Warrington",
+   "links": [
+    [
+     "/pages/areas/warrington",
+     "Warrington property compliance"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test",
+     "Emergency Lighting Annual Test"
+    ],
+    [
+     "/pages/services/emergency-lighting",
+     "Emergency lighting tests"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test",
+     "Emergency Lighting Test"
+    ],
+    [
+     "/pages/emergency-lighting-compliance",
+     "Emergency Lighting Compliance"
+    ],
+    [
+     "/pages/services/fire-alarms",
+     "Fire Alarms"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation",
+     "Emergency Lighting Installation"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/warrington",
+     "Emergency Lighting Test in Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/warrington",
+     "Emergency Lighting Installation in Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-design/warrington",
+     "Emergency Lighting Design in Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-maintenance/warrington",
+     "Emergency Lighting Maintenance in Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-repair/warrington",
+     "Emergency Lighting Repair in Warrington"
+    ],
+    [
+     "/pages/keywords/fire-alarm-installation/warrington",
+     "Fire Alarm Installation in Warrington"
+    ],
+    [
+     "/pages/keywords/fire-risk-assessment/warrington",
+     "Fire Risk Assessment in Warrington"
+    ],
+    [
+     "/pages/keywords/eicr/warrington",
+     "EICR in Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/great-sankey",
+     "Emergency Lighting Annual Test in Great Sankey"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/newton-le-willows",
+     "Emergency Lighting Annual Test in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/lymm",
+     "Emergency Lighting Annual Test in Lymm"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/golborne",
+     "Emergency Lighting Annual Test in Golborne"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/haydock",
+     "Emergency Lighting Annual Test in Haydock"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/widnes",
+     "Emergency Lighting Annual Test in Widnes"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/ashton-in-makerfield",
+     "Emergency Lighting Annual Test in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/runcorn",
+     "Emergency Lighting Annual Test in Runcorn"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/irlam",
+     "Emergency Lighting Annual Test in Irlam"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/st-helens",
+     "Emergency Lighting Annual Test in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/leigh",
+     "Emergency Lighting Annual Test in Leigh"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/rainhill",
+     "Emergency Lighting Annual Test in Rainhill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/abram",
+     "Emergency Lighting Annual Test in Abram"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/whiston",
+     "Emergency Lighting Annual Test in Whiston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/prescot",
+     "Emergency Lighting Annual Test in Prescot"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/altrincham",
+     "Emergency Lighting Annual Test in Altrincham"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/northwich",
+     "Emergency Lighting Annual Test in Northwich"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/tyldesley",
+     "Emergency Lighting Annual Test in Tyldesley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/hindley",
+     "Emergency Lighting Annual Test in Hindley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/atherton",
+     "Emergency Lighting Annual Test in Atherton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/ince-in-makerfield",
+     "Emergency Lighting Annual Test in Ince-in-Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/urmston",
+     "Emergency Lighting Annual Test in Urmston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/timperley",
+     "Emergency Lighting Annual Test in Timperley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/hale",
+     "Emergency Lighting Annual Test in Hale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/knutsford",
+     "Emergency Lighting Annual Test in Knutsford"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/halewood",
+     "Emergency Lighting Annual Test in Halewood"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/wigan",
+     "Emergency Lighting Annual Test in Wigan"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/huyton",
+     "Emergency Lighting Annual Test in Huyton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/sale",
+     "Emergency Lighting Annual Test in Sale"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/westhoughton",
+     "Emergency Lighting Annual Test in Westhoughton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/speke",
+     "Emergency Lighting Annual Test in Speke"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/walkden",
+     "Emergency Lighting Annual Test in Walkden"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/stretford",
+     "Emergency Lighting Annual Test in Stretford"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/little-hulton",
+     "Emergency Lighting Annual Test in Little Hulton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/eccles",
+     "Emergency Lighting Annual Test in Eccles"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/woolton",
+     "Emergency Lighting Annual Test in Woolton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/swinton",
+     "Emergency Lighting Annual Test in Swinton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/kearsley",
+     "Emergency Lighting Annual Test in Kearsley"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/allerton",
+     "Emergency Lighting Annual Test in Allerton"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-annual-test/childwall",
+     "Emergency Lighting Annual Test in Childwall"
+    ],
+    [
+     "/pages/areas/great-sankey",
+     "Property services in Great Sankey"
+    ],
+    [
+     "/pages/areas/newton-le-willows",
+     "Property services in Newton-le-Willows"
+    ],
+    [
+     "/pages/areas/lymm",
+     "Property services in Lymm"
+    ],
+    [
+     "/pages/areas/golborne",
+     "Property services in Golborne"
+    ],
+    [
+     "/pages/areas/haydock",
+     "Property services in Haydock"
+    ],
+    [
+     "/pages/areas/widnes",
+     "Property services in Widnes"
+    ],
+    [
+     "/pages/areas/ashton-in-makerfield",
+     "Property services in Ashton in Makerfield"
+    ],
+    [
+     "/pages/areas/runcorn",
+     "Property services in Runcorn"
+    ],
+    [
+     "/pages/areas/irlam",
+     "Property services in Irlam"
+    ],
+    [
+     "/pages/areas/st-helens",
+     "Property services in St Helens"
+    ],
+    [
+     "/pages/areas/leigh",
+     "Property services in Leigh"
+    ],
+    [
+     "/pages/areas/rainhill",
+     "Property services in Rainhill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/great-sankey",
+     "Emergency Lighting Test in Great Sankey"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/great-sankey",
+     "Emergency Lighting Installation in Great Sankey"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/newton-le-willows",
+     "Emergency Lighting Test in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/newton-le-willows",
+     "Emergency Lighting Installation in Newton-le-Willows"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/lymm",
+     "Emergency Lighting Test in Lymm"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/lymm",
+     "Emergency Lighting Installation in Lymm"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/golborne",
+     "Emergency Lighting Test in Golborne"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/golborne",
+     "Emergency Lighting Installation in Golborne"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/haydock",
+     "Emergency Lighting Test in Haydock"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/haydock",
+     "Emergency Lighting Installation in Haydock"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/widnes",
+     "Emergency Lighting Test in Widnes"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/widnes",
+     "Emergency Lighting Installation in Widnes"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/ashton-in-makerfield",
+     "Emergency Lighting Test in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/ashton-in-makerfield",
+     "Emergency Lighting Installation in Ashton in Makerfield"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/runcorn",
+     "Emergency Lighting Test in Runcorn"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/runcorn",
+     "Emergency Lighting Installation in Runcorn"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/irlam",
+     "Emergency Lighting Test in Irlam"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/irlam",
+     "Emergency Lighting Installation in Irlam"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/st-helens",
+     "Emergency Lighting Test in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/st-helens",
+     "Emergency Lighting Installation in St Helens"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/leigh",
+     "Emergency Lighting Test in Leigh"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/leigh",
+     "Emergency Lighting Installation in Leigh"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/rainhill",
+     "Emergency Lighting Test in Rainhill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/rainhill",
+     "Emergency Lighting Installation in Rainhill"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/abram",
+     "Emergency Lighting Test in Abram"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/abram",
+     "Emergency Lighting Installation in Abram"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/whiston",
+     "Emergency Lighting Test in Whiston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/whiston",
+     "Emergency Lighting Installation in Whiston"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-test/prescot",
+     "Emergency Lighting Test in Prescot"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/prescot",
+     "Emergency Lighting Installation in Prescot"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/services/gas-systems": {
+   "brief": "C4",
+   "kind": "hub",
+   "title": "Gas Safety Certificate CP12 Manchester | Same/Next-Day",
+   "meta": "Landlord CP12 gas safety certificates and boiler servicing across Greater Manchester. Carried out by Gas Safe registered engineers. POA. 07517 806082.",
+   "faqs": [
+    [
+     "What does a CP12 gas safety check cover?",
+     "Each gas appliance, flue and the pipework is checked for safe operation, with tightness testing and flue and ventilation checks. The work is carried out by Gas Safe registered engineers."
+    ],
+    [
+     "How often do landlords need one?",
+     "Every 12 months, with a copy given to existing tenants within 28 days and to new tenants before they move in."
+    ],
+    [
+     "What happens if a fault is found?",
+     "The engineer records it and, where needed, makes the appliance safe. Repairs are quoted before any work."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/keywords/gas-safety-certificate",
+    "/pages/keywords/cp12",
+    "/pages/keywords/gas-leak-detection"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/keywords/gas-safety-certificate",
+     "Gas safety certificate"
+    ],
+    [
+     "/pages/keywords/cp12",
+     "CP12 Gas Safety Certificate"
+    ],
+    [
+     "/pages/keywords/gas-leak-detection",
+     "Gas Leak Detection"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/services/aov-air-handling": {
+   "brief": "C6",
+   "kind": "hub",
+   "title": "AOV & Smoke Vent Servicing Manchester & NW | Same/Next-Day",
+   "meta": "AOV and smoke ventilation servicing, repair and panel work for blocks across Greater Manchester and the North West. POA. Call 07517 806082.",
+   "faqs": [
+    [
+     "What does an AOV do?",
+     "An automatic opening vent opens on a fire signal to let smoke out of a stair or corridor, keeping the escape route clearer."
+    ],
+    [
+     "How often should AOVs be serviced?",
+     "Smoke control systems are normally function-tested regularly and serviced at least once a year by a competent person."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/aov",
+    "/pages/services/fire-alarms"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/aov",
+     "AOV and smoke control by town"
+    ],
+    [
+     "/pages/services/fire-alarms",
+     "Fire Alarms"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/gas-safety-certificate": {
+   "brief": "C7",
+   "kind": "hub",
+   "title": "Gas Safety Certificate Greater Manchester | Same/Next-Day",
+   "meta": "Gas safety certificates for landlords across Greater Manchester. Carried out by Gas Safe registered engineers. POA. Call 07517 806082.",
+   "faqs": [
+    [
+     "Is a CP12 the same as a boiler service?",
+     "No. A CP12 is a safety check of every gas appliance and flue. A service is maintenance of the boiler itself. Both can be done in the same visit."
+    ],
+    [
+     "How long does a gas safety certificate last?",
+     "Twelve months. Landlords must renew it every year."
+    ],
+    [
+     "What fails a gas safety check?",
+     "Unsafe flues, poor combustion, missing ventilation or gas escapes. The engineer explains each finding."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/keywords/cp12",
+    "/pages/services/gas-systems"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/keywords/cp12",
+     "CP12 Gas Safety Certificate"
+    ],
+    [
+     "/pages/services/gas-systems",
+     "Gas Safety Certificate (CP12) Stockport"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/gas-leak-detection": {
+   "brief": "C8",
+   "kind": "hub",
+   "title": "Gas Leak Detection Greater Manchester | Same/Next-Day",
+   "meta": "Gas leak detection and follow-up repair across Greater Manchester. Carried out by Gas Safe registered engineers. Smell gas? Call 0800 111 999 first.",
+   "faqs": [
+    [
+     "What should I do if I smell gas?",
+     "Call the National Gas Emergency Service on 0800 111 999 first, open windows and do not use switches. Book follow-up repair once the supply has been made safe."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/keywords/gas-safety-certificate",
+    "/pages/keywords/cp12"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/keywords/gas-safety-certificate",
+     "Gas safety certificate"
+    ],
+    [
+     "/pages/keywords/cp12",
+     "CP12 Gas Safety Certificate"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/services/fire-doors": {
+   "brief": "C11",
+   "kind": "hub",
+   "title": "Fire Door Surveys & Repairs North West | Same/Next-Day",
+   "meta": "Fire door surveys, closers, seals and repairs for blocks and commercial stairs across the North West. POA from Stockport. Call 07517 806082.",
+   "faqs": [
+    [
+     "When is a fire door survey needed?",
+     "When the fire risk assessment asks for one, and in blocks of flats where the regulations require regular checks of communal and flat entrance doors."
+    ],
+    [
+     "What fails a fire door?",
+     "Large gaps, missing or damaged seals, closers that do not shut the door, damaged leaves and wrong hardware."
+    ],
+    [
+     "Is a survey the same as a certificate?",
+     "No. A survey records each door's condition and actions. Certification of a doorset comes from the manufacturer or installer."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/services/fire-risk-assessments"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/services/fire-risk-assessments",
+     "Fire risk assessments (POA)"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/emergency-lighting-test": {
+   "brief": "C14",
+   "kind": "hub",
+   "title": "Emergency Lighting Test North West | Same/Next-Day",
+   "meta": "Emergency lighting testing and certification to BS 5266 across Greater Manchester and the North West. POA. Call 07517 806082.",
+   "faqs": [
+    [
+     "Annual test or monthly checks?",
+     "Both. Monthly checks briefly confirm each fitting lights; the annual test runs every fitting for its full duration."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/keywords/emergency-lighting-annual-test/warrington",
+    "/pages/keywords/emergency-lighting-installation/rochdale"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/keywords/emergency-lighting-annual-test/warrington",
+     "Emergency Lighting Annual Test Warrington"
+    ],
+    [
+     "/pages/keywords/emergency-lighting-installation/rochdale",
+     "Emergency Lighting Installation in Rochdale"
+    ]
+   ],
+   "sameNextDay": true
+  },
+  "/pages/keywords/cp12": {
+   "brief": "C15",
+   "kind": "hub",
+   "title": "CP12 Gas Safety Certificate Manchester | Same/Next-Day",
+   "meta": "CP12 landlord gas safety certificates across Greater Manchester and the North West. Carried out by Gas Safe registered engineers. POA. 07517 806082.",
+   "faqs": [
+    [
+     "Do you cover landlord CP12s in Lymm and Warrington?",
+     "Yes. Landlord gas safety checks are carried out by Gas Safe registered engineers across Greater Manchester and nearby towns."
+    ]
+   ],
+   "faqHeading": "Common questions",
+   "hubs": [
+    "/pages/keywords/gas-safety-certificate",
+    "/pages/services/gas-systems"
+   ],
+   "linkTarget": 0,
+   "linksHeading": "Related money pages",
+   "links": [
+    [
+     "/pages/keywords/gas-safety-certificate",
+     "Gas safety certificate"
+    ],
+    [
+     "/pages/services/gas-systems",
+     "Gas Safety Certificate (CP12) Stockport"
+    ]
+   ],
+   "sameNextDay": true
+  }
+ }
+}

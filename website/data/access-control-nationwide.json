@@ -139,7 +139,7 @@
       "meta": "Access control systems in Newcastle upon Tyne. Quayside and city offices by arrangement from Stockport. POA. 07517806082.",
       "local": "Newcastle upon Tyne is a project visit. Quayside offices and city professional buildings are the usual ask, sometimes with a gate on a riverside service yard. We do not run a Tyne and Wear call-out rota.",
       "doors": "Wind on an exposed lobby door changes the lock choice. A strike that copes in Stockport can fail on a Quayside leaf. We specify after we have stood at the door.",
-      "visit": "Bundle doors. A one-fob trip to Newcastle is rarely the right spend, and we will tell you before you book it. Every quote is fixed and written.",
+      "visit": "Bundle doors. A one-fob trip to Newcastle is rarely the right spend, and we will tell you before you book it. Every quote is a free written quote.",
       "faq_q": "How soon can you be in Newcastle?",
       "faq_a": "When the survey and the travel are agreed. It is not a same-morning response from a local depot, because there is not one."
     },
@@ -310,7 +310,7 @@
       "doors": "External doors on exposed sites need readers rated for the weather. We check the existing IP claim against the rust on the backbox, not against the brochure.",
       "visit": "Exeter can be paired with Plymouth only when both scopes are already written. Speculative touring is not the model. POA.",
       "faq_q": "Is a same-week Exeter fault visit realistic?",
-      "faq_a": "Only if an engineer is already in the south west or the fault can wait for a planned day. We will not invent a local standby."
+      "faq_a": "Only if an engineer is already in the south west or the fault can wait for a planned day. "
     },
     {
       "slug": "plymouth",

@@ -71,7 +71,7 @@ function cctvServiceCopy(string $slug): ?array
         'intro' => [
             'iComply Property Services designs, installs and looks after CCTV for shops, warehouses, yards, offices, care settings and landlord common parts across Greater Manchester and the North West.',
             'The work follows the camera and the recorder you actually need: IP and HD views, NVRs and DVRs, ANPR lanes, remote viewing, and extra cameras on systems that still have channels. BS EN 62676 is the reference we design against. Camera aims are discussed with UK data-protection practice in mind, including signage and privacy masks where a view would otherwise cover neighbours.',
-            'This page is the CCTV job lane. Every CCTV keyword guide is listed below and links back here. Quotes are written after a survey or a clear photo set. We do not publish a made-up camera or day rate on this page.',
+            'Every CCTV service we offer is listed below. Quotes are written after a survey or a clear photo set.',
         ],
         'pillars' => [
             ['title' => 'Design and install', 'text' => 'New IP and HD systems, ANPR lanes, cabling and recorders sized for the retention you asked for, commissioned with remote viewing for the people who need it.'],
@@ -83,7 +83,7 @@ function cctvServiceCopy(string $slug): ?array
                 'h2' => 'What this CCTV lane covers',
                 'p' => [
                     'Installs and upgrades (4K, HD, wireless, dome, bullet and PTZ), brand work for Hikvision, Axis, Dahua and the other systems already on site, and the practical jobs that follow: network changes, switch and PoE checks, hard-drive and NVR changes, loading-bay adds and landlord common-part cameras.',
-                    'ANPR is scoped as its own view. A car-park overview is not treated as a plate camera unless the survey shows it can hold a plate. Monitoring and remote apps are set up for your staff. We do not invent a monitoring-centre contract on this page.',
+                    'ANPR is scoped as its own view. A car-park overview is not treated as a plate camera unless the survey shows it can hold a plate. Monitoring and remote apps are set up for your staff. ',
                 ],
             ],
         ],

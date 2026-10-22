@@ -65,7 +65,7 @@ $packages = [
     [
         'name' => 'Single property',
         'text' => 'One-off EICR, fire alarm service or emergency lighting test with certificates ready for your tenancy file. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.',
-        'points' => ['Fixed-price quote', 'Digital certificates', 'Remedial advice included'],
+        'points' => ['Written quote', 'Digital certificates', 'Remedial advice included'],
     ],
     [
         'name' => 'Portfolio package',
@@ -82,7 +82,7 @@ $packages = [
 $trust = [
     ['title' => 'Stockport-based', 'text' => 'Local engineers covering Greater Manchester & the North West'],
     ['title' => 'Letting-agent ready', 'text' => 'Certificates and reports formatted for tenancy files & portals'],
-    ['title' => 'Multi-property quotes', 'text' => 'Fixed prices across portfolios — no per-visit surprises'],
+    ['title' => 'Multi-property quotes', 'text' => 'One written quote for the portfolio, with no per-visit surprises'],
     ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers'],
 ];
 
@@ -298,7 +298,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Stockport engineers, North West coverage</h2>
             <p class="mt-4 text-zinc-600 leading-relaxed">
                 Based in Offerton, Stockport, iComply Property Services supports landlords and letting agents across
-                Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. We focus on clear scope, fixed-price
+                Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria. We focus on clear scope, quoted
                 quotes and paperwork that stands up to tenancy deposits, local authority checks and insurer audits.
             </p>
             <div class="mt-8 grid sm:grid-cols-2 gap-4">
@@ -351,7 +351,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
             <?php
             $steps = [
                 ['1', 'Send property details', 'Addresses, tenancy dates, certificate types due, and access notes — form, phone or WhatsApp.'],
-                ['2', 'Fixed multi-unit quote', 'We confirm scope (EICR, fire, emergency lighting) and a clear price per property or package. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
+                ['2', 'Multi-unit quote', 'We confirm scope (EICR, fire, emergency lighting) and a clear price per property or package. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
                 ['3', 'Attend and file', 'Engineers complete the electrical and fire work and issue those certificates for tenants and agents. Landlord gas safety certificates (CP12), carried out by Gas Safe registered engineers.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
@@ -412,7 +412,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
         </form>
 
         <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+            <a href="tel:<?= htmlspecialchars(preg_replace('/\s+/', '', PHONE), ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>
             <a href="mailto:<?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?>" class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]"><?= htmlspecialchars(EMAIL, ENT_QUOTES, 'UTF-8') ?></a>
             <span class="text-zinc-300">|</span>

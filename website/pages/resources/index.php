@@ -7,7 +7,7 @@ require_once SITE_ROOT . '/includes/share.php';
 require_once SITE_ROOT . '/includes/wave1.php';
 
 $pageTitle = 'Resources & Guides | Property Compliance North West';
-$metaDesc = 'Free property compliance guides for landlords, facilities managers and commercial sites — EICR, fire alarm servicing, emergency lighting testing, CCTV, access control, landlord checklists and keyword guides across the North West.';
+$metaDesc = 'Free property compliance guides for landlords, facilities managers and commercial sites — EICR, fire alarm servicing, emergency lighting testing, CCTV, access control, landlord checklists and service guides across the North West.';
 $metaKeywords = 'property compliance guides, EICR guide, fire alarm servicing, emergency lighting testing, CCTV for business, access control guide, landlord compliance checklist, commercial fire safety North West';
 $ogImage = url('/assets/images/services/fire-alarms.jpg');
 $canonicalUrl = url('/pages/resources');
@@ -67,7 +67,7 @@ $featuredGuides = [
     [
         'slug' => 'legionella-risk-assessment',
         'title' => 'Legionella risk assessment & water hygiene',
-        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only — no invented prices.',
+        'blurb' => 'HSE L8 / HSG274-style assessment, when sampling helps, POA only.',
         'tag' => 'Water hygiene',
         'img' => '/assets/images/services/plumbing.jpg',
     ],
@@ -83,7 +83,7 @@ $featuredGuides = [
 $hubLinks = [
     [
         'href' => url('/pages/keywords/index.php'),
-        'title' => 'Keyword guides',
+        'title' => 'Service guides',
         'blurb' => 'Browse installation, maintenance and certification topics across every service.',
         'cta' => 'Browse guides →',
     ],
@@ -141,7 +141,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Practical, high-level guidance for landlords, agents and facilities managers across Greater Manchester
-                and the North West — plus links to packages, services and detailed keyword guides.
+                and the North West — plus links to packages, services and detailed service guides.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#batch-a" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Landlord guides</a>
@@ -171,7 +171,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Start with these guides</h2>
             <p class="mt-2 text-zinc-600 max-w-xl">Short, plain-English overviews you can share with owners, agents and FM teams.</p>
         </div>
-        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All keyword guides →</a>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
         <?php foreach ($featuredGuides as $g): ?>
@@ -260,7 +260,7 @@ $batchC = $queue['C'];
         <div class="mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Explore</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">More from iComply</h2>
-            <p class="mt-2 text-zinc-600 max-w-2xl">Jump to keyword guides, FAQ, packages and dedicated landlord or commercial pages — or browse the full service list.</p>
+            <p class="mt-2 text-zinc-600 max-w-2xl">Jump to service guides, FAQ, packages and dedicated landlord or commercial pages — or browse the full service list.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <?php foreach ($hubLinks as $link): ?>
@@ -279,10 +279,10 @@ $batchC = $queue['C'];
 <section class="max-w-7xl mx-auto px-6 py-16">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
         <div>
-            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Keyword guides</div>
+            <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Service guides</div>
             <h2 class="text-3xl font-semibold tracking-tight text-black mt-2">Popular compliance topics</h2>
         </div>
-        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Full keyword index →</a>
+        <a href="<?= url('/pages/keywords/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All service guides →</a>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php
@@ -333,10 +333,10 @@ $batchC = $queue['C'];
             </div>
             <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
                 <h3 class="text-2xl font-semibold">Talk to a local engineer</h3>
-                <p class="mt-3 text-white/80">Fixed-price quotes, clear documentation and appointments booked when the diary allows.</p>
+                <p class="mt-3 text-white/80">Written quotes, clear documentation and appointments booked when the diary allows.</p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-                       class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                       class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                     <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>"
                        target="_blank" rel="noopener"
                        class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>

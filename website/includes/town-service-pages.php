@@ -147,7 +147,7 @@ function icomplyTownExtra(string $family, array $ctx, array &$ids): string
     $ends = $family === 'barriers'
         ? [
             'Call 07517 806082 and say which lane.',
-            'The wizard on this page already selects CAME unless you change it.',
+            '',
             'Safety edges stay in circuit.',
             'Five-metre CAME packs are on the products hub; fitting is still POA.',
             'Paxton or Videx release is specified separately from the boom.',
@@ -250,10 +250,10 @@ function icomplyTownPools(string $family): array
             ],
             'partner' => [
                 'CAME is the barrier partner. New booms are specified on the CAME GARD range unless the survey shows the incumbent cabinet, springs and safety edges are still the right kit to keep.',
-                'Partner supply is CAME. A replacement lane is a CAME GARD barrier with loops and edges. We still service the other manufacturers listed on this page.',
+                'Partner supply is CAME. A replacement lane is a CAME GARD barrier with loops and edges. ',
                 'Where {name} needs a new lane, the default specification is CAME. Taking over an existing BFT, FAAC, Nice or Magnetic cabinet is a different quote and stays on that manufacturer if the hardware is sound.',
                 'CAME partnership covers new vehicle barriers and the 5m packs on the products hub. It does not mean we refuse to maintain another brand that is already installed in {name}.',
-                'The partner badge on this page is CAME only. Every other logo is a brand we will open, test and either keep or replace after the survey in {county}.',
+                'Every other logo is a brand we will open, test and either keep or replace after the survey in {county}.',
                 'New {name} installs name CAME on the quotation. Service visits name whatever rating plate is on the cabinet.',
             ],
             'safety' => [
@@ -282,7 +282,7 @@ function icomplyTownPools(string $family): array
                 ],
                 'long' => [
                     '{name} is a long mainland trip, about {miles} miles from Stockport. We will quote it. We will not pretend there is a {name} depot.',
-                    'Attendance in {name} is a dedicated visit. Distance about {miles} miles. The specification wizard on this page is how we decide whether the first journey is a survey or a repair with parts.',
+                    'Attendance in {name} is a dedicated visit. Distance about {miles} miles. ',
                     'Scotland, the far south-west and the north of England are on this list because the population test says so. {name} is about {miles} miles away and is booked as such.',
                 ],
             ],
@@ -314,9 +314,9 @@ function icomplyTownPools(string $family): array
             'Refurbishments in {name} often inherit a panel the current maintainer cannot log into. We identify the manufacturer from the list below before promising a takeover. Local towns: {near}.',
         ],
         'partner' => [
-            'There is no single AOV house brand on this page. SE Controls, Nuaire, Brooks, Geze, D+H, Colt, TROX and the others below are all in scope. The survey says which one is installed.',
+            'SE Controls, Nuaire, Brooks, Geze, D+H, Colt, TROX and the others below are all in scope. The survey says which one is installed.',
             'Every AOV manufacturer on the grid is a real support line for {name}, with a nameplate, a link to the brand page and a way to name that brand in the wizard.',
-            'We will not invent a preferred smoke-vent brand for {name}. If the fire strategy names an actuator, that is the one we test.',
+            'If the fire strategy names an actuator, that is the one we test.',
             'Panel, actuator, vent and interface are quoted as separate lines when {name} only needs one of them. Full replacements are quoted when the system cannot be kept.',
             'Air-handling and smoke-shaft controls sit with the AOV scope where they are part of the same cause-and-effect in {county}.',
             'Brand logos below are our nameplates, linked to the manufacturer page, so a search for the equipment in {name} lands on a page that admits the brand.',
@@ -352,9 +352,9 @@ function icomplyTownPools(string $family): array
             ],
         ],
         'close' => [
-            'Call 07517 806082 and name the AOV panel if you know it. The wizard on this page lists every manufacturer we support in {name}.',
+            'Call 07517 806082 and name the AOV panel if you know it. ',
             'Phone 07517 806082 for {name} smoke control. Tell us storeys, stair count and whether the vent is open, shut or unknown.',
-            'Every quote is fixed and written. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
+            'Every quote is a free written quote. The number is 07517806082. Photos of the panel door help; they do not replace the survey.',
             'If the {name} system is one of the brands below, pick it in the wizard so the engineer brings the right interface notes. Phone 07517 806082.',
             'Maintenance for {name} is a dated test record, not a van on a retainer we cannot staff. Start at 07517806082.',
             'New stairs and inherited panels are different jobs. Say which one {name} is. 07517806082.',
@@ -402,7 +402,7 @@ function icomplyTownEditorial(string $family, array $town): array
             ['Can access control release the {name} lane?', 'Yes when the fire strategy allows it. Paxton, Videx, HID, Comelit and BPT are listed separately from the barrier manufacturer.'],
         ]
         : [
-            ['Which AOV brands do you support in {name}?', 'Every manufacturer in the grid on this page, including SE Controls, Nuaire, Brooks, Geze, D+H, Colt and the rest. The survey confirms which one is installed.'],
+            ['Which AOV brands do you support in {name}?', 'The survey confirms which one is installed.'],
             ['Are AOV quotes fixed before a visit?', 'No. {name} smoke control is POA after the stair, the panel and the fire-alarm interface are known.'],
             ['How far do you travel for {name}?', 'About {miles} miles from our Stockport SK2 workshop. The visit is planned around that.'],
             ['Do AOVs need testing?', 'Yes. Functional tests of actuators, vents and the panel should be in the {name} logbook, not only a visual look.'],
@@ -438,6 +438,20 @@ function icomplyTownEditorial(string $family, array $town): array
     return ['paragraphs' => $paragraphs, 'ids' => $ids, 'faqs' => $faqs, 'ctx' => $ctx, 'depth' => $depth, 'depth_text' => $depthText];
 }
 
+function icomplyTownNameplateImg(string $slug, string $label, string $class, int $width, int $height): string
+{
+    if ($slug === 'assa-abloy') {
+        return '';
+    }
+    $rel = '/assets/images/manufacturers/nameplates/' . $slug . '.svg';
+    $file = (defined('SITE_ROOT') ? SITE_ROOT : dirname(__DIR__)) . $rel;
+    if (!is_file($file)) {
+        return '';
+    }
+    $alt = trim(html_entity_decode($label, ENT_QUOTES, 'UTF-8')) . ' logo';
+    return '<img class="' . htmlspecialchars($class, ENT_QUOTES, 'UTF-8') . '" src="' . htmlspecialchars(url($rel), ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . '" width="' . $width . '" height="' . $height . '" loading="lazy">';
+}
+
 function icomplyTownManufacturerHtml(string $family, array $town): string
 {
     $rows = icomplyTownBrandRows($family);
@@ -460,7 +474,10 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
         $html .= '<article class="bg-white border-[#ff6b00] border-2 rounded-2xl p-4" data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '">';
-        $html .= '<a href="' . $href . '"><img class="mfr-nameplate w-full h-20 object-contain" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' nameplate" width="320" height="160" loading="lazy"></a>';
+        $plate = icomplyTownNameplateImg($row['slug'], $label, 'mfr-nameplate w-full h-20 object-contain', 320, 160);
+        if ($plate !== '') {
+            $html .= '<a href="' . $href . '">' . $plate . '</a>';
+        }
         $html .= '<a class="font-semibold text-black hover:text-[#ff6b00]" href="' . $href . '">' . $label . '</a> <span class="text-xs font-semibold uppercase text-[#ff6b00]">Partner</span>';
         $html .= '<a class="mt-2 inline-block text-sm font-semibold text-[#ff6b00]" href="#town-spec-wizard" data-specify-brand="' . $label . '" aria-label="Specify ' . $label . '">Specify</a></article>';
     }
@@ -468,7 +485,8 @@ function icomplyTownManufacturerHtml(string $family, array $town): string
     foreach ($others as $row) {
         $href = htmlspecialchars(url('/pages/manufacturers/' . $row['slug'] . '.php'), ENT_QUOTES, 'UTF-8');
         $label = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
-        $html .= '<li data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '"><a class="inline-block px-3 py-1 border rounded-full hover:border-[#ff6b00]" href="' . $href . '" data-specify-brand="' . $label . '"><img class="inline h-5 w-10 object-contain mr-1 align-middle" src="' . htmlspecialchars(url('/assets/images/manufacturers/nameplates/' . $row['slug'] . '.svg'), ENT_QUOTES, 'UTF-8') . '" alt="" width="40" height="20" loading="lazy">' . $label . '</a></li>';
+        $plate = icomplyTownNameplateImg($row['slug'], $label, 'inline h-5 w-10 object-contain mr-1 align-middle', 40, 20);
+        $html .= '<li data-manufacturer="' . htmlspecialchars($row['slug'], ENT_QUOTES, 'UTF-8') . '"><a class="inline-block px-3 py-1 border rounded-full hover:border-[#ff6b00]" href="' . $href . '" data-specify-brand="' . $label . '">' . $plate . $label . '</a></li>';
     }
     $html .= '</ul>';
     $html .= '</section>';
@@ -489,7 +507,7 @@ function icomplyTownWizardHtml(string $family, array $town, string $csrf): strin
         : ['Residential stair', 'Office or mixed use', 'School or hotel', 'Smoke shaft', 'Not sure'];
     $html = '<section class="mt-12 bg-white border border-zinc-200 rounded-3xl p-6 md:p-8" id="town-spec-wizard">';
     $html .= '<h2 class="text-2xl font-semibold text-black">Specification wizard — ' . $h($townName) . '</h2>';
-    $html .= '<p class="mt-2 text-sm"><a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517806082</a></p>';
+    $html .= '<p class="mt-2 text-sm"><a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517 806082</a></p>';
     $seedW = crc32((string)($town['slug'] ?? $townName));
     $rot = static function (array $a, int $k): array { $k %= max(1, count($a)); return array_merge(array_slice($a, $k), array_slice($a, 0, $k)); };
     $jobs = $rot($jobs, $seedW);
@@ -551,27 +569,57 @@ function icomplyTownCsrf(): string
 function icomplyRenderTownHub(string $family): void
 {
     $towns = icomplyUkTowns();
-    $title = $family === 'barriers' ? 'Vehicle barriers by town' : 'AOV and smoke control by town';
-    $pageTitle = $title;
+    $title = $family === 'barriers' ? 'Vehicle barrier towns' : 'AOV and smoke control towns';
+    $pageTitle = $family === 'barriers' ? 'Barrier towns | CAME partner' : 'AOV towns | smoke control';
+    $metaTitleExact = true;
     $metaDesc = $family === 'barriers'
-        ? 'CAME partner vehicle-barrier pages for every UK mainland town with population over 10,000. Phone 07517 806082.'
-        : 'AOV and smoke-control pages for every UK mainland town with population over 10,000. Phone 07517 806082.';
+        ? 'Town-by-town vehicle barrier pages from the CAME partner hub. Not the barriers service page. Call 07517 806082.'
+        : 'Town-by-town AOV and smoke-control pages. Not the AOV service page. Call 07517 806082.';
     $metaKeywords = $family === 'barriers'
         ? 'CAME barriers, vehicle barriers, car park barrier, UK towns'
         : 'AOV, smoke control, automatic opening vent, UK towns';
     $canonicalUrl = url($family === 'barriers' ? '/pages/barriers' : '/pages/aov');
+    // CLOSE-Q6 (2026-10-19): /pages/aov is a full hub (>= 800 words, FAQ, 3 images,
+    // complete meta), copy from website/data/close-q/aov-hub.json. Barriers unchanged.
+    $aovHub = null;
+    if ($family === 'aov') {
+        require_once __DIR__ . '/quality-bar.php';
+        $aovHub = icomplyCloseQLoad('aov-hub.json');
+        if (!empty($aovHub['description'])) {
+            $metaDesc = (string)$aovHub['description'];
+        }
+        $aovImages = icomplyQualityBarAovImages();
+        $ogImage = $aovImages['og'] ?? url('/assets/images/services/aov-air-handling.jpg');
+        $ogImageAlt = 'Automatic opening vents and smoke control — iComply Property Services';
+    }
     $other = $family === 'barriers' ? '/pages/aov' : '/pages/barriers';
     $otherLabel = $family === 'barriers' ? 'AOV towns' : 'Barrier towns';
     require SITE_ROOT . '/includes/header.php';
     echo '<section class="max-w-6xl mx-auto px-6 py-16">';
     echo '<p class="text-sm uppercase tracking-[3px] text-[#ff6b00]">Mainland towns · population over 10,000</p>';
     echo '<h1 class="mt-2 text-4xl md:text-5xl font-semibold tracking-tight">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>';
+    if (!function_exists('icomplyHeroCtaHtml')) {
+        require_once __DIR__ . '/hero-cta.php';
+    }
+    echo icomplyHeroCtaHtml($title);
     echo '<p class="mt-4 text-lg max-w-3xl">iComply publishes one page per mainland town on the ' . count($towns) . '-place list (England, Scotland and Wales, population over 10,000). ';
     echo $family === 'barriers'
         ? 'CAME is the barrier partner. Other barrier and access manufacturers are listed on every town page.'
         : 'Each town page lists the AOV manufacturers we support, with nameplates and links.';
-    echo ' Call <a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517806082</a>. ';
+    echo ' Call <a class="font-semibold text-[#ff6b00]" href="tel:07517806082">07517 806082</a>. ';
     echo '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url($other), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($otherLabel, ENT_QUOTES, 'UTF-8') . '</a>.</p>';
+    if ($family === 'aov' && is_array($aovHub)) {
+        echo '<div class="mt-10 max-w-3xl">';
+        echo $aovImages['html'];
+        echo icomplyQualityBarAovProseHtml();
+        echo '<p class="mt-4"><a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/services/aov-air-handling'), ENT_QUOTES, 'UTF-8') . '">AOV service hub</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/pages/services/fire-alarms'), ENT_QUOTES, 'UTF-8') . '">Fire alarm services</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="' . htmlspecialchars(url('/contact'), ENT_QUOTES, 'UTF-8') . '">Request a quote</a> · '
+            . 'WhatsApp <a class="font-semibold text-[#ff6b00]" href="https://wa.me/447517806082">07517 806082</a> · '
+            . '<a class="font-semibold text-[#ff6b00]" href="mailto:icomplypropertyservices@gmail.com">icomplypropertyservices@gmail.com</a></p>';
+        echo icomplyQualityBarFaqHtml(icomplyQualityBarAovFaqs(), 'q6-aov-faq', 'q6-aov-faq-jsonld', 'Questions about AOV and smoke control');
+        echo '</div>';
+    }
     $letters = [];
     foreach ($towns as $town) {
         $letter = strtoupper(substr((string)$town['name'], 0, 1));
@@ -631,6 +679,22 @@ function icomplyTownPageRecord(string $slug): ?array
     return icomplyGmServiceTown($slug);
 }
 
+function icomplyDisambiguatedTownName(string $name, string $slug): string
+{
+    $plain = strtolower(trim((string)preg_replace('/[^a-z0-9]+/', '-', $name), '-'));
+    if ($slug === '' || $slug === $plain) {
+        return $name;
+    }
+    if (preg_match('/^' . preg_quote($plain, '/') . '-(.+)$/', $slug, $m)) {
+        $tail = (string)$m[1];
+        if ($tail === $plain) {
+            return $name . ' (' . $name . ')';
+        }
+        return $name . ', ' . ucwords(str_replace('-', ' ', $tail));
+    }
+    return $name . ' (' . ucwords(str_replace('-', ' ', $slug)) . ')';
+}
+
 function icomplyRenderTownPage(string $family, string $slug): void
 {
     $town = icomplyTownPageRecord($slug);
@@ -652,12 +716,12 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'Vehicle barriers · CAME partner';
-        $h1 = 'Vehicle barriers in ' . $ctx['name'];
+        $h1 = 'Vehicle barriers in ' . icomplyDisambiguatedTownName((string)$ctx['name'], (string)$ctx['slug']);
     } else {
         $pageTitle = 'AOV smoke control in ' . $place;
         $metaDesc = 'AOV and smoke control in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). EN 12101. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'AOV and smoke control';
-        $h1 = 'AOV and smoke control in ' . $ctx['name'];
+        $h1 = 'AOV and smoke control in ' . icomplyDisambiguatedTownName((string)$ctx['name'], (string)$ctx['slug']);
     }
     if (!empty($town['gm_local'])) {
         $metaTitleExact = true;

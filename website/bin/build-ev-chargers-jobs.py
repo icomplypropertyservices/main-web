@@ -53,7 +53,7 @@ JOBS = [
         "faqs": [
             ("Will a normal house supply take a home charger?", "Often yes at a 7 kW single-phase rate, but only after we check the main fuse, board and other loads. We do not guess from the kerb."),
             ("Can the charger go on a garage wall?", "Yes when the cable route, isolation and mounting are safe. Long routes or a new post are itemised on the POA quote."),
-            ("Is the price on the website?", "No. Home EV charger work is enquire / POA. No invented figures on this page."),
+            ("Is the price on the website?", "No. Home EV charger work is enquire / POA. "),
         ],
     },
     {
@@ -74,7 +74,7 @@ JOBS = [
         "faqs": [
             ("Can we fit two bays now and add more later?", "Yes. We can leave board space and routes so later bays are less disruptive. That future allowance is written into the POA scope."),
             ("Do you apply to the DNO for us?", "Where notice or a supply upgrade is required we prepare the electrical information. We are not the network operator."),
-            ("How is commercial work priced?", "Enquire / POA. Bay count, civils and supply upgrades change the figure. Nothing is priced on this page."),
+            ("How is commercial work priced?", "Enquire / POA. Bay count, civils and supply upgrades change the figure. "),
         ],
     },
     {
@@ -95,7 +95,7 @@ JOBS = [
         "faqs": [
             ("Does 7kW mean every home can have one?", "No. 7 kW is the charger rating. The supply has to support it. We check before we install."),
             ("Is 7kW three phase?", "No. A typical 7 kW unit is single phase. Three-phase workplace rates are a different job."),
-            ("What does it cost?", "POA after survey. Enquire — we do not print a 7 kW tariff or install fee here."),
+            ("What does it cost?", "POA after survey. "),
         ],
     },
     {
@@ -137,7 +137,7 @@ JOBS = [
         "faqs": [
             ("What is a tethered charger?", "The cable lives on the charge point. You plug the vehicle end in. You do not carry a separate lead."),
             ("Can one tethered lead suit every car?", "No. Connector type has to match the vehicles. We confirm that before the unit is ordered."),
-            ("Is tethered more expensive on this page?", "We do not publish a comparison price. Both types are POA. Enquire and the written quote shows the unit we specified."),
+            ("", "We do not publish a comparison price. Both types are POA. Enquire and the written quote shows the unit we specified."),
         ],
     },
     {
@@ -158,7 +158,7 @@ JOBS = [
         "faqs": [
             ("What does untethered mean?", "The charge point has a socket. The driver brings a compatible lead. Nothing is permanently attached."),
             ("Is an untethered unit better for a workplace?", "Often, when staff cars use different leads. A single-vehicle home may prefer tethered. We advise at survey."),
-            ("Do you sell the loose lead on this page?", "No shop price is published here. The install is POA. Leads are specified with the quote if you need them."),
+            ("", "No shop price is published here. The install is POA. Leads are specified with the quote if you need them."),
         ],
     },
     {
@@ -169,16 +169,16 @@ JOBS = [
         "h1": "Smart EV Charger",
         "angle": "app control and scheduled charging",
         "intro": "A smart EV charger can schedule charging, report sessions and sometimes follow a tariff window. The electrical install is still a BS 7671 job — the app does not replace protection or certification.",
-        "body": "We connect the unit, walk through the app at handover, and leave you able to start a charge without calling us. Wi-Fi or hard-wired data needs are noted at survey. Smart features are included in the POA description of the unit, not priced as a menu on this page. Enquire if you want scheduling.",
+        "body": "We connect the unit, walk through the app at handover, and leave you able to start a charge without calling us. Wi-Fi or hard-wired data needs are noted at survey. Enquire if you want scheduling.",
         "points": [
             "App handover as part of commissioning",
             "Scheduling explained, not assumed",
             "Data connection checked at survey",
-            "POA — no subscription fees invented here",
+            "POA: subscription costs confirmed in writing",
         ],
         "faqs": [
             ("Does smart charging need the internet?", "Most apps do. We check Wi-Fi reach at the parking position and say if a booster or cable is a separate item."),
-            ("Will you set up off-peak times?", "We show you how. Your energy tariff and account stay yours. We do not invent a saving figure."),
+            ("Will you set up off-peak times?", "We show you how. Your energy tariff and account stay yours. "),
             ("Are app subscriptions included?", "Only if the manufacturer includes them. We do not publish a subscription price. Enquire and the quote names the unit."),
         ],
     },
@@ -221,7 +221,7 @@ JOBS = [
         "faqs": [
             ("Will a solar charger run the car for free?", "No. We do not promise free miles. Surplus divert only helps when the panels are generating more than the house is using."),
             ("Do you install the solar as well?", "Solar PV is a related electrical service. This page is the charge point and the divert interface. Each scope is quoted POA."),
-            ("Which brands divert solar?", "Some do, including certain Myenergi units. We specify after we see your inverter, not from a logo on this page."),
+            ("Which brands divert solar?", "Some do, including certain Myenergi units. "),
         ],
     },
     {
@@ -273,7 +273,7 @@ JOBS = [
         "seo_title": "Wallbox EV Charger | Wall-Mounted Install",
         "h1": "Wallbox EV Charger",
         "angle": "wall-mounted charge point",
-        "intro": "Wallbox EV charger on this page means a wall-mounted charge point — a unit fixed to a suitable wall, not a pedestal in the bay. The brand name Wallbox is one option among others.",
+        "intro": "The brand name Wallbox is one option among others.",
         "body": "We check the wall construction, fixing zone, and cable entry so the unit is not bridging a damp course badly or sitting where a bumper will hit it. Electrical design is unchanged: dedicated circuit, Section 722 protection, certificate. POA after we see the wall. Enquire with a photo of the proposed fixing point.",
         "points": [
             "Wall construction and fixing zone checked",
@@ -368,7 +368,7 @@ JOBS = [
         "faqs": [
             ("Is this an on-street public charger?", "No. We install on private and workplace land you control. Highway agreements are outside this job."),
             ("Can customers pay by card?", "Only with hardware and a back office that support it. We name that in the POA quote if you need it."),
-            ("How many bays can one board feed?", "As many as load management and the intake allow. We will not invent a bay count from the car park size alone."),
+            ("How many bays can one board feed?", "As many as load management and the intake allow. "),
         ],
     },
     {
@@ -463,7 +463,7 @@ JOBS = [
         "h1": "Myenergi Zappi EV Charger",
         "angle": "Zappi install, including solar divert where the kit exists",
         "intro": "A Myenergi Zappi EV charger is a smart unit we install and certificate. Solar divert is only part of the scope when you already have compatible generation.",
-        "body": "We set the device up, check CT clamp positions where divert is required, and hand over the app. If there is no solar, the Zappi still works as a charge point and we do not invent a PV saving. Installation is POA. Enquire with whether you have PV and the consumer unit location.",
+        "body": "We set the device up, check CT clamp positions where divert is required, and hand over the app. Installation is POA. Enquire with whether you have PV and the consumer unit location.",
         "points": [
             "Zappi installed to Myenergi guidance and BS 7671",
             "CT clamps only when divert is in scope",
@@ -473,7 +473,7 @@ JOBS = [
         "faqs": [
             ("Do I need solar to have a Zappi?", "No. Solar divert is optional. The charger still needs a proper electrical install."),
             ("Will you fit eddi at the same time?", "If you want hot-water divert as well, say so. It is a separate device and is quoted POA, not assumed."),
-            ("Is Zappi priced on this page?", "No. Enquire for a POA install figure."),
+            ("", "No. Enquire for a POA install figure."),
         ],
     },
     {
@@ -547,15 +547,15 @@ JOBS = [
         "h1": "EV Charger Maintenance",
         "angle": "planned check of existing charge points",
         "intro": "EV charger maintenance is a planned visit: terminals, glands, RCD test where it is safe to do so, lead and holster condition, and a note for the site file.",
-        "body": "Workplaces with several bays get more value from a scheduled visit than a house with one unit, but both can be maintained. We do not invent a legal service interval. The visit is POA and the checklist is agreed first. Enquire with how many points are on the site.",
+        "body": "Workplaces with several bays get more value from a scheduled visit than a house with one unit, but both can be maintained. The visit is POA and the checklist is agreed first. Enquire with how many points are on the site.",
         "points": [
             "Terminals, glands, lead and holster inspected",
             "Functional checks agreed in the scope",
             "Written note for the site file",
-            "POA — no invented annual contract price",
+            "POA",
         ],
         "faqs": [
-            ("How often must a charger be serviced?", "There is no single interval we will invent. Manufacturer guidance and how hard the bay is used decide the visit."),
+            ("How often must a charger be serviced?", "Manufacturer guidance and how hard the bay is used decide the visit."),
             ("Does maintenance include repairs?", "Inspection is the visit. Parts and repairs are extra and are quoted before we fit them."),
             ("Can several sites be on one instruction?", "Yes. Enquire with the list. Each site is still scoped, and the total is POA."),
         ],
@@ -599,7 +599,7 @@ JOBS = [
         "faqs": [
             ("Can you reuse the old cable?", "Only if it tests and is suitable for the new unit. We do not promise reuse from a photo."),
             ("Will the new charger need a new certificate?", "Yes for the work we do. You receive the certificate that matches that work."),
-            ("Do you dispose of the old unit?", "We agree that on the quote. We do not print a disposal fee here."),
+            ("Do you dispose of the old unit?", "We agree that on the quote. "),
         ],
     },
     {
@@ -725,7 +725,7 @@ JOBS = [
         "faqs": [
             ("Is a standard socket RCD enough?", "Not by assumption. The charger circuit has its own rules. We select the device for that circuit."),
             ("What if the charger already contains protection?", "Then the upstream device has to be compatible. We follow the manufacturer, not a habit."),
-            ("Do you sell RCDs on this page?", "No trade price is listed. The device is part of the POA install."),
+            ("", "No trade price is listed. The device is part of the POA install."),
         ],
     },
     {
@@ -736,7 +736,7 @@ JOBS = [
         "h1": "DNO Notification EV Charger",
         "angle": "network-operator notice for a charge point",
         "intro": "DNO notification for an EV charger is the notice the distribution network operator may require before or after a charge point is connected. iComply prepares the electrical information. We are not the DNO.",
-        "body": "Whether a job is notify or apply-before-connect depends on the supply and the equipment. We tell you which path the survey shows and what information we can submit. Approval, reinforcement and any DNO charge are the network's, not a figure we invent. Our work to prepare and install is POA. Enquire with the postcode and the MPAN if you have the bill to hand.",
+        "body": "Whether a job is notify or apply-before-connect depends on the supply and the equipment. We tell you which path the survey shows and what information we can submit. Approval, reinforcement and any DNO charge are the network'Our work to prepare and install is POA. Enquire with the postcode and the MPAN if you have the bill to hand.",
         "points": [
             "Notify versus apply-first explained after survey",
             "Electrical information prepared for the DNO",
@@ -760,7 +760,7 @@ JOBS = [
         "body": "Eligibility, approved equipment and paperwork change. We check what is live at survey and say if your job does not qualify. The electrical install is quoted POA either way, so a grant decision is not the only reason to survey. Enquire with the property type — home, flat, workplace or landlord — and we will tell you what we need to look up.",
         "points": [
             "Current scheme rules checked at survey, not assumed",
-            "No grant amount printed on this page",
+            "Grants confirmed case by case",
             "Install still quoted POA if no grant applies",
             "Eligibility is not guaranteed",
         ],

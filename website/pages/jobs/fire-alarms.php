@@ -126,7 +126,7 @@ require SITE_ROOT . '/includes/header.php';
         <p class="mt-6 text-lg text-white/80 max-w-2xl">
             iComply designs, installs, maintains and services BS 5839 fire detection and alarm systems
             from Stockport across Greater Manchester and the North West. Pick a lane below.
-            Quotes are written after scope. Price on application — we do not publish fees.
+            Quotes are written after scope. Price on application.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#install" class="px-6 py-3 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Install <?= (int)$counts['install'] ?></a>
@@ -192,7 +192,7 @@ require SITE_ROOT . '/includes/header.php';
 <section id="quote" class="bg-[#0B1F3A] text-white">
     <div class="max-w-3xl mx-auto px-6 py-14">
         <h2 class="text-3xl font-semibold text-center">Quote for fire alarm install, maintenance or service</h2>
-        <p class="mt-2 text-center text-white/80">Fixed written quote before any work starts. Tell us the panel brand, the site and whether this is a new system, a contract or a fault.</p>
+        <p class="mt-2 text-center text-white/80">Free written quote before any work starts. Tell us the panel brand, the site and whether this is a new system, a contract or a fault.</p>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="mt-8 bg-white text-zinc-900 rounded-3xl p-6 md:p-8 space-y-4"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
             <div class="grid md:grid-cols-2 gap-4">

@@ -404,7 +404,7 @@ echo icomplyQualityBarFaqHtml(
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Local keyword pages</div>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Guides for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?></h2>
-        <p class="mt-2 text-zinc-600 max-w-2xl">Every keyword guide has a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> page, the same set the other Greater Manchester area hubs link.</p>
+        <p class="mt-2 text-zinc-600 max-w-2xl">Every service guide below has a page for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.</p>
         <?php
         require_once SITE_ROOT . '/includes/related.php';
         echo keywordAreaLinksHtml($AREA, null, 0);
@@ -448,7 +448,7 @@ $areaFaqs = [
     ],
     [
         'Who carries out gas work for ' . $areaName . ' landlords?',
-        'Gas work is carried out by Gas Safe registered engineers. This index does not show an iComply Gas Safe registration number.',
+        'Gas work is carried out by Gas Safe registered engineers.',
     ],
     [
         'Which other Greater Manchester hubs should I open?',
@@ -470,7 +470,7 @@ echo icomplyGmFaqHtml('Questions about property services in ' . $areaName, $area
                target="_blank" rel="noopener"
                class="px-8 py-4 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>"
-               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>
@@ -489,7 +489,7 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> quote</h2>
-            <p class="mt-3 text-zinc-600">Postcode, property type and the service. No price is invented on this page.</p>
+            <p class="mt-3 text-zinc-600">Postcode, property type and the service. </p>
         </div>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
@@ -521,4 +521,8 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         </form>
     </div>
 </section>
-<?php require SITE_ROOT . '/includes/footer.php'; ?>
+<?php
+require_once SITE_ROOT . '/includes/upgrade-orphan-links.php';
+echo icomplyUpgradeOrphanLinksForTown((string)($AREA_SLUG ?? ''));
+require SITE_ROOT . '/includes/footer.php';
+?>

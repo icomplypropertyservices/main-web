@@ -8,7 +8,7 @@
  *  - data/barriers-places.json (ONS Census 2021 / NRS): housing, tenure, industry.
  *  - data/uk-towns-10k.json (ONS towns 2019): size, coastal class, workplace profile.
  * Straight-line distances are computed from coordinates. No reviews, projects,
- * job counts or response times are invented. iComply is not described as a
+iComply is not described as a
  * registered or certified body.
  */
 declare(strict_types=1);

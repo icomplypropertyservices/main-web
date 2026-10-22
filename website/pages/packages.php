@@ -25,7 +25,7 @@ $waBase = 'https://wa.me/' . WHATSAPP;
 $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
 
 /**
- * Packages: honest "from" / POA only — no invented catalogue prices.
+ * Packages: honest "from" / POA only.
  * Related service slugs link to existing hub pages.
  */
 $packages = [
@@ -37,7 +37,7 @@ $packages = [
         'highlight' => true,
         'price_label' => 'From',
         'price' => 'POA',
-        'price_note' => 'Scoped per property / portfolio — fixed quote after survey',
+        'price_note' => 'Scoped per property / portfolio — written quote after survey',
         'ideal' => 'Private landlords, letting agents and HMO operators',
         'includes' => [
             'EICR (Electrical Installation Condition Report)',
@@ -158,7 +158,7 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <?= sectionTrustStrip([
-    ['Honest pricing', 'Shown as From / POA — fixed quote after we agree scope'],
+    ['Honest pricing', 'Shown as From / POA — written quote after we agree scope'],
     ['One visit plan', 'Combine services where practical to cut access days'],
     ['Audit-ready packs', 'Certificates & reports in one place for insurers'],
     ['Local engineers', 'Stockport-based team covering Greater Manchester & NW'],
@@ -172,7 +172,7 @@ require SITE_ROOT . '/includes/header.php';
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Four ways to stay compliant</h2>
             <p class="mt-2 text-zinc-600 max-w-2xl">
                 Packages are starting points — we tailor scope to your buildings, system brands and renewals.
-                Prices are <strong class="text-black">from / POA</strong> only; you always get a fixed quote before work starts.
+                Prices are from / POA only; you always get a written quote before work starts.
             </p>
         </div>
         <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Browse single services →</a>
@@ -266,14 +266,14 @@ require SITE_ROOT . '/includes/header.php';
     <div class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="text-3xl font-semibold tracking-tight text-black text-center mb-4">How package quoting works</h2>
         <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
-            We never publish fake fixed prices online — every building is different.
-            You get a clear, fixed-price quote once scope is agreed.
+            We never publish a made-up price online — every building is different.
+            You get a clear, written quote once scope is agreed.
         </p>
         <div class="grid md:grid-cols-3 gap-8">
             <?php
             $steps = [
                 ['1', 'Tell us the package', 'Pick Landlord Essentials, Fire, Security or Full FM — plus postcode and property type.'],
-                ['2', 'We scope & quote', 'We confirm systems, standards and access. Pricing is From / POA until the fixed quote is issued.'],
+                ['2', 'We scope & quote', 'We confirm systems, standards and access. Pricing is From / POA until the written quote is issued.'],
                 ['3', 'Deliver & certify', 'Engineers complete the works, issue certificates and hand over an audit-ready pack.'],
             ];
             foreach ($steps as [$n, $t, $d]): ?>
@@ -311,7 +311,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-3 text-white/80">Call, WhatsApp or use the quote form. Send the postcode and property type to start a quote.</p>
             <div class="mt-6 flex flex-wrap gap-3">
                 <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+                   class="px-6 py-3 rounded-2xl bg-white text-[#0B1F3A] font-semibold"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
                 <a href="<?= htmlspecialchars($waBase, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode('Hi iComply, I need a compliance package quote') ?>"
                    target="_blank" rel="noopener"
                    class="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 font-semibold">WhatsApp</a>
@@ -327,7 +327,7 @@ require SITE_ROOT . '/includes/header.php';
         <div class="text-center mb-10">
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Free quote</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Request a package quote</h2>
-            <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a fixed-price proposal after scope is agreed. No obligation.</p>
+            <p class="mt-3 text-zinc-600">Tell us which package and your postcode — we’ll return a written proposal after scope is agreed. No obligation.</p>
         </div>
         <form <?= ICOMPLY_QUOTE_FORM_ATTRS ?> class="bg-white border rounded-3xl p-6 md:p-8 space-y-5 shadow-sm"><?= icomplyQuoteFormHidden() ?>
             <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8') ?>">
@@ -367,7 +367,7 @@ require SITE_ROOT . '/includes/header.php';
                target="_blank" rel="noopener"
                class="px-5 py-2.5 rounded-2xl bg-green-600 hover:bg-green-500 text-white font-semibold">WhatsApp us instead</a>
             <a href="<?= htmlspecialchars($phoneHref, ENT_QUOTES, 'UTF-8') ?>"
-               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
+               class="px-5 py-2.5 rounded-2xl border border-zinc-300 font-semibold text-black hover:border-[#0B1F3A]"><?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>
 </section>

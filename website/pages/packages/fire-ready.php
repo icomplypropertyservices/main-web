@@ -14,13 +14,13 @@ require SITE_ROOT . '/includes/header.php';
     <nav class="text-xs text-white/50 mb-6"><a href="<?= rtrim(SITE_URL,'/') ?>/" class="hover:text-white">Home</a> / <a href="<?= url('/pages/packages.php') ?>" class="hover:text-white">Packages</a> / Fire Ready</nav>
     <p class="text-xs uppercase tracking-widest text-white/60 mb-3">Commercial · Wave 1</p>
     <h1 class="text-4xl sm:text-5xl font-semibold tracking-tighter">Fire Ready <span class="text-[#ff6b00]">package</span></h1>
-    <p class="mt-4 text-white/80 max-w-2xl">Life-safety systems pack including AOV and smoke control where fitted. AOV is fire protection, so smoke-vent checks can be quoted outside the North West. Travel sits on that quote. Price: <strong>POA</strong> after scope. England, Wales, Scotland and Northern Ireland do not share one building-reg text. Call <?= htmlspecialchars((string)PHONE, ENT_QUOTES, 'UTF-8') ?>.</p>
+    <p class="mt-4 text-white/80 max-w-2xl">Life-safety systems pack including AOV and smoke control where fitted. AOV is fire protection, so smoke-vent checks can be quoted outside the North West. Travel sits on that quote. Price: <strong>POA</strong> after scope. England, Wales, Scotland and Northern Ireland do not share one building-reg text. Call <?= htmlspecialchars(icomplyPhoneDisplay(), ENT_QUOTES, 'UTF-8') ?>.</p>
     <a href="#quote" class="inline-block mt-8 px-8 py-4 rounded-2xl bg-[#ff6b00] font-semibold">Request quote</a>
   </div>
 </section>
 <section class="max-w-7xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold">What is included (indicative)</h2>
-  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. No invented catalogue prices — all work is POA until scoped.</p>
+  <p class="mt-2 text-zinc-600">Final scope is confirmed in your quote. </p>
   <ul class="mt-6 space-y-2 text-zinc-800">
     <li>✓ Fire alarm service / inspection to BS 5839 (as fitted)</li>
     <li>✓ Emergency lighting testing to BS 5266 (as fitted)</li>

@@ -25,7 +25,7 @@ $landing = [
     'priceKey' => 'bundle',
     'kicker' => 'Landlords, agents & small portfolios',
     'h1' => 'Landlord essentials — one schedule, one documentation pack',
-    'lede' => 'One coordinated visit plan. One documentation pack for landlords and agents. **Fixed price after we agree scope.** Typically **EICR**, **gas safety (CP12 / Landlord Gas Safety Record)**, and **core fire and alarm checks as scoped** — with an FRA where the building needs one.',
+    'lede' => 'One coordinated visit plan. One documentation pack for landlords and agents. **Written quote after we agree scope.** Typically **EICR**, **gas safety (CP12 / Landlord Gas Safety Record)**, and **core fire and alarm checks as scoped** — with an FRA where the building needs one.',
     'note' => '“Landlord essentials” is a commercial way of packaging typical certificate work. It is not a statutory product name and it does not guarantee that every duty on a given property is covered. Inclusions are agreed in writing before a fixed price. This page is general information, not legal advice.',
     'proof' => [
         'Stockport-based',

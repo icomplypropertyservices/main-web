@@ -1,0 +1,25 @@
+{
+  "generic": "Useful photographs before {subject} in {place} show the part that has failed and enough of the access to reach it, rather than a picture of an unrelated trade or a whole street, so the visit is prepared for this address.",
+  "fallback": "Useful photographs before {subject} in {place} show the {trade} and the access to it, rather than a photograph of a different trade, so the pictures match this job.",
+  "families": {
+    "plastering": "Useful photographs before {subject} in {place} show the wall or the ceiling being plastered and the damaged area, rather than a photograph of a different trade, so the plastering visit starts from the surface that was pictured.",
+    "gas-systems": "Useful photographs before {subject} in {place} show the appliance and the flue from a safe distance, when the job is gas, rather than a cover removed by the household, so the engineer attends the appliance that was named.",
+    "heating": "Useful photographs before {subject} in {place} show the boiler and the programmer from a safe distance, when the job is heating, rather than anyone removing a cover, so the engineer sees the appliance that is installed.",
+    "roofing": "Useful photographs before {subject} in {place} show the slope and the stain, when the job is roofing, rather than a picture taken only from the pavement at night, so the leak that the household sees is the one we discuss.",
+    "driveways": "Useful photographs before {subject} in {place} show the drive, the levels and the kerb, when the job is a driveway, rather than a single slab with no context, so the measure can be sketched before the survey.",
+    "fencing": "Useful photographs before {subject} in {place} show the fence run, the posts and any gate, when the job is fencing, rather than a close-up that hides how long the boundary is, so the length is still checked on site.",
+    "drainage": "Useful photographs before {subject} in {place} show the gully or the manhole, when the job is drainage, rather than a wet floor with no outlet in frame, so the survey knows which cover to lift.",
+    "aov-air-handling": "Useful photographs before {subject} in {place} show the smoke vent, the actuator and the AOV panel, rather than a picture of the street only, so the smoke-control visit is prepared for the equipment on that stair.",
+    "brickwork": "Useful photographs before {subject} in {place} show the brickwork, the mortar and the opening, rather than a fire-alarm panel or an unrelated interior, so the brickwork visit is about the wall that was pictured.",
+    "electrical": "Useful photographs before {subject} in {place} show the consumer unit, when the job is electrical, rather than photographs of unrelated rooms, so the electrical visit starts from the board that was pictured.",
+    "pat-testing": "Useful photographs before {subject} in {place} show the appliance and its plug, when the job is PAT testing, rather than a consumer unit in another room, so the test list matches the items that were pictured.",
+    "ev-chargers": "Useful photographs before {subject} in {place} show the parking bay and the supply point, when the job is an EV charger, rather than a photograph of an unrelated driveway, so the charger visit is about that bay.",
+    "epc": "Useful photographs before {subject} in {place} show the front of the building and the heating, when the job is an energy performance certificate, rather than a picture of an unrelated trade, so the assessment is of this building.",
+    "fire-alarms": "Useful photographs before {subject} in {place} show the fire-alarm panel and a detector, when the job is fire alarms, rather than a brick wall or a different system, so the fire-alarm visit starts from that panel.",
+    "demolition": "Useful photographs before {subject} in {place} show the wall or the opening, when the job is demolition, rather than a request to knock through on the strength of a text message, so the quote refers to the same opening.",
+    "barriers": "Useful photographs before {subject} in {place} show the barrier arm and the cabinet, when the job is a barrier, rather than a photograph of a bent boom with no label, so parts are identified from the cabinet that was pictured.",
+    "windows": "Useful photographs before {subject} in {place} show the window and the frame, when the job is windows, rather than someone cleaning glass on a different floor, so the window visit is about that opening.",
+    "kitchens": "Useful photographs before {subject} in {place} show the kitchen as it is, including the units and the services, rather than a fire-suppression nozzle or an unrelated room, so the kitchen visit is about that room.",
+    "landlord-compliance": "Useful photographs before {subject} in {place} show the rooms the certificates need to cover, when the job is landlord compliance, rather than the drive or a fence, so the pack is priced on the certificates that were asked for."
+  }
+}
