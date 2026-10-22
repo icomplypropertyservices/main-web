@@ -173,12 +173,40 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
+    // Networking, data cabling and mesh Wi-Fi pack hubs (lock 2026-10-20). Restored:
+    // the #119/#120 merges dropped this route, so 88 pack hubs fell back to the old pack.
+    if (preg_match('#^/pages/(keywords|services|jobs)/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/network-pack.php';
+        $npKey = ['keywords' => 'keyword', 'services' => 'service', 'jobs' => 'job'][$m[1]] . '/' . $m[2];
+        if (isset(icomplyNetworkPackHubs()[$npKey])) {
+            renderNetworkPackHub($npKey);
+            return true;
+        }
+    }
+
     if (!function_exists('manchesterElectricalP0Handle')) {
         require_once __DIR__ . '/manchester-electrical-p0.php';
     }
     // Manchester electrical P0: rich keyword and job pages, GM-core towns only.
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         if (manchesterElectricalP0Handle('keyword', $m[1], $m[2])) {
+            return true;
+        }
+        // Restored DEEP / nationwide 3-line / fire alarm installer town renderers.
+        if (function_exists('icomplyMarginDeepIsP0') && icomplyMarginDeepIsP0($m[1])) {
+            icomplyMarginDeepRenderTown($m[1], $m[2]);
+            return true;
+        }
+        if (function_exists('icomplyNationwide3lineIsP0')
+            && icomplyNationwide3lineIsP0($m[1])
+            && function_exists('icomplyNationwide3lineIndexablePath')
+            && icomplyNationwide3lineIndexablePath($path)) {
+            icomplyNationwide3lineRenderTown($m[1], $m[2]);
+            return true;
+        }
+        if (function_exists('icomplyFireAlarmInstallerNationwidePath')
+            && icomplyFireAlarmInstallerNationwidePath($path)) {
+            icomplyRenderFireAlarmInstallerTown($m[1], $m[2]);
             return true;
         }
         renderKeywordAreaPage($m[1], $m[2]);
