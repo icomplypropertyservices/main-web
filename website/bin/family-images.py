@@ -29,6 +29,10 @@ for f in ALT:
     v = man[rel]['variants']; c = cred.get(rel, {})
     fp_photo[f] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[f],
                        credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+OPT2SRC = {}
+for _k, _v in man.items():
+    for _x in _v.get('variants', []):
+        OPT2SRC.setdefault(_x['webp'].rsplit('/', 1)[1].split('-')[0], _k)
 IMG = re.compile(r'<(img|source)\b[^>]*>', re.I)
 SRC = re.compile(r'\b(src|data-src)="([^"]+)"', re.I)
 SRCSET = re.compile(r'\bsrcset="([^"]+)"', re.I)
@@ -56,6 +60,10 @@ for r, _, fs in os.walk(dist):
             _fig = re.search(r'<figure\b.*?</figure>', _raw[_b:] if _b >= 0 else '', re.S | re.I)  # hero figure only, never og:image/head
             if _fig:
                 hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _fig.group(0))
+                if not hm:
+                    _o = re.search(r'/assets/images/opt/([0-9a-f]{12})-\d+\.webp', _fig.group(0))
+                    _src = OPT2SRC.get(_o.group(1), '') if _o else ''
+                    hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _src)
             if hm and hm.group(1) in dir2fam: pf = dir2fam[hm.group(1)] if dir2fam[hm.group(1)] in ALT else pf
             if pf in ALT: files.append((fp, pf))
 use = collections.defaultdict(collections.Counter)
