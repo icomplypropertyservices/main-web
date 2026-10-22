@@ -11,7 +11,7 @@ function icomplyShopHubFaqs(string $current): array
     $fit = $current === 'gas' ? 'and installation is carried out by Gas Safe registered engineers' : 'and our engineers can supply and fit';
     return [
         ['Can I buy ' . $topic . ' and have them installed?', 'Yes. Order through the Shopify checkout, or call or WhatsApp 07517 806082, ' . $fit . '. Installation is priced on application after a short scope.'],
-        ['Are the prices on this page current?', 'Prices are shown as published on the Shopify store at build time. The checkout price is the one that applies.'],
+        ['How current are the listed prices?', 'Prices are shown as published on the Shopify store at build time. The checkout price is the one that applies.'],
         ['Do you deliver across the UK?', 'Most items ship UK-wide. Delivery options and costs are shown at checkout; email icomplypropertyservices@gmail.com for bulk or trade orders.'],
         ['Can you help me choose the right product?', 'Yes. Tell us the property type and what the system must do, and we will suggest compatible parts before you order.'],
     ];
