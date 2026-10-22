@@ -21,6 +21,8 @@ $siteDefaults = [
     // GA4 property. Loaded only by the consent-gated loader in includes/header.php
     // (never hardcoded in <head>). GA_MEASUREMENT_ID env still overrides.
     'GA_MEASUREMENT_ID' => 'G-RN048B7861',
+    // Second GA4 property, configured alongside GA_MEASUREMENT_ID by the same single gtag.js loader.
+    'GA_MEASUREMENT_ID_2' => 'G-G8NTX4JMC9',
     'GTM_CONTAINER_ID' => '',
     'AW_CONVERSION_ID' => '',
     // Google Search Console HTML-tag verification (content= value only)
@@ -59,6 +61,7 @@ $envMap = [
     'ADMIN_USER' => 'ADMIN_USER',
     'ADMIN_PASS' => 'ADMIN_PASS',
     'GA_MEASUREMENT_ID' => 'GA_MEASUREMENT_ID',
+    'GA_MEASUREMENT_ID_2' => 'GA_MEASUREMENT_ID_2',
     'GTM_CONTAINER_ID' => 'GTM_CONTAINER_ID',
     'AW_CONVERSION_ID' => 'AW_CONVERSION_ID',
     'GOOGLE_SITE_VERIFICATION' => 'GOOGLE_SITE_VERIFICATION',

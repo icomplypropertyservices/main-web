@@ -131,7 +131,9 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     static $data = null;
     if (stripos($html, 'data-pf-depth') !== false || preg_match('#(^|/)(404|thank|admin)#', $path)) { return $html; }
     $have = icomplyFinishProseWords($html);
-    if ($have >= 880) { return $html; }
+    if ($have >= 1100) { return $html; }
+    if ($have >= 700) { $have = icomplyFinishProseWordsDom($html) ?? $have; }
+    if ($have >= 860) { return $html; }
     if ($data === null) { $data = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/page-depth.json'), true) ?: []; }
     $hay = strtolower($path . ' ' . (preg_replace('/[^a-z0-9]+/i', '-', $h1) ?? ''));
     $paras = []; $names = [];
@@ -152,4 +154,23 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     if (($pos = strripos($html, '</main>')) !== false) { return substr($html, 0, $pos) . $sec . substr($html, $pos); }
     if (preg_match('/<footer\b/i', $html, $m, PREG_OFFSET_CAPTURE)) { $pos = $m[0][1]; return substr($html, 0, $pos) . $sec . substr($html, $pos); }
     return $html;
+}
+
+/** Exact prose count (DOM): drops script/style/noscript/nav/header/footer and #lead-popup, counts <main> or <body>. */
+function icomplyFinishProseWordsDom(string $html): ?int
+{
+    if (!class_exists('DOMDocument')) { return null; }
+    $d = new DOMDocument();
+    $prev = libxml_use_internal_errors(true);
+    $ok = $d->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NOERROR | LIBXML_NOWARNING | LIBXML_COMPACT);
+    libxml_clear_errors(); libxml_use_internal_errors($prev);
+    if (!$ok) { return null; }
+    $x = new DOMXPath($d);
+    foreach (iterator_to_array($x->query('//script|//style|//noscript|//nav|//header|//footer|//*[@id="lead-popup"]')) as $n) {
+        if ($n->parentNode) { $n->parentNode->removeChild($n); }
+    }
+    $m = $x->query('//main');
+    $b = $m->length ? $m->item(0) : $x->query('//body')->item(0);
+    if (!$b) { return null; }
+    return (int)preg_match_all("/[A-Za-z0-9\x{00A3}'\x{2019}-]+/u", (string)$b->textContent);
 }
