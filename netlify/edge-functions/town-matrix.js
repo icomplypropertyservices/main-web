@@ -963,6 +963,11 @@ export default async (request, context) => {
       });
     }
   }
+  // /pages/keywords/{slug} is a guide, not a service/town pair. Passing it
+  // through stops the matrix from sending the hub to /pages/areas.
+  if (/^\/pages\/keywords\/[a-z0-9-]+$/.test(path)) {
+    return context.next();
+  }
   const manufacturerMatch = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);

@@ -388,17 +388,19 @@
   },
   {
     "file": "/assets/images/services/fire-stopping-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Dih_electrical_firestop_bc_superferries.jpg",
-    "title": "File:Dih electrical firestop bc superferries.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Firestop_pillow_kbs.jpg",
+    "title": "File:Firestop pillow kbs.jpg",
     "license": "CC BY 3.0",
-    "artist": "Achim Hering"
+    "artist": "Achim Hering",
+    "alt": "Fire-stopping pillows packed around a penetration"
   },
   {
     "file": "/assets/images/services/fire-stopping-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Dih_electrical_firestop_bc_superferries.jpg",
-    "title": "File:Dih electrical firestop bc superferries.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pillow_mortar.jpg",
+    "title": "File:Pillow mortar.jpg",
     "license": "CC BY 3.0",
-    "artist": "Achim Hering"
+    "artist": "Achim Hering",
+    "alt": "Fire-stopping mortar around a pipe penetration"
   },
   {
     "file": "/assets/images/services/project-management.jpg",
@@ -783,10 +785,11 @@
   },
   {
     "file": "/assets/images/real-job/directory-hub.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Welsh_fence_panels_-_geograph.org.uk_-_598692.jpg",
-    "title": "File:Welsh fence panels - geograph.org.uk - 598692.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Keith Evans"
+    "source": "https://commons.wikimedia.org/wiki/File:Brandmeldezentrale_mit_Feuerwehrlaufkarten.JPG",
+    "title": "File:Brandmeldezentrale mit Feuerwehrlaufkarten.JPG",
+    "license": "Public domain",
+    "artist": "Benutzer:Juliabackhausen",
+    "alt": "Fire alarm control panel with fire-service route cards"
   },
   {
     "file": "/assets/images/real-job/jobs-hub.jpg",
@@ -845,11 +848,11 @@
   },
   {
     "file": "/assets/images/services/building-maintenance-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:East_gate_St_Etheldredas_from_east_Hatfield_House_Hertfordshire_England.jpg",
-    "title": "File:East gate St Etheldredas from east Hatfield House Hertfordshire England.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Acabashi",
-    "alt": "East gate St Etheldredas from east Hatfield House Hertfordshire England"
+    "source": "https://commons.wikimedia.org/wiki/File:Repointing_the_wall_(49160488472).png",
+    "title": "File:Repointing the wall (49160488472).png",
+    "license": "CC BY 2.0",
+    "artist": "Oregon Department of Transportation",
+    "alt": "Bricklayer repointing a masonry wall"
   },
   {
     "file": "/assets/images/services/building-maintenance-photo-photo.jpg",
@@ -1093,11 +1096,11 @@
   },
   {
     "file": "/assets/images/services/fire-doors.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Copped_Hall_walled_garden_east_exterior_door%2C_Epping%2C_Essex%2C_England.jpg",
-    "title": "File:Copped Hall walled garden east exterior door, Epping, Essex, England.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Acabashi",
-    "alt": "Copped Hall walled garden east exterior door, Epping, Essex, England"
+    "source": "https://commons.wikimedia.org/wiki/File:Queen_Street_Mill_self_closing_fire-door_8617.JPG",
+    "title": "File:Queen Street Mill self closing fire-door 8617.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Clem Rutter, Rochester, Kent",
+    "alt": "Self-closing fire door"
   },
   {
     "file": "/assets/images/services/fire-doors-photo.jpg",
@@ -1533,11 +1536,11 @@
   },
   {
     "file": "/assets/images/real-job/areas.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:1959_Stockton_High_Street_Market_-_geograph.org.uk_-_3362766.jpg",
-    "title": "File:1959 Stockton High Street Market - geograph.org.uk - 3362766.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Tony Whelan (Deceased 2005)",
-    "alt": "1959 Stockton High Street Market"
+    "source": "https://commons.wikimedia.org/wiki/File:Megger_testing_the_main_and_branch_breakers_in_electrical_panels_in_a_power_substation_in_Queens._09-04-2019_(48689467532).jpg",
+    "title": "File:Megger testing the main and branch breakers in electrical panels in a power substation in Queens. 09-04-2019 (48689467532).jpg",
+    "license": "CC BY 2.0",
+    "artist": "MTA Capital Construction Mega Projects",
+    "alt": "Engineer testing breakers in an electrical panel"
   },
   {
     "file": "/assets/images/real-job/company.jpg",
@@ -5804,6 +5807,14 @@
     "alt": "Door entry intercom panel at a building entrance"
   },
   {
+    "file": "/assets/images/manufacturers/came.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:CAME_Unipark_automated_parking_barrier.jpg",
+    "title": "File:CAME Unipark automated parking barrier.jpg",
+    "license": "CC0",
+    "artist": "Викидим",
+    "alt": "CAME Unipark automated parking barrier"
+  },
+  {
     "file": "/assets/images/manufacturers/fermax-door-entry.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Dezen_15.JPG",
     "title": "File:Dezen 15.JPG",
@@ -5836,12 +5847,60 @@
     "alt": "Blower door fan fitted in a front doorway"
   },
   {
-    "file": "/assets/images/manufacturers/came.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:CAME_Unipark_automated_parking_barrier.jpg",
-    "title": "File:CAME Unipark automated parking barrier.jpg",
+    "file": "/assets/images/manufacturers/videx.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Videocitofono_-_Applicazione_esterna.jpg",
+    "title": "File:Videocitofono - Applicazione esterna.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antonio Mette",
+    "alt": "Video door-entry panel with a camera and call buttons"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/eicr.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fluke_1653B_Multifunction_Installation_Tester.jpg",
+    "title": "File:Fluke 1653B Multifunction Installation Tester.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Santeri Viinamäki",
+    "alt": "Multifunction installation tester used for an EICR"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/eicr-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:MIT520_by_Megger.jpg",
+    "title": "File:MIT520 by Megger.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Megger Ltd.",
+    "alt": "Insulation resistance tester for an electrical installation"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/addressable-fire-alarm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:AddressablePanelOfFireDetectionSystem.JPG",
+    "title": "File:AddressablePanelOfFireDetectionSystem.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Masanalv",
+    "alt": "Addressable fire alarm control panel"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/addressable-fire-alarm-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nittan_Proprietary-type_class_1_fire_alarm_control_panel.JPG",
+    "title": "File:Nittan Proprietary-type class 1 fire alarm control panel.JPG",
+    "license": "Public domain",
+    "artist": "Drb400atx",
+    "alt": "Fire alarm control panel mounted on a wall"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-service.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:SafePro_Safety_Roof_Hatch_Safety_Rail.jpg",
+    "title": "File:SafePro Safety Roof Hatch Safety Rail.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "SafePro Safety",
+    "alt": "Roof hatch with a safety rail for smoke-vent access"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-service-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_suppression_remote_start_device_(02).jpg",
+    "title": "File:Fire suppression remote start device (02).jpg",
     "license": "CC0",
-    "artist": "Викидим",
-    "alt": "CAME automated parking barrier"
+    "artist": "Georg Pik",
+    "alt": "Remote start point for smoke extraction"
   },
   {
     "file": "/assets/images/services/barriers-photo.jpg",
