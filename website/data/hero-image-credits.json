@@ -5804,14 +5804,6 @@
     "alt": "Door entry intercom panel at a building entrance"
   },
   {
-    "file": "/assets/images/manufacturers/came.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Centurion_D5_Evo_gate_motor_installation,_Garsfontein_Pretoria.jpg",
-    "title": "File:Centurion D5 Evo gate motor installation, Garsfontein Pretoria.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Felix chidanyika",
-    "alt": "Gate automation motor being wired on site"
-  },
-  {
     "file": "/assets/images/manufacturers/fermax-door-entry.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Dezen_15.JPG",
     "title": "File:Dezen 15.JPG",
@@ -5842,5 +5834,29 @@
     "license": "CC BY-SA 4.0",
     "artist": "Ket555",
     "alt": "Blower door fan fitted in a front doorway"
+  },
+  {
+    "file": "/assets/images/manufacturers/came.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:CAME_Unipark_automated_parking_barrier.jpg",
+    "title": "File:CAME Unipark automated parking barrier.jpg",
+    "license": "CC0",
+    "artist": "Викидим",
+    "alt": "CAME automated parking barrier"
+  },
+  {
+    "file": "/assets/images/services/barriers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Car_park,_Novosibirsk_2.JPG",
+    "title": "File:Car park, Novosibirsk 2.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "К.Артём.1",
+    "alt": "Car park barrier arm installed at an entrance"
+  },
+  {
+    "file": "/assets/images/services/barriers-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:An_automatic_barrier_at_the_exit_of_the_Marine_Drive_car_park_-_geograph.org.uk_-_2281418.jpg",
+    "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Roger A Smith",
+    "alt": "Rising-arm barrier at a site entrance"
   }
 ]
