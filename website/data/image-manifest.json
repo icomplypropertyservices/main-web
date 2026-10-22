@@ -6752,25 +6752,25 @@
   "/assets/images/services/compliance-consultancy.jpg": {
     "width": 1400,
     "height": 900,
-    "origBytes": 111317,
+    "origBytes": 177031,
     "variants": [
       {
         "w": 480,
         "h": 309,
-        "webp": "/assets/images/opt/953eb060f9d4-480.webp",
-        "bytes": 6192
+        "webp": "/assets/images/opt/0baee8306da4-480.webp",
+        "bytes": 10650
       },
       {
         "w": 800,
         "h": 514,
-        "webp": "/assets/images/opt/953eb060f9d4-800.webp",
-        "bytes": 11382
+        "webp": "/assets/images/opt/0baee8306da4-800.webp",
+        "bytes": 29308
       },
       {
         "w": 1280,
         "h": 823,
-        "webp": "/assets/images/opt/953eb060f9d4-1280.webp",
-        "bytes": 19656
+        "webp": "/assets/images/opt/0baee8306da4-1280.webp",
+        "bytes": 68978
       }
     ]
   },
@@ -9927,25 +9927,25 @@
   "/assets/images/services/electrics-first-fix.jpg": {
     "width": 1400,
     "height": 900,
-    "origBytes": 148372,
+    "origBytes": 234742,
     "variants": [
       {
         "w": 480,
         "h": 309,
-        "webp": "/assets/images/opt/fc46614b4ab4-480.webp",
-        "bytes": 9038
+        "webp": "/assets/images/opt/8d0fc552a16b-480.webp",
+        "bytes": 8698
       },
       {
         "w": 800,
         "h": 514,
-        "webp": "/assets/images/opt/fc46614b4ab4-800.webp",
-        "bytes": 18746
+        "webp": "/assets/images/opt/8d0fc552a16b-800.webp",
+        "bytes": 24004
       },
       {
         "w": 1280,
         "h": 823,
-        "webp": "/assets/images/opt/fc46614b4ab4-1280.webp",
-        "bytes": 35296
+        "webp": "/assets/images/opt/8d0fc552a16b-1280.webp",
+        "bytes": 79414
       }
     ]
   },
@@ -16102,25 +16102,25 @@
   "/assets/images/services/landlord-compliance.jpg": {
     "width": 1400,
     "height": 900,
-    "origBytes": 109279,
+    "origBytes": 329117,
     "variants": [
       {
         "w": 480,
         "h": 309,
-        "webp": "/assets/images/opt/baa59f941a0d-480.webp",
-        "bytes": 7894
+        "webp": "/assets/images/opt/84deb35f2a04-480.webp",
+        "bytes": 40332
       },
       {
         "w": 800,
         "h": 514,
-        "webp": "/assets/images/opt/baa59f941a0d-800.webp",
-        "bytes": 14724
+        "webp": "/assets/images/opt/84deb35f2a04-800.webp",
+        "bytes": 93310
       },
       {
         "w": 1280,
         "h": 823,
-        "webp": "/assets/images/opt/baa59f941a0d-1280.webp",
-        "bytes": 25692
+        "webp": "/assets/images/opt/84deb35f2a04-1280.webp",
+        "bytes": 165880
       }
     ]
   },
@@ -16177,25 +16177,25 @@
   "/assets/images/services/nurse-call-photo.jpg": {
     "width": 1280,
     "height": 720,
-    "origBytes": 165302,
+    "origBytes": 196640,
     "variants": [
       {
         "w": 480,
         "h": 270,
-        "webp": "/assets/images/opt/ac2b34c45f32-480.webp",
-        "bytes": 5960
+        "webp": "/assets/images/opt/2bc0052cf122-480.webp",
+        "bytes": 10822
       },
       {
         "w": 800,
         "h": 450,
-        "webp": "/assets/images/opt/ac2b34c45f32-800.webp",
-        "bytes": 12002
+        "webp": "/assets/images/opt/2bc0052cf122-800.webp",
+        "bytes": 30850
       },
       {
         "w": 1280,
         "h": 720,
-        "webp": "/assets/images/opt/ac2b34c45f32-1280.webp",
-        "bytes": 22046
+        "webp": "/assets/images/opt/2bc0052cf122-1280.webp",
+        "bytes": 95786
       }
     ]
   },
