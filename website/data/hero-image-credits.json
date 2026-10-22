@@ -640,5 +640,12 @@
     "artist": "MetalFusion81",
     "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
     "family": "compliance"
+  },
+  {
+    "file": "/assets/images/services/brickwork.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Zambia_-Bricklayer.jpg",
+    "title": "File:Zambia -Bricklayer.jpg (cropped 1280x720, same photo as b1/brickwork-1.jpg)",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thatlowdownwoman"
   }
 ]
