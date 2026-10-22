@@ -89,7 +89,6 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   const [council, county, ocs, wards, cons, lat, lng, census, districts] = g;
   const seed = hash(`${slug}|${subject}`);
   const mi = Math.round(miles(YARD, { lat, lng }));
-  const dir = bearing(YARD, { lat, lng });
   const paras = [];
   let lead = slug === "london" ? `This page covers London; the centre point we measure from is in ${council || "Westminster"}.` : council ? `${town} sits in the ${council} council area${county && county !== council ? `, ${county}` : ""}.` : `${town}${county ? ` is in ${county}` : ""}.`;
   if (ocs.length) {
@@ -108,8 +107,8 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
     paras.push(dl.map(([oc, ws, c]) => `${oc} takes in ${list(ws)}.`).join(" "));
   }
   paras.push(mi <= 3
-    ? `Our yard at Offerton, Stockport SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
-    : `${town} is about ${mi} miles ${dir} of our Offerton, Stockport SK2 5DE yard in a straight line. ${mi <= 25 ? "We cover it as a normal day visit, with travel included in the quote." : mi <= 90 ? "We plan visits at that distance into set days, with travel included in the quote." : "Travel is included in the quote before anything is booked."}`);
+    ? `Our yard at 17 Woodlands Park Road, Offerton, SK2 5DE is close by, so ${subject.toLowerCase()} visits in ${town} fit around other local work.`
+    : `Travel from our office at 17 Woodlands Park Road, Offerton, SK2 5DE is about ${mi} miles. ${mi <= 25 ? "We cover it as a normal day visit, with travel included in the quote." : mi <= 90 ? "We plan visits at that distance into set days, with travel included in the quote." : "Travel is included in the quote before anything is booked."}`);
   if (census) {
     const line = serviceLine(service, town, census, council);
     if (line) paras.push(line);
@@ -133,7 +132,7 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   const faqs = [];
   if (ocs.length) {
     faqs.push([`Do you cover ${list(ocs.slice(0, 3))} for ${subject.toLowerCase()}?`,
-      `Yes. ${list(ocs)} are covered by our Stockport team, about ${mi} miles away. Send the full postcode and a photo, or call 07517 806082.`]);
+      `Yes. ${list(ocs)} are covered from our Offerton office. Travel is about ${mi} miles and is included in the written quote. Send the full postcode and a photo, or call 07517 806082.`]);
   }
   if (near.length) {
     const townArticle = /^[aeiou]/i.test(town) ? "an" : "a";

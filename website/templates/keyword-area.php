@@ -175,13 +175,14 @@ $h = static function ($s): string {
 
 <section class="bg-white border-y-2 border-zinc-200">
     <div class="max-w-7xl mx-auto px-6 py-12">
+        <?php
+            require_once SITE_ROOT . '/includes/town-facts.php';
+            $towns = icomplyTownsWithinMiles((string)$areaSlugVal, array_values($allAreas), 12.0, 10);
+        if ($towns):
+        ?>
         <h2 class="text-xl font-bold text-[#0B1F3A]"><?= $h($KEYWORD_NAME) ?> nearby</h2>
         <div class="mt-4 flex flex-wrap gap-2">
             <?php
-            $towns = array_values(array_filter(
-                ['Manchester', 'Stockport', 'Bolton', 'Salford', 'Oldham', 'Liverpool', 'Preston', 'Warrington', 'Chester', 'Blackpool'],
-                fn($t) => in_array($t, $allAreas, true) && $t !== $areaName
-            ));
             foreach ($towns as $t):
             ?>
             <a href="<?= url('/pages/keywords/' . rawurlencode($KEYWORD_SLUG) . '/' . areaSlug($t) . '.php') ?>"
@@ -190,6 +191,7 @@ $h = static function ($s): string {
             </a>
             <?php endforeach; ?>
         </div>
+        <?php endif; ?>
     </div>
 </section>
 

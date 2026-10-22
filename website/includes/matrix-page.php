@@ -207,10 +207,11 @@ function icomplyMatrixNearestAreas(array $areas, string $slug, string $service, 
         }
         $dy = ($g[5] - $me[5]) * 69.0;
         $dx = ($g[6] - $me[6]) * 69.0 * cos(deg2rad((float)$me[5]));
-        $rows[] = [$dx * $dx + $dy * $dy, $a];
-    }
-    if (count($rows) < 10) {
-        return null;
+        $miles = sqrt($dx * $dx + $dy * $dy);
+        if ($miles > 12.0) {
+            continue;
+        }
+        $rows[] = [$miles, $a];
     }
     usort($rows, static fn($x, $y) => $x[0] <=> $y[0]);
     return array_map(static fn($r) => $r[1], array_slice($rows, 0, $limit));
@@ -411,12 +412,12 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . '</article>';
 
     $kwNear = icomplyMatrixNearestAreas($s['areas'], $areaSlugVal, $svcSlug);
-    if ($kwNear !== null) {
+    if ($kwNear !== null && $kwNear !== []) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">The ' . count($kwNear) . ' nearest of ' . count($s['areas']) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/keywords/' . $keywordSlug)) . '">All towns for ' . icomplyMatrixH($kwName) . '</a>.</p>'
             . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/'), $kwNear)
             . '</section>';
-    } else {
+    } elseif ($kwNear === null) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName) . ' in every area we cover</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">' . count($s['areas']) . ' towns — full list, not a short subset.</p>'
             . icomplyMatrixAreaChips(url('/pages/keywords/' . $keywordSlug . '/') )
@@ -597,12 +598,12 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
     // Smoke & CO towns with few live same-town checks take extra nearest-town links instead.
     $smokeShort = $serviceSlug === 'smoke-co-alarms' ? max(0, 10 - substr_count($smokeTown, 'class="area-chip"')) : 0;
     $svNear = icomplyMatrixNearestAreas($areaPairs, areaSlug($areaName), $serviceSlug, ($otherCount < 24 ? 52 + (24 - $otherCount) : 40) + $smokeShort);
-    if ($svNear !== null) {
+    if ($svNear !== null && $svNear !== []) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' near ' . icomplyMatrixH($areaName) . '</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">The ' . count($svNear) . ' nearest of ' . count($areaPairs) . ' towns. <a class="text-[#ff6b00] font-semibold" href="' . icomplyMatrixH(url('/pages/services/' . $serviceSlug)) . '">' . icomplyMatrixH($svcName) . ' hub</a>.</p>'
             . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $svNear)
             . '</section>';
-    } else {
+    } elseif ($svNear === null) {
         $html .= '<section><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($svcName) . ' in every area</h2>'
             . '<p class="text-sm text-zinc-600 mb-4">' . count($areaPairs) . ' towns.</p>'
             . icomplyMatrixAreaChips(url('/pages/' . $serviceSlug . '/'), $areaPairs)

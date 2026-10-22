@@ -373,10 +373,8 @@ if (function_exists('accessControlLaneHubSection')) {
 </script>
 
 <?php
-$upgradeLinks = SITE_ROOT . '/data/seo-upgrade/orphan-links.html';
-if (is_file($upgradeLinks)) {
-    echo file_get_contents($upgradeLinks);
-}
+require_once SITE_ROOT . '/includes/upgrade-orphan-links.php';
+echo icomplyUpgradeOrphanLinksForHub();
 require SITE_ROOT . '/includes/footer.php';
 ?>
 

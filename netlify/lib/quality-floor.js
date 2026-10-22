@@ -14,6 +14,7 @@ import brandHeroes from "../../website/data/manufacturer-hero-images.json" with 
 import resourceArticles from "../../website/data/resource-article-images.json" with { type: "json" };
 import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
 import p0Index from "../../website/data/seo-lock/p0-index.json" with { type: "json" };
+import commercialJobsDoc from "../../website/data/commercial-jobs.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 import { landlordLines } from "./landlord-note.js";
 import { aliasFamily, pickImages, isCollapsedAov, imageOwner, poolHas } from "./image-pool.js";
@@ -55,6 +56,20 @@ function keywordService(slug) {
   const fromIndex = row && typeof row.service === "string" ? row.service : "";
   const service = keywordServices[slug] || keywordFallback[slug] || fromIndex || "";
   return service === "aov" ? "aov-air-handling" : service;
+}
+
+const COMMERCIAL_JOB_SERVICE = new Map(
+  (Array.isArray(commercialJobsDoc.jobs) ? commercialJobsDoc.jobs : [])
+    .filter((job) => job && job.slug)
+    .map((job) => [String(job.slug), job.service === "aov" ? "aov-air-handling" : String(job.service || "")]),
+);
+
+function commercialJobService(slug) {
+  return COMMERCIAL_JOB_SERVICE.get(String(slug || "")) || "";
+}
+
+function isServiceCard(imageKey, src) {
+  return /^page-/.test(String(imageKey || "")) && /\/assets\/images\/services\/[a-z0-9-]+\.jpe?g(?:$|\?)/i.test(String(src || ""));
 }
 
 function serviceHero(path, service) {
@@ -274,7 +289,11 @@ function pageFamily(path) {
   if (head === "care-homes" || /care-home/.test(path)) return "nurse-call";
   if (/asbestos/.test(path)) return "asbestos-survey";
   if (head === "landlords" || /landlord/.test(leaf)) return "landlord-compliance";
-  if (/^commercial/.test(head) && services["commercial-fit-out"]) return "commercial-fit-out";
+  if (head === "commercial") {
+    const service = commercialJobService(parts[0] === "pages" ? (parts[2] || "") : (parts[1] || ""));
+    if (service && services[service]) return service;
+    if (services["commercial-fit-out"]) return "commercial-fit-out";
+  }
   if (services[head] && !["keywords", "jobs", "areas", "manufacturers", "packages", "resources"].includes(head)) return head;
   if (REAL_JOB.has(leaf)) return `hub:${leaf === "index" ? "home" : leaf}`;
   if (REAL_JOB.has(head)) return `hub:${head === "index" ? "home" : head}`;
@@ -326,7 +345,11 @@ function pageImageKey(path) {
   if (head === "services" && slug === "aov-air-handling") return "aov-air-handling";
   if (head === "about") return "page-about";
   if (slug && poolOverrides[`${head}/${slug}`]) return poolOverrides[`${head}/${slug}`];
-  if (head === "commercial") return "page-commercial";
+  if (head === "commercial") {
+    const service = commercialJobService(slug);
+    if (service) return `type-keywords-${service}`;
+    return "page-commercial";
+  }
   if (head === "keywords" && slug && slug !== "index") {
     const service = keywordService(slug) || "building-maintenance";
     return `type-keywords-${service}`;
@@ -771,8 +794,9 @@ function rewriteMetaImages(html, path) {
         || (isElectricalHero(origin) || isElectricalHero(pathOnly)) && !electricalPage
         || /\/page-(?:sets|types)\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
       let next = String(url);
-      const owned = imageKey ? poolHas(imageKey, origin) : (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)));
-      if (sharedHub || collapsed || borrowed || blocked || !owned) {
+      const serviceCard = isServiceCard(imageKey, origin);
+      const owned = serviceCard || (imageKey ? poolHas(imageKey, origin) : (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly))));
+      if (!serviceCard && (sharedHub || collapsed || borrowed || blocked || !owned)) {
         next = String(url).replace(/\/assets\/images\/[^"?#]+/, want);
       }
       return `content="${absoluteImageUrl(next)}"`;
@@ -833,9 +857,11 @@ function confineImages(html, path) {
     const foreign = servicePage && owner && owner !== wantFamily && !(imageKey && poolHas(imageKey, origin));
     const sharedMaintenance = wantFamily !== "building-maintenance" && (/\/services\/building-maintenance\.jpg/i.test(origin) || /19f957bd50f5/.test(src));
     const borrowed = borrowedImage(origin, path);
+    const serviceCard = isServiceCard(imageKey, origin);
     const wrongSet = (isAovEquipment(origin) || isAovEquipment(src)) && imageKey !== "aov"
-      || (isElectricalHero(origin) || isElectricalHero(src)) && !electricalPage
+      || (isElectricalHero(origin) || isElectricalHero(src)) && !electricalPage && !serviceCard
       || /\/page-(?:sets|types)\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
+    if (serviceCard) return `<img${next}>`;
     if (imageKey) {
       if (!poolHas(imageKey, origin) || sharedHub || collapsed || wrongSet) {
         return `<img${replaceImgSrc(next, nextSrc())}>`;
@@ -863,7 +889,7 @@ function confineImages(html, path) {
   if (imageKey !== "aov") {
     out = out.replace(/\/assets\/images\/services\/(?:smoke-vent-roof-1|smoke-vent-hatch-1|smoke-vent-cover-1|smoke-shaft-1|aov-release-switch-1|aov-control-panel-1|aov-control-panel-2|aov-roof-hatch-1)\.jpe?g/gi, replacement);
   }
-  if (!electricalPage) {
+  if (!electricalPage && !String(imageKey).startsWith("page-")) {
     out = out.replace(/(?:https?:\/\/[^"'\s]+)?\/assets\/images\/opt\/21bb8660f87c-\d+\.webp/gi, replacement);
     out = out.replace(/\/assets\/images\/services\/electrical\.jpe?g/gi, replacement);
   }

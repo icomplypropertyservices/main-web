@@ -275,6 +275,23 @@ say(spokenSubject("kitchen-fit", "Kitchen Fit") === "Kitchen fitting", "spoken k
 say(spokenSubject("ahu-commissioning", "AHU Commissioning") === "AHU commissioning", "spoken AHU commissioning");
 say(spokenSubject("eicr-report", "EICR Report") === "EICR report", "spoken EICR report");
 say(spokenSubject("retaining-wall-build", "Retaining Wall Build") === "Retaining wall construction", "spoken retaining wall");
+say(spokenSubject("drainage", "Drainage") === "Drainage", "spoken drainage stays a short label");
+say(spokenSubject("drainage", "Drainage repairs start with where the water is going") === "Drainage", "spoken drainage rejects the sentence fragment");
+const commercialHub = applyQualityFloor(
+  `<html><head></head><body><main><h1>Commercial</h1><img src="/assets/images/services/fire-alarms.jpg" alt="Fire"><img src="/assets/images/services/electrical.jpg" alt="Electrical"><img src="/assets/images/services/cctv.jpg" alt="CCTV"></main></body></html>`,
+  { path: "/pages/commercial", subject: "Commercial", place: "Stockport" },
+);
+say(commercialHub.includes("/assets/images/services/fire-alarms.jpg") && commercialHub.includes("/assets/images/services/electrical.jpg") && commercialHub.includes("/assets/images/services/cctv.jpg"), "commercial hub keeps each service photo");
+const aboutHub = applyQualityFloor(
+  `<html><head></head><body><main><h1>About</h1><img src="/assets/images/services/plastering.jpg" alt="Plaster"><img src="/assets/images/services/drainage.jpg" alt="Drainage"><img src="/assets/images/services/kitchens.jpg" alt="Kitchens"></main></body></html>`,
+  { path: "/pages/about", subject: "About", place: "Stockport" },
+);
+say(aboutHub.includes("/assets/images/services/plastering.jpg") && aboutHub.includes("/assets/images/services/drainage.jpg") && aboutHub.includes("/assets/images/services/kitchens.jpg"), "about hub keeps each service photo");
+const commercialJob = applyQualityFloor(
+  `<html><head></head><body><main><h1>Commercial FRA</h1><img src="/assets/images/page-types/commercial/fit-out.jpg" alt="Fit out"></main></body></html>`,
+  { path: "/pages/commercial/commercial-fire-risk-assessment", subject: "Commercial fire risk assessment", place: "Stockport" },
+);
+say(/page-types\/keywords\/fire-risk-assessments/.test(commercialJob) && !/page-types\/commercial\/fit-out\.jpg/.test(commercialJob), "commercial job uses its own service photo");
 const related = matrixRelatedHtml({
   keywords: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" } },
   jobs: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" }, "consumer-unit-swap": { name: "Consumer Unit Swap", service: "electrical" } },
@@ -320,6 +337,33 @@ const relatedEicr = matrixRelatedHtml({
   selfPath: "/pages/electrical/disley",
 });
 say(relatedEicr.includes("EICR report in Disley") && !relatedEicr.includes("Eicr report") && !relatedEicr.includes("in disley"), "related label speaks EICR report in Disley");
+const prestatynNear = matrixRelatedHtml({
+  keywords: { "builders-quote": { name: "Builders Quote", service: "building-maintenance" } },
+  jobs: {},
+  services: { labels: { "building-maintenance": "Building maintenance" }, keywords: {} },
+  places: { prestatyn: { name: "Prestatyn" }, stockport: { name: "Stockport" }, rhyl: { name: "Rhyl" } },
+  manufacturers: {},
+}, {
+  kind: "keyword",
+  keyword: "builders-quote",
+  townSlug: "prestatyn",
+  townName: "Prestatyn",
+  subject: "Builders quote",
+  serviceSlug: "building-maintenance",
+  selfPath: "/pages/keywords/builders-quote/prestatyn",
+});
+const prestatynNearby = (prestatynNear.split("Nearby areas")[1] || "").split("<h3>")[0];
+say(!/stockport/i.test(prestatynNearby), "prestatyn nearby stays inside 12 miles");
+const prestatynFacts = (await import("../netlify/lib/town-facts.js")).townFactsBlock({
+  slug: "prestatyn",
+  town: "Prestatyn",
+  subject: "Builders quote",
+  service: "building-maintenance",
+  names: new Map([["stockport", { name: "Stockport" }], ["rhyl", { name: "Rhyl" }]]),
+  hrefFor: (slug) => `/pages/keywords/builders-quote/${slug}`,
+});
+const prestatynFactText = prestatynFacts ? prestatynFacts.html + prestatynFacts.faqs.flat().join(" ") : "";
+say(Boolean(prestatynFacts) && !/Stockport \(/.test(prestatynFactText) && !/of our Offerton, Stockport/.test(prestatynFactText), "prestatyn facts do not list Stockport as nearby");
 const relatedWall = matrixRelatedHtml({
   keywords: {},
   jobs: {

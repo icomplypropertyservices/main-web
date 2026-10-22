@@ -5,6 +5,24 @@
  * AOV air-handling, keyword, job and resource pages use their own sets.
  */
 
+function icomplyCommercialJobService(string $slug): string
+{
+    static $map = null;
+    if ($map === null) {
+        $file = dirname(__DIR__) . '/data/commercial-jobs.json';
+        $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $map = [];
+        foreach (is_array($doc['jobs'] ?? null) ? $doc['jobs'] : [] as $job) {
+            if (!is_array($job) || empty($job['slug'])) {
+                continue;
+            }
+            $service = (string)($job['service'] ?? '');
+            $map[(string)$job['slug']] = $service === 'aov' ? 'aov-air-handling' : $service;
+        }
+    }
+    return $map[$slug] ?? '';
+}
+
 function icomplyImagePools(): array
 {
     static $doc = null;
@@ -228,6 +246,10 @@ function icomplyPageImageKey(string $path): string
         return 'page-about';
     }
     if ($head === 'commercial') {
+        $service = icomplyCommercialJobService($slug);
+        if ($service !== '') {
+            return 'type-keywords-' . $service;
+        }
         return 'page-commercial';
     }
     if ($head === 'keywords' && $slug !== '' && $slug !== 'index') {

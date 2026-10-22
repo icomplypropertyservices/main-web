@@ -35,6 +35,20 @@ $say(icomplySpokenLinkLabel('ahu-commissioning', 'AHU Commissioning') === 'AHU c
 $say(icomplySpokenLinkLabel('eicr-report', 'EICR Report', 'disley') === 'EICR report in Disley', 'spoken EICR report in Disley');
 $say(icomplySpokenLinkLabel('retaining-wall-build', 'Retaining Wall Build', 'Warrington') === 'Retaining wall construction in Warrington', 'spoken retaining wall construction');
 $say(icomplySpokenLinkLabel('kitchen-fit', 'Kitchen Fit') === 'Kitchen fitting', 'spoken kitchen fitting');
+$say(icomplySpokenLinkLabel('drainage', 'Drainage repairs start with where the water is going') === 'Drainage', 'spoken drainage rejects the sentence fragment');
+require_once dirname(__DIR__) . '/includes/town-facts.php';
+$prestatynNear = icomplyTownsWithinMiles('prestatyn', ['Stockport', 'Manchester', 'Rhyl', 'Prestatyn'], 12.0, 10);
+$say(!in_array('Stockport', $prestatynNear, true), 'prestatyn nearby excludes Stockport');
+require_once dirname(__DIR__) . '/includes/upgrade-orphan-links.php';
+require_once dirname(__DIR__) . '/includes/quality-floor.php';
+$orphanHub = icomplyUpgradeOrphanLinksForHub();
+$say(str_contains($orphanHub, 'EICR report in Disley') && !str_contains($orphanHub, 'Eicr report') && !str_contains($orphanHub, 'in disley'), 'keywords hub orphan label is EICR report in Disley');
+$commercialKept = icomplyQualityFloorConfineImages('<img src="/assets/images/services/fire-alarms.jpg" alt="Fire"><img src="/assets/images/services/electrical.jpg" alt="Electrical"><img src="/assets/images/services/cctv.jpg" alt="CCTV">', '/pages/commercial');
+$say(str_contains($commercialKept, '/assets/images/services/fire-alarms.jpg') && str_contains($commercialKept, '/assets/images/services/electrical.jpg') && str_contains($commercialKept, '/assets/images/services/cctv.jpg'), 'commercial hub keeps each service photo');
+$aboutKept = icomplyQualityFloorConfineImages('<img src="/assets/images/services/plastering.jpg" alt="Plaster"><img src="/assets/images/services/drainage.jpg" alt="Drainage">', '/pages/about');
+$say(str_contains($aboutKept, '/assets/images/services/plastering.jpg') && str_contains($aboutKept, '/assets/images/services/drainage.jpg'), 'about hub keeps each service photo');
+$jobPhoto = icomplyQualityFloorConfineImages('<img src="/assets/images/page-types/commercial/fit-out.jpg" alt="Fit out">', '/pages/commercial/commercial-fire-risk-assessment');
+$say(str_contains($jobPhoto, '/page-types/keywords/fire-risk-assessments') && !str_contains($jobPhoto, '/page-types/commercial/fit-out.jpg'), 'commercial job uses its own service photo');
 
 $removedFile = getenv('QM_SITEMAP_REMOVED');
 if (!is_string($removedFile) || $removedFile === '') {

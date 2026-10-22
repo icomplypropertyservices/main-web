@@ -90,20 +90,29 @@ export function topicFor(slug, family) {
   return fam.fallback;
 }
 
+function shortLabel(value) {
+  const text = String(value || "").trim();
+  const words = text.split(/\s+/).filter(Boolean);
+  return Boolean(text) && words.length <= 6 && text.length <= 48 && !/[.?!,:]/.test(text);
+}
+
 export function spokenSubject(slug, name) {
   const titled = titleCaseSlug(slug);
   const given = String(name || "").trim();
-  if (!given || given.toLowerCase() !== titled.toLowerCase()) return given || titled;
+  // A catalogue name that is already a sentence must not become the link label.
+  if (given && given.toLowerCase() !== titled.toLowerCase()) {
+    return shortLabel(given) ? given : (naturalizeSlug(slug) || titled);
+  }
   // Only an exact topic may replace the slug; a family-level topic would give
   // "coving-cost" and "coving-near-me" the same name, title and H1.
   const topic = TOPICS[slug];
   if (topic) {
     // Use the topic only when it opens "X is ...": otherwise the lead is a sentence fragment.
-    const opener = String(topic).match(/^(.*?)\s+is\s+/i);
+    const opener = String(topic).match(/^(?:an?\s+)?(.{1,48}?)\s+is\s+/i);
     const lead = opener ? opener[1].replace(/^(?:an|a)\s+/i, "").trim() : "";
-    if (lead && lead.length >= 3 && lead.length <= 48 && lead.split(/\s+/).length <= 6 && !/[.?!,:]/.test(lead)) {
+    if (shortLabel(lead) && lead.length >= 3) {
       return lead.charAt(0).toUpperCase() + lead.slice(1);
     }
   }
-  return naturalizeSlug(slug) || given;
+  return naturalizeSlug(slug) || given || titled;
 }

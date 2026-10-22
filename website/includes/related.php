@@ -205,8 +205,10 @@ function icomplySpokenLinkLabel(string $slug, string $name, string $town = ''): 
 {
     $given = trim($name);
     $titled = function_exists('keywordDisplayName') ? keywordDisplayName($slug) : ucwords(str_replace('-', ' ', $slug));
-    $spoken = $given;
-    if ($given === '' || strcasecmp($given, $titled) === 0) {
+    $givenWords = $given === '' ? [] : preg_split('/\s+/', $given);
+    $givenShort = $given !== '' && is_array($givenWords) && count($givenWords) <= 6 && strlen($given) <= 48 && !preg_match('/[.?!,:]/', $given);
+    $spoken = $givenShort ? $given : '';
+    if ($spoken === '' || strcasecmp($given, $titled) === 0) {
         $parts = array_values(array_filter(explode('-', $slug), static fn ($part) => $part !== ''));
         $verbs = [
             'fit' => 'fitting', 'fitting' => 'fitting', 'swap' => 'replacement', 'replace' => 'replacement',

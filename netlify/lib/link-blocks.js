@@ -383,7 +383,7 @@ export function matrixRelatedHtml(catalogue, identity) {
       slug: town.slug,
     });
   }
-  const nearSet = new Set(distanceNear.length ? distanceNear.map((town) => town.slug) : adjacentGmSlugs(townSlug, 12));
+  const nearSet = new Set(distanceNear.map((town) => town.slug));
   for (const town of gmTowns) {
     if (!town.slug || town.slug === townSlug) continue;
     const item = {
@@ -391,8 +391,7 @@ export function matrixRelatedHtml(catalogue, identity) {
       label: `${subject} in ${spokenPlace(town.name)}`,
       slug: town.slug,
     };
-    if (!distanceNear.length && nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);
-    else if (!nearSet.has(town.slug)) coverage.push(item);
+    if (!nearSet.has(town.slug)) coverage.push(item);
   }
 
   const cross = [];

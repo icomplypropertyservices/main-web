@@ -155,6 +155,7 @@ function nearestMainland(slug, limit = 12) {
   const ranked = MAINLAND_TOWNS
     .filter((town) => town.slug !== slug)
     .map((town) => ({ town, miles: haversineMiles(here, town) }))
+    .filter((row) => row.miles <= 12)
     .sort((a, b) => a.miles - b.miles)
     .slice(0, limit)
     .map((row) => row.town);
@@ -480,7 +481,7 @@ export function renderTownPage(input) {
   const neighbours = Array.isArray(rankedNeighbours)
     ? rankedNeighbours
     : (Array.isArray(place.neighbours) ? place.neighbours.filter(Boolean).slice(0, 3) : []);
-  const near = neighbours.length ? neighbours.join(", ") : "Stockport, Manchester and the surrounding North West";
+  const near = neighbours.length ? neighbours.join(", ") : "other published towns";
   const pop = place.population
     ? `${place.name} is home to about ${Number(place.population).toLocaleString("en-GB")} people.`
     : `We work across ${place.name} every week.`;
