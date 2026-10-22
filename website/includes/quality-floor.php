@@ -1412,6 +1412,11 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             return '<img' . $attrs . '>';
         }
         $origin = icomplyQualityFloorImageSource($src);
+        // A brand used on several services has one photo per service. Keep that photo on its own service page.
+        if (preg_match('#/assets/images/manufacturers/[a-z0-9-]+--([a-z0-9-]+)\.jpe?g$#i', $origin, $brandSvc)
+            && strcasecmp($brandSvc[1], $wantFamily) === 0) {
+            return '<img' . $attrs . '>';
+        }
         $family = icomplyQualityFloorImageFamily($src);
         $product = $family === 'products' || (bool)preg_match('#/(?:products|shop)/#i', $src);
         $placeholder = icomplyQualityFloorPlaceholderImage($src);

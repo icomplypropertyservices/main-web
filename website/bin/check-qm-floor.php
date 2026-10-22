@@ -459,6 +459,8 @@ $creditsRaw = (string)file_get_contents(dirname(__DIR__) . '/data/hero-image-cre
 $say(!str_contains($creditsRaw, 'smoke-shaft-2'), 'smoke-shaft-2 credit removed');
 $say(str_contains($creditsRaw, 'Wet chemical fire extinguisher for a commercial kitchen'), 'kitchen suppression photo is a wet-chemical extinguisher');
 $say(!str_contains($creditsRaw, 'Nářadí a nádobí'), 'kitchen shelves credit removed');
+$imageManifest = json_decode((string)file_get_contents(dirname(__DIR__) . '/data/image-manifest.json'), true);
+$imageManifest = is_array($imageManifest) ? $imageManifest : [];
 foreach (['access-control', 'barriers', 'door-entry'] as $svc) {
     $_SERVER['REQUEST_URI'] = '/pages/services/' . $svc;
     ob_start();
@@ -467,7 +469,15 @@ foreach (['access-control', 'barriers', 'door-entry'] as $svc) {
     if (function_exists('icomplyPerfRewriteHtml')) {
         $svcHtml = icomplyPerfRewriteHtml($svcHtml);
     }
-    $say($handled && str_contains($svcHtml, '/assets/images/manufacturers/paxton--' . $svc . '.jpg'), $svc . ' service page uses its own photo');
+    $own = '/assets/images/manufacturers/paxton--' . $svc . '.jpg';
+    $hash = '';
+    foreach (($imageManifest[$own]['variants'] ?? []) as $variant) {
+        if (preg_match('#/opt/([a-f0-9]+)-#', (string)($variant['webp'] ?? ''), $hashMatch)) {
+            $hash = $hashMatch[1];
+            break;
+        }
+    }
+    $say($handled && $hash !== '' && str_contains($svcHtml, $hash), $svc . ' service page uses its own photo');
     $say(!str_contains($svcHtml, '/assets/images/manufacturers/paxton.jpg') && !str_contains($svcHtml, '949cf9191ce2'), $svc . ' service page does not reuse paxton.jpg');
 }
 $_SERVER['REQUEST_URI'] = '/pages/keywords/kitchen-hood-suppression';

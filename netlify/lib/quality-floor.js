@@ -847,6 +847,9 @@ function confineImages(html, path) {
     const src = (next.match(/\bsrc\s*=\s*"([^"]*)"/i) || [])[1] || "";
     if (!src) return `<img${next}>`;
     const origin = sourceOfImage(src);
+    // A brand used on several services has one photo per service. Keep that photo on its own service page.
+    const brandSvc = origin.match(/\/assets\/images\/manufacturers\/[a-z0-9-]+--([a-z0-9-]+)\.jpe?g$/i);
+    if (brandSvc && brandSvc[1] === wantFamily) return `<img${next}>`;
     const family = imageFamily(src);
     const placeholder = isPlaceholderImage(src);
     const product = family === "products" || /\/(?:products|shop)\//i.test(src);

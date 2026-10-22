@@ -396,6 +396,18 @@ const round15Credits = fs.readFileSync(path.join(repo, "website/data/hero-image-
 say(!fs.existsSync(path.join(repo, "website/assets/images/services/smoke-shaft-2.jpg")) && !round15Credits.includes("smoke-shaft-2"), "unused smoke-shaft-2 file and credit removed");
 say(round15Credits.includes("Wet chemical fire extinguisher for a commercial kitchen") && !round15Credits.includes("Nářadí"), "kitchen suppression credit replaces the shelves photo");
 say(fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--access-control.jpg")) && fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--barriers.jpg")) && fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--door-entry.jpg")), "access control, barriers and door entry each have a Paxton photo");
+for (const svc of ["access-control", "barriers", "door-entry"]) {
+  const kept = applyQualityFloor(
+    `<html><body><img src="/assets/images/manufacturers/paxton--${svc}.jpg" alt="${svc} equipment"></body></html>`,
+    { path: `/pages/services/${svc}`, subject: svc, place: "" },
+  );
+  const shared = applyQualityFloor(
+    `<html><body><img src="/assets/images/manufacturers/paxton.jpg" alt="Paxton equipment"></body></html>`,
+    { path: `/pages/services/${svc}`, subject: svc, place: "" },
+  );
+  say(kept.includes(`paxton--${svc}.jpg`), `${svc} keeps its own Paxton photo`);
+  say(!shared.includes("/assets/images/manufacturers/paxton.jpg"), `${svc} does not keep the shared Paxton photo`);
+}
 const round15Pools = JSON.parse(fs.readFileSync(path.join(repo, "website/data/service-image-pools.json"), "utf8"));
 say((round15Pools["access-control"]?.own || []).some((src) => src.endsWith("/services/access-control.jpg")), "access-control pool keeps its own photo");
 say((round15Pools.barriers?.own || []).some((src) => src.endsWith("/services/barriers.jpg")), "barriers pool keeps its own photo");
