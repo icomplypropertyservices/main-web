@@ -135,6 +135,10 @@ function shopifyImageSrc(string $path, string $hint = ''): string {
     }
     $hay = strtolower($path . ' ' . $hint);
     $aliases = [
+        // QM #158: boilers/CO products must not fall back to the fire-alarm panel photo.
+        'boiler' => 'heating', 'combi' => 'heating', 'condensfit' => 'heating', 'worcester' => 'heating', 'vaillant' => 'heating',
+        'baxi' => 'heating', 'glow-worm' => 'heating', 'ideal-' => 'heating', 'viessmann' => 'heating', 'greenstar' => 'heating',
+        'ecotec' => 'heating', 'flue' => 'heating', 'carbon-monoxide' => 'smoke-co-alarms', 'co-alarm' => 'smoke-co-alarms',
         'electrical' => 'electrical',
         'fire-alarm' => 'fire-alarms',
         'emergency-lighting' => 'emergency-lighting',
