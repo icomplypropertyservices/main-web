@@ -29,7 +29,18 @@
    "smoke-co-alarms",
    "evacuation-alerts",
    "aov-control-panel-1",
-   "fire-alarms-callpoint"
+   "fire-alarms-callpoint",
+   "sprinkler-systems-2",
+   "sprinkler-systems-3",
+   "fire-extinguishers-2",
+   "fire-extinguishers-3",
+   "fire-suppression-2",
+   "fire-suppression-3",
+   "fire-stopping-2",
+   "fire-stopping-3",
+   "fire-risk-assessments-2",
+   "fire-risk-assessments-3",
+   "emergency-lighting-2"
   ],
   "security": [
    "cctv",
@@ -187,11 +198,14 @@
   ],
   "fire-risk-assessments": [
    "fire-risk-assessments",
-   "fire-risk-assessments-photo"
+   "fire-risk-assessments-photo",
+   "fire-risk-assessments-2",
+   "fire-risk-assessments-3"
   ],
   "emergency-lighting": [
    "emergency-lighting",
-   "emergency-lighting-photo"
+   "emergency-lighting-photo",
+   "emergency-lighting-2"
   ],
   "aov-air-handling": [
    "aov-air-handling",
@@ -202,25 +216,33 @@
    "fire-doors"
   ],
   "fire-extinguishers": [
-   "fire-extinguishers"
+   "fire-extinguishers",
+   "fire-extinguishers-2",
+   "fire-extinguishers-3"
   ],
   "fire-signage": [
    "fire-signage"
   ],
   "fire-stopping": [
-   "fire-stopping"
+   "fire-stopping",
+   "fire-stopping-2",
+   "fire-stopping-3"
   ],
   "fire-compartmentation": [
    "fire-compartmentation"
   ],
   "fire-suppression": [
-   "fire-suppression"
+   "fire-suppression",
+   "fire-suppression-2",
+   "fire-suppression-3"
   ],
   "kitchen-fire-suppression": [
    "kitchen-fire-suppression"
   ],
   "sprinkler-systems": [
-   "sprinkler-systems"
+   "sprinkler-systems",
+   "sprinkler-systems-2",
+   "sprinkler-systems-3"
   ],
   "dry-risers": [
    "dry-risers"
