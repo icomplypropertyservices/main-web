@@ -6,6 +6,7 @@ import { heroCta } from "./hero-cta.js";
 import { landlordNote } from "./landlord-note.js";
 import { creditName as licensedCredit } from "./quality-floor.js";
 import { pickImages } from "./image-pool.js";
+import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
 import { breadcrumbHtml } from "./link-blocks.js";
 import { spokenSubject, titleCaseSlug, topicFor } from "./spoken-subject.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "./page-shell.js";
@@ -198,7 +199,10 @@ export function tradesImages(slug, placeName) {
   const key = imageKey(slug, row.family);
   const service = row.service || "building-maintenance";
   const kind = row.kind || "";
-  const poolKey = kind === "keyword"
+  const override = poolOverrides[`${kind === "job" ? "jobs" : "keywords"}/${slug}`];
+  const poolKey = override && (kind === "keyword" || kind === "job")
+    ? override
+    : kind === "keyword"
     ? `type-keywords-${service}`
     : kind === "job"
       ? `type-jobs-${service}`

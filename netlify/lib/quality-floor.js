@@ -12,6 +12,7 @@ import keywordFallback from "../../website/data/keyword-service-fallback.json" w
 import imageManifest from "../../website/data/image-manifest.json" with { type: "json" };
 import brandHeroes from "../../website/data/manufacturer-hero-images.json" with { type: "json" };
 import resourceArticles from "../../website/data/resource-article-images.json" with { type: "json" };
+import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
 import p0Index from "../../website/data/seo-lock/p0-index.json" with { type: "json" };
 import { sanitizeInternalLinks } from "./internal-links.js";
 import { landlordLines } from "./landlord-note.js";
@@ -324,6 +325,7 @@ function pageImageKey(path) {
   if (head === "services" && slug === "aov") return "aov";
   if (head === "services" && slug === "aov-air-handling") return "aov-air-handling";
   if (head === "about") return "page-about";
+  if (slug && poolOverrides[`${head}/${slug}`]) return poolOverrides[`${head}/${slug}`];
   if (head === "commercial") return "page-commercial";
   if (head === "keywords" && slug && slug !== "index") {
     const service = keywordService(slug) || "building-maintenance";

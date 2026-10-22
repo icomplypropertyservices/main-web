@@ -209,6 +209,15 @@ function icomplyPageImageKey(string $path): string
     $parts = array_values(array_filter(explode('/', $path), static fn ($part) => $part !== ''));
     $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
     $slug = ($parts[0] ?? '') === 'pages' ? ($parts[2] ?? '') : ($parts[1] ?? '');
+    static $overrides = null;
+    if ($overrides === null) {
+        $file = dirname(__DIR__) . '/data/page-image-pool-overrides.json';
+        $decoded = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+        $overrides = is_array($decoded) ? $decoded : [];
+    }
+    if ($slug !== '' && isset($overrides[$head . '/' . $slug]) && isset(icomplyImagePools()[$overrides[$head . '/' . $slug]])) {
+        return (string)$overrides[$head . '/' . $slug];
+    }
     if ($head === 'aov' || ($head === 'services' && $slug === 'aov')) {
         return 'aov';
     }

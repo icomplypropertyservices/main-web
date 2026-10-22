@@ -24,6 +24,7 @@ import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
 import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
 import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
+import poolOverrides from "../../website/data/page-image-pool-overrides.json" with { type: "json" };
 import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
 import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
 
@@ -550,7 +551,10 @@ export function renderTownPage(input) {
     qualityCtx.peFaqs = pe.faqs;
   }
   const preferredHero = "";
-  const poolKey = kind === "keyword"
+  const poolOverride = (kind === "keyword" || kind === "job") ? poolOverrides[`${kind === "job" ? "jobs" : "keywords"}/${pageSlug}`] : "";
+  const poolKey = poolOverride
+    ? poolOverride
+    : kind === "keyword"
     ? `type-keywords-${serviceSlug || "building-maintenance"}`
     : kind === "job"
       ? `type-jobs-${serviceSlug || "building-maintenance"}`
