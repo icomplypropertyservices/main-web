@@ -37,6 +37,13 @@ for sv in SVC_ALT:
         v = man[rel]['variants']; c = cred.get(rel, {})
         fp_photo[sv] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=SVC_ALT[sv],
                             credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+# QM #158 r2: otherwise a switched image becomes the page's OWN service photo (hero service), not the family photo.
+def svc_photo(sv):
+    rel = f'/assets/images/services/{sv}.jpg'
+    if rel not in man or rel not in cred: return None
+    v = man[rel]['variants']; c = cred[rel]
+    return dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=sv.replace('-', ' ').capitalize() + ' work',
+                credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
 def caption(ph):
     return ('<span class="pf-credit fam-credit" style="display:block;font-size:.8rem;color:#555555;margin:.3rem 0 .6rem">'
             + ph['credit'].replace('&', '&amp;').replace('<', '&lt;') + ' · <a href="/pages/photo-credits">Photo credits</a></span>')
@@ -64,6 +71,12 @@ for r, _, fs in os.walk(dist):
             hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', open(fp, encoding='utf-8', errors='replace').read())
             if hm and hm.group(1) in dir2fam: pf = dir2fam[hm.group(1)] if dir2fam[hm.group(1)] in ALT else pf
             sv = hm.group(1) if hm and hm.group(1) in SVC_ALT else next((k for k in SVC_ALT if k in u), None)
+            if sv is None and hm:
+                hb = re.sub(r'-photo$', '', hm.group(1))
+                if hb not in fp_photo:
+                    sp = svc_photo(hb)
+                    if sp: fp_photo[hb] = sp
+                sv = hb if hb in fp_photo else None
             if pf in ALT: files.append((fp, pf, sv))
 use = collections.defaultdict(collections.Counter)
 for fp, pf, _ in files:
