@@ -1,0 +1,1069 @@
+{
+  "nap": "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE",
+  "phone": "07517806082",
+  "service_path": "/pages/services/electrical",
+  "images": [
+    "/assets/images/services/electrical.jpg",
+    "/assets/images/services/electrical-photo.jpg",
+    "/assets/images/keywords/electrical-installation.jpg",
+    "/assets/images/keywords/eicr.jpg",
+    "/assets/images/keywords/emergency-electrician.jpg",
+    "/assets/images/keywords/consumer-unit-upgrade.jpg",
+    "/assets/images/keywords/pat-testing.jpg",
+    "/assets/images/keywords/ev-charger-installation.jpg"
+  ],
+  "intro": "People searching for {intent} in {town} are usually a landlord, a managing agent or a facilities lead who wants the electrical visit scoped before anyone attends. iComply Property Services arranges qualified electricians for that work from {nap}. Call {phone} with the postcode in {town}, the property type, and what has failed or which certificate you need. The quote for {intent} is price on application. This page does not publish a catalogue fee.",
+  "closer": "To book {intent} in {town}, call {phone} or use the contact form and include the postcode. The reply names the scope and the price on application figure before a date is fixed. The base address, when you need it on a purchase order, is {nap}.",
+  "blocks": [
+    "An enquiry for {intent} in {town} starts with the building. Say whether it is a house, a flat, an HMO, a shop, an office or a light-industrial unit, and whether people will still be inside when the electrician attends. {local} The scope for {intent} is written down before a date is offered. The quote is price on application. Travel from {nap} is part of that written quote. Call {phone} with the {town} postcode.",
+    "Landlords and letting agents ask for {intent} in {town} when a tenancy is changing, a licence file is thin, or a report has come back unsatisfactory. We read what you already hold, including any previous certificate, and we say what the next visit can and cannot prove. Remedial work, if the inspection finds it, is quoted separately and stays price on application. Nothing on this page is a fixed call-out fee.",
+    "Commercial and facilities enquiries for {intent} in {town} need access notes: which floor, whether a board is in a locked riser, and whether the supply can be isolated. Occupied offices, shops and warehouses are booked around the people who work there. The electrician leaves the certificate, test sheet or written note with the person who instructed the visit. iComply arranges that from Stockport rather than from a national script.",
+    "Domestic work described as {intent} in {town} covers the fixed installation that is in the agreed scope: consumer unit, circuits, accessories and any rewire sections that were written down. We do not treat a photograph of a fuse board as a full survey. If the property needs a longer look, the quote says so before anyone is dispatched. Homeowners and landlords get the same rule: price on application, scope first.",
+    "Faults that lead people to search {intent} in {town} include lost power, a device that will not reset, a burning smell, or a circuit that trips when a particular load is used. If it is safe to do so, leave the affected circuit off and keep clear of water and damaged accessories. The first task on site is to make the installation safe. A permanent repair is a separate line in the quote when the fault is not a simple local failure.",
+    "Board changes linked to {intent} in {town} are specified against the installation that is there now, not against a generic consumer-unit package. That includes the enclosure, the way circuits are identified, and whether RCD or RCBO protection and surge protection are required for that board. Labelling and testing happen before the board is left energised. The figure is price on application after we have seen the board or clear photographs of it.",
+    "Rewire and installation searches under {intent} in {town} are scoped against the containment, the finishes and the rooms that are actually in the job. A full house rewire is not the same visit as a kitchen circuit or a single new socket. Where the work is notifiable under Part P of the Building Regulations, notification sits inside the agreed scope. We do not describe that notification as a scheme badge.",
+    "Testing and certification for {intent} in {town} follows BS 7671 for the fixed installation. An Electrical Installation Condition Report, an Electrical Installation Certificate or a Minor Electrical Installation Works Certificate is used only when that is the right form for the work that was done. Portable appliance testing is a different exercise and is not a substitute for an installation report. Reports name the property in {town}.",
+    "Three-phase and higher-load enquiries for {intent} in {town} are common on workshops, small factories, commercial kitchens and some EV or plant supplies. We confirm the supply that is already in the building before talking about a new board or a new circuit. The quote states what is included and what the distribution network operator would have to change. That distinction is price on application and is not guessed from the street.",
+    "EV charger, PAT and landlord-file work under the {intent} heading in {town} is booked as its own scope. A charger installation is not an EICR. A PAT round is not a rewire. A landlord electrical file may need the report plus any remedial evidence the report itself asks for. Each of those is quoted separately, price on application, after the appliance count or the property type is known.",
+    "On the day of {intent} in {town} the electrician works to the written scope, isolates where the test method requires it, and reinstates circuits that were part of the visit. Power may be off for a period. Tell tenants or staff beforehand. If something outside the scope is found, it is photographed or noted and quoted afterwards. It is not added to the bill without an instruction.",
+    "Coverage for {intent} reaches {town} from the Stockport base at {nap}. Manchester is the primary hub city for this electrical pack, and {town} is one of the sixty Greater Manchester places on the matrix. If the site sits just outside the {town} boundary, say so. Nearby postcodes are still quoted as one visit when the travel is sensible. The phone number is {phone}.",
+    "What we will not do on a {intent} page for {town} is invent a membership. iComply does not claim NICEIC, NAPIT or Elecsa registration. If you need a named scheme contractor and we cannot show that registration, we say so before you book. {intent} in {town} is quoted price on application after the scope is written.",
+    "Paperwork after {intent} in {town} is for the instructing client: the report or certificate, any schedule of test results that belongs with it, and a short note of what was outside the visit. Landlords can pass that pack to an agent. Facilities managers can file it against the building. We do not keep the only copy. Ask for a duplicate if the original was issued to someone else on site.",
+    "A useful {intent} enquiry from {town} includes the postcode, a contact who can open the building, the age of the installation if you know it, and whether there has been a flood, a fire, or an unsatisfactory report. Photographs of the consumer unit, any damaged accessory, and the supply head help the scope. They do not replace the look on site when the work is a test or a rewire.",
+    "Related electrical work sits beside {intent}. The parent service page is the electrical hub, and the related guide linked from this page is {related}. Area pages for {town} list the other services in that town. Use those links rather than a second copy of the same enquiry. If you need several trades, each one is quoted on its own scope. This page stays on the electrical work."
+  ],
+  "faqs": [
+    {
+      "q": "Do you cover {town} for {intent}?",
+      "a": "Yes. {town} is on the Greater Manchester electrical matrix. Visits are arranged from {nap}. The quote is price on application once the building and the scope are known."
+    },
+    {
+      "q": "How is {intent} priced in {town}?",
+      "a": "Price on application. Access, the condition of the installation and the agreed scope change the visit, so this page does not print a fixed fee for {intent} in {town}."
+    },
+    {
+      "q": "Who carries out {intent} in {town}?",
+      "a": "Qualified electricians, with the electrical work judged against BS 7671. Where Part P notification applies, it is part of the scope. iComply does not claim NICEIC, NAPIT or Elecsa membership."
+    },
+    {
+      "q": "What should I send before the {town} visit?",
+      "a": "The postcode, access notes, and any previous report or photographs of the consumer unit. Say if the building is occupied. We confirm the {intent} scope in writing before attendance."
+    }
+  ],
+  "towns": [
+    {
+      "slug": "altrincham",
+      "name": "Altrincham",
+      "fact": "Trafford market town with terraces, flats and retail units around the interchange"
+    },
+    {
+      "slug": "ashton-under-lyne",
+      "name": "Ashton-under-Lyne",
+      "fact": "Tameside town with a market, older housing and commercial streets off the ring road"
+    },
+    {
+      "slug": "atherton",
+      "name": "Atherton",
+      "fact": "Wigan-side town of brick terraces, semis and small industrial yards"
+    },
+    {
+      "slug": "bolton",
+      "name": "Bolton",
+      "fact": "large borough of mills, terraces, new housing and town-centre commercial stock"
+    },
+    {
+      "slug": "bramhall",
+      "name": "Bramhall",
+      "fact": "Stockport suburb of semis and detached houses with a village centre"
+    },
+    {
+      "slug": "bury",
+      "name": "Bury",
+      "fact": "borough of stone terraces, retail parks and mixed suburban housing"
+    },
+    {
+      "slug": "cadishead",
+      "name": "Cadishead",
+      "fact": "Salford west village beside Irlam, with houses and low industrial units"
+    },
+    {
+      "slug": "chadderton",
+      "name": "Chadderton",
+      "fact": "Oldham district of inter-war housing, shops and light industry"
+    },
+    {
+      "slug": "cheadle",
+      "name": "Cheadle",
+      "fact": "Stockport suburb of semis, parades of shops and small offices"
+    },
+    {
+      "slug": "cheadle-hulme",
+      "name": "Cheadle Hulme",
+      "fact": "residential Stockport area with a station, schools and family housing"
+    },
+    {
+      "slug": "chorlton",
+      "name": "Chorlton",
+      "fact": "south Manchester neighbourhood of terraces, conversions and busy high-street units"
+    },
+    {
+      "slug": "denton",
+      "name": "Denton",
+      "fact": "Tameside town of terraces, estates and industrial estates toward Hyde"
+    },
+    {
+      "slug": "didsbury",
+      "name": "Didsbury",
+      "fact": "south Manchester suburb of larger houses, flats and village shops"
+    },
+    {
+      "slug": "droylsden",
+      "name": "Droylsden",
+      "fact": "Tameside town tight against east Manchester, with terraces and local shops"
+    },
+    {
+      "slug": "dukinfield",
+      "name": "Dukinfield",
+      "fact": "Tameside town of terraces and industrial buildings beside the canal"
+    },
+    {
+      "slug": "eccles",
+      "name": "Eccles",
+      "fact": "Salford town with a centre, older housing and sites toward the ship canal"
+    },
+    {
+      "slug": "failsworth",
+      "name": "Failsworth",
+      "fact": "Oldham-edge town on the Manchester road, terraces and retail units"
+    },
+    {
+      "slug": "farnworth",
+      "name": "Farnworth",
+      "fact": "Bolton town of terraces, estates and local commercial streets"
+    },
+    {
+      "slug": "hazel-grove",
+      "name": "Hazel Grove",
+      "fact": "Stockport suburb along the A6, semis and a long shopping street"
+    },
+    {
+      "slug": "heywood",
+      "name": "Heywood",
+      "fact": "Rochdale town of terraces, estates and industrial units"
+    },
+    {
+      "slug": "horwich",
+      "name": "Horwich",
+      "fact": "west Bolton town beside the moor, with housing and a retail park"
+    },
+    {
+      "slug": "hyde",
+      "name": "Hyde",
+      "fact": "Tameside town of terraces, a centre and industrial sites"
+    },
+    {
+      "slug": "irlam",
+      "name": "Irlam",
+      "fact": "Salford west town with housing estates and employment sites"
+    },
+    {
+      "slug": "kearsley",
+      "name": "Kearsley",
+      "fact": "Bolton town of stone terraces between Farnworth and the Irwell"
+    },
+    {
+      "slug": "lees",
+      "name": "Lees",
+      "fact": "Oldham village edge with stone cottages, semis and local shops"
+    },
+    {
+      "slug": "leigh",
+      "name": "Leigh",
+      "fact": "Wigan town of terraces, a centre and suburban estates"
+    },
+    {
+      "slug": "little-lever",
+      "name": "Little Lever",
+      "fact": "small Bolton town of housing between Moses Gate and Radcliffe"
+    },
+    {
+      "slug": "littleborough",
+      "name": "Littleborough",
+      "fact": "Rochdale Pennine town of stone houses and a high street"
+    },
+    {
+      "slug": "manchester",
+      "name": "Manchester",
+      "fact": "the primary hub city, from the centre out to Chorlton, Didsbury and Wythenshawe"
+    },
+    {
+      "slug": "marple",
+      "name": "Marple",
+      "fact": "Stockport town toward the Goyt, with stone houses and a centre"
+    },
+    {
+      "slug": "middleton",
+      "name": "Middleton",
+      "fact": "Rochdale town north of Manchester, estates, terraces and local industry"
+    },
+    {
+      "slug": "milnrow",
+      "name": "Milnrow",
+      "fact": "Rochdale town beside the M62, stone housing and small commercial units"
+    },
+    {
+      "slug": "mossley",
+      "name": "Mossley",
+      "fact": "Tameside Pennine town of hillside terraces and mills"
+    },
+    {
+      "slug": "oldham",
+      "name": "Oldham",
+      "fact": "borough of terraces, town-centre commercial stock and mill conversions"
+    },
+    {
+      "slug": "pendlebury",
+      "name": "Pendlebury",
+      "fact": "Salford area between Swinton and the Irwell, housing and local shops"
+    },
+    {
+      "slug": "prestwich",
+      "name": "Prestwich",
+      "fact": "Bury suburb of semis, flats and a long high street toward Manchester"
+    },
+    {
+      "slug": "radcliffe",
+      "name": "Radcliffe",
+      "fact": "Bury town of terraces, estates and sites along the Irwell"
+    },
+    {
+      "slug": "rochdale",
+      "name": "Rochdale",
+      "fact": "borough town of stone buildings, housing estates and a commercial centre"
+    },
+    {
+      "slug": "romiley",
+      "name": "Romiley",
+      "fact": "Stockport town toward Marple, semis and a compact centre"
+    },
+    {
+      "slug": "royton",
+      "name": "Royton",
+      "fact": "Oldham town of terraces and suburban housing north of the town centre"
+    },
+    {
+      "slug": "saddleworth",
+      "name": "Saddleworth",
+      "fact": "Oldham Pennine villages, stone houses and converted mills"
+    },
+    {
+      "slug": "sale",
+      "name": "Sale",
+      "fact": "Trafford town of semis, a centre and waterside housing"
+    },
+    {
+      "slug": "salford",
+      "name": "Salford",
+      "fact": "city of quays, terraces, estates and commercial stock beside Manchester"
+    },
+    {
+      "slug": "shaw",
+      "name": "Shaw",
+      "fact": "Oldham and Rochdale edge town of terraces and local industry"
+    },
+    {
+      "slug": "stalybridge",
+      "name": "Stalybridge",
+      "fact": "Tameside town of stone streets, a centre and hillside housing"
+    },
+    {
+      "slug": "stockport",
+      "name": "Stockport",
+      "fact": "the borough where the iComply base sits, from the centre out to Offerton and the Heatons"
+    },
+    {
+      "slug": "stretford",
+      "name": "Stretford",
+      "fact": "Trafford town beside Old Trafford, terraces, flats and retail"
+    },
+    {
+      "slug": "swinton",
+      "name": "Swinton",
+      "fact": "Salford town of civic buildings, terraces and suburban streets"
+    },
+    {
+      "slug": "tameside",
+      "name": "Tameside",
+      "fact": "the borough covering Ashton, Hyde, Stalybridge, Dukinfield, Denton and Droylsden"
+    },
+    {
+      "slug": "trafford",
+      "name": "Trafford",
+      "fact": "the borough covering Altrincham, Sale, Stretford and Urmston"
+    },
+    {
+      "slug": "tyldesley",
+      "name": "Tyldesley",
+      "fact": "Wigan town of terraces between Atherton and the East Lancs road"
+    },
+    {
+      "slug": "uppermill",
+      "name": "Uppermill",
+      "fact": "Saddleworth village with stone buildings along the canal"
+    },
+    {
+      "slug": "urmston",
+      "name": "Urmston",
+      "fact": "Trafford town of semis and a centre west of Stretford"
+    },
+    {
+      "slug": "walkden",
+      "name": "Walkden",
+      "fact": "Salford town of housing estates and a shopping centre"
+    },
+    {
+      "slug": "westhoughton",
+      "name": "Westhoughton",
+      "fact": "Bolton town of housing between the M61 and Atherton"
+    },
+    {
+      "slug": "whitefield",
+      "name": "Whitefield",
+      "fact": "Bury suburb on the Manchester road, semis and parades of shops"
+    },
+    {
+      "slug": "wigan",
+      "name": "Wigan",
+      "fact": "borough town of terraces, a centre and wide suburban housing"
+    },
+    {
+      "slug": "withington",
+      "name": "Withington",
+      "fact": "south Manchester neighbourhood of terraces, conversions and student lets"
+    },
+    {
+      "slug": "worsley",
+      "name": "Worsley",
+      "fact": "Salford village area of older houses and newer estates"
+    },
+    {
+      "slug": "wythenshawe",
+      "name": "Wythenshawe",
+      "fact": "south Manchester district of estates, a centre and commercial units"
+    }
+  ],
+  "intents": [
+    {
+      "slug": "emergency-electrician",
+      "name": "Emergency Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrician-near-me",
+      "angle": "Emergency Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Emergency Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrician-near-me",
+      "name": "Electrician Near Me",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrician",
+      "angle": "Electrician Near Me is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Electrician Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrician",
+      "name": "Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "eicr",
+      "angle": "Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr",
+      "name": "EICR",
+      "kind": "both",
+      "status": "existing",
+      "related": "eicr-near-me",
+      "angle": "EICR on this matrix is an Electrical Installation Condition Report on the fixed wiring. The published EICR list price is £249 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay price on application. Remedials are quoted after the report. The commercial line for EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-near-me",
+      "name": "EICR Near Me",
+      "kind": "both",
+      "status": "existing",
+      "related": "rewire",
+      "angle": "EICR Near Me is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for EICR Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "rewire",
+      "name": "Rewire",
+      "kind": "both",
+      "status": "existing",
+      "related": "house-rewire",
+      "angle": "Rewire is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Rewire does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "house-rewire",
+      "name": "House Rewire",
+      "kind": "both",
+      "status": "existing",
+      "related": "three-phase-electrician",
+      "angle": "House Rewire is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for House Rewire does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "three-phase-electrician",
+      "name": "Three Phase Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "qualified-electrician",
+      "angle": "Three Phase Electrician is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "qualified-electrician",
+      "name": "Qualified Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "part-p-electrician",
+      "angle": "Qualified Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Qualified Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "part-p-electrician",
+      "name": "Part P Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "same-day-electrician",
+      "angle": "Part P Electrician refers to Part P of the Building Regulations for notifiable electrical work in dwellings. Notification, where it applies, is part of the agreed scope. It is not a claim that iComply holds a competent-person scheme registration. The commercial line for Part P Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "same-day-electrician",
+      "name": "Same Day Electrician",
+      "kind": "keyword",
+      "status": "existing",
+      "related": "24-hour-emergency-electrician",
+      "angle": "Same Day Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Same Day Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "24-hour-emergency-electrician",
+      "name": "24 Hour Emergency Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "24-hour-electrician",
+      "angle": "24 Hour Emergency Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for 24 Hour Emergency Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "24-hour-electrician",
+      "name": "24 Hour Electrician",
+      "kind": "keyword",
+      "status": "existing",
+      "related": "out-of-hours-electrician",
+      "angle": "24 Hour Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for 24 Hour Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "out-of-hours-electrician",
+      "name": "Out Of Hours Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "domestic-electrician",
+      "angle": "Out Of Hours Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Out Of Hours Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "domestic-electrician",
+      "name": "Domestic Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "commercial-electrician",
+      "angle": "Domestic Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Domestic Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "commercial-electrician",
+      "name": "Commercial Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "landlord-eicr",
+      "angle": "Commercial Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Commercial Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "landlord-eicr",
+      "name": "Landlord EICR",
+      "kind": "both",
+      "status": "existing",
+      "related": "landlord-electrical-certificate",
+      "angle": "Landlord EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Landlord EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "landlord-electrical-certificate",
+      "name": "Landlord Electrical Certificate",
+      "kind": "both",
+      "status": "existing",
+      "related": "consumer-unit-upgrade",
+      "angle": "Landlord Electrical Certificate is landlord electrical work: the report, the certificate and any remedials the file needs. England private-rented electrical safety duties should be read from current official guidance. This page is the commercial route to book the visit, price on application. The commercial line for Landlord Electrical Certificate does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "consumer-unit-upgrade",
+      "name": "Consumer Unit Upgrade",
+      "kind": "both",
+      "status": "existing",
+      "related": "fuse-board-replacement",
+      "angle": "Consumer Unit Upgrade is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Consumer Unit Upgrade does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fuse-board-replacement",
+      "name": "Fuse Board Replacement",
+      "kind": "both",
+      "status": "existing",
+      "related": "full-house-rewire",
+      "angle": "Fuse Board Replacement is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Fuse Board Replacement does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "full-house-rewire",
+      "name": "Full House Rewire",
+      "kind": "both",
+      "status": "existing",
+      "related": "domestic-rewire",
+      "angle": "Full House Rewire is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Full House Rewire does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "domestic-rewire",
+      "name": "Domestic Rewire",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-fault-finding",
+      "angle": "Domestic Rewire is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Domestic Rewire does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-fault-finding",
+      "name": "Electrical Fault Finding",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-call-out",
+      "angle": "Electrical Fault Finding is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Fault Finding does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-call-out",
+      "name": "Electrical Call Out",
+      "kind": "both",
+      "status": "existing",
+      "related": "three-phase-electrical-installation",
+      "angle": "Electrical Call Out is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Call Out does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "three-phase-electrical-installation",
+      "name": "Three Phase Electrical Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "three-phase-installation",
+      "angle": "Three Phase Electrical Installation is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Electrical Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "three-phase-installation",
+      "name": "Three Phase Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "certified-electrician",
+      "angle": "Three Phase Installation is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "certified-electrician",
+      "name": "Certified Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "part-p-certified",
+      "angle": "Certified Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Certified Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "part-p-certified",
+      "name": "Part P Certified",
+      "kind": "both",
+      "status": "existing",
+      "related": "eicr-certificate",
+      "angle": "Part P Certified is read here as Part P and Building Regulations wording for notifiable domestic electrical work. The certificate that is issued matches the work completed. We do not invent a scheme membership to support the phrase. The commercial line for Part P Certified does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-certificate",
+      "name": "EICR Certificate",
+      "kind": "both",
+      "status": "existing",
+      "related": "eicr-testing",
+      "angle": "EICR Certificate is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for EICR Certificate does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-testing",
+      "name": "EICR Testing",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-installation-condition-report",
+      "angle": "EICR Testing is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for EICR Testing does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-installation-condition-report",
+      "name": "Electrical Installation Condition Report",
+      "kind": "both",
+      "status": "existing",
+      "related": "next-day-electrician",
+      "angle": "Electrical Installation Condition Report is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Electrical Installation Condition Report does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "next-day-electrician",
+      "name": "Next Day Electrician",
+      "kind": "keyword",
+      "status": "existing",
+      "related": "emergency-eicr",
+      "angle": "Next Day Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Next Day Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "emergency-eicr",
+      "name": "Emergency EICR",
+      "kind": "keyword",
+      "status": "existing",
+      "related": "same-day-eicr",
+      "angle": "Emergency EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Emergency EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "same-day-eicr",
+      "name": "Same Day EICR",
+      "kind": "both",
+      "status": "existing",
+      "related": "commercial-eicr",
+      "angle": "Same Day EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Same Day EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "commercial-eicr",
+      "name": "Commercial EICR",
+      "kind": "both",
+      "status": "existing",
+      "related": "domestic-eicr",
+      "angle": "Commercial EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Commercial EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "domestic-eicr",
+      "name": "Domestic EICR",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-rewire",
+      "angle": "Domestic EICR is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for Domestic EICR does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-rewire",
+      "name": "Electrical Rewire",
+      "kind": "both",
+      "status": "existing",
+      "related": "consumer-unit-replacement",
+      "angle": "Electrical Rewire is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Electrical Rewire does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "consumer-unit-replacement",
+      "name": "Consumer Unit Replacement",
+      "kind": "both",
+      "status": "existing",
+      "related": "fuse-box-upgrade",
+      "angle": "Consumer Unit Replacement is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Consumer Unit Replacement does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fuse-box-upgrade",
+      "name": "Fuse Box Upgrade",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-repair",
+      "angle": "Fuse Box Upgrade is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Fuse Box Upgrade does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-repair",
+      "name": "Electrical Repair",
+      "kind": "both",
+      "status": "existing",
+      "related": "residential-electrician",
+      "angle": "Electrical Repair is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Repair does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "residential-electrician",
+      "name": "Residential Electrician",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-contractor",
+      "angle": "Residential Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Residential Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-contractor",
+      "name": "Electrical Contractor",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-services",
+      "angle": "Electrical Contractor is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Contractor does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-services",
+      "name": "Electrical Services",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-installation",
+      "angle": "Electrical Services is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Services does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-installation",
+      "name": "Electrical Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "fixed-wire-testing",
+      "angle": "Electrical Installation is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fixed-wire-testing",
+      "name": "Fixed Wire Testing",
+      "kind": "both",
+      "status": "existing",
+      "related": "pat-testing",
+      "angle": "Fixed Wire Testing is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Fixed Wire Testing does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "pat-testing",
+      "name": "PAT Testing",
+      "kind": "both",
+      "status": "existing",
+      "related": "pat-testing-near-me",
+      "angle": "PAT Testing is in-service inspection and testing of portable appliances, with labelling and a register. It is not an EICR. The quote is price on application after the appliance count is known. Failed items are quoted as separate remedials. The commercial line for PAT Testing does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "pat-testing-near-me",
+      "name": "PAT Testing Near Me",
+      "kind": "both",
+      "status": "existing",
+      "related": "ev-charger-installation",
+      "angle": "PAT Testing Near Me is in-service inspection and testing of portable appliances, with labelling and a register. It is not an EICR. The quote is price on application after the appliance count is known. Failed items are quoted as separate remedials. The commercial line for PAT Testing Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "ev-charger-installation",
+      "name": "EV Charger Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "3-phase-electrician",
+      "angle": "EV Charger Installation is the installation of electric-vehicle charging equipment on a supply that can take it. The survey checks the board, the earthing and the cable route. The quote is price on application. Charger hardware is only specified when it suits the installation. The commercial line for EV Charger Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "3-phase-electrician",
+      "name": "3 Phase Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "local-electrician",
+      "angle": "3 Phase Electrician is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for 3 Phase Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "local-electrician",
+      "name": "Local Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "electrician-manchester",
+      "angle": "Local Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Local Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrician-manchester",
+      "name": "Electrician Manchester",
+      "kind": "keyword",
+      "status": "create",
+      "related": "emergency-electrician-near-me",
+      "angle": "Electrician Manchester is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Electrician Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "emergency-electrician-near-me",
+      "name": "Emergency Electrician Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "rewire-near-me",
+      "angle": "Emergency Electrician Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Emergency Electrician Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "rewire-near-me",
+      "name": "Rewire Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "consumer-unit-near-me",
+      "angle": "Rewire Near Me is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Rewire Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "consumer-unit-near-me",
+      "name": "Consumer Unit Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "fuse-board-near-me",
+      "angle": "Consumer Unit Near Me is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Consumer Unit Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fuse-board-near-me",
+      "name": "Fuse Board Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "electrical-engineer-near-me",
+      "angle": "Fuse Board Near Me is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Fuse Board Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-engineer-near-me",
+      "name": "Electrical Engineer Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "nic-electrician",
+      "angle": "Electrical Engineer Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Engineer Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "nic-electrician",
+      "name": "NIC Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "bs-7671-electrician",
+      "angle": "NIC Electrician is a scheme-search phrase. iComply does not claim NICEIC, NIC, NAPIT or Elecsa membership, and this page does not show a scheme badge. Ask what registration the attending electrician can show. If you need a named scheme contractor and that registration cannot be shown, we say so before you book. The commercial line for NIC Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "bs-7671-electrician",
+      "name": "BS 7671 Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "eicr-cost",
+      "angle": "BS 7671 Electrician means electrical work judged against BS 7671, the IET Wiring Regulations, including inspection, testing and the certificates that match the job. Quoting the standard is not a scheme badge. The commercial line for BS 7671 Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-cost",
+      "name": "EICR Cost",
+      "kind": "both",
+      "status": "existing",
+      "related": "eicr-price",
+      "angle": "EICR Cost is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for EICR Cost does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-price",
+      "name": "EICR Price",
+      "kind": "both",
+      "status": "existing",
+      "related": "rewire-cost",
+      "angle": "EICR Price is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for EICR Price does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "rewire-cost",
+      "name": "Rewire Cost",
+      "kind": "both",
+      "status": "existing",
+      "related": "emergency-electrician-cost",
+      "angle": "Rewire Cost is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for Rewire Cost does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "emergency-electrician-cost",
+      "name": "Emergency Electrician Cost",
+      "kind": "both",
+      "status": "existing",
+      "related": "consumer-unit-cost",
+      "angle": "Emergency Electrician Cost is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for Emergency Electrician Cost does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "consumer-unit-cost",
+      "name": "Consumer Unit Cost",
+      "kind": "both",
+      "status": "existing",
+      "related": "fuse-board-cost",
+      "angle": "Consumer Unit Cost is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for Consumer Unit Cost does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fuse-board-cost",
+      "name": "Fuse Board Cost",
+      "kind": "both",
+      "status": "existing",
+      "related": "fuse-board",
+      "angle": "Fuse Board Cost is a cost search. The figure is price on application after we know the property, the access and the scope. This page does not invent a pound rate, a call-out fee or a package price. The commercial line for Fuse Board Cost does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "fuse-board",
+      "name": "Fuse Board",
+      "kind": "both",
+      "status": "existing",
+      "related": "consumer-unit",
+      "angle": "Fuse Board is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Fuse Board does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "consumer-unit",
+      "name": "Consumer Unit",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-board-upgrade",
+      "angle": "Consumer Unit is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Consumer Unit does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-board-upgrade",
+      "name": "Electrical Board Upgrade",
+      "kind": "both",
+      "status": "existing",
+      "related": "rcbo-consumer-unit",
+      "angle": "Electrical Board Upgrade is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for Electrical Board Upgrade does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "rcbo-consumer-unit",
+      "name": "RCBO Consumer Unit",
+      "kind": "both",
+      "status": "existing",
+      "related": "landlord-electrical-safety-check",
+      "angle": "RCBO Consumer Unit is consumer-unit or fuse-board work: replacement, upgrade or a specified device layout. The board is identified, labelled and tested before it is left energised. The quote is price on application after the existing board is known. The commercial line for RCBO Consumer Unit does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "landlord-electrical-safety-check",
+      "name": "Landlord Electrical Safety Check",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-safety-certificate",
+      "angle": "Landlord Electrical Safety Check is landlord electrical work: the report, the certificate and any remedials the file needs. England private-rented electrical safety duties should be read from current official guidance. This page is the commercial route to book the visit, price on application. The commercial line for Landlord Electrical Safety Check does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-safety-certificate",
+      "name": "Electrical Safety Certificate",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrical-maintenance",
+      "angle": "Electrical Safety Certificate is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Safety Certificate does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-maintenance",
+      "name": "Electrical Maintenance",
+      "kind": "both",
+      "status": "existing",
+      "related": "industrial-electrician",
+      "angle": "Electrical Maintenance is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Maintenance does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "industrial-electrician",
+      "name": "Industrial Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "electrical-remedial-works",
+      "angle": "Industrial Electrician is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Industrial Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-remedial-works",
+      "name": "Electrical Remedial Works",
+      "kind": "both",
+      "status": "existing",
+      "related": "socket-installation",
+      "angle": "Electrical Remedial Works is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Remedial Works does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "socket-installation",
+      "name": "Socket Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "lighting-installation",
+      "angle": "Socket Installation is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Socket Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "lighting-installation",
+      "name": "Lighting Installation",
+      "kind": "both",
+      "status": "existing",
+      "related": "three-phase-supply",
+      "angle": "Lighting Installation is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Lighting Installation does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "three-phase-supply",
+      "name": "Three Phase Supply",
+      "kind": "both",
+      "status": "existing",
+      "related": "three-phase-board",
+      "angle": "Three Phase Supply is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Supply does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "three-phase-board",
+      "name": "Three Phase Board",
+      "kind": "both",
+      "status": "existing",
+      "related": "ev-charger",
+      "angle": "Three Phase Board is three-phase electrical work: supply, board, circuit or test as the scope says. Workshops, commercial plant and some EV loads are typical. The existing supply is confirmed before any upgrade is quoted, price on application. The commercial line for Three Phase Board does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "ev-charger",
+      "name": "EV Charger",
+      "kind": "both",
+      "status": "existing",
+      "related": "portable-appliance-testing",
+      "angle": "EV Charger is the installation of electric-vehicle charging equipment on a supply that can take it. The survey checks the board, the earthing and the cable route. The quote is price on application. Charger hardware is only specified when it suits the installation. The commercial line for EV Charger does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "portable-appliance-testing",
+      "name": "Portable Appliance Testing",
+      "kind": "both",
+      "status": "existing",
+      "related": "electrician-stockport",
+      "angle": "Portable Appliance Testing is in-service inspection and testing of portable appliances, with labelling and a register. It is not an EICR. The quote is price on application after the appliance count is known. Failed items are quoted as separate remedials. The commercial line for Portable Appliance Testing does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrician-stockport",
+      "name": "Electrician Stockport",
+      "kind": "keyword",
+      "status": "create",
+      "related": "eicr-manchester",
+      "angle": "Electrician Stockport is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Electrician Stockport does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "eicr-manchester",
+      "name": "EICR Manchester",
+      "kind": "keyword",
+      "status": "create",
+      "related": "rewire-manchester",
+      "angle": "EICR Manchester is inspection and testing of the fixed electrical installation, with the report issued to the instructing client. Codes and any remedials are explained from the written report. Pricing other than the published HMO list on the main EICR page is price on application. The commercial line for EICR Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "rewire-manchester",
+      "name": "Rewire Manchester",
+      "kind": "keyword",
+      "status": "create",
+      "related": "emergency-electrician-manchester",
+      "angle": "Rewire Manchester is rewire work on the fixed installation, full or partial as agreed. Containment, finishes and which rooms are in the job are written down first. The quote is price on application. Notifiable work is notified where Part P requires it. The commercial line for Rewire Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "emergency-electrician-manchester",
+      "name": "Emergency Electrician Manchester",
+      "kind": "keyword",
+      "status": "create",
+      "related": "landlord-electrician",
+      "angle": "Emergency Electrician Manchester is a place-led search inside this Greater Manchester electrical pack. Manchester is the primary hub city and the Stockport base is 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. The visit is still scoped to the building, price on application. The commercial line for Emergency Electrician Manchester does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "landlord-electrician",
+      "name": "Landlord Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "cheap-electrician",
+      "angle": "Landlord Electrician is landlord electrical work: the report, the certificate and any remedials the file needs. England private-rented electrical safety duties should be read from current official guidance. This page is the commercial route to book the visit, price on application. The commercial line for Landlord Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "cheap-electrician",
+      "name": "Cheap Electrician",
+      "kind": "both",
+      "status": "create",
+      "related": "best-electrician-near-me",
+      "angle": "Cheap Electrician is a price-led search. We do not publish a cheap fixed fee, and we do not win the job by skipping tests or certificates. The quote is price on application after the scope is clear. A lower number that leaves the installation untested is not what this page is selling. The commercial line for Cheap Electrician does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "best-electrician-near-me",
+      "name": "Best Electrician Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "electrical-company-near-me",
+      "angle": "Best Electrician Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Best Electrician Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "electrical-company-near-me",
+      "name": "Electrical Company Near Me",
+      "kind": "both",
+      "status": "create",
+      "related": "domestic-electrical-services",
+      "angle": "Electrical Company Near Me is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Electrical Company Near Me does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "domestic-electrical-services",
+      "name": "Domestic Electrical Services",
+      "kind": "both",
+      "status": "create",
+      "related": "commercial-electrical-contractor",
+      "angle": "Domestic Electrical Services is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Domestic Electrical Services does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    },
+    {
+      "slug": "commercial-electrical-contractor",
+      "name": "Commercial Electrical Contractor",
+      "kind": "both",
+      "status": "create",
+      "related": "emergency-electrician",
+      "angle": "Commercial Electrical Contractor is electrical work for homes, landlords and commercial buildings across Greater Manchester. The visit is scoped against BS 7671 and quoted price on application. Qualified electricians attend from the Stockport base. The commercial line for Commercial Electrical Contractor does not change by town: price on application, scope in writing, paperwork to the instructing client."
+    }
+  ]
+}

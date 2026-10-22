@@ -945,12 +945,17 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $jobTown++;
         }
     }
-    $buildingJobTown = 0;
-    if (function_exists('icomplyBuildingDualJobTownPaths')) {
-        foreach (icomplyBuildingDualJobTownPaths() as $dualPath) {
-            $writeLoc($dualPath);
-            $buildingJobTown++;
+    if (!function_exists('manchesterElectricalP0JobTownPaths')) {
+        require_once __DIR__ . '/manchester-electrical-p0.php';
+    }
+    $seenJobs = array_fill_keys(array_keys($jobs), true);
+    foreach (manchesterElectricalP0JobTownPaths() as $jobPath) {
+        if (preg_match('#^/pages/jobs/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $jobPath, $jobMatch)
+            && isset($seenJobs[$jobMatch[1]])) {
+            continue;
         }
+        $writeLoc($jobPath);
+        $jobTown++;
     }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");

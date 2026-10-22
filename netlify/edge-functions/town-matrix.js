@@ -10,6 +10,7 @@ import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "..
  * on the Greater Manchester core. Other places stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
+import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { buildingDualExempt, renderBuildingDualTown } from "../lib/building-dual.js";
@@ -74,7 +75,7 @@ const VISIT_STYLES = [
   "a survey followed by a return visit for the agreed scope",
 ];
 
-const GAS_SENTENCE = "Gas work is carried out by Gas Safe registered engineers.";
+const GAS_SENTENCE = "Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.";
 
 function stripBriefTokens(text) {
   return String(text || "")
@@ -360,121 +361,13 @@ export function renderTownPage(input) {
     ? gmTownBlurb(kind, kind === "keyword" ? input.keyword : serviceSlug, townSlug)
     : null;
   let prose = packed && packed.blurb ? stripBriefTokens(packed.blurb) : "";
-  if (gas && prose && !/Gas Safe registered engineers/.test(prose)) {
-    prose = `${prose} ${GAS_SENTENCE}`;
-  }
-  const proseService = String(serviceName).replace(/\b([A-Z])([a-z]+)/g, (m, first, rest) => first.toLowerCase() + rest);
-  const qualityCtx = {
-    kind,
-    seed,
-    place: place.name,
-    subject: kind === "manufacturer" ? `${subject} ${proseService}` : subject,
-    service: proseService,
-    audience,
-    visit,
-    near,
-    housing,
-    industry,
-    pop,
-    gas,
-    blurb: prose,
-  };
-  const closeQPages = input.closeQPages && typeof input.closeQPages === "object" ? input.closeQPages : null;
-  const pageSlug = kind === "keyword"
-    ? input.keyword
-    : kind === "job"
-      ? input.job
-      : kind === "service"
-        ? serviceSlug
-        : "";
-  const pe = closeQPages && pageSlug ? closeQPages[`${kind}/${pageSlug}/${townSlug}`] : null;
-  // Facts-only local block (council, postcodes, wards, travel, census) for every service family.
-  const facts = townFactsBlock({
-    slug: townSlug,
-    town: place.name,
-    subject,
-    service: serviceSlug,
-    names: MAINLAND,
-    hrefFor: null, // only the P0 renderer links siblings; other matrix towns may 301
-  });
-  if (facts) qualityCtx.short = true;
-  // SEO PR145: the 15 new security intents get town-specific copy so each x town page stands alone;
-  // that copy replaces the long generic template prose on the two borough pages with no centre point.
-  const secLocal = kind === "keyword" && SECURITY_NEW_INTENTS.has(input.keyword) ? securityTownCopy(input.keyword, townSlug) : null;
-  if (secLocal) qualityCtx.short = true;
-  if (pe && typeof pe.body === "string" && pe.body.trim()) {
-    // Lean pages keep the first two authored paragraphs; the rest is a service guide repeated in every town.
-    qualityCtx.peBody = facts ? pe.body.trim().split(/\n\s*\n/).slice(0, 2).join("\n\n") : pe.body;
-  }
-  if (pe && Array.isArray(pe.faqs)) {
-    qualityCtx.peFaqs = pe.faqs;
-  }
-  const preferredHero = "";
-  const poolOverride = (kind === "keyword" || kind === "job") ? poolOverrides[`${kind === "job" ? "jobs" : "keywords"}/${pageSlug}`] : "";
-  const poolKey = poolOverride
-    ? poolOverride
-    : kind === "keyword"
-    ? `type-keywords-${serviceSlug || "building-maintenance"}`
-    : kind === "job"
-      ? `type-jobs-${serviceSlug || "building-maintenance"}`
-      : serviceSlug === "aov"
-        ? "aov"
-        : serviceSlug === "aov-air-handling"
-          ? "aov-air-handling"
-          : "";
-  const images = thinImages(imageSlug, subject, place.name, seed, pe && Array.isArray(pe.images) ? pe.images : null, preferredHero, poolKey);
-  let proseHtml = thinProseHtml(qualityCtx);
-  const faqs = thinFaqs(qualityCtx).slice();
-  if (fireTown || fireFamily) {
-    const county = place.county ? `${place.county}, ` : "";
-    const population = place.population
-      ? `Published population is about ${Number(place.population).toLocaleString("en-GB")}. `
-      : "";
-    proseHtml += `<p data-pe-slot="fire-installer-nap">${escapeHtml(`We install and maintain ${subject.toLowerCase()} in ${place.name} from our base at ${FIRE_NAP}. ${place.name} is in ${county}${place.region}, ${place.country}. ${population}${FIRE_DUTY} Call 07517 806082 for a written quote.`)}</p>`;
-  }
-  if (fireTown) {
-    faqs.push([
-      `Do you cover ${place.name} for ${subject}?`,
-      `Yes. Our engineers cover ${place.name} from ${FIRE_NAP}. ${FIRE_DUTY} Call 07517 806082 for a written quote.`,
-    ]);
-  }
-  if (facts) {
-    faqs.unshift(...facts.faqs);
-    // CLOSE-Q1: lean pages sat at 540-700 words; add town-specific depth (>= 800 total).
-    const depth = townDepthBlock({
-      slug: townSlug,
-      town: place.name,
-      subject,
-      service: serviceSlug,
-      names: MAINLAND,
-      nation: place.country || "",
-      extra: depthBankParagraphs(qualityCtx, 4),
-      // G9: list-price pages (EICR from £160) never carry a POA line.
-      priceFrom: ctrPriceFrom(ctrSlug) || ctrPriceFrom(input.keyword || "") || ctrPriceFrom(input.job || "") || (/from £160\b/.test(`${title} ${description} ${proseHtml}`) ? "£160" : ""),
-    });
-    // Seeded block order (authored copy, town facts, local notes) for town-to-town uniqueness.
-    const blocks = [proseHtml, facts.html, depth ? depth.html : ""];
-    // Never lead with the facts block: its "{town}: council..." heading would sit straight under the H1.
-    const orders = [[0, 1, 2], [0, 2, 1], [2, 0, 1], [2, 1, 0]];
-    proseHtml = orders[mix32(hashStr(`order|${townSlug}|${subject}`)) % orders.length].map((i) => blocks[i]).join("");
-    const shift = faqs.length ? mix32(hashStr(`faq|${townSlug}|${subject}`)) % faqs.length : 0;
-    faqs.push(...faqs.splice(0, shift));
-  }
-  if (secLocal) {
-    proseHtml += secLocal.html;
-    faqs.push(...secLocal.faqs);
-  }
-  const faqBlock = (fireTown || fireFamily || facts || secLocal)
-    ? `<section id="faq" class="faq" data-pe-slot="q5-thin-faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${faqs.map(([q, a]) => (
-      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
-    )).join("")}</section>`
-    : thinFaqHtml(qualityCtx);
-  if (lockPage && !(fireTown || fireFamily || facts)) {
-    const extraFaqs = tradesFaqs(lockSlug, place.name);
-    faqBlock += `<section id="faq" class="faq"><h2>Questions about ${escapeHtml(place.name)}</h2>${extraFaqs.map(([q, a]) => (
-      `<details class="faq-item"><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
-    )).join("")}</section>`;
-  }
+  const packedLead = prose
+    ? `${packed && packed.h2 ? `<h2>${escapeHtml(stripBriefTokens(packed.h2))}</h2>` : ""}<p>${escapeHtml(prose)}</p>`
+    : "";
+  const localOnly = [place.housing ? housing : "", place.industry ? industry : "", place.population ? pop : ""]
+    .filter(Boolean)
+    .join(" ");
+  const paragraphs = prose ? [] : (localOnly ? [localOnly] : []);
 
   const hubHref = kind === "keyword"
     ? `/pages/keywords/${input.keyword}`
@@ -507,14 +400,26 @@ export function renderTownPage(input) {
   crumbItems.push({ label: `${subject} in ${place.name}` });
   const crumbs = breadcrumbHtml(crumbItems);
 
+  const bits = proseSentences(prose || localOnly);
+  const faqs = [];
+  if (bits[0]) {
+    faqs.push([`What is particular about ${subject} in ${place.name}?`, bits[0]]);
+  }
+  if (bits[1]) {
+    faqs.push([`What should the ${place.name} file show before a quote?`, bits[1]]);
+  }
+  if (bits[2]) {
+    faqs.push([`How is the ${place.name} price decided?`, bits[2]]);
+  }
+  const faqHtml = faqs.map(([q, a]) => (
+    `<details><summary>${escapeHtml(q)}</summary><p>${escapeHtml(a)}</p></details>`
+  )).join("");
   const focusHtml = focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-  let bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("");
-  if (!/price on application|\bPOA\b/i.test(description) && !/price on application|\bPOA\b/i.test(bodyHtml)) {
-    bodyHtml += "<p>The quote is price on application.</p>";
-  }
-  if (gas && !bodyHtml.includes("iComply is not Gas Safe registered.")) {
-    bodyHtml += "<p>Landlord gas safety certificates (CP12) are carried out by Gas Safe registered engineers. iComply is not Gas Safe registered.</p>";
-  }
+  const poaLine = `The quote for ${subject} in ${place.name} is price on application (POA).`;
+  const complianceHtml = `<p>${escapeHtml(poaLine)}</p>${
+    gas && !/iComply is not Gas Safe registered/i.test(prose) ? `<p>${escapeHtml(GAS_SENTENCE)}</p>` : ""
+  }`;
+  const bodyHtml = packedLead + paragraphs.map((paragraph) => `<p>${escapeHtml(stripBriefTokens(paragraph))}</p>`).join("") + complianceHtml;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -898,6 +803,28 @@ export default async (request, context) => {
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const serviceMatch = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  if (keywordMatch || jobMatch) {
+    try {
+      const rich = await renderManchesterElectricalPage({
+        origin: url.origin,
+        surface: keywordMatch ? "keyword" : "job",
+        slug: (keywordMatch || jobMatch)[1],
+        town: (keywordMatch || jobMatch)[2],
+      });
+      if (rich) {
+        return new Response(rich, {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    } catch {
+      // Thin matrix renderer remains the fallback when the P0 spec is unavailable.
+    }
+  }
   if (!manufacturerMatch && !jobMatch && !keywordMatch && !serviceMatch) {
     return context.next();
   }

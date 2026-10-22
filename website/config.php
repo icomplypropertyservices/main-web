@@ -426,18 +426,14 @@ function icomplyPathIsIndexable(string $path): bool
     if ($path === '') {
         $path = '/';
     }
-    // P0-CTR-MONEY C1-C15 money pages are always index,follow (SEO brief 2026-10-19; Jack: never noindex).
-    if (!function_exists('icomplyMoneyCtrPages')) {
-        $moneyCtr = __DIR__ . '/includes/money-ctr.php';
-        if (is_file($moneyCtr)) {
-            require_once $moneyCtr;
+    if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $kwTown)) {
+        if (!function_exists('manchesterElectricalP0TownIndexable')) {
+            require_once __DIR__ . '/includes/manchester-electrical-p0.php';
         }
-    }
-    if (function_exists('icomplyMoneyCtrPages') && isset(icomplyMoneyCtrPages()[$path])) {
-        return true;
-    }
-    if (preg_match('#^/pages/keywords/[a-z0-9\-]+/[a-z0-9\-]+$#', $path)) {
-        return function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path);
+        if (manchesterElectricalP0TownIndexable('keyword', $kwTown[1], $kwTown[2])) {
+            return true;
+        }
+        return false;
     }
     // Area hubs are indexable for the dual-ring allowlist, including Burnley.
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $areaMatch)) {
