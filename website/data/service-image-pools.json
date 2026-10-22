@@ -468,212 +468,254 @@
     },
     "type-keywords-access-control": {
         "own": [
-            "/assets/images/page-types/keywords/access-control.jpg"
+            "/assets/images/page-types/keywords/access-control.jpg",
+            "/assets/images/page-types/keywords/access-control-2.jpg"
         ]
     },
     "type-keywords-bathrooms": {
         "own": [
-            "/assets/images/page-types/keywords/bathrooms.jpg"
+            "/assets/images/page-types/keywords/bathrooms.jpg",
+            "/assets/images/page-types/keywords/bathrooms-2.jpg"
         ]
     },
     "type-keywords-brickwork": {
         "own": [
-            "/assets/images/page-types/keywords/brickwork.jpg"
+            "/assets/images/page-types/keywords/brickwork.jpg",
+            "/assets/images/page-types/keywords/brickwork-2.jpg"
         ]
     },
     "type-keywords-building-maintenance": {
         "own": [
-            "/assets/images/page-types/keywords/building-maintenance.jpg"
+            "/assets/images/page-types/keywords/building-maintenance.jpg",
+            "/assets/images/page-types/keywords/building-maintenance-2.jpg"
         ]
     },
     "type-keywords-carpentry": {
         "own": [
-            "/assets/images/page-types/keywords/carpentry.jpg"
+            "/assets/images/page-types/keywords/carpentry.jpg",
+            "/assets/images/page-types/keywords/carpentry-2.jpg"
         ]
     },
     "type-keywords-cctv": {
         "own": [
-            "/assets/images/page-types/keywords/cctv.jpg"
+            "/assets/images/page-types/keywords/cctv.jpg",
+            "/assets/images/page-types/keywords/cctv-2.jpg"
         ]
     },
     "type-keywords-demolition": {
         "own": [
-            "/assets/images/page-types/keywords/demolition.jpg"
+            "/assets/images/page-types/keywords/demolition.jpg",
+            "/assets/images/page-types/keywords/demolition-2.jpg"
         ]
     },
     "type-keywords-drainage": {
         "own": [
-            "/assets/images/page-types/keywords/drainage.jpg"
+            "/assets/images/page-types/keywords/drainage.jpg",
+            "/assets/images/page-types/keywords/drainage-2.jpg"
         ]
     },
     "type-keywords-driveways": {
         "own": [
-            "/assets/images/page-types/keywords/driveways.jpg"
+            "/assets/images/page-types/keywords/driveways.jpg",
+            "/assets/images/page-types/keywords/driveways-2.jpg"
         ]
     },
     "type-keywords-dry-lining": {
         "own": [
-            "/assets/images/page-types/keywords/dry-lining.jpg"
+            "/assets/images/page-types/keywords/dry-lining.jpg",
+            "/assets/images/page-types/keywords/dry-lining-2.jpg"
         ]
     },
     "type-keywords-electrical": {
         "own": [
-            "/assets/images/page-types/keywords/electrical.jpg"
+            "/assets/images/page-types/keywords/electrical.jpg",
+            "/assets/images/page-types/keywords/electrical-2.jpg"
         ]
     },
     "type-keywords-ev-chargers": {
         "own": [
-            "/assets/images/page-types/keywords/ev-chargers.jpg"
+            "/assets/images/page-types/keywords/ev-chargers.jpg",
+            "/assets/images/page-types/keywords/ev-chargers-2.jpg"
         ]
     },
     "type-keywords-extensions": {
         "own": [
-            "/assets/images/page-types/keywords/extensions.jpg"
+            "/assets/images/page-types/keywords/extensions.jpg",
+            "/assets/images/page-types/keywords/extensions-2.jpg"
         ]
     },
     "type-keywords-fire-doors": {
         "own": [
-            "/assets/images/page-types/keywords/fire-doors.jpg"
+            "/assets/images/page-types/keywords/fire-doors.jpg",
+            "/assets/images/page-types/keywords/fire-doors-2.jpg"
         ]
     },
     "type-keywords-fire-extinguishers": {
         "own": [
-            "/assets/images/page-types/keywords/fire-extinguishers.jpg"
+            "/assets/images/page-types/keywords/fire-extinguishers.jpg",
+            "/assets/images/page-types/keywords/fire-extinguishers-2.jpg"
         ]
     },
     "type-keywords-flooring": {
         "own": [
-            "/assets/images/page-types/keywords/flooring.jpg"
+            "/assets/images/page-types/keywords/flooring.jpg",
+            "/assets/images/page-types/keywords/flooring-2.jpg"
         ]
     },
     "type-keywords-gas-systems": {
         "own": [
-            "/assets/images/page-types/keywords/gas-systems.jpg"
+            "/assets/images/page-types/keywords/gas-systems.jpg",
+            "/assets/images/page-types/keywords/gas-systems-2.jpg"
         ]
     },
     "type-keywords-heating": {
         "own": [
-            "/assets/images/page-types/keywords/heating.jpg"
+            "/assets/images/page-types/keywords/heating.jpg",
+            "/assets/images/page-types/keywords/heating-2.jpg"
         ]
     },
     "type-keywords-joinery": {
         "own": [
-            "/assets/images/page-types/keywords/joinery.jpg"
+            "/assets/images/page-types/keywords/joinery.jpg",
+            "/assets/images/page-types/keywords/joinery-2.jpg"
         ]
     },
     "type-keywords-kitchens": {
         "own": [
-            "/assets/images/page-types/keywords/kitchens.jpg"
+            "/assets/images/page-types/keywords/kitchens.jpg",
+            "/assets/images/page-types/keywords/kitchens-2.jpg"
         ]
     },
     "type-keywords-landscaping": {
         "own": [
-            "/assets/images/page-types/keywords/landscaping.jpg"
+            "/assets/images/page-types/keywords/landscaping.jpg",
+            "/assets/images/page-types/keywords/landscaping-2.jpg"
         ]
     },
     "type-keywords-painting-decorating": {
         "own": [
-            "/assets/images/page-types/keywords/painting-decorating.jpg"
+            "/assets/images/page-types/keywords/painting-decorating.jpg",
+            "/assets/images/page-types/keywords/painting-decorating-2.jpg"
         ]
     },
     "type-keywords-pat-testing": {
         "own": [
-            "/assets/images/page-types/keywords/pat-testing.jpg"
+            "/assets/images/page-types/keywords/pat-testing.jpg",
+            "/assets/images/page-types/keywords/pat-testing-2.jpg"
         ]
     },
     "type-keywords-plumbing": {
         "own": [
-            "/assets/images/page-types/keywords/plumbing.jpg"
+            "/assets/images/page-types/keywords/plumbing.jpg",
+            "/assets/images/page-types/keywords/plumbing-2.jpg"
         ]
     },
     "type-keywords-renovation": {
         "own": [
-            "/assets/images/page-types/keywords/renovation.jpg"
+            "/assets/images/page-types/keywords/renovation.jpg",
+            "/assets/images/page-types/keywords/renovation-2.jpg"
         ]
     },
     "type-keywords-roofing": {
         "own": [
-            "/assets/images/page-types/keywords/roofing.jpg"
+            "/assets/images/page-types/keywords/roofing.jpg",
+            "/assets/images/page-types/keywords/roofing-2.jpg"
         ]
     },
     "type-keywords-smoke-co-alarms": {
         "own": [
-            "/assets/images/page-types/keywords/smoke-co-alarms.jpg"
+            "/assets/images/page-types/keywords/smoke-co-alarms.jpg",
+            "/assets/images/page-types/keywords/smoke-co-alarms-2.jpg"
         ]
     },
     "type-keywords-tiling": {
         "own": [
-            "/assets/images/page-types/keywords/tiling.jpg"
+            "/assets/images/page-types/keywords/tiling.jpg",
+            "/assets/images/page-types/keywords/tiling-2.jpg"
         ]
     },
     "type-keywords-windows-doors": {
         "own": [
-            "/assets/images/page-types/keywords/windows-doors.jpg"
+            "/assets/images/page-types/keywords/windows-doors.jpg",
+            "/assets/images/page-types/keywords/windows-doors-2.jpg"
         ]
     },
     "type-jobs-brickwork": {
         "own": [
-            "/assets/images/page-types/jobs/brickwork.jpg"
+            "/assets/images/page-types/jobs/brickwork.jpg",
+            "/assets/images/page-types/keywords/brickwork-2.jpg"
         ]
     },
     "type-jobs-building-maintenance": {
         "own": [
-            "/assets/images/page-types/jobs/building-maintenance.jpg"
+            "/assets/images/page-types/jobs/building-maintenance.jpg",
+            "/assets/images/page-types/keywords/building-maintenance-2.jpg"
         ]
     },
     "type-jobs-drainage": {
         "own": [
-            "/assets/images/page-types/jobs/drainage.jpg"
+            "/assets/images/page-types/jobs/drainage.jpg",
+            "/assets/images/page-types/keywords/drainage-2.jpg"
         ]
     },
     "type-jobs-driveways": {
         "own": [
-            "/assets/images/page-types/jobs/driveways.jpg"
+            "/assets/images/page-types/jobs/driveways.jpg",
+            "/assets/images/page-types/keywords/driveways-2.jpg"
         ]
     },
     "type-jobs-electrical": {
         "own": [
-            "/assets/images/page-types/jobs/electrical.jpg"
+            "/assets/images/page-types/jobs/electrical.jpg",
+            "/assets/images/page-types/keywords/electrical-2.jpg"
         ]
     },
     "type-jobs-extensions": {
         "own": [
-            "/assets/images/page-types/jobs/extensions.jpg"
+            "/assets/images/page-types/jobs/extensions.jpg",
+            "/assets/images/page-types/keywords/extensions-2.jpg"
         ]
     },
     "type-jobs-flooring": {
         "own": [
-            "/assets/images/page-types/jobs/flooring.jpg"
+            "/assets/images/page-types/jobs/flooring.jpg",
+            "/assets/images/page-types/keywords/flooring-2.jpg"
         ]
     },
     "type-jobs-joinery": {
         "own": [
-            "/assets/images/page-types/jobs/joinery.jpg"
+            "/assets/images/page-types/jobs/joinery.jpg",
+            "/assets/images/page-types/keywords/joinery-2.jpg"
         ]
     },
     "type-jobs-kitchens": {
         "own": [
-            "/assets/images/page-types/jobs/kitchens.jpg"
+            "/assets/images/page-types/jobs/kitchens.jpg",
+            "/assets/images/page-types/keywords/kitchens-2.jpg"
         ]
     },
     "type-jobs-painting-decorating": {
         "own": [
-            "/assets/images/page-types/jobs/painting-decorating.jpg"
+            "/assets/images/page-types/jobs/painting-decorating.jpg",
+            "/assets/images/page-types/keywords/painting-decorating-2.jpg"
         ]
     },
     "type-jobs-roofing": {
         "own": [
-            "/assets/images/page-types/jobs/roofing.jpg"
+            "/assets/images/page-types/jobs/roofing.jpg",
+            "/assets/images/page-types/keywords/roofing-2.jpg"
         ]
     },
     "type-jobs-tiling": {
         "own": [
-            "/assets/images/page-types/jobs/tiling.jpg"
+            "/assets/images/page-types/jobs/tiling.jpg",
+            "/assets/images/page-types/keywords/tiling-2.jpg"
         ]
     },
     "type-jobs-windows-doors": {
         "own": [
-            "/assets/images/page-types/jobs/windows-doors.jpg"
+            "/assets/images/page-types/jobs/windows-doors.jpg",
+            "/assets/images/page-types/keywords/windows-doors-2.jpg"
         ]
     },
     "type-resources-asbestos-survey": {
@@ -743,47 +785,56 @@
     },
     "type-keywords-aov-air-handling": {
         "own": [
-            "/assets/images/page-types/keywords/aov-air-handling.jpg"
+            "/assets/images/page-types/keywords/aov-air-handling.jpg",
+            "/assets/images/page-types/keywords/aov-air-handling-2.jpg"
         ]
     },
     "type-keywords-emergency-lighting": {
         "own": [
-            "/assets/images/page-types/keywords/emergency-lighting.jpg"
+            "/assets/images/page-types/keywords/emergency-lighting.jpg",
+            "/assets/images/page-types/keywords/emergency-lighting-2.jpg"
         ]
     },
     "type-keywords-fencing": {
         "own": [
-            "/assets/images/page-types/keywords/fencing.jpg"
+            "/assets/images/page-types/keywords/fencing.jpg",
+            "/assets/images/page-types/keywords/fencing-2.jpg"
         ]
     },
     "type-keywords-loft-conversions": {
         "own": [
-            "/assets/images/page-types/keywords/loft-conversions.jpg"
+            "/assets/images/page-types/keywords/loft-conversions.jpg",
+            "/assets/images/page-types/keywords/loft-conversions-2.jpg"
         ]
     },
     "type-keywords-rendering": {
         "own": [
-            "/assets/images/page-types/keywords/rendering.jpg"
+            "/assets/images/page-types/keywords/rendering.jpg",
+            "/assets/images/page-types/keywords/rendering-2.jpg"
         ]
     },
     "type-jobs-damp-proofing": {
         "own": [
-            "/assets/images/page-types/jobs/damp-proofing.jpg"
+            "/assets/images/page-types/jobs/damp-proofing.jpg",
+            "/assets/images/page-types/keywords/damp-proofing-2.jpg"
         ]
     },
     "type-jobs-fencing": {
         "own": [
-            "/assets/images/page-types/jobs/fencing.jpg"
+            "/assets/images/page-types/jobs/fencing.jpg",
+            "/assets/images/page-types/keywords/fencing-2.jpg"
         ]
     },
     "type-jobs-groundworks": {
         "own": [
-            "/assets/images/page-types/jobs/groundworks.jpg"
+            "/assets/images/page-types/jobs/groundworks.jpg",
+            "/assets/images/page-types/keywords/groundworks-2.jpg"
         ]
     },
     "type-jobs-rendering": {
         "own": [
-            "/assets/images/page-types/jobs/rendering.jpg"
+            "/assets/images/page-types/jobs/rendering.jpg",
+            "/assets/images/page-types/keywords/rendering-2.jpg"
         ]
     },
     "type-resources-access-control": {
@@ -803,47 +854,56 @@
     },
     "type-keywords-damp-proofing": {
         "own": [
-            "/assets/images/page-types/keywords/damp-proofing.jpg"
+            "/assets/images/page-types/keywords/damp-proofing.jpg",
+            "/assets/images/page-types/keywords/damp-proofing-2.jpg"
         ]
     },
     "type-keywords-groundworks": {
         "own": [
-            "/assets/images/page-types/keywords/groundworks.jpg"
+            "/assets/images/page-types/keywords/groundworks.jpg",
+            "/assets/images/page-types/keywords/groundworks-2.jpg"
         ]
     },
     "type-keywords-insulation": {
         "own": [
-            "/assets/images/page-types/keywords/insulation.jpg"
+            "/assets/images/page-types/keywords/insulation.jpg",
+            "/assets/images/page-types/keywords/insulation-2.jpg"
         ]
     },
     "type-keywords-plastering": {
         "own": [
-            "/assets/images/page-types/keywords/plastering.jpg"
+            "/assets/images/page-types/keywords/plastering.jpg",
+            "/assets/images/page-types/keywords/plastering-2.jpg"
         ]
     },
     "type-jobs-aov-air-handling": {
         "own": [
-            "/assets/images/page-types/jobs/aov-air-handling.jpg"
+            "/assets/images/page-types/jobs/aov-air-handling.jpg",
+            "/assets/images/page-types/keywords/aov-air-handling-2.jpg"
         ]
     },
     "type-jobs-bathrooms": {
         "own": [
-            "/assets/images/page-types/jobs/bathrooms.jpg"
+            "/assets/images/page-types/jobs/bathrooms.jpg",
+            "/assets/images/page-types/keywords/bathrooms-2.jpg"
         ]
     },
     "type-jobs-insulation": {
         "own": [
-            "/assets/images/page-types/jobs/insulation.jpg"
+            "/assets/images/page-types/jobs/insulation.jpg",
+            "/assets/images/page-types/keywords/insulation-2.jpg"
         ]
     },
     "type-jobs-loft-conversions": {
         "own": [
-            "/assets/images/page-types/jobs/loft-conversions.jpg"
+            "/assets/images/page-types/jobs/loft-conversions.jpg",
+            "/assets/images/page-types/keywords/loft-conversions-2.jpg"
         ]
     },
     "type-jobs-plastering": {
         "own": [
-            "/assets/images/page-types/jobs/plastering.jpg"
+            "/assets/images/page-types/jobs/plastering.jpg",
+            "/assets/images/page-types/keywords/plastering-2.jpg"
         ]
     },
     "type-resources-kitchen-fire-suppression": {
@@ -868,22 +928,26 @@
     },
     "type-keywords-asbestos-survey": {
         "own": [
-            "/assets/images/page-types/keywords/asbestos-survey.jpg"
+            "/assets/images/page-types/keywords/asbestos-survey.jpg",
+            "/assets/images/page-types/keywords/asbestos-survey-2.jpg"
         ]
     },
     "type-keywords-barriers": {
         "own": [
-            "/assets/images/page-types/keywords/barriers.jpg"
+            "/assets/images/page-types/keywords/barriers.jpg",
+            "/assets/images/page-types/keywords/barriers-2.jpg"
         ]
     },
     "type-keywords-cdm-support": {
         "own": [
-            "/assets/images/page-types/keywords/cdm-support.jpg"
+            "/assets/images/page-types/keywords/cdm-support.jpg",
+            "/assets/images/page-types/keywords/cdm-support-2.jpg"
         ]
     },
     "type-keywords-commercial-fit-out": {
         "own": [
-            "/assets/images/page-types/keywords/commercial-fit-out.jpg"
+            "/assets/images/page-types/keywords/commercial-fit-out.jpg",
+            "/assets/images/page-types/keywords/commercial-fit-out-2.jpg"
         ]
     },
     "type-keywords-compliance-consultancy": {
@@ -893,27 +957,32 @@
     },
     "type-keywords-door-entry": {
         "own": [
-            "/assets/images/page-types/keywords/door-entry.jpg"
+            "/assets/images/page-types/keywords/door-entry.jpg",
+            "/assets/images/page-types/keywords/door-entry-2.jpg"
         ]
     },
     "type-keywords-dry-risers": {
         "own": [
-            "/assets/images/page-types/keywords/dry-risers.jpg"
+            "/assets/images/page-types/keywords/dry-risers.jpg",
+            "/assets/images/page-types/keywords/dry-risers-2.jpg"
         ]
     },
     "type-keywords-evacuation-alerts": {
         "own": [
-            "/assets/images/page-types/keywords/evacuation-alerts.jpg"
+            "/assets/images/page-types/keywords/evacuation-alerts.jpg",
+            "/assets/images/page-types/keywords/evacuation-alerts-2.jpg"
         ]
     },
     "type-keywords-facilities-management": {
         "own": [
-            "/assets/images/page-types/keywords/facilities-management.jpg"
+            "/assets/images/page-types/keywords/facilities-management.jpg",
+            "/assets/images/page-types/keywords/facilities-management-2.jpg"
         ]
     },
     "type-keywords-fire-alarms": {
         "own": [
-            "/assets/images/page-types/keywords/fire-alarms.jpg"
+            "/assets/images/page-types/keywords/fire-alarms.jpg",
+            "/assets/images/page-types/keywords/fire-alarms-2.jpg"
         ]
     },
     "type-keywords-fire-compartmentation": {
@@ -923,27 +992,32 @@
     },
     "type-keywords-fire-risk-assessments": {
         "own": [
-            "/assets/images/page-types/keywords/fire-risk-assessments.jpg"
+            "/assets/images/page-types/keywords/fire-risk-assessments.jpg",
+            "/assets/images/page-types/keywords/fire-risk-assessments-2.jpg"
         ]
     },
     "type-keywords-fire-signage": {
         "own": [
-            "/assets/images/page-types/keywords/fire-signage.jpg"
+            "/assets/images/page-types/keywords/fire-signage.jpg",
+            "/assets/images/page-types/keywords/fire-signage-2.jpg"
         ]
     },
     "type-keywords-fire-stopping": {
         "own": [
-            "/assets/images/page-types/keywords/fire-stopping.jpg"
+            "/assets/images/page-types/keywords/fire-stopping.jpg",
+            "/assets/images/page-types/keywords/fire-stopping-2.jpg"
         ]
     },
     "type-keywords-fire-suppression": {
         "own": [
-            "/assets/images/page-types/keywords/fire-suppression.jpg"
+            "/assets/images/page-types/keywords/fire-suppression.jpg",
+            "/assets/images/page-types/keywords/fire-suppression-2.jpg"
         ]
     },
     "type-keywords-intercoms": {
         "own": [
-            "/assets/images/page-types/keywords/intercoms.jpg"
+            "/assets/images/page-types/keywords/intercoms.jpg",
+            "/assets/images/page-types/keywords/intercoms-2.jpg"
         ]
     },
     "type-keywords-landlord-compliance": {
@@ -953,17 +1027,20 @@
     },
     "type-keywords-project-management": {
         "own": [
-            "/assets/images/page-types/keywords/project-management.jpg"
+            "/assets/images/page-types/keywords/project-management.jpg",
+            "/assets/images/page-types/keywords/project-management-2.jpg"
         ]
     },
     "type-keywords-property-refurbishment-pm": {
         "own": [
-            "/assets/images/page-types/keywords/property-refurbishment-pm.jpg"
+            "/assets/images/page-types/keywords/property-refurbishment-pm.jpg",
+            "/assets/images/page-types/keywords/property-refurbishment-pm-2.jpg"
         ]
     },
     "type-keywords-sprinkler-systems": {
         "own": [
-            "/assets/images/page-types/keywords/sprinkler-systems.jpg"
+            "/assets/images/page-types/keywords/sprinkler-systems.jpg",
+            "/assets/images/page-types/keywords/sprinkler-systems-2.jpg"
         ]
     },
     "type-keywords-water-wras": {
@@ -973,27 +1050,32 @@
     },
     "type-keywords-building-surveys": {
         "own": [
-            "/assets/images/page-types/keywords/building-surveys.jpg"
+            "/assets/images/page-types/keywords/building-surveys.jpg",
+            "/assets/images/page-types/keywords/building-surveys-2.jpg"
         ]
     },
     "type-keywords-intruder-alarm": {
         "own": [
-            "/assets/images/page-types/keywords/intruder-alarm.jpg"
+            "/assets/images/page-types/keywords/intruder-alarm.jpg",
+            "/assets/images/page-types/keywords/intruder-alarm-2.jpg"
         ]
     },
     "type-keywords-legionella-risk-assessment": {
         "own": [
-            "/assets/images/page-types/keywords/legionella-risk-assessment.jpg"
+            "/assets/images/page-types/keywords/legionella-risk-assessment.jpg",
+            "/assets/images/page-types/keywords/legionella-risk-assessment-2.jpg"
         ]
     },
     "type-keywords-nurse-call": {
         "own": [
-            "/assets/images/page-types/keywords/nurse-call.jpg"
+            "/assets/images/page-types/keywords/nurse-call.jpg",
+            "/assets/images/page-types/keywords/nurse-call-2.jpg"
         ]
     },
     "type-keywords-electrics-first-fix": {
         "own": [
-            "/assets/images/page-types/keywords/electrics-first-fix.jpg"
+            "/assets/images/page-types/keywords/electrics-first-fix.jpg",
+            "/assets/images/page-types/keywords/electrics-first-fix-2.jpg"
         ]
     }
 }

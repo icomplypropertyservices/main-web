@@ -4857,14 +4857,6 @@
     "alt": "Wall-mounted gas boiler"
   },
   {
-    "file": "/assets/images/page-types/resources/landlord-compliance.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3ASmoke_detector_on_the_stretch_ceiling_%2801%29.jpg",
-    "title": "File:Smoke detector on the stretch ceiling (01).jpg",
-    "license": "CC0",
-    "artist": "Georg Pik",
-    "alt": "Smoke detector on a ceiling"
-  },
-  {
     "file": "/assets/images/page-types/resources/pat-testing.jpg",
     "source": "https://commons.wikimedia.org/wiki/File%3AInsulationTester.jpg",
     "title": "File:InsulationTester.jpg",
@@ -5169,14 +5161,6 @@
     "alt": "Fire alarm panel"
   },
   {
-    "file": "/assets/images/page-types/keywords/fire-compartmentation.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3ABelimo_LF230-S_fail-safe_rotary_actuator.jpg",
-    "title": "File:Belimo LF230-S fail-safe rotary actuator.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Phiarc",
-    "alt": "Fire damper actuator"
-  },
-  {
     "file": "/assets/images/page-types/keywords/fire-risk-assessments.jpg",
     "source": "https://commons.wikimedia.org/wiki/File%3AFire_Extinguisher_Box_Presents_by_MBS_Broadcast_Station_%26_Ajinomoto_AGF_at_Konomiya_Shigino_Joto-Ku_Osaka.jpg",
     "title": "File:Fire Extinguisher Box Presents by MBS Broadcast Station & Ajinomoto AGF at Konomiya Shigino Joto-Ku Osaka.jpg",
@@ -5295,5 +5279,501 @@
     "license": "Public domain",
     "artist": "Department of Homeland Security. U.S. Coast Guard. 3/1/2003",
     "alt": "Electrical cables in wall ducts"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/access-control-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IC_Card_Reader_Writer_RW-5100W.jpg",
+    "title": "File:IC Card Reader Writer RW-5100W.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Project Kei",
+    "alt": "Access control work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/bathrooms-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Small_Bathroom_Renovation_in_Wellington.jpg",
+    "title": "File:Small Bathroom Renovation in Wellington.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Smtzzz",
+    "alt": "Bathrooms work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/brickwork-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bricklayer_taking_measurements.jpg",
+    "title": "File:Bricklayer taking measurements.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Regy05",
+    "alt": "Brickwork work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/building-maintenance-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Handyman_on_a_roof.jpg",
+    "title": "File:Handyman on a roof.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tony Alter",
+    "alt": "Building maintenance work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/carpentry-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PalmercarpenterA.jpg",
+    "title": "File:PalmercarpenterA.jpg",
+    "license": "Public domain",
+    "artist": "Alfred T. Palmer",
+    "alt": "Carpentry work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/cctv-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:IFacility_CCTV_Cameras.jpg",
+    "title": "File:IFacility CCTV Cameras.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "RickySpanish",
+    "alt": "Cctv work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/dry-lining-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Drywall_and_tools.jpg",
+    "title": "File:Drywall and tools.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Timothyjosephwood",
+    "alt": "Dry lining work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/electrical-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Electricians_fixing_electricity_meter_5.jpg",
+    "title": "File:Electricians fixing electricity meter 5.jpg",
+    "license": "CC0",
+    "artist": "Jeromi Mikhael",
+    "alt": "Electrical work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/ev-chargers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Car2Go_Charging_Station_Stuttgart_2013_01.jpg",
+    "title": "File:Car2Go Charging Station Stuttgart 2013 01.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Julian Herzog (Website)",
+    "alt": "Ev chargers work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/extensions-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:House_extension_-_geograph.org.uk_-_6255964.jpg",
+    "title": "File:House extension - geograph.org.uk - 6255964.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Richard Sutcliffe",
+    "alt": "Extensions work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-doors-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Durasteel_fire_door_stainless.jpg",
+    "title": "File:Durasteel fire door stainless.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "alt": "Fire doors work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-extinguishers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_foam_extinguishers_(h%C3%A5ndslokker,_brannslukningsapparat,_pulverapparat,_skumapparat,_type_HOUSEGARD)_on_wall_in_primary_school_in_Eikelandsosen,_Fusa,_Hordaland,_Norway._Also_sign._2018-03-23_A.jpg",
+    "title": "File:Fire foam extinguishers (håndslokker, brannslukningsapparat, pulverapparat, skumapparat, type HOUSEGARD) on wall in primary school in Eikelandsosen, Fusa, Hordaland, Norway. Also sign. 2018-03-23 A.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wolfmann",
+    "alt": "Fire extinguishers work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/flooring-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Laminate_floor_assembly_-_close_up.JPG",
+    "title": "File:Laminate floor assembly - close up.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Wasrts",
+    "alt": "Flooring work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/gas-systems-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gas_boiler_at_school._Buryatia,_Russia.jpg",
+    "title": "File:Gas boiler at school. Buryatia, Russia.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Oleg Bor",
+    "alt": "Gas systems work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/heating-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Radiator_op_blauw-wit-gestreepte_tegels.JPG",
+    "title": "File:Radiator op blauw-wit-gestreepte tegels.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Bios (talk · contribs)",
+    "alt": "Heating work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/joinery-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_time_joiner_instruments_in_the_collection_of_Historical_and_Cultural_Museum-Reserve_%22Zaslavl%22.jpg",
+    "title": "File:Old time joiner instruments in the collection of Historical and Cultural Museum-Reserve \"Zaslavl\".jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Призрак Св. Лаврентия",
+    "alt": "Joinery work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/kitchens-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Empty_apartment_in_Berlin_with_fitted_kitchen_and_chair.jpg",
+    "title": "File:Empty apartment in Berlin with fitted kitchen and chair.jpg",
+    "license": "CC0",
+    "artist": "SmashingIt99",
+    "alt": "Kitchens work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/landscaping-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Paving_Display_at_Downtown_Garden_centre_-_geograph.org.uk_-_1763935.jpg",
+    "title": "File:Paving Display at Downtown Garden centre - geograph.org.uk - 1763935.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Ian Paterson",
+    "alt": "Landscaping work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/painting-decorating-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Modern-Trade-Painter.jpg",
+    "title": "File:Modern-Trade-Painter.jpg",
+    "license": "CC BY-SA 2.5",
+    "artist": "Lukeroberts",
+    "alt": "Painting decorating work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/pat-testing-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:US_Navy_070216-N-2970T-001_Safety_Inspector_Hirofumi_Tokunaga_conducts_an_open_ground_test_on_an_electrical_outlet.jpg",
+    "title": "File:US Navy 070216-N-2970T-001 Safety Inspector Hirofumi Tokunaga conducts an open ground test on an electrical outlet.jpg",
+    "license": "Public domain",
+    "artist": "U.S. Navy photo by Mass Communication Specialist 3rd Class Marvin E. Thompson Jr.",
+    "alt": "Pat testing work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/plumbing-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Matchfit_Plumbing_Competition.jpg",
+    "title": "File:Matchfit Plumbing Competition.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "matchfitskills from Provista Plumbing & Gas in Perth, WA.",
+    "alt": "Plumbing work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/renovation-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_02.jpg",
+    "title": "File:Under Renovation house in Mid-City New Orleans - 02.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Bart Everson",
+    "alt": "Renovation work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/roofing-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sirrako_slate_roof.jpg",
+    "title": "File:Sirrako slate roof.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Etan J. Tal",
+    "alt": "Roofing work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/smoke-co-alarms-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smoke_detector,_Russia_(12).jpg",
+    "title": "File:Smoke detector, Russia (12).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik",
+    "alt": "Smoke co alarms work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/tiling-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fformate_-_Verlegung_Donauhalle_Ulm.jpg",
+    "title": "File:Großformate - Verlegung Donauhalle Ulm.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Alexander Eichler",
+    "alt": "Tiling work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/windows-doors-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Double_glazed_Units.JPG",
+    "title": "File:Double glazed Units.JPG",
+    "license": "CC0",
+    "artist": "Mfc3058",
+    "alt": "Windows doors work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/aov-air-handling-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:L%C3%BCftungsanlage_JCRG_20210904_HOF05266_RAW-Export_20220607003429.jpg",
+    "title": "File:Lüftungsanlage JCRG 20210904 HOF05266 RAW-Export 20220607003429.jpg",
+    "license": "CC BY 4.0",
+    "artist": "PantheraLeo1359531",
+    "alt": "Aov air handling work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/emergency-lighting-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sure-Lites_emergency_exit_light_2.jpg",
+    "title": "File:Sure-Lites emergency exit light 2.jpg",
+    "license": "CC0",
+    "artist": "Dave aldr",
+    "alt": "Emergency lighting work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/rendering-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Flat-roofed_commercial_building_with_rendered_facade,_Gillingham,_Kent,_England.jpg",
+    "title": "File:Flat-roofed commercial building with rendered facade, Gillingham, Kent, England.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "OathOn",
+    "alt": "Rendering work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/groundworks-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ripcord_Construction_Excavating_for_a_New_Home_Build.jpg",
+    "title": "File:Ripcord Construction Excavating for a New Home Build.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CassieMCassid",
+    "alt": "Groundworks work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/insulation-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Loft_insulation_for_sale,_B%26Q_store,_Pool,_Cornwall_-_November_2022.jpg",
+    "title": "File:Loft insulation for sale, B&Q store, Pool, Cornwall - November 2022.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mutney",
+    "alt": "Insulation work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/plastering-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sand-cement-render.jpg",
+    "title": "File:Sand-cement-render.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kebabknight",
+    "alt": "Plastering work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/asbestos-survey-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_Abatement_(8715085022).jpg",
+    "title": "File:Asbestos Abatement (8715085022).jpg",
+    "license": "CC BY 2.0",
+    "artist": "NAVFAC",
+    "alt": "Asbestos survey work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/barriers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sainsbury%27s_car_park_height_restriction_barrier,_Chingford,_London,_England_1.jpg",
+    "title": "File:Sainsbury's car park height restriction barrier, Chingford, London, England 1.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Acabashi",
+    "alt": "Barriers work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/cdm-support-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Construction_Site_Safety_sign.jpg",
+    "title": "File:Construction Site Safety sign.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Rick Obst",
+    "alt": "Cdm support work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/commercial-fit-out-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:School_renovation_under_way_in_Kosovo_(13996237374).jpg",
+    "title": "File:School renovation under way in Kosovo (13996237374).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Army Corps of Engineers Europe District from Wiesbaden, Germany",
+    "alt": "Commercial fit out work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/door-entry-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smart_Intercom_Abrebox.jpg",
+    "title": "File:Smart Intercom Abrebox.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "LaVozTecnologica",
+    "alt": "Door entry work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/evacuation-alerts-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Panasonic_Emergency_Voice_Evacuation_System.jpg",
+    "title": "File:Panasonic Emergency Voice Evacuation System.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Darklanlan",
+    "alt": "Evacuation alerts work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/facilities-management-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Baghdad_South_Power_Station_-_October_2003_-_control_room.jpg",
+    "title": "File:Baghdad South Power Station - October 2003 - control room.jpg",
+    "license": "Public domain",
+    "artist": "Thomas Hartwell, USAID",
+    "alt": "Facilities management work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-alarms-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Alarm_Annunciator.jpg",
+    "title": "File:Fire Alarm Annunciator.jpg",
+    "license": "CC0",
+    "artist": "MarylandGeoffrey",
+    "alt": "Fire alarms work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-compartmentation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3m_fire_barrier_mortar_proper_reentry.jpg",
+    "title": "File:3m fire barrier mortar proper reentry.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "alt": "Fire compartmentation work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-risk-assessments-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Conference_center_receives_USACE_safety_inspection_(4885136304).jpg",
+    "title": "File:Conference center receives USACE safety inspection (4885136304).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Army Corps of Engineers Europe District from Wiesbaden, Germany",
+    "alt": "Fire risk assessments work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-signage-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_and_fire_exit_signs_at_an_Arriva_train,_Groningen_(2022)_01.jpg",
+    "title": "File:Fire extinguisher and fire exit signs at an Arriva train, Groningen (2022) 01.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Donald Trung Quoc Don (Chữ Hán: 徵國單) - Wikimedia Commons - © CC BY-SA 4.0 International.(Want to use this image?)Original publication 📤: --Donald Trung 『徵國單』 (No Fake News 💬) (WikiProject Numismatics 💴) (Articles 📚) 23:40, 6 January 2022 (UTC)",
+    "alt": "Fire signage work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-stopping-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Oldroyd_and_son_installing_3m_fire_barrier_mortar_st_marys_pulp_and_paper2.jpg",
+    "title": "File:Oldroyd and son installing 3m fire barrier mortar st marys pulp and paper2.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering",
+    "alt": "Fire stopping work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-suppression-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Afton_Historical_Museum_Clean_Agent_Fire_Suppression_System_Demonstration-08.jpg",
+    "title": "File:Afton Historical Museum Clean Agent Fire Suppression System Demonstration-08.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Myotus",
+    "alt": "Fire suppression work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/intercoms-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sagrada_Familia,_Barcelona_(P1170687).jpg",
+    "title": "File:Sagrada Familia, Barcelona (P1170687).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Matti Blume",
+    "alt": "Intercoms work on site"
+  },
+  {
+    "file": "/assets/images/page-types/resources/landlord-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Steam_Boiler_Repair_and_Cleaning.jpg",
+    "title": "File:Steam Boiler Repair and Cleaning.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "CV Duta Perdana",
+    "alt": "Landlord compliance work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/project-management-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Site_meeting_at_Ochlawaha_Bog_(5413347466).jpg",
+    "title": "File:Site meeting at Ochlawaha Bog (5413347466).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Fish and Wildlife Service Southeast Region",
+    "alt": "Project management work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/property-refurbishment-pm-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Atr%C3%A9_Akihabara_1_south-west_entrance,_under_interior_construction_(2010-10-15_17.53.41).jpg",
+    "title": "File:Atré Akihabara 1 south-west entrance, under interior construction (2010-10-15 17.53.41).jpg",
+    "license": "CC BY 2.0",
+    "artist": "street viewer",
+    "alt": "Property refurbishment pm work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/sprinkler-systems-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sprinkler.jpg",
+    "title": "File:Sprinkler.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "",
+    "alt": "Sprinkler systems work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/building-surveys-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Surveyor_Using_GNSS_Receiver_with_RTK_Solution.jpg",
+    "title": "File:Surveyor Using GNSS Receiver with RTK Solution.jpg",
+    "license": "CC BY 4.0",
+    "artist": "SweetCanadianMullet",
+    "alt": "Building surveys work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/intruder-alarm-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Diebold_burglar_alarm_on_the_outside_of_a_brick_building.jpg",
+    "title": "File:Diebold burglar alarm on the outside of a brick building.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "The Eloquent Peasant",
+    "alt": "Intruder alarm work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/legionella-risk-assessment-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Day_in_the_Life-_52nd_Aerospace_Medical_Squadron_Bioenvironmental_Engineering_(6072791).jpg",
+    "title": "File:A Day in the Life- 52nd Aerospace Medical Squadron Bioenvironmental Engineering (6072791).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Air Force photo by Senior Airman Kyle Cope",
+    "alt": "Legionella risk assessment work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/nurse-call-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nurse_Call_Button_at_Hospital_(17238701230).jpg",
+    "title": "File:Nurse Call Button at Hospital (17238701230).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Tony Webster from Minneapolis, Minnesota, United States",
+    "alt": "Nurse call work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/electrics-first-fix-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Juan_Bautista_Tuxtepec-_electrical_wiring_inside_of_Hotel_Mirador.jpg",
+    "title": "File:San Juan Bautista Tuxtepec- electrical wiring inside of Hotel Mirador.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Thayne Tuason",
+    "alt": "Electrics first fix work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/loft-conversions-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cherry_Hinton-a_loft_conversion_-_geograph.org.uk_-_6914082.jpg",
+    "title": "File:Cherry Hinton-a loft conversion - geograph.org.uk - 6914082.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Sutton",
+    "alt": "Loft conversions work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/damp-proofing-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaster-removed-rising-damp.jpg",
+    "title": "File:Plaster-removed-rising-damp.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Kebabknight",
+    "alt": "Damp proofing work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/dry-risers-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dry_riser_outlet.jpg",
+    "title": "File:Dry riser outlet.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "ProjectManhattan",
+    "alt": "Dry risers work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/drainage-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fujiks_Water_Jet_Engineering_truck.jpg",
+    "title": "File:Fujiks Water Jet Engineering truck.jpg",
+    "license": "CC0",
+    "artist": "Syced",
+    "alt": "Drainage work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fencing-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fence_Line_Installation_on_Ford_Island_(8942684683).jpg",
+    "title": "File:Fence Line Installation on Ford Island (8942684683).jpg",
+    "license": "CC BY 2.0",
+    "artist": "NAVFAC",
+    "alt": "Fencing work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/driveways-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Laying_sett_block_paving_8355.jpg",
+    "title": "File:Laying sett block paving 8355.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Amada44",
+    "alt": "Driveways work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/demolition-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Demolition_of_old_house_in_Ebisu.jpg",
+    "title": "File:Demolition of old house in Ebisu.jpg",
+    "license": "CC0",
+    "artist": "Syced",
+    "alt": "Demolition work on site"
   }
 ]
