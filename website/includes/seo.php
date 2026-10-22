@@ -613,7 +613,7 @@ function icomply_service_hub_jsonld(
                     '@type' => 'Offer',
                     'name' => ($poa ? 'Price on application — ' : 'Written quote — ') . $serviceName,
                     'description' => $poa
-                        ? ('Request a scoped price-on-application quote for ' . $serviceName . '. No published fee.')
+                        ? ('Request a scoped price-on-application quote for ' . $serviceName . '.')
                         : ('Request a written quote for ' . $serviceName . ' after scope is confirmed.'),
                     'priceCurrency' => 'GBP',
                     'url' => url('/contact.php'),

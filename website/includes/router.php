@@ -167,6 +167,15 @@ function routerDispatchVirtual(string $path): bool {
         return true;
     }
 
+    // Networking, data cabling and mesh Wi-Fi pack hubs (lock 2026-10-20).
+    if (preg_match('#^/pages/(keywords|services|jobs)/([a-z0-9\-]+)$#', $path, $m)) {
+        require_once SITE_ROOT . '/includes/network-pack.php';
+        $npKey = ['keywords' => 'keyword', 'services' => 'service', 'jobs' => 'job'][$m[1]] . '/' . $m[2];
+        if (isset(icomplyNetworkPackHubs()[$npKey])) {
+            renderNetworkPackHub($npKey);
+            return true;
+        }
+    }
     // /pages/keywords/{kw}/{area}
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         if (function_exists('icomplyNationwide3lineIsP0')

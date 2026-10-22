@@ -1,4 +1,4 @@
 <?php
-/** Service guide — unique copy is in the keyword catalogue. */
-require_once __DIR__ . '/../../includes/render.php';
-renderKeywordPage('cctv-remote-viewing-setup');
+/** Network pack hub. Copy: data/network-pack-hubs.json (bin/build-network-pack.py). */
+require_once __DIR__ . '/../../includes/network-pack.php';
+renderNetworkPackHub('keyword/cctv-remote-viewing-setup');

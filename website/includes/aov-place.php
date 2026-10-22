@@ -168,7 +168,7 @@ function aovPlaceArticle(array $t): array
 
     $name = (string)$t['name'];
     $title = "AOV and smoke vents in {$name}";
-    $meta = "Automatic opening vents and smoke control for {$name}, {$t['region']}. Supply kits priced, installation POA. Call " . PHONE . ". No scheme badge claimed.";
+    $meta = "Automatic opening vents and smoke control for {$name}, {$t['region']}. Supply kits priced, installation POA. Call " . PHONE . ".";
     $h1 = "Smoke vents in {$name}";
     if (($seed % 4) === 1) {
         $h1 = "Automatic opening vents for {$name}";

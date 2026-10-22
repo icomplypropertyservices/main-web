@@ -462,4 +462,5 @@ echo '</section>';
         </form>
     </div>
 </section>
+<?php if (in_array((string)$KEYWORD_SLUG, ['data-cabling-installation', 'cctv-switch-and-poe-check', 'cctv-cabling-installation', 'cctv-after-network-change', 'door-entry-cabling', 'intercom-cabling', 'intercom-cabling-installation'], true)) { require_once SITE_ROOT . '/includes/network-pack.php'; echo icomplyNetworkPackLinksHtml(); } ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

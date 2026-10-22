@@ -127,8 +127,8 @@ jobs:
       - name: Every img and og:image on exported pages exists
         run: python3 website/bin/check-images-exist.py dist
 
-      - name: Every optimised WebP matches its source photo (perceptual hash)
-        run: python3 website/bin/check-webp-matches-source.py
+      - name: Networking, data cabling and mesh Wi-Fi pack (words, similarity, links, schema, photos, sitemap)
+        run: python3 website/bin/check-network-pack.py dist
 
       - name: Fire-family service x town depth (>=800 words, sample similarity <=0.70)
         run: python3 website/bin/check-fire-family-depth.py dist

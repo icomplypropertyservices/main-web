@@ -150,7 +150,7 @@ $schema = [
                 '@type' => 'Offer',
                 'name' => ($poaCombo ? 'Price on application — ' : 'Written quote — ') . $serviceName . ' in ' . $areaName,
                 'description' => $poaCombo
-                    ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '. No published fee list.')
+                    ? ('Request a scoped POA quote for ' . $serviceName . ' in ' . $areaName . '.')
                     : ('Request a written quote for ' . $serviceName . ' in ' . $areaName . '.'),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',

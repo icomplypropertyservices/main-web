@@ -71,7 +71,7 @@ def expand(row: dict) -> dict:
         see_line[0].upper() + see_line[1:],
         caveat,
         "Written note for the dutyholder file — not a catalogue certificate",
-        "Price on application after scope — no published fee",
+        "Price on application after scope",
     ]
     faqs = []
     for question, answer in row["faqs"]:

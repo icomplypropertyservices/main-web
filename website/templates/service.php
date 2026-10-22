@@ -236,7 +236,7 @@ $schema = [
                 '@type' => 'Offer',
                 'name' => ($poaService ? 'Price on application — ' : 'Written quote — ') . $serviceName,
                 'description' => $poaService
-                    ? ('Request a scoped POA quote for ' . $serviceName . '. No published fee list.')
+                    ? ('Request a scoped POA quote for ' . $serviceName . '.')
                     : ('Request a written quote for ' . $serviceName . ' installation, servicing and certification.'),
                 'availability' => 'https://schema.org/InStock',
                 'priceCurrency' => 'GBP',
@@ -841,4 +841,5 @@ require_once SITE_ROOT . '/includes/testimonials.php';
         </form>
     </div>
 </section>
+<?php if (in_array((string)$SERVICE_SLUG, ['cctv', 'door-entry', 'intercoms'], true)) { require_once SITE_ROOT . '/includes/network-pack.php'; echo icomplyNetworkPackLinksHtml(); } ?>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>
