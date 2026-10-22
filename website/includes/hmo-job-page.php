@@ -205,7 +205,8 @@ function hmoJobRender(string $id): void
 <?php
 require_once SITE_ROOT . '/includes/quality-bar.php';
 echo '<section class="max-w-7xl mx-auto px-6 py-10">';
-echo icomplyQualityBarImages('electrical', (string)($page['h1'] ?? 'HMO compliance'), 'q2-hub-images')['html'];
+$hmoImg = preg_match('/fire|occupan/i', (string)($page['slug'] ?? '') . ' ' . (string)($page['h1'] ?? '')) ? 'fire-risk-assessments' : 'electrical';
+echo icomplyQualityBarImages($hmoImg, (string)($page['h1'] ?? 'HMO compliance'), 'q2-hub-images')['html'];
 echo '</section>';
 ?>
 <section class="max-w-3xl mx-auto px-6 py-16">

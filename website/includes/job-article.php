@@ -284,6 +284,9 @@ function renderJobArticle(array $page): void
         $jobImageSlug = 'fire-alarms';
         if (preg_match('#/assets/images/services/([a-z0-9\-]+)\.jpg#', $image, $jobImgMatch)) {
             $jobImageSlug = $jobImgMatch[1];
+        } elseif (preg_match('#barrier#', (string)($_SERVER['REQUEST_URI'] ?? '') . ' ' . $h1)) {
+            // QM #158: barrier jobs show barrier photos, not the fire-alarms fallback.
+            $jobImageSlug = 'barriers';
         }
         echo icomplyQualityBarImages($jobImageSlug, $h1, 'q2-hub-images')['html'];
         ?>
