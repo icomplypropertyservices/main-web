@@ -1,0 +1,139 @@
+"""Hand-written copy for the 22 Oct priority pages (SEO rankings queue). Real service detail,
+no prices other than the approved ones, gas wording untouched (none of these are gas pages)."""
+PRIORITY = {
+ "/pages/keywords/aov-maintenance/stockport": {
+  "title": "AOV Maintenance Stockport | Smoke Vent Servicing | iComply",
+  "meta": "AOV maintenance in Stockport: smoke vent, actuator and control panel servicing to BS EN 12101 for blocks and HMOs. Same/Next-Day. Call 07517 806082",
+  "paras": [
+   "Stockport is our home base, so AOV maintenance here is the work we can turn round fastest. Most of the automatic opening vents we look after in the borough sit at the head of common stairs in converted mills around the town centre, in the 1960s and 1970s blocks in Brinnington, Offerton and Adswood, and in newer apartment schemes near the station and along the A6 through Heaton Chapel and Heaton Norris.",
+   "A planned AOV maintenance visit checks the whole smoke control chain, not just whether the window opens. We trigger the system from each smoke detector and break-glass point, time the vent to full open, check the actuator chain or spindle for wear, inspect hinges and seals, confirm the control panel reports faults correctly, test the standby batteries under load and make sure the firefighter override switch on the ground floor works and is clearly labelled.",
+   "Older Stockport blocks often have a mix of equipment: an original panel that is no longer supported, newer actuators fitted after a repair, and vents that were painted shut during redecoration. We record each part, photograph the panel and every vent, and tell you plainly which items are worn, which are obsolete and which simply need adjusting. Where a part is no longer made we offer a compatible replacement rather than a whole new system.",
+   "The Regulatory Reform (Fire Safety) Order and the Fire Safety (England) Regulations 2022 expect smoke control in common parts to be kept in working order, and most fire risk assessments for Stockport blocks ask for a service at least once a year with a monthly user check in between. We leave a logbook entry after every visit and can send the report straight to your managing agent or fire risk assessor.",
+  ],
+  "faqs": [
+   ["How often should AOVs in Stockport be serviced?", "At least once a year by a competent engineer, with a simple weekly or monthly operation test recorded by the responsible person. Busier blocks or systems with known faults may need six-monthly visits."],
+   ["Can you repair an AOV that has failed its test?", "Yes. Most failures are actuators, batteries, detectors or a jammed vent. We carry common parts and can often fix the fault on the same visit; otherwise we quote in writing before ordering."],
+  ],
+ },
+ "/pages/jobs/car-park-barrier": {
+  "title": "Car Park Barrier Installation & Repair Manchester | iComply",
+  "meta": "Car park barrier installation, repair and servicing in Manchester and the North West: rising arms, ANPR, fob and intercom access. Call 07517 806082",
+  "paras": [
+   "This job page covers car park barrier work across Manchester, Stockport, Salford, Trafford and the wider North West: new rising-arm barriers for residential and office car parks, replacement of worn or obsolete units, repairs to arms, motors and loop detectors, and planned servicing so the barrier keeps working on a busy morning.",
+   "A typical installation starts with a site visit. We look at the lane width, traffic volume, where the power and data will come from, whether the ground is suitable for a concrete base, and how residents, staff, visitors and deliveries will get in. From that we recommend the barrier type, arm length and access method: key fob, keypad, intercom, remote, Bluetooth phone access or ANPR number plate recognition.",
+   "Safety matters as much as access. Barriers should have a safety loop or photocells so the arm cannot close on a car or a person, clear signage and a manual release for power cuts. Many repair calls we attend are caused by missing or failed safety loops, arms cut down after a strike, or controllers that have been bypassed. We put those right and leave a written record of what was tested.",
+   "Servicing usually means one or two visits a year: checking the motor and gearbox, springs and balance, the arm and its breakaway, loop detectors and photocells, the access reader and any link to the fire alarm or intercom. Where a barrier is beyond economic repair we say so and price a like-for-like replacement, often reusing the base and ducting to keep costs down. Every quote is POA until we have seen the site.",
+  ],
+  "faqs": [
+   ["Can a car park barrier open automatically for residents' cars?", "Yes. ANPR cameras read number plates and open for registered vehicles, and fob or Bluetooth readers work well for smaller sites. Visitors can use an intercom or keypad."],
+   ["What happens if the barrier loses power?", "A good installation has a manual release and, where needed, a battery backup so the arm can be raised. We check both on every service visit."],
+  ],
+ },
+ "/pages/keywords/repointing-services/bramhall": {
+  "title": "Repointing Services Bramhall | Lime & Brick Pointing",
+  "meta": "Repointing services in Bramhall: brick and stone repointing in lime or sand-cement mortar matched to your home and chimneys. Call 07517 806082",
+  "paras": [
+   "Bramhall has a lot of 1930s semis, Edwardian villas and older cottages around the village centre and Bramhall Park, and most of them now have mortar joints that are worn, cracked or patched with the wrong mix. Repointing done properly keeps rain out of the wall, protects the brick faces and makes the house look cared for.",
+   "We start by checking why the pointing has failed. Joints washing out on a west-facing gable, damp patches inside, cracked render or a leaking gutter all change what the job needs. We rake out the old mortar to a consistent depth, usually 15 to 20 mm, without damaging the brick arrises, then brush and damp down the joints before pointing.",
+   "The mortar has to suit the wall. Older solid-brick and stone houses in Bramhall need a breathable lime mortar so moisture can escape through the joints rather than the bricks; using hard cement on them traps water and causes spalling. Newer cavity-wall homes can take a sand and cement mix. We match colour and joint profile, whether flush, weathered or bucket-handle, to the rest of the house or to neighbouring properties in a conservation area.",
+   "Chimneys, garden walls and gable ends are the most common repointing jobs we quote in Bramhall. Chimney work is done from a tower or scaffold with the flashings checked at the same time. Pricing is POA: you get a written quote once we have seen the wall, the access and how much needs raking out.",
+  ],
+  "faqs": [
+   ["Should my Bramhall house be repointed in lime mortar?", "If it has solid walls, older soft bricks or stone, yes. Lime lets the wall breathe. Most post-war cavity-wall homes can use a sand and cement mortar."],
+   ["How long does repointing a house take?", "A chimney is often one or two days; a full elevation usually takes several days depending on access, weather and how deep the old mortar needs raking."],
+  ],
+ },
+ "/pages/keywords/5-year-eicr-certificate/alderley-edge": {
+  "title": "5 Year EICR Certificate Alderley Edge from £160 | iComply",
+  "meta": "5 year EICR certificate in Alderley Edge from £160 for landlords and homeowners: full electrical test, written report, remedials. Call 07517 806082",
+  "paras": [
+   "Private landlords in England must have the electrics in each rented home inspected and tested at least every five years under the Electrical Safety Standards in the Private Rented Sector Regulations 2020, and give a copy of the report to tenants within 28 days. In Alderley Edge that covers everything from flats above the London Road shops to large detached houses let to families and company tenants.",
+   "An EICR (Electrical Installation Condition Report) is a full inspection and test of the fixed wiring: the consumer unit, circuits, sockets, light fittings, earthing and bonding, and RCD protection. Our electrician tests each circuit, records the readings and lists any defects with a code: C1 for danger present, C2 for potentially dangerous, C3 for improvement recommended and FI for further investigation.",
+   "Larger Alderley Edge properties often have more circuits, outbuildings, garden lighting, electric gates or a pool house, so the test takes longer. EICRs are from £160 for a typical property; larger installations are POA once we know the circuit count. If the report finds C1 or C2 items, the landlord has 28 days to fix them, and we can quote for and carry out the remedial work and issue the confirmation you need.",
+   "Homeowners also book a 5 year EICR before buying or selling, after a long period empty or before an extension or rewire. You get the full report by email, normally the same day, with photos of anything that needs attention and a plain-English summary of what matters most.",
+  ],
+  "faqs": [
+   ["Is a 5 year EICR a legal requirement for landlords in Alderley Edge?", "Yes, for private rented homes in England. The installation must be inspected at least every five years, or sooner if the previous report says so."],
+   ["How much is a 5 year EICR in Alderley Edge?", "From £160 for a typical property. Larger homes with more circuits or outbuildings are POA once we know the size."],
+  ],
+ },
+}
+
+DEEP = {
+ "/pages/services/aov-air-handling": {
+  "town": None,
+  "title": "AOV & Air Handling Servicing Manchester | iComply",
+  "meta": "AOV and air handling servicing in Manchester: smoke vents, actuators, control panels, dampers and fans tested to BS EN 12101. Call 07517 806082",
+  "h2": "AOV and air handling servicing: what we check and why",
+  "paras": [
+   "Automatic opening vents (AOVs) and the air handling that works alongside them are what keep a stair or corridor clear of smoke long enough for residents to get out and for firefighters to get in. In most blocks of flats, HMOs, care homes and offices across Greater Manchester they are installed once and then forgotten until a fire risk assessment flags them as faulty. This page explains what a proper service covers, what goes wrong and how we put it right.",
+   "A natural smoke ventilation system is usually a vent or window at the head of the stair, sometimes with vents on each corridor, opened by an electric actuator. Smoke detectors or a break-glass point signal the control panel, which opens the vents and, in mechanical systems, starts extract fans and moves smoke dampers. A firefighter override switch at ground level lets the fire service open or close the system manually.",
+   "Mechanical systems add fans, dampers, ductwork and often a pressure sensor. These are found in deeper-plan buildings, basements, car parks and newer high-rise blocks where a single vent at the top of a stair is not enough. Air handling units serving the same building may also need to shut down or switch to smoke mode when the fire alarm operates, and that interface is one of the most commonly missed checks.",
+   "Our service visit follows BS EN 12101 and BS 9999 guidance and the manufacturer's instructions. We operate the system from each detector and call point, time the vents to fully open, inspect actuators, chains, spindles, hinges and seals, check that dampers move to their fire position, confirm fans start and run in the right direction, load test the standby batteries and check that faults show correctly on the panel and at any remote monitoring.",
+   "We then test the override switch, the reset sequence and the link to the fire alarm, and check that the vents close again and seal properly so the building is not left open to the weather. Each vent, panel, damper and fan is photographed and logged with its location, make and condition, so the next visit is quicker and your fire risk assessor has evidence the system works.",
+   "The faults we find most often are flat batteries, actuators that have burnt out or lost their chain, vents painted or screwed shut during decoration, detectors removed during works and never replaced, panels showing a fault that everyone has learned to ignore, and dampers seized open. In older systems the panel itself may be obsolete. Where that happens we offer compatible replacement parts or a new panel that works with the vents you already have, rather than starting from scratch.",
+   "Responsible persons have a duty under the Regulatory Reform (Fire Safety) Order 2005 to keep fire safety systems in good working order, and the Fire Safety (England) Regulations 2022 add specific duties for residential blocks. Most fire risk assessments ask for an annual engineer's service with a weekly or monthly user test recorded in the logbook. We can set up the logbook, show the caretaker how to do the user test and remind you when the next service is due.",
+   "After the visit you get a written report with pass or fail for each component, photographs, the faults found and what we recommend, in order of urgency. Repairs are quoted in writing before any work goes ahead, and most common parts such as actuators, batteries and detectors are carried on the van so faults can often be fixed on the same day.",
+   "We work across Manchester, Stockport, Salford, Trafford, Tameside, Bolton, Bury, Oldham, Rochdale and Wigan, and further into Cheshire, Lancashire and Merseyside, from our base in Stockport. Same or next-day visits are offered for systems that have failed, and planned servicing is booked at a time that suits residents and staff. Pricing is POA: every building is different, so we quote once we know how many vents, fans and panels there are.",
+   'Different buildings need different approaches. In a converted mill or Victorian terrace turned into flats, the AOV is often a single roof light or window at the head of the stair, retrofitted after a fire risk assessment, and the main concerns are access, weathering and whether the actuator was sized for the vent. In purpose-built blocks from the 2000s onwards there may be corridor vents on every floor, shafts with dampers and a more complex panel. In car parks and basements, jet fans and extract fans do the work and need their own checks of bearings, belts and motor current.',
+   'Before we arrive we ask for any existing logbook, the last service report, the fire risk assessment and drawings if you have them. That saves time on site and lets us bring the right parts. If nothing is available, the first visit doubles as a survey: we map every vent, detector, panel and fan, give each one a reference and leave you with a simple schedule that the next engineer, whoever it is, can follow.',
+  ],
+  "faqs": [
+   ["How often should AOVs and smoke control fans be serviced?", "At least once a year by a competent engineer, with weekly or monthly operation tests by the responsible person. Mechanical systems and busy buildings often benefit from six-monthly visits."],
+   ["Can you service systems installed by another company?", "Yes. We work on most common makes of vent, actuator, panel and fan, and source compatible parts where the original equipment is no longer made."],
+   ["Do you test the link between the fire alarm and the air handling?", "Yes. We check that air handling units shut down or switch to smoke mode when the alarm operates, and that dampers move to their fire position."],
+   ["How much does an AOV service cost?", "Pricing is POA because it depends on the number of vents, fans and panels. We give you a written quote before any work."],
+  ],
+ },
+ "/pages/keywords/emergency-lighting-test": {
+  "town": None,
+  "title": "Emergency Lighting Test North West | BS 5266 | iComply",
+  "meta": "Emergency lighting test to BS 5266: monthly flick tests, annual 3-hour duration tests, logbooks and certificates for blocks and HMOs. Call 07517 806082",
+  "h2": "Emergency lighting testing: monthly checks, annual duration tests and certificates",
+  "paras": [
+   "Emergency lighting comes on automatically when the normal lighting fails, so people can find their way out along escape routes, see changes of level and locate fire alarm call points and extinguishers. It only works if the batteries and lamps are healthy, which is why BS 5266-1 sets out a routine of regular testing. We carry out that testing for blocks of flats, HMOs, offices, shops, schools and care homes across the North West.",
+   "There are two kinds of test. The monthly functional test, often called a flick test, briefly cuts the mains supply to each fitting to check that it switches to battery and lights up. The annual full-duration test runs every fitting on battery for its full rated time, usually three hours, to prove the battery can still hold the light for long enough. Both must be recorded in the emergency lighting logbook.",
+   "Many responsible persons do the monthly test themselves using a fish key switch, and we can show staff or caretakers how. The annual duration test is best done by a competent person, because the building needs to stay safe while the batteries recharge afterwards. We plan it so that areas are tested in sections or at quiet times, and we never leave a building without working emergency lighting overnight.",
+   "On an annual visit we test every fitting, including maintained fittings over exits, non-maintained bulkheads, emergency spurs in standard light fittings and exit signs. We check that each one reaches full brightness, lasts the full duration and recharges, inspect diffusers and housings for damage, and confirm the test key switches are labelled and working. Each fitting is logged by location so faults are easy to find on the next visit.",
+   "The faults we find most often are failed batteries, especially in fittings more than four years old, LED drivers or lamps that have failed, fittings removed during redecoration and never put back, exit signs pointing the wrong way after a layout change, and areas such as stairs, toilets over eight square metres, plant rooms and outside final exits that were never covered at all. We list these in the report with photos and a clear priority.",
+   "Where batteries have failed we can replace them on the day, or replace the whole fitting where an LED unit will cost less to run and last longer. For larger sites, self-test or addressable emergency lighting runs the monthly and annual tests automatically and reports faults to a panel or online dashboard, cutting the time spent on ladders. We can survey and quote for that upgrade if it suits your building.",
+   "After testing you receive a BS 5266 emergency lighting test certificate and an updated logbook, which your fire risk assessor, insurer and the fire service may ask to see. If the system does not meet the standard we say what is needed to bring it up to date and quote for the work in writing. Pricing for testing is POA because it depends on the number of fittings and how easy they are to reach.",
+   "Our engineers travel from Stockport and cover Greater Manchester, Cheshire, Lancashire, Merseyside and the wider North West. Same or next-day visits are often possible for failed fittings, and planned annual tests are booked at a time that suits you, including early mornings, evenings and weekends for shops and offices that cannot lose lighting during the working day.",
+   'Different buildings bring different problems. In HMOs and converted houses the emergency lighting is often a handful of non-maintained bulkheads on the landings and stairs, fitted at the time of licensing and rarely touched since, so batteries are frequently the original ones. In offices and shops there are usually more fittings, exit signs and fittings tied into the general lighting, and the main challenge is testing without disrupting staff and customers. Blocks of flats add long corridors, bin stores, plant rooms and car parks, all of which need lighting along the escape route.',
+   'Before the first visit we ask for the existing logbook, the last certificate and the fire risk assessment if you have them, and a rough count of fittings. If there are no records, the first test doubles as a survey: we number every fitting, mark it on a simple plan and leave you with a schedule that makes later monthly tests quicker for whoever carries them out. That record is often the first thing an insurer or fire officer asks to see after a fault or an incident.',
+   'Emergency lighting also has to be designed for the building as it is now. If walls have moved, rooms have been split, or a staircase has been enclosed, the original layout may leave dark spots on the escape route. Where the test shows gaps in coverage, we note them and can propose extra fittings, so the report reflects the building you actually have rather than the one on the original drawings.',
+  ],
+  "faqs": [
+   ["How often must emergency lighting be tested?", "BS 5266-1 asks for a short functional test every month and a full-duration test, usually three hours, once a year. Both are recorded in the logbook."],
+   ["Can I do the monthly emergency lighting test myself?", "Yes. A responsible person can do the monthly flick test with a test key. The annual duration test should be done by a competent engineer."],
+   ["What certificate do I get after an emergency lighting test?", "A BS 5266 periodic inspection and test certificate plus an updated logbook listing every fitting and any faults found."],
+   ["How much does an emergency lighting test cost?", "It is POA because it depends on the number of fittings and access. We quote in writing before the visit."],
+  ],
+ },
+ "/pages/fire-risk-assessments/westhoughton": {
+  "town": "Westhoughton",
+  "title": "Fire Risk Assessment Westhoughton from £350 | iComply",
+  "meta": "Fire risk assessment in Westhoughton from £350 for a typical 6-bed HMO in the North West; other properties POA. Written report. Call 07517 806082",
+  "h2": "Fire risk assessments in Westhoughton: HMOs, flats, shops and small businesses",
+  "paras": [
+   "Westhoughton sits between Bolton and Wigan, and its mix of buildings shapes what a fire risk assessment needs to look at. There are terraced streets around Market Street and Church Street converted into flats and HMOs, shops with living space above, small industrial units off the A58 and the Hunger Hill area, churches and community halls, and newer estates towards Chequerbent and Over Hulton.",
+   "Under the Regulatory Reform (Fire Safety) Order 2005, the responsible person for any non-domestic premises, and for the common parts of flats and HMOs, must have a suitable and sufficient fire risk assessment, keep it under review and act on what it finds. If five or more people work there, or the premises are licensed or an HMO, the significant findings must be written down. Bolton Council's HMO licensing team will ask to see it.",
+   "Our assessor visits the building and walks every escape route. We look at how a fire could start, such as kitchens, electrical equipment, heaters, smoking, rubbish storage and arson risk, who could be at risk and how quickly they could get out. In Westhoughton terraces that usually means checking the single staircase, the doors onto it, the fire separation between the shop and the flats above and whether the alarm reaches every bedroom.",
+   "We check fire doors and their closers, fire alarm and detection, emergency lighting, signage, fire extinguishers and blankets, any gaps in fire-resisting walls and ceilings, storage on escape routes, and the arrangements for testing and maintenance. For HMOs we follow the LACORS housing fire safety guidance used by most councils, which sets out the expected level of alarm, doors and escape for each type of house.",
+   "The written report lists each hazard, the people at risk and the existing controls, then gives an action plan with each item ranked as high, medium or low priority and a suggested timescale. It is written in plain English so landlords, managing agents and shop owners can act on it, not just file it. You get the report by email, usually within a few working days of the visit.",
+   "Fire risk assessments are From £350 for a typical 6-bed HMO in the North West; other properties POA. Larger blocks, mixed-use buildings, care settings and industrial units are quoted once we know the size, layout and use. If the action plan calls for work such as fire doors, alarm upgrades, emergency lighting or fire stopping, we can quote for that too, but you are free to use any competent contractor.",
+   "A fire risk assessment should be reviewed regularly and whenever something significant changes: new tenants, a change of use, building work, a fire or near miss, or a change to the alarm or doors. Many Westhoughton landlords book a yearly review to keep their HMO licence file up to date. We remind you when the next review is due and keep a copy of every report on file.",
+   "We are based in Stockport and work across Bolton, Wigan, Horwich, Atherton, Hindley, Leigh and the rest of Greater Manchester. Same or next-day visits are offered where the diary allows, which helps when a council inspection, insurer or new tenancy is close. Call 07517 806082 or email icomplypropertyservices@gmail.com with the address and type of building to book.",
+   "Many Westhoughton buildings have been altered several times. A shop may have had its flat above split into two, a terrace may have had a loft converted into a bedroom, or a former pub or chapel may now be offices or flats. Each change can affect escape routes, fire separation and alarm coverage, so we ask about the building's history and look above ceilings and inside cupboards where we can. Where we cannot see something, such as the construction of a floor between a shop and a flat, the report says so and suggests how to check it.",
+   'We also look at management, not just hardware. Who tests the alarm and emergency lighting, and is it recorded? Do tenants know what to do if the alarm sounds? Are fire doors being wedged open, are bins stored inside, are bikes and prams blocking the stairs? Small changes in how a building is run often reduce the risk more than expensive works, and the action plan includes them alongside any physical improvements.',
+   'If you already have an older fire risk assessment, send it to us before the visit. We will review it, keep what still applies and focus on what has changed, which keeps the report useful and avoids repeating work. For landlords with several properties in Westhoughton and the surrounding towns, we can plan the visits together and use one consistent report format for the whole portfolio.',
+   'Assessments are carried out by an experienced fire risk assessor who visits in person; we never produce a report from photos or a questionnaire alone. If the building is occupied we work around tenants and staff, and if any serious risk is found during the visit, such as a blocked exit or a disabled alarm, we tell you on the day rather than waiting for the report.',
+  ],
+  "faqs": [
+   ["How much is a fire risk assessment in Westhoughton?", "From £350 for a typical 6-bed HMO in the North West; other properties POA."],
+   ["Do HMOs in Westhoughton need a written fire risk assessment?", "Yes. The common parts of HMOs and flats fall under the Fire Safety Order, and Bolton Council will expect a written assessment for licensed HMOs."],
+   ["How often should a fire risk assessment be reviewed?", "Regularly, and after any significant change. Most landlords and businesses review it every year."],
+   ["What happens after the assessment?", "You receive a written report with a prioritised action plan. We can quote for any work it recommends, but you can use any competent contractor."],
+  ],
+ },
+}

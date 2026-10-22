@@ -10,7 +10,11 @@ import doc from "../../website/data/money-ctr-c1-c15.json" with { type: "json" }
 // GSC 21 Oct upgrade queue (scripts/gsc-2026-10-21/build_upgrade_pages.py). C1-C15 win on overlap.
 import gscDoc from "../../website/data/gsc-upgrade-2026-10-21.json" with { type: "json" };
 
-const PAGES = { ...(gscDoc.pages || {}), ...(doc.pages || {}) };
+// GSC rankings upgrade 22 Oct (scripts/gsc-2026-10-22/build_rank_upgrade.py): wins over C1-C15 and 21 Oct.
+import rankDoc from "../../website/data/gsc-upgrade-2026-10-22.json" with { type: "json" };
+
+const PAGES = { ...(gscDoc.pages || {}), ...(doc.pages || {}), ...(rankDoc.pages || {}) };
+const INBOUND = rankDoc.inbound || {};
 const SITE = "https://icomplypropertyservices.co.uk";
 
 function esc(value) {
@@ -46,7 +50,23 @@ export function moneyCtrPage(path) {
   return PAGES[path] || null;
 }
 
-export function applyMoneyCtr(path, html) {
+/** Hub -> upgraded page links (22 Oct queue). Idempotent; skips links the page already has. */
+export function applyRankInbound(path, html) {
+  const list = INBOUND[path];
+  if (!list || typeof html !== "string" || html.includes('data-pe-slot="rank-inbound"')) return html;
+  const have = internalHrefs(html);
+  const add = list.filter(([href]) => href !== path && !have.has(href));
+  if (!add.length) return html;
+  const nav = `<nav class="money-ctr-links" data-pe-slot="rank-inbound" aria-label="Popular local pages" style="max-width:72rem;margin:2rem auto;padding:0 1rem"><h2>Popular local pages</h2><ul>${add.map(([href, label]) => `<li><a href="${esc(href)}">${esc(label)}</a></li>`).join("")}</ul></nav>`;
+  for (const anchor of ["<footer", "</body>"]) {
+    const i = html.indexOf(anchor);
+    if (i !== -1) return html.slice(0, i) + nav + html.slice(i);
+  }
+  return html;
+}
+
+export function applyMoneyCtr(path, rawHtml) {
+  const html = applyRankInbound(path, rawHtml);
   const page = PAGES[path];
   if (!page || typeof html !== "string") return html;
   let out = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);

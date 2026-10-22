@@ -19,8 +19,41 @@ function icomplyMoneyCtrPages(): array
         if (is_array($gsc['pages'] ?? null)) {
             $pages = $pages + $gsc['pages'];
         }
+        // GSC rankings upgrade 22 Oct wins over C1-C15 and 21 Oct.
+        $rank = icomplyRankDoc();
+        if (is_array($rank['pages'] ?? null)) {
+            $pages = $rank['pages'] + $pages;
+        }
     }
     return $pages;
+}
+
+function icomplyRankDoc(): array
+{
+    static $doc = null;
+    if ($doc === null) {
+        $f = dirname(__DIR__) . '/data/gsc-upgrade-2026-10-22.json';
+        $doc = is_file($f) ? (json_decode((string)file_get_contents($f), true) ?: []) : [];
+    }
+    return $doc;
+}
+
+/** Hub -> upgraded page links (22 Oct queue). Twin of applyRankInbound in money-ctr.js. */
+function icomplyApplyRankInbound(string $path, string $html): string
+{
+    $list = icomplyRankDoc()['inbound'][$path] ?? null;
+    if (!is_array($list) || str_contains($html, 'data-pe-slot="rank-inbound"')) return $html;
+    $have = icomplyMoneyCtrInternalHrefs($html);
+    $add = array_values(array_filter($list, fn($l) => $l[0] !== $path && !isset($have[$l[0]])));
+    if (!$add) return $html;
+    $nav = '<nav class="money-ctr-links" data-pe-slot="rank-inbound" aria-label="Popular local pages" style="max-width:72rem;margin:2rem auto;padding:0 1rem"><h2>Popular local pages</h2><ul>';
+    foreach ($add as [$href, $label]) $nav .= '<li><a href="' . icomplyMoneyCtrEsc($href) . '">' . icomplyMoneyCtrEsc($label) . '</a></li>';
+    $nav .= '</ul></nav>';
+    foreach (['<footer', '</body>'] as $anchor) {
+        $i = strpos($html, $anchor);
+        if ($i !== false) return substr($html, 0, $i) . $nav . substr($html, $i);
+    }
+    return $html;
 }
 
 function icomplyMoneyCtrEsc(string $v): string
@@ -56,6 +89,7 @@ function icomplyMoneyCtrSetMeta(string $html, string $attr, string $key, string 
 
 function icomplyApplyMoneyCtr(string $path, string $html): string
 {
+    $html = icomplyApplyRankInbound($path, $html);
     $pages = icomplyMoneyCtrPages();
     $page = $pages[$path] ?? null;
     if (!is_array($page)) return $html;
