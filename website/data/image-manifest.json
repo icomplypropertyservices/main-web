@@ -16788,25 +16788,6 @@
       }
     ]
   },
-  "/assets/images/manufacturers/fermax-door-entry.jpg": {
-    "width": 640,
-    "height": 480,
-    "origBytes": 27951,
-    "variants": [
-      {
-        "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/4fbf31681c4a-480.webp",
-        "bytes": 8228
-      },
-      {
-        "w": 640,
-        "h": 480,
-        "webp": "/assets/images/opt/4fbf31681c4a-640.webp",
-        "bytes": 12812
-      }
-    ]
-  },
   "/assets/images/manufacturers/videx.jpg": {
     "width": 640,
     "height": 480,
@@ -18570,81 +18551,6 @@
         "h": 823,
         "webp": "/assets/images/opt/f2d29d643f2f-1280.webp",
         "bytes": 34558
-      }
-    ]
-  },
-  "/assets/images/services/epc-context.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 160246,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/f320c638f20b-480.webp",
-        "bytes": 15170
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/f320c638f20b-800.webp",
-        "bytes": 27662
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/f320c638f20b-1280.webp",
-        "bytes": 47804
-      }
-    ]
-  },
-  "/assets/images/services/epc-photo.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 160246,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/e959943168e3-480.webp",
-        "bytes": 15170
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/e959943168e3-800.webp",
-        "bytes": 27662
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/e959943168e3-1280.webp",
-        "bytes": 47804
-      }
-    ]
-  },
-  "/assets/images/services/epc.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 160246,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/66486ea684f1-480.webp",
-        "bytes": 15170
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/66486ea684f1-800.webp",
-        "bytes": 27662
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/66486ea684f1-1280.webp",
-        "bytes": 47804
       }
     ]
   },
@@ -25139,6 +25045,131 @@
         "h": 1049,
         "webp": "/assets/images/opt/31315193ea15-1280.webp",
         "bytes": 68486
+      }
+    ]
+  },
+  "/assets/images/services/epc-context.jpg": {
+    "width": 1102,
+    "height": 1600,
+    "origBytes": 177476,
+    "variants": [
+      {
+        "w": 480,
+        "h": 697,
+        "webp": "/assets/images/opt/7c03b8d48aaf-480.webp",
+        "bytes": 19766
+      },
+      {
+        "w": 800,
+        "h": 1162,
+        "webp": "/assets/images/opt/7c03b8d48aaf-800.webp",
+        "bytes": 41648
+      },
+      {
+        "w": 1102,
+        "h": 1600,
+        "webp": "/assets/images/opt/7c03b8d48aaf-1102.webp",
+        "bytes": 65042
+      }
+    ]
+  },
+  "/assets/images/services/epc-photo.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 271525,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/b397d811a110-480.webp",
+        "bytes": 17856
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/b397d811a110-800.webp",
+        "bytes": 39126
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/b397d811a110-1280.webp",
+        "bytes": 73962
+      }
+    ]
+  },
+  "/assets/images/services/epc.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 108058,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/7b0277c4b3d3-480.webp",
+        "bytes": 6114
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/7b0277c4b3d3-800.webp",
+        "bytes": 11652
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/7b0277c4b3d3-1280.webp",
+        "bytes": 21226
+      }
+    ]
+  },
+  "/assets/images/manufacturers/came.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 564085,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/0caf233e1bd5-480.webp",
+        "bytes": 38582
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/0caf233e1bd5-800.webp",
+        "bytes": 109676
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/0caf233e1bd5-1280.webp",
+        "bytes": 253844
+      }
+    ]
+  },
+  "/assets/images/manufacturers/fermax-door-entry.jpg": {
+    "width": 1067,
+    "height": 1600,
+    "origBytes": 185488,
+    "variants": [
+      {
+        "w": 480,
+        "h": 720,
+        "webp": "/assets/images/opt/a8fdd515aaea-480.webp",
+        "bytes": 14542
+      },
+      {
+        "w": 800,
+        "h": 1200,
+        "webp": "/assets/images/opt/a8fdd515aaea-800.webp",
+        "bytes": 27982
+      },
+      {
+        "w": 1067,
+        "h": 1600,
+        "webp": "/assets/images/opt/a8fdd515aaea-1067.webp",
+        "bytes": 47090
       }
     ]
   }

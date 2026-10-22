@@ -338,27 +338,6 @@
     "artist": "Bob Harvey"
   },
   {
-    "file": "/assets/images/services/epc.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Prukaz_energeticke_narocnosti_budovy_vzor2020.jpg",
-    "title": "File:Prukaz energeticke narocnosti budovy vzor2020.jpg",
-    "license": "Public domain",
-    "artist": "Czech Goverment"
-  },
-  {
-    "file": "/assets/images/services/epc-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Prukaz_energeticke_narocnosti_budovy_vzor2020.jpg",
-    "title": "File:Prukaz energeticke narocnosti budovy vzor2020.jpg",
-    "license": "Public domain",
-    "artist": "Czech Goverment"
-  },
-  {
-    "file": "/assets/images/services/epc-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Prukaz_energeticke_narocnosti_budovy_vzor2020.jpg",
-    "title": "File:Prukaz energeticke narocnosti budovy vzor2020.jpg",
-    "license": "Public domain",
-    "artist": "Czech Goverment"
-  },
-  {
     "file": "/assets/images/services/ev-chargers.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Tesla_Wall_Connector_EV_charging_station_installed_outdoors_in_Newton_MA_1.jpg",
     "title": "File:Tesla Wall Connector EV charging station installed outdoors in Newton MA 1.jpg",
@@ -5823,5 +5802,45 @@
     "license": "CC BY-SA 3.0",
     "artist": "Taborsky",
     "alt": "Door entry intercom panel at a building entrance"
+  },
+  {
+    "file": "/assets/images/manufacturers/came.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Centurion_D5_Evo_gate_motor_installation,_Garsfontein_Pretoria.jpg",
+    "title": "File:Centurion D5 Evo gate motor installation, Garsfontein Pretoria.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Felix chidanyika",
+    "alt": "Gate automation motor being wired on site"
+  },
+  {
+    "file": "/assets/images/manufacturers/fermax-door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dezen_15.JPG",
+    "title": "File:Dezen 15.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Filipograf",
+    "alt": "Video door entry handset on a wall"
+  },
+  {
+    "file": "/assets/images/services/epc.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Behind_the_Scenes-_Airflow_Humidity_and_Temperature_Testing_(9593362).jpg",
+    "title": "File:Behind the Scenes- Airflow Humidity and Temperature Testing (9593362).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Army photo by Monique Freemon",
+    "alt": "Energy assessor checking a room with a thermal camera"
+  },
+  {
+    "file": "/assets/images/services/epc-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:BlowerDoor.jpg",
+    "title": "File:BlowerDoor.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Bauthermografie & Luftdichtheitsprüfung Lutz Weidner / Thüringen.\n\nAnobiumpuncta",
+    "alt": "Blower door air-tightness test with laptop readout"
+  },
+  {
+    "file": "/assets/images/services/epc-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Blower_Door.png",
+    "title": "File:Blower Door.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ket555",
+    "alt": "Blower door fan fitted in a front doorway"
   }
 ]
