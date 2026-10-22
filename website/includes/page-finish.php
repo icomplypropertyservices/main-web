@@ -173,7 +173,7 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     $n = count($gen); $start = $n ? (int)(crc32($path) % $n) : 0;
     for ($i = 0; $i < $n; $i++) { $paras[] = $gen[($start + $i) % $n]; }
     $out = []; $w = $have;
-    foreach ($paras as $p) { if ($w >= 860) { break; } $out[] = $p; $w += str_word_count($p); }
+    foreach ($paras as $p) { if ($w >= 1000) { break; } $out[] = $p; $w += str_word_count($p); }
     if (!$out) { return $html; }
     $title = $names ? 'Good to know about ' . implode(' and ', $names) : 'How we work';
     $sec = '<section data-pf-depth class="pf-depth max-w-7xl mx-auto px-6 py-8"><h2 class="text-2xl font-semibold">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h2>';
