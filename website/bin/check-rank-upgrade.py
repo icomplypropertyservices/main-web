@@ -13,7 +13,7 @@ src = open(spec.origin).read().split("\nd = sys.argv")[0]; G = {}; exec(src, G);
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DOC = json.load(open(os.path.join(ROOT, "website/data/gsc-upgrade-2026-10-22.json")))
 SITE = "https://icomplypropertyservices.co.uk"
-BAN = re.compile(r"07471|info@|BAFE-backed|fixed pricing is used|fixed written quote|we do not dump|Gas Safe registered(?! engineers)", re.I)
+BAN = re.compile(r"Gas Safe install|aligned to Gas Safe|07471|info@|BAFE-backed|fixed pricing is used|fixed written quote|we do not dump|Gas Safe registered(?! engineers)", re.I)
 d = sys.argv[1] if len(sys.argv) > 1 else "/tmp/rank-render"
 rows = [l.rstrip("\n").split("\t") for l in open(os.path.join(d, "index.tsv")) if l.strip()]
 fails, fam, report = [], collections.defaultdict(dict), []
@@ -40,6 +40,8 @@ for p, kind, status, f in rows:
     t = H.unescape((re.search(r"<title>([\s\S]*?)</title>", h) or [None, ""])[1]).strip()
     md = H.unescape((re.search(r'<meta name="description" content="([^"]*)"', h) or [None, ""])[1])
     if t != e["title"] or len(t) > 60: fails.append(f"{p}: title {t!r}")
+    if e.get("town") and e["town"].lower() not in t.split("|")[0].lower(): fails.append(f"{p}: town {e['town']!r} not before first '|' in {t!r}")
+    if "Same/Next-Day" not in t: fails.append(f"{p}: Same/Next-Day missing from title (Jack 19 Oct)")
     if md != e["meta"] or not 140 <= len(md) <= 155: fails.append(f"{p}: meta {len(md)} {md[:50]!r}")
     rb = re.search(r'<meta name="robots" content="([^"]*)"', h)
     if not rb or "noindex" in rb.group(1): fails.append(f"{p}: robots")

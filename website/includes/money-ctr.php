@@ -114,6 +114,9 @@ function icomplyApplyMoneyCtr(string $path, string $html): string
     $pages = icomplyMoneyCtrPages();
     $page = $pages[$path] ?? null;
     if (!is_array($page)) return $html;
+    if (($page['brief'] ?? '') === 'GSC-2026-10-22' && !preg_match('/gas|boiler|cp12|lgsr|heating|flue|cooker|hob/', $path)) {
+        $html = preg_replace('#<details class="foot-sub"><summary>Gas Systems</summary>.*?</details>#s', '', $html, 1) ?? $html;
+    }
     $schema = icomplyRankSchema($path, $page, $html);
     if ($schema !== '') $html = stripos($html, '</head>') !== false ? preg_replace('#</head>#i', $schema . '</head>', $html, 1) : $html . $schema;
     $out = preg_replace('/<title>[\s\S]*?<\/title>/i', '<title>' . icomplyMoneyCtrEsc($page['title']) . '</title>', $html, 1) ?? $html;

@@ -15,6 +15,7 @@ import rankDoc from "../../website/data/gsc-upgrade-2026-10-22.json" with { type
 
 const PAGES = { ...(gscDoc.pages || {}), ...(doc.pages || {}), ...(rankDoc.pages || {}) };
 const INBOUND = rankDoc.inbound || {};
+const GAS_PATH = /gas|boiler|cp12|lgsr|heating|flue|cooker|hob/;
 const SITE = "https://icomplypropertyservices.co.uk";
 
 function esc(value) {
@@ -87,6 +88,8 @@ export function applyMoneyCtr(path, rawHtml) {
   const page = PAGES[path];
   if (!page || typeof html !== "string") return html;
   let out = html;
+  // SEO #158: non-gas 22 Oct pages drop the footer Gas Systems list.
+  if (page.brief === "GSC-2026-10-22" && !GAS_PATH.test(path)) out = out.replace(/<details class="foot-sub"><summary>Gas Systems<\/summary>[\s\S]*?<\/details>/, "");
   const schema = rankSchema(path, page, out);
   if (schema) out = /<\/head>/i.test(out) ? out.replace(/<\/head>/i, schema + "</head>") : out + schema;
   out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${esc(page.title)}</title>`);

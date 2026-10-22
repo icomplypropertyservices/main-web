@@ -1,20 +1,16 @@
-/pages/keywords/emergency-lighting-installation/rochdale	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
-/pages/keywords/epc-insulation-works-cost/weaverham	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
-/pages/services/battery-storage	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
-/pages/keywords/emergency-lighting-design/burscough	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
-/pages/fire-risk-assessments/westhoughton	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
-/pages/keywords/gas-leak-detection	www/apex FAIL row: the page itself is upgraded via its apex row; www->apex is the host-level 301
+/pages/keywords/emergency-lighting-installation/rochdale	existing C1-C15 money page (200, CTA OK); FAIL row is only the www->apex host 301
+/pages/services/battery-storage	301 to /pages/services (not a page)
+/pages/keywords/emergency-lighting-design/burscough	existing C1-C15 money page (200, CTA OK); FAIL row is only the www->apex host 301
+/pages/keywords/gas-leak-detection	existing C1-C15 money page (200, CTA OK); FAIL row is only the www->apex host 301
 /pages/services/fire-doors	C1-C15 money page already authored (inbound hub links still added)
 /pages/keywords/emergency-lighting-annual-test/warrington	C1-C15 money page already authored (inbound hub links still added)
 /pages/dry-risers/foxdenton	not a page (one-hop 301 to its hub)
 /pages/ev-charging/parbold	not a page (one-hop 301 to its hub)
 /pages/fire-alarms/chorlton.php	not a page (one-hop 301 to its hub)
 /pages/ev-chargers	not a page (one-hop 301 to its hub)
-/pages/keywords/emergency-lighting-annual-test/warrington	C1-C15 money page already authored (inbound hub links still added)
 /pages/fire-risk-assessments/buxworth	not a page (one-hop 301 to its hub)
 /pages/keywords/fire-risk-assessment-support/carlisle	out-of-ring town: one-hop 301 to its keyword hub
 /pages/fire-signage/four-gates	not a page (one-hop 301 to its hub)
 /pages/keywords/fascia-and-soffit-replacement/whalley	out-of-ring town: one-hop 301 to its keyword hub
 /pages/keywords/electrical-certification/rossendale	out-of-ring town: one-hop 301 to its keyword hub
 /pages/keywords/home-ev-charger/ellesmere-port	out-of-ring town: one-hop 301 to its keyword hub
-/pages/keywords/repointing-services/bramhall	duplicate (www/apex)
