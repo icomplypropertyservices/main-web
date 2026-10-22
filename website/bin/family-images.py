@@ -67,7 +67,7 @@ for fp, pf in files:
             return SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
         t = SRC.sub(lambda x: f'{x.group(1)}="{ph["src"]}"', t)
         t = SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
-        t = re.sub(r'\balt="[^"]*"', f'alt="{ph["alt"]}"', t, 1)
+        t = re.sub(r'\balt="[^"]*"', f'alt="{ph["alt"]}"', t, count=1)
         t = re.sub(r'\s(width|height)="\d+"', '', t)
         return t[:-1].rstrip('/').rstrip() + f' width="1280" height="823" data-credit="{ph["credit"]}">'
     s2 = IMG.sub(fix, s)
