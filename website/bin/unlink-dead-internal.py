@@ -15,6 +15,7 @@ for sm in glob.glob(f'{dist}/sitemap*.xml') + glob.glob(f'{dist}/sitemaps/*.xml'
     for u in re.findall(r'<loc>https?://[^/<]+([^<]*)</loc>', open(sm, errors='ignore').read()):
         known.add(u.rstrip('/') or '/')
 parents = {k.rsplit('/', 1)[0] for k in known if k.count('/') >= 3}
+towns = {k.rsplit('/', 1)[1] for k in known if k.startswith('/pages/keywords/') and k.count('/') == 4}
 rd = f'{dist}/_redirects'
 if os.path.exists(rd):
     for l in open(rd, errors='ignore'):
@@ -36,7 +37,7 @@ for root, _, files in os.walk(dist):
             # (not exported, not in the sitemap, not a _redirects source). Edge-only hubs stay linked.
             if k in known or '*' in k or k.count('/') < 3 or k.rsplit('/', 1)[0] not in parents:
                 return m.group(0)
-            if k.count('/') == 3 and '/pages/areas/' + k.rsplit('/', 1)[1] not in known:
+            if k.count('/') == 3 and k.rsplit('/', 1)[1] not in towns:
                 return m.group(0)  # /pages/<x>/<slug> that is not a service x town (edge-only hubs stay linked)
             n[0] += 1
             town = k.rsplit('/', 1)[1]
