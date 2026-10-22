@@ -1518,9 +1518,16 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
             : url('/pages/manufacturers/index.php');
         $href = htmlspecialchars($brandHref, ENT_QUOTES, 'UTF-8');
         $src = manufacturerImageUrl($slug, $serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+        $alt = html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' logo';
+        // A brand that serves several services gets a separate photo per service, so one photo is not reused across them.
+        $perService = '/assets/images/manufacturers/' . $slug . '--' . $serviceSlug . '.jpg';
+        if ($serviceSlug !== '' && is_file(__DIR__ . $perService)) {
+            $src = $perService;
+            $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' on site; see ' . html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' products';
+        }
         $img = '';
         if ($src !== '') {
-            $img = '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . $label . ' logo" width="640" height="360" '
+            $img = '<img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($alt, ENT_QUOTES, 'UTF-8') . '" width="640" height="360" '
                 . 'class="w-full h-28 object-cover group-hover:scale-105 transition duration-300" loading="lazy" '
                 . 'onerror="this.src=\'' . $fallback . '\'">';
         }
