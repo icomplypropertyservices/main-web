@@ -33,6 +33,12 @@ OPT2SRC = {}
 for _k, _v in man.items():
     for _x in _v.get('variants', []):
         OPT2SRC.setdefault(_x['webp'].rsplit('/', 1)[1].split('-')[0], _k)
+def cross_photo(h, u):
+    rel = f'/assets/images/families/{h}-photo-{u}.jpg'
+    if rel not in man: return fp_photo[h]
+    v = man[rel]['variants']; c = cred.get(rel, {})
+    return dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[h],
+                credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
 IMG = re.compile(r'<(img|source)\b[^>]*>', re.I)
 SRC = re.compile(r'\b(src|data-src)="([^"]+)"', re.I)
 SRCSET = re.compile(r'\bsrcset="([^"]+)"', re.I)
@@ -69,7 +75,7 @@ for r, _, fs in os.walk(dist):
             if pf is None and hf:
                 files.append((fp, hf, False)); continue   # no family in the URL: follow the hero figure (does not count for owners)
             if pf in ALT and hf and hf != pf:
-                continue   # URL family and hero family disagree: leave the page's own photos untouched
+                files.append((fp, (hf, pf), False)); continue   # URL and hero families disagree: hero-family photo, cropped for this URL family
             if pf in ALT: files.append((fp, pf, True))
 use = collections.defaultdict(collections.Counter)
 for fp, pf, own in files:
@@ -80,10 +86,13 @@ for fp, pf, own in files:
 owner = {k: c.most_common(1)[0][0] for k, c in use.items()}
 changed = tags = 0
 for fp, pf, own in files:
-    s = open(fp, encoding='utf-8', errors='replace').read(); ph = fp_photo[pf]; n = [0]
+    s = open(fp, encoding='utf-8', errors='replace').read(); n = [0]
+    cross = isinstance(pf, tuple)
+    ph = cross_photo(*pf) if cross else fp_photo[pf]
     def fix(m):
         t = m.group(0)
-        if not any(owner.get(k) not in (None, pf) for k in tag_keys(t)): return t
+        ks = tag_keys(t)
+        if not ks or (not cross and not any(owner.get(k) not in (None, pf) for k in ks)): return t
         n[0] += 1
         if m.group(1).lower() == 'source':
             return SRCSET.sub(f'srcset="{ph["srcset"]}"', t)

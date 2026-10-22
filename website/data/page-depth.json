@@ -1,6 +1,24 @@
 {
  "_note": "QM #156 under_800_words: topic guidance added by page-finish to pages under 840 prose words. Topics match the URL path or H1.",
  "topics": {
+  "let-ready": {
+   "name": "getting a home ready to let",
+   "p": [
+    "Let-ready work focuses on what a landlord must have before a tenant moves in: a current gas safety record, a satisfactory EICR, an EPC of band E or above, and working smoke and carbon monoxide alarms tested on the first day of the tenancy. A missing item can delay the move-in date, so we check the full list when we quote.",
+    "Tenants must be given the gas safety record before they move in, the EICR within 28 days, and the EPC before the tenancy starts, along with the How to Rent guide. Keeping proof that each document was served protects the landlord if a section 21 notice is needed later.",
+    "Void periods are the best time for work that disturbs tenants: consumer unit changes, new alarms, extra sockets, and any remedials from the EICR. We book these around the check-out and check-in dates so the property is not left empty longer than necessary.",
+    "For HMOs the list is longer: fire doors, interlinked detection, emergency lighting where the fire risk assessment calls for it, and an HMO licence where the council requires one. We flag those during the visit so nothing is missed at licence renewal."
+   ]
+  },
+  "workplace": {
+   "name": "workplace compliance",
+   "p": [
+    "Workplace packages cover what an employer or business tenant is responsible for: a written fire risk assessment where five or more people work, fire alarm and emergency lighting servicing, extinguisher servicing, PAT testing, and an electrical installation inspection, usually every five years.",
+    "In shared buildings, responsibility is split by the lease. The landlord usually looks after common parts and the main fire alarm, while each tenant looks after their own unit. We check the lease or ask the managing agent before quoting, so nobody pays twice.",
+    "Staff need to know the evacuation procedure, where the call points and extinguishers are, and who the fire marshals are. We can walk through the building with the responsible person and note what the fire risk assessment expects, such as signage, drills and training records.",
+    "Insurers often ask for service certificates at renewal. Keeping the fire alarm logbook, emergency lighting test records and PAT register together on site, with copies by email, makes those requests quick to answer."
+   ]
+  },
   "fire-alarm|bs-5839|call-point|detector|sounder|panel": {
    "name": "fire alarm systems",
    "p": [
@@ -197,15 +215,6 @@
    "p": [
     "The quickest way to reach us is by phone or WhatsApp on 07517 806082. Messages and emails to icomplypropertyservices@gmail.com are answered the same working day, and urgent faults such as a fire alarm stuck in alarm or a barrier stuck shut are prioritised.",
     "For a quote, send the address, the type of building, what you need and when the current certificate or service runs out. Photos of panels, rating plates and the problem area help us send the right engineer with the right parts."
-   ]
-  },
-  "package|bundle|let-ready|workplace": {
-   "name": "compliance packages",
-   "p": [
-    "A package groups the checks a property needs into one booking, so the visits, paperwork and reminders line up. Before booking, list what the property already has and when each item runs out: gas safety record, EICR, EPC, fire alarm and emergency lighting service, PAT, legionella assessment and fire risk assessment.",
-    "Let-ready work focuses on what a landlord must have before a tenant moves in: a current gas safety record, a satisfactory EICR, an EPC of band E or above, and working smoke and carbon monoxide alarms tested on the first day of the tenancy. A missing item can delay the move-in date, so we check the full list when we quote.",
-    "Workplace packages cover what an employer or business tenant is responsible for: a written fire risk assessment where five or more people work, fire alarm and emergency lighting servicing, extinguisher servicing, PAT testing, and an electrical installation inspection, usually every five years.",
-    "Items that a package does not cover, such as remedial work found during testing, are quoted separately and itemised. You decide what goes ahead, and the paperwork is updated once the work is complete."
    ]
   }
  },
