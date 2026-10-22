@@ -21,12 +21,16 @@ $categories = getServiceCategories();
 $pageTitle = 'Service Guides | Fire Safety, Professional & Construction Topics';
 $metaDesc = 'Browse ' . count($keywords) . '+ guides covering fire risk assessments, fire safety systems, electrical, security, landlord compliance, kitchens, bathrooms, renovation and construction across the North West.';
 $metaKeywords = 'fire risk assessment guide, kitchen fitting guide, EICR, fire alarm installation, bathroom renovation, plastering, landlord compliance North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 // /pages/keywords includes this file. /pages/keywords-hub is the same document at its own URL.
 $reqPath = (string)(parse_url((string)($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH) ?: '');
 $canonicalUrl = str_contains($reqPath, '/pages/keywords-hub')
     ? url('/pages/keywords-hub.php')
     : url('/pages/keywords');
+if (str_contains($reqPath, '/pages/keywords-hub')) {
+    // QM #157: same document at a second URL gets its own title.
+    $pageTitle = 'All Service Guides A-Z | Fire, Electrical, Security & Building Topics';
+}
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();

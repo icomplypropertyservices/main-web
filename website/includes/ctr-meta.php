@@ -89,11 +89,14 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
  */
 function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $town): ?array
 {
-    $labels = ['pat-testing' => ['Costs & Certificates', 'Costs'], 'asbestos-survey' => ['Survey Types & Reports', 'Survey Types'], 'legionella-risk-assessment' => ['Costs & Written Reports', 'Costs']];
+    $labels = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports',
+        'first-fix-electrical' => 'Costs & What Is Included', 'bathroom-fitting' => 'Costs & Design Options', 'kitchen-fitting' => 'Costs & Design Options',
+        'property-renovation' => 'Costs & Project Stages', 'damp-proofing' => 'Costs & Treatment Options', 'bs-5306-extinguisher-service-cost' => 'Prices & What Affects Them'];
     if (!isset($labels[$keywordSlug])) {
         return null;
     }
-    [$long, $short] = $labels[$keywordSlug];
+    $long = $labels[$keywordSlug];
+    $short = explode(' & ', $long)[0];
     // Titles keep "Same/Next-Day" and stay <= 60 chars; the town comes before the first '|'.
     $title = '';
     foreach ([$kwName . ' ' . $town . ': ' . $long . ' | Same/Next-Day', $kwName . ' ' . $town . ': ' . $short . ' | Same/Next-Day', $kwName . ' ' . $town . ' ' . $short . ' | Same/Next-Day'] as $t) {
@@ -105,7 +108,7 @@ function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $t
     return [
         'label' => $long,
         'title' => $title,
-        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': typical costs, what the visit and report include, and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
+        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': ' . strtolower($long) . ' explained, typical costs and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
         'h1_tail' => ': ' . strtolower($long),
     ];
 }

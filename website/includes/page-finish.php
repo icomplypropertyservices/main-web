@@ -26,13 +26,15 @@ function icomplyFinishPage(string $html, string $path): string
     if (count($segs) >= 3 && $segs[0] === 'pages') {
         $crumbs[] = [icomplyFinishTitleCase($segs[count($segs) - 2]), '/' . implode('/', array_slice($segs, 0, -1))];
     }
-    $crumbs[] = [$h1 !== '' ? $h1 : icomplyFinishTitleCase((string)end($segs)), '/' . implode('/', $segs)];
+    if ($segs) {
+        $crumbs[] = [$h1 !== '' ? $h1 : icomplyFinishTitleCase((string)end($segs)), '/' . implode('/', $segs)];
+    }
     $low = strtolower($html);
     $add = '';
     if (!str_contains($html, 'id="pf-css"')) {
         $add .= ICOMPLY_FINISH_CSS;
     }
-    if (!str_contains($low, 'breadcrumblist') && count($segs) > 0) {
+    if (!str_contains($low, 'breadcrumblist')) {
         $items = [];
         foreach ($crumbs as $i => [$n, $u]) {
             $items[] = ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $n, 'item' => $site . ($u === '/' ? '/' : $u)];
@@ -43,7 +45,7 @@ function icomplyFinishPage(string $html, string $path): string
         $html = preg_replace('/<\/head>/i', $add . '</head>', $html, 1) ?? $html;
     }
     $hasVis = preg_match('/aria-label="breadcrumb"|class="[^"]*breadcrumb/i', $html);
-    if (!$hasVis && count($segs) > 0) {
+    if (!$hasVis) {
         $lis = '';
         $last = count($crumbs) - 1;
         foreach ($crumbs as $i => [$n, $u]) {

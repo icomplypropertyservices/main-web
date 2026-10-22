@@ -22,13 +22,23 @@ def page_family(u):
     if 'roof' in s: return 'roofing'
     return None
 ALT = {'fire': 'Fire alarm manual call point', 'gas': 'Wall-mounted gas boiler in a kitchen', 'security': 'CCTV cameras on a building',
-       'electrical': 'Consumer unit with RCD protection', 'building': 'Building under renovation with scaffolding', 'compliance': 'Asbestos warning label'}
+       'electrical': 'Consumer unit with RCD protection', 'building': 'Building under renovation with scaffolding', 'compliance': 'Terraced rented houses on a residential street'}
 fp_photo = {}
 for f in ALT:
     rel = f'/assets/images/families/{f}-photo.jpg'
     v = man[rel]['variants']; c = cred.get(rel, {})
     fp_photo[f] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[f],
                        credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+OPT2SRC = {}
+for _k, _v in man.items():
+    for _x in _v.get('variants', []):
+        OPT2SRC.setdefault(_x['webp'].rsplit('/', 1)[1].split('-')[0], _k)
+def cross_photo(h, u):
+    rel = f'/assets/images/families/{h}-photo-{u}.jpg'
+    if rel not in man: return fp_photo[h]
+    v = man[rel]['variants']; c = cred.get(rel, {})
+    return dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=ALT[h],
+                credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
 # SEO 22 Oct: services where the family photo is a loose fit get their own credited Commons photo.
 SVC_ALT = {'landscaping': 'Planted garden border with bark mulch', 'building-surveys': 'Thermal imaging survey of a church building', 'facilities-management': 'Maintenance worker servicing a washroom'}
 for sv in SVC_ALT:
@@ -68,28 +78,46 @@ for r, _, fs in os.walk(dist):
             u = re.sub(r'/index$', '', u) or '/'
             pf = page_family(u)
             # The hero service photo's family wins over URL words (e.g. a windows-doors page whose URL says fire-door).
-            hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', open(fp, encoding='utf-8', errors='replace').read())
-            if hm and hm.group(1) in dir2fam: pf = dir2fam[hm.group(1)] if dir2fam[hm.group(1)] in ALT else pf
-            sv = hm.group(1) if hm and hm.group(1) in SVC_ALT else next((k for k in SVC_ALT if k in u), None)
-            if sv is None and hm:
-                hb = re.sub(r'-photo$', '', hm.group(1))
-                if hb not in fp_photo:
-                    sp = svc_photo(hb)
-                    if sp: fp_photo[hb] = sp
-                sv = hb if hb in fp_photo else None
-            if pf in ALT: files.append((fp, pf, sv))
+            hm = None
+            _raw = open(fp, encoding='utf-8', errors='replace').read()
+            _b = _raw.find('<body')
+            _fig = re.search(r'<figure\b.*?</figure>', _raw[_b:] if _b >= 0 else '', re.S | re.I)  # hero figure only, never og:image/head
+            if _fig:
+                hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _fig.group(0))
+                if not hm:
+                    _o = re.search(r'/assets/images/opt/([0-9a-f]{12})-\d+\.webp', _fig.group(0))
+                    _src = OPT2SRC.get(_o.group(1), '') if _o else ''
+                    hm = re.search(r'/assets/images/services/([a-z0-9-]+)\.(?:jpg|png|webp)', _src)
+            hf = dir2fam.get(hm.group(1)) if hm else None
+            hf = hf if hf in ALT else None
+            _sv = hm.group(1) if hm and hm.group(1) in SVC_ALT else next((k for k in SVC_ALT if k in u), None)
+            if _sv is None and hm:
+                _hb = re.sub(r'-photo$', '', hm.group(1))
+                if _hb not in fp_photo:
+                    _sp = svc_photo(_hb)
+                    if _sp: fp_photo[_hb] = _sp
+                _sv = _hb if _hb in fp_photo else None
+            if pf is None and hf:
+                files.append((fp, hf, False, _sv)); continue   # no family in the URL: follow the hero figure (does not count for owners)
+            if pf in ALT and hf and hf != pf:
+                files.append((fp, (hf, pf), False, _sv)); continue   # URL and hero families disagree: hero-family photo, cropped for this URL family
+            if pf in ALT: files.append((fp, pf, True, _sv))
 use = collections.defaultdict(collections.Counter)
-for fp, pf, _ in files:
+for fp, pf, own, _ in files:
+    if not own: continue
     s = open(fp, encoding='utf-8', errors='replace').read()
     for m in IMG.finditer(s):
         for k in tag_keys(m.group(0)): use[k][pf] += 1
 owner = {k: c.most_common(1)[0][0] for k, c in use.items()}
 changed = tags = 0
-for fp, pf, sv in files:
-    s = open(fp, encoding='utf-8', errors='replace').read(); ph = fp_photo.get(sv) or fp_photo[pf]; n = [0]
+for fp, pf, own, sv in files:
+    s = open(fp, encoding='utf-8', errors='replace').read(); n = [0]
+    cross = isinstance(pf, tuple)
+    ph = fp_photo.get(sv) or (cross_photo(*pf) if cross else fp_photo[pf])
     def fix(m):
         t = m.group(0)
-        if not any(owner.get(k) != pf for k in tag_keys(t)): return t
+        ks = tag_keys(t)
+        if not ks or (not cross and not any(owner.get(k) not in (None, pf) for k in ks)): return t
         n[0] += 1
         if m.group(1).lower() == 'source':
             return SRCSET.sub(f'srcset="{ph["srcset"]}"', t)
@@ -98,7 +126,12 @@ for fp, pf, sv in files:
         t = re.sub(r'\balt="[^"]*"', f'alt="{ph["alt"]}"', t, count=1)
         t = re.sub(r'\s(width|height)="\d+"', '', t)
         return t[:-1].rstrip('/').rstrip() + f' width="1280" height="823" data-credit="{ph["credit"]}">' + '<!--famcap-->'
-    s2 = IMG.sub(fix, s)
+    if own:
+        s2 = IMG.sub(fix, s)
+    else:
+        # family-from-hero (no URL family, or URL/hero disagree): rewrite the hero <figure> only, never body/og images
+        _b = s.find('<body'); _f = re.search(r'<figure\b.*?</figure>', s[_b:], re.S | re.I) if _b >= 0 else None
+        s2 = s if not _f else s[:_b + _f.start()] + IMG.sub(fix, _f.group(0)) + s[_b + _f.end():]
     # Visible credit under each switched photo: replace the figure's own caption if it has one, else add a line.
     def cap(mm):
         return mm.group(1) + '<figcaption style="font-size:.8rem;color:#555555;margin-top:.3rem">' + caption(ph)[caption(ph).index('>') + 1:-7] + '</figcaption>'

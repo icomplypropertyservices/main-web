@@ -1,6 +1,24 @@
 {
  "_note": "QM #156 under_800_words: topic guidance added by page-finish to pages under 840 prose words. Topics match the URL path or H1.",
  "topics": {
+  "let-ready": {
+   "name": "getting a home ready to let",
+   "p": [
+    "Let-ready work focuses on what a landlord must have before a tenant moves in: a current gas safety record, a satisfactory EICR, an EPC of band E or above, and working smoke and carbon monoxide alarms tested on the first day of the tenancy. A missing item can delay the move-in date, so we check the full list when we quote.",
+    "Tenants must be given the gas safety record before they move in, the EICR within 28 days, and the EPC before the tenancy starts, along with the How to Rent guide. Keeping proof that each document was served protects the landlord if a section 21 notice is needed later.",
+    "Void periods are the best time for work that disturbs tenants: consumer unit changes, new alarms, extra sockets, and any remedials from the EICR. We book these around the check-out and check-in dates so the property is not left empty longer than necessary.",
+    "For HMOs the list is longer: fire doors, interlinked detection, emergency lighting where the fire risk assessment calls for it, and an HMO licence where the council requires one. We flag those during the visit so nothing is missed at licence renewal."
+   ]
+  },
+  "workplace": {
+   "name": "workplace compliance",
+   "p": [
+    "Workplace packages cover what an employer or business tenant is responsible for: a written fire risk assessment where five or more people work, fire alarm and emergency lighting servicing, extinguisher servicing, PAT testing, and an electrical installation inspection, usually every five years.",
+    "In shared buildings, responsibility is split by the lease. The landlord usually looks after common parts and the main fire alarm, while each tenant looks after their own unit. We check the lease or ask the managing agent before quoting, so nobody pays twice.",
+    "Staff need to know the evacuation procedure, where the call points and extinguishers are, and who the fire marshals are. We can walk through the building with the responsible person and note what the fire risk assessment expects, such as signage, drills and training records.",
+    "Insurers often ask for service certificates at renewal. Keeping the fire alarm logbook, emergency lighting test records and PAT register together on site, with copies by email, makes those requests quick to answer."
+   ]
+  },
   "fire-alarm|bs-5839|call-point|detector|sounder|panel": {
    "name": "fire alarm systems",
    "p": [
