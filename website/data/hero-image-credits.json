@@ -1852,5 +1852,50 @@
     "license": "CC BY-SA 2.0",
     "artist": "Gerald England",
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo-fire.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg (crop)",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo-gas.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg (crop)",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo-security.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg (crop)",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo-electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg (crop)",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
+  },
+  {
+    "file": "/assets/images/families/compliance-photo-building.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
+    "title": "File:Asbestos warning label.jpg (crop)",
+    "license": "CC BY-SA 3.0",
+    "artist": "MetalFusion81",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "family": "compliance"
   }
 ]

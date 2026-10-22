@@ -13,7 +13,7 @@ $pageTitle = 'Vehicle Barriers in ' . $name;
 $metaDesc = $name . ' vehicle barriers. Official population ' . number_format($population) . '. CAME partner supply from Stockport, price on application. ' . PHONE . '.';
 $metaKeywords = 'vehicle barriers ' . $name . ', rising arm barrier ' . $name . ', CAME Gard, ' . $region . ', price on application';
 $canonicalUrl = url('/pages/barriers/' . $slug);
-$ogImage = url('/assets/images/services/access-control.jpg');
+$ogImage = url('/assets/images/services/barriers-photo.jpg');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();

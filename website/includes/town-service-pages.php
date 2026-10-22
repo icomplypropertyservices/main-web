@@ -675,20 +675,22 @@ function icomplyTownPageRecord(string $slug): ?array
     return icomplyGmServiceTown($slug);
 }
 
-function icomplyDisambiguatedTownName(string $name, string $slug): string
+/** 'Town, County' only when the county is set and does not already contain the town name. */
+function icomplyPlaceWithCounty(string $name, string $county): string
 {
-    $plain = strtolower(trim((string)preg_replace('/[^a-z0-9]+/', '-', $name), '-'));
-    if ($slug === '' || $slug === $plain) {
+    $name = trim($name);
+    $county = trim($county);
+    if ($county === '' || $name === '') {
         return $name;
     }
-    if (preg_match('/^' . preg_quote($plain, '/') . '-(.+)$/', $slug, $m)) {
-        $tail = (string)$m[1];
-        if ($tail === $plain) {
-            return $name . ' (' . $name . ')';
-        }
-        return $name . ', ' . ucwords(str_replace('-', ' ', $tail));
+    $bare = trim((string)preg_replace('/\s*\(.*\)$/', '', $name));
+    if (preg_match('/(^|[^\p{L}])' . preg_quote($bare, '/') . '($|[^\p{L}])/iu', $county)) {
+        return $name;
     }
-    return $name . ' (' . ucwords(str_replace('-', ' ', $slug)) . ')';
+    if (preg_match('/(^|[^\p{L}])' . preg_quote($county, '/') . '($|[^\p{L}])/iu', $name)) {
+        return $name;
+    }
+    return $name . ', ' . $county;
 }
 
 function icomplyRenderTownPage(string $family, string $slug): void
@@ -708,8 +710,8 @@ function icomplyRenderTownPage(string $family, string $slug): void
     $ctx = $edit['ctx'];
     $csrf = icomplyTownCsrf();
     // Never repeat the town ('Stockport, Stockport'): add the county only when it differs.
-    $county = trim((string)($ctx['county'] ?? ''));
-    $place = ($county === '' || strcasecmp($county, (string)$ctx['name']) === 0) ? (string)$ctx['name'] : $ctx['name'] . ', ' . $county;
+    // Also skip it when the county already names the town ('Bournemouth, Christchurch and Poole').
+    $place = icomplyPlaceWithCounty((string)$ctx['name'], (string)($ctx['county'] ?? ''));
     if ($family === 'barriers') {
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
