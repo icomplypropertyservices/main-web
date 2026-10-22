@@ -1556,7 +1556,7 @@ function serviceImageUrl(string $slug): string {
             return url($rel);
         }
     }
-    return url('/assets/images/services/fire-alarms.jpg');
+    return url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**
@@ -1568,7 +1568,7 @@ function keywordImageUrl(string $slug, string $serviceSlug = ''): string {
     if ($slug !== '' && is_file(SITE_ROOT . $rel)) {
         return url($rel);
     }
-    return serviceImageUrl($serviceSlug !== '' ? $serviceSlug : 'fire-alarms');
+    return $serviceSlug !== '' ? serviceImageUrl($serviceSlug) : url('/assets/images/heroes/property-generic.jpg');
 }
 
 /**

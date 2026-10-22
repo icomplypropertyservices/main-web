@@ -9,7 +9,7 @@ require_once SITE_ROOT . '/includes/share.php';
 $pageTitle = 'Commercial & Facilities Management | Fire Safety & Multi-Site';
 $metaDesc = 'Commercial & FM across the North West: fire risk assessments, fire systems, electrical, AOV, nurse call, CCTV, access control, fit-out and planned maintenance. Written quotes for multi-site portfolios.';
 $metaKeywords = 'commercial fire risk assessment, multi-site compliance, commercial fire alarms, AOV, nurse call, CCTV, access control, commercial fit out, FM North West';
-$ogImage = url('/assets/images/services/fire-alarms.jpg');
+$ogImage = url('/assets/images/heroes/property-generic.jpg');
 $canonicalUrl = url('/pages/commercial.php');
 
 $services = getServices();

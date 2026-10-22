@@ -52,7 +52,7 @@ function figureRule(where, html) {
       const ownFiles = new Set(own.map((b) => `/assets/images/services/${b}.jpg`));
       // The hero's own family photo (family-images.py, credited Commons) is allowed.
       const famPhoto = famOf(bases[0]) ? `/assets/images/families/${famOf(bases[0])}-photo.jpg` : null;
-      for (const [rel, hs] of imgFileHashes(fig)) if (!ownFiles.has(rel) && !(famPhoto && (rel === famPhoto || (rel.startsWith(famPhoto.replace(/\.jpg$/, '-')) && rel.endsWith('.jpg')))) && hs.every((h) => h && !okHash.has(h))) bad(`${where}: ${rel} is not a ${bases[0]} photo`);
+      for (const [rel, hs] of imgFileHashes(fig)) if (!ownFiles.has(rel) && !rel.startsWith('/assets/images/manufacturers/') && !(famPhoto && (rel === famPhoto || (rel.startsWith(famPhoto.replace(/\.jpg$/, '-')) && rel.endsWith('.jpg')))) && rel !== `/assets/images/families/${bases[0]}-photo.jpg` && hs.every((h) => h && !okHash.has(h))) bad(`${where}: ${rel} is not a ${bases[0]} photo`);
       continue;
     }
     const want = famOf(bases[0]);

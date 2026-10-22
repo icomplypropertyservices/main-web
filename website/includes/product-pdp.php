@@ -77,7 +77,9 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
         (string)($product['image'] ?? ''),
         (string)(($product['id'] ?? '') . ' ' . $handle . ' ' . $title)
     );
-    $canonicalPath = rtrim($pathPrefix, '/') . '/' . rawurlencode($handle);
+    // QM #158: the same product lives at /shop/products/ and /products/product/; one canonical (never noindex).
+    $canonicalPath = '/shop/products/' . rawurlencode($handle);
+    $isShopCopy = str_starts_with('/' . trim($pathPrefix, '/'), '/shop');
     $canonicalUrl = url($canonicalPath);
     $shopHref = shopifyStoreUrl();
     if ($shopHref !== '' && $handle !== '') {
@@ -92,7 +94,7 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
         $shopHref = $over['href'];
     }
 
-    $pageTitle = $title . ' | iComply Trade';
+    $pageTitle = $title . ($isShopCopy ? ' | iComply Shop' : ' | Product details | iComply');
     $metaDesc = trim($blurb !== '' ? $blurb : ($title . ' — trade supply. Install POA.'));
     $ogImage = $img;
     $isInstallPoa = true;
@@ -121,7 +123,7 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
   </nav>
   <div class="grid lg:grid-cols-2 gap-10 items-start">
     <div class="bg-zinc-100 rounded-3xl overflow-hidden border border-zinc-200">
-      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-80 object-contain bg-white" loading="eager" width="640" height="320" onerror="this.src='<?= htmlspecialchars(url('/assets/images/services/fire-alarms.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
+      <img src="<?= htmlspecialchars($img, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-80 object-contain bg-white" loading="eager" width="640" height="320" onerror="this.src='<?= htmlspecialchars(url('/assets/images/heroes/property-generic.jpg'), ENT_QUOTES, 'UTF-8') ?>'">
     </div>
     <div>
       <?php if (!empty($product['badge']) || !empty($over['is_aov_package'])): ?>
@@ -141,6 +143,12 @@ function icomplyRenderProductPdp(string $pathPrefix = '/products/product'): void
         <a href="<?= htmlspecialchars(url('/contact.php'), ENT_QUOTES, 'UTF-8') ?>" class="px-8 py-4 rounded-2xl border border-zinc-300 font-semibold text-[#0B1F3A]">Get install quote (POA)</a>
       </div>
     </div>
+  </div>
+  <?php $ptype = trim((string)($product['product_type'] ?? '')); $tl = htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?>
+  <div class="mt-12 max-w-3xl text-zinc-700 leading-relaxed" data-pe-slot="pdp-guidance">
+    <h2 class="text-2xl font-semibold text-[#0B1F3A]">Before you order the <?= $tl ?></h2>
+    <p class="mt-3">Check that the <?= $tl ?><?= $ptype !== '' ? ' (' . htmlspecialchars($ptype, ENT_QUOTES, 'UTF-8') . ')' : '' ?> suits the property, the existing system and any landlord, insurer or building control requirements before you buy. If you are not sure, send us the model you have now, a photo of where it will go and your postcode, and we will confirm compatibility in writing.</p>
+    <p class="mt-3">Supply prices are shown where we have them; installation and labour are POA until we know the site. Every install comes with commissioning, handover paperwork and photos of the finished work. Call 07517 806082, WhatsApp us or email icomplypropertyservices@gmail.com with the product name and your postcode to get started.</p>
   </div>
 </section>
     <?php

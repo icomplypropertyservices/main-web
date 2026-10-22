@@ -42,7 +42,7 @@ export function finishPage(html, path) {
     s = s.replace(/(<div class="hero-cta" data-cta="hero">[\s\S]*?<\/div>)/, (m0) => m0 + fig);
   }
   if (/<body\b[\s\S]*<img\b/i.test(s) && !/photo credit|image credit|photo:|credit:|©|data-credit|figcaption/i.test(s)) {
-    const p = '<p class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></p>';
+    const p = '<div class="pf-credit" data-credit style="font-size:.8rem;color:#555555;margin:1rem 0">Photo credits: <a href="/pages/photo-credits">photographers, sources and licences</a></div>';
     s = /<\/main>/i.test(s) ? s.replace(/<\/main>/i, p + "</main>") : s.replace(/<footer\b/i, p + "<footer");
   }
   return s;

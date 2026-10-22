@@ -38,8 +38,8 @@ require SITE_ROOT . '/includes/header.php';
 </section>
 
 <figure class="max-w-3xl mx-auto px-6 pt-8" data-photo-slot="real-photo">
-  <img src="/assets/images/opt/b92219b53d96-800.webp" srcset="/assets/images/opt/b92219b53d96-480.webp 480w, /assets/images/opt/b92219b53d96-800.webp 800w, /assets/images/opt/b92219b53d96-1280.webp 1280w" sizes="(min-width: 768px) 720px, 100vw" alt="Asbestos warning label, one of the records a renewal diary keeps track of" width="800" height="514" loading="lazy" style="width:100%;height:auto;border-radius:1rem">
-  <figcaption style="font-size:.8rem;color:#555555;margin-top:.4rem">Photo: MetalFusion81, CC BY-SA 3.0, via Wikimedia Commons · <a href="/pages/photo-credits">photo credits</a></figcaption>
+  <img src="/assets/images/opt/9ce274df546b-800.webp" srcset="/assets/images/opt/9ce274df546b-480.webp 480w, /assets/images/opt/9ce274df546b-800.webp 800w, /assets/images/opt/9ce274df546b-1280.webp 1280w" sizes="(min-width: 768px) 720px, 100vw" alt="Terraced rented houses, each with its own certificate renewal dates" width="800" height="514" loading="lazy" style="width:100%;height:auto;border-radius:1rem">
+  <figcaption style="font-size:.8rem;color:#555555;margin-top:.4rem">Photo: Robert Wade, CC BY-SA 2.0, via Wikimedia Commons · <a href="/pages/photo-credits">photo credits</a></figcaption>
 </figure>
 <section class="bg-[#f4f4f4] border-b">
   <div class="max-w-3xl mx-auto px-6 py-10 md:py-14">

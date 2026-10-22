@@ -27,7 +27,20 @@
       "sprinkler-systems",
       "dry-risers",
       "smoke-co-alarms",
-      "evacuation-alerts"
+      "evacuation-alerts",
+      "aov-control-panel-1",
+      "fire-alarms-callpoint",
+      "sprinkler-systems-2",
+      "sprinkler-systems-3",
+      "fire-extinguishers-2",
+      "fire-extinguishers-3",
+      "fire-suppression-2",
+      "fire-suppression-3",
+      "fire-stopping-2",
+      "fire-stopping-3",
+      "fire-risk-assessments-2",
+      "fire-risk-assessments-3",
+      "emergency-lighting-2"
     ],
     "security": [
       "cctv",
@@ -164,7 +177,144 @@
     ],
     "windows-doors": [
       "windows-doors"
+    ],
+    "electrical": [
+      "electrical",
+      "electrical-photo"
+    ],
+    "electrics-first-fix": [
+      "electrics-first-fix"
+    ],
+    "pat-testing": [
+      "pat-testing"
+    ],
+    "ev-chargers": [
+      "ev-chargers"
+    ],
+    "fire-alarms": [
+      "fire-alarms",
+      "fire-alarms-photo",
+      "fire-alarms-callpoint"
+    ],
+    "fire-risk-assessments": [
+      "fire-risk-assessments",
+      "fire-risk-assessments-photo",
+      "fire-risk-assessments-2",
+      "fire-risk-assessments-3"
+    ],
+    "emergency-lighting": [
+      "emergency-lighting",
+      "emergency-lighting-photo",
+      "emergency-lighting-2"
+    ],
+    "aov-air-handling": [
+      "aov-air-handling",
+      "aov-air-handling-photo",
+      "aov-control-panel-1"
+    ],
+    "fire-doors": [
+      "fire-doors"
+    ],
+    "fire-extinguishers": [
+      "fire-extinguishers",
+      "fire-extinguishers-2",
+      "fire-extinguishers-3"
+    ],
+    "fire-signage": [
+      "fire-signage"
+    ],
+    "fire-stopping": [
+      "fire-stopping",
+      "fire-stopping-2",
+      "fire-stopping-3"
+    ],
+    "fire-compartmentation": [
+      "fire-compartmentation"
+    ],
+    "fire-suppression": [
+      "fire-suppression",
+      "fire-suppression-2",
+      "fire-suppression-3"
+    ],
+    "kitchen-fire-suppression": [
+      "kitchen-fire-suppression"
+    ],
+    "sprinkler-systems": [
+      "sprinkler-systems",
+      "sprinkler-systems-2",
+      "sprinkler-systems-3"
+    ],
+    "dry-risers": [
+      "dry-risers"
+    ],
+    "smoke-co-alarms": [
+      "smoke-co-alarms"
+    ],
+    "evacuation-alerts": [
+      "evacuation-alerts"
+    ],
+    "cctv": [
+      "cctv",
+      "cctv-photo"
+    ],
+    "access-control": [
+      "access-control",
+      "access-control-photo"
+    ],
+    "door-entry": [
+      "door-entry",
+      "door-entry-photo"
+    ],
+    "intercoms": [
+      "intercoms",
+      "intercoms-photo"
+    ],
+    "intruder-alarm": [
+      "intruder-alarm",
+      "intruder-alarm-photo"
+    ],
+    "barriers": [
+      "barriers",
+      "barriers-photo"
+    ],
+    "nurse-call": [
+      "nurse-call",
+      "nurse-call-photo"
+    ],
+    "gas-systems": [
+      "gas-systems",
+      "gas-systems-photo"
+    ],
+    "heating": [
+      "heating"
+    ],
+    "plumbing": [
+      "plumbing"
+    ],
+    "landlord-compliance": [
+      "landlord-compliance"
+    ],
+    "compliance-consultancy": [
+      "compliance-consultancy"
+    ],
+    "legionella-risk-assessment": [
+      "legionella-risk-assessment"
+    ],
+    "water-wras": [
+      "water-wras"
+    ],
+    "asbestos-survey": [
+      "asbestos-survey"
+    ],
+    "epc": [
+      "epc"
+    ],
+    "building-surveys": [
+      "building-surveys"
+    ],
+    "cdm-support": [
+      "cdm-support"
     ]
   },
-  "service_photos_note": "Jack/SEO 20 Oct: building-trade pages show only their own service photo (no plastering photo on kitchens, flooring, landscaping, PM, FM or fit-out). Other families still draw from their family list."
+  "service_photos_note": "Jack/SEO 20 Oct: building-trade pages show only their own service photo (no plastering photo on kitchens, flooring, landscaping, PM, FM or fit-out). Other families still draw from their family list. QM #158 22 Oct: every service shows only its own photo(s); no cross-service extras (renamed duplicates)."
 }
