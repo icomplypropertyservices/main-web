@@ -339,10 +339,11 @@
   },
   {
     "file": "/assets/images/services/ev-chargers.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Tesla_Wall_Connector_EV_charging_station_installed_outdoors_in_Newton_MA_1.jpg",
-    "title": "File:Tesla Wall Connector EV charging station installed outdoors in Newton MA 1.jpg",
-    "license": "CC BY 4.0",
-    "artist": "4300streetcar"
+    "source": "https://commons.wikimedia.org/wiki/File:BMW_i3_home_charging_L2_CRI_04_2021_9753.jpg",
+    "title": "File:BMW i3 home charging L2 CRI 04 2021 9753.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Mariordo (Mario Roberto Durán Ortiz)",
+    "alt": "Electric car charging from a wall-mounted home EV charger"
   },
   {
     "file": "/assets/images/services/ev-chargers-photo.jpg",
@@ -388,19 +389,19 @@
   },
   {
     "file": "/assets/images/services/fire-stopping-photo.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Firestop_pillow_kbs.jpg",
-    "title": "File:Firestop pillow kbs.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3m_fs195_ppd_nortown_casistas.jpg",
+    "title": "File:3m fs195 ppd nortown casistas.jpg",
     "license": "CC BY 3.0",
-    "artist": "Achim Hering",
-    "alt": "Fire-stopping pillows packed around a penetration"
+    "author": "Achim Hering",
+    "alt": "Intumescent pipe collar fire-stopping a plastic pipe through a slab"
   },
   {
     "file": "/assets/images/services/fire-stopping-context.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Pillow_mortar.jpg",
-    "title": "File:Pillow mortar.jpg",
-    "license": "CC BY 3.0",
-    "artist": "Achim Hering",
-    "alt": "Fire-stopping mortar around a pipe penetration"
+    "source": "https://commons.wikimedia.org/wiki/File:Nortown.jpg",
+    "title": "File:Nortown.jpg",
+    "license": "Public domain",
+    "author": "Achim Hering",
+    "alt": "Intumescent fire-stopping collar fitted where a pipe passes through concrete"
   },
   {
     "file": "/assets/images/services/project-management.jpg",
@@ -785,11 +786,11 @@
   },
   {
     "file": "/assets/images/real-job/directory-hub.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Brandmeldezentrale_mit_Feuerwehrlaufkarten.JPG",
-    "title": "File:Brandmeldezentrale mit Feuerwehrlaufkarten.JPG",
-    "license": "Public domain",
-    "artist": "Benutzer:Juliabackhausen",
-    "alt": "Fire alarm control panel with fire-service route cards"
+    "source": "https://commons.wikimedia.org/wiki/File:Downloading_software_on_to_the_Fire_Control_Panel_of_a_sub-station_located_in_Queens._(CS179,_01-22-2019)_(46906375001).jpg",
+    "title": "File:Downloading software on to the Fire Control Panel of a sub-station located in Queens. (CS179, 01-22-2019) (46906375001).jpg",
+    "license": "CC BY 2.0",
+    "author": "MTA Capital Construction Mega Projects",
+    "alt": "Engineer working on a building fire control panel"
   },
   {
     "file": "/assets/images/real-job/jobs-hub.jpg",
@@ -5888,19 +5889,19 @@
   },
   {
     "file": "/assets/images/page-types/jobs/aov-service.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:SafePro_Safety_Roof_Hatch_Safety_Rail.jpg",
-    "title": "File:SafePro Safety Roof Hatch Safety Rail.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "SafePro Safety",
-    "alt": "Roof hatch with a safety rail for smoke-vent access"
+    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_01.png",
+    "title": "File:Ul 3h smoke and fire damper 01.png",
+    "license": "CC BY 3.0",
+    "author": "Achim Hering",
+    "alt": "Motorised smoke damper with its actuator fitted for an AOV service"
   },
   {
     "file": "/assets/images/page-types/jobs/aov-service-2.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Fire_suppression_remote_start_device_(02).jpg",
-    "title": "File:Fire suppression remote start device (02).jpg",
-    "license": "CC0",
-    "artist": "Georg Pik",
-    "alt": "Remote start point for smoke extraction"
+    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_03a.png",
+    "title": "File:Ul 3h smoke and fire damper 03a.png",
+    "license": "CC BY 3.0",
+    "author": "Achim Hering",
+    "alt": "Smoke damper blades and linkage inspected during servicing"
   },
   {
     "file": "/assets/images/services/barriers-photo.jpg",

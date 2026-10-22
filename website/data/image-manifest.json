@@ -18604,31 +18604,6 @@
       }
     ]
   },
-  "/assets/images/services/ev-chargers.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 560358,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/3be7881db979-480.webp",
-        "bytes": 44020
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/3be7881db979-800.webp",
-        "bytes": 122834
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/3be7881db979-1280.webp",
-        "bytes": 306988
-      }
-    ]
-  },
   "/assets/images/services/evacuation-alerts-photo.jpg": {
     "width": 1400,
     "height": 900,
@@ -19126,56 +19101,6 @@
         "h": 823,
         "webp": "/assets/images/opt/055b22cfa932-1280.webp",
         "bytes": 15856
-      }
-    ]
-  },
-  "/assets/images/services/fire-stopping-context.jpg": {
-    "width": 1600,
-    "height": 740,
-    "origBytes": 177823,
-    "variants": [
-      {
-        "w": 480,
-        "h": 222,
-        "webp": "/assets/images/opt/651a5f11f2c1-480.webp",
-        "bytes": 11168
-      },
-      {
-        "w": 800,
-        "h": 370,
-        "webp": "/assets/images/opt/651a5f11f2c1-800.webp",
-        "bytes": 22674
-      },
-      {
-        "w": 1280,
-        "h": 592,
-        "webp": "/assets/images/opt/651a5f11f2c1-1280.webp",
-        "bytes": 41756
-      }
-    ]
-  },
-  "/assets/images/services/fire-stopping-photo.jpg": {
-    "width": 1400,
-    "height": 880,
-    "origBytes": 255189,
-    "variants": [
-      {
-        "w": 480,
-        "h": 302,
-        "webp": "/assets/images/opt/344d63f70377-480.webp",
-        "bytes": 23796
-      },
-      {
-        "w": 800,
-        "h": 503,
-        "webp": "/assets/images/opt/344d63f70377-800.webp",
-        "bytes": 57840
-      },
-      {
-        "w": 1280,
-        "h": 805,
-        "webp": "/assets/images/opt/344d63f70377-1280.webp",
-        "bytes": 124220
       }
     ]
   },
@@ -25198,31 +25123,6 @@
       }
     ]
   },
-  "/assets/images/real-job/directory-hub.jpg": {
-    "width": 1600,
-    "height": 1200,
-    "origBytes": 288319,
-    "variants": [
-      {
-        "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/5bf0dca473be-480.webp",
-        "bytes": 9032
-      },
-      {
-        "w": 800,
-        "h": 600,
-        "webp": "/assets/images/opt/5bf0dca473be-800.webp",
-        "bytes": 20670
-      },
-      {
-        "w": 1280,
-        "h": 960,
-        "webp": "/assets/images/opt/5bf0dca473be-1280.webp",
-        "bytes": 52000
-      }
-    ]
-  },
   "/assets/images/page-types/jobs/eicr.jpg": {
     "width": 1600,
     "height": 1200,
@@ -25317,53 +25217,153 @@
       }
     ]
   },
-  "/assets/images/page-types/jobs/aov-service.jpg": {
+  "/assets/images/services/ev-chargers.jpg": {
     "width": 1600,
-    "height": 1313,
-    "origBytes": 152880,
+    "height": 1067,
+    "origBytes": 387951,
     "variants": [
       {
         "w": 480,
-        "h": 394,
-        "webp": "/assets/images/opt/f49c3be9f254-480.webp",
-        "bytes": 12502
+        "h": 320,
+        "webp": "/assets/images/opt/b1d86cb76000-480.webp",
+        "bytes": 22234
       },
       {
         "w": 800,
-        "h": 656,
-        "webp": "/assets/images/opt/f49c3be9f254-800.webp",
-        "bytes": 24122
+        "h": 534,
+        "webp": "/assets/images/opt/b1d86cb76000-800.webp",
+        "bytes": 58060
       },
       {
         "w": 1280,
-        "h": 1050,
-        "webp": "/assets/images/opt/f49c3be9f254-1280.webp",
-        "bytes": 44394
+        "h": 854,
+        "webp": "/assets/images/opt/b1d86cb76000-1280.webp",
+        "bytes": 134968
+      }
+    ]
+  },
+  "/assets/images/services/fire-stopping-context.jpg": {
+    "width": 1600,
+    "height": 1096,
+    "origBytes": 349289,
+    "variants": [
+      {
+        "w": 480,
+        "h": 329,
+        "webp": "/assets/images/opt/57f90623873b-480.webp",
+        "bytes": 22388
+      },
+      {
+        "w": 800,
+        "h": 548,
+        "webp": "/assets/images/opt/57f90623873b-800.webp",
+        "bytes": 52132
+      },
+      {
+        "w": 1280,
+        "h": 877,
+        "webp": "/assets/images/opt/57f90623873b-1280.webp",
+        "bytes": 103194
+      }
+    ]
+  },
+  "/assets/images/services/fire-stopping-photo.jpg": {
+    "width": 1600,
+    "height": 1068,
+    "origBytes": 294293,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/0337a3e927b8-480.webp",
+        "bytes": 17910
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/0337a3e927b8-800.webp",
+        "bytes": 40028
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/0337a3e927b8-1280.webp",
+        "bytes": 78206
+      }
+    ]
+  },
+  "/assets/images/real-job/directory-hub.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 373090,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/99e8578bea0b-480.webp",
+        "bytes": 22600
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/99e8578bea0b-800.webp",
+        "bytes": 51624
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/99e8578bea0b-1280.webp",
+        "bytes": 109132
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-service.jpg": {
+    "width": 1600,
+    "height": 1550,
+    "origBytes": 313635,
+    "variants": [
+      {
+        "w": 480,
+        "h": 465,
+        "webp": "/assets/images/opt/42e3fde539cc-480.webp",
+        "bytes": 21938
+      },
+      {
+        "w": 800,
+        "h": 775,
+        "webp": "/assets/images/opt/42e3fde539cc-800.webp",
+        "bytes": 43418
+      },
+      {
+        "w": 1280,
+        "h": 1240,
+        "webp": "/assets/images/opt/42e3fde539cc-1280.webp",
+        "bytes": 75404
       }
     ]
   },
   "/assets/images/page-types/jobs/aov-service-2.jpg": {
     "width": 1600,
-    "height": 1600,
-    "origBytes": 215617,
+    "height": 1312,
+    "origBytes": 349268,
     "variants": [
       {
         "w": 480,
-        "h": 480,
-        "webp": "/assets/images/opt/9ec461f88571-480.webp",
-        "bytes": 5166
+        "h": 394,
+        "webp": "/assets/images/opt/bc1cfbdcadb2-480.webp",
+        "bytes": 16960
       },
       {
         "w": 800,
-        "h": 800,
-        "webp": "/assets/images/opt/9ec461f88571-800.webp",
-        "bytes": 11210
+        "h": 656,
+        "webp": "/assets/images/opt/bc1cfbdcadb2-800.webp",
+        "bytes": 35150
       },
       {
         "w": 1280,
-        "h": 1280,
-        "webp": "/assets/images/opt/9ec461f88571-1280.webp",
-        "bytes": 23208
+        "h": 1050,
+        "webp": "/assets/images/opt/bc1cfbdcadb2-1280.webp",
+        "bytes": 79546
       }
     ]
   }
