@@ -45,8 +45,10 @@ function icomplyImagePick(string $path, string $family, int $count = 3): array
     $aov = array_values(is_array($entry['aov'] ?? null) ? $entry['aov'] : []);
     $own = array_values(is_array($entry['own'] ?? null) ? $entry['own'] : []);
     if ($family === 'aov-air-handling' && $smoke !== [] && $aov !== []) {
-        $first = icomplyImageHashed($smoke, $path, 0);
-        $second = icomplyImageHashed($aov, $path, 1);
+        // Hero rotates across the whole smoke + AOV pool so no single photo dominates;
+        // the second slot always comes from the other group.
+        $first = icomplyImageHashed(array_merge($smoke, $aov), $path, 0);
+        $second = icomplyImageHashed(in_array($first, $smoke, true) ? $aov : $smoke, $path, 1);
         $rest = array_values(array_filter(
             array_merge($smoke, $aov),
             static fn (string $src): bool => $src !== $first && $src !== $second

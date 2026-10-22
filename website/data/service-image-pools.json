@@ -9,13 +9,33 @@
             "/assets/images/services/smoke-vent-roof-1.jpg",
             "/assets/images/services/smoke-vent-hatch-1.jpg",
             "/assets/images/services/smoke-vent-cover-1.jpg",
-            "/assets/images/services/smoke-shaft-1.jpg"
+            "/assets/images/services/smoke-shaft-1.jpg",
+            "/assets/images/services/smoke-vent-rooflight-1.jpg",
+            "/assets/images/services/smoke-exhaust-duct-1.jpg",
+            "/assets/images/services/smoke-vent-roof-window-1.jpg",
+            "/assets/images/services/smoke-shaft-2.jpg",
+            "/assets/images/services/smoke-stair-fan-1.jpg"
         ],
         "aov": [
             "/assets/images/services/aov-release-switch-1.jpg",
             "/assets/images/services/aov-control-panel-1.jpg",
             "/assets/images/services/aov-control-panel-2.jpg",
-            "/assets/images/services/aov-roof-hatch-1.jpg"
+            "/assets/images/services/aov-roof-hatch-1.jpg",
+            "/assets/images/services/aov-control-panel-3.jpg",
+            "/assets/images/services/aov-control-panel-4.jpg",
+            "/assets/images/services/aov-release-switch-2.jpg",
+            "/assets/images/services/aov-release-switch-3.jpg",
+            "/assets/images/services/aov-damper-actuator-1.jpg",
+            "/assets/images/services/aov-smoke-damper-1.jpg",
+            "/assets/images/services/aov-smoke-damper-2.jpg",
+            "/assets/images/services/aov-smoke-damper-3.jpg",
+            "/assets/images/services/aov-damper-actuator-2.jpg",
+            "/assets/images/services/aov-damper-actuator-3.jpg",
+            "/assets/images/services/aov-damper-actuator-4.jpg",
+            "/assets/images/services/aov-air-handling-unit-1.jpg",
+            "/assets/images/services/aov-air-handling-unit-2.jpg",
+            "/assets/images/services/aov-air-handling-unit-3.jpg",
+            "/assets/images/services/aov-rooftop-unit-1.jpg"
         ]
     },
     "asbestos-survey": {

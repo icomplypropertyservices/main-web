@@ -37,8 +37,9 @@ export function pickImages(path, family, count = 3) {
   const aov = Array.isArray(entry.aov) ? entry.aov : [];
   let own = Array.isArray(entry.own) ? entry.own.slice() : [];
   if (key === "aov-air-handling" && smoke.length && aov.length) {
-    const first = hashed(smoke, path, 0);
-    const second = hashed(aov, path, 1);
+    // Hero rotates across the whole smoke + AOV pool; the second slot comes from the other group.
+    const first = hashed(smoke.concat(aov), path, 0);
+    const second = hashed(smoke.includes(first) ? aov : smoke, path, 1);
     const rest = smoke.concat(aov).filter((src) => src !== first && src !== second);
     const third = hashed(rest.length ? rest : aov, path, 2);
     return [first, second, third].slice(0, want);
