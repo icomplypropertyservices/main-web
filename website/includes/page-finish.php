@@ -64,7 +64,7 @@ function icomplyFinishPage(string $html, string $path): string
         $fig = '<figure data-pe-slot="q2-image-hero" data-photo-slot="real-photo" class="pf-hero" style="margin:0 0 1.1rem"><img src="' . htmlspecialchars($src, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($h1, ENT_QUOTES, 'UTF-8') . '" width="1200" height="630" loading="eager" style="width:100%;height:auto;min-height:200px;max-height:420px;object-fit:cover;border-radius:.6rem">' . icomplyFinishCaption($src) . '</figure>';
         $html = preg_replace('/(<div class="hero-cta" data-cta="hero">.*?<\/div>)/s', '$1' . $fig, $html, 1) ?? $html;
     }
-    if (stripos($html, 'faqpage') === false && $h1 !== '' && stripos($html, '</main>') !== false) {
+    if (stripos($html, 'faqpage') === false && $h1 !== '' && (stripos($html, '</main>') !== false || stripos($html, '<footer') !== false)) {
         $t = $h1;
         $qa = [
             ['How do I get a quote for ' . $t . '?', 'Call or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com with the address, the type of property and a few photos. We reply the same working day with a written quote or the questions we need answered first.'],
@@ -79,6 +79,7 @@ function icomplyFinishPage(string $html, string $path): string
         }
         $vis .= '</section><script type="application/ld+json">' . json_encode(['@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => $ents], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>';
         $pos = strripos($html, '</main>');
+        if ($pos === false) { $pos = stripos($html, '<footer'); }
         $html = substr($html, 0, $pos) . $vis . substr($html, $pos);
     }
     $html = icomplyFinishDepth($html, $path, $h1);
@@ -130,7 +131,7 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     static $data = null;
     if (stripos($html, 'data-pf-depth') !== false || preg_match('#(^|/)(404|thank|admin)#', $path)) { return $html; }
     $have = icomplyFinishProseWords($html);
-    if ($have >= 840) { return $html; }
+    if ($have >= 880) { return $html; }
     if ($data === null) { $data = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/page-depth.json'), true) ?: []; }
     $hay = strtolower($path . ' ' . (preg_replace('/[^a-z0-9]+/i', '-', $h1) ?? ''));
     $paras = []; $names = [];
@@ -142,7 +143,7 @@ function icomplyFinishDepth(string $html, string $path, string $h1): string
     $n = count($gen); $start = $n ? (int)(crc32($path) % $n) : 0;
     for ($i = 0; $i < $n; $i++) { $paras[] = $gen[($start + $i) % $n]; }
     $out = []; $w = $have;
-    foreach ($paras as $p) { if ($w >= 870) { break; } $out[] = $p; $w += str_word_count($p); }
+    foreach ($paras as $p) { if ($w >= 910) { break; } $out[] = $p; $w += str_word_count($p); }
     if (!$out) { return $html; }
     $title = $names ? 'Good to know about ' . implode(' and ', $names) : 'How we work';
     $sec = '<section data-pf-depth class="pf-depth max-w-7xl mx-auto px-6 py-8"><h2 class="text-2xl font-semibold">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h2>';
