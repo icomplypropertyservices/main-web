@@ -28,6 +28,13 @@ $say = static function (bool $ok, string $msg) use (&$fail): void {
 $pick = icomplyMatrixSelectPlaces(100000);
 $places = array_keys($pick['selected']);
 $say(count($places) === 269, 'dual-ring places selected=' . count($places) . ' available=' . ($pick['available'] ?? 0) . ' skipped=' . ($pick['skipped_duplicates'] ?? 0));
+if (!function_exists('icomplySpokenLinkLabel')) {
+    require_once dirname(__DIR__) . '/includes/related.php';
+}
+$say(icomplySpokenLinkLabel('ahu-commissioning', 'AHU Commissioning') === 'AHU commissioning', 'spoken AHU commissioning');
+$say(icomplySpokenLinkLabel('eicr-report', 'EICR Report', 'disley') === 'EICR report in Disley', 'spoken EICR report in Disley');
+$say(icomplySpokenLinkLabel('retaining-wall-build', 'Retaining Wall Build', 'Warrington') === 'Retaining wall construction in Warrington', 'spoken retaining wall construction');
+$say(icomplySpokenLinkLabel('kitchen-fit', 'Kitchen Fit') === 'Kitchen fitting', 'spoken kitchen fitting');
 
 $removedFile = getenv('QM_SITEMAP_REMOVED');
 if (!is_string($removedFile) || $removedFile === '') {
@@ -331,7 +338,7 @@ foreach ($paths as $path) {
         $say(!str_contains($html, 'WN1–WN6in') && !str_contains($html, 'WN1-WN6in'), $path . ' district spacing');
     }
     $aovEquipment = '#/services/(?:smoke-vent-|smoke-shaft-|smoke-exhaust-|smoke-stair-|aov-release-switch-|aov-control-panel-|aov-roof-hatch-|aov-damper-actuator-|aov-smoke-damper-)#';
-    $airSet = '#/(?:page-sets/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units)|services/aov-air-handling-unit-|services/aov-rooftop-unit-)#';
+    $airSet = '#/(?:page-sets/air-duct-pipes|services/aov-air-handling-unit-|services/aov-rooftop-unit-)#';
     if (preg_match('#/aov-air-handling(?:/|$)#', $path)) {
         $say(!str_contains($html, 'a055da46974c') && !str_contains($html, '/services/aov-air-handling.jpg'), $path . ' aov image not collapsed');
         $say(!preg_match($aovEquipment, $html), $path . ' air handling does not use aov equipment');
@@ -346,17 +353,17 @@ foreach ($paths as $path) {
     }
     if (preg_match('#/keywords/[^/]+#', $path)) {
         $say(!preg_match($aovEquipment, $html), $path . ' keyword does not use aov equipment');
-        $say(!preg_match('#/page-sets/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units|workshop-interior|mechanics-tool-set|desk-notebook|public-bookcase)\.jpg#', $html) && !preg_match($airSet, $html), $path . ' keyword does not use another page set');
-        $say(preg_match('#/page-sets/(?:combination-spanners|tape-measure|safety-boots)\.jpg#', $html) === 1, $path . ' keyword photo set');
+        $say(!preg_match('#/page-sets/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units|combination-spanners|tape-measure|safety-boots|workshop-interior|mechanics-tool-set|desk-notebook|public-bookcase)\.jpg#', $html) && !preg_match($airSet, $html), $path . ' keyword does not use another page set');
+        $say(preg_match('#/page-types/keywords/[a-z0-9-]+\.jpg#', $html) === 1, $path . ' keyword trade photo');
         $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg') && !str_contains($html, '/assets/images/keywords/'), $path . ' keyword does not reuse electrical or old keyword files');
     }
-    if (preg_match('#/jobs/[^/]+#', $path)) {
+    if (preg_match('#/jobs/[^/]+#', $path) && !str_ends_with($path, '/jobs')) {
         $say(!preg_match($aovEquipment, $html), $path . ' job does not use aov equipment');
-        $say(preg_match('#/page-sets/(?:workshop-interior|mechanics-tool-set)\.jpg#', $html) === 1, $path . ' job photo set');
+        $say(preg_match('#/page-types/jobs/[a-z0-9-]+\.jpg#', $html) === 1, $path . ' job trade photo');
         $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg'), $path . ' job does not use electrical hero');
     }
-    if (preg_match('#/resources/[^/]+#', $path)) {
-        $say(preg_match('#/page-sets/(?:desk-notebook|public-bookcase)\.jpg#', $html) === 1, $path . ' resource photo set');
+    if (preg_match('#/resources/[^/]+#', $path) && !str_ends_with($path, '/resources')) {
+        $say(preg_match('#/page-types/resources/[a-z0-9-]+\.jpg#', $html) === 1, $path . ' resource trade photo');
         $say(!str_contains($html, '21bb8660f87c') && !str_contains($html, '/services/electrical.jpg'), $path . ' resource does not use electrical hero');
     }
     if ($path === '/pages/manufacturers/vaillant') {

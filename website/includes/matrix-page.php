@@ -331,7 +331,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     if (!function_exists('icomplyImagePick')) {
         require_once SITE_ROOT . '/includes/image-pool.php';
     }
-    $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, 'page-keywords', 1)[0];
+    $kwImagePath = icomplyImagePick('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal, icomplyPageImageKey('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal), 1)[0];
     $html = icomplyMatrixChromeStart($title, $desc, $canonical, $robots, $kwImagePath);
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'

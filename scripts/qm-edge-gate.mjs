@@ -235,7 +235,7 @@ const aovPicks = pickImages("/pages/aov/york", "aov", 3);
 say(aovPicks.length >= 2 && aovPicks[0] !== aovPicks[1], `aov pool distinct ${aovPicks.slice(0, 2).join(" ")}`);
 say(!aovPicks.some((src) => isCollapsedAov(src) || src.includes("/page-sets/") || src.includes("air-handling-unit") || src.includes("rooftop-unit")), "aov pool is equipment only");
 const airPicks = pickImages("/pages/aov-air-handling/york", "aov-air-handling", 3);
-const airFile = /\/(?:page-sets\/(?:air-handler-unit|air-duct-pipes|rooftop-packaged-units)|services\/aov-air-handling-unit-|services\/aov-rooftop-unit-)/;
+const airFile = /\/(?:page-sets\/air-duct-pipes|services\/aov-air-handling-unit-|services\/aov-rooftop-unit-)/;
 say(airPicks.every((src) => airFile.test(src)), `air pool ${airPicks.join(" ")}`);
 say(!airPicks.some((src) => /smoke-vent|aov-release|aov-control|aov-roof-hatch|aov-damper|aov-smoke-damper/.test(src)), "air pool has no aov equipment");
 const aovFloor = applyQualityFloor(
@@ -255,23 +255,26 @@ const keywordFloor = applyQualityFloor(
   `<html><head></head><body><main><h1>Kitchen fitting in Colne</h1><img src="/assets/images/services/electrical.jpg" alt="Board"><img src="/assets/images/services/aov-control-panel-1.jpg" alt="Panel"><img src="/assets/images/keywords/kitchen-fit.jpg" alt="Kitchen"></main></body></html>`,
   { path: "/pages/keywords/kitchen-fit/colne", subject: "Kitchen fitting", place: "Colne" },
 );
-say(/\/page-sets\/(?:combination-spanners|tape-measure|safety-boots)\.jpg/.test(keywordFloor) && !/smoke-vent|aov-release|aov-control|aov-roof-hatch|21bb8660f87c|\/services\/electrical\.jpg|\/assets\/images\/keywords\//.test(keywordFloor), "keyword floor uses only its photo set");
+say(/\/page-types\/keywords\/kitchens\.jpg/.test(keywordFloor) && !/smoke-vent|aov-release|aov-control|aov-roof-hatch|21bb8660f87c|\/services\/electrical\.jpg|\/assets\/images\/keywords\/|combination-spanners|tape-measure|safety-boots/.test(keywordFloor), "keyword floor uses the kitchens trade photo");
 const jobFloor = applyQualityFloor(
   `<html><head></head><body><main><h1>Kitchen fitting in Colne</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
   { path: "/pages/jobs/kitchen-fit/colne", subject: "Kitchen fitting", place: "Colne" },
 );
-say(/\/page-sets\/(?:workshop-interior|mechanics-tool-set)\.jpg/.test(jobFloor) && !/21bb8660f87c|\/services\/electrical\.jpg/.test(jobFloor), "job floor uses only its photo set");
+say(/\/page-types\/jobs\/kitchens\.jpg/.test(jobFloor) && !/21bb8660f87c|\/services\/electrical\.jpg|workshop-interior|page-types\/keywords\//.test(jobFloor), "job floor uses the kitchens trade photo");
 const resourceFloor = applyQualityFloor(
   `<html><head></head><body><main><h1>EICR guide</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
   { path: "/pages/resources/eicr-guide", subject: "EICR guide", place: "Stockport" },
 );
-say(/\/page-sets\/(?:desk-notebook|public-bookcase)\.jpg/.test(resourceFloor) && !/21bb8660f87c|\/services\/electrical\.jpg/.test(resourceFloor), "resource floor uses only its photo set");
+say(/\/page-types\/resources\/electrical\.jpg/.test(resourceFloor) && !/21bb8660f87c|\/services\/electrical\.jpg|desk-notebook|public-bookcase|page-types\/keywords\//.test(resourceFloor), "resource floor uses the electrical trade photo");
 const electricalFloor = applyQualityFloor(
   `<html><head></head><body><main><h1>Electrical in York</h1><img src="/assets/images/services/electrical.jpg" alt="Board"></main></body></html>`,
   { path: "/pages/electrical/york", subject: "Electrical", place: "York" },
 );
 say(electricalFloor.includes("/assets/images/services/electrical.jpg"), "electrical service page keeps its hero");
 say(spokenSubject("kitchen-fit", "Kitchen Fit") === "Kitchen fitting", "spoken kitchen fitting");
+say(spokenSubject("ahu-commissioning", "AHU Commissioning") === "AHU commissioning", "spoken AHU commissioning");
+say(spokenSubject("eicr-report", "EICR Report") === "EICR report", "spoken EICR report");
+say(spokenSubject("retaining-wall-build", "Retaining Wall Build") === "Retaining wall construction", "spoken retaining wall");
 const related = matrixRelatedHtml({
   keywords: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" } },
   jobs: { "kitchen-fit": { name: "Kitchen Fit", service: "kitchens" }, "consumer-unit-swap": { name: "Consumer Unit Swap", service: "electrical" } },
@@ -302,6 +305,40 @@ const relatedJob = matrixRelatedHtml({
   selfPath: "/pages/electrical/colne",
 });
 say(relatedJob.includes("Consumer unit replacement in Colne") && !relatedJob.includes("Consumer Unit Swap"), "related label speaks consumer unit replacement");
+const relatedEicr = matrixRelatedHtml({
+  keywords: { "eicr-report": { name: "EICR Report", service: "electrical" } },
+  jobs: {},
+  services: { labels: { electrical: "Electrical" }, keywords: { electrical: ["eicr-report"] } },
+  places: { disley: { name: "disley" } },
+  manufacturers: {},
+}, {
+  kind: "service",
+  townSlug: "york",
+  townName: "disley",
+  subject: "Electrical",
+  serviceSlug: "electrical",
+  selfPath: "/pages/electrical/disley",
+});
+say(relatedEicr.includes("EICR report in Disley") && !relatedEicr.includes("Eicr report") && !relatedEicr.includes("in disley"), "related label speaks EICR report in Disley");
+const relatedWall = matrixRelatedHtml({
+  keywords: {},
+  jobs: {
+    "retaining-wall-build": { name: "Retaining Wall Build", service: "groundworks" },
+    "foundation-dig": { name: "Foundation Dig", service: "groundworks" },
+  },
+  services: { labels: { groundworks: "Groundworks" }, keywords: {} },
+  places: { warrington: { name: "Warrington" } },
+  manufacturers: {},
+}, {
+  kind: "job",
+  townSlug: "warrington",
+  townName: "Warrington",
+  subject: "Foundation Dig",
+  serviceSlug: "groundworks",
+  job: "foundation-dig",
+  selfPath: "/pages/jobs/foundation-dig/warrington",
+});
+say(relatedWall.includes("Retaining wall construction in Warrington") && !relatedWall.includes("Retaining wall build"), "related label speaks retaining wall construction");
 const plasterNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/plastering/york", "Plastering", "York").join(" ");
 say(/wall or the ceiling/.test(plasterNote) && !/fence run/.test(plasterNote) && !/Useful photographs before/.test(plasterNote), "plastering photo line");
 const gasNote = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/keywords/gas-engineer/york", "Gas engineer", "York").join(" ");

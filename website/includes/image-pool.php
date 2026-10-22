@@ -58,9 +58,16 @@ function icomplyImagePick(string $path, string $family, int $count = 3): array
         return array_slice($picked, 0, $count);
     }
     if ($own === []) {
-        $rel = '/assets/images/services/' . $family . '.jpg';
         $root = dirname(__DIR__);
-        $own = is_file($root . $rel) ? [$rel] : ['/assets/images/real-job/directory-hub.jpg'];
+        if (str_starts_with($family, 'type-') || str_starts_with($family, 'page-')) {
+            $fallback = icomplyImagePools()['type-keywords-building-maintenance']['own'] ?? [];
+            $own = is_array($fallback) && $fallback !== []
+                ? array_values($fallback)
+                : ['/assets/images/real-job/directory-hub.jpg'];
+        } else {
+            $rel = '/assets/images/services/' . $family . '.jpg';
+            $own = is_file($root . $rel) ? [$rel] : ['/assets/images/real-job/directory-hub.jpg'];
+        }
     }
     $picked = [];
     $used = [];
@@ -126,6 +133,126 @@ function icomplyImagePoolHas(string $family, string $src): bool
         }
     }
     return false;
+}
+
+/** @return array<string,string> */
+function icomplyKeywordServiceMap(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $map = [];
+    $primary = dirname(__DIR__) . '/data/keyword-services.json';
+    $decoded = is_file($primary) ? json_decode((string)file_get_contents($primary), true) : [];
+    if (is_array($decoded)) {
+        foreach ($decoded as $slug => $service) {
+            if (is_string($slug) && is_string($service) && $service !== '') {
+                $map[$slug] = $service;
+            }
+        }
+    }
+    $fallbackFile = dirname(__DIR__) . '/data/keyword-service-fallback.json';
+    $fallback = is_file($fallbackFile) ? json_decode((string)file_get_contents($fallbackFile), true) : [];
+    if (is_array($fallback)) {
+        foreach ($fallback as $slug => $service) {
+            if (!isset($map[$slug]) && is_string($service) && $service !== '') {
+                $map[(string)$slug] = $service;
+            }
+        }
+    }
+    return $map;
+}
+
+/** @return array<string,array<string,mixed>> */
+function icomplyCatalogueRows(): array
+{
+    static $rows = null;
+    if ($rows !== null) {
+        return $rows;
+    }
+    $file = dirname(__DIR__) . '/data/seo-lock/p0-index.json';
+    $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    if (is_array($doc['rows'] ?? null)) {
+        $rows = $doc['rows'];
+    } elseif (is_array($doc)) {
+        $rows = $doc;
+    } else {
+        $rows = [];
+    }
+    return $rows;
+}
+
+/** @return array<string,string> */
+function icomplyResourceServiceMap(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+    $file = dirname(__DIR__) . '/data/resource-article-images.json';
+    $doc = is_file($file) ? json_decode((string)file_get_contents($file), true) : [];
+    $map = [];
+    if (is_array($doc)) {
+        foreach ($doc as $slug => $service) {
+            if (is_string($slug) && is_string($service)) {
+                $map[$slug] = $service;
+            }
+        }
+    }
+    return $map;
+}
+
+function icomplyPageImageKey(string $path): string
+{
+    $path = (string)preg_replace('/\.php$/i', '', $path);
+    $parts = array_values(array_filter(explode('/', $path), static fn ($part) => $part !== ''));
+    $head = ($parts[0] ?? '') === 'pages' ? ($parts[1] ?? '') : ($parts[0] ?? '');
+    $slug = ($parts[0] ?? '') === 'pages' ? ($parts[2] ?? '') : ($parts[1] ?? '');
+    if ($head === 'aov' || ($head === 'services' && $slug === 'aov')) {
+        return 'aov';
+    }
+    if ($head === 'aov-air-handling' || ($head === 'services' && $slug === 'aov-air-handling')) {
+        return 'aov-air-handling';
+    }
+    if ($head === 'about') {
+        return 'page-about';
+    }
+    if ($head === 'commercial') {
+        return 'page-commercial';
+    }
+    if ($head === 'keywords' && $slug !== '' && $slug !== 'index') {
+        $row = icomplyCatalogueRows()[$slug] ?? [];
+        $service = icomplyKeywordServiceMap()[$slug] ?? '';
+        if ($service === '' && is_array($row)) {
+            $service = (string)($row['service'] ?? '');
+        }
+        if ($service === 'aov') {
+            $service = 'aov-air-handling';
+        }
+        if ($service === '') {
+            $service = 'building-maintenance';
+        }
+        return 'type-keywords-' . $service;
+    }
+    if ($head === 'jobs' && $slug !== '' && $slug !== 'index') {
+        $row = icomplyCatalogueRows()[$slug] ?? [];
+        $service = is_array($row) ? (string)($row['service'] ?? '') : '';
+        if ($service === '') {
+            $fallbackFile = dirname(__DIR__) . '/data/keyword-service-fallback.json';
+            $fallback = is_file($fallbackFile) ? json_decode((string)file_get_contents($fallbackFile), true) : [];
+            $service = is_array($fallback) ? (string)($fallback[$slug] ?? '') : '';
+        }
+        if ($service === '' || $service === 'aov') {
+            $service = $service === 'aov' ? 'aov-air-handling' : 'building-maintenance';
+        }
+        return 'type-jobs-' . $service;
+    }
+    if ($head === 'resources' && $slug !== '' && $slug !== 'index') {
+        $service = icomplyResourceServiceMap()[$slug] ?? 'compliance-consultancy';
+        return 'type-resources-' . $service;
+    }
+    return '';
 }
 
 function icomplyImageOwner(string $src): string

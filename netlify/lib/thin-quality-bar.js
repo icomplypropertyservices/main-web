@@ -196,10 +196,20 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages, pref
   const altHero = `${subject} in ${placeName}`;
   const altWork = `${subject} equipment prepared for ${placeName}`;
   const altContext = `Property compliance visit arranged for ${placeName}`;
+  const slots = [
+    ["q2-image-hero", primary, altHero],
+    ["q2-image-work", second, altWork],
+    ["q2-image-context", third, altContext],
+  ];
+  const seen = new Set();
   const html = `<figure class="quality-bar-images" data-pe-slot="q2-thin-images">`
-    + `<img data-pe-slot="q2-image-hero"${creditAttr(primary)} src="${primary}" alt="${escapeHtml(altHero)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-work"${creditAttr(second)} src="${second}" alt="${escapeHtml(altWork)}" width="1200" height="630">`
-    + `<img data-pe-slot="q2-image-context"${creditAttr(third)} src="${third}" alt="${escapeHtml(altContext)}" width="1200" height="630">`
+    + slots.filter(([, src]) => {
+      if (!src || seen.has(src)) return false;
+      seen.add(src);
+      return true;
+    }).map(([slot, src, alt]) => (
+      `<img data-pe-slot="${slot}"${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="630">`
+    )).join("")
     + `</figure>`;
   return {
     html,

@@ -578,14 +578,8 @@ function icomplyQualityFloorImageKey(string $path): string
     if ($head === 'services' && $slug === 'aov-air-handling') {
         return 'aov-air-handling';
     }
-    if ($head === 'keywords' && $slug !== '' && $slug !== 'index') {
-        return 'page-keywords';
-    }
-    if ($head === 'jobs' && $slug !== '' && $slug !== 'index') {
-        return 'page-jobs';
-    }
-    if ($head === 'resources' && $slug !== '' && $slug !== 'index' && !icomplyQualityFloorIsHubIndex($path, 'resources')) {
-        return 'page-resources';
+    if (function_exists('icomplyPageImageKey')) {
+        return icomplyPageImageKey($path);
     }
     return '';
 }
@@ -619,7 +613,8 @@ function icomplyQualityFloorManufacturerSrc(string $path): string
     if ($image !== '' && (preg_match('#/services/aov-air-handling(?:-(?:photo|context))?\.jpe?g$#i', $image)
         || icomplyQualityFloorAovEquipment($image)
         || icomplyQualityFloorElectricalHero($image)
-        || str_contains($image, '/page-sets/'))) {
+        || str_contains($image, '/page-sets/')
+        || str_contains($image, '/page-types/'))) {
         $image = '';
     }
     $root = dirname(__DIR__);
@@ -1093,12 +1088,13 @@ function icomplyQualityFloorCrumbSubject(string $slug): string
     $verbs = [
         'fit' => 'fitting', 'swap' => 'replacement', 'replace' => 'replacement',
         'install' => 'installation', 'repair' => 'repair', 'service' => 'servicing',
+        'build' => 'construction',
     ];
     $acronyms = [
-        'aov' => 'AOV', 'grp' => 'GRP', 'epdm' => 'EPDM', 'eicr' => 'EICR', 'ev' => 'EV',
-        'pir' => 'PIR', 'upvc' => 'uPVC', 'lvt' => 'LVT', 'cctv' => 'CCTV', 'cp12' => 'CP12',
+        'aov' => 'AOV', 'ahu' => 'AHU', 'grp' => 'GRP', 'epdm' => 'EPDM', 'eicr' => 'EICR', 'ev' => 'EV',
+        'pir' => 'PIR', 'upvc' => 'uPVC', 'lvt' => 'LVT', 'cctv' => 'CCTV', 'cp12' => 'CP12', 'cp44' => 'CP44',
         'pat' => 'PAT', 'hmo' => 'HMO', 'cdm' => 'CDM', 'co' => 'CO', 'tv' => 'TV',
-        'ip' => 'IP', 'led' => 'LED', 'rcd' => 'RCD', 'mcb' => 'MCB',
+        'ip' => 'IP', 'led' => 'LED', 'rcd' => 'RCD', 'mcb' => 'MCB', 'epc' => 'EPC', 'fra' => 'FRA',
     ];
     $parts = array_values(array_filter(explode('-', $slug), static fn ($p) => $p !== ''));
     if ($parts === []) {
@@ -1367,7 +1363,7 @@ function icomplyQualityFloorRewriteMetaImages(string $html, string $path): strin
             $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
             $blocked = (icomplyQualityFloorAovEquipment($origin) && $imageKey !== 'aov')
                 || ((icomplyQualityFloorElectricalHero($origin) || icomplyQualityFloorElectricalHero($pathOnly)) && !$electricalPage)
-                || (str_contains($origin, '/page-sets/') && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
+                || ((str_contains($origin, '/page-sets/') || str_contains($origin, '/page-types/')) && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
             $owned = $imageKey !== ''
                 ? icomplyImagePoolHas($imageKey, $origin)
                 : ($imgFamily === '' || ($imgFamily === $family && !icomplyQualityFloorPlaceholderImage($pathOnly)));
@@ -1467,7 +1463,7 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
         $borrowed = icomplyQualityFloorBorrowedImage($origin, $path);
         $wrongSet = ((icomplyQualityFloorAovEquipment($origin) || icomplyQualityFloorAovEquipment($src)) && $imageKey !== 'aov')
             || ((icomplyQualityFloorElectricalHero($origin) || icomplyQualityFloorElectricalHero($src)) && !$electricalPage)
-            || (str_contains($origin, '/page-sets/') && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
+            || ((str_contains($origin, '/page-sets/') || str_contains($origin, '/page-types/')) && !($imageKey !== '' && icomplyImagePoolHas($imageKey, $origin)));
         if ($imageKey !== '') {
             if (!icomplyImagePoolHas($imageKey, $origin) || $sharedHub || $collapsed || $wrongSet) {
                 return '<img' . $swap($attrs, $nextSrc()) . '>';
@@ -1513,6 +1509,54 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
         $out = preg_replace('#/assets/images/services/electrical\.jpe?g#i', $replacement, $out) ?? $out;
     }
     return $out;
+}
+
+function icomplyQualityFloorDedupePhotos(string $html): string
+{
+    if (!preg_match_all('/<img\b[^>]*\bsrc="([^"]+)"[^>]*>/i', $html, $matches, PREG_OFFSET_CAPTURE)) {
+        return $html;
+    }
+    $groups = [];
+    foreach ($matches[0] as $i => $tag) {
+        $src = $matches[1][$i][0];
+        if (!preg_match('#/assets/images/.+\.(?:jpe?g|webp)(?:$|\?)#i', $src)) {
+            continue;
+        }
+        $key = (string)strtok($src, '?');
+        $groups[$key][] = ['tag' => $tag[0], 'offset' => $tag[1], 'length' => strlen($tag[0])];
+    }
+    $ops = [];
+    foreach ($groups as $items) {
+        if (count($items) < 2) {
+            continue;
+        }
+        $real = false;
+        foreach ($items as $item) {
+            if (stripos($item['tag'], 'data-pe-slot="real-photo"') !== false) {
+                $real = true;
+                break;
+            }
+        }
+        $first = $items[0];
+        $tag = $first['tag'];
+        if ($real && stripos($tag, 'data-pe-slot="real-photo"') === false) {
+            $patched = preg_replace('/<img\b/i', '<img data-pe-slot="real-photo"', $tag, 1);
+            if (is_string($patched) && $patched !== $tag) {
+                $ops[$first['offset']] = ['length' => $first['length'], 'html' => $patched];
+            }
+        }
+        foreach (array_slice($items, 1) as $item) {
+            $ops[$item['offset']] = ['length' => $item['length'], 'html' => ''];
+        }
+    }
+    if ($ops === []) {
+        return $html;
+    }
+    krsort($ops, SORT_NUMERIC);
+    foreach ($ops as $offset => $op) {
+        $html = substr($html, 0, $offset) . $op['html'] . substr($html, $offset + $op['length']);
+    }
+    return $html;
 }
 
 function icomplyApplyQualityFloor(string $html): string
@@ -1612,6 +1656,7 @@ function icomplyApplyQualityFloor(string $html): string
         ['Bolton (BL1–BL7) has terraced houses', 'Bolton (BL1-BL7) has terraced houses'],
         $html
     );
+    $html = icomplyQualityFloorDedupePhotos($html);
     $html = icomplyStampImageCredits($html);
     $passes = 0;
     while (str_contains($html, '&amp;amp;') && $passes < 4) {

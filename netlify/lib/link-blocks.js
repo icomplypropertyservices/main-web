@@ -23,7 +23,7 @@ import areasMainland from "../../website/data/areas-mainland.json" with { type: 
 import { BOROUGH_GEO } from "./town-depth.js";
 
 import { LOCAL_TOWN_SET } from "./dual-ring-allowlist.js";
-import { spokenSubject } from "./spoken-subject.js";
+import { spokenPlace, spokenSubject } from "./spoken-subject.js";
 
 function mainlandAreaSlug(name) {
   return String(name || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -288,13 +288,14 @@ function nearestSlice(items, townSlug, size) {
 
 function spokenLinkLabel(slug, name, townName = "") {
   const spoken = spokenSubject(slug, name);
-  return townName ? `${spoken} in ${townName}` : spoken;
+  const place = spokenPlace(townName);
+  return place ? `${spoken} in ${place}` : spoken;
 }
 
 export function matrixRelatedHtml(catalogue, identity) {
   const kind = identity.kind || "service";
   const townSlug = identity.townSlug || "";
-  const townName = identity.townName || gmTownName(townSlug) || "Greater Manchester";
+  const townName = spokenPlace(identity.townName || gmTownName(townSlug) || "Greater Manchester");
   const subject = identity.subject || "This work";
   const serviceSlug = identity.serviceSlug || "";
   const serviceName = identity.serviceName || serviceLabel(catalogue, serviceSlug) || "Property services";
@@ -378,7 +379,7 @@ export function matrixRelatedHtml(catalogue, identity) {
   for (const town of distanceNear) {
     nearby.push({
       href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
-      label: `${subject} in ${town.name}`,
+      label: `${subject} in ${spokenPlace(town.name)}`,
       slug: town.slug,
     });
   }
@@ -387,7 +388,7 @@ export function matrixRelatedHtml(catalogue, identity) {
     if (!town.slug || town.slug === townSlug) continue;
     const item = {
       href: leafHref(kind === "variant" ? "keyword" : kind, identity, town.slug),
-      label: `${subject} in ${town.name}`,
+      label: `${subject} in ${spokenPlace(town.name)}`,
       slug: town.slug,
     };
     if (!distanceNear.length && nearSet.has(town.slug) && nearby.length < 12) nearby.push(item);

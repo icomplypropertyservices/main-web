@@ -8,15 +8,18 @@ const TOPICS = copyDoc.topics || {};
 const COPY = copyDoc.families || {};
 
 const ACRONYM = {
-  aov: "AOV", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
-  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", pat: "PAT", hmo: "HMO",
+  aov: "AOV", ahu: "AHU", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
+  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", cp44: "CP44", pat: "PAT", hmo: "HMO",
   cdm: "CDM", co: "CO", tv: "TV", ip: "IP", led: "LED", rcd: "RCD", mcb: "MCB",
+  hd: "HD", bs: "BS", htm: "HTM", lpg: "LPG", ptz: "PTZ", fra: "FRA", epc: "EPC",
+  fd30: "FD30", fd60: "FD60", anpr: "ANPR", nvr: "NVR", dvr: "DVR", ppm: "PPM", gsm: "GSM",
 };
 
 const VERB = {
   fit: "fitting", fitting: "fitting", swap: "replacement", replace: "replacement",
   replacement: "replacement", install: "installation", installation: "installation",
   repair: "repair", repairs: "repairs", service: "servicing", servicing: "servicing",
+  build: "construction",
 };
 
 function sentenceToken(part, index) {
@@ -48,19 +51,25 @@ export function titleCaseSlug(slug) {
     .split("-")
     .filter(Boolean)
     .map((part) => {
-      if (part === "aov") return "AOV";
-      if (part === "grp") return "GRP";
-      if (part === "epdm") return "EPDM";
-      if (part === "eicr") return "EICR";
-      if (part === "ev") return "EV";
-      if (part === "pir") return "PIR";
-      if (part === "upvc") return "uPVC";
-      if (part === "lvt") return "LVT";
-      if (part === "d" ) return "D";
+      const lower = part.toLowerCase();
+      if (ACRONYM[lower]) return ACRONYM[lower];
+      if (lower === "d") return "D";
       return part.charAt(0).toUpperCase() + part.slice(1);
     })
     .join(" ")
     .replace(/\bD H\b/g, "D+H");
+}
+
+/** Town labels: a lowercase slug becomes a spoken place. Proper names stay. */
+export function spokenPlace(town) {
+  const raw = String(town || "").trim();
+  if (!raw || /[A-Z]/.test(raw)) return raw;
+  return raw.split(/(\s+|-)/).map((part) => {
+    if (!part || part === "-" || /^\s+$/.test(part)) return part;
+    const lower = part.toLowerCase();
+    if (ACRONYM[lower]) return ACRONYM[lower];
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  }).join("");
 }
 
 export function topicFor(slug, family) {
@@ -82,7 +91,7 @@ export function spokenSubject(slug, name) {
   const titled = titleCaseSlug(slug);
   const given = String(name || "").trim();
   if (!given || given.toLowerCase() !== titled.toLowerCase()) return given || titled;
-  const topic = TOPICS[slug] || topicFor(slug, "");
+  const topic = TOPICS[slug];
   if (topic) {
     const lead = String(topic).split(/\s+is\s+/i)[0].replace(/^(?:an|a)\s+/i, "").trim();
     if (lead && lead.length >= 3 && lead.length <= 48 && !/[.?!,:]/.test(lead)) {

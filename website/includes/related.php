@@ -175,6 +175,32 @@ function relatedManufacturersHtml(string $serviceSlug = '', int $limit = 8): str
     return $html;
 }
 
+function icomplySpokenPlace(string $town): string
+{
+    $town = trim($town);
+    if ($town === '' || preg_match('/[A-Z]/', $town)) {
+        return $town;
+    }
+    $parts = preg_split('/(\s+|-)/', $town, -1, PREG_SPLIT_DELIM_CAPTURE);
+    if (!is_array($parts)) {
+        return ucfirst($town);
+    }
+    $acronyms = [
+        'aov' => 'AOV', 'ahu' => 'AHU', 'eicr' => 'EICR', 'epc' => 'EPC', 'cctv' => 'CCTV',
+        'pat' => 'PAT', 'hmo' => 'HMO', 'cp12' => 'CP12', 'ev' => 'EV',
+    ];
+    $out = '';
+    foreach ($parts as $part) {
+        if ($part === '-' || trim($part) === '') {
+            $out .= $part;
+            continue;
+        }
+        $lower = strtolower($part);
+        $out .= $acronyms[$lower] ?? (ucfirst($lower));
+    }
+    return $out;
+}
+
 function icomplySpokenLinkLabel(string $slug, string $name, string $town = ''): string
 {
     $given = trim($name);
@@ -186,15 +212,26 @@ function icomplySpokenLinkLabel(string $slug, string $name, string $town = ''): 
             'fit' => 'fitting', 'fitting' => 'fitting', 'swap' => 'replacement', 'replace' => 'replacement',
             'replacement' => 'replacement', 'install' => 'installation', 'installation' => 'installation',
             'repair' => 'repair', 'repairs' => 'repairs', 'service' => 'servicing', 'servicing' => 'servicing',
+            'build' => 'construction',
+        ];
+        $acronyms = [
+            'aov' => 'AOV', 'ahu' => 'AHU', 'grp' => 'GRP', 'epdm' => 'EPDM', 'eicr' => 'EICR', 'ev' => 'EV',
+            'pir' => 'PIR', 'upvc' => 'uPVC', 'lvt' => 'LVT', 'cctv' => 'CCTV', 'cp12' => 'CP12', 'cp44' => 'CP44',
+            'pat' => 'PAT', 'hmo' => 'HMO', 'cdm' => 'CDM', 'co' => 'CO', 'tv' => 'TV', 'ip' => 'IP',
+            'led' => 'LED', 'rcd' => 'RCD', 'mcb' => 'MCB', 'hd' => 'HD', 'bs' => 'BS', 'htm' => 'HTM',
+            'lpg' => 'LPG', 'ptz' => 'PTZ', 'fra' => 'FRA', 'epc' => 'EPC', 'fd30' => 'FD30', 'fd60' => 'FD60',
+            'anpr' => 'ANPR', 'nvr' => 'NVR', 'dvr' => 'DVR', 'ppm' => 'PPM', 'gsm' => 'GSM',
         ];
         $last = strtolower((string)($parts[count($parts) - 1] ?? ''));
         if (isset($verbs[$last])) {
             $parts[count($parts) - 1] = $verbs[$last];
         }
         $words = [];
-        foreach ($parts as $index => $part) {
+        foreach ($parts as $part) {
             $lower = strtolower($part);
-            if ($index === 0) {
+            if (isset($acronyms[$lower])) {
+                $words[] = $acronyms[$lower];
+            } elseif ($words === []) {
                 $words[] = ucfirst($lower);
             } else {
                 $words[] = $lower;
@@ -202,7 +239,8 @@ function icomplySpokenLinkLabel(string $slug, string $name, string $town = ''): 
         }
         $spoken = $words !== [] ? implode(' ', $words) : $given;
     }
-    return $town !== '' ? $spoken . ' in ' . $town : $spoken;
+    $place = icomplySpokenPlace($town);
+    return $place !== '' ? $spoken . ' in ' . $place : $spoken;
 }
 
 /**

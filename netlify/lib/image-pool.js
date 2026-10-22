@@ -45,7 +45,14 @@ export function pickImages(path, family, count = 3) {
     const third = hashed(rest.length ? rest : aov, path, 2);
     return [first, second, third].slice(0, want);
   }
-  if (!own.length) own = [`/assets/images/services/${key}.jpg`];
+  if (!own.length) {
+    if (key.startsWith("type-") || key.startsWith("page-")) {
+      const fallback = (pools["type-keywords-building-maintenance"] || {}).own;
+      own = Array.isArray(fallback) && fallback.length ? fallback.slice() : ["/assets/images/real-job/directory-hub.jpg"];
+    } else {
+      own = [`/assets/images/services/${key}.jpg`];
+    }
+  }
   const picked = [];
   const used = new Set();
   for (let slot = 0; slot < want; slot++) {

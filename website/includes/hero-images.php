@@ -205,12 +205,13 @@ function icomplyKeywordHero(string $keywordSlug, string $serviceSlug, string $ar
         }
     }
     $path = '/pages/keywords/' . $keywordSlug . ($area !== '' ? '/' . $area : '');
-    $picks = function_exists('icomplyImagePick') ? icomplyImagePick($path, 'page-keywords', 2) : [];
+    $poolKey = function_exists('icomplyPageImageKey') ? icomplyPageImageKey($path) : 'type-keywords-building-maintenance';
+    $picks = function_exists('icomplyImagePick') ? icomplyImagePick($path, $poolKey, 2) : [];
     $primary = (string)($picks[0] ?? '/assets/images/real-job/directory-hub.jpg');
     $inline = (string)($picks[1] ?? $primary);
     return [
         'primary' => $primary,
         'inline' => $inline,
-        'pool' => 'page-keywords',
+        'pool' => $poolKey,
     ];
 }

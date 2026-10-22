@@ -199,9 +199,9 @@ export function tradesImages(slug, placeName) {
   const service = row.service || "building-maintenance";
   const kind = row.kind || "";
   const poolKey = kind === "keyword"
-    ? "page-keywords"
+    ? `type-keywords-${service}`
     : kind === "job"
-      ? "page-jobs"
+      ? `type-jobs-${service}`
       : (service === "aov" || row.family === "aov")
         ? "aov"
         : service === "aov-air-handling"
@@ -219,11 +219,21 @@ export function tradesImages(slug, placeName) {
     const credit = licensedCredit(file);
     return credit ? ` data-credit="${escapeHtml(credit)}"` : "";
   };
-  const html = `<figure class="quality-bar-images trades-images" data-pe-slot="real-photo" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">`
-    + `<img${creditAttr(real)} data-pe-slot="real-photo" src="${real}" alt="${escapeHtml(`Photograph of ${name}${place}`)}" width="1200" height="675">`
-    + `<img${creditAttr(src)} src="${src}" alt="${escapeHtml(alt)}" width="1200" height="675" loading="lazy">`
-    + `<img${creditAttr(third)} src="${third}" alt="${escapeHtml(`${name} detail${place}`)}" width="1200" height="675" loading="lazy">`
-    + `</figure>`;
+  const figures = [
+    [real, `Photograph of ${name}${place}`, "real-photo"],
+    [src, alt, ""],
+    [third, `${name} detail${place}`, ""],
+  ];
+  const seenSrc = new Set();
+  const imgs = figures.filter(([file]) => {
+    if (!file || seenSrc.has(file)) return false;
+    seenSrc.add(file);
+    return true;
+  }).map(([file, label, slot]) => {
+    const slotAttr = slot ? ` data-pe-slot="${slot}"` : "";
+    return `<img${creditAttr(file)}${slotAttr} src="${file}" alt="${escapeHtml(label)}" width="1200" height="675" loading="lazy">`;
+  }).join("");
+  const html = `<figure class="quality-bar-images trades-images" data-pe-slot="real-photo" data-image-key="${escapeHtml(key)}" data-image-family="${escapeHtml(row.family)}" data-real-job-photo="owner">${imgs}</figure>`;
   return { html, src, key, family: row.family, alt };
 }
 

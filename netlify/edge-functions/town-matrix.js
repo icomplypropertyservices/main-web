@@ -24,6 +24,8 @@ import mainlandTownDoc from "../../website/data/uk-mainland-towns-10k.json" with
 import gscKeepDoc from "../../website/data/gsc-keep-towns.json" with { type: "json" };
 import serveUpgradeDoc from "../../website/data/seo-upgrade/serve-200.json" with { type: "json" };
 import townCoords from "../../website/data/town-coords-slim.json" with { type: "json" };
+import keywordServices from "../../website/data/keyword-services.json" with { type: "json" };
+import keywordFallback from "../../website/data/keyword-service-fallback.json" with { type: "json" };
 
 // Town pages Google already ranks (GSC impressions). Never 301 these to a hub;
 // render them index,follow so the rankings are kept.
@@ -393,7 +395,8 @@ export function renderTownPage(input) {
         synthetic: true,
       };
     }
-    serviceSlug = keyword.service || "electrical";
+    const mappedService = keywordServices[input.keyword] || keywordFallback[input.keyword] || keyword.service || "building-maintenance";
+    serviceSlug = mappedService === "aov" ? "aov-air-handling" : mappedService;
     serviceName = labels[serviceSlug] || titleCaseSlug(serviceSlug);
     subject = keyword.name;
     nationwideFlag = isFamilyService(serviceSlug, catalogue);
@@ -541,9 +544,9 @@ export function renderTownPage(input) {
   }
   const preferredHero = "";
   const poolKey = kind === "keyword"
-    ? "page-keywords"
+    ? `type-keywords-${serviceSlug || "building-maintenance"}`
     : kind === "job"
-      ? "page-jobs"
+      ? `type-jobs-${serviceSlug || "building-maintenance"}`
       : serviceSlug === "aov"
         ? "aov"
         : serviceSlug === "aov-air-handling"

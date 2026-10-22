@@ -19,12 +19,13 @@ import { aliasFamily, pickImages, isCollapsedAov, imageOwner, poolHas } from "./
 
 const CRUMB_VERB = {
   fit: "fitting", swap: "replacement", replace: "replacement", install: "installation",
-  repair: "repair", service: "servicing",
+  repair: "repair", service: "servicing", build: "construction",
 };
 const CRUMB_ACRONYM = {
-  aov: "AOV", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
-  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", pat: "PAT", hmo: "HMO",
+  aov: "AOV", ahu: "AHU", grp: "GRP", epdm: "EPDM", eicr: "EICR", ev: "EV", pir: "PIR",
+  upvc: "uPVC", lvt: "LVT", cctv: "CCTV", cp12: "CP12", cp44: "CP44", pat: "PAT", hmo: "HMO",
   cdm: "CDM", co: "CO", tv: "TV", ip: "IP", led: "LED", rcd: "RCD", mcb: "MCB",
+  epc: "EPC", fra: "FRA", hd: "HD",
 };
 
 function crumbSubject(slug) {
@@ -322,9 +323,21 @@ function pageImageKey(path) {
   if (head === "aov-air-handling") return "aov-air-handling";
   if (head === "services" && slug === "aov") return "aov";
   if (head === "services" && slug === "aov-air-handling") return "aov-air-handling";
-  if (head === "keywords" && slug && slug !== "index") return "page-keywords";
-  if (head === "jobs" && slug && slug !== "index") return "page-jobs";
-  if (head === "resources" && slug && slug !== "index" && !isHubIndex(path, "resources")) return "page-resources";
+  if (head === "about") return "page-about";
+  if (head === "commercial") return "page-commercial";
+  if (head === "keywords" && slug && slug !== "index") {
+    const service = keywordService(slug) || "building-maintenance";
+    return `type-keywords-${service}`;
+  }
+  if (head === "jobs" && slug && slug !== "index") {
+    const row = (p0Index.rows || p0Index)[slug] || {};
+    const service = row.service || keywordService(slug) || "building-maintenance";
+    return `type-jobs-${service}`;
+  }
+  if (head === "resources" && slug && slug !== "index" && !isHubIndex(path, "resources")) {
+    const service = resourceArticles[slug] || "compliance-consultancy";
+    return `type-resources-${service}`;
+  }
   return "";
 }
 
@@ -339,7 +352,7 @@ function manufacturerSrc(path) {
   const exactAssa = brand === "assa-abloy" && !town;
   if (image.endsWith("/assa-abloy.svg") && !exactAssa) image = "";
   if (/\/services\/aov-air-handling(?:-(?:photo|context))?\.jpe?g$/i.test(image)) image = "";
-  if (isAovEquipment(image) || isElectricalHero(image) || /\/page-sets\//i.test(image)) image = "";
+  if (isAovEquipment(image) || isElectricalHero(image) || /\/page-sets\//i.test(image) || /\/page-types\//i.test(image)) image = "";
   if (image) return image;
   if (service === "aov" || service === "aov-air-handling" || brand === "assa-abloy") {
     return "/assets/images/manufacturers/lines/assa-abloy-door-closers.svg";
@@ -614,6 +627,37 @@ function stampCredits(html) {
   return stamped.replace(/\u0000HOLD(\d+)\u0000/g, (_, index) => held[Number(index)]);
 }
 
+function dedupeRepeatedPhotos(html) {
+  const text = String(html);
+  const re = /<img\b[^>]*\bsrc="([^"]+)"[^>]*>/gi;
+  const matches = [...text.matchAll(re)].filter((match) => /\/assets\/images\/.+\.(?:jpe?g|webp)(?:$|\?)/i.test(match[1]));
+  const groups = new Map();
+  for (const match of matches) {
+    const key = match[1].split("?")[0];
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(match);
+  }
+  const dropAt = new Set();
+  const replaceAt = new Map();
+  for (const group of groups.values()) {
+    if (group.length < 2) continue;
+    const first = group[0];
+    const real = group.some((match) => /data-pe-slot="real-photo"/i.test(match[0]));
+    let tag = first[0];
+    if (real && !/data-pe-slot="real-photo"/i.test(tag)) {
+      tag = tag.replace(/<img\b/i, '<img data-pe-slot="real-photo"');
+    }
+    if (tag !== first[0]) replaceAt.set(first.index, tag);
+    for (const extra of group.slice(1)) dropAt.add(extra.index);
+  }
+  if (!dropAt.size && !replaceAt.size) return text;
+  return text.replace(re, (tag, src, offset) => {
+    if (!/\/assets\/images\/.+\.(?:jpe?g|webp)(?:$|\?)/i.test(src)) return tag;
+    if (dropAt.has(offset)) return "";
+    return replaceAt.get(offset) || tag;
+  });
+}
+
 function photoHtml(path, subject) {
   const imageKey = pageImageKey(path);
   const srcs = imageKey === "aov" || imageKey === "aov-air-handling"
@@ -723,7 +767,7 @@ function rewriteMetaImages(html, path) {
       const borrowed = borrowedImage(origin, path);
       const blocked = isAovEquipment(origin) && imageKey !== "aov"
         || (isElectricalHero(origin) || isElectricalHero(pathOnly)) && !electricalPage
-        || /\/page-sets\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
+        || /\/page-(?:sets|types)\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
       let next = String(url);
       const owned = imageKey ? poolHas(imageKey, origin) : (!imgFamily || (imgFamily === family && !isPlaceholderImage(pathOnly)));
       if (sharedHub || collapsed || borrowed || blocked || !owned) {
@@ -789,7 +833,7 @@ function confineImages(html, path) {
     const borrowed = borrowedImage(origin, path);
     const wrongSet = (isAovEquipment(origin) || isAovEquipment(src)) && imageKey !== "aov"
       || (isElectricalHero(origin) || isElectricalHero(src)) && !electricalPage
-      || /\/page-sets\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
+      || /\/page-(?:sets|types)\//i.test(origin) && !(imageKey && poolHas(imageKey, origin));
     if (imageKey) {
       if (!poolHas(imageKey, origin) || sharedHub || collapsed || wrongSet) {
         return `<img${replaceImgSrc(next, nextSrc())}>`;
@@ -905,6 +949,7 @@ export function applyQualityFloor(html, ctx = {}) {
   out = out.replace(/Bolton \(BL1[–-]BL7\) is terraced houses/g, "Bolton (BL1–BL7) has terraced houses");
   out = spaceVisiblePhone(out);
   out = fixPlaceArticle(out, place);
+  out = dedupeRepeatedPhotos(out);
   out = stampCredits(out);
   let passes = 0;
   while (out.includes("&amp;amp;") && passes < 4) {

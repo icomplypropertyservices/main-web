@@ -16,7 +16,7 @@ if (!function_exists('icomplyKeywordImagePath')) {
             }
         }
         if (function_exists('icomplyImagePick')) {
-            $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, 'page-keywords', 1)[0] ?? '');
+            $rel = (string)(icomplyImagePick('/pages/keywords/' . $slug, icomplyPageImageKey('/pages/keywords/' . $slug), 1)[0] ?? '');
             if ($rel !== '' && is_file($root . $rel)) {
                 return $rel;
             }
