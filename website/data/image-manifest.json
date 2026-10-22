@@ -17722,5 +17722,7274 @@
         "bytes": 124760
       }
     ]
+  },
+  "/assets/images/page-sets/air-duct-pipes.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 237155,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e48233769fb9-480.webp",
+        "bytes": 20874
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e48233769fb9-800.webp",
+        "bytes": 46230
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e48233769fb9-1280.webp",
+        "bytes": 93452
+      }
+    ]
+  },
+  "/assets/images/services/asbestos-survey.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 255299,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/dd57d97dc3ec-480.webp",
+        "bytes": 20056
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/dd57d97dc3ec-800.webp",
+        "bytes": 45854
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/dd57d97dc3ec-1280.webp",
+        "bytes": 88956
+      }
+    ]
+  },
+  "/assets/images/services/barriers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267257,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/047f1a18ad19-480.webp",
+        "bytes": 15600
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/047f1a18ad19-800.webp",
+        "bytes": 42592
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/047f1a18ad19-1280.webp",
+        "bytes": 92364
+      }
+    ]
+  },
+  "/assets/images/services/brickwork-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267764,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/aef72781b96d-480.webp",
+        "bytes": 18724
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/aef72781b96d-800.webp",
+        "bytes": 45398
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/aef72781b96d-1280.webp",
+        "bytes": 96356
+      }
+    ]
+  },
+  "/assets/images/services/brickwork-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267764,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d2644b300ac7-480.webp",
+        "bytes": 18724
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d2644b300ac7-800.webp",
+        "bytes": 45398
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d2644b300ac7-1280.webp",
+        "bytes": 96356
+      }
+    ]
+  },
+  "/assets/images/services/brickwork.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267764,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/87e8d8df7c51-480.webp",
+        "bytes": 18724
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/87e8d8df7c51-800.webp",
+        "bytes": 45398
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/87e8d8df7c51-1280.webp",
+        "bytes": 96356
+      }
+    ]
+  },
+  "/assets/images/services/building-maintenance-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 234889,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5b234d28fa36-480.webp",
+        "bytes": 18390
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5b234d28fa36-800.webp",
+        "bytes": 40548
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5b234d28fa36-1280.webp",
+        "bytes": 79762
+      }
+    ]
+  },
+  "/assets/images/services/building-maintenance-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 452557,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/64e528ceb67a-480.webp",
+        "bytes": 33624
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/64e528ceb67a-800.webp",
+        "bytes": 89440
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/64e528ceb67a-1280.webp",
+        "bytes": 221988
+      }
+    ]
+  },
+  "/assets/images/services/building-maintenance-photo-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 322105,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/504f50ae42d3-480.webp",
+        "bytes": 22000
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/504f50ae42d3-800.webp",
+        "bytes": 57164
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/504f50ae42d3-1280.webp",
+        "bytes": 137600
+      }
+    ]
+  },
+  "/assets/images/services/building-maintenance-photo-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 213789,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/24ed5b82e73e-480.webp",
+        "bytes": 21248
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/24ed5b82e73e-800.webp",
+        "bytes": 44776
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/24ed5b82e73e-1280.webp",
+        "bytes": 75464
+      }
+    ]
+  },
+  "/assets/images/services/building-surveys-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 217319,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/778494a114b8-480.webp",
+        "bytes": 11494
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/778494a114b8-800.webp",
+        "bytes": 27550
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/778494a114b8-1280.webp",
+        "bytes": 64630
+      }
+    ]
+  },
+  "/assets/images/services/building-surveys-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 217319,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6fa68b41c050-480.webp",
+        "bytes": 11494
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6fa68b41c050-800.webp",
+        "bytes": 27550
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6fa68b41c050-1280.webp",
+        "bytes": 64630
+      }
+    ]
+  },
+  "/assets/images/services/building-surveys.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 217319,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/049fd765a59c-480.webp",
+        "bytes": 11494
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/049fd765a59c-800.webp",
+        "bytes": 27550
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/049fd765a59c-1280.webp",
+        "bytes": 64630
+      }
+    ]
+  },
+  "/assets/images/services/cctv-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 296719,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e924048747c3-480.webp",
+        "bytes": 18744
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e924048747c3-800.webp",
+        "bytes": 50830
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e924048747c3-1280.webp",
+        "bytes": 119198
+      }
+    ]
+  },
+  "/assets/images/services/cdm-support-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 278740,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4401a6aab21a-480.webp",
+        "bytes": 25752
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4401a6aab21a-800.webp",
+        "bytes": 55598
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4401a6aab21a-1280.webp",
+        "bytes": 102744
+      }
+    ]
+  },
+  "/assets/images/services/cdm-support-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 278173,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/edbd85b69102-480.webp",
+        "bytes": 26020
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/edbd85b69102-800.webp",
+        "bytes": 58804
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/edbd85b69102-1280.webp",
+        "bytes": 113554
+      }
+    ]
+  },
+  "/assets/images/services/commercial-fit-out-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 243891,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4885fbaf8345-480.webp",
+        "bytes": 25734
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4885fbaf8345-800.webp",
+        "bytes": 54462
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4885fbaf8345-1280.webp",
+        "bytes": 91408
+      }
+    ]
+  },
+  "/assets/images/services/commercial-fit-out-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 243891,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6b2d9fe9ec30-480.webp",
+        "bytes": 25734
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6b2d9fe9ec30-800.webp",
+        "bytes": 54462
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6b2d9fe9ec30-1280.webp",
+        "bytes": 91408
+      }
+    ]
+  },
+  "/assets/images/services/commercial-fit-out.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 243891,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4989bf60b70e-480.webp",
+        "bytes": 25734
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4989bf60b70e-800.webp",
+        "bytes": 54462
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4989bf60b70e-1280.webp",
+        "bytes": 91408
+      }
+    ]
+  },
+  "/assets/images/services/compliance-consultancy-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 282708,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/37fb0a9d433e-480.webp",
+        "bytes": 26236
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/37fb0a9d433e-800.webp",
+        "bytes": 63110
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/37fb0a9d433e-1280.webp",
+        "bytes": 118218
+      }
+    ]
+  },
+  "/assets/images/services/compliance-consultancy-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 164166,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d09654b56f0a-480.webp",
+        "bytes": 8276
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d09654b56f0a-800.webp",
+        "bytes": 17034
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d09654b56f0a-1280.webp",
+        "bytes": 35242
+      }
+    ]
+  },
+  "/assets/images/services/damp-proofing-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 481725,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/64f1f1dbad8f-480.webp",
+        "bytes": 42224
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/64f1f1dbad8f-800.webp",
+        "bytes": 119424
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/64f1f1dbad8f-1280.webp",
+        "bytes": 268130
+      }
+    ]
+  },
+  "/assets/images/services/damp-proofing-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267855,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/466b6039f279-480.webp",
+        "bytes": 13438
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/466b6039f279-800.webp",
+        "bytes": 40210
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/466b6039f279-1280.webp",
+        "bytes": 98780
+      }
+    ]
+  },
+  "/assets/images/services/demolition.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 178025,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/55411e30ebe4-480.webp",
+        "bytes": 15566
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/55411e30ebe4-800.webp",
+        "bytes": 30490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/55411e30ebe4-1280.webp",
+        "bytes": 51642
+      }
+    ]
+  },
+  "/assets/images/services/drainage.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 398866,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/bb6237d1f362-480.webp",
+        "bytes": 35410
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/bb6237d1f362-800.webp",
+        "bytes": 98468
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/bb6237d1f362-1280.webp",
+        "bytes": 199646
+      }
+    ]
+  },
+  "/assets/images/services/driveways-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191008,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e4b4b6056c16-480.webp",
+        "bytes": 18140
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e4b4b6056c16-800.webp",
+        "bytes": 37936
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e4b4b6056c16-1280.webp",
+        "bytes": 65612
+      }
+    ]
+  },
+  "/assets/images/services/driveways-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191008,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5f613b28caec-480.webp",
+        "bytes": 18140
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5f613b28caec-800.webp",
+        "bytes": 37936
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5f613b28caec-1280.webp",
+        "bytes": 65612
+      }
+    ]
+  },
+  "/assets/images/services/driveways.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191008,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5b595a58fcb7-480.webp",
+        "bytes": 18140
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5b595a58fcb7-800.webp",
+        "bytes": 37936
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5b595a58fcb7-1280.webp",
+        "bytes": 65612
+      }
+    ]
+  },
+  "/assets/images/services/dry-lining-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 54600,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d3bc54f3ef98-480.webp",
+        "bytes": 2980
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d3bc54f3ef98-800.webp",
+        "bytes": 6094
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d3bc54f3ef98-1280.webp",
+        "bytes": 11544
+      }
+    ]
+  },
+  "/assets/images/services/dry-lining-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 54600,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c6a45c8c5011-480.webp",
+        "bytes": 2980
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c6a45c8c5011-800.webp",
+        "bytes": 6094
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c6a45c8c5011-1280.webp",
+        "bytes": 11544
+      }
+    ]
+  },
+  "/assets/images/services/dry-lining.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 54600,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1bb73322edde-480.webp",
+        "bytes": 2980
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1bb73322edde-800.webp",
+        "bytes": 6094
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1bb73322edde-1280.webp",
+        "bytes": 11544
+      }
+    ]
+  },
+  "/assets/images/services/dry-risers-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 198200,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/9005d19b7dc9-480.webp",
+        "bytes": 9982
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/9005d19b7dc9-800.webp",
+        "bytes": 21890
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/9005d19b7dc9-1280.webp",
+        "bytes": 45878
+      }
+    ]
+  },
+  "/assets/images/services/dry-risers-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 198200,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/451243985f34-480.webp",
+        "bytes": 9982
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/451243985f34-800.webp",
+        "bytes": 21890
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/451243985f34-1280.webp",
+        "bytes": 45878
+      }
+    ]
+  },
+  "/assets/images/services/dry-risers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 198200,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8d4a7c746119-480.webp",
+        "bytes": 9982
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8d4a7c746119-800.webp",
+        "bytes": 21890
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8d4a7c746119-1280.webp",
+        "bytes": 45878
+      }
+    ]
+  },
+  "/assets/images/services/emergency-lighting-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 151855,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f2d29d643f2f-480.webp",
+        "bytes": 5328
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f2d29d643f2f-800.webp",
+        "bytes": 15190
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f2d29d643f2f-1280.webp",
+        "bytes": 34558
+      }
+    ]
+  },
+  "/assets/images/services/epc-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 160246,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f320c638f20b-480.webp",
+        "bytes": 15170
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f320c638f20b-800.webp",
+        "bytes": 27662
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f320c638f20b-1280.webp",
+        "bytes": 47804
+      }
+    ]
+  },
+  "/assets/images/services/epc-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 160246,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e959943168e3-480.webp",
+        "bytes": 15170
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e959943168e3-800.webp",
+        "bytes": 27662
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e959943168e3-1280.webp",
+        "bytes": 47804
+      }
+    ]
+  },
+  "/assets/images/services/epc.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 160246,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/66486ea684f1-480.webp",
+        "bytes": 15170
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/66486ea684f1-800.webp",
+        "bytes": 27662
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/66486ea684f1-1280.webp",
+        "bytes": 47804
+      }
+    ]
+  },
+  "/assets/images/services/ev-chargers-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 560358,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0ba439daa48a-480.webp",
+        "bytes": 44020
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0ba439daa48a-800.webp",
+        "bytes": 122834
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0ba439daa48a-1280.webp",
+        "bytes": 306988
+      }
+    ]
+  },
+  "/assets/images/services/ev-chargers-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 560358,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/9a20ecf48a58-480.webp",
+        "bytes": 44020
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/9a20ecf48a58-800.webp",
+        "bytes": 122834
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/9a20ecf48a58-1280.webp",
+        "bytes": 306988
+      }
+    ]
+  },
+  "/assets/images/services/ev-chargers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 560358,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3be7881db979-480.webp",
+        "bytes": 44020
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3be7881db979-800.webp",
+        "bytes": 122834
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3be7881db979-1280.webp",
+        "bytes": 306988
+      }
+    ]
+  },
+  "/assets/images/services/evacuation-alerts-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 136945,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/db97380e92cf-480.webp",
+        "bytes": 7858
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/db97380e92cf-800.webp",
+        "bytes": 16444
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/db97380e92cf-1280.webp",
+        "bytes": 32714
+      }
+    ]
+  },
+  "/assets/images/services/evacuation-alerts-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 80220,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e564a0968cfd-480.webp",
+        "bytes": 5282
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e564a0968cfd-800.webp",
+        "bytes": 10308
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e564a0968cfd-1280.webp",
+        "bytes": 19208
+      }
+    ]
+  },
+  "/assets/images/services/extensions-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191074,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0a1624a10824-480.webp",
+        "bytes": 19108
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0a1624a10824-800.webp",
+        "bytes": 40370
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0a1624a10824-1280.webp",
+        "bytes": 68212
+      }
+    ]
+  },
+  "/assets/images/services/extensions-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191074,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/427259d80b7a-480.webp",
+        "bytes": 19108
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/427259d80b7a-800.webp",
+        "bytes": 40370
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/427259d80b7a-1280.webp",
+        "bytes": 68212
+      }
+    ]
+  },
+  "/assets/images/services/extensions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191074,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/bda04c606460-480.webp",
+        "bytes": 19108
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/bda04c606460-800.webp",
+        "bytes": 40370
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/bda04c606460-1280.webp",
+        "bytes": 68212
+      }
+    ]
+  },
+  "/assets/images/services/facilities-management-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254569,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a35d709f4ebd-480.webp",
+        "bytes": 19864
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a35d709f4ebd-800.webp",
+        "bytes": 46916
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a35d709f4ebd-1280.webp",
+        "bytes": 91742
+      }
+    ]
+  },
+  "/assets/images/services/facilities-management-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254569,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0c5d4d1538b9-480.webp",
+        "bytes": 19864
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0c5d4d1538b9-800.webp",
+        "bytes": 46916
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0c5d4d1538b9-1280.webp",
+        "bytes": 91742
+      }
+    ]
+  },
+  "/assets/images/services/facilities-management.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254569,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ba2dbabcfdce-480.webp",
+        "bytes": 19864
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ba2dbabcfdce-800.webp",
+        "bytes": 46916
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ba2dbabcfdce-1280.webp",
+        "bytes": 91742
+      }
+    ]
+  },
+  "/assets/images/services/fencing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 224602,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/79af89498877-480.webp",
+        "bytes": 17944
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/79af89498877-800.webp",
+        "bytes": 41972
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/79af89498877-1280.webp",
+        "bytes": 80156
+      }
+    ]
+  },
+  "/assets/images/services/fire-alarms-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 139463,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/18870f8401ef-480.webp",
+        "bytes": 8480
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/18870f8401ef-800.webp",
+        "bytes": 16582
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/18870f8401ef-1280.webp",
+        "bytes": 32172
+      }
+    ]
+  },
+  "/assets/images/services/fire-compartmentation-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 142390,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/52baf8837445-480.webp",
+        "bytes": 9140
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/52baf8837445-800.webp",
+        "bytes": 19014
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/52baf8837445-1280.webp",
+        "bytes": 33750
+      }
+    ]
+  },
+  "/assets/images/services/fire-compartmentation-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 193110,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8c52b79114f6-480.webp",
+        "bytes": 13806
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8c52b79114f6-800.webp",
+        "bytes": 30182
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8c52b79114f6-1280.webp",
+        "bytes": 58460
+      }
+    ]
+  },
+  "/assets/images/services/fire-doors-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 103636,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/22a52d18b249-480.webp",
+        "bytes": 2834
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/22a52d18b249-800.webp",
+        "bytes": 6164
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/22a52d18b249-1280.webp",
+        "bytes": 13210
+      }
+    ]
+  },
+  "/assets/images/services/fire-doors-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 237863,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a69cfa395b1f-480.webp",
+        "bytes": 12958
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a69cfa395b1f-800.webp",
+        "bytes": 32704
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a69cfa395b1f-1280.webp",
+        "bytes": 72094
+      }
+    ]
+  },
+  "/assets/images/services/fire-extinguishers-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 132049,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2ea4a2910575-480.webp",
+        "bytes": 5436
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2ea4a2910575-800.webp",
+        "bytes": 13044
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2ea4a2910575-1280.webp",
+        "bytes": 27456
+      }
+    ]
+  },
+  "/assets/images/services/fire-extinguishers-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 132049,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/02ff89942ccc-480.webp",
+        "bytes": 5436
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/02ff89942ccc-800.webp",
+        "bytes": 13044
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/02ff89942ccc-1280.webp",
+        "bytes": 27456
+      }
+    ]
+  },
+  "/assets/images/services/fire-extinguishers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 132049,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2239cd3a7b20-480.webp",
+        "bytes": 5436
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2239cd3a7b20-800.webp",
+        "bytes": 13044
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2239cd3a7b20-1280.webp",
+        "bytes": 27456
+      }
+    ]
+  },
+  "/assets/images/services/fire-risk-assessments-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 229075,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5d2e2a96f969-480.webp",
+        "bytes": 19508
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5d2e2a96f969-800.webp",
+        "bytes": 39862
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5d2e2a96f969-1280.webp",
+        "bytes": 76966
+      }
+    ]
+  },
+  "/assets/images/services/fire-signage-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 108268,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/cb338beeaf00-480.webp",
+        "bytes": 3232
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/cb338beeaf00-800.webp",
+        "bytes": 7402
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/cb338beeaf00-1280.webp",
+        "bytes": 17124
+      }
+    ]
+  },
+  "/assets/images/services/fire-signage-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 118111,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/055b22cfa932-480.webp",
+        "bytes": 5302
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/055b22cfa932-800.webp",
+        "bytes": 8894
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/055b22cfa932-1280.webp",
+        "bytes": 15856
+      }
+    ]
+  },
+  "/assets/images/services/fire-stopping-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 154527,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3df36e4926f5-480.webp",
+        "bytes": 8214
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3df36e4926f5-800.webp",
+        "bytes": 15324
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3df36e4926f5-1280.webp",
+        "bytes": 28736
+      }
+    ]
+  },
+  "/assets/images/services/fire-stopping-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 154527,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/b1e1002fd2f4-480.webp",
+        "bytes": 8214
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/b1e1002fd2f4-800.webp",
+        "bytes": 15324
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/b1e1002fd2f4-1280.webp",
+        "bytes": 28736
+      }
+    ]
+  },
+  "/assets/images/services/fire-stopping.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 154527,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/72c74469e18e-480.webp",
+        "bytes": 8214
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/72c74469e18e-800.webp",
+        "bytes": 15324
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/72c74469e18e-1280.webp",
+        "bytes": 28736
+      }
+    ]
+  },
+  "/assets/images/services/fire-suppression-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 158264,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a7555f97b220-480.webp",
+        "bytes": 6340
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a7555f97b220-800.webp",
+        "bytes": 14472
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a7555f97b220-1280.webp",
+        "bytes": 31638
+      }
+    ]
+  },
+  "/assets/images/services/fire-suppression-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 158264,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/25a5e0c75d00-480.webp",
+        "bytes": 6340
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/25a5e0c75d00-800.webp",
+        "bytes": 14472
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/25a5e0c75d00-1280.webp",
+        "bytes": 31638
+      }
+    ]
+  },
+  "/assets/images/services/fire-suppression.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 158264,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f9b2d9244286-480.webp",
+        "bytes": 6340
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f9b2d9244286-800.webp",
+        "bytes": 14472
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f9b2d9244286-1280.webp",
+        "bytes": 31638
+      }
+    ]
+  },
+  "/assets/images/services/flooring-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 195997,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0b4f669ab3bb-480.webp",
+        "bytes": 17276
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0b4f669ab3bb-800.webp",
+        "bytes": 33428
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0b4f669ab3bb-1280.webp",
+        "bytes": 59542
+      }
+    ]
+  },
+  "/assets/images/services/flooring-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 219517,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/b43e6689c06d-480.webp",
+        "bytes": 13954
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/b43e6689c06d-800.webp",
+        "bytes": 30980
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/b43e6689c06d-1280.webp",
+        "bytes": 62574
+      }
+    ]
+  },
+  "/assets/images/services/gas-systems-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 257076,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/b01fe8e300db-480.webp",
+        "bytes": 14000
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/b01fe8e300db-800.webp",
+        "bytes": 35478
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/b01fe8e300db-1280.webp",
+        "bytes": 87888
+      }
+    ]
+  },
+  "/assets/images/services/groundworks-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 187727,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3de5368572cf-480.webp",
+        "bytes": 12508
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3de5368572cf-800.webp",
+        "bytes": 25136
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3de5368572cf-1280.webp",
+        "bytes": 46384
+      }
+    ]
+  },
+  "/assets/images/services/groundworks-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 181704,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e5adb486adb6-480.webp",
+        "bytes": 9546
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e5adb486adb6-800.webp",
+        "bytes": 21868
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e5adb486adb6-1280.webp",
+        "bytes": 44112
+      }
+    ]
+  },
+  "/assets/images/services/heating-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 186300,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ed92fc50ebdd-480.webp",
+        "bytes": 12410
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ed92fc50ebdd-800.webp",
+        "bytes": 24882
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ed92fc50ebdd-1280.webp",
+        "bytes": 44704
+      }
+    ]
+  },
+  "/assets/images/services/heating-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 186300,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ae8fa10c33f5-480.webp",
+        "bytes": 12410
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ae8fa10c33f5-800.webp",
+        "bytes": 24882
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ae8fa10c33f5-1280.webp",
+        "bytes": 44704
+      }
+    ]
+  },
+  "/assets/images/services/heating.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 186300,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/547aed50f075-480.webp",
+        "bytes": 12410
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/547aed50f075-800.webp",
+        "bytes": 24882
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/547aed50f075-1280.webp",
+        "bytes": 44704
+      }
+    ]
+  },
+  "/assets/images/services/joinery-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 253954,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4904658caeaa-480.webp",
+        "bytes": 19980
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4904658caeaa-800.webp",
+        "bytes": 45926
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4904658caeaa-1280.webp",
+        "bytes": 92074
+      }
+    ]
+  },
+  "/assets/images/services/joinery-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 412716,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ac01a90dffbb-480.webp",
+        "bytes": 31938
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ac01a90dffbb-800.webp",
+        "bytes": 82260
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ac01a90dffbb-1280.webp",
+        "bytes": 184714
+      }
+    ]
+  },
+  "/assets/images/services/kitchen-fire-suppression-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162880,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7909d1f2b73c-480.webp",
+        "bytes": 4070
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7909d1f2b73c-800.webp",
+        "bytes": 13046
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7909d1f2b73c-1280.webp",
+        "bytes": 30730
+      }
+    ]
+  },
+  "/assets/images/services/kitchen-fire-suppression-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162880,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e0794f781b2b-480.webp",
+        "bytes": 4070
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e0794f781b2b-800.webp",
+        "bytes": 13046
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e0794f781b2b-1280.webp",
+        "bytes": 30730
+      }
+    ]
+  },
+  "/assets/images/services/kitchen-fire-suppression.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162880,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0ef6f8411444-480.webp",
+        "bytes": 4070
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0ef6f8411444-800.webp",
+        "bytes": 13046
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0ef6f8411444-1280.webp",
+        "bytes": 30730
+      }
+    ]
+  },
+  "/assets/images/services/kitchens-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254232,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c56ad446b1de-480.webp",
+        "bytes": 17172
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c56ad446b1de-800.webp",
+        "bytes": 38880
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c56ad446b1de-1280.webp",
+        "bytes": 78438
+      }
+    ]
+  },
+  "/assets/images/services/kitchens-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254232,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/bf95abba38eb-480.webp",
+        "bytes": 17172
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/bf95abba38eb-800.webp",
+        "bytes": 38880
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/bf95abba38eb-1280.webp",
+        "bytes": 78438
+      }
+    ]
+  },
+  "/assets/images/services/kitchens.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254232,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/60c0a20ba083-480.webp",
+        "bytes": 17172
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/60c0a20ba083-800.webp",
+        "bytes": 38880
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/60c0a20ba083-1280.webp",
+        "bytes": 78438
+      }
+    ]
+  },
+  "/assets/images/services/landlord-compliance-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 204243,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1a40a7913112-480.webp",
+        "bytes": 23338
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1a40a7913112-800.webp",
+        "bytes": 49168
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1a40a7913112-1280.webp",
+        "bytes": 86166
+      }
+    ]
+  },
+  "/assets/images/services/landlord-compliance-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 204243,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ab88db5f0bb3-480.webp",
+        "bytes": 23338
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ab88db5f0bb3-800.webp",
+        "bytes": 49168
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ab88db5f0bb3-1280.webp",
+        "bytes": 86166
+      }
+    ]
+  },
+  "/assets/images/services/landlord-compliance.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 204243,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/81c8c8eaf0b3-480.webp",
+        "bytes": 23338
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/81c8c8eaf0b3-800.webp",
+        "bytes": 49168
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/81c8c8eaf0b3-1280.webp",
+        "bytes": 86166
+      }
+    ]
+  },
+  "/assets/images/services/landscaping-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 383023,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/bc5c331af254-480.webp",
+        "bytes": 35796
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/bc5c331af254-800.webp",
+        "bytes": 85448
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/bc5c331af254-1280.webp",
+        "bytes": 178154
+      }
+    ]
+  },
+  "/assets/images/services/landscaping-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 352732,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e239620300e1-480.webp",
+        "bytes": 43774
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e239620300e1-800.webp",
+        "bytes": 100054
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e239620300e1-1280.webp",
+        "bytes": 176002
+      }
+    ]
+  },
+  "/assets/images/services/legionella-risk-assessment.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 260321,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3dc1bb46efd3-480.webp",
+        "bytes": 25000
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3dc1bb46efd3-800.webp",
+        "bytes": 54494
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3dc1bb46efd3-1280.webp",
+        "bytes": 93926
+      }
+    ]
+  },
+  "/assets/images/services/legionella-risk-assessment-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 93350,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/62b308919398-480.webp",
+        "bytes": 3884
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/62b308919398-800.webp",
+        "bytes": 7958
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/62b308919398-1280.webp",
+        "bytes": 15350
+      }
+    ]
+  },
+  "/assets/images/services/legionella-risk-assessment-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 179364,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c0e8d63c8f3d-480.webp",
+        "bytes": 15594
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c0e8d63c8f3d-800.webp",
+        "bytes": 30100
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c0e8d63c8f3d-1280.webp",
+        "bytes": 51512
+      }
+    ]
+  },
+  "/assets/images/services/loft-conversions-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 193994,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7d49048a44e2-480.webp",
+        "bytes": 11016
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7d49048a44e2-800.webp",
+        "bytes": 22700
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7d49048a44e2-1280.webp",
+        "bytes": 47094
+      }
+    ]
+  },
+  "/assets/images/services/loft-conversions-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 193994,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1e3c5cbe245a-480.webp",
+        "bytes": 11016
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1e3c5cbe245a-800.webp",
+        "bytes": 22700
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1e3c5cbe245a-1280.webp",
+        "bytes": 47094
+      }
+    ]
+  },
+  "/assets/images/services/loft-conversions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 193994,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c13ff372545f-480.webp",
+        "bytes": 11016
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c13ff372545f-800.webp",
+        "bytes": 22700
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c13ff372545f-1280.webp",
+        "bytes": 47094
+      }
+    ]
+  },
+  "/assets/images/services/painting-decorating-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 280724,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/afa70e741dbe-480.webp",
+        "bytes": 23482
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/afa70e741dbe-800.webp",
+        "bytes": 52036
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/afa70e741dbe-1280.webp",
+        "bytes": 100988
+      }
+    ]
+  },
+  "/assets/images/services/painting-decorating-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 176059,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a9e7b68e43c6-480.webp",
+        "bytes": 17790
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a9e7b68e43c6-800.webp",
+        "bytes": 33390
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a9e7b68e43c6-1280.webp",
+        "bytes": 55326
+      }
+    ]
+  },
+  "/assets/images/services/pat-testing-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 213534,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f930060963e8-480.webp",
+        "bytes": 18160
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f930060963e8-800.webp",
+        "bytes": 42146
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f930060963e8-1280.webp",
+        "bytes": 74496
+      }
+    ]
+  },
+  "/assets/images/services/pat-testing-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 213534,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/fce727f7a64f-480.webp",
+        "bytes": 18160
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/fce727f7a64f-800.webp",
+        "bytes": 42146
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/fce727f7a64f-1280.webp",
+        "bytes": 74496
+      }
+    ]
+  },
+  "/assets/images/services/pat-testing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 213534,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c383a49a5504-480.webp",
+        "bytes": 18160
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c383a49a5504-800.webp",
+        "bytes": 42146
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c383a49a5504-1280.webp",
+        "bytes": 74496
+      }
+    ]
+  },
+  "/assets/images/services/plastering-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 182922,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/cc6dee0b3ec9-480.webp",
+        "bytes": 6134
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/cc6dee0b3ec9-800.webp",
+        "bytes": 14490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/cc6dee0b3ec9-1280.webp",
+        "bytes": 33930
+      }
+    ]
+  },
+  "/assets/images/services/plastering-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 182922,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/fa1d19fb2b04-480.webp",
+        "bytes": 6134
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/fa1d19fb2b04-800.webp",
+        "bytes": 14490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/fa1d19fb2b04-1280.webp",
+        "bytes": 33930
+      }
+    ]
+  },
+  "/assets/images/services/plastering.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 182922,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/484ea4503426-480.webp",
+        "bytes": 6134
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/484ea4503426-800.webp",
+        "bytes": 14490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/484ea4503426-1280.webp",
+        "bytes": 33930
+      }
+    ]
+  },
+  "/assets/images/services/plumbing-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 177376,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c0e6b30cb0c7-480.webp",
+        "bytes": 14520
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c0e6b30cb0c7-800.webp",
+        "bytes": 28470
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c0e6b30cb0c7-1280.webp",
+        "bytes": 49138
+      }
+    ]
+  },
+  "/assets/images/services/plumbing-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 283357,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f819d3dd055d-480.webp",
+        "bytes": 27504
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f819d3dd055d-800.webp",
+        "bytes": 60226
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f819d3dd055d-1280.webp",
+        "bytes": 106906
+      }
+    ]
+  },
+  "/assets/images/services/project-management-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 208882,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/73065ef09278-480.webp",
+        "bytes": 21550
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/73065ef09278-800.webp",
+        "bytes": 45184
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/73065ef09278-1280.webp",
+        "bytes": 77084
+      }
+    ]
+  },
+  "/assets/images/services/project-management-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 208882,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/bd769da5f781-480.webp",
+        "bytes": 21550
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/bd769da5f781-800.webp",
+        "bytes": 45184
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/bd769da5f781-1280.webp",
+        "bytes": 77084
+      }
+    ]
+  },
+  "/assets/images/services/project-management.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 208882,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a871a6e409a2-480.webp",
+        "bytes": 21550
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a871a6e409a2-800.webp",
+        "bytes": 45184
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a871a6e409a2-1280.webp",
+        "bytes": 77084
+      }
+    ]
+  },
+  "/assets/images/services/property-refurbishment-pm-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 237507,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2d134226ac22-480.webp",
+        "bytes": 17338
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2d134226ac22-800.webp",
+        "bytes": 37490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2d134226ac22-1280.webp",
+        "bytes": 71192
+      }
+    ]
+  },
+  "/assets/images/services/property-refurbishment-pm-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 185973,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8f1ffb7bee24-480.webp",
+        "bytes": 10872
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8f1ffb7bee24-800.webp",
+        "bytes": 22504
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8f1ffb7bee24-1280.webp",
+        "bytes": 43626
+      }
+    ]
+  },
+  "/assets/images/services/rendering-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 388281,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d512d928bb2c-480.webp",
+        "bytes": 31538
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d512d928bb2c-800.webp",
+        "bytes": 85260
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d512d928bb2c-1280.webp",
+        "bytes": 193662
+      }
+    ]
+  },
+  "/assets/images/services/rendering-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 289517,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/845eb6c150f9-480.webp",
+        "bytes": 18386
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/845eb6c150f9-800.webp",
+        "bytes": 48580
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/845eb6c150f9-1280.webp",
+        "bytes": 107514
+      }
+    ]
+  },
+  "/assets/images/services/renovation-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162500,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0da436859d58-480.webp",
+        "bytes": 7570
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0da436859d58-800.webp",
+        "bytes": 15150
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0da436859d58-1280.webp",
+        "bytes": 28288
+      }
+    ]
+  },
+  "/assets/images/services/renovation-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162500,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d76fd210d35f-480.webp",
+        "bytes": 7570
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d76fd210d35f-800.webp",
+        "bytes": 15150
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d76fd210d35f-1280.webp",
+        "bytes": 28288
+      }
+    ]
+  },
+  "/assets/images/services/renovation.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 162500,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/452e0c2a3b70-480.webp",
+        "bytes": 7570
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/452e0c2a3b70-800.webp",
+        "bytes": 15150
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/452e0c2a3b70-1280.webp",
+        "bytes": 28288
+      }
+    ]
+  },
+  "/assets/images/services/roofing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 135706,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ab05742fd9bb-480.webp",
+        "bytes": 11404
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ab05742fd9bb-800.webp",
+        "bytes": 21518
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ab05742fd9bb-1280.webp",
+        "bytes": 37528
+      }
+    ]
+  },
+  "/assets/images/services/smoke-co-alarms-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 144981,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6eee0b096343-480.webp",
+        "bytes": 4910
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6eee0b096343-800.webp",
+        "bytes": 10068
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6eee0b096343-1280.webp",
+        "bytes": 23070
+      }
+    ]
+  },
+  "/assets/images/services/smoke-co-alarms-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 144981,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/87c46eeb4bcf-480.webp",
+        "bytes": 4910
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/87c46eeb4bcf-800.webp",
+        "bytes": 10068
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/87c46eeb4bcf-1280.webp",
+        "bytes": 23070
+      }
+    ]
+  },
+  "/assets/images/services/smoke-co-alarms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 144981,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/fdf5b3dd8890-480.webp",
+        "bytes": 4910
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/fdf5b3dd8890-800.webp",
+        "bytes": 10068
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/fdf5b3dd8890-1280.webp",
+        "bytes": 23070
+      }
+    ]
+  },
+  "/assets/images/services/sprinkler-systems-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 179574,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/356a81ab2549-480.webp",
+        "bytes": 10720
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/356a81ab2549-800.webp",
+        "bytes": 30388
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/356a81ab2549-1280.webp",
+        "bytes": 74258
+      }
+    ]
+  },
+  "/assets/images/services/sprinkler-systems-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 126094,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/88c6ba1a9bcf-480.webp",
+        "bytes": 3774
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/88c6ba1a9bcf-800.webp",
+        "bytes": 8004
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/88c6ba1a9bcf-1280.webp",
+        "bytes": 17500
+      }
+    ]
+  },
+  "/assets/images/services/tiling-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 326424,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0d3dfcc1796a-480.webp",
+        "bytes": 34146
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0d3dfcc1796a-800.webp",
+        "bytes": 92492
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0d3dfcc1796a-1280.webp",
+        "bytes": 161960
+      }
+    ]
+  },
+  "/assets/images/services/tiling-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 431748,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d56efabf9b48-480.webp",
+        "bytes": 51744
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d56efabf9b48-800.webp",
+        "bytes": 105686
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d56efabf9b48-1280.webp",
+        "bytes": 189368
+      }
+    ]
+  },
+  "/assets/images/services/water-wras.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 265137,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4962ab8ea04e-480.webp",
+        "bytes": 18590
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4962ab8ea04e-800.webp",
+        "bytes": 47736
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4962ab8ea04e-1280.webp",
+        "bytes": 99124
+      }
+    ]
+  },
+  "/assets/images/services/windows-doors-photo.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 302688,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a4063c406797-480.webp",
+        "bytes": 24146
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a4063c406797-800.webp",
+        "bytes": 55242
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a4063c406797-1280.webp",
+        "bytes": 111458
+      }
+    ]
+  },
+  "/assets/images/services/windows-doors-context.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 223463,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3c9348bfabe5-480.webp",
+        "bytes": 20016
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3c9348bfabe5-800.webp",
+        "bytes": 41042
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3c9348bfabe5-1280.webp",
+        "bytes": 70192
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/access-control.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 158020,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c09239b18b3f-480.webp",
+        "bytes": 9244
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c09239b18b3f-800.webp",
+        "bytes": 18328
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c09239b18b3f-1280.webp",
+        "bytes": 36504
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/access-control-2.jpg": {
+    "width": 1185,
+    "height": 1600,
+    "origBytes": 317537,
+    "variants": [
+      {
+        "w": 480,
+        "h": 648,
+        "webp": "/assets/images/opt/02e861e06a1c-480.webp",
+        "bytes": 31438
+      },
+      {
+        "w": 800,
+        "h": 1080,
+        "webp": "/assets/images/opt/02e861e06a1c-800.webp",
+        "bytes": 88050
+      },
+      {
+        "w": 1185,
+        "h": 1600,
+        "webp": "/assets/images/opt/02e861e06a1c-1185.webp",
+        "bytes": 175154
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/bathrooms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 285267,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3915b708b054-480.webp",
+        "bytes": 17972
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3915b708b054-800.webp",
+        "bytes": 50232
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3915b708b054-1280.webp",
+        "bytes": 134952
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/bathrooms-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 292856,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/93b36d9419c2-480.webp",
+        "bytes": 17180
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/93b36d9419c2-800.webp",
+        "bytes": 44798
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/93b36d9419c2-1200.webp",
+        "bytes": 123962
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/brickwork.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 221088,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8f4c517e2f36-480.webp",
+        "bytes": 25610
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8f4c517e2f36-800.webp",
+        "bytes": 50222
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8f4c517e2f36-1280.webp",
+        "bytes": 83888
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/brickwork-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 624048,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/deca56cd1bd0-480.webp",
+        "bytes": 76060
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/deca56cd1bd0-800.webp",
+        "bytes": 223086
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/deca56cd1bd0-1200.webp",
+        "bytes": 496080
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/building-maintenance.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 291969,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/84124ed968fd-480.webp",
+        "bytes": 28864
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/84124ed968fd-800.webp",
+        "bytes": 71866
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/84124ed968fd-1280.webp",
+        "bytes": 150218
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/building-maintenance-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 243927,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/216155e95ff0-480.webp",
+        "bytes": 19066
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/216155e95ff0-800.webp",
+        "bytes": 41222
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/216155e95ff0-1280.webp",
+        "bytes": 76896
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/carpentry.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 291972,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c5998434ffc7-480.webp",
+        "bytes": 22328
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c5998434ffc7-800.webp",
+        "bytes": 59184
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c5998434ffc7-1280.webp",
+        "bytes": 141720
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/carpentry-2.jpg": {
+    "width": 1227,
+    "height": 1600,
+    "origBytes": 292015,
+    "variants": [
+      {
+        "w": 480,
+        "h": 626,
+        "webp": "/assets/images/opt/6f4c6d7ad6ab-480.webp",
+        "bytes": 32636
+      },
+      {
+        "w": 800,
+        "h": 1043,
+        "webp": "/assets/images/opt/6f4c6d7ad6ab-800.webp",
+        "bytes": 69258
+      },
+      {
+        "w": 1227,
+        "h": 1600,
+        "webp": "/assets/images/opt/6f4c6d7ad6ab-1227.webp",
+        "bytes": 131200
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/cctv.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 516945,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0fcdf0a78d59-480.webp",
+        "bytes": 39526
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0fcdf0a78d59-800.webp",
+        "bytes": 116332
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0fcdf0a78d59-1280.webp",
+        "bytes": 321268
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/cctv-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 234843,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/21be4e858ebf-480.webp",
+        "bytes": 15790
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/21be4e858ebf-800.webp",
+        "bytes": 34884
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/21be4e858ebf-1280.webp",
+        "bytes": 67476
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/demolition.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 396745,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/65e586bf3a56-480.webp",
+        "bytes": 20524
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/65e586bf3a56-800.webp",
+        "bytes": 61434
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/65e586bf3a56-1280.webp",
+        "bytes": 224448
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/drainage.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 459719,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d076a6ad4298-480.webp",
+        "bytes": 43962
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d076a6ad4298-800.webp",
+        "bytes": 122042
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d076a6ad4298-1280.webp",
+        "bytes": 291928
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/driveways.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 210690,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/223de4109e3d-480.webp",
+        "bytes": 20374
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/223de4109e3d-800.webp",
+        "bytes": 46696
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/223de4109e3d-1280.webp",
+        "bytes": 87036
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/dry-lining.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 202807,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/069cf2cf4b37-480.webp",
+        "bytes": 13562
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/069cf2cf4b37-800.webp",
+        "bytes": 31624
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/069cf2cf4b37-1280.webp",
+        "bytes": 71234
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/dry-lining-2.jpg": {
+    "width": 1600,
+    "height": 1159,
+    "origBytes": 263792,
+    "variants": [
+      {
+        "w": 480,
+        "h": 347,
+        "webp": "/assets/images/opt/c2efe53d6466-480.webp",
+        "bytes": 14554
+      },
+      {
+        "w": 800,
+        "h": 580,
+        "webp": "/assets/images/opt/c2efe53d6466-800.webp",
+        "bytes": 36542
+      },
+      {
+        "w": 1280,
+        "h": 927,
+        "webp": "/assets/images/opt/c2efe53d6466-1280.webp",
+        "bytes": 79410
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrical.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 54118,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1f1ca36b9ded-480.webp",
+        "bytes": 5130
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1f1ca36b9ded-800.webp",
+        "bytes": 8876
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1f1ca36b9ded-1280.webp",
+        "bytes": 15520
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrical-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 209075,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/31a22e7ab450-480.webp",
+        "bytes": 8758
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/31a22e7ab450-800.webp",
+        "bytes": 16636
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/31a22e7ab450-1280.webp",
+        "bytes": 34008
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/ev-chargers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 395501,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/57a48857a9b0-480.webp",
+        "bytes": 33088
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/57a48857a9b0-800.webp",
+        "bytes": 91252
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/57a48857a9b0-1280.webp",
+        "bytes": 225340
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/ev-chargers-2.jpg": {
+    "width": 1600,
+    "height": 1063,
+    "origBytes": 416047,
+    "variants": [
+      {
+        "w": 480,
+        "h": 319,
+        "webp": "/assets/images/opt/b22639fceb73-480.webp",
+        "bytes": 24984
+      },
+      {
+        "w": 800,
+        "h": 532,
+        "webp": "/assets/images/opt/b22639fceb73-800.webp",
+        "bytes": 72130
+      },
+      {
+        "w": 1280,
+        "h": 850,
+        "webp": "/assets/images/opt/b22639fceb73-1280.webp",
+        "bytes": 178554
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/extensions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 290509,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3abb954af700-480.webp",
+        "bytes": 19574
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3abb954af700-800.webp",
+        "bytes": 57924
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3abb954af700-1280.webp",
+        "bytes": 155390
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/extensions-2.jpg": {
+    "width": 1600,
+    "height": 1015,
+    "origBytes": 358261,
+    "variants": [
+      {
+        "w": 480,
+        "h": 304,
+        "webp": "/assets/images/opt/dcae289f1fb6-480.webp",
+        "bytes": 22824
+      },
+      {
+        "w": 800,
+        "h": 508,
+        "webp": "/assets/images/opt/dcae289f1fb6-800.webp",
+        "bytes": 64682
+      },
+      {
+        "w": 1280,
+        "h": 812,
+        "webp": "/assets/images/opt/dcae289f1fb6-1280.webp",
+        "bytes": 156940
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-doors.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 202735,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/48f493f48b54-480.webp",
+        "bytes": 21248
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/48f493f48b54-800.webp",
+        "bytes": 39340
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/48f493f48b54-1280.webp",
+        "bytes": 67866
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-doors-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 256547,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/282bb212a20f-480.webp",
+        "bytes": 26522
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/282bb212a20f-800.webp",
+        "bytes": 59460
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/282bb212a20f-1200.webp",
+        "bytes": 97646
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-extinguishers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 80938,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5fdcc0f8d63f-480.webp",
+        "bytes": 6000
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5fdcc0f8d63f-800.webp",
+        "bytes": 11390
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5fdcc0f8d63f-1280.webp",
+        "bytes": 19670
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-extinguishers-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 247419,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/2b7ed8884107-480.webp",
+        "bytes": 20084
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/2b7ed8884107-800.webp",
+        "bytes": 43514
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/2b7ed8884107-1200.webp",
+        "bytes": 95840
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/flooring.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 120952,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f1d7548b66db-480.webp",
+        "bytes": 2718
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f1d7548b66db-800.webp",
+        "bytes": 7878
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f1d7548b66db-1280.webp",
+        "bytes": 21272
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/flooring-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 215751,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/357b338e8fb4-480.webp",
+        "bytes": 13654
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/357b338e8fb4-800.webp",
+        "bytes": 31050
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/357b338e8fb4-1280.webp",
+        "bytes": 61096
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/gas-systems.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 136333,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/779ee4d2c32e-480.webp",
+        "bytes": 9954
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/779ee4d2c32e-800.webp",
+        "bytes": 19842
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/779ee4d2c32e-1280.webp",
+        "bytes": 37142
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/gas-systems-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 224464,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/9c865abf3338-480.webp",
+        "bytes": 17706
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/9c865abf3338-800.webp",
+        "bytes": 36842
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/9c865abf3338-1200.webp",
+        "bytes": 71766
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/heating.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 189076,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7d88dd52c8da-480.webp",
+        "bytes": 12730
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7d88dd52c8da-800.webp",
+        "bytes": 30352
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7d88dd52c8da-1280.webp",
+        "bytes": 67142
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/heating-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 244933,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/6316bd4de141-480.webp",
+        "bytes": 5624
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/6316bd4de141-800.webp",
+        "bytes": 12814
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/6316bd4de141-1280.webp",
+        "bytes": 34258
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/joinery.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 463968,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/612824d8ff41-480.webp",
+        "bytes": 35332
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/612824d8ff41-800.webp",
+        "bytes": 103362
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/612824d8ff41-1280.webp",
+        "bytes": 273454
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/joinery-2.jpg": {
+    "width": 1600,
+    "height": 902,
+    "origBytes": 293856,
+    "variants": [
+      {
+        "w": 480,
+        "h": 271,
+        "webp": "/assets/images/opt/6bf2a8293b52-480.webp",
+        "bytes": 19574
+      },
+      {
+        "w": 800,
+        "h": 451,
+        "webp": "/assets/images/opt/6bf2a8293b52-800.webp",
+        "bytes": 47924
+      },
+      {
+        "w": 1280,
+        "h": 722,
+        "webp": "/assets/images/opt/6bf2a8293b52-1280.webp",
+        "bytes": 107292
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/kitchens.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 163563,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/05754ad059c8-480.webp",
+        "bytes": 9890
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/05754ad059c8-800.webp",
+        "bytes": 21322
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/05754ad059c8-1280.webp",
+        "bytes": 45464
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/kitchens-2.jpg": {
+    "width": 1280,
+    "height": 960,
+    "origBytes": 97187,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/e8eda2d43a65-480.webp",
+        "bytes": 8872
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/e8eda2d43a65-800.webp",
+        "bytes": 17568
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/e8eda2d43a65-1280.webp",
+        "bytes": 33988
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/landscaping.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 167442,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/48fafc8e41a3-480.webp",
+        "bytes": 19012
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/48fafc8e41a3-800.webp",
+        "bytes": 42726
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/48fafc8e41a3-1280.webp",
+        "bytes": 73856
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/landscaping-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 522699,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/c453c9249a79-480.webp",
+        "bytes": 29652
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/c453c9249a79-800.webp",
+        "bytes": 91918
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/c453c9249a79-1280.webp",
+        "bytes": 234766
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/painting-decorating.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 207569,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4a08b4ef04db-480.webp",
+        "bytes": 9390
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4a08b4ef04db-800.webp",
+        "bytes": 28198
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4a08b4ef04db-1280.webp",
+        "bytes": 79644
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/painting-decorating-2.jpg": {
+    "width": 1600,
+    "height": 1078,
+    "origBytes": 131855,
+    "variants": [
+      {
+        "w": 480,
+        "h": 323,
+        "webp": "/assets/images/opt/7500f068bd04-480.webp",
+        "bytes": 3878
+      },
+      {
+        "w": 800,
+        "h": 539,
+        "webp": "/assets/images/opt/7500f068bd04-800.webp",
+        "bytes": 8120
+      },
+      {
+        "w": 1280,
+        "h": 862,
+        "webp": "/assets/images/opt/7500f068bd04-1280.webp",
+        "bytes": 16586
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/pat-testing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 85148,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/174c9fa35fe8-480.webp",
+        "bytes": 5956
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/174c9fa35fe8-800.webp",
+        "bytes": 10764
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/174c9fa35fe8-1280.webp",
+        "bytes": 19152
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/pat-testing-2.jpg": {
+    "width": 1600,
+    "height": 1143,
+    "origBytes": 187677,
+    "variants": [
+      {
+        "w": 480,
+        "h": 343,
+        "webp": "/assets/images/opt/92733f1cafc6-480.webp",
+        "bytes": 12378
+      },
+      {
+        "w": 800,
+        "h": 572,
+        "webp": "/assets/images/opt/92733f1cafc6-800.webp",
+        "bytes": 23892
+      },
+      {
+        "w": 1280,
+        "h": 914,
+        "webp": "/assets/images/opt/92733f1cafc6-1280.webp",
+        "bytes": 44186
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/plumbing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 199814,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8a2e37075cb7-480.webp",
+        "bytes": 16350
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8a2e37075cb7-800.webp",
+        "bytes": 33080
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8a2e37075cb7-1280.webp",
+        "bytes": 67466
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/plumbing-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 236780,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/07ee33457921-480.webp",
+        "bytes": 16698
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/07ee33457921-800.webp",
+        "bytes": 38338
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/07ee33457921-1280.webp",
+        "bytes": 78268
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/renovation.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 218510,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8f37c5c746fe-480.webp",
+        "bytes": 14510
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8f37c5c746fe-800.webp",
+        "bytes": 33240
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8f37c5c746fe-1280.webp",
+        "bytes": 76226
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/renovation-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 489597,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/eb20034c77c0-480.webp",
+        "bytes": 26840
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/eb20034c77c0-800.webp",
+        "bytes": 79390
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/eb20034c77c0-1280.webp",
+        "bytes": 205140
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/roofing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 233035,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2cab9a150bb5-480.webp",
+        "bytes": 15604
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2cab9a150bb5-800.webp",
+        "bytes": 43106
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2cab9a150bb5-1280.webp",
+        "bytes": 109022
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/roofing-2.jpg": {
+    "width": 1600,
+    "height": 1176,
+    "origBytes": 653187,
+    "variants": [
+      {
+        "w": 480,
+        "h": 353,
+        "webp": "/assets/images/opt/e82f57ac868f-480.webp",
+        "bytes": 42408
+      },
+      {
+        "w": 800,
+        "h": 588,
+        "webp": "/assets/images/opt/e82f57ac868f-800.webp",
+        "bytes": 123868
+      },
+      {
+        "w": 1280,
+        "h": 941,
+        "webp": "/assets/images/opt/e82f57ac868f-1280.webp",
+        "bytes": 324806
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/smoke-co-alarms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 70142,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d5ba888fcdb1-480.webp",
+        "bytes": 4208
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d5ba888fcdb1-800.webp",
+        "bytes": 7560
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d5ba888fcdb1-1280.webp",
+        "bytes": 13584
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/smoke-co-alarms-2.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "origBytes": 155124,
+    "variants": [
+      {
+        "w": 480,
+        "h": 480,
+        "webp": "/assets/images/opt/f5a06372b87a-480.webp",
+        "bytes": 3982
+      },
+      {
+        "w": 800,
+        "h": 800,
+        "webp": "/assets/images/opt/f5a06372b87a-800.webp",
+        "bytes": 8380
+      },
+      {
+        "w": 1280,
+        "h": 1280,
+        "webp": "/assets/images/opt/f5a06372b87a-1280.webp",
+        "bytes": 17878
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/tiling.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 188208,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1a064318b512-480.webp",
+        "bytes": 11914
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1a064318b512-800.webp",
+        "bytes": 28362
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1a064318b512-1280.webp",
+        "bytes": 62892
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/tiling-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 285471,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/5084ba83c88f-480.webp",
+        "bytes": 16498
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/5084ba83c88f-800.webp",
+        "bytes": 39760
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/5084ba83c88f-1280.webp",
+        "bytes": 82846
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/windows-doors.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 151653,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/f06030b4b2dc-480.webp",
+        "bytes": 10010
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/f06030b4b2dc-800.webp",
+        "bytes": 21434
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/f06030b4b2dc-1280.webp",
+        "bytes": 41520
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/windows-doors-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 241169,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/f1357aef825e-480.webp",
+        "bytes": 9438
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/f1357aef825e-800.webp",
+        "bytes": 29132
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/f1357aef825e-1280.webp",
+        "bytes": 66474
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/brickwork.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 345396,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2b99f77f4e65-480.webp",
+        "bytes": 27026
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2b99f77f4e65-800.webp",
+        "bytes": 71604
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2b99f77f4e65-1280.webp",
+        "bytes": 180862
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/building-maintenance.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 351037,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/03da502c0032-480.webp",
+        "bytes": 31790
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/03da502c0032-800.webp",
+        "bytes": 86450
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/03da502c0032-1280.webp",
+        "bytes": 201154
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/drainage.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 572556,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/58a646480181-480.webp",
+        "bytes": 50240
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/58a646480181-800.webp",
+        "bytes": 148400
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/58a646480181-1280.webp",
+        "bytes": 381662
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/driveways.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 452594,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2e2a11f45d56-480.webp",
+        "bytes": 31910
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2e2a11f45d56-800.webp",
+        "bytes": 99888
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2e2a11f45d56-1280.webp",
+        "bytes": 276408
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/electrical.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 103855,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/b770b9ef8999-480.webp",
+        "bytes": 8064
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/b770b9ef8999-800.webp",
+        "bytes": 16102
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/b770b9ef8999-1280.webp",
+        "bytes": 28158
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/extensions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 276285,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d4c2229beaf0-480.webp",
+        "bytes": 26984
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d4c2229beaf0-800.webp",
+        "bytes": 67042
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d4c2229beaf0-1280.webp",
+        "bytes": 134732
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/flooring.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 159265,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/cd29e3c7cf62-480.webp",
+        "bytes": 5962
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/cd29e3c7cf62-800.webp",
+        "bytes": 14556
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/cd29e3c7cf62-1280.webp",
+        "bytes": 37136
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/joinery.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 177261,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7c539dc06b79-480.webp",
+        "bytes": 9460
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7c539dc06b79-800.webp",
+        "bytes": 19780
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7c539dc06b79-1280.webp",
+        "bytes": 42480
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/kitchens.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 191437,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/9ca98c582119-480.webp",
+        "bytes": 12298
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/9ca98c582119-800.webp",
+        "bytes": 29490
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/9ca98c582119-1280.webp",
+        "bytes": 68758
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/painting-decorating.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 204876,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/411950ce55e4-480.webp",
+        "bytes": 21812
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/411950ce55e4-800.webp",
+        "bytes": 45886
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/411950ce55e4-1280.webp",
+        "bytes": 80736
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/roofing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 565516,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5346e37f46a6-480.webp",
+        "bytes": 46282
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5346e37f46a6-800.webp",
+        "bytes": 136600
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5346e37f46a6-1280.webp",
+        "bytes": 354414
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/tiling.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 155089,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/26ccd0c869a7-480.webp",
+        "bytes": 5496
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/26ccd0c869a7-800.webp",
+        "bytes": 12860
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/26ccd0c869a7-1280.webp",
+        "bytes": 31774
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/windows-doors.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 167243,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ac8bb9c9539d-480.webp",
+        "bytes": 11598
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ac8bb9c9539d-800.webp",
+        "bytes": 25006
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ac8bb9c9539d-1280.webp",
+        "bytes": 52740
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/asbestos-survey.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 205264,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e6a86385d805-480.webp",
+        "bytes": 7720
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e6a86385d805-800.webp",
+        "bytes": 25024
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e6a86385d805-1280.webp",
+        "bytes": 71304
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/cctv.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 253973,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a729685a0a66-480.webp",
+        "bytes": 28426
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a729685a0a66-800.webp",
+        "bytes": 62448
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a729685a0a66-1280.webp",
+        "bytes": 111104
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/compliance-consultancy.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 346150,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6b7924a695de-480.webp",
+        "bytes": 32836
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6b7924a695de-800.webp",
+        "bytes": 85448
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6b7924a695de-1280.webp",
+        "bytes": 185380
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/electrical.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 186086,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/9abf9991948e-480.webp",
+        "bytes": 17258
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/9abf9991948e-800.webp",
+        "bytes": 35674
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/9abf9991948e-1280.webp",
+        "bytes": 70964
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/fire-alarms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 146474,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/363e6d4b09c2-480.webp",
+        "bytes": 10846
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/363e6d4b09c2-800.webp",
+        "bytes": 23058
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/363e6d4b09c2-1280.webp",
+        "bytes": 48382
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/fire-doors.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 183239,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/409b8e993c20-480.webp",
+        "bytes": 7416
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/409b8e993c20-800.webp",
+        "bytes": 21726
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/409b8e993c20-1280.webp",
+        "bytes": 58888
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/fire-extinguishers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 92400,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1f82122dd5e9-480.webp",
+        "bytes": 6286
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1f82122dd5e9-800.webp",
+        "bytes": 13002
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1f82122dd5e9-1280.webp",
+        "bytes": 22526
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/fire-risk-assessments.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 228081,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8cddd3ca796a-480.webp",
+        "bytes": 18884
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8cddd3ca796a-800.webp",
+        "bytes": 43566
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8cddd3ca796a-1280.webp",
+        "bytes": 90826
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/gas-systems.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 311559,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2616f4eea775-480.webp",
+        "bytes": 24184
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2616f4eea775-800.webp",
+        "bytes": 62348
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2616f4eea775-1280.webp",
+        "bytes": 152066
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/landlord-compliance.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 250920,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/68a42be67a7e-480.webp",
+        "bytes": 22896
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/68a42be67a7e-800.webp",
+        "bytes": 47640
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/68a42be67a7e-1200.webp",
+        "bytes": 97388
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/pat-testing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 187965,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/23e354a61833-480.webp",
+        "bytes": 14142
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/23e354a61833-800.webp",
+        "bytes": 31630
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/23e354a61833-1280.webp",
+        "bytes": 66266
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/smoke-co-alarms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 165439,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5450c7b25f93-480.webp",
+        "bytes": 9082
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5450c7b25f93-800.webp",
+        "bytes": 23130
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5450c7b25f93-1280.webp",
+        "bytes": 60102
+      }
+    ]
+  },
+  "/assets/images/page-types/commercial/fit-out.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 266035,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6b55f01567f4-480.webp",
+        "bytes": 18666
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6b55f01567f4-800.webp",
+        "bytes": 46342
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6b55f01567f4-1280.webp",
+        "bytes": 113344
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/aov-air-handling.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 287064,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/94326632796e-480.webp",
+        "bytes": 22222
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/94326632796e-800.webp",
+        "bytes": 61988
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/94326632796e-1280.webp",
+        "bytes": 139320
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/aov-air-handling-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 464876,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/93c0e34a8c50-480.webp",
+        "bytes": 20680
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/93c0e34a8c50-800.webp",
+        "bytes": 68040
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/93c0e34a8c50-1280.webp",
+        "bytes": 200362
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/emergency-lighting.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 110963,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/33694f51e18c-480.webp",
+        "bytes": 6682
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/33694f51e18c-800.webp",
+        "bytes": 13452
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/33694f51e18c-1280.webp",
+        "bytes": 26786
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/emergency-lighting-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 255715,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/3910ca57a6fd-480.webp",
+        "bytes": 11958
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/3910ca57a6fd-800.webp",
+        "bytes": 36658
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/3910ca57a6fd-1280.webp",
+        "bytes": 81200
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fencing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 395511,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e3ae34f7672e-480.webp",
+        "bytes": 27926
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e3ae34f7672e-800.webp",
+        "bytes": 82082
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e3ae34f7672e-1280.webp",
+        "bytes": 216402
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/loft-conversions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 288795,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/80650d14a46d-480.webp",
+        "bytes": 20120
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/80650d14a46d-800.webp",
+        "bytes": 56032
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/80650d14a46d-1280.webp",
+        "bytes": 146620
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/rendering.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 368814,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/68b8d92f15e1-480.webp",
+        "bytes": 30408
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/68b8d92f15e1-800.webp",
+        "bytes": 87916
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/68b8d92f15e1-1280.webp",
+        "bytes": 210332
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/rendering-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 199881,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/da8bf32b58d3-480.webp",
+        "bytes": 13536
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/da8bf32b58d3-800.webp",
+        "bytes": 29530
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/da8bf32b58d3-1200.webp",
+        "bytes": 64396
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/damp-proofing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 398003,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7e709e95ce91-480.webp",
+        "bytes": 38956
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7e709e95ce91-800.webp",
+        "bytes": 96876
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7e709e95ce91-1280.webp",
+        "bytes": 226134
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fencing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 507047,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/ad324681f5e7-480.webp",
+        "bytes": 50468
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/ad324681f5e7-800.webp",
+        "bytes": 135406
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/ad324681f5e7-1280.webp",
+        "bytes": 325840
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/groundworks.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 456708,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4d3ba0d6d605-480.webp",
+        "bytes": 29308
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4d3ba0d6d605-800.webp",
+        "bytes": 94360
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4d3ba0d6d605-1280.webp",
+        "bytes": 278436
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/rendering.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 342115,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/dbb07ea2e0e4-480.webp",
+        "bytes": 32130
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/dbb07ea2e0e4-800.webp",
+        "bytes": 84168
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/dbb07ea2e0e4-1280.webp",
+        "bytes": 190644
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/access-control.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 104477,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e1cd697f22a2-480.webp",
+        "bytes": 6210
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e1cd697f22a2-800.webp",
+        "bytes": 12052
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e1cd697f22a2-1280.webp",
+        "bytes": 23740
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/emergency-lighting.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 93888,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8294e8669b4b-480.webp",
+        "bytes": 5560
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8294e8669b4b-800.webp",
+        "bytes": 10988
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8294e8669b4b-1280.webp",
+        "bytes": 22252
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/epc.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 307947,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/6188ea1317db-480.webp",
+        "bytes": 27156
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/6188ea1317db-800.webp",
+        "bytes": 71846
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/6188ea1317db-1280.webp",
+        "bytes": 156940
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/damp-proofing.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 190824,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a5a119f75039-480.webp",
+        "bytes": 5986
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a5a119f75039-800.webp",
+        "bytes": 14584
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a5a119f75039-1280.webp",
+        "bytes": 55548
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/groundworks.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 286193,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2eb7a4306dcc-480.webp",
+        "bytes": 17420
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2eb7a4306dcc-800.webp",
+        "bytes": 53702
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2eb7a4306dcc-1280.webp",
+        "bytes": 140486
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/groundworks-2.jpg": {
+    "width": 1067,
+    "height": 1600,
+    "origBytes": 310335,
+    "variants": [
+      {
+        "w": 480,
+        "h": 720,
+        "webp": "/assets/images/opt/026a5e8574c3-480.webp",
+        "bytes": 53290
+      },
+      {
+        "w": 800,
+        "h": 1200,
+        "webp": "/assets/images/opt/026a5e8574c3-800.webp",
+        "bytes": 114864
+      },
+      {
+        "w": 1067,
+        "h": 1600,
+        "webp": "/assets/images/opt/026a5e8574c3-1067.webp",
+        "bytes": 171738
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/insulation.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 441657,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8f2b66360de6-480.webp",
+        "bytes": 37980
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8f2b66360de6-800.webp",
+        "bytes": 103180
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8f2b66360de6-1280.webp",
+        "bytes": 251340
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/insulation-2.jpg": {
+    "width": 1600,
+    "height": 1208,
+    "origBytes": 587997,
+    "variants": [
+      {
+        "w": 480,
+        "h": 362,
+        "webp": "/assets/images/opt/9e98a68bbc94-480.webp",
+        "bytes": 42132
+      },
+      {
+        "w": 800,
+        "h": 604,
+        "webp": "/assets/images/opt/9e98a68bbc94-800.webp",
+        "bytes": 114480
+      },
+      {
+        "w": 1280,
+        "h": 966,
+        "webp": "/assets/images/opt/9e98a68bbc94-1280.webp",
+        "bytes": 272176
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/plastering.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 379158,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0599584f3d9f-480.webp",
+        "bytes": 40020
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0599584f3d9f-800.webp",
+        "bytes": 109406
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0599584f3d9f-1280.webp",
+        "bytes": 228474
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/plastering-2.jpg": {
+    "width": 1124,
+    "height": 1600,
+    "origBytes": 193485,
+    "variants": [
+      {
+        "w": 480,
+        "h": 683,
+        "webp": "/assets/images/opt/f4d268a2f0aa-480.webp",
+        "bytes": 11088
+      },
+      {
+        "w": 800,
+        "h": 1139,
+        "webp": "/assets/images/opt/f4d268a2f0aa-800.webp",
+        "bytes": 27674
+      },
+      {
+        "w": 1124,
+        "h": 1600,
+        "webp": "/assets/images/opt/f4d268a2f0aa-1124.webp",
+        "bytes": 51820
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-air-handling.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 168507,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/593e09e5eae8-480.webp",
+        "bytes": 5926
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/593e09e5eae8-800.webp",
+        "bytes": 15908
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/593e09e5eae8-1280.webp",
+        "bytes": 42892
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/bathrooms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 138623,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/7e6feb70aa4f-480.webp",
+        "bytes": 10598
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/7e6feb70aa4f-800.webp",
+        "bytes": 22452
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/7e6feb70aa4f-1280.webp",
+        "bytes": 44986
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/insulation.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 351022,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d5f269ff0fe7-480.webp",
+        "bytes": 25874
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d5f269ff0fe7-800.webp",
+        "bytes": 74566
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d5f269ff0fe7-1280.webp",
+        "bytes": 191040
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/loft-conversions.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 267153,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/1dfe0f3f072d-480.webp",
+        "bytes": 25332
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/1dfe0f3f072d-800.webp",
+        "bytes": 66502
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/1dfe0f3f072d-1280.webp",
+        "bytes": 139984
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/plastering.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 386729,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/9dd3b5d43013-480.webp",
+        "bytes": 22546
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/9dd3b5d43013-800.webp",
+        "bytes": 73512
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/9dd3b5d43013-1280.webp",
+        "bytes": 221562
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/kitchen-fire-suppression.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 84205,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/48283e547f82-480.webp",
+        "bytes": 4032
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/48283e547f82-800.webp",
+        "bytes": 8732
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/48283e547f82-1280.webp",
+        "bytes": 17386
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/legionella-risk-assessment.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 232727,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c01049173e23-480.webp",
+        "bytes": 22836
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c01049173e23-800.webp",
+        "bytes": 50600
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c01049173e23-1280.webp",
+        "bytes": 96222
+      }
+    ]
+  },
+  "/assets/images/page-types/resources/nurse-call.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 226543,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4b500b8731ec-480.webp",
+        "bytes": 11560
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4b500b8731ec-800.webp",
+        "bytes": 30846
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4b500b8731ec-1280.webp",
+        "bytes": 90382
+      }
+    ]
+  },
+  "/assets/images/page-types/about/trades.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 214915,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/2d896ebe630e-480.webp",
+        "bytes": 19362
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/2d896ebe630e-800.webp",
+        "bytes": 46146
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/2d896ebe630e-1280.webp",
+        "bytes": 95786
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/asbestos-survey.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 173518,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/12cc073a0e5c-480.webp",
+        "bytes": 14178
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/12cc073a0e5c-800.webp",
+        "bytes": 31050
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/12cc073a0e5c-1280.webp",
+        "bytes": 64066
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/asbestos-survey-2.jpg": {
+    "width": 1008,
+    "height": 589,
+    "origBytes": 68305,
+    "variants": [
+      {
+        "w": 480,
+        "h": 280,
+        "webp": "/assets/images/opt/18497b229c04-480.webp",
+        "bytes": 10388
+      },
+      {
+        "w": 800,
+        "h": 467,
+        "webp": "/assets/images/opt/18497b229c04-800.webp",
+        "bytes": 21142
+      },
+      {
+        "w": 1008,
+        "h": 589,
+        "webp": "/assets/images/opt/18497b229c04-1008.webp",
+        "bytes": 28560
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/barriers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 243118,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c2d08b4584bb-480.webp",
+        "bytes": 23016
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c2d08b4584bb-800.webp",
+        "bytes": 54158
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c2d08b4584bb-1280.webp",
+        "bytes": 109192
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/barriers-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 619617,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/828b80f2126f-480.webp",
+        "bytes": 39772
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/828b80f2126f-800.webp",
+        "bytes": 119168
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/828b80f2126f-1280.webp",
+        "bytes": 311834
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/cdm-support.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 301169,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/8c794926e192-480.webp",
+        "bytes": 22842
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/8c794926e192-800.webp",
+        "bytes": 51916
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/8c794926e192-1280.webp",
+        "bytes": 141702
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/cdm-support-2.jpg": {
+    "width": 1600,
+    "height": 1108,
+    "origBytes": 337957,
+    "variants": [
+      {
+        "w": 480,
+        "h": 332,
+        "webp": "/assets/images/opt/0ac40c669691-480.webp",
+        "bytes": 33170
+      },
+      {
+        "w": 800,
+        "h": 554,
+        "webp": "/assets/images/opt/0ac40c669691-800.webp",
+        "bytes": 65482
+      },
+      {
+        "w": 1280,
+        "h": 886,
+        "webp": "/assets/images/opt/0ac40c669691-1280.webp",
+        "bytes": 114606
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/commercial-fit-out.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 107100,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/aeae2f6cc271-480.webp",
+        "bytes": 6700
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/aeae2f6cc271-800.webp",
+        "bytes": 13724
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/aeae2f6cc271-1280.webp",
+        "bytes": 26702
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/commercial-fit-out-2.jpg": {
+    "width": 1600,
+    "height": 1068,
+    "origBytes": 141599,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/9d0b7df1fa94-480.webp",
+        "bytes": 7400
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/9d0b7df1fa94-800.webp",
+        "bytes": 16470
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/9d0b7df1fa94-1280.webp",
+        "bytes": 34136
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/compliance-consultancy.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 366024,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/99531ea8258b-480.webp",
+        "bytes": 26444
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/99531ea8258b-800.webp",
+        "bytes": 76232
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/99531ea8258b-1280.webp",
+        "bytes": 202910
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/door-entry.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 166578,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/a1cc62354d46-480.webp",
+        "bytes": 11180
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/a1cc62354d46-800.webp",
+        "bytes": 24508
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/a1cc62354d46-1280.webp",
+        "bytes": 48154
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/door-entry-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 352922,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/260190551755-480.webp",
+        "bytes": 17542
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/260190551755-800.webp",
+        "bytes": 52468
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/260190551755-1280.webp",
+        "bytes": 125160
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/dry-risers.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 233277,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/c8e309ad8d31-480.webp",
+        "bytes": 15322
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/c8e309ad8d31-800.webp",
+        "bytes": 43552
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/c8e309ad8d31-1280.webp",
+        "bytes": 100778
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/evacuation-alerts.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 303093,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/724d4191c345-480.webp",
+        "bytes": 13998
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/724d4191c345-800.webp",
+        "bytes": 49854
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/724d4191c345-1280.webp",
+        "bytes": 155518
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/evacuation-alerts-2.jpg": {
+    "width": 1055,
+    "height": 599,
+    "origBytes": 90814,
+    "variants": [
+      {
+        "w": 480,
+        "h": 273,
+        "webp": "/assets/images/opt/719b55fcfb69-480.webp",
+        "bytes": 12656
+      },
+      {
+        "w": 800,
+        "h": 454,
+        "webp": "/assets/images/opt/719b55fcfb69-800.webp",
+        "bytes": 26008
+      },
+      {
+        "w": 1055,
+        "h": 599,
+        "webp": "/assets/images/opt/719b55fcfb69-1055.webp",
+        "bytes": 40290
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/facilities-management.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 293035,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d1f971319291-480.webp",
+        "bytes": 22902
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d1f971319291-800.webp",
+        "bytes": 52220
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d1f971319291-1280.webp",
+        "bytes": 131016
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/facilities-management-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 317949,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/c3cb360e8801-480.webp",
+        "bytes": 24614
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/c3cb360e8801-800.webp",
+        "bytes": 55446
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/c3cb360e8801-1280.webp",
+        "bytes": 109716
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-alarms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 140062,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/98f178f53756-480.webp",
+        "bytes": 4610
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/98f178f53756-800.webp",
+        "bytes": 11340
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/98f178f53756-1280.webp",
+        "bytes": 28302
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-alarms-2.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 237604,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/97b6d22231d0-480.webp",
+        "bytes": 10606
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/97b6d22231d0-800.webp",
+        "bytes": 23218
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/97b6d22231d0-1280.webp",
+        "bytes": 60500
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-compartmentation.jpg": {
+    "width": 1600,
+    "height": 1081,
+    "origBytes": 216910,
+    "variants": [
+      {
+        "w": 480,
+        "h": 324,
+        "webp": "/assets/images/opt/cb0d43db7ae9-480.webp",
+        "bytes": 10306
+      },
+      {
+        "w": 800,
+        "h": 541,
+        "webp": "/assets/images/opt/cb0d43db7ae9-800.webp",
+        "bytes": 22206
+      },
+      {
+        "w": 1280,
+        "h": 865,
+        "webp": "/assets/images/opt/cb0d43db7ae9-1280.webp",
+        "bytes": 45644
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-risk-assessments.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 238794,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/3a61153b45e2-480.webp",
+        "bytes": 14490
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/3a61153b45e2-800.webp",
+        "bytes": 41702
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/3a61153b45e2-1280.webp",
+        "bytes": 101840
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-risk-assessments-2.jpg": {
+    "width": 1600,
+    "height": 1064,
+    "origBytes": 203339,
+    "variants": [
+      {
+        "w": 480,
+        "h": 319,
+        "webp": "/assets/images/opt/69a14fa8755c-480.webp",
+        "bytes": 11492
+      },
+      {
+        "w": 800,
+        "h": 532,
+        "webp": "/assets/images/opt/69a14fa8755c-800.webp",
+        "bytes": 26332
+      },
+      {
+        "w": 1280,
+        "h": 851,
+        "webp": "/assets/images/opt/69a14fa8755c-1280.webp",
+        "bytes": 53494
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-signage.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 223840,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/d59d63b1fcd9-480.webp",
+        "bytes": 22866
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/d59d63b1fcd9-800.webp",
+        "bytes": 48268
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/d59d63b1fcd9-1280.webp",
+        "bytes": 87286
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-signage-2.jpg": {
+    "width": 900,
+    "height": 1600,
+    "origBytes": 101245,
+    "variants": [
+      {
+        "w": 480,
+        "h": 853,
+        "webp": "/assets/images/opt/0aba1bc4ae1d-480.webp",
+        "bytes": 8088
+      },
+      {
+        "w": 800,
+        "h": 1422,
+        "webp": "/assets/images/opt/0aba1bc4ae1d-800.webp",
+        "bytes": 17962
+      },
+      {
+        "w": 900,
+        "h": 1600,
+        "webp": "/assets/images/opt/0aba1bc4ae1d-900.webp",
+        "bytes": 23634
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-stopping.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 234397,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/725dae8bd258-480.webp",
+        "bytes": 23968
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/725dae8bd258-800.webp",
+        "bytes": 48984
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/725dae8bd258-1280.webp",
+        "bytes": 90476
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-stopping-2.jpg": {
+    "width": 1600,
+    "height": 1037,
+    "origBytes": 190958,
+    "variants": [
+      {
+        "w": 480,
+        "h": 311,
+        "webp": "/assets/images/opt/6e17f51f88be-480.webp",
+        "bytes": 8026
+      },
+      {
+        "w": 800,
+        "h": 519,
+        "webp": "/assets/images/opt/6e17f51f88be-800.webp",
+        "bytes": 17148
+      },
+      {
+        "w": 1280,
+        "h": 830,
+        "webp": "/assets/images/opt/6e17f51f88be-1280.webp",
+        "bytes": 34708
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-suppression.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 79476,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/deb758f6fb3a-480.webp",
+        "bytes": 5174
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/deb758f6fb3a-800.webp",
+        "bytes": 9384
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/deb758f6fb3a-1280.webp",
+        "bytes": 17856
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-suppression-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 329641,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/14cb29a1e8d8-480.webp",
+        "bytes": 33990
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/14cb29a1e8d8-800.webp",
+        "bytes": 81820
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/14cb29a1e8d8-1200.webp",
+        "bytes": 164950
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/intercoms.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 157385,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4ad562b4e5e1-480.webp",
+        "bytes": 10048
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4ad562b4e5e1-800.webp",
+        "bytes": 20880
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4ad562b4e5e1-1280.webp",
+        "bytes": 45222
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/intercoms-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 476784,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/7fdf3ec61109-480.webp",
+        "bytes": 52878
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/7fdf3ec61109-800.webp",
+        "bytes": 145796
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/7fdf3ec61109-1200.webp",
+        "bytes": 328756
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/landlord-compliance.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 111934,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0686b08b5b5c-480.webp",
+        "bytes": 6952
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0686b08b5b5c-800.webp",
+        "bytes": 14074
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0686b08b5b5c-1280.webp",
+        "bytes": 26626
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/project-management.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 167670,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/5a26e216bec2-480.webp",
+        "bytes": 14770
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/5a26e216bec2-800.webp",
+        "bytes": 31434
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/5a26e216bec2-1280.webp",
+        "bytes": 61418
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/project-management-2.jpg": {
+    "width": 1600,
+    "height": 898,
+    "origBytes": 309964,
+    "variants": [
+      {
+        "w": 480,
+        "h": 269,
+        "webp": "/assets/images/opt/a0dc5e359ee3-480.webp",
+        "bytes": 19768
+      },
+      {
+        "w": 800,
+        "h": 449,
+        "webp": "/assets/images/opt/a0dc5e359ee3-800.webp",
+        "bytes": 53274
+      },
+      {
+        "w": 1280,
+        "h": 718,
+        "webp": "/assets/images/opt/a0dc5e359ee3-1280.webp",
+        "bytes": 128122
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/property-refurbishment-pm.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 481596,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/aacbcbcee527-480.webp",
+        "bytes": 36470
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/aacbcbcee527-800.webp",
+        "bytes": 112070
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/aacbcbcee527-1280.webp",
+        "bytes": 296566
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/property-refurbishment-pm-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 329834,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/b40e0a999fac-480.webp",
+        "bytes": 20514
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/b40e0a999fac-800.webp",
+        "bytes": 43242
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/b40e0a999fac-1280.webp",
+        "bytes": 98012
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/sprinkler-systems.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 254997,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/eb3c4098311b-480.webp",
+        "bytes": 20192
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/eb3c4098311b-800.webp",
+        "bytes": 48740
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/eb3c4098311b-1280.webp",
+        "bytes": 105654
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/sprinkler-systems-2.jpg": {
+    "width": 1359,
+    "height": 1083,
+    "origBytes": 125841,
+    "variants": [
+      {
+        "w": 480,
+        "h": 383,
+        "webp": "/assets/images/opt/4f8a57eec86e-480.webp",
+        "bytes": 6854
+      },
+      {
+        "w": 800,
+        "h": 638,
+        "webp": "/assets/images/opt/4f8a57eec86e-800.webp",
+        "bytes": 15336
+      },
+      {
+        "w": 1280,
+        "h": 1020,
+        "webp": "/assets/images/opt/4f8a57eec86e-1280.webp",
+        "bytes": 32684
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/water-wras.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 207070,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/e757763973ee-480.webp",
+        "bytes": 9266
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/e757763973ee-800.webp",
+        "bytes": 24096
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/e757763973ee-1280.webp",
+        "bytes": 69316
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/building-surveys.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 248504,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/611ec9fb490b-480.webp",
+        "bytes": 20692
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/611ec9fb490b-800.webp",
+        "bytes": 53842
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/611ec9fb490b-1280.webp",
+        "bytes": 123734
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/building-surveys-2.jpg": {
+    "width": 1066,
+    "height": 1600,
+    "origBytes": 301367,
+    "variants": [
+      {
+        "w": 480,
+        "h": 720,
+        "webp": "/assets/images/opt/c4b3cdd1c1c9-480.webp",
+        "bytes": 49316
+      },
+      {
+        "w": 800,
+        "h": 1201,
+        "webp": "/assets/images/opt/c4b3cdd1c1c9-800.webp",
+        "bytes": 100906
+      },
+      {
+        "w": 1066,
+        "h": 1600,
+        "webp": "/assets/images/opt/c4b3cdd1c1c9-1066.webp",
+        "bytes": 152964
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/intruder-alarm.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 144727,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/4830b205ce84-480.webp",
+        "bytes": 10012
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/4830b205ce84-800.webp",
+        "bytes": 23874
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/4830b205ce84-1280.webp",
+        "bytes": 54756
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/intruder-alarm-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 209153,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/9f7672d093ab-480.webp",
+        "bytes": 10158
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/9f7672d093ab-800.webp",
+        "bytes": 24200
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/9f7672d093ab-1280.webp",
+        "bytes": 49464
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/legionella-risk-assessment.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 137014,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/0c7cdba0f4ac-480.webp",
+        "bytes": 11228
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/0c7cdba0f4ac-800.webp",
+        "bytes": 20912
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/0c7cdba0f4ac-1280.webp",
+        "bytes": 38990
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/legionella-risk-assessment-2.jpg": {
+    "width": 1600,
+    "height": 1204,
+    "origBytes": 237639,
+    "variants": [
+      {
+        "w": 480,
+        "h": 361,
+        "webp": "/assets/images/opt/354b1712e431-480.webp",
+        "bytes": 13342
+      },
+      {
+        "w": 800,
+        "h": 602,
+        "webp": "/assets/images/opt/354b1712e431-800.webp",
+        "bytes": 30768
+      },
+      {
+        "w": 1280,
+        "h": 963,
+        "webp": "/assets/images/opt/354b1712e431-1280.webp",
+        "bytes": 62244
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/nurse-call.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 243600,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/101122208954-480.webp",
+        "bytes": 12128
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/101122208954-800.webp",
+        "bytes": 47892
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/101122208954-1280.webp",
+        "bytes": 116558
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/nurse-call-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 303562,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/8713597cf053-480.webp",
+        "bytes": 23008
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/8713597cf053-800.webp",
+        "bytes": 62190
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/8713597cf053-1200.webp",
+        "bytes": 150806
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrics-first-fix.jpg": {
+    "width": 1400,
+    "height": 900,
+    "origBytes": 242874,
+    "variants": [
+      {
+        "w": 480,
+        "h": 309,
+        "webp": "/assets/images/opt/36dd18bfefd8-480.webp",
+        "bytes": 21292
+      },
+      {
+        "w": 800,
+        "h": 514,
+        "webp": "/assets/images/opt/36dd18bfefd8-800.webp",
+        "bytes": 54510
+      },
+      {
+        "w": 1280,
+        "h": 823,
+        "webp": "/assets/images/opt/36dd18bfefd8-1280.webp",
+        "bytes": 117134
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrics-first-fix-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 433376,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/54dada6eacd8-480.webp",
+        "bytes": 40924
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/54dada6eacd8-800.webp",
+        "bytes": 115638
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/54dada6eacd8-1200.webp",
+        "bytes": 273330
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/loft-conversions-2.jpg": {
+    "width": 1200,
+    "height": 800,
+    "origBytes": 202657,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/58a50bae1797-480.webp",
+        "bytes": 18500
+      },
+      {
+        "w": 800,
+        "h": 533,
+        "webp": "/assets/images/opt/58a50bae1797-800.webp",
+        "bytes": 51168
+      },
+      {
+        "w": 1200,
+        "h": 800,
+        "webp": "/assets/images/opt/58a50bae1797-1200.webp",
+        "bytes": 118752
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/damp-proofing-2.jpg": {
+    "width": 800,
+    "height": 533,
+    "origBytes": 99815,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/b82b93bdc250-480.webp",
+        "bytes": 23522
+      },
+      {
+        "w": 800,
+        "h": 533,
+        "webp": "/assets/images/opt/b82b93bdc250-800.webp",
+        "bytes": 55488
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/dry-risers-2.jpg": {
+    "width": 900,
+    "height": 1600,
+    "origBytes": 160162,
+    "variants": [
+      {
+        "w": 480,
+        "h": 853,
+        "webp": "/assets/images/opt/461d0f83e909-480.webp",
+        "bytes": 11860
+      },
+      {
+        "w": 800,
+        "h": 1422,
+        "webp": "/assets/images/opt/461d0f83e909-800.webp",
+        "bytes": 28130
+      },
+      {
+        "w": 900,
+        "h": 1600,
+        "webp": "/assets/images/opt/461d0f83e909-900.webp",
+        "bytes": 37216
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/demolition-2.jpg": {
+    "width": 1600,
+    "height": 1205,
+    "origBytes": 609043,
+    "variants": [
+      {
+        "w": 480,
+        "h": 361,
+        "webp": "/assets/images/opt/bfd793c3ccab-480.webp",
+        "bytes": 37408
+      },
+      {
+        "w": 800,
+        "h": 603,
+        "webp": "/assets/images/opt/bfd793c3ccab-800.webp",
+        "bytes": 105070
+      },
+      {
+        "w": 1280,
+        "h": 964,
+        "webp": "/assets/images/opt/bfd793c3ccab-1280.webp",
+        "bytes": 265350
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/drainage-2.jpg": {
+    "width": 1600,
+    "height": 1205,
+    "origBytes": 492523,
+    "variants": [
+      {
+        "w": 480,
+        "h": 361,
+        "webp": "/assets/images/opt/b657a19aad8b-480.webp",
+        "bytes": 32030
+      },
+      {
+        "w": 800,
+        "h": 603,
+        "webp": "/assets/images/opt/b657a19aad8b-800.webp",
+        "bytes": 88550
+      },
+      {
+        "w": 1280,
+        "h": 964,
+        "webp": "/assets/images/opt/b657a19aad8b-1280.webp",
+        "bytes": 207592
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/driveways-2.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 625375,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/5aa28a08a4d6-480.webp",
+        "bytes": 67628
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/5aa28a08a4d6-800.webp",
+        "bytes": 193608
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/5aa28a08a4d6-1200.webp",
+        "bytes": 439182
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fencing-2.jpg": {
+    "width": 1600,
+    "height": 1086,
+    "origBytes": 471976,
+    "variants": [
+      {
+        "w": 480,
+        "h": 326,
+        "webp": "/assets/images/opt/3fd1c98cb8c4-480.webp",
+        "bytes": 34102
+      },
+      {
+        "w": 800,
+        "h": 543,
+        "webp": "/assets/images/opt/3fd1c98cb8c4-800.webp",
+        "bytes": 95810
+      },
+      {
+        "w": 1280,
+        "h": 869,
+        "webp": "/assets/images/opt/3fd1c98cb8c4-1280.webp",
+        "bytes": 212908
+      }
+    ]
   }
 }
