@@ -424,6 +424,25 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         foreach ((array)$kwDepth[$keywordSlug]['p'] as $p) { $deep .= '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub((string)$p) . '</p>'; }
         $deep .= '</section>';
     }
+    if ($deep === '') {
+        // Thin keyword × town pages (under ~850 prose words) get the town-depth block: postcode districts,
+        // wards, housing and council facts for this town (QM #156 under_800_words).
+        $mainTxt = preg_replace('#<(script|style|nav|header|footer)\b.*?</\1>#s', ' ', substr($html, (int)strpos($html, '<main')));
+        if (str_word_count(strip_tags((string)$mainTxt)) < 850) {
+            require_once __DIR__ . '/town-deep.php';
+            $deep = function_exists('icomplyTownDeepHtml') ? icomplyTownDeepHtml($areaSlugVal, $areaName, $kwName, $svcSlug) : '';
+            static $svcDepth = null;
+            if ($svcDepth === null) {
+                $svcDepth = (array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/service-depth.json'), true);
+            }
+            if (isset($svcDepth[$svcSlug]) && is_array($svcDepth[$svcSlug])) {
+                $sub2 = static fn(string $t): string => icomplyMatrixH(str_replace(['{town}', '{kw}'], [$areaName, mb_strtolower($kwName)], $t));
+                $deep = '<section class="svc-depth"><h2 class="text-2xl font-semibold mb-3">' . icomplyMatrixH($kwName . ' in ' . $areaName . ': what to expect') . '</h2>'
+                    . implode('', array_map(static fn($p) => '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub2((string)$p) . '</p>', $svcDepth[$svcSlug]))
+                    . '</section>' . $deep;
+            }
+        }
+    }
     if ($deep !== '') {
         $pos = strrpos($html, '</main>');
         if ($pos !== false) { $html = substr($html, 0, $pos) . $deep . substr($html, $pos); }
