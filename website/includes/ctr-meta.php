@@ -89,19 +89,23 @@ function icomplyCtrDesc(string $topic, string $town, string $slug, string $svcSl
  */
 function icomplyKeywordTwinIntent(string $keywordSlug, string $kwName, string $town): ?array
 {
-    $labels = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports'];
+    $labels = ['pat-testing' => ['Costs & Certificates', 'Costs'], 'asbestos-survey' => ['Survey Types & Reports', 'Survey Types'], 'legionella-risk-assessment' => ['Costs & Written Reports', 'Costs']];
     if (!isset($labels[$keywordSlug])) {
         return null;
     }
-    $l = $labels[$keywordSlug];
-    $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day Engineers';
-    if (strlen($title) > 70) {
-        $title = $kwName . ' ' . $town . ': ' . $l . ' | Same/Next-Day';
+    [$long, $short] = $labels[$keywordSlug];
+    // Titles keep "Same/Next-Day" and stay <= 60 chars; the town comes before the first '|'.
+    $title = '';
+    foreach ([$kwName . ' ' . $town . ': ' . $long . ' | Same/Next-Day', $kwName . ' ' . $town . ': ' . $short . ' | Same/Next-Day', $kwName . ' ' . $town . ' ' . $short . ' | Same/Next-Day'] as $t) {
+        if (strlen($t) <= 60) { $title = $t; break; }
+    }
+    if ($title === '') {
+        $title = icomplyCtrCut($kwName . ' ' . $town, 44) . ' | Same/Next-Day';
     }
     return [
-        'label' => $l,
+        'label' => $long,
         'title' => $title,
-        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': what it costs, what the ' . strtolower($l) . ' cover and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
-        'h1_tail' => ': ' . strtolower($l),
+        'desc' => icomplyCtrCut($kwName . ' in ' . $town . ': typical costs, what the visit and report include, and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.', 160),
+        'h1_tail' => ': ' . strtolower($long),
     ];
 }
