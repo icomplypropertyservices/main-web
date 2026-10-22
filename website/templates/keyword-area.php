@@ -9,6 +9,13 @@ require_once SITE_ROOT . '/includes/ctr-meta.php';
 $pageTitle = icomplyCtrTitle((string)$KEYWORD_NAME, (string)$AREA, (string)$KEYWORD_SLUG, (string)$SERVICE_SLUG);
 $metaTitleExact = true;
 $metaDesc = icomplyCtrDesc((string)$KEYWORD_NAME, (string)$AREA, (string)$KEYWORD_SLUG, (string)$SERVICE_SLUG);
+// QM #158: these keywords share a town URL at /pages/{slug}/{town}; give the keyword URL its own cost/certificate intent.
+$kwIntent = in_array((string)$KEYWORD_SLUG, ['pat-testing', 'asbestos-survey', 'legionella-risk-assessment'], true);
+if ($kwIntent) {
+    $kwIntentLabel = ['pat-testing' => 'Costs & Certificates', 'asbestos-survey' => 'Survey Types & Reports', 'legionella-risk-assessment' => 'Costs & Written Reports'][(string)$KEYWORD_SLUG];
+    $pageTitle = $KEYWORD_NAME . ' ' . $AREA . ': ' . $kwIntentLabel . ' | Same/Next-Day Engineers';
+    $metaDesc = $KEYWORD_NAME . ' in ' . $AREA . ': what it costs, what the ' . strtolower($kwIntentLabel) . ' cover and how to book. Same/next-day slots often available. Call or WhatsApp 07517 806082.';
+}
 $metaKeywords = $KEYWORD_NAME . ' ' . $AREA . ', ' . $SERVICE_NAME . ' ' . $AREA . ', ' . $SEO_KEYWORDS;
 $ogImage = $KEYWORD_IMAGE;
 $canonicalUrl = url('/pages/keywords/' . $KEYWORD_SLUG . '/' . $AREA_SLUG . '.php');
@@ -68,7 +75,7 @@ $h = static function ($s): string {
             <?= $h($SERVICE_NAME) ?> · <?= $h($AREA) ?>
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] drop-shadow-lg">
-            <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?></span>
+            <?= $h($KEYWORD_NAME) ?><br><span class="text-[#ff6b00]">in <?= $h($AREA) ?><?= $kwIntent ? ': ' . $h(strtolower($kwIntentLabel)) : '' ?></span>
         </h1>
         <p class="mt-5 text-lg text-white font-medium max-w-2xl leading-relaxed drop-shadow">
             Local engineers for <strong><?= $h($KEYWORD_NAME) ?></strong> in <strong><?= $h($AREA) ?></strong> and nearby postcodes.
