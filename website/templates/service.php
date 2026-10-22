@@ -38,6 +38,7 @@ if ($svcBoost) {
 $metaKeywords = $SEO_KEYWORDS;
 $hubHeroRel = function_exists('icomplyHubHero') ? icomplyHubHero($SERVICE_SLUG) : null;
 $hubInline1 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 1) : null;
+if ($SERVICE_SLUG === 'barriers') { $hubInline1 = '/assets/images/services/barriers-photo.jpg'; } // first inline card ≠ hero photo
 $hubInline2 = function_exists('icomplyHubInline') ? icomplyHubInline($SERVICE_SLUG, 2) : null;
 $ogImage = url($hubHeroRel ?: ('/assets/images/services/' . $SERVICE_SLUG . '.jpg'));
 
