@@ -17,6 +17,12 @@ if (function_exists('hubPageVisuals')) {
         $ogImage = (string)$areaHero['src'];
     }
 }
+// QM #157: towns whose generic hero was an off-topic service photo get a credited photo of the town itself.
+$areaHeroPhotos = json_decode((string)@file_get_contents(SITE_ROOT . '/data/area-hero-photos.json'), true) ?: [];
+if (isset($areaHeroPhotos[$AREA]['src']) && is_file(SITE_ROOT . $areaHeroPhotos[$AREA]['src'])) {
+    $areaHero = ['src' => url($areaHeroPhotos[$AREA]['src']), 'alt' => (string)($areaHeroPhotos[$AREA]['alt'] ?? ('Property compliance in ' . $AREA)), 'fit' => 'cover'];
+    $ogImage = (string)$areaHero['src'];
+}
 
 $allServices = getServices();
 $allAreas = getAreas();
