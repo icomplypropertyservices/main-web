@@ -4529,14 +4529,6 @@
     "alt": "Plasterboard being fixed"
   },
   {
-    "file": "/assets/images/page-types/keywords/electrical.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3ADistribution_board_for_knife_fuses.jpg",
-    "title": "File:Distribution board for knife fuses.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Dmitry G",
-    "alt": "Electrician testing a consumer unit"
-  },
-  {
     "file": "/assets/images/page-types/keywords/ev-chargers.jpg",
     "source": "https://commons.wikimedia.org/wiki/File%3ACologne_Germany_Electric-Car-Charging-Point-at-TUV-Rheinland-01.jpg",
     "title": "File:Cologne Germany Electric-Car-Charging-Point-at-TUV-Rheinland-01.jpg",
@@ -4551,14 +4543,6 @@
     "license": "CC BY-SA 4.0",
     "artist": "OathOn",
     "alt": "House extension under construction"
-  },
-  {
-    "file": "/assets/images/page-types/keywords/fire-doors.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AKeep_fire_doors_in_operating_condition._In_case_of_fire%2C_heat_causes_automatic_fire_doors_to_close%2C_thereby..._-_NARA_-_535257.jpg",
-    "title": "File:Keep fire doors in operating condition. In case of fire, heat causes automatic fire doors to close, thereby... - NARA - 535257.jpg",
-    "license": "Public domain",
-    "artist": "Unknown author Unknown author or not provided",
-    "alt": "Fire door with a closer"
   },
   {
     "file": "/assets/images/page-types/keywords/fire-extinguishers.jpg",
@@ -4695,14 +4679,6 @@
     "license": "CC BY-SA 2.0",
     "artist": "habiloid",
     "alt": "Scaffolding on a house being repaired"
-  },
-  {
-    "file": "/assets/images/page-types/jobs/drainage.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AA_drainage_gully_-_geograph.org.uk_-_6946301.jpg",
-    "title": "File:A drainage gully - geograph.org.uk - 6946301.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Bob Harvey",
-    "alt": "Drain cover and gully"
   },
   {
     "file": "/assets/images/page-types/jobs/driveways.jpg",
@@ -4881,14 +4857,6 @@
     "alt": "Shop being refurbished"
   },
   {
-    "file": "/assets/images/page-types/keywords/aov-air-handling.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AAir_handling_unit.JPG",
-    "title": "File:Air handling unit.JPG",
-    "license": "Public domain",
-    "artist": "P199",
-    "alt": "Air handling unit with filters"
-  },
-  {
     "file": "/assets/images/page-types/keywords/emergency-lighting.jpg",
     "source": "https://commons.wikimedia.org/wiki/File%3AExit_sign_-_inside.jpg",
     "title": "File:Exit sign - inside.jpg",
@@ -4927,14 +4895,6 @@
     "license": "CC BY-SA 4.0",
     "artist": "RASHIKA AGARWAL",
     "alt": "Damp masonry"
-  },
-  {
-    "file": "/assets/images/page-types/jobs/fencing.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AWooden_fence_panel.jpg",
-    "title": "File:Wooden fence panel.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Paolomarco",
-    "alt": "Timber fence panel"
   },
   {
     "file": "/assets/images/page-types/jobs/groundworks.jpg",
@@ -5217,14 +5177,6 @@
     "alt": "Site meeting"
   },
   {
-    "file": "/assets/images/page-types/keywords/property-refurbishment-pm.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A126297_kibbutz_kerem-shalom_residential_house_renovation_PikiWiki_Israel.jpg",
-    "title": "File:126297 kibbutz kerem-shalom residential house renovation PikiWiki Israel.jpg",
-    "license": "CC BY 2.5",
-    "artist": "שלמה רודד",
-    "alt": "House during renovation"
-  },
-  {
     "file": "/assets/images/page-types/keywords/sprinkler-systems.jpg",
     "source": "https://commons.wikimedia.org/wiki/File%3AInstallation_of_fire_protection_sprinklers_in_the_ceiling_of_the_future_LIRR_passenger_concourse._%28CM014B%2C_10-31-2018%29_%2830742926137%29.jpg",
     "title": "File:Installation of fire protection sprinklers in the ceiling of the future LIRR passenger concourse. (CM014B, 10-31-2018) (30742926137).jpg",
@@ -5271,14 +5223,6 @@
     "license": "CC0",
     "artist": "Ser Amantio di Nicolao",
     "alt": "Bathroom assistance pull cord"
-  },
-  {
-    "file": "/assets/images/page-types/keywords/electrics-first-fix.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3ABattery_Brooklyn_-_Battery_Tunnel_Electrical_Installation_Cables_in_Wall_Ducts_-_East_%26_West_Tunnel%2C_September_2%2C_1947_-_DPLA_-_b350772364b709114960f9bb4408e9c6.tiff",
-    "title": "File:Battery Brooklyn - Battery Tunnel Electrical Installation Cables in Wall Ducts - East & West Tunnel, September 2, 1947 - DPLA - b350772364b709114960f9bb4408e9c6.tiff",
-    "license": "Public domain",
-    "artist": "Department of Homeland Security. U.S. Coast Guard. 3/1/2003",
-    "alt": "Electrical cables in wall ducts"
   },
   {
     "file": "/assets/images/page-types/keywords/access-control-2.jpg",
@@ -5775,5 +5719,93 @@
     "license": "CC0",
     "artist": "Syced",
     "alt": "Demolition work on site"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Blue_Grass_Chemical_Agent-Destruction_Pilot_Plant_Munitions_Demilitarization_Building_(14723003870).jpg",
+    "title": "File:Blue Grass Chemical Agent-Destruction Pilot Plant Munitions Demilitarization Building (14723003870).jpg",
+    "license": "CC BY 2.0",
+    "artist": "PEO ACWA",
+    "alt": "Electrician wiring into an electrical panel"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/electrics-first-fix.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_section_of_electrical_wiring_within_a_wall_cutout.jpg",
+    "title": "File:A section of electrical wiring within a wall cutout.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "ShriniwasGajare",
+    "alt": "First-fix cables pulled into a wall back box"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/fire-doors.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Art_K-s_Daimy%C5%8D_The_fire_door_on_the_5th_floor_Daimy%C5%8D_1-ch%C5%8Dme_Ch%C5%AB%C5%8D-ku_Fukuoka_20250630.jpg",
+    "title": "File:Art K-s Daimyō The fire door on the 5th floor Daimyō 1-chōme Chūō-ku Fukuoka 20250630.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Hirho",
+    "alt": "Steel fire door at a stair landing"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/property-refurbishment-pm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hadeldorfstra%C3%9Fe_5_Meiningen,_Interior_03.jpg",
+    "title": "File:Hadeldorfstraße 5 Meiningen, Interior 03.jpg",
+    "license": "CC BY-SA 3.0 at",
+    "artist": "Feel free to use my photos, but please mention me as the author and if you want ",
+    "alt": "Interior of a house under refurbishment"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/drainage.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Day_in_the_Life-_100th_CES_Dirt_Boys_(8804448).jpg",
+    "title": "File:Day in the Life- 100th CES Dirt Boys (8804448).jpg",
+    "license": "Public domain",
+    "artist": "U.S. Air Force photo by Airman 1st Class Cody Mott",
+    "alt": "Excavator digging a drainage trench"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/aov-air-handling.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:East_Side_Access_Update-_Queens_(26082305922).jpg",
+    "title": "File:East Side Access Update- Queens (26082305922).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Metropolitan Transportation Authority of the State of New York",
+    "alt": "Air handling units on a flat roof"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/fencing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:18th_century_Hatfield_Park_at_Hatfield_Broad_Oak_Essex_England.jpg",
+    "title": "File:18th century Hatfield Park at Hatfield Broad Oak Essex England.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Acabashi",
+    "alt": "Post-and-rail timber fence"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/epc.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:-2021-01-23_Cavity_wall_construction,_Trimingham,_Norfolk_(2).JPG",
+    "title": "File:-2021-01-23 Cavity wall construction, Trimingham, Norfolk (2).JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kolforn (Kolforn)\nI'd appreciate if you could mail me (Kolforn@gmail.com) if you",
+    "alt": "Cavity wall insulation batts between block leaves, an EPC improvement"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/epc-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Brandschutzstreifen.jpg",
+    "title": "File:Brandschutzstreifen.jpg",
+    "license": "CC BY-SA 3.0 de",
+    "artist": "Cschirp",
+    "alt": "External wall insulation boards going on a building under scaffold"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/kitchen-fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kitchen_at_CIA_Copia.jpg",
+    "title": "File:Kitchen at CIA Copia.jpg",
+    "license": "CC0",
+    "artist": "Shrinks99",
+    "alt": "Commercial kitchen with extraction canopy"
+  },
+  {
+    "file": "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:N%C3%A1%C5%99ad%C3%AD_a_n%C3%A1dob%C3%AD_pro_velkokapacitn%C3%AD_kuchyn%C4%9B.jpg",
+    "title": "File:Nářadí a nádobí pro velkokapacitní kuchyně.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Pohled 111",
+    "alt": "Stainless commercial kitchen cooking line"
   }
 ]

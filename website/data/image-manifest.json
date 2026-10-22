@@ -21273,31 +21273,6 @@
       }
     ]
   },
-  "/assets/images/page-types/keywords/electrical.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 54118,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/1f1ca36b9ded-480.webp",
-        "bytes": 5130
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/1f1ca36b9ded-800.webp",
-        "bytes": 8876
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/1f1ca36b9ded-1280.webp",
-        "bytes": 15520
-      }
-    ]
-  },
   "/assets/images/page-types/keywords/electrical-2.jpg": {
     "width": 1600,
     "height": 1200,
@@ -21420,31 +21395,6 @@
         "h": 812,
         "webp": "/assets/images/opt/dcae289f1fb6-1280.webp",
         "bytes": 156940
-      }
-    ]
-  },
-  "/assets/images/page-types/keywords/fire-doors.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 202735,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/48f493f48b54-480.webp",
-        "bytes": 21248
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/48f493f48b54-800.webp",
-        "bytes": 39340
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/48f493f48b54-1280.webp",
-        "bytes": 67866
       }
     ]
   },
@@ -22273,31 +22223,6 @@
       }
     ]
   },
-  "/assets/images/page-types/jobs/drainage.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 572556,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/58a646480181-480.webp",
-        "bytes": 50240
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/58a646480181-800.webp",
-        "bytes": 148400
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/58a646480181-1280.webp",
-        "bytes": 381662
-      }
-    ]
-  },
   "/assets/images/page-types/jobs/driveways.jpg": {
     "width": 1400,
     "height": 900,
@@ -22873,31 +22798,6 @@
       }
     ]
   },
-  "/assets/images/page-types/keywords/aov-air-handling.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 287064,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/94326632796e-480.webp",
-        "bytes": 22222
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/94326632796e-800.webp",
-        "bytes": 61988
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/94326632796e-1280.webp",
-        "bytes": 139320
-      }
-    ]
-  },
   "/assets/images/page-types/keywords/aov-air-handling-2.jpg": {
     "width": 1600,
     "height": 1067,
@@ -23095,31 +22995,6 @@
         "h": 823,
         "webp": "/assets/images/opt/7e709e95ce91-1280.webp",
         "bytes": 226134
-      }
-    ]
-  },
-  "/assets/images/page-types/jobs/fencing.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 507047,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/ad324681f5e7-480.webp",
-        "bytes": 50468
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/ad324681f5e7-800.webp",
-        "bytes": 135406
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/ad324681f5e7-1280.webp",
-        "bytes": 325840
       }
     ]
   },
@@ -24448,31 +24323,6 @@
       }
     ]
   },
-  "/assets/images/page-types/keywords/property-refurbishment-pm.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 481596,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/aacbcbcee527-480.webp",
-        "bytes": 36470
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/aacbcbcee527-800.webp",
-        "bytes": 112070
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/aacbcbcee527-1280.webp",
-        "bytes": 296566
-      }
-    ]
-  },
   "/assets/images/page-types/keywords/property-refurbishment-pm-2.jpg": {
     "width": 1600,
     "height": 1200,
@@ -24773,31 +24623,6 @@
       }
     ]
   },
-  "/assets/images/page-types/keywords/electrics-first-fix.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 242874,
-    "variants": [
-      {
-        "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/36dd18bfefd8-480.webp",
-        "bytes": 21292
-      },
-      {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/36dd18bfefd8-800.webp",
-        "bytes": 54510
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/36dd18bfefd8-1280.webp",
-        "bytes": 117134
-      }
-    ]
-  },
   "/assets/images/page-types/keywords/electrics-first-fix-2.jpg": {
     "width": 1200,
     "height": 1600,
@@ -24989,6 +24814,281 @@
         "h": 869,
         "webp": "/assets/images/opt/3fd1c98cb8c4-1280.webp",
         "bytes": 212908
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrical.jpg": {
+    "width": 1063,
+    "height": 1600,
+    "origBytes": 280247,
+    "variants": [
+      {
+        "w": 480,
+        "h": 722,
+        "webp": "/assets/images/opt/d3da2f1a8de6-480.webp",
+        "bytes": 33526
+      },
+      {
+        "w": 800,
+        "h": 1204,
+        "webp": "/assets/images/opt/d3da2f1a8de6-800.webp",
+        "bytes": 74770
+      },
+      {
+        "w": 1063,
+        "h": 1600,
+        "webp": "/assets/images/opt/d3da2f1a8de6-1063.webp",
+        "bytes": 124430
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/fire-doors.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 157568,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/969d708121a0-480.webp",
+        "bytes": 6884
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/969d708121a0-800.webp",
+        "bytes": 16078
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/969d708121a0-1200.webp",
+        "bytes": 33650
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/drainage.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "origBytes": 512568,
+    "variants": [
+      {
+        "w": 480,
+        "h": 320,
+        "webp": "/assets/images/opt/efdfaf701549-480.webp",
+        "bytes": 29288
+      },
+      {
+        "w": 800,
+        "h": 534,
+        "webp": "/assets/images/opt/efdfaf701549-800.webp",
+        "bytes": 87662
+      },
+      {
+        "w": 1280,
+        "h": 854,
+        "webp": "/assets/images/opt/efdfaf701549-1280.webp",
+        "bytes": 225526
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/aov-air-handling.jpg": {
+    "width": 1600,
+    "height": 1065,
+    "origBytes": 492152,
+    "variants": [
+      {
+        "w": 480,
+        "h": 319,
+        "webp": "/assets/images/opt/6cd0af802ef5-480.webp",
+        "bytes": 27544
+      },
+      {
+        "w": 800,
+        "h": 533,
+        "webp": "/assets/images/opt/6cd0af802ef5-800.webp",
+        "bytes": 80974
+      },
+      {
+        "w": 1280,
+        "h": 852,
+        "webp": "/assets/images/opt/6cd0af802ef5-1280.webp",
+        "bytes": 213662
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/fencing.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 516403,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/9cc99c11dc82-480.webp",
+        "bytes": 29212
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/9cc99c11dc82-800.webp",
+        "bytes": 83016
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/9cc99c11dc82-1280.webp",
+        "bytes": 212790
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/property-refurbishment-pm.jpg": {
+    "width": 1600,
+    "height": 408,
+    "origBytes": 192390,
+    "variants": [
+      {
+        "w": 480,
+        "h": 122,
+        "webp": "/assets/images/opt/c298e89bfbfb-480.webp",
+        "bytes": 12668
+      },
+      {
+        "w": 800,
+        "h": 204,
+        "webp": "/assets/images/opt/c298e89bfbfb-800.webp",
+        "bytes": 33488
+      },
+      {
+        "w": 1280,
+        "h": 326,
+        "webp": "/assets/images/opt/c298e89bfbfb-1280.webp",
+        "bytes": 79986
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/electrics-first-fix.jpg": {
+    "width": 1156,
+    "height": 1286,
+    "origBytes": 88160,
+    "variants": [
+      {
+        "w": 480,
+        "h": 534,
+        "webp": "/assets/images/opt/ae319f8e7b42-480.webp",
+        "bytes": 7900
+      },
+      {
+        "w": 800,
+        "h": 890,
+        "webp": "/assets/images/opt/ae319f8e7b42-800.webp",
+        "bytes": 15702
+      },
+      {
+        "w": 1156,
+        "h": 1286,
+        "webp": "/assets/images/opt/ae319f8e7b42-1156.webp",
+        "bytes": 27664
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/epc.jpg": {
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 613884,
+    "variants": [
+      {
+        "w": 480,
+        "h": 640,
+        "webp": "/assets/images/opt/eb43baed6705-480.webp",
+        "bytes": 66486
+      },
+      {
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/eb43baed6705-800.webp",
+        "bytes": 194388
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/eb43baed6705-1200.webp",
+        "bytes": 445530
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/epc-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 353700,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/90aec4f57d78-480.webp",
+        "bytes": 28296
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/90aec4f57d78-800.webp",
+        "bytes": 63870
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/90aec4f57d78-1280.webp",
+        "bytes": 125362
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/kitchen-fire-suppression.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 219256,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/55d7b5bff2d2-480.webp",
+        "bytes": 14136
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/55d7b5bff2d2-800.webp",
+        "bytes": 32820
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/55d7b5bff2d2-1280.webp",
+        "bytes": 66470
+      }
+    ]
+  },
+  "/assets/images/page-types/keywords/kitchen-fire-suppression-2.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 343759,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/4de121f60584-480.webp",
+        "bytes": 20832
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/4de121f60584-800.webp",
+        "bytes": 47158
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/4de121f60584-1280.webp",
+        "bytes": 100400
       }
     ]
   }
