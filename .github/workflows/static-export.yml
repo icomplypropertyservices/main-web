@@ -101,7 +101,7 @@ jobs:
         run: node website/bin/render-rank-pages.mjs dist /tmp/rank-render && python3 website/bin/check-rank-upgrade.py /tmp/rank-render
 
       - name: Service photos unique per service (perceptual hash, catches renamed duplicates)
-        run: python3 website/bin/check-service-photo-dupes.py
+        run: pip install -q opencv-python-headless numpy pillow && python3 website/bin/check-service-photo-dupes.py
 
       - name: SEO basics (JSON-LD FAQ/Service valid, images exist, no noindex)
         run: python3 website/bin/check-seo-basics.py dist --strict
