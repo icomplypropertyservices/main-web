@@ -17204,31 +17204,6 @@
       }
     ]
   },
-  "/assets/images/services/smoke-shaft-2.jpg": {
-    "width": 1600,
-    "height": 1069,
-    "origBytes": 411686,
-    "variants": [
-      {
-        "w": 480,
-        "h": 320,
-        "webp": "/assets/images/opt/cb3c1d7341e8-480.webp",
-        "bytes": 24572
-      },
-      {
-        "w": 800,
-        "h": 535,
-        "webp": "/assets/images/opt/cb3c1d7341e8-800.webp",
-        "bytes": 74148
-      },
-      {
-        "w": 1280,
-        "h": 855,
-        "webp": "/assets/images/opt/cb3c1d7341e8-1280.webp",
-        "bytes": 185644
-      }
-    ]
-  },
   "/assets/images/services/smoke-stair-fan-1.jpg": {
     "width": 1600,
     "height": 1200,
