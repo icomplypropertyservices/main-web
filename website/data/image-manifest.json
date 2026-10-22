@@ -9700,27 +9700,27 @@
     ]
   },
   "/assets/images/services/fire-doors.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 415921,
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 318783,
     "variants": [
       {
         "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/1220dc9fd7d4-480.webp",
-        "bytes": 35156
+        "h": 360,
+        "webp": "/assets/images/opt/d17622b8d081-480.webp",
+        "bytes": 13700
       },
       {
         "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/1220dc9fd7d4-800.webp",
-        "bytes": 89766
+        "h": 600,
+        "webp": "/assets/images/opt/d17622b8d081-800.webp",
+        "bytes": 31232
       },
       {
         "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/1220dc9fd7d4-1280.webp",
-        "bytes": 199924
+        "h": 960,
+        "webp": "/assets/images/opt/d17622b8d081-1280.webp",
+        "bytes": 70160
       }
     ]
   },
@@ -16789,21 +16789,27 @@
     ]
   },
   "/assets/images/manufacturers/videx.jpg": {
-    "width": 640,
-    "height": 480,
-    "origBytes": 38601,
+    "width": 1200,
+    "height": 1600,
+    "origBytes": 735758,
     "variants": [
       {
         "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/cd75ed1ce256-480.webp",
-        "bytes": 8234
+        "h": 640,
+        "webp": "/assets/images/opt/c8c40eef46a6-480.webp",
+        "bytes": 80576
       },
       {
-        "w": 640,
-        "h": 480,
-        "webp": "/assets/images/opt/cd75ed1ce256-640.webp",
-        "bytes": 12926
+        "w": 800,
+        "h": 1067,
+        "webp": "/assets/images/opt/c8c40eef46a6-800.webp",
+        "bytes": 222814
+      },
+      {
+        "w": 1200,
+        "h": 1600,
+        "webp": "/assets/images/opt/c8c40eef46a6-1200.webp",
+        "bytes": 474056
       }
     ]
   },
@@ -17855,27 +17861,21 @@
     ]
   },
   "/assets/images/services/building-maintenance-context.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 452557,
+    "width": 640,
+    "height": 480,
+    "origBytes": 84222,
     "variants": [
       {
         "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/64e528ceb67a-480.webp",
-        "bytes": 33624
+        "h": 360,
+        "webp": "/assets/images/opt/c99c58a19914-480.webp",
+        "bytes": 28720
       },
       {
-        "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/64e528ceb67a-800.webp",
-        "bytes": 89440
-      },
-      {
-        "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/64e528ceb67a-1280.webp",
-        "bytes": 221988
+        "w": 640,
+        "h": 480,
+        "webp": "/assets/images/opt/c99c58a19914-640.webp",
+        "bytes": 45614
       }
     ]
   },
@@ -19130,52 +19130,52 @@
     ]
   },
   "/assets/images/services/fire-stopping-context.jpg": {
-    "width": 1400,
-    "height": 900,
-    "origBytes": 154527,
+    "width": 1600,
+    "height": 740,
+    "origBytes": 177823,
     "variants": [
       {
         "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/3df36e4926f5-480.webp",
-        "bytes": 8214
+        "h": 222,
+        "webp": "/assets/images/opt/651a5f11f2c1-480.webp",
+        "bytes": 11168
       },
       {
         "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/3df36e4926f5-800.webp",
-        "bytes": 15324
+        "h": 370,
+        "webp": "/assets/images/opt/651a5f11f2c1-800.webp",
+        "bytes": 22674
       },
       {
         "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/3df36e4926f5-1280.webp",
-        "bytes": 28736
+        "h": 592,
+        "webp": "/assets/images/opt/651a5f11f2c1-1280.webp",
+        "bytes": 41756
       }
     ]
   },
   "/assets/images/services/fire-stopping-photo.jpg": {
     "width": 1400,
-    "height": 900,
-    "origBytes": 154527,
+    "height": 880,
+    "origBytes": 255189,
     "variants": [
       {
         "w": 480,
-        "h": 309,
-        "webp": "/assets/images/opt/b1e1002fd2f4-480.webp",
-        "bytes": 8214
+        "h": 302,
+        "webp": "/assets/images/opt/344d63f70377-480.webp",
+        "bytes": 23796
       },
       {
         "w": 800,
-        "h": 514,
-        "webp": "/assets/images/opt/b1e1002fd2f4-800.webp",
-        "bytes": 15324
+        "h": 503,
+        "webp": "/assets/images/opt/344d63f70377-800.webp",
+        "bytes": 57840
       },
       {
         "w": 1280,
-        "h": 823,
-        "webp": "/assets/images/opt/b1e1002fd2f4-1280.webp",
-        "bytes": 28736
+        "h": 805,
+        "webp": "/assets/images/opt/344d63f70377-1280.webp",
+        "bytes": 124220
       }
     ]
   },
@@ -25125,26 +25125,26 @@
   },
   "/assets/images/manufacturers/came.jpg": {
     "width": 1600,
-    "height": 1200,
-    "origBytes": 564085,
+    "height": 1589,
+    "origBytes": 653139,
     "variants": [
       {
         "w": 480,
-        "h": 360,
-        "webp": "/assets/images/opt/0caf233e1bd5-480.webp",
-        "bytes": 38582
+        "h": 477,
+        "webp": "/assets/images/opt/d7f0875411a8-480.webp",
+        "bytes": 51744
       },
       {
         "w": 800,
-        "h": 600,
-        "webp": "/assets/images/opt/0caf233e1bd5-800.webp",
-        "bytes": 109676
+        "h": 794,
+        "webp": "/assets/images/opt/d7f0875411a8-800.webp",
+        "bytes": 123810
       },
       {
         "w": 1280,
-        "h": 960,
-        "webp": "/assets/images/opt/0caf233e1bd5-1280.webp",
-        "bytes": 253844
+        "h": 1271,
+        "webp": "/assets/images/opt/d7f0875411a8-1280.webp",
+        "bytes": 244058
       }
     ]
   },
@@ -25170,6 +25170,200 @@
         "h": 1600,
         "webp": "/assets/images/opt/a8fdd515aaea-1067.webp",
         "bytes": 47090
+      }
+    ]
+  },
+  "/assets/images/real-job/areas.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 378439,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/3629f651df08-480.webp",
+        "bytes": 23966
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/3629f651df08-800.webp",
+        "bytes": 52302
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/3629f651df08-1280.webp",
+        "bytes": 106842
+      }
+    ]
+  },
+  "/assets/images/real-job/directory-hub.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 288319,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/5bf0dca473be-480.webp",
+        "bytes": 9032
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/5bf0dca473be-800.webp",
+        "bytes": 20670
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/5bf0dca473be-1280.webp",
+        "bytes": 52000
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/eicr.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 254367,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/004542a95df2-480.webp",
+        "bytes": 10342
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/004542a95df2-800.webp",
+        "bytes": 22648
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/004542a95df2-1280.webp",
+        "bytes": 53074
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/eicr-2.jpg": {
+    "width": 488,
+    "height": 410,
+    "origBytes": 32514,
+    "variants": [
+      {
+        "w": 480,
+        "h": 403,
+        "webp": "/assets/images/opt/ccc183aefc67-480.webp",
+        "bytes": 13726
+      },
+      {
+        "w": 488,
+        "h": 410,
+        "webp": "/assets/images/opt/ccc183aefc67-488.webp",
+        "bytes": 14266
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/addressable-fire-alarm.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "origBytes": 450589,
+    "variants": [
+      {
+        "w": 480,
+        "h": 360,
+        "webp": "/assets/images/opt/b30f971c4961-480.webp",
+        "bytes": 18054
+      },
+      {
+        "w": 800,
+        "h": 600,
+        "webp": "/assets/images/opt/b30f971c4961-800.webp",
+        "bytes": 50270
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "webp": "/assets/images/opt/b30f971c4961-1280.webp",
+        "bytes": 130984
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/addressable-fire-alarm-2.jpg": {
+    "width": 1195,
+    "height": 1600,
+    "origBytes": 250033,
+    "variants": [
+      {
+        "w": 480,
+        "h": 643,
+        "webp": "/assets/images/opt/6f34f577ea94-480.webp",
+        "bytes": 19770
+      },
+      {
+        "w": 800,
+        "h": 1071,
+        "webp": "/assets/images/opt/6f34f577ea94-800.webp",
+        "bytes": 44802
+      },
+      {
+        "w": 1195,
+        "h": 1600,
+        "webp": "/assets/images/opt/6f34f577ea94-1195.webp",
+        "bytes": 80478
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-service.jpg": {
+    "width": 1600,
+    "height": 1313,
+    "origBytes": 152880,
+    "variants": [
+      {
+        "w": 480,
+        "h": 394,
+        "webp": "/assets/images/opt/f49c3be9f254-480.webp",
+        "bytes": 12502
+      },
+      {
+        "w": 800,
+        "h": 656,
+        "webp": "/assets/images/opt/f49c3be9f254-800.webp",
+        "bytes": 24122
+      },
+      {
+        "w": 1280,
+        "h": 1050,
+        "webp": "/assets/images/opt/f49c3be9f254-1280.webp",
+        "bytes": 44394
+      }
+    ]
+  },
+  "/assets/images/page-types/jobs/aov-service-2.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "origBytes": 215617,
+    "variants": [
+      {
+        "w": 480,
+        "h": 480,
+        "webp": "/assets/images/opt/9ec461f88571-480.webp",
+        "bytes": 5166
+      },
+      {
+        "w": 800,
+        "h": 800,
+        "webp": "/assets/images/opt/9ec461f88571-800.webp",
+        "bytes": 11210
+      },
+      {
+        "w": 1280,
+        "h": 1280,
+        "webp": "/assets/images/opt/9ec461f88571-1280.webp",
+        "bytes": 23208
       }
     ]
   }

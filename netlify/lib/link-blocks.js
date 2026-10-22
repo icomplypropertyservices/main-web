@@ -126,9 +126,7 @@ const CLUSTERS = [
 ];
 
 const HUB_SKIP = new Set([
-  "air-source-heat-pumps-service-agreement",
   "loft-conversion-fixed-price-package",
-  "bs-5306-extinguisher-service-cost",
 ]);
 
 const RESERVED = new Set([

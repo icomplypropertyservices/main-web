@@ -172,8 +172,19 @@ $schema = [
             <div class="relative rounded-3xl overflow-hidden border border-white/10 min-h-[260px] bg-white/5">
                 <?php $mfrHero = manufacturerImageUrl($mfrSlug, $primaryService, true); ?>
                 <?php if ($mfrHero !== ''): ?>
+                <?php
+                $heroAlt = $mfrSlug === 'paxton'
+                    ? 'Numeric access-control keypad beside a door'
+                    : ($mfrName . ' equipment');
+                if (function_exists('icomplyManufacturerPhotoAlt')) {
+                    $creditedAlt = icomplyManufacturerPhotoAlt($mfrHero, '');
+                    if ($creditedAlt !== '') {
+                        $heroAlt = $creditedAlt;
+                    }
+                }
+                ?>
                 <img src="<?= htmlspecialchars($mfrHero, ENT_QUOTES, 'UTF-8') ?>"
-                     alt="<?= htmlspecialchars($mfrName, ENT_QUOTES, 'UTF-8') ?> equipment — iComply Property Services"
+                     alt="<?= htmlspecialchars($heroAlt, ENT_QUOTES, 'UTF-8') ?>"
                      width="1200" height="800"
                      class="absolute inset-0 w-full h-full object-cover opacity-70"
                      loading="eager">

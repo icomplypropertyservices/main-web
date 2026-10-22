@@ -1417,6 +1417,13 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             && strcasecmp($brandSvc[1], $wantFamily) === 0) {
             return '<img' . $attrs . '>';
         }
+        // A brand photo with no per-service file stays on the card. Paxton has one file per service, so the shared photo does not.
+        if (preg_match('#/assets/images/manufacturers/([a-z0-9-]+)\.jpe?g$#i', $origin, $brandOnly)) {
+            $perService = '/assets/images/manufacturers/' . strtolower($brandOnly[1]) . '--' . $wantFamily . '.jpg';
+            if (!is_file(dirname(__DIR__) . $perService)) {
+                return '<img' . $attrs . '>';
+            }
+        }
         $family = icomplyQualityFloorImageFamily($src);
         $product = $family === 'products' || (bool)preg_match('#/(?:products|shop)/#i', $src);
         $placeholder = icomplyQualityFloorPlaceholderImage($src);
@@ -1447,7 +1454,11 @@ function icomplyQualityFloorConfineImages(string $html, string $path): string
             $attrs = preg_replace('/\sdata-credit-stamped="[^"]*"/i', '', $attrs) ?? $attrs;
             $label = icomplyQualityFloorImageAlt($src);
             if ($label === '') {
-                $label = 'Photograph';
+                $current = '';
+                if (preg_match('/\balt\s*=\s*"([^"]*)"/i', $attrs, $am)) {
+                    $current = icomplyQualityFloorNeutralAlt(html_entity_decode($am[1], ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+                }
+                $label = ($current !== '' && strcasecmp($current, 'Photograph') !== 0) ? $current : 'Photograph';
             }
             $safeAlt = icomplyQualityFloorH($label);
             if (preg_match('/\balt\s*=/i', $attrs)) {
@@ -1539,6 +1550,10 @@ function icomplyQualityFloorDedupePhotos(string $html): string
             continue;
         }
         $key = (string)strtok($src, '?');
+        $key = (string)preg_replace('#^https?://[^/]+#i', '', $key);
+        if (preg_match('#/opt/([a-f0-9]{8,})-\d+\.webp$#i', $key, $hashMatch)) {
+            $key = 'opt:' . $hashMatch[1];
+        }
         $groups[$key][] = ['tag' => $tag[0], 'offset' => $tag[1], 'length' => strlen($tag[0])];
     }
     $ops = [];

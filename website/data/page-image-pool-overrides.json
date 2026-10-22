@@ -128,5 +128,8 @@
  "keywords/staircase-renovation-near-me": "type-keywords-renovation",
  "keywords/staircase-renovation-quote": "type-keywords-renovation",
  "keywords/tank-insulation-hygiene-check": "type-keywords-insulation",
- "keywords/warehouse-pat-testing-electrical": "type-keywords-pat-testing"
+ "keywords/warehouse-pat-testing-electrical": "type-keywords-pat-testing",
+ "jobs/eicr": "type-jobs-eicr",
+ "jobs/addressable-fire-alarm-installation": "type-jobs-addressable-fire-alarm",
+ "jobs/aov-service": "type-jobs-aov-service"
 }
