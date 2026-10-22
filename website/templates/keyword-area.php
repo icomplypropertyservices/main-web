@@ -84,7 +84,7 @@ $h = static function ($s): string {
         <div class="mt-8 flex flex-wrap gap-3">
             <a href="#quote" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-bold text-white shadow-lg"><?= $poaService ? 'Enquire for POA' : 'Get free quote' ?></a>
             <a href="https://wa.me/<?= htmlspecialchars(WHATSAPP, ENT_QUOTES, 'UTF-8') ?>?text=<?= rawurlencode($keywordName . ' in ' . $areaName) ?>"
-               target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-green-600 font-bold text-white shadow-lg">WhatsApp</a>
+               target="_blank" rel="noopener" class="px-8 py-4 rounded-2xl bg-[#0B1F3A] font-bold text-white shadow-lg" style="background:#0B1F3A;border:2px solid #FF6B00;color:#fff">WhatsApp</a>
             <a href="tel:<?= preg_replace('/\s+/', '', PHONE) ?>" class="px-8 py-4 rounded-2xl bg-white text-[#0B1F3A] font-bold shadow-lg"><?= htmlspecialchars(PHONE, ENT_QUOTES, 'UTF-8') ?></a>
         </div>
     </div>

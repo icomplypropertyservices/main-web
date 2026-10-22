@@ -48,6 +48,13 @@ for sv in SVC_ALT:
         v = man[rel]['variants']; c = cred.get(rel, {})
         fp_photo[sv] = dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=SVC_ALT[sv],
                             credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
+# QM #158 r2: otherwise a switched image becomes the page's OWN service photo (hero service), not the family photo.
+def svc_photo(sv):
+    rel = f'/assets/images/services/{sv}.jpg'
+    if rel not in man or rel not in cred: return None
+    v = man[rel]['variants']; c = cred[rel]
+    return dict(src=v[-1]['webp'], srcset=', '.join(f"{x['webp']} {x['w']}w" for x in v), alt=sv.replace('-', ' ').capitalize() + ' work',
+                credit=f"Photo: {c.get('artist', '')}, {c.get('license', '')}, via Wikimedia Commons")
 def caption(ph):
     return ('<span class="pf-credit fam-credit" style="display:block;font-size:.8rem;color:#555555;margin:.3rem 0 .6rem">'
             + ph['credit'].replace('&', '&amp;').replace('<', '&lt;') + ' · <a href="/pages/photo-credits">Photo credits</a></span>')
@@ -85,6 +92,12 @@ for r, _, fs in os.walk(dist):
             hf = dir2fam.get(hm.group(1)) if hm else None
             hf = hf if hf in ALT else None
             _sv = hm.group(1) if hm and hm.group(1) in SVC_ALT else next((k for k in SVC_ALT if k in u), None)
+            if _sv is None and hm:
+                _hb = re.sub(r'-photo$', '', hm.group(1))
+                if _hb not in fp_photo:
+                    _sp = svc_photo(_hb)
+                    if _sp: fp_photo[_hb] = _sp
+                _sv = _hb if _hb in fp_photo else None
             if pf is None and hf:
                 files.append((fp, hf, False, _sv)); continue   # no family in the URL: follow the hero figure (does not count for owners)
             if pf in ALT and hf and hf != pf:

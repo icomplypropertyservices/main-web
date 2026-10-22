@@ -9,7 +9,10 @@ $region = (string)($place['region'] ?? '');
 $population = (int)($place['population'] ?? 0);
 $reading = (string)($place['reading'] ?? '');
 $paragraphs = barriersReadingParagraphs($reading);
+// Disambiguated census slugs (e.g. ashford-ashford) share a bare name with town pages; label them distinctly.
+$h1Name = ($slug !== areaSlug($name) && strpos($name, '(') === false && $region !== '') ? $name . ' (' . $region . ' census area)' : $name;
 $pageTitle = 'Vehicle Barriers in ' . $name;
+
 $metaDesc = $name . ' vehicle barriers. Official population ' . number_format($population) . '. CAME partner supply from Stockport, price on application. ' . PHONE . '.';
 $metaKeywords = 'vehicle barriers ' . $name . ', rising arm barrier ' . $name . ', CAME Gard, ' . $region . ', price on application';
 $canonicalUrl = url('/pages/barriers/' . $slug);
@@ -78,7 +81,7 @@ require SITE_ROOT . '/includes/header.php';
             <span class="text-white/80"><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></span>
         </nav>
         <p class="text-xs uppercase tracking-[2px] text-[#ff6b00] font-semibold"><?= htmlspecialchars($where, ENT_QUOTES, 'UTF-8') ?></p>
-        <h1 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight">Vehicle barriers in <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></h1>
+        <h1 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight">Vehicle barriers in <?= htmlspecialchars($h1Name, ENT_QUOTES, 'UTF-8') ?></h1>
         <p class="mt-5 text-lg text-white/80 max-w-3xl">
             <?= htmlspecialchars(number_format($population), ENT_QUOTES, 'UTF-8') ?> usual residents in the official count for this place.
             A barrier visit is planned from our Stockport SK2 base. The price is on application.

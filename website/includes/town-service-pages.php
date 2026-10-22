@@ -698,7 +698,7 @@ function icomplyRenderTownPage(string $family, string $slug): void
         $pageTitle = 'CAME vehicle barriers in ' . $place;
         $metaDesc = 'Vehicle barriers in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). CAME partner. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
         $kicker = 'Vehicle barriers · CAME partner';
-        $h1 = 'Vehicle barriers in ' . $ctx['name'];
+        $h1 = 'Vehicle barriers in ' . $place;
     } else {
         $pageTitle = 'AOV smoke control in ' . $place;
         $metaDesc = 'AOV and smoke control in ' . $ctx['name'] . ' (' . $ctx['pop'] . ' people, ' . $ctx['county'] . '). EN 12101. About ' . $ctx['miles'] . ' miles from Stockport. 07517806082.';
