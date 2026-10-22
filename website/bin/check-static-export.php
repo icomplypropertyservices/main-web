@@ -943,6 +943,8 @@ foreach ($canonIter as $canonFile) {
     $canonSeen++;
     $allowed = $page === $canonPath
         || ($page === '/pages/products' && $canonPath === '/products')
+        // QM #158: product twins canonicalise to the shop copy (never noindex).
+        || (str_starts_with($page, '/products/product/') && $canonPath === '/shop/products/' . substr($page, 18))
         || ($page === '/pages/packages/landlord-pack' && $canonPath === '/pages/packages/compliance-bundle')
         || ($page === '/pages/packages/compliance-bundle' && $canonPath === '/pages/packages/landlord-pack');
     if (!$allowed) {

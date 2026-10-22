@@ -150,6 +150,13 @@ export function thinImages(serviceSlug, subject, placeName, seed, peImages) {
     const picked = [];
     for (const image of peImages) {
       if (!image || typeof image.src !== "string" || !image.src.trim()) continue;
+      // QM #158: later slots must be the hero service's own photos (no fire-alarms shot on an FRA page).
+      if (picked.length) {
+        const hb = (picked[0].src.match(/\/assets\/images\/services\/([a-z0-9-]+)\.jpg/) || [])[1];
+        const ib = (image.src.trim().match(/\/assets\/images\/services\/([a-z0-9-]+)\.jpg/) || [])[1];
+        const own = hb ? (imageFamilies.service_photos || {})[hb] : null;
+        if (ib && Array.isArray(own) && !own.includes(ib)) continue;
+      }
       picked.push({ src: image.src.trim(), alt: String(image.alt || "") });
       if (picked.length === 3) break;
     }
