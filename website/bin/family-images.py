@@ -101,7 +101,12 @@ for fp, pf, own in files:
         t = re.sub(r'\balt="[^"]*"', f'alt="{ph["alt"]}"', t, count=1)
         t = re.sub(r'\s(width|height)="\d+"', '', t)
         return t[:-1].rstrip('/').rstrip() + f' width="1280" height="823" data-credit="{ph["credit"]}">'
-    s2 = IMG.sub(fix, s)
+    if own:
+        s2 = IMG.sub(fix, s)
+    else:
+        # family-from-hero (no URL family, or URL/hero disagree): rewrite the hero <figure> only, never body/og images
+        _b = s.find('<body'); _f = re.search(r'<figure\b.*?</figure>', s[_b:], re.S | re.I) if _b >= 0 else None
+        s2 = s if not _f else s[:_b + _f.start()] + IMG.sub(fix, _f.group(0)) + s[_b + _f.end():]
     if n[0]:
         open(fp, 'w', encoding='utf-8').write(s2); changed += 1; tags += n[0]
 print(f'family-images: {len(files)} family pages, {changed} pages / {tags} image tags switched to own-family photos')
