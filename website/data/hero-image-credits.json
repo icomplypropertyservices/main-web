@@ -734,12 +734,94 @@
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
   },
   {
-    "file": "/assets/images/services/water-wras.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Kupferfittings_4062.jpg",
-    "title": "File:Kupferfittings 4062.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Torsten Bätge",
-    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+    "file": "/assets/images/services/ev-chargers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:BMW_i3_home_charging_L2_CRI_04_2021_9753.jpg",
+    "title": "File:BMW i3 home charging L2 CRI 04 2021 9753.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Mariordo (Mario Roberto Durán Ortiz)",
+    "alt": "Electric car charging from a wall-mounted home EV charger"
+  },
+  {
+    "file": "/assets/images/services/ev-chargers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tesla_Wall_Connector_EV_charging_station_installed_outdoors_in_Newton_MA_1.jpg",
+    "title": "File:Tesla Wall Connector EV charging station installed outdoors in Newton MA 1.jpg",
+    "license": "CC BY 4.0",
+    "artist": "4300streetcar"
+  },
+  {
+    "file": "/assets/images/services/ev-chargers-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tesla_Wall_Connector_EV_charging_station_installed_outdoors_in_Newton_MA_1.jpg",
+    "title": "File:Tesla Wall Connector EV charging station installed outdoors in Newton MA 1.jpg",
+    "license": "CC BY 4.0",
+    "artist": "4300streetcar"
+  },
+  {
+    "file": "/assets/images/services/pat-testing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PrimeTest_250_RCD.jpg",
+    "title": "File:PrimeTest 250 RCD.jpg",
+    "license": "Public domain",
+    "artist": "Ian Watson"
+  },
+  {
+    "file": "/assets/images/services/pat-testing-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PrimeTest_250_RCD.jpg",
+    "title": "File:PrimeTest 250 RCD.jpg",
+    "license": "Public domain",
+    "artist": "Ian Watson"
+  },
+  {
+    "file": "/assets/images/services/pat-testing-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PrimeTest_250_RCD.jpg",
+    "title": "File:PrimeTest 250 RCD.jpg",
+    "license": "Public domain",
+    "artist": "Ian Watson"
+  },
+  {
+    "file": "/assets/images/services/fire-stopping.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dih_electrical_firestop_bc_superferries.jpg",
+    "title": "File:Dih electrical firestop bc superferries.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Achim Hering"
+  },
+  {
+    "file": "/assets/images/services/fire-stopping-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3m_fs195_ppd_nortown_casistas.jpg",
+    "title": "File:3m fs195 ppd nortown casistas.jpg",
+    "license": "CC BY 3.0",
+    "author": "Achim Hering",
+    "alt": "Intumescent pipe collar fire-stopping a plastic pipe through a slab"
+  },
+  {
+    "file": "/assets/images/services/fire-stopping-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nortown.jpg",
+    "title": "File:Nortown.jpg",
+    "license": "Public domain",
+    "author": "Achim Hering",
+    "alt": "Intumescent fire-stopping collar fitted where a pipe passes through concrete"
+  },
+  {
+    "file": "/assets/images/services/project-management.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vi%E1%BB%87t-foundation-interior-construction-office.jpg",
+    "title": "File:Việt-foundation-interior-construction-office.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Tran Vuong Phi",
+    "alt": "Photograph of project management"
+  },
+  {
+    "file": "/assets/images/services/project-management-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vi%E1%BB%87t-foundation-interior-construction-office.jpg",
+    "title": "File:Việt-foundation-interior-construction-office.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Tran Vuong Phi",
+    "alt": "Photograph of project management photo"
+  },
+  {
+    "file": "/assets/images/services/project-management-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Vi%E1%BB%87t-foundation-interior-construction-office.jpg",
+    "title": "File:Việt-foundation-interior-construction-office.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Tran Vuong Phi",
+    "alt": "Photograph of project management context"
   },
   {
     "file": "/assets/images/services/renovation.jpg",
@@ -1429,6 +1511,670 @@
     "artist": "Bart Everson"
   },
   {
+    "file": "/assets/images/services/building-surveys-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_01.jpg",
+    "title": "File:Under Renovation house in Mid-City New Orleans - 01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Bart Everson"
+  },
+  {
+    "file": "/assets/images/services/building-surveys-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_01.jpg",
+    "title": "File:Under Renovation house in Mid-City New Orleans - 01.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Bart Everson"
+  },
+  {
+    "file": "/assets/images/services/dry-lining.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Drywall.jpg",
+    "title": "File:Drywall.jpg",
+    "license": "Public domain",
+    "artist": "Amaxson at English Wikipedia"
+  },
+  {
+    "file": "/assets/images/services/dry-lining-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Drywall.jpg",
+    "title": "File:Drywall.jpg",
+    "license": "Public domain",
+    "artist": "Amaxson at English Wikipedia"
+  },
+  {
+    "file": "/assets/images/services/dry-lining-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Drywall.jpg",
+    "title": "File:Drywall.jpg",
+    "license": "Public domain",
+    "artist": "Amaxson at English Wikipedia"
+  },
+  {
+    "file": "/assets/images/services/commercial-fit-out.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_plan_office%5E_-_geograph.org.uk_-_1675523.jpg",
+    "title": "File:Open plan office^ - geograph.org.uk - 1675523.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Mr Ignavy"
+  },
+  {
+    "file": "/assets/images/services/commercial-fit-out-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_plan_office%5E_-_geograph.org.uk_-_1675523.jpg",
+    "title": "File:Open plan office^ - geograph.org.uk - 1675523.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Mr Ignavy"
+  },
+  {
+    "file": "/assets/images/services/commercial-fit-out-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Open_plan_office%5E_-_geograph.org.uk_-_1675523.jpg",
+    "title": "File:Open plan office^ - geograph.org.uk - 1675523.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Mr Ignavy"
+  },
+  {
+    "file": "/assets/images/services/facilities-management.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_really_open_plan_office_-_geograph.org.uk_-_5225229.jpg",
+    "title": "File:A really open plan office - geograph.org.uk - 5225229.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Neil Owen"
+  },
+  {
+    "file": "/assets/images/services/facilities-management-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_really_open_plan_office_-_geograph.org.uk_-_5225229.jpg",
+    "title": "File:A really open plan office - geograph.org.uk - 5225229.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Neil Owen"
+  },
+  {
+    "file": "/assets/images/services/facilities-management-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_really_open_plan_office_-_geograph.org.uk_-_5225229.jpg",
+    "title": "File:A really open plan office - geograph.org.uk - 5225229.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Neil Owen"
+  },
+  {
+    "file": "/assets/images/services/dry-risers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DRY_RISER_INLET_%283423890499%29.jpg",
+    "title": "File:DRY RISER INLET (3423890499).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Metro Centric"
+  },
+  {
+    "file": "/assets/images/services/dry-risers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DRY_RISER_INLET_%283423890499%29.jpg",
+    "title": "File:DRY RISER INLET (3423890499).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Metro Centric"
+  },
+  {
+    "file": "/assets/images/services/dry-risers-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:DRY_RISER_INLET_%283423890499%29.jpg",
+    "title": "File:DRY RISER INLET (3423890499).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Metro Centric"
+  },
+  {
+    "file": "/assets/images/services/extensions.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:House_Extension_Construction_-_geograph.org.uk_-_3157370.jpg",
+    "title": "File:House Extension Construction - geograph.org.uk - 3157370.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Nigel Mykura"
+  },
+  {
+    "file": "/assets/images/services/extensions-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:House_Extension_Construction_-_geograph.org.uk_-_3157370.jpg",
+    "title": "File:House Extension Construction - geograph.org.uk - 3157370.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Nigel Mykura"
+  },
+  {
+    "file": "/assets/images/services/extensions-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:House_Extension_Construction_-_geograph.org.uk_-_3157370.jpg",
+    "title": "File:House Extension Construction - geograph.org.uk - 3157370.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Nigel Mykura"
+  },
+  {
+    "file": "/assets/images/services/fire-extinguishers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_in_wall_mount.jpg",
+    "title": "File:Fire extinguisher in wall mount.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Mibrahim74"
+  },
+  {
+    "file": "/assets/images/services/fire-extinguishers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_in_wall_mount.jpg",
+    "title": "File:Fire extinguisher in wall mount.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Mibrahim74"
+  },
+  {
+    "file": "/assets/images/services/fire-extinguishers-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_in_wall_mount.jpg",
+    "title": "File:Fire extinguisher in wall mount.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Mibrahim74"
+  },
+  {
+    "file": "/assets/images/services/smoke-co-alarms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smoke_detector_on_the_stretch_ceiling_%2801%29.jpg",
+    "title": "File:Smoke detector on the stretch ceiling (01).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik"
+  },
+  {
+    "file": "/assets/images/services/smoke-co-alarms-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smoke_detector_on_the_stretch_ceiling_%2801%29.jpg",
+    "title": "File:Smoke detector on the stretch ceiling (01).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik"
+  },
+  {
+    "file": "/assets/images/services/smoke-co-alarms-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Smoke_detector_on_the_stretch_ceiling_%2801%29.jpg",
+    "title": "File:Smoke detector on the stretch ceiling (01).jpg",
+    "license": "CC0",
+    "artist": "Georg Pik"
+  },
+  {
+    "file": "/assets/images/services/kitchen-fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ansul_Restaurant_Pull_Station.jpg",
+    "title": "File:Ansul Restaurant Pull Station.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/kitchen-fire-suppression-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ansul_Restaurant_Pull_Station.jpg",
+    "title": "File:Ansul Restaurant Pull Station.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/kitchen-fire-suppression-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ansul_Restaurant_Pull_Station.jpg",
+    "title": "File:Ansul Restaurant Pull Station.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/kitchens.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mid-1920s_House%2C_Downtown_Fort_Lauderdale_Florida%2C_January_2018_-_Interior_-_Kitchen_02.jpg",
+    "title": "File:Mid-1920s House, Downtown Fort Lauderdale Florida, January 2018 - Interior - Kitchen 02.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Infrogmation of New Orleans"
+  },
+  {
+    "file": "/assets/images/services/kitchens-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mid-1920s_House%2C_Downtown_Fort_Lauderdale_Florida%2C_January_2018_-_Interior_-_Kitchen_02.jpg",
+    "title": "File:Mid-1920s House, Downtown Fort Lauderdale Florida, January 2018 - Interior - Kitchen 02.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Infrogmation of New Orleans"
+  },
+  {
+    "file": "/assets/images/services/kitchens-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mid-1920s_House%2C_Downtown_Fort_Lauderdale_Florida%2C_January_2018_-_Interior_-_Kitchen_02.jpg",
+    "title": "File:Mid-1920s House, Downtown Fort Lauderdale Florida, January 2018 - Interior - Kitchen 02.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Infrogmation of New Orleans"
+  },
+  {
+    "file": "/assets/images/services/loft-conversions.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_in_loft_apartment.jpg",
+    "title": "File:Bedroom in loft apartment.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kotivalo"
+  },
+  {
+    "file": "/assets/images/services/loft-conversions-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_in_loft_apartment.jpg",
+    "title": "File:Bedroom in loft apartment.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kotivalo"
+  },
+  {
+    "file": "/assets/images/services/loft-conversions-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_in_loft_apartment.jpg",
+    "title": "File:Bedroom in loft apartment.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Kotivalo"
+  },
+  {
+    "file": "/assets/images/services/landlord-compliance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:1950s_Housing_Estate_-_Rhodes_Way_in_the_Tilgate_neighbourhood%2C_Crawley%2C_West_Sussex_-_geograph.org.uk_-_53828.jpg",
+    "title": "File:1950s Housing Estate - Rhodes Way in the Tilgate neighbourhood, Crawley, West Sussex - geograph.org.uk - 53828.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Pete Chapman"
+  },
+  {
+    "file": "/assets/images/services/landlord-compliance-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:1950s_Housing_Estate_-_Rhodes_Way_in_the_Tilgate_neighbourhood%2C_Crawley%2C_West_Sussex_-_geograph.org.uk_-_53828.jpg",
+    "title": "File:1950s Housing Estate - Rhodes Way in the Tilgate neighbourhood, Crawley, West Sussex - geograph.org.uk - 53828.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Pete Chapman"
+  },
+  {
+    "file": "/assets/images/services/landlord-compliance-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:1950s_Housing_Estate_-_Rhodes_Way_in_the_Tilgate_neighbourhood%2C_Crawley%2C_West_Sussex_-_geograph.org.uk_-_53828.jpg",
+    "title": "File:1950s Housing Estate - Rhodes Way in the Tilgate neighbourhood, Crawley, West Sussex - geograph.org.uk - 53828.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Pete Chapman"
+  },
+  {
+    "file": "/assets/images/services/heating.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet"
+  },
+  {
+    "file": "/assets/images/services/heating-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet"
+  },
+  {
+    "file": "/assets/images/services/heating-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wall_mounted_boiler_in_kitchen.jpg",
+    "title": "File:Wall mounted boiler in kitchen.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Turbojet"
+  },
+  {
+    "file": "/assets/images/services/fire-suppression.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Supression_System.jpg",
+    "title": "File:Fire Supression System.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/fire-suppression-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Supression_System.jpg",
+    "title": "File:Fire Supression System.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/fire-suppression-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Supression_System.jpg",
+    "title": "File:Fire Supression System.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "PCHS-NJROTC"
+  },
+  {
+    "file": "/assets/images/services/roofing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Fine_Slate_Roof_-_geograph.org.uk_-_1426058.jpg",
+    "title": "File:A Fine Slate Roof - geograph.org.uk - 1426058.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Sutton"
+  },
+  {
+    "file": "/assets/images/services/roofing-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Fine_Slate_Roof_-_geograph.org.uk_-_1426058.jpg",
+    "title": "File:A Fine Slate Roof - geograph.org.uk - 1426058.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Sutton"
+  },
+  {
+    "file": "/assets/images/services/roofing-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Fine_Slate_Roof_-_geograph.org.uk_-_1426058.jpg",
+    "title": "File:A Fine Slate Roof - geograph.org.uk - 1426058.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Sutton"
+  },
+  {
+    "file": "/assets/images/real-job/resources.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:House_with_green-tiled_roofs,_Daventry_Road,_Cheylesmore,_Coventry_-_geograph.org.uk_-_4747049.jpg",
+    "title": "File:House with green-tiled roofs, Daventry Road, Cheylesmore, Coventry - geograph.org.uk - 4747049.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Robin Stott"
+  },
+  {
+    "file": "/assets/images/real-job/manufacturers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Decorative_brickwork_-_geograph.org.uk_-_1688553.jpg",
+    "title": "File:Decorative brickwork - geograph.org.uk - 1688553.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "John Salmon"
+  },
+  {
+    "file": "/assets/images/real-job/products-hub.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Front_driveway_to_The_Hill_House,_Helensburgh_-_geograph.org.uk_-_1593933.jpg",
+    "title": "File:Front driveway to The Hill House, Helensburgh - geograph.org.uk - 1593933.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Anthony O'Neil"
+  },
+  {
+    "file": "/assets/images/real-job/directory-hub.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Downloading_software_on_to_the_Fire_Control_Panel_of_a_sub-station_located_in_Queens._(CS179,_01-22-2019)_(46906375001).jpg",
+    "title": "File:Downloading software on to the Fire Control Panel of a sub-station located in Queens. (CS179, 01-22-2019) (46906375001).jpg",
+    "license": "CC BY 2.0",
+    "author": "MTA Capital Construction Mega Projects",
+    "alt": "Engineer working on a building fire control panel"
+  },
+  {
+    "file": "/assets/images/real-job/jobs-hub.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_house_roof_at_Theydon_Mount_Essex_England.JPG",
+    "title": "File:A house roof at Theydon Mount Essex England.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Acabashi"
+  },
+  {
+    "file": "/assets/images/services/access-control.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Keypad_door_knob.jpg",
+    "title": "File:Keypad door knob.jpg",
+    "license": "CC BY 2.0",
+    "artist": "J Wynia",
+    "alt": "Keypad on a door lock"
+  },
+  {
+    "file": "/assets/images/services/asbestos-survey.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Corrugated_Asbestos_Sheet_Roofing_-_Howrah_2011-07-10_00392.jpg",
+    "title": "File:Corrugated Asbestos Sheet Roofing - Howrah 2011-07-10 00392.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Biswarup Ganguly",
+    "alt": "Corrugated Asbestos Sheet Roofing - Howrah 2011-07-10 00392"
+  },
+  {
+    "file": "/assets/images/services/barriers.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Automatic_Rising_Arm_Barrier.jpg",
+    "title": "File:Automatic Rising Arm Barrier.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "FrontierPitts",
+    "alt": "Rising-arm barrier"
+  },
+  {
+    "file": "/assets/images/services/bathrooms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Bathroom_of_Khan_Pool_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "title": "File:Bathroom of Khan Pool Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Basile Morin",
+    "alt": "Bathroom of Khan Pool Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3APreservation_crews_begin_erecting_scaffolding_around_the_house_to_access_the_roof_and_upper_levels_for_masonry_repairs._%288aa49e6a-e077-4b9c-8cca-667e469d06de%29.jpg",
+    "title": "File:Preservation crews begin erecting scaffolding around the house to access the roof and upper levels for masonry repairs. (8aa49e6a-e077-4b9c-8cca-667e469d06de).jpg",
+    "license": "Public domain",
+    "artist": "NPS photo",
+    "alt": "Scaffolding on a house being repaired"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Boynton_House_Exterior_Scaffolding.jpg",
+    "title": "File:Boynton House Exterior Scaffolding.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "BixFamily",
+    "alt": "Scaffolding on a house exterior"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Repointing_the_wall_(49160488472).png",
+    "title": "File:Repointing the wall (49160488472).png",
+    "license": "CC BY 2.0",
+    "artist": "Oregon Department of Transportation",
+    "alt": "Bricklayer repointing a masonry wall"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance-photo-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Building_repair_on_Walton_Street_-_geograph.org.uk_-_8121630.jpg",
+    "title": "File:Building repair on Walton Street - geograph.org.uk - 8121630.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Pierre Marshall",
+    "alt": "Building repair on a row of houses"
+  },
+  {
+    "file": "/assets/images/services/building-maintenance-photo-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Croome_Court_-_building_repairs_-_geograph.org.uk_-_4373575.jpg",
+    "title": "File:Croome Court - building repairs - geograph.org.uk - 4373575.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Chris Allen",
+    "alt": "Building repairs under way"
+  },
+  {
+    "file": "/assets/images/services/carpentry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Carpenter_measuring_a_piece_of_wood_in_his_workshop.jpg",
+    "title": "File:Carpenter measuring a piece of wood in his workshop.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Shixart1985",
+    "alt": "Carpenter measuring timber in a workshop"
+  },
+  {
+    "file": "/assets/images/services/cctv.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:HK_Yau_Ma_Tei_Temple_Street_%E5%B9%B3%E5%AE%89%E5%A4%A7%E5%BB%88_Alhambra_Building_exterior_wall_fence_n_warning_sign_CCTV_Dec-2013.JPG",
+    "title": "File:HK Yau Ma Tei Temple Street 平安大廈 Alhambra Building exterior wall fence n warning sign CCTV Dec-2013.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Komingmeuawartm",
+    "alt": "Security camera fixed to an outside wall"
+  },
+  {
+    "file": "/assets/images/services/cctv-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen%2C_Kirchspiel%2C_ehem._Sondermunitionslager_Visbeck%2C_Bereich_der_US_Army_--_2020_--_7458.jpg",
+    "title": "File:Dülmen, Kirchspiel, ehem. Sondermunitionslager Visbeck, Bereich der US Army -- 2020 -- 7458.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dietmar Rabich",
+    "alt": "Security camera fixed to an outside wall detail"
+  },
+  {
+    "file": "/assets/images/services/cctv-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gel%C3%A4nde_der_Topographie_des_Terrors.jpg",
+    "title": "File:Gelände der Topographie des Terrors.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Christian Reinboth",
+    "alt": "Security camera fixed to an outside wall on site"
+  },
+  {
+    "file": "/assets/images/services/cdm-support.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Construction_site_near_LWL_library.jpg",
+    "title": "File:Construction site near LWL library.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "N1500513G",
+    "alt": "Construction site near LWL library"
+  },
+  {
+    "file": "/assets/images/services/cdm-support-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Danger_Construction_Area_and_Hard_Hat_Area_signs.jpg",
+    "title": "File:Danger Construction Area and Hard Hat Area signs.jpg",
+    "license": "CC0",
+    "artist": "The Navigators",
+    "alt": "Danger Construction Area and Hard Hat Area signs"
+  },
+  {
+    "file": "/assets/images/services/cdm-support-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:HK_Central_Man_Yiu_Street_Highways_Department_construction_site_office_06_Leighton_May-2013_helmets.JPG",
+    "title": "File:HK Central Man Yiu Street Highways Department construction site office 06 Leighton May-2013 helmets.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Kadeiwonra",
+    "alt": "HK Central Man Yiu Street Highways Department construction site office 06 Leighton May-2013 helmets"
+  },
+  {
+    "file": "/assets/images/services/compliance-consultancy.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3ANRC_Resident_Inspector_at_the_Summer_New_Reactor_Construction_Site_-_August_2012_%287797524972%29.jpg",
+    "title": "File:NRC Resident Inspector at the Summer New Reactor Construction Site - August 2012 (7797524972).jpg",
+    "license": "Public domain",
+    "artist": "Nuclear Regulatory Commission from US",
+    "alt": "Construction inspector on site"
+  },
+  {
+    "file": "/assets/images/services/compliance-consultancy-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Theodolite_in_use.JPG",
+    "title": "File:Theodolite in use.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wikimedia Commons",
+    "alt": "Surveyor at work with a theodolite"
+  },
+  {
+    "file": "/assets/images/services/compliance-consultancy-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:NRC_Inspector_at_Vogtle_Site_(14492252799).jpg",
+    "title": "File:NRC Inspector at Vogtle Site (14492252799).jpg",
+    "license": "Public domain",
+    "artist": "Nuclear Regulatory Commission from US",
+    "alt": "Inspector at a construction site"
+  },
+  {
+    "file": "/assets/images/services/damp-proofing.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_brick_wall_destroyed_by_erosion_from_dampness.jpg",
+    "title": "File:A brick wall destroyed by erosion from dampness.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Алёна Синичкина",
+    "alt": "A brick wall destroyed by erosion from dampness"
+  },
+  {
+    "file": "/assets/images/services/damp-proofing-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Brick_4_-_Preview_%28Rob_Tuytel_via_Poly_Haven%29.webp",
+    "title": "File:Brick 4 - Preview (Rob Tuytel via Poly Haven).webp",
+    "license": "CC0",
+    "artist": "Rob Tuytel",
+    "alt": "Brick 4 - Preview (Rob Tuytel via Poly Haven)"
+  },
+  {
+    "file": "/assets/images/services/damp-proofing-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Brick_4_ao_8k_%28Rob_Tuytel_via_Poly_Haven%29.png",
+    "title": "File:Brick 4 ao 8k (Rob Tuytel via Poly Haven).png",
+    "license": "CC0",
+    "artist": "Rob Tuytel",
+    "alt": "Brick 4 ao 8k (Rob Tuytel via Poly Haven)"
+  },
+  {
+    "file": "/assets/images/services/door-entry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Apartment_building_-_Ni%C5%A1.jpg",
+    "title": "File:Apartment building - Niš.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "MrPanyGoff",
+    "alt": "Door entry intercom at a flat entrance"
+  },
+  {
+    "file": "/assets/images/services/electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "alt": "RCD Protection Consumer Dual Split-Load"
+  },
+  {
+    "file": "/assets/images/services/electrics-first-fix.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Domestic_Consumer_Unit.JPG",
+    "title": "File:Domestic Consumer Unit.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Pfnicholls",
+    "alt": "Domestic consumer unit with the cover off"
+  },
+  {
+    "file": "/assets/images/services/emergency-lighting.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Emergency_exit_light.jpg",
+    "title": "File:Emergency exit light.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Erik1980",
+    "alt": "Emergency exit light"
+  },
+  {
+    "file": "/assets/images/services/emergency-lighting-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Exit_%28180079343%29.jpeg",
+    "title": "File:Exit (180079343).jpeg",
+    "license": "CC BY 3.0",
+    "artist": "Isengardt",
+    "alt": "Illuminated emergency exit sign"
+  },
+  {
+    "file": "/assets/images/services/emergency-lighting-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Exit_light_sign.JPG",
+    "title": "File:Exit light sign.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "KRoock74",
+    "alt": "Exit light sign"
+  },
+  {
+    "file": "/assets/images/services/evacuation-alerts.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Emergency_exit_UK_010.jpg",
+    "title": "File:Emergency exit UK 010.jpg",
+    "license": "CC BY 4.0",
+    "artist": "User:HarJIT",
+    "alt": "Emergency exit sign used on an evacuation route"
+  },
+  {
+    "file": "/assets/images/services/evacuation-alerts-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_Alarm_Bell_red.jpg",
+    "title": "File:Fire Alarm Bell red.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Zulfaamaliya",
+    "alt": "Red fire alarm bell"
+  },
+  {
+    "file": "/assets/images/services/evacuation-alerts-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:European_Manual_Call_Point.jpg",
+    "title": "File:European Manual Call Point.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Masanalv",
+    "alt": "Manual call point on an evacuation route"
+  },
+  {
+    "file": "/assets/images/services/fire-alarms.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chloride_Gent_1102_Manual_Call_Point.jpg",
+    "title": "File:Chloride Gent 1102 Manual Call Point.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Chesterfield42",
+    "alt": "Chloride Gent 1102 Manual Call Point"
+  },
+  {
+    "file": "/assets/images/services/fire-alarms-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_alarm%2C_fire_action%2C_fire_alarm_call_point_%2842030938081%29.jpg",
+    "title": "File:Fire alarm, fire action, fire alarm call point (42030938081).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Eric Fischer",
+    "alt": "Fire alarm, fire action, fire alarm call point (42030938081)"
+  },
+  {
+    "file": "/assets/images/services/fire-alarms-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_extinguisher_with_ID_sign%2C_call_point_and_fire_action_sign.JPG",
+    "title": "File:Fire extinguisher with ID sign, call point and fire action sign.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "KRoock74",
+    "alt": "Fire extinguisher with ID sign, call point and fire action sign"
+  },
+  {
+    "file": "/assets/images/services/fire-compartmentation.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:EFTA00000101_-_Hallway_wall_features_two_red_fire_extinguishers_a_framed_picture_and_a_2nd_Floor_sign_above_an_open_door.jpg",
+    "title": "File:EFTA00000101 - Hallway wall features two red fire extinguishers a framed picture and a 2nd Floor sign above an open door.jpg",
+    "license": "Public domain",
+    "artist": "Federal Bureau of Investigation",
+    "alt": "EFTA00000101 - Hallway wall features two red fire extinguishers a framed picture and a 2nd Floor sign above an open door"
+  },
+  {
+    "file": "/assets/images/services/fire-compartmentation-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Engine_Company_No._9_-_doors.JPG",
+    "title": "File:Engine Company No. 9 - doors.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "AgnosticPreachersKid",
+    "alt": "Engine Company No. 9 - doors"
+  },
+  {
+    "file": "/assets/images/services/fire-compartmentation-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fire_exit_door_in_a_bright_blue_frame%2C_propped_open_with_a_security_cord%2C_showing_%27Fire_Exit%27_signs_and_surrounding_metal_debris_in_an_abandoned_corridor%2C_Buzz_Bingo_hall%2C_Chatham%2C_Kent%2C_England_%282025-05-11%29.png",
+    "title": "File:Fire exit door in a bright blue frame, propped open with a security cord, showing 'Fire Exit' signs and surrounding metal debris in an abandoned corridor, Buzz Bingo hall, Chatham, Kent, England (2025-05-11).png",
+    "license": "CC BY-SA 4.0",
+    "artist": "OathOn",
+    "alt": "Fire exit door in a bright blue frame, propped open with a security cord, showing 'Fire Exit' signs and surrounding metal debris in an abandoned corridor, Buzz "
+  },
+  {
+    "file": "/assets/images/services/fire-doors.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Queen_Street_Mill_self_closing_fire-door_8617.JPG",
+    "title": "File:Queen Street Mill self closing fire-door 8617.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Clem Rutter, Rochester, Kent",
+    "alt": "Self-closing fire door"
+  },
+  {
+    "file": "/assets/images/services/fire-doors-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Door_closer.jpg",
+    "title": "File:Door closer.jpg",
+    "license": "Public domain",
+    "artist": "Wesha",
+    "alt": "Door closer"
+  },
+  {
+    "file": "/assets/images/services/fire-doors-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Door_closing_mechanism_Jh._Clay_1896.jpg",
+    "title": "File:Door closing mechanism Jh. Clay 1896.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Tim D. Williamson",
+    "alt": "Door closing mechanism Jh. Clay 1896"
+  },
+  {
     "file": "/assets/images/services/fire-risk-assessments.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:037_Fire_safety_-_fire_escape_stairs_in_Rotterdam%2C_Netherlands.jpg",
     "title": "File:037 Fire safety - fire escape stairs in Rotterdam, Netherlands.jpg",
@@ -1894,8 +2640,47 @@
     "source": "https://commons.wikimedia.org/wiki/File:Asbestos_warning_label.jpg",
     "title": "File:Asbestos warning label.jpg (crop)",
     "license": "CC BY-SA 3.0",
-    "artist": "MetalFusion81",
-    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
-    "family": "compliance"
+    "artist": "Masanalv",
+    "alt": "Addressable fire alarm control panel"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/addressable-fire-alarm-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nittan_Proprietary-type_class_1_fire_alarm_control_panel.JPG",
+    "title": "File:Nittan Proprietary-type class 1 fire alarm control panel.JPG",
+    "license": "Public domain",
+    "artist": "Drb400atx",
+    "alt": "Fire alarm control panel mounted on a wall"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-service.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_01.png",
+    "title": "File:Ul 3h smoke and fire damper 01.png",
+    "license": "CC BY 3.0",
+    "author": "Achim Hering",
+    "alt": "Motorised smoke damper with its actuator fitted for an AOV service"
+  },
+  {
+    "file": "/assets/images/page-types/jobs/aov-service-2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ul_3h_smoke_and_fire_damper_03a.png",
+    "title": "File:Ul 3h smoke and fire damper 03a.png",
+    "license": "CC BY 3.0",
+    "author": "Achim Hering",
+    "alt": "Smoke damper blades and linkage inspected during servicing"
+  },
+  {
+    "file": "/assets/images/services/barriers-photo.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Car_park,_Novosibirsk_2.JPG",
+    "title": "File:Car park, Novosibirsk 2.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "К.Артём.1",
+    "alt": "Car park barrier arm installed at an entrance"
+  },
+  {
+    "file": "/assets/images/services/barriers-context.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:An_automatic_barrier_at_the_exit_of_the_Marine_Drive_car_park_-_geograph.org.uk_-_2281418.jpg",
+    "title": "File:An automatic barrier at the exit of the Marine Drive car park - geograph.org.uk - 2281418.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Roger A Smith",
+    "alt": "Rising-arm barrier at a site entrance"
   }
 ]
