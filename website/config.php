@@ -1546,9 +1546,19 @@ function manufacturerImagesHtml(string $serviceSlug, int $limit = 0): string {
         $alt = html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' logo';
         // A brand that serves several services gets a separate photo per service, so one photo is not reused across them.
         $perService = '/assets/images/manufacturers/' . $slug . '--' . $serviceSlug . '.jpg';
+        static $brandHome = null;
+        if ($brandHome === null) {
+            $heroFile = __DIR__ . '/data/manufacturer-hero-images.json';
+            $brandHome = is_file($heroFile) ? (json_decode((string)file_get_contents($heroFile), true) ?: []) : [];
+        }
+        $home = (string)($brandHome[$slug]['service'] ?? '');
         if ($serviceSlug !== '' && is_file(__DIR__ . $perService)) {
             $src = $perService;
             $alt = ucfirst(str_replace('-', ' ', $serviceSlug)) . ' on site; see ' . html_entity_decode($label, ENT_QUOTES, 'UTF-8') . ' products';
+        } elseif ($serviceSlug !== '' && $home !== '' && $home !== $serviceSlug && preg_match('#\.(?:jpe?g|png|webp)(?:$|\?)#i', $src)) {
+            // A brand photo belongs to the brand's own service. On other services the card is text only,
+            // so one photo is not repeated across unrelated service pages.
+            $src = '';
         }
         $described = icomplyManufacturerPhotoAlt($src, '');
         if ($described !== '') {

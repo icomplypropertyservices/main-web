@@ -963,9 +963,10 @@ export default async (request, context) => {
       });
     }
   }
-  // /pages/keywords/{slug} is a guide, not a service/town pair. Passing it
-  // through stops the matrix from sending the hub to /pages/areas.
-  if (/^\/pages\/keywords\/[a-z0-9-]+$/.test(path)) {
+  // These two keyword guides are built as static pages. Passing them through stops
+  // the matrix sending them to /pages/areas. Every other /pages/keywords/{slug}
+  // keeps the matrix route (an edge-rendered hub or a single 301 to a live page).
+  if (/^\/pages\/keywords\/(?:air-source-heat-pumps-service-agreement|bs-5306-extinguisher-service-cost)$/.test(path)) {
     return context.next();
   }
   const manufacturerMatch = path.match(/^\/pages\/manufacturers\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
@@ -1066,7 +1067,17 @@ export default async (request, context) => {
     // 301 to the closest live hub rather than a 404.
     let to = "/pages/areas";
     const svcHub = path.match(/^\/pages\/services\/([a-z0-9-]+)$/);
-    if (svcHub) {
+    const kwHub = path.match(/^\/pages\/keywords\/([a-z0-9-]+)$/);
+    if (kwHub) {
+      // Keyword guide with no built page: one 301 to its live service page, else the guides index.
+      const svc = keywordServices[kwHub[1]] || keywordFallback[kwHub[1]] || "";
+      to = "/pages/keywords";
+      if (svc) {
+        const svcPath = SERVICE_HUB_ALIAS[svc] || `/pages/services/${svc}`;
+        const probe = await fetch(new URL(svcPath, url.origin), { method: "HEAD", redirect: "manual" }).catch(() => null);
+        if (probe && probe.status === 200) to = svcPath;
+      }
+    } else if (svcHub) {
       // /pages/services/<slug> with no exported hub: send to the live service page, never to /pages/areas.
       to = SERVICE_HUB_ALIAS[svcHub[1]] || "/pages/services";
     } else if (manufacturerMatch) to = "/pages/manufacturers";

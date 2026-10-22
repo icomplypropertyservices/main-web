@@ -422,11 +422,11 @@ say(round16Credits.includes("Self-closing fire door") && !round16Credits.include
 say(round16Credits.includes("Bricklayer repointing a masonry wall") && !round16Credits.includes("Hatfield House"), "building maintenance context is repointing");
 say(round16Credits.includes("CAME Unipark automated parking barrier"), "CAME photo is a CAME barrier");
 say(round16Credits.includes("Video door-entry panel with a camera and call buttons"), "door-entry panel alt describes the panel");
-say(round16Credits.includes("Fire alarm control panel with fire-service route cards") && !round16Credits.includes("Welsh fence"), "directory hub is a fire alarm panel");
+say(round16Credits.includes("Engineer working on a building fire control panel") && !round16Credits.includes("Welsh fence"), "directory hub is a fire control panel");
 say(round16Credits.includes("Multifunction installation tester used for an EICR"), "EICR job photo is a tester");
 say(round16Credits.includes("Addressable fire alarm control panel"), "addressable fire alarm job photo is a panel");
-say(round16Credits.includes("Roof hatch with a safety rail for smoke-vent access"), "AOV service photo is a roof hatch");
-say(round16Credits.includes("Fire-stopping pillows packed around a penetration") && round16Credits.includes("Fire-stopping mortar around a pipe penetration"), "fire stopping photos are different");
+say(round16Credits.includes("Motorised smoke damper with its actuator fitted for an AOV service"), "AOV service photo is smoke-control equipment");
+say(round16Credits.includes("Intumescent pipe collar fire-stopping a plastic pipe through a slab") && round16Credits.includes("Intumescent fire-stopping collar fitted where a pipe passes through concrete"), "fire stopping photos are different");
 say(round16Overrides["jobs/eicr"] === "type-jobs-eicr" && (round16Pools["type-jobs-eicr"]?.own || []).some((src) => src.endsWith("/jobs/eicr.jpg")), "EICR job uses its own pool");
 say(round16Overrides["jobs/addressable-fire-alarm-installation"] === "type-jobs-addressable-fire-alarm", "addressable fire alarm job uses its own pool");
 say(round16Overrides["jobs/aov-service"] === "type-jobs-aov-service", "AOV service job uses its own pool");

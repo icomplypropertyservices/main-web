@@ -491,29 +491,29 @@ $say(str_contains($creditsRaw, 'Self-closing fire door') && !str_contains($credi
 $say(str_contains($creditsRaw, 'Bricklayer repointing a masonry wall') && !str_contains($creditsRaw, 'Hatfield House'), 'building maintenance context is repointing');
 $say(str_contains($creditsRaw, 'CAME Unipark automated parking barrier'), 'CAME photo is a CAME barrier');
 $say(str_contains($creditsRaw, 'Video door-entry panel with a camera and call buttons'), 'door-entry panel alt describes the panel');
-$say(str_contains($creditsRaw, 'Fire alarm control panel with fire-service route cards') && !str_contains($creditsRaw, 'Welsh fence'), 'directory hub is a fire alarm panel');
+$say(str_contains($creditsRaw, 'Engineer working on a building fire control panel') && !str_contains($creditsRaw, 'Welsh fence'), 'directory hub is a fire control panel');
 $say(str_contains($creditsRaw, 'Multifunction installation tester used for an EICR'), 'EICR job photo is a tester');
 $say(str_contains($creditsRaw, 'Addressable fire alarm control panel'), 'addressable fire alarm job photo is a panel');
-$say(str_contains($creditsRaw, 'Roof hatch with a safety rail for smoke-vent access'), 'AOV service photo is a roof hatch');
-$say(str_contains($creditsRaw, 'Fire-stopping pillows packed around a penetration') && str_contains($creditsRaw, 'Fire-stopping mortar around a pipe penetration'), 'fire stopping photos are different');
+$say(str_contains($creditsRaw, 'Motorised smoke damper with its actuator fitted for an AOV service'), 'AOV service photo is smoke-control equipment');
+$say(str_contains($creditsRaw, 'Intumescent pipe collar fire-stopping a plastic pipe through a slab') && str_contains($creditsRaw, 'Intumescent fire-stopping collar fitted where a pipe passes through concrete'), 'fire stopping photos are different');
 
 $round16Expect = [
     '/pages/jobs/eicr' => ['004542a95df2', 'Multifunction installation tester used for an EICR'],
     '/pages/jobs/addressable-fire-alarm-installation' => ['b30f971c4961', 'Addressable fire alarm control panel'],
-    '/pages/jobs/aov-service' => ['f49c3be9f254', 'Roof hatch with a safety rail for smoke-vent access'],
+    '/pages/jobs/aov-service' => ['42e3fde539cc', 'Motorised smoke damper with its actuator fitted for an AOV service'],
     '/pages/areas/burnley' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
     '/pages/areas/nelson' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
     '/pages/areas/colne' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
     '/pages/areas/bolton' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
     '/pages/areas/wigan' => ['3629f651df08', 'Engineer testing breakers in an electrical panel'],
-    '/pages/manchester-property-compliance' => ['5bf0dca473be', 'Fire alarm control panel with fire-service route cards'],
+    '/pages/manchester-property-compliance' => ['99e8578bea0b', 'Engineer working on a building fire control panel'],
     '/pages/fire-doors/oldham' => ['d17622b8d081', 'Self-closing fire door'],
     '/pages/services/building-maintenance' => ['c99c58a19914', 'Bricklayer repointing a masonry wall'],
     '/pages/services/barriers' => ['d7f0875411a8', 'CAME Unipark automated parking barrier'],
     '/pages/services/door-entry' => ['c8c40eef46a6', 'Video door-entry panel with a camera and call buttons'],
     '/pages/manufacturers/came' => ['d7f0875411a8', 'CAME Unipark automated parking barrier'],
     '/pages/manufacturers/paxton' => ['949cf9191ce2', 'Numeric access-control keypad beside a door'],
-    '/pages/services/fire-stopping' => ['344d63f70377', 'Fire-stopping pillows packed around a penetration'],
+    '/pages/services/fire-stopping' => ['0337a3e927b8', 'Intumescent pipe collar fire-stopping a plastic pipe through a slab'],
     '/pages/keywords/bs-5306-extinguisher-service-cost' => ['BS 5306 extinguisher servicing', 'BS 5306 extinguisher servicing'],
     '/pages/keywords/air-source-heat-pumps-service-agreement' => ['air source heat pump service agreement', 'air source heat pump service agreement'],
 ];
@@ -546,12 +546,12 @@ foreach ($round16Expect as $round16Path => $needles) {
 $fireCounts = [];
 if (preg_match_all('#<img\b[^>]*>#i', $fireHtml, $fireImgs)) {
     foreach ($fireImgs[0] as $fireTag) {
-        if (preg_match('#/(72c74469e18e|344d63f70377|651a5f11f2c1)-#', $fireTag, $fireMatch)) {
+        if (preg_match('#/(72c74469e18e|0337a3e927b8|57f90623873b)-#', $fireTag, $fireMatch)) {
             $fireCounts[$fireMatch[1]] = ($fireCounts[$fireMatch[1]] ?? 0) + 1;
         }
     }
 }
-$say(($fireCounts['72c74469e18e'] ?? 0) === 1 && ($fireCounts['344d63f70377'] ?? 0) === 1 && ($fireCounts['651a5f11f2c1'] ?? 0) === 1, 'fire stopping shows each photo once');
+$say(($fireCounts['72c74469e18e'] ?? 0) === 1 && ($fireCounts['0337a3e927b8'] ?? 0) === 1 && ($fireCounts['57f90623873b'] ?? 0) === 1, 'fire stopping shows each photo once');
 $say($paxtonHtml !== '' && !preg_match('#<img\b[^>]*(?:949cf9191ce2|manufacturers/paxton\.jpg)[^>]*\balt="Photograph"#i', $paxtonHtml) && !preg_match('#<img\b[^>]*\balt="Photograph"[^>]*(?:949cf9191ce2|manufacturers/paxton\.jpg)#i', $paxtonHtml), 'paxton hero is not alt Photograph');
 
 echo $fail === 0 ? "QM FLOOR OK\n" : "QM FLOOR FAILED {$fail}\n";
