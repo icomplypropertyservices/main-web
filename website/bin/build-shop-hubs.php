@@ -463,7 +463,7 @@ function icomplyRenderProductCard(array $product, string $email): string
         ? '<img src="' . icomplyH($image) . '" alt="' . icomplyH($title) . '" loading="lazy" width="480" height="360">'
         : '<div class="coming-soon">Image coming soon</div>';
 
-    $enquire = 'mailto:' . rawurlencode($email) . '?subject=' . rawurlencode('Enquire: ' . $title);
+    $enquire = 'mailto:' . $email . '?subject=' . rawurlencode('Enquire: ' . $title);
 
     $html = '<article class="product-card">'
         . '<div class="product-media">' . $media . '</div>'
