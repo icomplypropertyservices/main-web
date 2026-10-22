@@ -158,7 +158,7 @@ function manufacturerContextKits(string $slug): array
             'price' => $price,
             'handle' => '',
             'public_href' => url('/products.php') . '#barrier-packs',
-            'image' => '/assets/images/services/access-control.jpg',
+            'image' => '/assets/images/services/barriers-photo.jpg',
             'badge' => 'Kit',
         ];
     }
