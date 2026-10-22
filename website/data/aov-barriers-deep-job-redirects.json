@@ -1,0 +1,102 @@
+{
+ "ruling": "SEO Manager 2026-10-06: the AOV + Barriers DEEP keyword slug wins the canonical. Overlapping job hubs (main, #114 W1a) 301 to the matching DEEP keyword hub; job\u00d7town 301s to keyword\u00d7town where that town page exists, else to the keyword hub. Job URLs leave the sitemap.",
+ "lock": "icomply-ops/seo/AOV-BARRIERS-DEEP-LOCK-2026-10-05.md",
+ "not_overlaps": {
+  "came-gard-gt4": "main product job (CAME Gard GT4). No DEEP slug for that product. Left as a job hub.",
+  "came-gard-gt4-installation": "#114 product job. No DEEP slug. Left alone.",
+  "addressable-fire-alarm-installation": "#114 kept hub, keyword-canonical to the #113 fire twin. Not AOV/barrier. Left alone.",
+  "conventional-fire-alarm-installation": "#114 kept hub, keyword-canonical to the #113 fire twin. Not AOV/barrier. Left alone."
+ },
+ "jobs": {
+  "car-park-barrier": {
+   "keyword": "car-park-barrier",
+   "source": "main",
+   "was": "rendered job hub + job\u00d7town (269 dual-ring towns)"
+  },
+  "aov-service": {
+   "keyword": "aov-service",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "automatic-barrier-repair": {
+   "keyword": "automatic-barrier-repair",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "barrier-arm-replacement": {
+   "keyword": "barrier-arm-replacement",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "came-barrier-installation": {
+   "keyword": "came-barrier-installation",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "car-park-barrier-repair": {
+   "keyword": "car-park-barrier-repair",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "rising-arm-barrier-repair": {
+   "keyword": "rising-arm-barrier-repair",
+   "source": "#114",
+   "was": "rendered W1a job hub (#114 head 7d202da)"
+  },
+  "aov-commissioning": {
+   "keyword": "aov-commissioning",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "aov-installation": {
+   "keyword": "aov-installation",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "aov-maintenance": {
+   "keyword": "aov-maintenance",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "aov-repair": {
+   "keyword": "aov-repair",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "barrier-installation": {
+   "keyword": "barrier-installation",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "barrier-maintenance": {
+   "keyword": "barrier-maintenance",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "barrier-repair": {
+   "keyword": "barrier-repair",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "barrier-service": {
+   "keyword": "barrier-service",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "car-park-barrier-installation": {
+   "keyword": "car-park-barrier-installation",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "emergency-barrier-repair": {
+   "keyword": "emergency-barrier-repair",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  },
+  "rising-arm-barrier-installation": {
+   "keyword": "rising-arm-barrier-installation",
+   "source": "#114",
+   "was": "already 301 to the same keyword hub in #114 (kept, same target)"
+  }
+ }
+}

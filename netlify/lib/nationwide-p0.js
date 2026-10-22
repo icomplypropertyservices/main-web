@@ -9,11 +9,7 @@ import family from "../../website/data/nationwide-3line-p0.json" with { type: "j
 import keywordPack from "../../website/data/nationwide-3line-p0-keywords.json" with { type: "json" };
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
 import { gmTownName, isGmTown } from "./link-blocks.js";
-import { townFactsBlock } from "./town-facts.js";
-import { geoRow, townDepthBlock } from "./town-depth.js";
-import { depthBankParagraphs } from "./thin-quality-bar.js";
-import { pickImages } from "./image-pool.js";
-import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
+import { aovBarriersDeepKeepsTown, isAovBarriersDeep, renderAovBarriersDeepTown } from "./aov-barriers-deep.js";
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
 const TOWNS = new Map((townDoc.towns || []).filter((town) => town && town.slug).map((town) => [town.slug, town]));
@@ -34,10 +30,12 @@ const PARENTS = {
 };
 
 export function isNationwideP0(slug) {
-  return P0.has(slug);
+  return P0.has(slug) || isAovBarriersDeep(slug);
 }
 
 export function p0KeepsTown(keyword, town) {
+  // AOV + Barriers DEEP P0 (lock 2026-10-05) wins on overlap; manufacturer heads are GM core only.
+  if (isAovBarriersDeep(keyword)) return aovBarriersDeepKeepsTown(keyword, town);
   return P0.has(keyword) && (TOWNS.has(town) || isGmTown(town));
 }
 
@@ -214,6 +212,7 @@ const P0_VISITS = ["a planned daytime visit", "a surveyed site visit", "a booked
 const FAMILY_LABEL = { fire: "Fire safety", aov: "Smoke control", barriers: "Barrier" };
 
 export function renderNationwideP0Town(keywordSlug, townSlug) {
+  if (isAovBarriersDeep(keywordSlug)) return renderAovBarriersDeepTown(keywordSlug, townSlug);
   const hub = P0.get(keywordSlug);
   const pack = keywordPack[keywordSlug];
   const place = placeFor(townSlug);

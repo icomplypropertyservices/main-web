@@ -4,6 +4,7 @@
  * Copy: SEO CLOSE-6 JOBS-INDEX (22 hubs).
  */
 require_once dirname(__DIR__, 2) . '/config.php';
+require_once SITE_ROOT . '/includes/aov-barriers-deep.php';
 
 $pageTitle = 'Job types | Greater Manchester | iComply';
 $metaDesc = 'Job hubs for landlords, fire alarms, gas, electrical, barriers and call-outs across Greater Manchester. POA after scope. Call 07517 806082.';
@@ -90,13 +91,15 @@ require SITE_ROOT . '/includes/header.php';
         <ul class="mt-6 grid sm:grid-cols-2 gap-3">
             <?php foreach ($jobs as $job):
                 $slug = $job['slug'];
-                // Keep acronyms upright in card titles (HMO, FRA, EICR, CP12, BS 5839, PPM, CAME GARD GT4).
-                $name = preg_replace_callback('/\\b(Hmo|Fra|Eicr|Cp12|Bs|Ppm|Aov|Cctv|Anpr|Gt4|Gard|Came)\\b/', static fn($m) => strtoupper($m[1]), ucwords(str_replace('-', ' ', $slug)));
+                $name = ucwords(str_replace('-', ' ', $slug));
+                // DEEP keyword hub is canonical for overlapping barrier/AOV jobs (301 from /pages/jobs/{slug}).
+                $deepKeyword = function_exists('icomplyAovBarriersDeepJobTarget') ? icomplyAovBarriersDeepJobTarget($slug) : null;
+                $hubHref = $deepKeyword !== null ? '/pages/keywords/' . $deepKeyword : '/pages/jobs/' . $slug;
                 ?>
             <li class="border border-zinc-200 rounded-2xl p-4 bg-white">
-                <a class="font-semibold text-[#0B1F3A] hover:text-[#ff6b00]" href="<?= $h(url('/pages/jobs/' . $slug)) ?>"><?= $h($name) ?></a>
+                <a class="font-semibold text-[#061828] hover:text-[#ff6b00]" href="<?= $h(url($hubHref)) ?>"><?= $h($name) ?></a>
                 <p class="mt-1 text-sm text-zinc-600"><?= $h($job['blurb']) ?></p>
-                <p class="mt-2 text-sm"><a class="text-[#ff6b00] font-medium" href="<?= $h(url('/pages/jobs/' . $slug . '/stockport')) ?>"><?= $h($name) ?> in Stockport</a></p>
+                <p class="mt-2 text-sm"><a class="text-[#ff6b00] font-medium" href="<?= $h(url($hubHref . '/stockport')) ?>"><?= $h($name) ?> in Stockport</a></p>
             </li>
             <?php endforeach; ?>
         </ul>

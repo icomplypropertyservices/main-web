@@ -23,7 +23,7 @@ function resourceRelatedLinks(string $slug): array {
         'access-control-guide' => [
             ['href' => url('/pages/services/barriers'), 'label' => 'Vehicle and parking barriers'],
             ['href' => url('/pages/manufacturers/came'), 'label' => 'Came partner'],
-            ['href' => url('/pages/jobs/car-park-barrier'), 'label' => 'Car park barriers'],
+            ['href' => url('/pages/keywords/car-park-barrier'), 'label' => 'Car park barriers'],
             ['href' => url('/pages/keywords/rising-arm-barrier'), 'label' => 'Rising arm barrier'],
             ['href' => url('/pages/jobs/came-gard-gt4'), 'label' => 'CAME Gard GT4'],
             ['href' => url('/pages/jobs/maglock-installation'), 'label' => 'Maglock installation'],
