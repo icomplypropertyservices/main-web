@@ -101,7 +101,7 @@ $howWeWork = [
 $trust = [
     ['title' => 'Standards-led', 'text' => 'BS 7671, BS 5839, BS 5266, gas safety & more'],
     ['title' => 'Written quotes', 'text' => 'Clear scope, documentation and certification'],
-    ['title' => count($areas) . '+ towns', 'text' => 'Greater Manchester, Cheshire, Lancs, Merseyside & Cumbria'],
+    ['title' => icomplyCoverageTownCount() . '+ towns', 'text' => 'Greater Manchester, Cheshire, Lancs, Merseyside & Cumbria'],
 ];
 
 // AggregateRating schema from testimonials
@@ -211,7 +211,7 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div>
-                        <span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span>
+                        <span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span>
                         Towns covered
                     </div>
                 </div>
@@ -315,7 +315,7 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div class="bg-white border rounded-3xl p-6">
                 <div class="font-semibold text-black">Local North West cover</div>
-                <p class="mt-2 text-sm text-zinc-600">Based in Offerton, Stockport SK2 5DE — serving <?= count($areas) ?>+ towns across Greater Manchester and the wider North West.</p>
+                <p class="mt-2 text-sm text-zinc-600">Based in Offerton, Stockport SK2 5DE — serving <?= icomplyCoverageTownCount() ?>+ towns across Greater Manchester and the wider North West.</p>
             </div>
         </div>
     </div>
@@ -417,7 +417,7 @@ require SITE_ROOT . '/includes/header.php';
         <ul class="space-y-3 text-sm text-white/90">
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> BS 5839 · BS 5266 · BS 7671 · gas safety</li>
             <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Installation, servicing and certification</li>
-            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= count($areas) ?>+ towns across the North West</li>
+            <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> <?= icomplyCoverageTownCount() ?>+ towns across the North West</li>
         </ul>
     </div>
 </section>

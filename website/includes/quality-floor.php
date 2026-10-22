@@ -271,9 +271,12 @@ function icomplyQualityFloorLandlord(string $path, string $subject, string $plac
         $hash = hash('sha256', $path . '|' . ($index + 1));
         $n = hexdec(substr($hash, 0, 8));
         $line = (string)$bank[$n % count($bank)];
-        if (str_starts_with($line, 'Useful photographs')) {
-            $line = icomplyQualityFloorPhotoTemplate($path);
+        // SEO audit 22 Oct: keep only the trade photo request; the other banks are
+        // generic access/key/void scenarios that read as filler on every page.
+        if (!str_starts_with($line, 'Useful photographs')) {
+            continue;
         }
+        $line = icomplyQualityFloorPhotoTemplate($path);
         $parts[] = str_replace(['{subject}', '{place}'], [$job, $town], $line);
     }
     return implode("\n", $parts);

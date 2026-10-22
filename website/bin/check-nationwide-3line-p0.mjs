@@ -41,11 +41,11 @@ ok(leeds && leeds.html.includes('property="og:url"'), "og:url");
 ok(leeds && leeds.html.includes('property="og:image" content="https://icomplypropertyservices.co.uk/'), "og:image absolute");
 const desc = leeds?.html.match(/<meta name="description" content="([^"]*)"/)?.[1] || "";
 ok(desc.length >= 140 && desc.length <= 160, `meta length ${desc.length}`);
-ok(leeds?.title.includes("Leeds") && (leeds.title.includes("iComply") || leeds.title.includes("Same/Next-Day")), "title has town and brand or Same/Next-Day");
+ok(leeds?.title.includes("Leeds") && (leeds.title.includes("iComply") || leeds.title.includes("Same/Next-Day") || leeds.title.includes("Free Written Quote")), "title has town and brand or Same/Next-Day");
 const article = leeds?.html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "";
 const words = article.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
 ok(words >= 450, `body words ${words}`);
-ok(article.includes('id="town-facts"') && article.includes("Leeds sits in the"), "town facts block (council, postcodes, travel)");
+ok(article.includes('id="town-facts"') && (article.includes("Leeds sits in the") || article.includes("Leeds has its own council")), "town facts block (council, postcodes, travel)");
 const shingles = (html) => {
   const w = (html.match(/<article id="local-copy">([\s\S]*?)<\/article>/)?.[1] || "").replace(/<[^>]+>/g, " ").toLowerCase().replace(/leeds|bradford/g, "town").match(/[a-z0-9']+/g) || [];
   const set = new Set();

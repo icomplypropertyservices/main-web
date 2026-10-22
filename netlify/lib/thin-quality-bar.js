@@ -70,7 +70,9 @@ function fill(template, ctx) {
     .replaceAll("{housing}", ctx.housing)
     .replaceAll("{industry}", ctx.industry)
     .replaceAll("{pop}", ctx.pop)
-    .replaceAll("{article}", articleFor(ctx.subject));
+    .replaceAll("{article}", articleFor(ctx.subject))
+    // A lowercase {service} label can open a sentence; capitalise sentence starts.
+    .replace(/(^|[.!?]\s+)([a-z])/g, (m, lead, ch) => lead + ch.toUpperCase());
   return softenHandTrade(text, ctx);
 }
 

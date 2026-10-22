@@ -122,7 +122,7 @@ require SITE_ROOT . '/includes/header.php';
             </h1>
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Directory of <?= count($services) ?> services (fire safety, professional &amp; construction),
-                <?= count($areas) ?>+ towns, brands, service guides and resources.
+                <?= icomplyCoverageTownCount() ?>+ towns, brands, service guides and resources.
                 Machine-readable list:
                 <a href="<?= url('/sitemap.xml') ?>" class="text-[#ff6b00] hover:underline font-medium">XML sitemap (core pages, services, towns, brands and guides — no junk keyword×area URLs)</a>.
             </p>
@@ -190,7 +190,7 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Catalogue</div>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">All <?= count($services) ?> services</h2>
-                <p class="mt-2 text-zinc-600 max-w-xl">Fire safety, professional support and construction — each service has local pages for <?= count($areas) ?>+ towns.</p>
+                <p class="mt-2 text-zinc-600 max-w-xl">Fire safety, professional support and construction — each service has local pages for <?= icomplyCoverageTownCount() ?>+ towns.</p>
             </div>
             <a href="<?= url('/pages/services/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">Services hub →</a>
         </div>
@@ -217,7 +217,7 @@ require SITE_ROOT . '/includes/header.php';
         </div>
         <?php endforeach; ?>
         <p class="text-sm text-zinc-500">
-            Full machine-readable list (<?= number_format(count($services) * count($areas) + count(getMajorKeywords()) * count($areas) + count($services) + count(getMajorKeywords()) + count($areas)) ?>+ URLs):
+            Full machine-readable list (<?= number_format(count($services) * icomplyCoverageTownCount() + count(getMajorKeywords()) * icomplyCoverageTownCount() + count($services) + count(getMajorKeywords()) + icomplyCoverageTownCount()) ?>+ URLs):
             <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/sitemap.xml') ?>">XML sitemap index</a>.
         </p>
     </div>
@@ -308,7 +308,7 @@ require SITE_ROOT . '/includes/header.php';
         <div id="electrical-gas-keywords" class="mt-12 grid md:grid-cols-2 gap-8">
             <div>
                 <h3 class="text-xl font-semibold text-black">Electrical keyword family</h3>
-                <p class="mt-1 text-sm text-zinc-600"><?= (int)$elecKwN ?> guides × <?= count($areas) ?> towns. Rewire, EICR, consumer units and emergency electrician pages.</p>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$elecKwN ?> guides × <?= icomplyCoverageTownCount() ?> towns. Rewire, EICR, consumer units and emergency electrician pages.</p>
                 <div class="mt-3 flex flex-wrap gap-2">
                     <?php foreach ($egFeatured['electrical'] ?? [] as $egSlug):
                         if (!isset($allKwMap[$egSlug])) { continue; }
@@ -322,7 +322,7 @@ require SITE_ROOT . '/includes/header.php';
             </div>
             <div>
                 <h3 class="text-xl font-semibold text-black">Gas keyword family</h3>
-                <p class="mt-1 text-sm text-zinc-600"><?= (int)$gasKwN ?> guides × <?= count($areas) ?> towns. Boiler, CP12, gas safety and emergency gas engineer pages.</p>
+                <p class="mt-1 text-sm text-zinc-600"><?= (int)$gasKwN ?> guides × <?= icomplyCoverageTownCount() ?> towns. Boiler, CP12, gas safety and emergency gas engineer pages.</p>
                 <div class="mt-3 flex flex-wrap gap-2">
                     <?php foreach ($egFeatured['gas'] ?? [] as $egSlug):
                         if (!isset($allKwMap[$egSlug])) { continue; }
@@ -345,10 +345,10 @@ require SITE_ROOT . '/includes/header.php';
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
             <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Popular areas</h2>
             <p class="mt-2 text-zinc-600 max-w-xl">
-                Key towns we cover — plus <?= count($areas) ?> towns in total across Greater Manchester and the North West.
+                Key towns we cover — plus <?= icomplyCoverageTownCount() ?> towns in total across Greater Manchester and the North West.
             </p>
         </div>
-        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= count($areas) ?> towns →</a>
+        <a href="<?= url('/pages/areas/index.php') ?>" class="text-sm font-semibold text-[#ff6b00]">All <?= icomplyCoverageTownCount() ?> towns →</a>
     </div>
     <div class="flex flex-wrap gap-2">
         <?php foreach ($popularAreas as $area): ?>

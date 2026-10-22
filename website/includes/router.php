@@ -193,6 +193,14 @@ function routerDispatchVirtual(string $path): bool {
         if (manchesterElectricalP0Handle('job', $m[1], '')) {
             return true;
         }
+        // Building-services dual job hubs (data in building-services-dual pack) have no
+        // pages/jobs/{slug}.php file. Without this they 404 in the export (98 routes).
+        if (!is_file(SITE_ROOT . '/pages/jobs/' . $m[1] . '.php')
+            && function_exists('icomplyBuildingDualSlugMap')
+            && isset(icomplyBuildingDualSlugMap()[$m[1]])) {
+            icomplyBuildingDualRenderHub('job', $m[1]);
+            return true;
+        }
     }
     // /pages/keywords/{kw}  (not the directory index)
     if (preg_match('#^/pages/keywords/([a-z0-9\-]+)$#', $path, $m) && $m[1] !== 'index') {

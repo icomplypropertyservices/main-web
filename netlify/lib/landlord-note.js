@@ -100,10 +100,14 @@ export function landlordLines(path, subject, place) {
   const job = subject || "the work";
   const town = place || "Stockport";
   const parts = [];
+  // SEO audit 22 Oct: only the trade-specific photo request is kept. The other 13
+  // banks were generic access/key/void scenarios rotated per URL to avoid duplicate
+  // detection; they read as filler on every page and are left out.
   BANKS.forEach((bank, index) => {
     if (!Array.isArray(bank) || bank.length === 0) return;
     let line = String(bank[mix(path, index + 1) % bank.length]);
-    if (line.startsWith("Useful photographs")) line = photoTemplate(path);
+    if (!line.startsWith("Useful photographs")) return;
+    line = photoTemplate(path);
     parts.push(line.replaceAll("{subject}", job).replaceAll("{place}", town));
   });
   return parts;

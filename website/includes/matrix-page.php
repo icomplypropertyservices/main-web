@@ -569,6 +569,7 @@ function icomplyRenderServiceAreaHtml(string $serviceSlug, string $areaName): st
             $html = preg_replace('#<header class="matrix-header">.*?</header>#s', icomplyMegaHeaderHtml(), $html, 1) ?? $html;
         }
     }
+    $heroCredit = $heroCredit ?? ($serviceSlug === 'demolition' ? ' data-credit="Tomwsulcer (CC0)" data-credit-stamped="1"' : '');
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<img src="' . icomplyMatrixH(function_exists('url') ? url($svcImagePath) : $svcImagePath) . '" alt="' . icomplyMatrixH($svcName . ' in ' . $areaName) . '" width="1200" height="800"' . $heroCredit . '>'
         . ($serviceSlug === 'demolition' ? '<p class="image-credit">Image credit: Tomwsulcer (CC0)</p>' : '')

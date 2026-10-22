@@ -61,7 +61,7 @@ $trust = [
     ['title' => 'BS 7671 installs', 'text' => 'Every charge point certified to current wiring regs'],
     ['title' => 'Leading brands', 'text' => 'Rolec, Myenergi, Easee & Ohme supported'],
     ['title' => 'Written quotes', 'text' => 'Clear scope after survey — no hidden extras'],
-    ['title' => 'North West coverage', 'text' => 'Stockport-based · ' . count($areas) . '+ towns'],
+    ['title' => 'North West coverage', 'text' => 'Stockport-based · ' . icomplyCoverageTownCount() . '+ towns'],
 ];
 
 $howItWorks = [
@@ -150,7 +150,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block">4 brands</span> Rolec · Myenergi · Easee · Ohme</div>
                     <div><span class="text-white font-semibold text-xl block">BS 7671</span> Full certification</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span> towns covered</div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-3">
@@ -366,7 +366,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ North West towns</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= icomplyCoverageTownCount() ?>+ North West towns</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Based in Offerton, Stockport — covering Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria
                 for home and commercial EV installs.

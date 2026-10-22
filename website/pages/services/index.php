@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
             <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
                 Full fire safety systems including fire risk assessments, electrical &amp; gas, security,
                 professional compliance support, plus kitchens, bathrooms, renovation and building trades —
-                quotes after scope across <?= count($areas) ?>+ North West towns.
+                quotes after scope across <?= icomplyCoverageTownCount() ?>+ North West towns.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#fire-safety" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Fire safety</a>
@@ -109,7 +109,7 @@ foreach ($categories as $catKey => $cat):
                     <p class="mt-2 text-zinc-600 max-w-2xl"><?= htmlspecialchars($cat['blurb'], ENT_QUOTES, 'UTF-8') ?></p>
                 <?php endif; ?>
             </div>
-            <span class="text-sm text-zinc-500"><?= count($catServices) ?> services · <?= count($areas) ?>+ towns each</span>
+            <span class="text-sm text-zinc-500"><?= count($catServices) ?> services · <?= icomplyCoverageTownCount() ?>+ towns each</span>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php foreach ($catServices as $slug => $name):
@@ -130,7 +130,7 @@ foreach ($categories as $catKey => $cat):
                     <p class="text-sm text-zinc-600 mt-2 flex-1"><?= htmlspecialchars($blurb, ENT_QUOTES, 'UTF-8') ?></p>
                     <div class="mt-5 flex items-center justify-between">
                         <span class="text-sm font-semibold text-[#ff6b00]">View service →</span>
-                        <span class="text-xs text-zinc-400"><?= count($areas) ?>+ areas</span>
+                        <span class="text-xs text-zinc-400"><?= icomplyCoverageTownCount() ?>+ areas</span>
                     </div>
                 </div>
             </a>

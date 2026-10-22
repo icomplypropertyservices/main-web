@@ -141,7 +141,7 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> core services</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span> towns covered</div>
                     <div><span class="text-white font-semibold text-xl block">One</span> compliance partner</div>
                 </div>
             </div>
@@ -355,7 +355,7 @@ require SITE_ROOT . '/includes/header.php';
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Parts &amp; kits for commercial jobs</h2>
                 <p class="mt-4 text-zinc-600 text-lg">
                     Fire panels, detectors, emergency lighting, CCTV, access control hardware and more —
-                    Shopify-ready checkout when live. Ideal for engineers and FM stores stocking common spares.
+                    Ideal for engineers and FM stores stocking common spares.
                 </p>
                 <a href="<?= url('/shop/index.php') ?>"
                    class="inline-flex mt-6 px-6 py-3 rounded-2xl bg-[#0B1F3A] text-white text-sm font-semibold hover:bg-[#ff6b00] transition">
@@ -409,7 +409,7 @@ require SITE_ROOT . '/includes/header.php';
     <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
             <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Coverage</div>
-            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= count($areas) ?>+ towns</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Serving <?= icomplyCoverageTownCount() ?>+ towns</h2>
             <p class="mt-4 text-zinc-600 text-lg">
                 Stockport-based engineers covering Greater Manchester, Lancashire, Cheshire, Merseyside and Cumbria —
                 practical for multi-site FM rounds and commercial call-outs.

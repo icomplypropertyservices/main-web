@@ -1,4 +1,5 @@
 import { scrubMeta } from "../lib/scrub-meta.js";
+import { capH1Phrase } from "../lib/phrase-cap.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
  * Unique town × keyword, town × service, manufacturer × town and job × town HTML.
@@ -9,6 +10,7 @@ import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "..
  * on the Greater Manchester core. Other places stay noindex.
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
+import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
@@ -46,17 +48,23 @@ function ctrPriceFrom(slug) {
   return "";
 }
 
-export function ctrTitle(subject, town, slug) {
+export function ctrTitle(subject, town, slug, local = true) {
   const price = ctrPriceFrom(slug);
   const opts = [];
   if (price) {
-    opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
-    opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    if (local) {
+      opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
+      opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    }
     opts.push(`${subject} ${town} from ${price}`);
   }
-  opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
-  opts.push(`${subject} in ${town} | Same/Next-Day`);
-  opts.push(`${subject} ${town} | Same/Next-Day`);
+  if (local) {
+    opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
+    opts.push(`${subject} in ${town} | Same/Next-Day`);
+    opts.push(`${subject} ${town} | Same/Next-Day`);
+  } else {
+    opts.push(`${subject} in ${town} | Free Written Quote`);
+  }
   opts.push(`${subject} in ${town} | iComply`);
   for (const o of opts) if (o.length <= 60) return o;
   const room = 60 - " | iComply".length - String(town).length - 1;
@@ -496,7 +504,7 @@ export function renderTownPage(input) {
   const h1 = `${subject} for ${audience} in ${place.name}`;
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
-  let title = ctrTitle(subject, place.name, ctrSlug);
+  let title = ctrTitle(subject, place.name, ctrSlug, isGmTown(townSlug) || isLocalTown(townSlug));
   const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
   const imageFamily = UPGRADE_SERVICE[serviceSlug] || serviceSlug;
   const imageSlug = IMAGE_SLUG[imageFamily] || imageFamily;
@@ -804,7 +812,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(withContactWidgets(scrubMeta(capH1Phrase(rendered.html))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -973,6 +981,30 @@ export default async (request, context) => {
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const serviceMatch = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  // Manchester electrical P0 (PR #119): rich keyword/job pages on the GM core. Restored after
+  // abf07e9 dropped it; without it 4,740 sitemap job×town URLs 301 to /pages/jobs.
+  if (keywordMatch || jobMatch) {
+    try {
+      const rich = await renderManchesterElectricalPage({
+        origin: url.origin,
+        surface: keywordMatch ? "keyword" : "job",
+        slug: (keywordMatch || jobMatch)[1],
+        town: (keywordMatch || jobMatch)[2],
+      });
+      if (rich) {
+        return new Response(withContactWidgets(scrubMeta(capH1Phrase(rich))), {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    } catch {
+      // The matrix renderer below stays the fallback when the P0 spec is unavailable.
+    }
+  }
   if (!manufacturerMatch && !jobMatch && !keywordMatch && !serviceMatch) {
     return context.next();
   }
@@ -1086,7 +1118,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
+  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(capH1Phrase(rendered.html)))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",

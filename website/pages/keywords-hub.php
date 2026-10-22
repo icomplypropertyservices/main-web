@@ -54,7 +54,7 @@ require SITE_ROOT . '/includes/header.php';
             <div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs tracking-widest uppercase mb-5">
                     <span class="w-2 h-2 rounded-full bg-[#ff6b00]"></span>
-                    <?= count($keywords) ?> topics Â· <?= count($services) ?> services Â· <?= count($areas) ?>+ towns
+                    <?= count($keywords) ?> topics Â· <?= count($services) ?> services Â· <?= icomplyCoverageTownCount() ?>+ towns
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.05]">
                     Service<br>
@@ -63,7 +63,7 @@ require SITE_ROOT . '/includes/header.php';
                 <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
                     Fire risk assessments, fire systems, electrical, security, professional compliance,
                     kitchens, bathrooms, renovation and construction trades â€”
-                    each guide links to local pages across <?= count($areas) ?>+ North West towns.
+                    each guide links to local pages across <?= icomplyCoverageTownCount() ?>+ North West towns.
                 </p>
                 <div class="mt-8 flex flex-wrap gap-3">
                     <a href="#directory" class="px-8 py-4 rounded-2xl bg-[#ff6b00] hover:bg-orange-600 font-semibold text-white">Browse guides</a>
@@ -73,7 +73,7 @@ require SITE_ROOT . '/includes/header.php';
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block"><?= count($keywords) ?></span> service guides</div>
                     <div><span class="text-white font-semibold text-xl block"><?= count($services) ?></span> services covered</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns linked</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span> towns linked</div>
                 </div>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
@@ -132,7 +132,7 @@ require SITE_ROOT . '/includes/header.php';
         $trust = [
             ['Full catalogue', 'Fire safety, professional & construction topics'],
             ['Service-linked', 'Every guide maps to one of ' . count($services) . ' services'],
-            ['Local coverage', count($areas) . '+ North West towns on related pages'],
+            ['Local coverage', icomplyCoverageTownCount() . '+ North West towns on related pages'],
             ['Written quotes', 'Clear scope before work starts'],
         ];
         foreach ($trust as [$t, $d]): ?>
@@ -228,7 +228,7 @@ if (function_exists('accessControlLaneHubSection')) {
             </p>
             <ul class="mt-6 space-y-3 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> Standards-led install &amp; certification</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> <?= count($areas) ?>+ towns covered from Stockport</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> <?= icomplyCoverageTownCount() ?>+ towns covered from Stockport</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00] font-bold">âœ“</span> Trade shop for kits &amp; parts</li>
             </ul>
             <div class="mt-8 flex flex-wrap gap-3">
