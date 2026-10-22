@@ -300,6 +300,8 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     require_once SITE_ROOT . '/includes/ctr-meta.php';
     $title = icomplyCtrTitle($kwName, $areaName, $keywordSlug, $svcSlug);
     $desc = icomplyCtrDesc($kwName, $areaName, $keywordSlug, $svcSlug);
+    $twin = icomplyKeywordTwinIntent((string)$keywordSlug, (string)$kwName, (string)$areaName);
+    if ($twin) { $title = $twin['title']; $desc = $twin['desc']; }
     $canonical = url('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal);
     $robots = function_exists('icomplyRobotsMetaForPath')
         ? icomplyRobotsMetaForPath('/pages/keywords/' . $keywordSlug . '/' . $areaSlugVal)
@@ -319,7 +321,7 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
     }
     $html .= '<section class="matrix-hero"><div class="matrix-wrap">'
         . '<p class="text-xs uppercase tracking-widest text-white/60">' . icomplyMatrixH($svcName) . ' · ' . icomplyMatrixH($areaName) . '</p>'
-        . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . '</span></h1>'
+        . '<h1>' . icomplyMatrixH($kwName) . ' <span class="accent">in ' . icomplyMatrixH($areaName) . ($twin ? icomplyMatrixH($twin['h1_tail']) : '') . '</span></h1>'
         . '<p class="mt-4 text-white/80 max-w-2xl">' . icomplyGmBriefHtml($intro) . '</p>'
         . '<div class="mt-6 flex flex-wrap gap-3">'
         . '<a class="matrix-cta matrix-cta-accent" href="' . icomplyMatrixH($s['contact']) . '">Request a quote</a>'

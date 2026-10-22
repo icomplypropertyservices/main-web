@@ -1,3 +1,4 @@
+import { keywordTwinIntent } from "../lib/keyword-twin.js";
 import { scrubMeta } from "../lib/scrub-meta.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
@@ -422,8 +423,9 @@ export function renderTownPage(input) {
   const ctrSlug = kind === "keyword" ? input.keyword : serviceSlug;
   const ctrGas = Boolean(keyword.gas) || serviceSlug === "gas-systems" || serviceSlug === "heating";
   const buildTitle = buildTrade ? `${buildTrade} ${place.name} | Free Quote 07517 806082` : "";
-  const title = buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug);
-  const description = ctrDescription(subject, place.name, ctrSlug, ctrGas);
+  const twin = kind === "keyword" ? keywordTwinIntent(input.keyword, subject, place.name) : null;
+  const title = twin ? twin.title : (buildTitle && buildTitle.length <= 60 ? buildTitle : ctrTitle(subject, place.name, ctrSlug));
+  const description = twin ? twin.desc : ctrDescription(subject, place.name, ctrSlug, ctrGas);
   // Plastering / plasterboard / dry-lining pages show their own credited photo.
   const plasterText = kind === "manufacturer" ? "" : `${path} ${serviceSlug || ""}`;
   const imageSlug = /dry-?lining/.test(plasterText) ? "dry-lining" : /plaster|skim/.test(plasterText) ? "plastering" : (IMAGE_SLUG[serviceSlug] || serviceSlug);
@@ -624,7 +626,7 @@ ${MATRIX_CSS}
 ${MATRIX_HEADER}
 <main>
 ${crumbs}
-<h1>${escapeHtml(h1)}</h1>
+<h1>${escapeHtml(twin ? `${subject} in ${place.name}${twin.h1Tail}` : h1)}</h1>
 ${images.html}
 <article id="local-copy">
 ${proseHtml}
