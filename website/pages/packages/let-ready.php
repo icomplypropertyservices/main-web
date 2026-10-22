@@ -37,6 +37,19 @@ require SITE_ROOT . '/includes/header.php';
     <a class="px-4 py-2 border rounded-full text-sm" href="<?= url('/pages/services/epc.php') ?>">EPC</a>
   </div>
 </section>
+<section class="max-w-4xl mx-auto px-6 pb-12 prose">
+  <h2 class="text-2xl font-semibold">How the Let Ready package works</h2>
+  <p>Let Ready is built for landlords and letting agents who need a property signed off before a new tenancy starts or after a void period. We book every visit on one schedule, so the electrician, the gas engineer and the fire and alarm technician are not chasing separate keys and separate access dates. Gas safety checks are carried out by Gas Safe registered engineers, and electrical testing is carried out by qualified electricians who issue a full EICR with observations coded C1, C2, C3 or FI.</p>
+  <p>Once the visits are done you receive one pack of certificates and reports, laid out so you can hand it to a tenant, an agent or the local authority licensing team without re-sorting paperwork. Where remedial work is needed we quote it in writing first; nothing is carried out without your approval.</p>
+  <h3 class="text-xl font-semibold">Typical prices</h3>
+  <p>An EICR starts from £160 and a CP12 gas safety record is £85. HMO compliance bundles start from £561. Other items, such as alarm upgrades, fire doors or remedials, are priced on application because they depend on the property size and layout.</p>
+  <h3 class="text-xl font-semibold">Frequently asked questions</h3>
+  <p><strong>How quickly can a Let Ready visit be booked?</strong> Same-day or next-day slots are often available, subject to access and engineer availability in your area.</p>
+  <p><strong>Do I need to be present?</strong> No. We can collect keys from your agent or use a key safe, and we send photos with the report.</p>
+  <p><strong>Is it suitable for HMOs?</strong> Yes. For licensed HMOs we add the fire alarm, emergency lighting and fire risk assessment items the licence conditions usually require.</p>
+  <p>Call or WhatsApp 07517 806082, or email icomplypropertyservices@gmail.com, to book or ask a question.</p>
+</section>
+
 <section id="quote" class="bg-zinc-50 border-t"><div class="max-w-3xl mx-auto px-6 py-16">
   <h2 class="text-3xl font-semibold text-center">Quote Let Ready</h2>
   <?= icomplyQuoteFormOpen('mt-8 bg-white border rounded-3xl p-6 space-y-4') ?>
