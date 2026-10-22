@@ -649,6 +649,14 @@
     "artist": "Thatlowdownwoman"
   },
   {
+    "file": "/assets/images/services/electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
     "file": "/assets/images/families/fire-photo-gas.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Gent_1102_Manual_Call_Point.jpg",
     "title": "File:Gent 1102 Manual Call Point.jpg (crop)",
