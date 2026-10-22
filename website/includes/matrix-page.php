@@ -424,13 +424,13 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         foreach ((array)$kwDepth[$keywordSlug]['p'] as $p) { $deep .= '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub((string)$p) . '</p>'; }
         $deep .= '</section>';
     }
-    if ($deep === '') {
+    {
         // Thin keyword × town pages (under ~850 prose words) get the town-depth block: postcode districts,
         // wards, housing and council facts for this town (QM #156 under_800_words).
         $mainTxt = preg_replace('#<(script|style|nav|header|footer)\b.*?</\1>#s', ' ', substr($html, (int)strpos($html, '<main')));
-        if (str_word_count(strip_tags((string)$mainTxt)) < 850) {
+        if (str_word_count(strip_tags((string)$mainTxt . ' ' . $deep)) < 850) {
             require_once __DIR__ . '/town-deep.php';
-            $deep = function_exists('icomplyTownDeepHtml') ? icomplyTownDeepHtml($areaSlugVal, $areaName, $kwName, $svcSlug) : '';
+            $deep .= ($deep === '' && function_exists('icomplyTownDeepHtml')) ? icomplyTownDeepHtml($areaSlugVal, $areaName, $kwName, $svcSlug) : '';
             static $svcDepth = null;
             if ($svcDepth === null) {
                 $svcDepth = (array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/service-depth.json'), true);
