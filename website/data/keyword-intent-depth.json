@@ -1,0 +1,35 @@
+{
+  "_note": "QM #156 CLOSE 8: keyword-specific depth for the GSC upgrade keyword x town pages, so each keyword reads differently in the same town. {town} is replaced at render time.",
+  "eicr-cost-near-me": {
+    "h2": "What an EICR costs in {town}, and why",
+    "p": [
+      "EICRs start from £160 for a typical rented flat or small house in {town}, and an HMO pack is £561. The figure moves with the number of circuits, not the number of bedrooms. A one-board flat with eight circuits tests in a morning. A converted house with a second consumer unit, an outbuilding supply or a communal landing circuit takes longer, so we price it after we have seen the board.",
+      "The quickest way to get a firm figure is to send a clear photo of the consumer unit with the cover on, the approximate age of the wiring if you know it, and whether the property is let, empty or occupied. Access matters too. If a tenant needs notice, or the loft and meter cupboard are locked, tell us before we book so the engineer is not paid to wait outside.",
+      "The price covers the inspection, the sample testing set out in BS 7671, and the written report emailed to you. Remedial work is not included, because nobody can know what is needed until the circuits are tested. If the report records C1 or C2 observations, we list each one with its own written quote so you can approve them line by line. Landlords in {town} have 28 days to complete remedial work and pass written confirmation to the tenant and, if asked, to the council."
+    ]
+  },
+  "5-year-eicr-certificate": {
+    "h2": "The five-year EICR cycle for {town} properties",
+    "p": [
+      "Private landlords in England must have the fixed wiring in each let property inspected and tested at least every five years, and before a new tenancy if the last report has expired. The report, not a certificate in the strict sense, is what a letting agent or the council will ask to see. Owner-occupiers in {town} have no legal deadline, but ten years is the usual recommendation, and most mortgage lenders and insurers will accept a five-year cycle.",
+      "Five years is a maximum, not a fixed date. The engineer can set a shorter interval on the report if the installation is old, if there is evidence of damage, or if the property is an HMO with heavy use. When that happens the next inspection date on the report is the one that counts, and it should go straight into your compliance diary.",
+      "We keep the date for you. When you book a five-year EICR in {town}, the next due date is logged and we contact you about eight weeks before it falls due, so there is time to arrange access and any tenant notice. If you manage several properties, send us the addresses and last report dates and we will line them up so neighbouring jobs share a visit and a single trip."
+    ]
+  },
+  "boiler-service-and-repair-package": {
+    "h2": "How the boiler service and repair package works in {town}",
+    "p": [
+      "The package combines an annual boiler service with priority call-outs for breakdowns during the year. It suits landlords and homeowners in {town} who would rather have one arrangement than book a service, then search for an engineer the day the heating fails. Gas work is carried out by Gas Safe registered engineers.",
+      "The annual visit covers a visual check of the appliance and flue, a combustion analysis, a check of the seals, safety devices and condensate route, and a written record of what was tested. If the appliance is in a rented property, the landlord gas safety record can be done on the same visit, which saves a second appointment and a second round of tenant notice.",
+      "Repairs under the package are prioritised over standard bookings. Parts are quoted separately because a diverter valve costs very differently from a PCB or a heat exchanger, and the engineer will tell you the part and the price before fitting anything. If a boiler is beyond economic repair, we say so in writing and give a separate written quote for a replacement rather than fitting parts that will not last."
+    ]
+  },
+  "boiler-service-gas-safe": {
+    "h2": "What a full boiler service in {town} includes",
+    "p": [
+      "A full boiler service is more than a quick look at the pressure gauge. The engineer removes the casing, inspects the burner, heat exchanger and seals, checks the flue terminal and route, tests the safety devices and records a flue gas analysis reading. The work is carried out by Gas Safe registered engineers, and you receive a written service record for the appliance.",
+      "Most manufacturers ask for a service every twelve months to keep the warranty valid, and the service record is what they ask to see if you make a claim. If your boiler in {town} is under warranty, send us the make and model when you book so the engineer follows that manufacturer's checklist and brings any parts the schedule calls for.",
+      "If the service finds a fault, the engineer explains it, classifies any safety issue under the gas industry unsafe situations procedure, and gives you a written quote for the repair. An appliance that is immediately dangerous will be made safe and labelled with your permission. Annual servicing is also the cheapest way to avoid winter breakdowns, because worn seals and blocked condensate traps show up long before they stop the heating."
+    ]
+  }
+}

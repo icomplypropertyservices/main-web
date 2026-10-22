@@ -405,6 +405,22 @@ function icomplyRenderKeywordTownHtml(string $keywordSlug, string $areaName): st
         . icomplyMatrixKeywordChips($svcSlug)
         . '</section></main>';
 
+    // QM #156 (CLOSE 8): town-specific depth inside <main> so keyword × town pages clear 800 words and differ.
+    static $kwDepth = null;
+    if ($kwDepth === null) {
+        $kwDepth = (array)json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/keyword-intent-depth.json'), true);
+    }
+    $deep = '';
+    if (isset($kwDepth[$keywordSlug]['p'])) {
+        $sub = static fn(string $t): string => icomplyMatrixH(str_replace('{town}', $areaName, $t));
+        $deep = '<section class="kw-intent-depth"><h2 class="text-2xl font-semibold mb-3">' . $sub((string)$kwDepth[$keywordSlug]['h2']) . '</h2>';
+        foreach ((array)$kwDepth[$keywordSlug]['p'] as $p) { $deep .= '<p class="mt-3 text-zinc-700 leading-relaxed">' . $sub((string)$p) . '</p>'; }
+        $deep .= '</section>';
+    }
+    if ($deep !== '') {
+        $pos = strrpos($html, '</main>');
+        if ($pos !== false) { $html = substr($html, 0, $pos) . $deep . substr($html, $pos); }
+    }
     $html .= icomplyMatrixChromeEnd();
     return $html;
 }
