@@ -454,5 +454,27 @@ foreach (array_slice($places, 0, 40) as $town) {
 $maxShare = $sentencePages > 0 && $sentenceCounts !== [] ? max($sentenceCounts) / $sentencePages : 1;
 $say($maxShare < 0.5, 'landlord sentence max share ' . round($maxShare * 100, 1) . '% of ' . $sentencePages);
 
+$say(!is_file(dirname(__DIR__) . '/assets/images/services/smoke-shaft-2.jpg'), 'unused smoke-shaft-2 file removed');
+$creditsRaw = (string)file_get_contents(dirname(__DIR__) . '/data/hero-image-credits.json');
+$say(!str_contains($creditsRaw, 'smoke-shaft-2'), 'smoke-shaft-2 credit removed');
+$say(str_contains($creditsRaw, 'Wet chemical fire extinguisher for a commercial kitchen'), 'kitchen suppression photo is a wet-chemical extinguisher');
+$say(!str_contains($creditsRaw, 'Nářadí a nádobí'), 'kitchen shelves credit removed');
+foreach (['access-control', 'barriers', 'door-entry'] as $svc) {
+    $_SERVER['REQUEST_URI'] = '/pages/services/' . $svc;
+    ob_start();
+    $handled = routerDispatchVirtual('/pages/services/' . $svc);
+    $svcHtml = (string)ob_get_clean();
+    if (function_exists('icomplyPerfRewriteHtml')) {
+        $svcHtml = icomplyPerfRewriteHtml($svcHtml);
+    }
+    $say($handled && str_contains($svcHtml, '/assets/images/manufacturers/paxton--' . $svc . '.jpg'), $svc . ' service page uses its own photo');
+    $say(!str_contains($svcHtml, '/assets/images/manufacturers/paxton.jpg') && !str_contains($svcHtml, '949cf9191ce2'), $svc . ' service page does not reuse paxton.jpg');
+}
+$_SERVER['REQUEST_URI'] = '/pages/keywords/kitchen-hood-suppression';
+ob_start();
+$hoodHandled = routerDispatchVirtual('/pages/keywords/kitchen-hood-suppression');
+$hoodHtml = (string)ob_get_clean();
+$say($hoodHandled && str_contains($hoodHtml, 'kitchen-fire-suppression-2.jpg'), 'kitchen hood page uses the suppression photo');
+
 echo $fail === 0 ? "QM FLOOR OK\n" : "QM FLOOR FAILED {$fail}\n";
 exit($fail === 0 ? 0 : 1);

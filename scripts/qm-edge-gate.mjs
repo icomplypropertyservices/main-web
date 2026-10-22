@@ -392,6 +392,15 @@ say(/part that has failed/.test(townNote) && !/when the job is the roof/.test(to
 const landlordNoteLine = (await import("../netlify/lib/landlord-note.js")).landlordLines("/pages/landlords", "Landlords", "Stockport").join(" ");
 say(/part that has failed/.test(landlordNoteLine) && !/when the job is a driveway/.test(landlordNoteLine) && !/Useful photographs before/.test(landlordNoteLine), "landlord photo line");
 say(/(?:smoke|shaft|ventilation)/i.test(aovFloor) && /(?:\/aov-|actuator|automatic-opening-vent|aov-air-handling-(?:photo|context))/i.test(aovFloor), "aov floor smoke and aov photos");
+const round15Credits = fs.readFileSync(path.join(repo, "website/data/hero-image-credits.json"), "utf8");
+say(!fs.existsSync(path.join(repo, "website/assets/images/services/smoke-shaft-2.jpg")) && !round15Credits.includes("smoke-shaft-2"), "unused smoke-shaft-2 file and credit removed");
+say(round15Credits.includes("Wet chemical fire extinguisher for a commercial kitchen") && !round15Credits.includes("Nářadí"), "kitchen suppression credit replaces the shelves photo");
+say(fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--access-control.jpg")) && fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--barriers.jpg")) && fs.existsSync(path.join(repo, "website/assets/images/manufacturers/paxton--door-entry.jpg")), "access control, barriers and door entry each have a Paxton photo");
+const round15Pools = JSON.parse(fs.readFileSync(path.join(repo, "website/data/service-image-pools.json"), "utf8"));
+say((round15Pools["access-control"]?.own || []).some((src) => src.endsWith("/services/access-control.jpg")), "access-control pool keeps its own photo");
+say((round15Pools.barriers?.own || []).some((src) => src.endsWith("/services/barriers.jpg")), "barriers pool keeps its own photo");
+say((round15Pools["door-entry"]?.own || []).some((src) => src.endsWith("/services/door-entry.jpg")), "door-entry pool keeps its own photo");
+say((round15Pools["type-keywords-kitchen-fire-suppression"]?.own || []).some((src) => src.endsWith("kitchen-fire-suppression-2.jpg")), "kitchen hood pool still uses the replacement photo");
 
 console.log(fail === 0 ? "QM EDGE OK" : `QM EDGE FAILED ${fail}`);
 process.exit(fail === 0 ? 0 : 1);
