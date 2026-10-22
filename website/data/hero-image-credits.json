@@ -647,5 +647,13 @@
     "title": "File:Zambia -Bricklayer.jpg (cropped 1280x720, same photo as b1/brickwork-1.jpg)",
     "license": "CC BY-SA 4.0",
     "artist": "Thatlowdownwoman"
+  },
+  {
+    "file": "/assets/images/services/electrical.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:RCD_Protection_Consumer_Dual_Split-Load.jpg",
+    "title": "File:RCD Protection Consumer Dual Split-Load.jpg (cropped, same photo as families/electrical-photo.jpg)",
+    "license": "CC BY 4.0",
+    "artist": "Evry Electrical",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
   }
 ]
