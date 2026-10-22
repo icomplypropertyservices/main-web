@@ -5,6 +5,7 @@ with the most pages showing it. On a page of another family, that <img>/<source>
 credited Commons photo (assets/images/families/<family>-photo.jpg, credits in data/hero-image-credits.json).
 Pages with no family and brand/logo images are left alone."""
 import os, re, sys, json, collections
+def html_esc(s): return str(s).replace("&", "&amp;").replace("<", "&lt;")
 dist = sys.argv[1] if len(sys.argv) > 1 else 'dist'
 root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 fam = json.load(open(os.path.join(root, 'data/service-image-families.json')))['families']
@@ -140,3 +141,32 @@ for fp, pf, own, sv in files:
     if n[0]:
         open(fp, 'w', encoding='utf-8').write(s2); changed += 1; tags += n[0]
 print(f'family-images: {len(files)} family pages, {changed} pages / {tags} image tags switched to own-family photos')
+# QM #157: FRA-adjacent pages (evacuation strategy guides, HMO / landlord packs) show the second credited FRA photo,
+# so the main FRA photo is not shared across them and the FRA service pages.
+FRA2_PAGES = re.compile(r'/pages/(keywords/evacuation-strategy-(document|review)(/|$)|jobs/(landlord-bundle|hmo-occupancy)$)')
+_a, _b = '/assets/images/services/fire-risk-assessments.jpg', '/assets/images/services/fire-risk-assessments-2.jpg'
+if _a in man and _b in man:
+    _swap = {_a: _b}
+    for _x, _y in zip(man[_a]['variants'], man[_b]['variants']): _swap[_x['webp']] = _y['webp']
+    for _x in man[_a]['variants']: _swap.setdefault(_x['webp'], man[_b]['variants'][-1]['webp'])
+    _pat = re.compile('|'.join(re.escape(k) for k in sorted(_swap, key=len, reverse=True)))
+    _cb = (cred.get(_b) or {})
+    _n = 0
+    for r, _, fs in os.walk(dist):
+        if '/assets' in r: continue
+        for f in fs:
+            if not f.endswith(('.php', '.html')): continue
+            fp = os.path.join(r, f); u = re.sub(r'/index$', '', '/' + os.path.relpath(fp, dist).rsplit('.', 1)[0])
+            if not FRA2_PAGES.search(u): continue
+            s = open(fp, encoding='utf-8', errors='replace').read(); s2 = _pat.sub(lambda m: _swap[m.group(0)], s)
+            if s2 != s:
+                _ca = cred.get(_a) or {}
+                if _ca.get('artist') and _cb.get('artist'):   # the visible credit follows the photo
+                    for _old, _new in ((_ca['artist'], _cb['artist']), (_ca.get('license', ''), _cb.get('license', ''))):
+                        if _old: s2 = s2.replace(html_esc(_old), html_esc(_new)).replace(_old, html_esc(_new))
+                if _cb.get('artist') and html_esc(_cb['artist']) not in s2:
+                    _line = ('<div class="pf-credit" style="font-size:.8rem;color:#555555;margin:1rem 0">Photo: ' + html_esc(_cb['artist']) + ', '
+                             + html_esc(_cb.get('license', '')) + ', via Wikimedia Commons · <a href="/pages/photo-credits">Photo credits</a></div>')
+                    s2 = re.sub(r'(</main>|<footer\b)', lambda m: _line + m.group(1), s2, count=1)
+                open(fp, 'w', encoding='utf-8').write(s2); _n += 1
+    print(f'family-images: {_n} FRA-adjacent pages use the second FRA photo')
