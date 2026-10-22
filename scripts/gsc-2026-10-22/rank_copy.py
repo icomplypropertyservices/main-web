@@ -2,7 +2,7 @@
 no prices other than the approved ones, gas wording untouched (none of these are gas pages)."""
 PRIORITY = {
  "/pages/keywords/aov-maintenance/stockport": {
-  "title": "AOV Maintenance Stockport | Smoke Vent Servicing | iComply",
+  "title": "AOV Maintenance Stockport | Smoke Vents | Same/Next-Day",
   "meta": "AOV maintenance in Stockport: smoke vent, actuator and control panel servicing to BS EN 12101 for blocks and HMOs. Same/Next-Day. Call 07517 806082",
   "paras": [
    "Stockport is our home base, so AOV maintenance here is the work we can turn round fastest. Most of the automatic opening vents we look after in the borough sit at the head of common stairs in converted mills around the town centre, in the 1960s and 1970s blocks in Brinnington, Offerton and Adswood, and in newer apartment schemes near the station and along the A6 through Heaton Chapel and Heaton Norris.",
@@ -16,7 +16,7 @@ PRIORITY = {
   ],
  },
  "/pages/jobs/car-park-barrier": {
-  "title": "Car Park Barrier Installation & Repair Manchester | iComply",
+  "title": "Car Park Barrier Repair Manchester | Same/Next-Day",
   "meta": "Car park barrier installation, repair and servicing in Manchester and the North West: rising arms, ANPR, fob and intercom access. Call 07517 806082",
   "paras": [
    "This job page covers car park barrier work across Manchester, Stockport, Salford, Trafford and the wider North West: new rising-arm barriers for residential and office car parks, replacement of worn or obsolete units, repairs to arms, motors and loop detectors, and planned servicing so the barrier keeps working on a busy morning.",
@@ -30,7 +30,7 @@ PRIORITY = {
   ],
  },
  "/pages/keywords/repointing-services/bramhall": {
-  "title": "Repointing Services Bramhall | Lime & Brick Pointing",
+  "title": "Repointing Services Bramhall | Lime Pointing | Same/Next-Day",
   "meta": "Repointing services in Bramhall: brick and stone repointing in lime or sand-cement mortar matched to your home and chimneys. Call 07517 806082",
   "paras": [
    "Bramhall has a lot of 1930s semis, Edwardian villas and older cottages around the village centre and Bramhall Park, and most of them now have mortar joints that are worn, cracked or patched with the wrong mix. Repointing done properly keeps rain out of the wall, protects the brick faces and makes the house look cared for.",
@@ -44,7 +44,7 @@ PRIORITY = {
   ],
  },
  "/pages/keywords/5-year-eicr-certificate/alderley-edge": {
-  "title": "5 Year EICR Certificate Alderley Edge from £160 | iComply",
+  "title": "5 Year EICR Alderley Edge from £160 | Same/Next-Day",
   "meta": "5 year EICR certificate in Alderley Edge from £160 for landlords and homeowners: full electrical test, written report, remedials. Call 07517 806082",
   "paras": [
    "Private landlords in England must have the electrics in each rented home inspected and tested at least every five years under the Electrical Safety Standards in the Private Rented Sector Regulations 2020, and give a copy of the report to tenants within 28 days. In Alderley Edge that covers everything from flats above the London Road shops to large detached houses let to families and company tenants.",
@@ -62,7 +62,7 @@ PRIORITY = {
 DEEP = {
  "/pages/services/aov-air-handling": {
   "town": None,
-  "title": "AOV & Air Handling Servicing Manchester | iComply",
+  "title": "AOV & Air Handling Servicing Manchester | Same/Next-Day",
   "meta": "AOV and air handling servicing in Manchester: smoke vents, actuators, control panels, dampers and fans tested to BS EN 12101. Call 07517 806082",
   "h2": "AOV and air handling servicing: what we check and why",
   "paras": [
@@ -87,7 +87,7 @@ DEEP = {
  },
  "/pages/keywords/emergency-lighting-test": {
   "town": None,
-  "title": "Emergency Lighting Test North West | BS 5266 | iComply",
+  "title": "Emergency Lighting Test North West | BS 5266 | Same/Next-Day",
   "meta": "Emergency lighting test to BS 5266: monthly flick tests, annual 3-hour duration tests, logbooks and certificates for blocks and HMOs. Call 07517 806082",
   "h2": "Emergency lighting testing: monthly checks, annual duration tests and certificates",
   "paras": [
@@ -112,7 +112,7 @@ DEEP = {
  },
  "/pages/fire-risk-assessments/westhoughton": {
   "town": "Westhoughton",
-  "title": "Fire Risk Assessment Westhoughton from £350 | iComply",
+  "title": "Fire Risk Assessment Westhoughton from £350 | Same/Next-Day",
   "meta": "Fire risk assessment in Westhoughton from £350 for a typical 6-bed HMO in the North West; other properties POA. Written report. Call 07517 806082",
   "h2": "Fire risk assessments in Westhoughton: HMOs, flats, shops and small businesses",
   "paras": [

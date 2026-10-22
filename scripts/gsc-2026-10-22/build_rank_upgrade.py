@@ -61,8 +61,10 @@ for r in rows:
         if tw and not p.startswith("/pages/services/") and not p.startswith("/pages/jobs/"): e["town"] = g["tname"](tw.group(1))
         if e.get("town") and e["town"].lower() not in e["title"].lower() and p not in PRIORITY and p not in DEEP:
             nm = e["h2"].split(" in ")[0]; fr = " from £160" if "eicr" in p else (" from £350" if "fire-risk-assessment" in p else "")
-            for c in (f"{nm} {e['town']}{fr} | iComply", f"{nm} {e['town']}{fr}", f"{nm} {e['town']} | iComply", f"{nm} {e['town']}"):
+            cands = [f"{nm} {e['town']}{fr} | Same/Next-Day"] if fr else [f"{nm} {e['town']} | Same/Next-Day"]
+            for c in cands:
                 if len(c) <= 60: e["title"] = c; break
+        if "Same/Next-Day" not in e["title"]: skipped.append((p, "WARN title lacks Same/Next-Day: " + e["title"]))
         check(e, p)
         pages[p] = e
     # inbound: keyword hub, service hub, town area page link to the upgraded page
