@@ -105,7 +105,7 @@ jobs:
         run: php website/bin/check-nationwide-p0-jobs.php && python3 website/bin/check-w1a-hub-uniqueness.py dist
 
       - name: Site-wide banned phrases + barrier census copy
-        run: python3 website/bin/check-barriers-copy.py dist
+        run: python3 website/bin/check-barriers-copy.py dist && python3 website/bin/check-only-gmail.py dist
 
       - name: Every img and og:image on exported pages exists
         run: python3 website/bin/check-images-exist.py dist
