@@ -123,7 +123,7 @@ foreach ($samples as [$label, $html, $gas]) {
 $ok(icomplyPathIsIndexable('/pages/keywords/plasterers/burnley'), 'plasterers/burnley indexable');
 $ok(icomplyPathIsIndexable('/pages/keywords/plasterers/york'), 'plasterers/york indexable');
 $ok(icomplyPathIsIndexable('/pages/jobs/cp12/york'), 'cp12/york indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'eicr/stockport stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 $ok(icomplyNonGmMatrixRedirect('/pages/jobs/cp12/york') === null, 'cp12/york stays');
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/plasterers/burnley') === null, 'plasterers/burnley stays');
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/plasterers/aberdeen') === '/pages/keywords/plasterers', 'aberdeen redirects to the hub');

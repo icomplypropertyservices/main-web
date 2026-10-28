@@ -197,7 +197,7 @@ $ok(icomplyNonGmMatrixRedirect('/pages/keywords/came-barrier-installation/stockp
 $ok(icomplyPathIsIndexable('/pages/keywords/manual-height-barrier/leeds'), 'DEEP × Leeds indexable');
 $ok(!icomplyPathIsIndexable('/pages/keywords/colt-aov-installation/leeds'), 'manufacturer head × Leeds not indexable');
 $ok(icomplyPathIsIndexable('/pages/keywords/se-controls-aov-installation/bolton'), 'manufacturer head × Bolton indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'other keyword×town stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 
 // 5. ×town renderer: every hub × one kept town (in-process; the edge twin is checked by the .mjs).
 $townWords = PHP_INT_MAX;
@@ -298,10 +298,12 @@ foreach ($jobMap as $job => $keyword) {
     $ok($hubLine, "_redirects has /pages/jobs/{$job} → /pages/keywords/{$keyword} 301!");
     $ok($hubLine && $splatAt !== false && $hm[0][1] < $splatAt, "_redirects {$job} rule precedes the splat");
     $ok((bool)preg_match('#^/pages/jobs/' . preg_quote($job, '#') . '/:town\s+/pages/keywords/' . preg_quote($keyword, '#') . '/:town\s+301!$#m', $redirectTxt), "_redirects has {$job}/:town → keyword×town");
-    $ok(!isset($sitemapPaths['/pages/jobs/' . $job]), "sitemap omits /pages/jobs/{$job}");
+    // Never prune (Jack, 28 Oct): a job hub that was live on main keeps its sitemap entry; the 301 stays.
+    $wasLiveOnMain = ($jobDoc['jobs'][$job]['source'] ?? '') === 'main';
+    $ok($wasLiveOnMain || !isset($sitemapPaths['/pages/jobs/' . $job]), "sitemap omits /pages/jobs/{$job}");
     $ok(!isset($matrixJobs[$job]), "job×town catalogue omits {$job}");
     if (($jobDoc['jobs'][$job]['source'] ?? '') === 'main') {
-        $ok(!is_file($root . '/pages/jobs/' . $job . '.php'), "main job page source removed for {$job}");
+        // Source kept: never prune a page that was live (the edge 301 still applies).
     }
 }
 preg_match_all('#^(/pages/jobs/[^\s]+)\s#m', $redirectTxt, $jobRuleFroms);

@@ -98,8 +98,8 @@ $ok(icomplyNonGmMatrixRedirect('/pages/keywords/fire-alarm-company/birmingham') 
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/rewire/liverpool') === null, 'rewire Liverpool stays inside the dual ring');
 $ok(icomplyNonGmMatrixRedirect('/pages/electrical/london') === '/pages/services/electrical', 'electrical London still redirects');
 $ok(icomplyPathIsIndexable('/pages/keywords/fire-alarm-installer/cardiff'), 'Cardiff installer page is indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'other keyword×town stays noindex');
-$ok(!icomplyPathIsIndexable('/pages/keywords/fire-alarm-company/cardiff'), 'non-P0 town URL stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(8));

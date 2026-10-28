@@ -952,6 +952,19 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $jobTown++;
         }
     }
+    // Never prune (Jack, 28 Oct): job hubs that the DEEP ruling 301s to a keyword hub stay
+    // listed where they were in the 22 Oct sitemap (source "main"); the 301 itself is unchanged.
+    $legacyDoc = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/aov-barriers-deep-job-redirects.json'), true);
+    foreach ((is_array($legacyDoc) ? ($legacyDoc['jobs'] ?? []) : []) as $legacySlug => $legacyRow) {
+        if (($legacyRow['source'] ?? '') !== 'main') {
+            continue;
+        }
+        $writeLoc('/pages/jobs/' . $legacySlug, 'job-town');
+        foreach ($coreKeys as $placeSlug) {
+            $writeLoc('/pages/jobs/' . $legacySlug . '/' . $placeSlug, 'job-town');
+            $jobTown++;
+        }
+    }
     if (!function_exists('manchesterElectricalP0JobTownPaths')) {
         require_once __DIR__ . '/manchester-electrical-p0.php';
     }

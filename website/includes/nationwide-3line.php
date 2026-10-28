@@ -87,6 +87,11 @@ function icomplyNationwide3lineImages(string $slug): array
     if ($service === '' || !preg_match('/^[a-z0-9-]+$/', $service)) {
         $service = 'fire-alarms';
     }
+    if ($service === 'aov-air-handling') {
+        // services/aov-air-handling.jpg was removed (licence, 22 Oct); use the credited AOV lane photos.
+        $lane = '/assets/images/lanes/aov-barriers-deep/';
+        return [$lane . 'aov-smoke-vent-trigger-switch.jpg', $lane . 'aov-smoke-vent-control-panel.jpg', $lane . 'aov-smoke-vent-panels-plant-room.jpg'];
+    }
     $src = '/assets/images/services/' . $service . '.jpg';
     return [$src, $src, $src];
 }

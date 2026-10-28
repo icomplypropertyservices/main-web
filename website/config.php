@@ -433,6 +433,10 @@ function icomplyPathIsIndexable(string $path): bool
         if (manchesterElectricalP0TownIndexable('keyword', $kwTown[1], $kwTown[2])) {
             return true;
         }
+        // No noindex ever (Jack): every keyword×town that is served 200 (not 301'd) is indexable.
+        if (!function_exists('icomplyNonGmMatrixRedirect') || icomplyNonGmMatrixRedirect($path) === null) {
+            return true;
+        }
         return false;
     }
     // Area hubs are indexable for the dual-ring allowlist, including Burnley.

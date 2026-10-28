@@ -78,7 +78,7 @@ $ok($pages === 10309, "rendered pages={$pages}");
 $ok($keywordHubs === 89, "keyword hubs={$keywordHubs}");
 $ok($jobHubs === 80, "job hubs={$jobHubs}");
 $ok(icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'eicr stockport indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/boiler/stockport'), 'boiler stockport stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 $ok(str_contains((string)file_get_contents(SITE_ROOT . '/pages/keywords/three-phase-electrician.php'), 'manchesterElectricalP0Emit'), 'create stub exists');
 $ok(is_file(SITE_ROOT . '/pages/jobs/eicr.php') && !str_contains((string)file_get_contents(SITE_ROOT . '/pages/jobs/eicr.php'), 'manchesterElectricalP0Emit'), 'existing EICR job hub kept');
 

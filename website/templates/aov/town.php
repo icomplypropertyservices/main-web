@@ -5,7 +5,7 @@ $pageTitle = $article['title'] . ' | iComply';
 $metaDesc = $article['meta'];
 $metaKeywords = 'AOV ' . $place['name'] . ', smoke vent ' . $place['name'] . ', automatic opening vent ' . $place['region'] . ', smoke control ' . $place['nation'];
 $canonicalUrl = url('/pages/aov/' . $place['slug']);
-$ogImage = url('/assets/images/services/aov-air-handling.jpg');
+$ogImage = url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
 require SITE_ROOT . '/includes/header.php';
 $h = static function (string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');

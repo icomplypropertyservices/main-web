@@ -233,6 +233,7 @@ function icomplyBuildingDualApplyKeywords(array $keywords): array
     $pack = icomplyBuildingDualPack();
     foreach (icomplyBuildingDualSlugMap() as $slug => $meta) {
         $name = (string)$meta['name'];
+        $prevBody = (string)($keywords[$slug]['body'] ?? '');
         $keywords[$slug] = [
             'name' => $name,
             'service' => (string)$meta['service'],
@@ -256,6 +257,10 @@ function icomplyBuildingDualApplyKeywords(array $keywords): array
             'seo_keywords' => $name . ', Stockport, Manchester, Burnley',
             'building_dual_p0' => true,
         ];
+        // Keep a fuller article that already exists for this slug (e.g. the nationwide 3-line hub).
+        if (strlen($prevBody) > strlen((string)$keywords[$slug]['body'])) {
+            $keywords[$slug]['body'] = $prevBody;
+        }
     }
     return $keywords;
 }

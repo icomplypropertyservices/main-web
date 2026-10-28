@@ -6,7 +6,7 @@ $pageTitle = 'AOV and smoke control | Automatic opening vents';
 $metaDesc = 'Automatic opening vents, stair smoke vents and smoke-control panels. Supply kits with list prices. Installation POA. Quoted nationwide as fire protection. Call ' . PHONE . '.';
 $metaKeywords = 'AOV, automatic opening vent, smoke vent, smoke control, EN 12101, BS 9991, SE Controls, WindowMaster';
 $canonicalUrl = url('/pages/services/aov-air-handling.php');
-$ogImage = url('/assets/images/services/aov-air-handling.jpg');
+$ogImage = url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
 require SITE_ROOT . '/includes/header.php';
 $h = static function (string $s): string {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
@@ -25,7 +25,7 @@ $h = static function (string $s): string {
                 <a class="px-6 py-3 rounded-2xl border border-white/30 font-semibold" href="<?= $h(url('/pages/aov')) ?>"><?= (int)$placeCount ?> town pages</a>
             </div>
         </div>
-        <img src="<?= $h(url('/assets/images/services/aov-air-handling.jpg')) ?>" alt="Smoke vent and AOV equipment" class="w-full h-80 object-cover rounded-3xl border border-white/10" width="640" height="320">
+        <img src="<?= $h(url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg')) ?>" alt="Smoke vent and AOV equipment" class="w-full h-80 object-cover rounded-3xl border border-white/10" width="640" height="320">
     </div>
 </section>
 

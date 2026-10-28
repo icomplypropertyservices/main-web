@@ -115,7 +115,7 @@ $ok(icomplyPathIsIndexable('/pages/areas/manchester'), 'Manchester area hub is i
 $ok(icomplyPathIsIndexable('/pages/areas/burnley'), 'Burnley area hub is indexable');
 $ok(!icomplyPathIsIndexable('/pages/areas/birmingham'), 'towns outside the rings stay noindex');
 $ok(icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'Manchester electrical P0 keyword×town is indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/boiler/stockport'), 'non-P0 keyword×town stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 $ok(icomplyPathIsIndexable('/pages/areas'), 'areas index stays indexable');
 
 $xml = icomplyBuildSitemapXml('https://icomplypropertyservices.co.uk');
