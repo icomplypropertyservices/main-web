@@ -156,22 +156,20 @@ function icomplyBuildingDualFitMeta(string $raw): string
 /** @param array<string,mixed> $town */
 function icomplyBuildingDualPopSentence(array $town): string
 {
-    $row = (int)($town['row'] ?? 0);
     $pop = $town['population'] ?? null;
     if ($pop === null || $pop === '' || (int)$pop === 0) {
-        return 'The dual-ring allowlist does not print a population on row ' . $row . '.';
+        return '';
     }
-    return 'The allowlist population for row ' . $row . ' is ' . number_format((int)$pop) . '.';
+    return (string)$town['name'] . ' has a population of about ' . number_format((int)$pop) . '.';
 }
 
 /** @param array<string,mixed> $town */
 function icomplyBuildingDualMileSentence(array $town): string
 {
-    $row = (int)($town['row'] ?? 0);
     if (!isset($town['mi_manchester'], $town['mi_burnley']) || $town['mi_manchester'] === null || $town['mi_burnley'] === null) {
-        return 'Miles from Manchester and Burnley are not printed on row ' . $row . '.';
+        return '';
     }
-    return 'Straight-line figures on the allowlist put row ' . $row . ' about ' . $town['mi_manchester'] . ' miles from Manchester and ' . $town['mi_burnley'] . ' miles from Burnley.';
+    return (string)$town['name'] . ' is about ' . $town['mi_manchester'] . ' miles from Manchester and ' . $town['mi_burnley'] . ' miles from Burnley.';
 }
 
 /**
@@ -185,15 +183,15 @@ function icomplyBuildingDualTownParagraphs(array $meta, array $town, string $sur
     $cluster = $pack['clusters'][$meta['cluster']] ?? ['facts' => []];
     $facts = $cluster['facts'] ?? [];
     $sections = $pack['sections'] ?? [];
-    $label = $surface === 'job' ? 'job page' : 'keyword guide';
+    $label = $surface === 'job' ? 'job' : 'service';
     $out = [];
     foreach ($sections as $index => $heading) {
         $fact = (string)($facts[$index % max(1, count($facts))] ?? '');
-        $out[] = $meta['name'] . ' in ' . $town['name'] . ' is the ' . $label . ' for “' . $heading . '”. '
-            . 'District marker ' . $town['district'] . ', dual-ring row ' . $town['row'] . ', ' . $town['county'] . '. '
+        $out[] = $meta['name'] . ' in ' . $town['name'] . ': ' . $heading . '. '
+            . 'We cover ' . $town['name'] . ' (' . $town['district'] . ', ' . $town['county'] . ') from Stockport. '
             . icomplyBuildingDualPopSentence($town) . ' ' . icomplyBuildingDualMileSentence($town) . ' '
             . $meta['angle'] . ' ' . $fact . ' '
-            . 'The quote on this ' . $label . ' is price on application. Call ' . ($pack['phone'] ?? '07517806082') . '. '
+            . 'The quote for this ' . $label . ' is price on application. Call ' . ($pack['phone'] ?? '07517806082') . '. '
             . 'Workshop: ' . ($pack['nap'] ?? '') . '.';
     }
     return $out;
@@ -218,11 +216,9 @@ function icomplyBuildingDualHubParagraphs(array $meta, string $surface): array
     $out = [];
     foreach ($sections as $index => $heading) {
         $fact = (string)($facts[$index % max(1, count($facts))] ?? '');
-        $out[] = $meta['name'] . ' is the ' . $label . ' section “' . $heading . '” for the Manchester and Burnley dual ring. '
-            . 'Manchester is district ' . $manchester['district'] . ' on row ' . $manchester['row'] . '. '
-            . 'Burnley is district ' . $burnley['district'] . ' on row ' . $burnley['row'] . '. '
+        $out[] = $meta['name'] . ': ' . $heading . '. We cover Greater Manchester, Burnley and the surrounding Lancashire towns from our Stockport base. '
             . $meta['angle'] . ' ' . $fact . ' '
-            . 'Town pages for this intent use the 269-place allowlist only. The quote is price on application. '
+            . 'Each town we cover has its own page. The quote is price on application. '
             . 'Call ' . $phone . '. Workshop: ' . $nap . '.';
     }
     return $out;
@@ -237,29 +233,34 @@ function icomplyBuildingDualApplyKeywords(array $keywords): array
     $pack = icomplyBuildingDualPack();
     foreach (icomplyBuildingDualSlugMap() as $slug => $meta) {
         $name = (string)$meta['name'];
+        $prevBody = (string)($keywords[$slug]['body'] ?? '');
         $keywords[$slug] = [
             'name' => $name,
             'service' => (string)$meta['service'],
             'related' => (string)($meta['related'] ?? $slug),
             'intro' => (string)$meta['angle'],
             'body' => $name . ' is arranged from ' . ($pack['nap'] ?? '') . '. The quote is price on application.',
-            'meta_desc' => icomplyBuildingDualFitMeta($name . ' for landlords and agents across the Manchester and Burnley dual ring. Price on application.'),
+            'meta_desc' => icomplyBuildingDualFitMeta($name . ' for landlords and agents across Greater Manchester and Burnley. Price on application.'),
             'seo_title' => icomplyBuildingDualFitTitle($name . ' guide'),
             'h1' => $name . ' from Stockport',
             'focus_points' => [
                 'Scope written before a date is fixed',
                 'Price on application',
-                'Manchester and Burnley dual ring, 269 places',
+                'Greater Manchester, Burnley and nearby Lancashire towns',
                 'Workshop at ' . ($pack['nap'] ?? ''),
             ],
             'faq' => [
                 ['Where is the workshop?', 'The workshop address is ' . ($pack['nap'] ?? '') . '.'],
                 ['Do you publish a price?', 'No. The quote is price on application after the building is known.'],
-                ['Which towns are in this wave?', 'The 269 places on the Manchester and Burnley dual-ring allowlist.'],
+                ['Which towns do you cover?', 'Greater Manchester, Burnley and the Lancashire towns around them. Each town we cover has its own page linked from the Manchester, Burnley and Stockport area pages.'],
             ],
             'seo_keywords' => $name . ', Stockport, Manchester, Burnley',
             'building_dual_p0' => true,
         ];
+        // Keep a fuller article that already exists for this slug (e.g. the nationwide 3-line hub).
+        if (strlen($prevBody) > strlen((string)$keywords[$slug]['body'])) {
+            $keywords[$slug]['body'] = $prevBody;
+        }
     }
     return $keywords;
 }
@@ -282,7 +283,7 @@ function icomplyBuildingDualRenderHub(string $surface, string $slug): void
         $h1 = $name . ' service from Stockport';
     }
     $title = icomplyBuildingDualFitTitle($surface === 'job' ? ($name . ' job') : ($name . ' guide'));
-    $description = icomplyBuildingDualFitMeta($name . ' for landlords and agents on the Manchester and Burnley dual ring. Price on application.');
+    $description = icomplyBuildingDualFitMeta($name . ' for landlords and agents across Greater Manchester and Burnley. Price on application.');
     $path = ($surface === 'job' ? '/pages/jobs/' : '/pages/keywords/') . $slug;
     $canonical = function_exists('url') ? url($path) : $path;
     $images = $pack['clusters'][$meta['cluster']]['images'] ?? [];
@@ -325,7 +326,7 @@ function icomplyBuildingDualRenderHub(string $surface, string $slug): void
         . '<a href="' . $h(url('/pages/areas/stockport')) . '">Stockport area hub</a></p>';
     echo '<h2>Questions</h2>';
     $faqs = [
-        ['What area does this hub cover?', 'The Manchester and Burnley dual ring: 269 places on the allowlist. Town pages are linked from Manchester, Burnley and Stockport.'],
+        ['What area does this cover?', 'Greater Manchester, Burnley and the Lancashire towns around them. Town pages are linked from the Manchester, Burnley and Stockport area pages.'],
         ['Is there a published price?', 'No. The quote is price on application after the building, access and scope are known.'],
         ['Where is the workshop?', 'The workshop is ' . ($pack['nap'] ?? '') . '. Call ' . ($pack['phone'] ?? '07517806082') . '.'],
     ];
@@ -399,7 +400,7 @@ function icomplyBuildingDualRenderTown(string $surface, string $slug, string $to
     echo '<h2>Questions about ' . $h((string)$town['name']) . '</h2>';
     $angle = (string)$meta['angle'];
     $faqs = [
-        ['What does the page cover in ' . $town['name'] . '?', $angle . ' District ' . $town['district'] . ' on row ' . $town['row'] . '.'],
+        ['What do you cover in ' . $town['name'] . '?', $angle . ' We cover ' . $town['name'] . ' and the ' . $town['district'] . ' area.'],
         ['How is the price set?', 'The quote for ' . $town['name'] . ' is price on application. ' . icomplyBuildingDualPopSentence($town) . ' ' . $angle],
         ['Where is the workshop?', 'Arranged from ' . ($pack['nap'] ?? '') . '. ' . icomplyBuildingDualMileSentence($town) . ' ' . $angle],
     ];

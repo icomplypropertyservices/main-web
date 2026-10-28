@@ -164,6 +164,16 @@ function icomplyNationwideTownPath(string $path): bool
  * Outside-allowlist matrix URL → the parent hub.
  * Null means the URL stays (hub, dual-ring local page, GM manufacturer page, or nationwide family).
  */
+/** Jack 2026-10-28: keyword/job x town pages stay live (200) in every dual-ring matrix town, never pruned. */
+function icomplyMatrixTownSlug(string $slug): bool
+{
+    static $set = null;
+    if ($set === null) {
+        $set = array_fill_keys(array_column(icomplyDualRingTownRows(), 'slug'), true);
+    }
+    return icomplyCrawlTownSlug($slug) || isset($set[strtolower($slug)]);
+}
+
 function icomplyNonGmMatrixRedirect(string $path): ?string
 {
     $path = '/' . ltrim(str_replace('\\', '/', $path), '/');
@@ -186,6 +196,9 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
             require_once $security;
         }
     }
+    if (!function_exists('icomplyBuildingDualCoversPath') && is_file(__DIR__ . '/building-services-dual.php')) {
+        require_once __DIR__ . '/building-services-dual.php';
+    }
     if (function_exists('securityDualRingHandlesPath') && securityDualRingHandlesPath($path)) {
         return null;
     }
@@ -194,7 +207,18 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
         if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
             return null;
         }
-        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
+        foreach (['nationwide-3line.php', 'fire-alarm-installer.php', 'aov-barriers-deep.php'] as $inc) {
+            if (is_file(__DIR__ . '/' . $inc)) {
+                require_once __DIR__ . '/' . $inc;
+            }
+        }
+        // Jack 2026-10-28 superset-never-prune: nationwide fire / AOV / barrier town pages stay.
+        if ((function_exists('icomplyNationwide3lineNationwidePath') && icomplyNationwide3lineNationwidePath($path))
+            || (function_exists('icomplyFireAlarmInstallerNationwidePath') && icomplyFireAlarmInstallerNationwidePath($path))
+            || (function_exists('icomplyAovBarriersDeepKeepsTown') && icomplyAovBarriersDeepKeepsTown($m[1], $m[2]))) {
+            return null;
+        }
+        return icomplyMatrixTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyCrawlTownSlug($m[2]) ? null : '/pages/manufacturers/' . $m[1];
@@ -203,7 +227,7 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
         if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
             return null;
         }
-        return icomplyCrawlTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
+        return icomplyMatrixTownSlug($m[2]) ? null : '/pages/jobs/' . $m[1];
     }
     if (preg_match('#^/pages/areas/([a-z0-9\-]+)$#', $path, $m)) {
         return icomplyLocalTownSlug($m[1]) ? null : '/pages/areas';

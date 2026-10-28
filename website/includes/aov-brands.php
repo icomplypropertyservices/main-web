@@ -42,7 +42,7 @@ function aovBrandWordmarkUrl(string $slug): string
     }
     return function_exists('manufacturerImageUrl')
         ? manufacturerImageUrl($slug, 'aov-air-handling')
-        : url('/assets/images/services/aov-air-handling.jpg');
+        : url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
 }
 
 function aovBrandGridHtml(): string

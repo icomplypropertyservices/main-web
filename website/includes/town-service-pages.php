@@ -585,7 +585,7 @@ function icomplyRenderTownHub(string $family): void
             $metaDesc = (string)$aovHub['description'];
         }
         $aovImages = icomplyQualityBarAovImages();
-        $ogImage = $aovImages['og'] ?? url('/assets/images/services/aov-air-handling.jpg');
+        $ogImage = $aovImages['og'] ?? url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
         $ogImageAlt = 'Automatic opening vents and smoke control — iComply Property Services';
     }
     $other = $family === 'barriers' ? '/pages/aov' : '/pages/barriers';

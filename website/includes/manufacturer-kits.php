@@ -140,7 +140,7 @@ function manufacturerContextKits(string $slug): array
             'price' => 'Kit list',
             'handle' => '',
             'public_href' => url('/products.php') . '#aov-kits',
-            'image' => '/assets/images/services/aov-air-handling.jpg',
+            'image' => '/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg',
             'badge' => 'Kit',
         ];
     }

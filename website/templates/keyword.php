@@ -260,7 +260,9 @@ require_once SITE_ROOT . '/includes/quality-bar.php';
 echo '<section class="max-w-7xl mx-auto px-6 py-10">';
 echo (function_exists('icomplyAovBarriersDeepIsP0') && icomplyAovBarriersDeepIsP0((string)$keywordSlug))
     ? icomplyAovBarriersDeepImageFigure((string)$keywordSlug, (string)$keywordName)
-    : icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html'];
+    : ($marginDeep
+        ? icomplyMarginDeepImageFigure((string)$keywordSlug, (string)$keywordName)
+        : icomplyQualityBarImages((string)$serviceSlug, (string)$keywordName, 'q2-hub-images')['html']);
 echo '</section>';
 ?>
 

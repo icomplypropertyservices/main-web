@@ -4,8 +4,8 @@
   "note": "Same primary hero src may appear on at most 8 pages in one lane. Town clusters are 8 consecutive areas from data/areas.json. Pools are AOV and vehicle barriers only (v1).",
   "pools": {
     "aov-air-handling": [
-      "/assets/images/services/aov-air-handling.jpg",
-      "/assets/images/services/aov-air-handling-photo.jpg",
+      "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg",
+      "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-control-panel.jpg",
       "/assets/images/lanes/aov-air-handling/02.jpg",
       "/assets/images/lanes/aov-air-handling/03.jpg",
       "/assets/images/lanes/aov-air-handling/04.jpg",

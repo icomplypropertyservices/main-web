@@ -11,7 +11,7 @@ foreach ($places as $place) {
 $pageTitle = 'AOV by UK town | Smoke vents nationwide';
 $metaDesc = 'Automatic opening vent pages for UK places with a published population of 10,000 or more. Fire-protection smoke control, kit prices, installation POA. Call ' . PHONE . '.';
 $canonicalUrl = url('/pages/aov');
-$ogImage = url('/assets/images/services/aov-air-handling.jpg');
+$ogImage = url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
 require SITE_ROOT . '/includes/header.php';
 ?>
 <section class="bg-[#0B1F3A] text-white">

@@ -808,6 +808,29 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         // sitemap0.xml is one urlset. Protocol cap is 50,000 URLs per file.
         throw new RuntimeException('Hub sitemap has ' . count($hubEntries) . ' URLs (cap ' . ICOMPLY_MATRIX_SITEMAP_CHUNK . ' per file)');
     }
+    // Never-prune: every 22 Oct baseline URL stays listed. Paths that are NOT in that baseline
+    // and that 301 (exact _redirects 301 sources, or the 19 Oct removed-list 301s) are not
+    // added as new sitemap entries — the redirects themselves are unchanged.
+    $sitemapRedirectOnly = [];
+    foreach (file($dist . '/_redirects', FILE_IGNORE_NEW_LINES) ?: [] as $rLine) {
+        $rParts = preg_split('/\s+/', trim((string)$rLine));
+        if (count($rParts) >= 3 && ($rParts[0][0] ?? '#') === '/' && preg_match('/^30[12]!?$/', $rParts[2]) && !str_contains($rParts[0], '*') && !str_contains($rParts[0], ':')) {
+            $sitemapRedirectOnly[rtrim($rParts[0], '/') ?: '/'] = true;
+        }
+    }
+    foreach (file(SITE_ROOT . '/bin/fixtures/sitemap-exclusions-removed-2026-10-19.txt', FILE_IGNORE_NEW_LINES) ?: [] as $rLine) {
+        $rParts = preg_split('/\s+/', trim((string)$rLine));
+        if (($rParts[0][0] ?? '#') === '/' && ($rParts[1] ?? '') !== '200') {
+            $sitemapRedirectOnly[$rParts[0]] = true;
+        }
+    }
+    foreach ((gzfile(SITE_ROOT . '/bin/fixtures/sitemap-baseline-2026-10-22.txt.gz') ?: []) as $bLine) {
+        $bPath = trim((string)$bLine);
+        if (str_starts_with($bPath, $base)) {
+            $bPath = substr($bPath, strlen($base));
+        }
+        unset($sitemapRedirectOnly[$bPath === '' ? '/' : $bPath]);
+    }
     // Every loc is written once across sitemap0..N (hub priority wins over a matrix repeat).
     $sitemapSeen = [];
     $sitemapDuplicates = 0;
@@ -815,6 +838,9 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         $path = (string)($entry['path'] ?? '/');
         if (isset($sitemapSeen[$path])) {
             $sitemapDuplicates++;
+            continue;
+        }
+        if (isset($sitemapRedirectOnly[$path])) {
             continue;
         }
         $sitemapSeen[$path] = true;
@@ -847,11 +873,18 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         $chunkCount = 0;
     };
     $sitemapWritten = count($sitemapSeen);
-    $writeLoc = static function (string $path) use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, &$sitemapSeen, &$sitemapDuplicates, &$sitemapWritten): void {
+    // One family per sitemap file (SEO audit 22 Oct) so Search Console reports
+    // indexing per page family. Files stay sitemap1..N.xml.
+    $chunkFamily = '';
+    $chunkFamilies = [];
+    $writeLoc = static function (string $path, string $family = 'matrix') use (&$sitemapRedirectOnly, &$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, &$sitemapSeen, &$sitemapDuplicates, &$sitemapWritten, &$chunkFamily, &$chunkFamilies, &$chunkIndex): void {
         if (!function_exists('icomplySitemapOmitsNonGm')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
         if (icomplySitemapOmitsNonGm($path)) {
+            return;
+        }
+        if (isset($sitemapRedirectOnly[$path])) {
             return;
         }
         if (isset($sitemapSeen[$path])) {
@@ -860,8 +893,10 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         }
         $sitemapSeen[$path] = true;
         $sitemapWritten++;
-        if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK) {
+        if ($chunkHandle === null || $chunkCount >= ICOMPLY_MATRIX_SITEMAP_CHUNK || $family !== $chunkFamily) {
             $openChunk();
+            $chunkFamily = $family;
+            $chunkFamilies[$chunkIndex] = $family;
         }
         $loc = $base . $path;
         fwrite($chunkHandle, '  <url><loc>' . htmlspecialchars($loc, ENT_XML1) . '</loc><priority>0.6</priority></url>' . "\n");
@@ -872,7 +907,7 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     $keywordTown = 0;
     foreach (array_keys($keywords) as $keywordSlug) {
         foreach (array_keys($places) as $placeSlug) {
-            $writeLoc('/pages/keywords/' . $keywordSlug . '/' . $placeSlug);
+            $writeLoc('/pages/keywords/' . $keywordSlug . '/' . $placeSlug, 'keyword-town');
             $keywordTown++;
         }
     }
@@ -885,14 +920,14 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             $m = [];
             if (preg_match('#^/pages/keywords/([a-z0-9-]+)/([a-z0-9-]+)$#', $kp, $m)
                 && isset($keywords[$m[1]]) && !isset($places[$m[2]])) {
-                $writeLoc($kp);
+                $writeLoc($kp, 'keyword-town');
             }
         }
     }
     $serviceTown = 0;
     foreach (array_keys($services) as $serviceSlug) {
         foreach (array_keys($places) as $placeSlug) {
-            $writeLoc('/pages/' . $serviceSlug . '/' . $placeSlug);
+            $writeLoc('/pages/' . $serviceSlug . '/' . $placeSlug, 'service-town');
             $serviceTown++;
         }
     }
@@ -907,7 +942,7 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     $familyKeywordTown = 0;
     if (function_exists('icomplyBuildingDualExtraKeywordTownPaths')) {
         foreach (icomplyBuildingDualExtraKeywordTownPaths($places) as $dualPath) {
-            $writeLoc($dualPath);
+            $writeLoc($dualPath, 'keyword-town');
             $familyKeywordTown++;
         }
     }
@@ -924,25 +959,38 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         icomplyAovBarriersDeepExtraTownPaths($places)
     )));
     foreach ($familyPaths as $familyPath) {
-        $writeLoc($familyPath);
+        $writeLoc($familyPath, 'fire-aov-barrier-town');
         $familyKeywordTown++;
     }
     $manufacturerTown = 0;
     foreach (array_keys($manufacturers) as $brandSlug) {
         foreach ($gmKeys as $placeSlug) {
-            $writeLoc('/pages/manufacturers/' . $brandSlug . '/' . $placeSlug);
+            $writeLoc('/pages/manufacturers/' . $brandSlug . '/' . $placeSlug, 'manufacturer-town');
             $manufacturerTown++;
         }
     }
     $jobTown = 0;
+    $buildingJobTown = 0;
     $deepSuperseded = function_exists('icomplyMarginDeepSupersededJobs') ? array_fill_keys(icomplyMarginDeepSupersededJobs(), true) : [];
     foreach (array_keys($jobs) as $jobSlug) {
         if (isset($deepSuperseded[$jobSlug])) {
             continue;
         }
         foreach ($coreKeys as $placeSlug) {
-            $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug);
+            $writeLoc('/pages/jobs/' . $jobSlug . '/' . $placeSlug, 'job-town');
             $jobTown++;
+        }
+    }
+    // Never prune (Jack, 28 Oct): job hubs that the DEEP ruling 301s to a keyword hub stay
+    // listed where they were in the 22 Oct sitemap (source "main"); the 301 itself is unchanged.
+    $legacyDoc = json_decode((string)@file_get_contents(dirname(__DIR__) . '/data/aov-barriers-deep-job-redirects.json'), true);
+    foreach ((is_array($legacyDoc) ? ($legacyDoc['jobs'] ?? []) : []) as $legacySlug => $legacyRow) {
+        if (($legacyRow['source'] ?? '') !== 'main') {
+            continue;
+        }
+        $writeLoc('/pages/jobs/' . $legacySlug, 'job-town');
+        foreach ($coreKeys as $placeSlug) {
+            $writeLoc('/pages/jobs/' . $legacySlug . '/' . $placeSlug, 'job-town');
         }
     }
     if (!function_exists('manchesterElectricalP0JobTownPaths')) {
@@ -954,8 +1002,10 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
             && isset($seenJobs[$jobMatch[1]])) {
             continue;
         }
-        $writeLoc($jobPath);
-        $jobTown++;
+        $writeLoc($jobPath, 'job-town');
+        // Manchester electrical P0 job×town (GM core only) is counted apart from the
+        // dual-ring job matrix so the jobs × 269 coverage check stays exact.
+        $buildingJobTown++;
     }
     if ($chunkHandle !== null) {
         fwrite($chunkHandle, '</urlset>' . "\n");
@@ -966,10 +1016,17 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
 
     $index = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     $index .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-    $index .= '  <sitemap><loc>' . $base . '/sitemap0.xml</loc></sitemap>' . "\n";
+    $lastmod = gmdate('Y-m-d');
+    $index .= '  <sitemap><loc>' . $base . '/sitemap0.xml</loc><lastmod>' . $lastmod . '</lastmod></sitemap>' . "\n";
     foreach ($chunkPaths as $name) {
-        $index .= '  <sitemap><loc>' . $base . '/' . $name . '</loc></sitemap>' . "\n";
+        $index .= '  <sitemap><loc>' . $base . '/' . $name . '</loc><lastmod>' . $lastmod . '</lastmod></sitemap>' . "\n";
     }
+    // Family per file, for reading Search Console sitemap reports.
+    $familyMap = ['sitemap0.xml' => 'hubs'];
+    foreach ($chunkFamilies as $n => $fam) {
+        $familyMap['sitemap' . $n . '.xml'] = $fam;
+    }
+    file_put_contents($dist . '/sitemap-families.json', json_encode($familyMap, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n");
     // Only the regular sitemap0..N.xml chunks are submitted (the edge
     // /matrix-sitemap/* variant feed is not in the index).
     $index .= '</sitemapindex>' . "\n";

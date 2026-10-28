@@ -2,7 +2,7 @@
 $pageTitle = '{{SERVICE_NAME}} in {{AREA}}';
 $metaDesc = 'BS EN 12101 AOV and smoke ventilation systems installation, commissioning and maintenance in {{AREA}}. SE Controls, Nuaire, Brooks, Geze, D+H systems.';
 $metaKeywords = 'AOV {{AREA}}, smoke ventilation {{AREA}}, automatic opening vents {{AREA}}, BS EN 12101 {{AREA}}, natural smoke ventilation, air handling unit';
-$ogImage = url('/assets/images/services/aov-air-handling.jpg');
+$ogImage = url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg');
 require SITE_ROOT . '/includes/header.php'; 
 ?>
 <!-- Schema.org Service + FAQPage Markup -->
@@ -16,7 +16,7 @@ require SITE_ROOT . '/includes/header.php';
       "name": "{{SERVICE_NAME}} in {{AREA}}",
       "description": "AOV smoke ventilation and air handling system installation to BS 9991 in {{AREA}}.",
       "url": "<?= url('/pages/{{SERVICE_SLUG}}/{{AREA_SLUG}}.php') ?>",
-      "image": "<?= url('/assets/images/services/aov-air-handling.jpg') ?>",
+      "image": "<?= url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg') ?>",
       "serviceType": "AOV & Air Handling",
       "category": "AOV & Air Handling",
       "provider": {
@@ -64,7 +64,7 @@ require SITE_ROOT . '/includes/header.php';
 
     <!-- IMAGE 1: Hero service image -->
     <div class="mt-8">
-        <img src="<?= url('/assets/images/services/aov-air-handling.jpg') ?>"
+        <img src="<?= url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg') ?>"
              alt="{{SERVICE_NAME}} installation and servicing in {{AREA}} by iComply Property Services"
              width="1200" height="800"
              class="w-full h-72 md:h-96 object-cover rounded-3xl border"
@@ -90,7 +90,7 @@ require SITE_ROOT . '/includes/header.php';
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/aov-air-handling.jpg') ?>'">
+                 onerror="this.src='<?= url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg') ?>'">
             <p class="text-xs text-black mt-2">AOV control panels, actuators &amp; vents</p>
         </div>
         <div>
@@ -99,7 +99,7 @@ require SITE_ROOT . '/includes/header.php';
                  width="800" height="600"
                  class="w-full h-56 object-cover rounded-2xl border"
                  loading="lazy"
-                 onerror="this.src='<?= url('/assets/images/services/aov-air-handling.jpg') ?>'">
+                 onerror="this.src='<?= url('/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg') ?>'">
             <p class="text-xs text-black mt-2">Smoke vents, AHU systems &amp; certification in {{AREA}}</p>
         </div>
     </div>

@@ -103,7 +103,7 @@ $ok(icomplyNonGmMatrixRedirect('/pages/keywords/aov-installer/belfast') === '/pa
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/aov-installer/chorlton') === null, 'Chorlton stays on the GM path');
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/rewire/birmingham') === '/pages/keywords/rewire', 'rewire Birmingham still redirects');
 $ok(icomplyPathIsIndexable('/pages/keywords/fire-alarm-installer/cardiff'), 'Cardiff installer is indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/eicr/stockport'), 'other keyword×town stays noindex');
+// Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 $ok(icomplyPathIsIndexable('/pages/keywords/barrier-installer/cadishead'), 'Cadishead barrier page stays indexable via GM');
 
 if (empty($_SESSION['csrf'])) {

@@ -7,11 +7,12 @@ import { heroCta } from "./hero-cta.js";
 import family from "../../website/data/nationwide-3line-p0.json" with { type: "json" };
 import keywordPack from "../../website/data/nationwide-3line-p0-keywords.json" with { type: "json" };
 import townDoc from "../../website/data/uk-top5000-towns.json" with { type: "json" };
-import { gmTownName, isGmTown } from "./link-blocks.js";
+import { gmTownName, isGmTown, isLocalTown } from "./link-blocks.js";
 import { townFactsBlock } from "./town-facts.js";
 import { geoRow, townDepthBlock } from "./town-depth.js";
 import { depthBankParagraphs } from "./thin-quality-bar.js";
 import { pickImages } from "./image-pool.js";
+import { aovBarriersDeepKeepsTown, isAovBarriersDeep, renderAovBarriersDeepTown } from "./aov-barriers-deep.js";
 import townGeo from "../../website/data/town-geo-slim.json" with { type: "json" };
 
 const P0 = new Map((family.hubs || []).map((hub) => [hub.slug, hub]));
@@ -33,10 +34,12 @@ const PARENTS = {
 };
 
 export function isNationwideP0(slug) {
-  return P0.has(slug);
+  return P0.has(slug) || isAovBarriersDeep(slug);
 }
 
 export function p0KeepsTown(keyword, town) {
+  // AOV + Barriers DEEP P0 (lock 2026-10-05) wins on overlap; manufacturer heads are GM core only.
+  if (isAovBarriersDeep(keyword)) return aovBarriersDeepKeepsTown(keyword, town);
   return P0.has(keyword) && (TOWNS.has(town) || isGmTown(town));
 }
 
@@ -84,16 +87,25 @@ function fitMeta(text, hand = false) {
   return value;
 }
 
-export function p0Title(name, town) {
+export function p0Title(name, town, local = true) {
   const lead = town ? `${name} in ${town}` : name;
-  for (const t of [`${lead} | Same/Next-Day Engineers`, `${lead} | Same/Next-Day`, `${lead} | iComply`]) {
+  // Same/next-day is only claimed for towns inside the local (Greater Manchester + Burnley) area.
+  const opts = local
+    ? [`${lead} | Same/Next-Day Engineers`, `${lead} | Same/Next-Day`, `${lead} | iComply`]
+    : [`${lead} | Free Written Quote`, `${lead} | iComply`];
+  for (const t of opts) {
     if (t.length <= 60) return t;
   }
   return `${lead.slice(0, 50).replace(/\s+\S*$/, "")} | iComply`;
 }
 
-export function p0Description(name, place) {
+export function p0Description(name, place, local = true) {
   const hand = handTradeName(name);
+  if (!local) {
+    let far = `${name} in ${place}. Visits booked from our Stockport base, free written quote${hand ? "" : ", certificates emailed"}. Call or WhatsApp 07517 806082.`;
+    if (byteLength(far) > 160) far = `${name} in ${place}. Booked visits from Stockport, free written quote. Call 07517 806082.`;
+    return fitMeta(far, hand);
+  }
   let text = hand
     ? `${name} in ${place}. Same/next-day engineers, free written quote. Call or WhatsApp 07517 806082.`
     : `${name} in ${place}. Same/next-day engineers, free written quote, certificates emailed. Call or WhatsApp 07517 806082.`;
@@ -216,15 +228,23 @@ function p0Seed(keywordSlug, townSlug) {
 }
 const P0_AUDIENCES = ["landlords", "managing agents", "facilities managers", "block managers", "housing associations", "care home managers"];
 const P0_VISITS = ["a planned daytime visit", "a surveyed site visit", "a booked visit agreed with the site contact"];
-const FAMILY_LABEL = { fire: "Fire safety", aov: "Smoke control", barriers: "Barrier" };
+const FAMILY_LABEL = { fire: "fire safety", aov: "smoke control", barriers: "barrier" };
+// SEO audit 22 Oct: name the actual trade in "{service} visit/quote" lines, not the category
+// ("Fire safety visit" read wrong on emergency lighting and fire door pages).
+const SERVICE_LABEL = {
+  "fire-alarms": "fire alarm", "emergency-lighting": "emergency lighting", "fire-doors": "fire door",
+  "fire-extinguishers": "fire extinguisher", "aov-air-handling": "smoke control", barriers: "barrier",
+};
 
 export function renderNationwideP0Town(keywordSlug, townSlug) {
+  if (isAovBarriersDeep(keywordSlug)) return renderAovBarriersDeepTown(keywordSlug, townSlug);
   const hub = P0.get(keywordSlug);
   const pack = keywordPack[keywordSlug];
   const place = placeFor(townSlug);
   if (!hub || !pack || !place) return null;
   const name = pack.name || hub.name;
   const townName = place.name;
+  // Jack (19 Oct): titles and metas keep Same/Next-Day on every town page.
   const title = p0Title(name, townName);
   const description = p0Description(name, townName);
   const canonical = `${ORIGIN}/pages/keywords/${keywordSlug}/${townSlug}`;
@@ -293,7 +313,7 @@ export function renderNationwideP0Town(keywordSlug, townSlug) {
     seed,
     place: townName,
     subject: name,
-    service: FAMILY_LABEL[FAMILY(pack.service)] || "Fire safety",
+    service: SERVICE_LABEL[pack.service] || FAMILY_LABEL[FAMILY(pack.service)] || "fire safety",
     audience: P0_AUDIENCES[seed % P0_AUDIENCES.length],
     visit: P0_VISITS[(seed >>> 4) % P0_VISITS.length],
     near: "the towns listed below",

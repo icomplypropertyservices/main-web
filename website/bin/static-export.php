@@ -901,6 +901,29 @@ function icomplyWriteDistRedirects(string $dist): void
             $redirects .= $deepFrom . '    ' . $deepTarget . '    301!' . "\n";
         }
     }
+    // One hop: when an exact 301 target is itself an exact 301 source, point straight at the final target.
+    $exactTarget = [];
+    $lines = explode("\n", $redirects);
+    foreach ($lines as $line) {
+        $parts = preg_split('/\s+/', trim($line));
+        if (count($parts) >= 3 && ($parts[0][0] ?? '#') === '/' && preg_match('/^30[12]!?$/', $parts[2]) && !str_contains($parts[0], '*') && !str_contains($parts[0], ':')) {
+            $exactTarget[rtrim($parts[0], '/') ?: '/'] ??= $parts[1];
+        }
+    }
+    foreach ($lines as $i => $line) {
+        $parts = preg_split('/\s+/', trim($line));
+        if (count($parts) < 3 || ($parts[0][0] ?? '#') !== '/' || !preg_match('/^30[12]!?$/', $parts[2])) {
+            continue;
+        }
+        $final = $parts[1];
+        for ($hop = 0; $hop < 5 && isset($exactTarget[rtrim($final, '/') ?: '/']) && $exactTarget[rtrim($final, '/') ?: '/'] !== $final; $hop++) {
+            $final = $exactTarget[rtrim($final, '/') ?: '/'];
+        }
+        if ($final !== $parts[1] && (rtrim($final, '/') ?: '/') !== (rtrim($parts[0], '/') ?: '/')) {
+            $lines[$i] = $parts[0] . '    ' . $final . '    ' . $parts[2];
+        }
+    }
+    $redirects = implode("\n", $lines);
     file_put_contents($dist . '/_redirects', $redirects);
 }
 
@@ -1181,6 +1204,13 @@ TXT;
     $txt = str_replace("__MATRIX_REDIRECTS__\n", icomplyUnpublishedMatrixRedirects(), $txt);
     if (!function_exists('securityDualRingRedirectLines')) {
         require_once SITE_ROOT . '/includes/security-dual-ring.php';
+    }
+    // Restored (a merge dropped it): dead product and retired service URLs from GSC, one hop.
+    $upgradeRedirects = '';
+    $upgradeFile = SITE_ROOT . '/data/seo-upgrade/product-redirects.txt';
+    if (is_file($upgradeFile)) {
+        $upgradeRedirects = "\n# SEO upgrade: dead product and retired service URLs, one hop.\n"
+            . trim((string)file_get_contents($upgradeFile)) . "\n";
     }
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
     // Security job twins 301 to their keyword equivalents (first match wins).

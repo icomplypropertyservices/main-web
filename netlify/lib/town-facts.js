@@ -90,7 +90,7 @@ export function townFactsBlock({ slug, town, subject, service, hrefFor, names })
   const seed = hash(`${slug}|${subject}`);
   const mi = Math.round(miles(YARD, { lat, lng }));
   const paras = [];
-  let lead = slug === "london" ? `This page covers London; the centre point we measure from is in ${council || "Westminster"}.` : council ? `${town} sits in the ${council} council area${county && county !== council ? `, ${county}` : ""}.` : `${town}${county ? ` is in ${county}` : ""}.`;
+  let lead = slug === "london" ? `This page covers London; the centre point we measure from is in ${council || "Westminster"}.` : council ? (council.toLowerCase() === String(town).toLowerCase() ? `${town} has its own council${county && county !== council ? ` in ${county}` : ""}.` : `${town} sits in the ${council} council area${county && county !== council ? `, ${county}` : ""}.`) : `${town}${county ? ` is in ${county}` : ""}.`;
   if (ocs.length) {
     lead += [
       ` Postcode districts around the centre: ${list(ocs)}.`,

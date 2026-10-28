@@ -33,4 +33,21 @@ require SITE_ROOT . '/includes/header.php';
     <a class="text-[#ff6b00] font-semibold" href="https://icomplypropertyservices.co.uk/assets/contact/icomply-property-services.vcf">save our contact card</a>.</p>
   </div>
 </section>
+<section class="bg-zinc-50 border-b">
+  <div class="max-w-3xl mx-auto px-6 py-12 text-zinc-700 space-y-5 text-left">
+    <h2 class="text-2xl font-semibold text-[#0B1F3A]">What happens next</h2>
+    <p>Your dates are now on our renewals list. A few weeks before each one is due we send a short email reminder with the property address, the certificate or service involved and the date it runs out, so you have time to book a visit without a gap in cover. If you chose a phone reminder as well, we will call from 07517 806082.</p>
+    <h2 class="text-2xl font-semibold text-[#0B1F3A]">Typical renewal intervals for landlords and managing agents</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li><strong>Landlord gas safety record (CP12):</strong> every 12 months, carried out by Gas Safe registered engineers.</li>
+      <li><strong>EICR (electrical installation condition report):</strong> at least every five years for private rented homes, or sooner if the last report says so.</li>
+      <li><strong>Fire alarm servicing:</strong> usually every six months under BS 5839, with weekly call point tests done on site.</li>
+      <li><strong>Emergency lighting:</strong> monthly function checks and a full-duration test each year.</li>
+      <li><strong>Fire risk assessment:</strong> review it at least yearly, and whenever the building, layout or occupancy changes.</li>
+      <li><strong>HMO licence:</strong> normally up to five years, and the council will expect current gas, electrical and fire paperwork when you renew.</li>
+    </ul>
+    <h2 class="text-2xl font-semibold text-[#0B1F3A]">Want us to book the visit for you?</h2>
+    <p>Reply to any reminder, or contact us now, and we will give you a free written quote and a date that suits your tenants. One visit can often cover several certificates at the same property, which saves arranging access more than once. Every report is sent to you in writing after the visit, ready for your records or your letting agent.</p>
+  </div>
+</section>
 <?php require SITE_ROOT . '/includes/footer.php'; ?>

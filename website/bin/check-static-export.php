@@ -715,7 +715,7 @@ if (str_contains($sitemapDist, '<sitemapindex')) {
     }
     // Sharded index (SEO ruling 2026-10-06): every shard listed and present, <=50,000 URLs
     // per file, no loc repeated across shards, robots.txt points at the index.
-    preg_match_all('#<sitemap><loc>https://icomplypropertyservices\.co\.uk/([^<]+)</loc></sitemap>#', $sitemapDist, $indexLocs);
+    preg_match_all('#<sitemap><loc>https://icomplypropertyservices\.co\.uk/([^<]+)</loc>(?:<lastmod>[^<]*</lastmod>)?</sitemap>#', $sitemapDist, $indexLocs);
     $indexLocal = array_values(array_filter($indexLocs[1], static fn(string $l): bool => (bool)preg_match('#^sitemap\d+\.xml$#', $l)));
     $onDisk = array_map('basename', glob($dist . '/sitemap[0-9]*.xml') ?: []);
     sort($onDisk);

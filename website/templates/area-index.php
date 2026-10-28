@@ -237,24 +237,23 @@ echo icomplyQualityBarFaqHtml(
             </p>
             <p class="mt-4 text-lg text-zinc-700 leading-relaxed">
                 This page lists the full catalogue — fire, electrical, gas, security, professional support and construction.
-                It is an index, not a cloned doorway for every street.
                 <?php if ($areaName === 'Manchester'): ?>
                     The quality local guide is also on the
                     <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/manchester-property-compliance') ?>">Manchester property compliance hub</a>.
                 <?php endif; ?>
                 <?php if ($sister !== ''): ?>
-                    Sister index:
-                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/' . areaSlug($sister) . '.php') ?>"><?= htmlspecialchars($sister, ENT_QUOTES, 'UTF-8') ?></a>.
+                    Nearby area:
+                    <a class="text-[#ff6b00] font-semibold hover:underline" href="<?= url('/pages/areas/' . areaSlug($sister)) ?>"><?= htmlspecialchars($sister, ENT_QUOTES, 'UTF-8') ?></a>.
                 <?php endif; ?>
             </p>
         </div>
         <div class="bg-[#0B1F3A] text-white rounded-3xl p-8 md:p-10">
-            <h3 class="text-2xl font-semibold tracking-tight">How the links work</h3>
+            <h3 class="text-2xl font-semibold tracking-tight">How booking works</h3>
             <ul class="mt-6 space-y-3 text-sm text-white/90">
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fire services open the national hub. The same link still works for London, Birmingham or any other UK place.</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Electrical and gas open a real keyword page for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?>.</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Other trades open their service hub, booked for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> when diary allows.</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> We do not publish a price on this index. Legionella and asbestos stay POA.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Fire safety services are quoted across the UK mainland; travel is confirmed on the quote.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Electrical and gas work in <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> is booked from our Stockport base.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Other trades are booked for <?= htmlspecialchars($areaName, ENT_QUOTES, 'UTF-8') ?> as the diary allows.</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Every job gets a free written quote first. Legionella and asbestos are price on application (POA) after a survey.</li>
             </ul>
             <a href="#services" class="inline-block mt-8 px-6 py-3 bg-[#ff6b00] rounded-2xl font-semibold hover:bg-orange-600">Jump to the index</a>
         </div>
@@ -264,11 +263,10 @@ echo icomplyQualityBarFaqHtml(
 <section id="fire-uk" class="bg-zinc-50 border-y">
     <div class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-xs uppercase tracking-[3px] text-[#ff6b00] font-semibold">Fire · nationwide</div>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Fire links that work across the UK</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mt-2">Fire safety across the UK</h2>
         <p class="mt-3 text-zinc-600 max-w-3xl">
             Fire detection, emergency lighting, fire risk assessments and the rest of the life-safety range can be quoted across the UK mainland.
             Travel is from Offerton, Stockport SK2 and is confirmed on the quote.
-            These links stay on the national hubs, so they do not 404 when the place is outside our North West town list.
         </p>
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php foreach ($allServices as $slug => $name):

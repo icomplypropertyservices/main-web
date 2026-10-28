@@ -1,4 +1,6 @@
 import { scrubMeta } from "../lib/scrub-meta.js";
+import { aovBarriersDeepJobRedirect } from "../lib/aov-barriers-deep.js";
+import { capH1Phrase } from "../lib/phrase-cap.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
  * Unique town × keyword, town × service, manufacturer × town and job × town HTML.
@@ -6,9 +8,10 @@ import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "..
  * Keyword variants ({service}--{stem}--…) and /matrix-sitemap/{n}.xml are
  * decoded from assets/matrix/variants.json. Dual-ring towns (269) are
  * index,follow for keyword, service and job pages. Manufacturer×town stays
- * on the Greater Manchester core. Other places stay noindex.
+ * on the Greater Manchester core. Every real page is index,follow (never noindex).
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
+import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
 import { breadcrumbHtml, isGmTown, isLocalTown, matrixRelatedHtml } from "../lib/link-blocks.js";
 import { gmTownBlurb } from "../lib/gm-blurbs.js";
 import { p0KeepsTown, renderNationwideP0Town } from "../lib/nationwide-p0.js";
@@ -16,6 +19,10 @@ import { withContactWidgets } from "../lib/contact-widgets.js";
 import { heroCta } from "../lib/hero-cta.js";
 import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
+import { withAnalytics } from "../lib/analytics.js";
+import { buildingDualExempt, renderBuildingDualTown } from "../lib/building-dual.js";
+import { isMarginDeep, marginDeepKeepsTown, renderMarginDeepTown } from "../lib/margin-deep.js";
+import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -46,17 +53,23 @@ function ctrPriceFrom(slug) {
   return "";
 }
 
-export function ctrTitle(subject, town, slug) {
+export function ctrTitle(subject, town, slug, local = true) {
   const price = ctrPriceFrom(slug);
   const opts = [];
   if (price) {
-    opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
-    opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    if (local) {
+      opts.push(`${subject} in ${town} from ${price} | Same/Next-Day`);
+      opts.push(`${subject} ${town} from ${price} | Same/Next-Day`);
+    }
     opts.push(`${subject} ${town} from ${price}`);
   }
-  opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
-  opts.push(`${subject} in ${town} | Same/Next-Day`);
-  opts.push(`${subject} ${town} | Same/Next-Day`);
+  if (local) {
+    opts.push(`${subject} in ${town} | Same/Next-Day Engineers`);
+    opts.push(`${subject} in ${town} | Same/Next-Day`);
+    opts.push(`${subject} ${town} | Same/Next-Day`);
+  } else {
+    opts.push(`${subject} in ${town} | Free Written Quote`);
+  }
   opts.push(`${subject} in ${town} | iComply`);
   for (const o of opts) if (o.length <= 60) return o;
   const room = 60 - " | iComply".length - String(town).length - 1;
@@ -171,6 +184,7 @@ const FIRE_DUTY = "Design, installation and commissioning follow BS 5839, carrie
 const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
 
 const SERVICE_HUB_ALIAS = {
+  "battery-storage": "/pages/keywords/battery-storage-electrical",
   "eicr": "/pages/jobs/eicr",
   "eicr-certificate": "/pages/jobs/eicr",
   "eicrs": "/pages/jobs/eicr",
@@ -326,6 +340,8 @@ function resolvePlace(townSlug, catalogue) {
 }
 
 export function renderTownPage(input) {
+  const dual = renderBuildingDualTown(input);
+  if (dual) return dual;
   const catalogue = input.catalogue || {};
   const keywords = catalogue.keywords || {};
   const services = catalogue.services || {};
@@ -804,7 +820,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(rendered.html)), {
+  return new Response(withAnalytics(withContactWidgets(scrubMeta(capH1Phrase(rendered.html)))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -855,7 +871,7 @@ async function loadCatalogue(origin) {
 const PLACE_ALIAS_BARRIERS = {"trafford":"hale-trafford","tameside":"hyde-tameside","shaw":"shaw-oldham","milnrow":"rochdale","pendlebury":"swinton-salford","cadishead":"irlam","chorlton":"manchester","withington":"manchester","crosby":"crosby-sefton","ince":"ince-in-makerfield","thornton-cleveleys":"cleveleys","ainsdale":"southport","ambleside":"kendal","appleton":"warrington","birchwood":"warrington","burscough":"ormskirk","carnforth":"lancaster","clayton-le-moors":"accrington","cockermouth":"workington","culcheth":"warrington","dalton-in-furness":"barrow-in-furness","frodsham":"runcorn","garstang":"preston-preston","halton":"runcorn","handforth":"wilmslow","helsby":"runcorn","holmes-chapel":"crewe","hoylake":"wallasey","keswick":"workington","kirkham":"blackpool","longridge":"preston-preston","maryport":"workington","millom":"barrow-in-furness","penketh":"warrington","rainford":"st-helens-st-helens","risley":"warrington","rossendale":"rawtenstall","shevington":"wigan","stockton-heath":"warrington","tarporley":"chester","tarvin":"chester","wesham":"blackpool","whalley":"blackburn-blackburn-with-darwen","windermere":"kendal"};
 const PLACE_ALIAS_AOV = {"worsley":"walkden","wythenshawe":"manchester","pendlebury":"salford","cadishead":"eccles","trafford":"hale-trafford","chorlton":"manchester","withington":"manchester","tameside":"hyde-tameside","shaw":"shaw-oldham"};
 
-function placeAliasRedirect(path) {
+export function placeAliasRedirect(path) {
   let m = path.match(/^\/pages\/(barriers|aov)\/([a-z0-9-]+)$/);
   if (!m) return null;
   const family = m[1];
@@ -869,9 +885,12 @@ function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
+  if (buildingDualExempt(path)) return null;
   if (GSC_KEEP.has(path) || SERVE_UPGRADE.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
+    // Margin DEEP hubs: dual-ring 269 (manufacturer heads: GM core 60 only).
+    if (isMarginDeep(m[1])) return marginDeepKeepsTown(m[1], m[2]) ? null : `/pages/keywords/${m[1]}`;
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
   }
@@ -889,6 +908,11 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // AOV + Barriers DEEP wins the canonical: overlapping job×town → keyword×town (or the hub), one hop.
+  const deepJobTo = aovBarriersDeepJobRedirect(path);
+  if (deepJobTo) {
+    return Response.redirect(new URL(deepJobTo, url.origin).toString(), 301);
+  }
   // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
   // duplicates on /pages/keywords/x/). Exported files never use the slash form.
   if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
@@ -963,6 +987,17 @@ export default async (request, context) => {
       });
     }
   }
+  // Batch 1 (2026-10-21): Manchester building work, homeowner template with hero call CTA.
+  const b1 = batch1Match(path);
+  if (b1) {
+    const page = renderBatch1(b1);
+    if (page) {
+      return new Response(withAnalytics(withContactWidgets(scrubMeta(page.html))), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
+      });
+    }
+  }
   // These two keyword guides are built as static pages. Passing them through stops
   // the matrix sending them to /pages/areas. Every other /pages/keywords/{slug}
   // keeps the matrix route (an edge-rendered hub or a single 301 to a live page).
@@ -973,6 +1008,30 @@ export default async (request, context) => {
   const jobMatch = path.match(/^\/pages\/jobs\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const keywordMatch = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   const serviceMatch = path.match(/^\/pages\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+  // Manchester electrical P0 (PR #119): rich keyword/job pages on the GM core. Restored after
+  // abf07e9 dropped it; without it 4,740 sitemap job×town URLs 301 to /pages/jobs.
+  if (keywordMatch || jobMatch) {
+    try {
+      const rich = await renderManchesterElectricalPage({
+        origin: url.origin,
+        surface: keywordMatch ? "keyword" : "job",
+        slug: (keywordMatch || jobMatch)[1],
+        town: (keywordMatch || jobMatch)[2],
+      });
+      if (rich) {
+        return new Response(withAnalytics(withContactWidgets(scrubMeta(capH1Phrase(rich)))), {
+          status: 200,
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-robots-tag": "index, follow",
+          },
+        });
+      }
+    } catch {
+      // The matrix renderer below stays the fallback when the P0 spec is unavailable.
+    }
+  }
   if (!manufacturerMatch && !jobMatch && !keywordMatch && !serviceMatch) {
     return context.next();
   }
@@ -1010,19 +1069,21 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+    if (isMarginDeep(keywordMatch[1])) {
+      rendered = renderMarginDeepTown(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered && p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
-      // Unknown keyword (retired slug): 410 Gone, like a dead hub,
-      // instead of a 200 noindex soft 404. Lock slugs stay indexable.
+      // Unknown keyword (retired slug): one 301 to a live page. Never noindex.
       const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
       if ((hub.status === 301 || hub.status === 308) && hub.headers.get("location")) {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
       }
       if (hub.status === 404) {
-        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
-        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+        // Jack rule: never noindex. One hop to the live keyword index (GSC 21 Oct A3).
+        return Response.redirect(new URL("/pages/keywords", url.origin).toString(), 301);
       }
     }
     if (!rendered) {
@@ -1053,7 +1114,7 @@ export default async (request, context) => {
     if (serviceMatch && (serviceMatch[1] === "keywords" || serviceMatch[1] === "jobs") && tradesHas(serviceMatch[2])) {
       const hubHtml = renderTradesHub(serviceMatch[2]);
       if (hubHtml) {
-        return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml))), {
+        return new Response(withAnalytics(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml)))), {
           status: 200,
           headers: {
             "content-type": "text/html; charset=utf-8",
@@ -1086,7 +1147,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(rendered.html))), {
+  return new Response(withAnalytics(applyMoneyCtr(path, withContactWidgets(scrubMeta(capH1Phrase(rendered.html))))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",

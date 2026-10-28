@@ -109,6 +109,14 @@ if ($dist !== '') {
             $redirects[rtrim($parts[0], '/') ?: '/'] = true;
         }
     }
+    // Never-prune: 22 Oct baseline URLs stay listed even when they 301 (e.g. /pages/jobs/car-park-barrier).
+    foreach ((gzfile(__DIR__ . '/fixtures/sitemap-baseline-2026-10-22.txt.gz') ?: []) as $bLine) {
+        $bPath = trim((string)$bLine);
+        if (str_starts_with($bPath, $base)) {
+            $bPath = substr($bPath, strlen($base));
+        }
+        unset($redirects[$bPath === '' ? '/' : $bPath]);
+    }
     $redir = array_values(array_intersect_key($redirects, $seen));
     $noPruneSay($redir === [], 'export sitemap lists ' . count($redir) . ' exact _redirects 301s, e.g. ' . implode(',', array_slice(array_keys(array_intersect_key($redirects, $seen)), 0, 6)));
 

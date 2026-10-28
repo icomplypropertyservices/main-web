@@ -2054,11 +2054,11 @@
     "seo_title": "AOV Installation & Smoke Vents | Same/Next-Day",
     "images": [
       {
-        "src": "/assets/images/services/aov-air-handling.jpg",
+        "src": "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg",
         "alt": "Automatic opening vent for smoke control — AOV installation, iComply Property Services"
       },
       {
-        "src": "/assets/images/services/aov-air-handling-photo.jpg",
+        "src": "/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-control-panel.jpg",
         "alt": "AOV actuator and stair vent — AOV installation, iComply Property Services"
       },
       {
@@ -43743,5 +43743,2696 @@
                 "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE"
             ]
         ]
-    }
+    },
+  "24-hour-aov": {
+    "name": "24 hour AOV",
+    "service": "aov-air-handling",
+    "related": "emergency-aov",
+    "intro": "A 24 hour AOV request is a smoke vent fault that cannot wait for a planned slot. iComply confirms attendance on the phone from Stockport SK2. This page does not promise an all-night contract.",
+    "body": "Failed-open, failed-shut and lost fire-alarm contacts are triaged first. Our qualified engineers make the stair safe, then agree any permanent repair. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "24 hour AOV and smoke vent faults across Greater Manchester. Confirm from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Do you attend every stair overnight?",
+        "Only when the diary and safe roof access allow. We confirm that on the phone."
+      ],
+      [
+        "Is this a maintenance contract?",
+        "No. This page is a fault visit, not a night-cover contract."
+      ]
+    ],
+    "seo_keywords": "24 hour AOV, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "24 hour AOV",
+    "seo_title": "24 hour AOV | iComply"
+  },
+  "24-hour-barrier": {
+    "name": "24 hour barrier",
+    "service": "barriers",
+    "related": "emergency-barrier-repair",
+    "intro": "A 24 hour barrier request is a vehicle barrier that will not open, will not close, or has lost its safety edge, asked for outside a planned PPM. iComply confirms attendance from Stockport SK2.",
+    "body": "The lane is made safe before parts are ordered. CAME is the barrier partner for a replacement boom. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "24 hour vehicle barrier call-outs across Greater Manchester. CAME partner. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Can you free a stuck boom today?",
+        "If access and the diary allow. We confirm before travel."
+      ],
+      [
+        "Do you only fit CAME?",
+        "CAME is the partner for a new boom. An existing cabinet is serviced when the survey says it should stay."
+      ]
+    ],
+    "seo_keywords": "24 hour barrier, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "24 hour barrier",
+    "seo_title": "24 hour barrier | iComply"
+  },
+  "emergency-barrier": {
+    "name": "Emergency barrier",
+    "service": "barriers",
+    "related": "emergency-barrier-repair",
+    "intro": "An emergency barrier request is a lane that will not release, a broken arm, or a safety edge that has failed. iComply surveys from Stockport SK2.",
+    "body": "We record the loop, the manual release and the cabinet make before ordering parts. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency vehicle barrier repair across Greater Manchester. CAME partner. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Is the site left open?",
+        "We agree a safe state before leaving. A failed barrier is not left as a trap."
+      ],
+      [
+        "Who supplies the boom?",
+        "CAME for a new lane. Incumbent hardware is kept when it is still sound."
+      ]
+    ],
+    "seo_keywords": "Emergency barrier, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency barrier",
+    "seo_title": "Emergency barrier | iComply"
+  },
+  "emergency-cctv": {
+    "name": "Emergency CCTV",
+    "service": "cctv",
+    "related": "cctv-repair",
+    "intro": "An emergency CCTV request is a recorder, camera or power fault that has left the site blind. iComply confirms the visit from Stockport SK2.",
+    "body": "We check power, recording and the cameras that matter for the entrance first. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency CCTV faults across Greater Manchester. Survey from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Do you rebuild the whole system every time?",
+        "No. We restore recording and the cameras that cover the risk, then quote any wider upgrade."
+      ],
+      [
+        "Is footage recovered?",
+        "Only when the storage still holds it. We say so on site."
+      ]
+    ],
+    "seo_keywords": "Emergency CCTV, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency CCTV",
+    "seo_title": "Emergency CCTV | iComply"
+  },
+  "emergency-fire-door": {
+    "name": "Emergency fire door",
+    "service": "fire-doors",
+    "related": "next-day-fire-door",
+    "intro": "An emergency fire door request is a door that will not close, a missing seal, or a closer that has failed on an escape route. iComply books from Stockport SK2.",
+    "body": "We look at the leaf, frame, closer and seals. A door that does not latch is not passed. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency fire door repair across Greater Manchester. Survey from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Can you certificate the same day?",
+        "Only when the defects are cleared and the door meets the required standard."
+      ],
+      [
+        "Do you replace every door?",
+        "No. Repair stays first when the leaf and frame are still sound."
+      ]
+    ],
+    "seo_keywords": "Emergency fire door, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency fire door",
+    "seo_title": "Emergency fire door | iComply"
+  },
+  "emergency-sprinkler": {
+    "name": "Emergency sprinkler",
+    "service": "sprinkler-systems",
+    "related": "sprinkler-repair",
+    "intro": "An emergency sprinkler request is a leak, an isolation, or a fault on a monitored system that cannot wait for PPM. iComply confirms attendance from Stockport SK2.",
+    "body": "We make the system safe, record the zone and agree the permanent repair. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Emergency sprinkler faults across Greater Manchester. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Do you design new systems on an emergency call?",
+        "No. Emergency work is isolation, make-safe and repair of what is installed."
+      ],
+      [
+        "Is the system left isolated?",
+        "Only with the responsible person informed and a clear return plan."
+      ]
+    ],
+    "seo_keywords": "Emergency sprinkler, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Emergency sprinkler",
+    "seo_title": "Emergency sprinkler | iComply"
+  },
+  "next-day-barrier": {
+    "name": "Next day barrier",
+    "service": "barriers",
+    "related": "emergency-barrier-repair",
+    "intro": "A next day barrier request is a lane fault booked for the following working visit. iComply confirms the slot from Stockport SK2.",
+    "body": "The survey names the cabinet, the loop and the release before parts are ordered. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day vehicle barrier repair across Greater Manchester. CAME partner. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Is next day guaranteed?",
+        "Only when access and the diary are confirmed the day before."
+      ],
+      [
+        "CAME only?",
+        "CAME for new lanes. Existing cabinets are serviced when they should stay."
+      ]
+    ],
+    "seo_keywords": "Next day barrier, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day barrier",
+    "seo_title": "Next day barrier | iComply"
+  },
+  "next-day-heating": {
+    "name": "Next day heating",
+    "service": "heating",
+    "related": "next-day-heating-engineer",
+    "intro": "A next day heating request is a heating fault the site wants on the following working visit. Boiler and gas appliance work is carried out by Gas Safe registered engineers.",
+    "body": "No heat is triaged on the phone. Smell of gas goes to the National Gas Emergency Service on 0800 111 999. Call 07517 806082 for non-gas heating faults we cover. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Next day heating attendance across Greater Manchester. Gas work by Gas Safe registered engineers. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover",
+      "Gas Safe for gas appliances"
+    ],
+    "faq": [
+      [
+        "Smell of gas?",
+        "Leave the building and call the National Gas Emergency number 0800 111 999 before anyone else."
+      ],
+      [
+        "Who carries out the gas work?",
+        "Gas appliance work is carried out by Gas Safe registered engineers."
+      ]
+    ],
+    "seo_keywords": "Next day heating, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Next day heating",
+    "seo_title": "Next day heating | iComply"
+  },
+  "same-day-barrier": {
+    "name": "Same day barrier",
+    "service": "barriers",
+    "related": "emergency-barrier-repair",
+    "intro": "A same day barrier request is a lane the site wants surveyed on the day they ring, if the diary allows. iComply confirms from Stockport SK2.",
+    "body": "We do not order a boom from a photograph of the wrong cabinet. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Same day vehicle barrier call-out across Greater Manchester. CAME partner. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Can you come today?",
+        "Only if we confirm it. Access to the lane has to be agreed."
+      ],
+      [
+        "What if the boom is bent?",
+        "We make the lane safe first, then quote the replacement."
+      ]
+    ],
+    "seo_keywords": "Same day barrier, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Same day barrier",
+    "seo_title": "Same day barrier | iComply"
+  },
+  "same-day-boiler": {
+    "name": "Same day boiler",
+    "service": "gas-systems",
+    "related": "same-day-boiler-repair",
+    "intro": "A same day boiler request is a boiler fault the household wants seen on the day they ring, if a Gas Safe registered engineer can attend. Boiler and gas appliance work is carried out by Gas Safe registered engineers.",
+    "body": "No heat and no hot water are triaged on the phone. Smell of gas goes to 0800 111 999. Call 07517 806082 to book the right engineer. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Same day boiler attendance across Greater Manchester via Gas Safe registered engineers. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover",
+      "Gas Safe for gas appliances"
+    ],
+    "faq": [
+      [
+        "Smell of gas?",
+        "Leave the building and call 0800 111 999."
+      ],
+      [
+        "Is this a written quote?",
+        "No. Price on application after the fault is seen."
+      ]
+    ],
+    "seo_keywords": "Same day boiler, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Same day boiler",
+    "seo_title": "Same day boiler | iComply"
+  },
+  "same-day-fire-alarm": {
+    "name": "Same day fire alarm",
+    "service": "fire-alarms",
+    "related": "emergency-fire-alarm",
+    "intro": "A same day fire alarm request is a panel fault, unwanted alarm or device failure the site wants surveyed on the day they ring. iComply confirms from Stockport SK2.",
+    "body": "We identify the panel and the zone before parts are ordered. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Same day fire alarm call-out across Greater Manchester. BS 5839 work from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Will you silence and leave?",
+        "Only with the responsible person informed and a clear return plan."
+      ],
+      [
+        "Do you cover every panel brand?",
+        "We service the panel on site. Replacement follows the fire strategy."
+      ]
+    ],
+    "seo_keywords": "Same day fire alarm, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Same day fire alarm",
+    "seo_title": "Same day fire alarm | iComply"
+  },
+  "same-day-heating": {
+    "name": "Same day heating",
+    "service": "heating",
+    "related": "emergency-heating",
+    "intro": "A same day heating request is a heating fault the site wants seen on the day they ring. Gas appliance work is by Gas Safe registered engineers.",
+    "body": "We triage on the phone. Smell of gas goes to 0800 111 999. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Same day heating attendance across Greater Manchester. Gas work by Gas Safe registered engineers. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover",
+      "Gas Safe for gas appliances"
+    ],
+    "faq": [
+      [
+        "Smell of gas?",
+        "Leave the building and call 0800 111 999."
+      ],
+      [
+        "Written quote?",
+        "No. Price on application after the visit."
+      ]
+    ],
+    "seo_keywords": "Same day heating, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Same day heating",
+    "seo_title": "Same day heating | iComply"
+  },
+  "same-day-heating-engineer": {
+    "name": "Same day heating engineer",
+    "service": "heating",
+    "related": "next-day-heating-engineer",
+    "intro": "A same day heating engineer request is a heating fault booked for the same day when the diary allows. Gas appliance work is by Gas Safe registered engineers.",
+    "body": "Attendance is confirmed before travel. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Same day heating engineer across Greater Manchester. Gas work by Gas Safe registered engineers. Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover",
+      "Gas Safe for gas appliances"
+    ],
+    "faq": [
+      [
+        "Can you guarantee today?",
+        "Only when confirmed. Access and parts decide the finish."
+      ],
+      [
+        "Smell of gas?",
+        "Call 0800 111 999 first."
+      ]
+    ],
+    "seo_keywords": "Same day heating engineer, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Same day heating engineer",
+    "seo_title": "Same day heating engineer | iComply"
+  },
+  "fire-risk-assessment-near-me": {
+    "name": "Fire risk assessment near me",
+    "service": "fire-risk-assessments",
+    "related": "fire-risk-assessment",
+    "intro": "A fire risk assessment near me search is a local FRA for the building you manage, not a downloaded template. iComply arranges the visit from Stockport SK2.",
+    "body": "The assessor walks the escape routes, the compartmentation and the management records that matter for that site. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Fire risk assessment near you across Greater Manchester. Arranged from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Is this a template FRA?",
+        "No. The visit is for the building in front of us."
+      ],
+      [
+        "Do you sell the follow-on works?",
+        "We can quote alarms, lighting and doors we already deliver. The FRA itself is independent advice."
+      ]
+    ],
+    "seo_keywords": "Fire risk assessment near me, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Fire risk assessment near me",
+    "seo_title": "Fire risk assessment near me | iComply"
+  },
+  "plumber-near-me": {
+    "name": "Plumber near me",
+    "service": "plumbing",
+    "related": "emergency-plumber",
+    "intro": "A plumber near me search is a local plumbing fault or planned visit, not a national call centre. iComply books from Stockport SK2.",
+    "body": "Leaks, no hot water and blocked waste are triaged on the phone. Call 07517 806082. The quote is price on application from Stockport SK2.",
+    "meta_desc": "Plumber near you across Greater Manchester. Booked from Stockport SK2. Price on application. 07517806082.",
+    "focus_points": [
+      "Confirmed from Stockport SK2",
+      "Qualified engineers",
+      "Price on application",
+      "Greater Manchester cover"
+    ],
+    "faq": [
+      [
+        "Do you cover every postcode?",
+        "Greater Manchester from Stockport SK2. We say if a job is outside cover."
+      ],
+      [
+        "Emergency leaks?",
+        "We confirm attendance when the diary allows."
+      ]
+    ],
+    "seo_keywords": "Plumber near me, Greater Manchester, Stockport, iComply",
+    "hub_only": true,
+    "h1": "Plumber near me",
+    "seo_title": "Plumber near me | iComply"
+  },
+  "24-hour-fire-alarm-engineer": {
+    "name": "24 Hour Fire Alarm Engineer",
+    "service": "fire-alarms",
+    "related": "emergency-fire-alarm",
+    "hub_only": true,
+    "h1": "24 hour fire alarm engineer",
+    "seo_title": "24 Hour Fire Alarm Engineer | UK | iComply",
+    "intro": "People search 24 hour fire alarm engineer when a panel fails at night. If an engineer is available for a UK mainland site, we will say so and quote price on application. If nobody is free, we say that too.",
+    "body": "Night attendance is exceptional. It is for a system that has left people unprotected, not for a beeping device that can wait until morning. The call should include the postcode, the panel text and whether the building is occupied. We do not ask a watchman to silence the panel and forget the cause.",
+    "meta_desc": "24 hour fire alarm engineer searches answered honestly. No retained night contract. UK mainland attendance when someone is free. POA.",
+    "focus_points": [
+      "No staffed night desk and no retained night contract",
+      "Unprotected buildings considered when an engineer is free",
+      "Morning attendance offered when night attendance is not",
+      "Cause recorded, not only a silence"
+    ],
+    "faq": [
+      [
+        "Are you open 24 hours?",
+        "No. This page exists so the search is answered honestly."
+      ],
+      [
+        "What should I do if the panel is in fire?",
+        "Follow the building's evacuation plan and call the fire and rescue service if there is a fire. Then call us about the system."
+      ],
+      [
+        "Will a night visit cost a published premium?",
+        "No premium is published. Any visit is price on application."
+      ]
+    ],
+    "seo_keywords": "24 hour fire alarm engineer, night fire alarm call out, emergency fire alarm engineer UK"
+  },
+  "addressable-fire-alarm-installation": {
+    "name": "Addressable Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "conventional-fire-alarm-installation",
+    "hub_only": true,
+    "h1": "Addressable fire alarm installation",
+    "seo_title": "Addressable Fire Alarm Installation | UK | iComply",
+    "intro": "Addressable fire alarm installation gives each device an identity so the panel can say which head or call point operated. iComply installs addressable systems where the building is too large or too mixed for a handful of conventional zones. UK mainland coverage. Price on application after the loop design.",
+    "body": "Loop length, isolators and device load are calculated, not guessed. We programme text that matches the room names the staff use. Cause and effect is proved device by device for the agreed sample, and in full where the specification demands it. A conventional system remains the right answer for a small single-storey unit. We will say so.",
+    "meta_desc": "Addressable fire alarm installation with loop design and commissioning. UK mainland. BS 5839. Price on application.",
+    "focus_points": [
+      "Loop load, length and isolators calculated",
+      "Device text that matches real room names",
+      "Cause and effect proved against the specification",
+      "Conventional recommended when addressable is unnecessary"
+    ],
+    "faq": [
+      [
+        "Is addressable always better?",
+        "No. A small building often only needs zones. We say which one the risk supports."
+      ],
+      [
+        "Can you add devices to an old addressable loop?",
+        "When the protocol and the spare capacity allow it. Obsolete protocols are quoted as a panel change."
+      ],
+      [
+        "Do you programme cause and effect?",
+        "Yes, for the interfaces in the scope. We do not programme plant we were not asked to touch."
+      ]
+    ],
+    "seo_keywords": "addressable fire alarm installation, addressable fire panel, loop fire alarm UK"
+  },
+  "bs-5839-fire-alarm-installer": {
+    "name": "BS 5839 Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installation",
+    "hub_only": true,
+    "h1": "BS 5839 fire alarm installer",
+    "seo_title": "BS 5839 Fire Alarm Installer | UK | iComply",
+    "intro": "A BS 5839 fire alarm installer designs and commissions to that code of practice: Part 1 for non-domestic buildings and Part 6 for dwellings. iComply works to those parts across the UK mainland. The standard is the method. It is not a badge we print on the van. Quotes are price on application.",
+    "body": "We name the part and the category in the quote. Commissioning checks the things the design promised: device list, sounder levels where the scope includes them, battery calculation and cause and effect. If the building use has changed since the last design, we say the category may need to change. We do not stamp a certificate onto an untested loop.",
+    "meta_desc": "BS 5839 fire alarm installer for Part 1 and Part 6 systems. UK mainland. Design and commissioning. Price on application.",
+    "focus_points": [
+      "BS 5839-1 and BS 5839-6 named in the quote",
+      "Category written down, not implied",
+      "Commissioning of the design that was agreed",
+      "No certificate for an untested loop"
+    ],
+    "faq": [
+      [
+        "Are you third-party certificated to BAFE?",
+        "No."
+      ],
+      [
+        "Which edition do you use?",
+        "The current edition that applies to the work, as the design states."
+      ],
+      [
+        "Can you certify someone else's install?",
+        "Only the parts we have inspected and tested. The certificate says that limit."
+      ]
+    ],
+    "seo_keywords": "BS 5839 fire alarm installer, BS 5839-1 installation, BS 5839-6 installer UK"
+  },
+  "care-home-fire-alarm-installation": {
+    "name": "Care Home Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "fire-alarm-strobe-installation",
+    "hub_only": true,
+    "h1": "Care home fire alarm installation",
+    "seo_title": "Care Home Fire Alarm Installation | UK | iComply",
+    "intro": "Care home fire alarm installation has to work around residents who cannot simply walk out when a sounder starts. iComply designs and commissions these systems to BS 5839 and the home's fire strategy, including staff alarms and staged evacuation where that strategy requires them. UK mainland. Price on application.",
+    "body": "We survey bedrooms, lounges, kitchens and any plant that must shut down. Visual devices and vibrating pillows are included only when the care plan needs them. Testing is phased so the whole home is not in alarm without staff ready. The logbook is written for the manager who will run the weekly test, not only for the installing engineer.",
+    "meta_desc": "Care home fire alarm installation to the fire strategy and BS 5839. UK mainland homes. Phased testing. Price on application.",
+    "focus_points": [
+      "Staff alarm and staged evacuation only when the strategy says so",
+      "Bedrooms, lounges and kitchens surveyed",
+      "Testing phased so staff are ready",
+      "Logbook written for the weekly test the manager runs"
+    ],
+    "faq": [
+      [
+        "Do you install nurse call as well?",
+        "Nurse call is a different system. We can be instructed separately. It is not part of the fire alarm quote by default."
+      ],
+      [
+        "Can testing happen at night?",
+        "Only if the home asks for it and staffing is in place. Daytime phased tests are the usual plan."
+      ],
+      [
+        "Will the system link to the fire service automatically?",
+        "Only if monitoring is in the strategy and in the quote. It is not assumed."
+      ]
+    ],
+    "seo_keywords": "care home fire alarm installation, residential care fire detection, BS 5839 care home UK"
+  },
+  "commercial-fire-alarm-installation": {
+    "name": "Commercial Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "commercial-fire-alarm-installer",
+    "h1": "Commercial fire alarm installation",
+    "seo_title": "Commercial Fire Alarm Installation | UK | iComply",
+    "intro": "Commercial fire alarm installation is the full job for a non-domestic building: category, devices, panel, cause and effect, and commissioning. iComply does that work across England, Wales and mainland Scotland. The commercial installation page is not a domestic alarm page. Pricing is price on application.",
+    "body": "We ask for plans, the fire risk assessment actions that mention detection, and whether the landlord or the tenant owns the panel. Those facts change the design. Handover includes the logbook and a demonstration of the weekly test. Maintenance afterwards is offered as its own instruction, not bundled as a hidden retainer.",
+    "meta_desc": "Commercial fire alarm installation to BS 5839-1 across the UK mainland. Commissioned handover. Price on application.",
+    "focus_points": [
+      "Non-domestic category and device schedule",
+      "Landlord and tenant panel ownership made clear",
+      "Weekly-test demonstration at handover",
+      "Maintenance quoted as its own instruction"
+    ],
+    "faq": [
+      [
+        "Do you follow L1, L2 or L3?",
+        "Whichever the fire strategy and BS 5839-1 category require. We do not pick a category from floor area alone."
+      ],
+      [
+        "Can installation include visual alarm devices?",
+        "Yes, where hearing the sounders is not enough. They are listed in the scope, not assumed."
+      ],
+      [
+        "Is commissioning included?",
+        "Commissioning of the agreed scope is part of the installation quote. It is not a surprise extra."
+      ]
+    ],
+    "seo_keywords": "commercial fire alarm installation, office fire alarm system, BS 5839 commercial install UK"
+  },
+  "commercial-fire-alarm-installer": {
+    "name": "Commercial Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "commercial-fire-alarm-installation",
+    "h1": "Commercial fire alarm installer",
+    "seo_title": "Commercial Fire Alarm Installer | UK | iComply",
+    "intro": "A commercial fire alarm installer works to the fire strategy for shops, offices, warehouses and mixed-use buildings. iComply designs, installs and commissions those systems across the UK mainland. Domestic Grade D alarms are a different guide. Commercial quotes are price on application after the category is known.",
+    "body": "Commercial sites usually need a zoned or addressable panel, manual call points on escape routes, and sounders that can be heard where people work. Interfaces to door holders or plant are only included when the strategy asks for them. ",
+    "meta_desc": "Commercial fire alarm installer for UK mainland businesses. BS 5839-1 design and commissioning. Price on application.",
+    "focus_points": [
+      "Shops, offices, warehouses and mixed-use buildings",
+      "Category taken from the fire strategy",
+      "Call points, sounders and agreed interfaces",
+      "No BAFE or NSI badge claimed"
+    ],
+    "faq": [
+      [
+        "Do you install in offices that stay open?",
+        "Yes, when noisy work and isolations are agreed around occupation."
+      ],
+      [
+        "Is a shop system the same as a warehouse system?",
+        "No. Ceiling height, racking and process risk change the devices. The survey records that."
+      ],
+      [
+        "Can one installer look after several branches?",
+        "Yes. Each branch is still scoped and commissioned on its own paperwork."
+      ]
+    ],
+    "seo_keywords": "commercial fire alarm installer, business fire alarm install, BS 5839-1 installer UK"
+  },
+  "commercial-fire-alarm-installers": {
+    "name": "Commercial Fire Alarm Installers",
+    "service": "fire-alarms",
+    "related": "commercial-fire-alarm-installer",
+    "hub_only": true,
+    "h1": "Commercial fire alarm installers",
+    "seo_title": "Commercial Fire Alarm Installers | UK | iComply",
+    "intro": "Commercial fire alarm installers are the crew for non-domestic systems: offices, retail, industrial units and landlord areas in mixed buildings. iComply fields that crew from Stockport for UK mainland sites. This page is the crew hub. Town-by-town pages for the core installer wording are published on the installer guides.",
+    "body": "A commercial crew needs ceiling access, a working hours plan and a person who can witness cause and effect. We write those into the instruction. Spare capacity on an existing loop is checked before anyone promises to add devices. If the panel cannot take the extension, replacement is quoted instead of a crowded loop.",
+    "meta_desc": "Commercial fire alarm installers for UK mainland non-domestic buildings. BS 5839-1. Price on application.",
+    "focus_points": [
+      "Non-domestic crews, not a domestic alarm swap",
+      "Access and witness plan written into the instruction",
+      "Loop capacity checked before devices are added",
+      "Panel replacement quoted when an extension will not fit"
+    ],
+    "faq": [
+      [
+        "Do you only install new panels?",
+        "No. Extensions are fine when the existing panel can carry them."
+      ],
+      [
+        "Can you work with our main contractor?",
+        "Yes. Programme and ceiling closures are agreed with the contractor before the start date."
+      ],
+      [
+        "Do you hold a third-party approval scheme mark?",
+        "No. We do not claim a scheme mark. The work is design, installation and commissioning to BS 5839."
+      ]
+    ],
+    "seo_keywords": "commercial fire alarm installers, business fire alarm engineers, non-domestic fire alarm UK"
+  },
+  "conventional-fire-alarm-installation": {
+    "name": "Conventional Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "addressable-fire-alarm-installation",
+    "hub_only": true,
+    "h1": "Conventional fire alarm installation",
+    "seo_title": "Conventional Fire Alarm Installation | UK | iComply",
+    "intro": "Conventional fire alarm installation uses zones rather than a named device. It is the right system for many small commercial buildings. iComply designs and fits conventional panels across the UK mainland when the zone plan is enough. The quote is price on application. We do not push an addressable panel to inflate the job.",
+    "body": "Zones must match how people will search the building. A single zone for a whole multi-room site is a poor design even if the panel is cheap to buy. We draw the zones, fit call points at the exits the standard expects, and test each zone into the panel. End-of-line devices are recorded so the next service engineer can find them.",
+    "meta_desc": "Conventional fire alarm installation for smaller UK mainland buildings. Zoned BS 5839 systems. Price on application.",
+    "focus_points": [
+      "Zones drawn to match a search of the building",
+      "Call points at the exits the design names",
+      "End-of-line positions recorded",
+      "Addressable offered only when zones are not enough"
+    ],
+    "faq": [
+      [
+        "How many zones do I need?",
+        "Enough to find a fire without searching the whole building. The survey draws them."
+      ],
+      [
+        "Can a conventional panel take smoke and heat on one zone?",
+        "Yes, when the design allows that mix. The zone chart says what is fitted."
+      ],
+      [
+        "Will you convert conventional to addressable later?",
+        "Yes, as a new scope. It is not a free upgrade inside a conventional quote."
+      ]
+    ],
+    "seo_keywords": "conventional fire alarm installation, zoned fire alarm, conventional fire panel UK"
+  },
+  "domestic-fire-alarm-installer": {
+    "name": "Domestic Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "domestic-fire-alarm-installation",
+    "h1": "Domestic fire alarm installer",
+    "seo_title": "Domestic Fire Alarm Installer | UK | iComply",
+    "intro": "A domestic fire alarm installer fits Grade and Category systems for houses, flats and small HMOs under BS 5839-6. iComply covers those homes across the UK mainland, with the visit arranged from Stockport. Landlord paperwork is included when the instruction asks for it. The quote is price on application.",
+    "body": "Kitchens usually need heat detection rather than a smoke alarm that false-alarms on toast. Landings and habitable rooms follow the category the layout needs. Mains alarms with a standby supply are specified when the standard requires them. We test every device before leaving and show the household the weekly test. We do not upsell a commercial panel into a two-bed flat.",
+    "meta_desc": "Domestic fire alarm installer for UK mainland homes and small HMOs. BS 5839-6. Price on application.",
+    "focus_points": [
+      "BS 5839-6 Grade and Category for dwellings",
+      "Heat detection in kitchens where smoke alarms false-alarm",
+      "Landlord paperwork when the instruction asks for it",
+      "No commercial panel forced into a small flat"
+    ],
+    "faq": [
+      [
+        "Do you install interlinked alarms?",
+        "Yes, when the category needs them. The quote names the grade."
+      ],
+      [
+        "Can you replace battery-only alarms?",
+        "Yes. The survey says whether mains interlink is required or a repair of the existing grade is enough."
+      ],
+      [
+        "Do you cover flats above shops?",
+        "Yes. The flat and the shop are separate scopes if the systems are separate."
+      ]
+    ],
+    "seo_keywords": "domestic fire alarm installer, home fire alarm installer, BS 5839-6 installer UK"
+  },
+  "emergency-fire-alarm-installation": {
+    "name": "Emergency Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "emergency-fire-alarm-installer",
+    "h1": "Emergency fire alarm installation",
+    "seo_title": "Emergency Fire Alarm Installation | UK | iComply",
+    "intro": "Emergency fire alarm installation replaces or rebuilds detection after a failure, a flood, or a condemned panel. iComply schedules that work across UK mainland towns from Stockport. Speed does not remove the design step. The category is still agreed, and the quote is still price on application.",
+    "body": "We separate making the building safer tonight from handing over a commissioned system. The first visit may isolate damaged cable and restore a zone. The installation visit fits the agreed devices and proves cause and effect. Both visits are written down. Neither is given a catalogue fee.",
+    "meta_desc": "Emergency fire alarm installation on the UK mainland. Make-safe and commissioned replacement. BS 5839. Price on application.",
+    "focus_points": [
+      "Make-safe visit separated from the full installation",
+      "Damaged cable and condemned panels assessed first",
+      "Commissioning of the replacement scope",
+      "Both visits price on application"
+    ],
+    "faq": [
+      [
+        "Will insurers accept a same-day install?",
+        "We document what was verified. What an insurer accepts is their decision. "
+      ],
+      [
+        "Can the old cable be reused?",
+        "Only when tests show it is sound. If it is not, replacement is in the quote."
+      ],
+      [
+        "Do you cover warehouses and houses under this heading?",
+        "Yes, with the right British Standard for that building. The survey names it."
+      ]
+    ],
+    "seo_keywords": "emergency fire alarm installation, urgent fire alarm system, replacement fire alarm UK"
+  },
+  "emergency-fire-alarm-installer": {
+    "name": "Emergency Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "emergency-fire-alarm",
+    "h1": "Emergency fire alarm installer",
+    "seo_title": "Emergency Fire Alarm Installer | UK | iComply",
+    "intro": "An emergency fire alarm installer is asked for when a building has lost detection and cannot wait for a routine diary slot. iComply prioritises unprotected premises when an engineer is free, anywhere on the UK mainland town list. This is not a guaranteed one-hour contract. The quote is price on application.",
+    "body": "Tell us whether the panel is dead, a zone is isolated, or there is no system at all after a flood or a strip-out. Those are different emergencies. A temporary arrangement is only left in place when it is safe and agreed. The permanent install is still designed to BS 5839, not rushed in as unnamed devices.",
+    "meta_desc": "Emergency fire alarm installer for unprotected UK mainland buildings. Attendance when an engineer is free. Price on application.",
+    "focus_points": [
+      "Unprotected buildings prioritised when someone is free",
+      "Dead panels, isolated zones and missing systems treated differently",
+      "Temporary cover only when it is safe and agreed",
+      "Permanent work still designed to BS 5839"
+    ],
+    "faq": [
+      [
+        "Do you guarantee attendance within an hour?",
+        "No. We say the next realistic window when an engineer is free."
+      ],
+      [
+        "Can you install a replacement the same day?",
+        "Only if the survey and the parts allow it. Otherwise the quote splits make-safe and the permanent install."
+      ],
+      [
+        "Is emergency work a different price list?",
+        "There is no price list. Emergency and planned work are both price on application."
+      ]
+    ],
+    "seo_keywords": "emergency fire alarm installer, urgent fire alarm install, fire alarm panel down UK"
+  },
+  "fire-alarm-companies": {
+    "name": "Fire Alarm Companies",
+    "service": "fire-alarms",
+    "related": "fire-alarm-company",
+    "hub_only": true,
+    "h1": "Fire alarm companies",
+    "seo_title": "Fire Alarm Companies | UK | iComply",
+    "intro": "iComply publishes the scope rules here and the town pages on the installer guides. Comparison shopping still ends in a price-on-application quote.",
+    "body": "Ask a company who commissions the system and where the logbook will live. Those two answers sort a real installer from a box-shift. We answer them on the quote. Multi-site managing agents can use one company for many towns. Each town page describes that place. The commercial terms stay on the quote, not in a table of fees.",
+    "meta_desc": "How to compare fire alarm companies on the UK mainland. Survey, commissioning and POA quotes. iComply, Stockport.",
+    "focus_points": [
+      "Survey before a price",
+      "Commissioning named in the quote",
+      "Logbook location agreed at handover",
+      "Multi-site work still priced per building"
+    ],
+    "faq": [
+      [
+        "Why are there no prices?",
+        "Buildings differ. A fee table would be fiction."
+      ],
+      [
+        "Do you work alongside other contractors?",
+        "Yes. The fire alarm scope is still ours to commission."
+      ],
+      [
+        "Which company page should a local search use?",
+        "Open the installer or installation town page for the place. This page explains the company."
+      ]
+    ],
+    "seo_keywords": "fire alarm companies, compare fire alarm companies, UK fire detection company"
+  },
+  "fire-alarm-company": {
+    "name": "Fire Alarm Company",
+    "service": "fire-alarms",
+    "related": "fire-alarm-companies",
+    "hub_only": true,
+    "h1": "Fire alarm company",
+    "seo_title": "Fire Alarm Company | UK | iComply",
+    "intro": "A fire alarm company should be able to design, install, commission and then service the system it hands over. iComply is that company for UK mainland premises, working from 17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. We are not a lead-generation desk. The quote is price on application.",
+    "body": "You get a named scope, a date, and paperwork for the work that was done. We do not franchise the visit out under a badge we do not hold. When a specialist ticket is required for a related trade, that limit is said in the quote. Fire alarm work itself is carried out as BS 5839 design, installation and commissioning.",
+    "meta_desc": "Fire alarm company for UK mainland design, installation, commissioning and service. Stockport workshop. Price on application.",
+    "focus_points": [
+      "Design, install, commission and service from one company",
+      "Named scope rather than a routed lead",
+      "Stockport workshop address on the paperwork",
+      "Related trades limited in writing"
+    ],
+    "faq": [
+      [
+        "Are you a national call centre?",
+        "No. Jobs are arranged from the Stockport workshop."
+      ],
+      [
+        "Do you cover the whole UK?",
+        "England, Wales and mainland Scotland on the published town list. Not Northern Ireland or the excluded islands."
+      ],
+      [
+        "Can you maintain a system another company installed?",
+        "Yes, after an initial visit that records what is actually on the wall."
+      ]
+    ],
+    "seo_keywords": "fire alarm company, UK fire alarm company, fire alarm company Stockport"
+  },
+  "fire-alarm-contractor": {
+    "name": "Fire Alarm Contractor",
+    "service": "fire-alarms",
+    "related": "fire-alarm-contractors",
+    "hub_only": true,
+    "h1": "Fire alarm contractor",
+    "seo_title": "Fire Alarm Contractor | UK | iComply",
+    "intro": "A fire alarm contractor is instructed by a main contractor, a landlord or a facilities manager to deliver a defined detection package. iComply takes that instruction for UK mainland projects. We price the package on application against drawings and the fire strategy, and we commission what we install.",
+    "body": "Programme, ceiling type and builders-work holes are agreed before the start. Variations are written when the site changes. We do not absorb extra floors into the original quote without saying so. Practical completion is the commissioned system and the documents, not a panel powered up with zones still spare and unnamed.",
+    "meta_desc": "Fire alarm contractor for UK mainland projects. Drawn scope, variations in writing, BS 5839 commissioning. Price on application.",
+    "focus_points": [
+      "Instructions from main contractors, landlords and FM teams",
+      "Drawings and fire strategy priced before start",
+      "Variations written when the site changes",
+      "Completion means commissioned, not just powered"
+    ],
+    "faq": [
+      [
+        "Can you be instructed on a construction job?",
+        "Yes. The form of contract is agreed in the quote. The fire alarm scope is design, installation and commissioning."
+      ],
+      [
+        "Do you design and build?",
+        "Yes. Design and installation can be one instruction or split if your designer has already finished the cause and effect."
+      ],
+      [
+        "Who holds the drawings?",
+        "The instructing client. We issue the as-fitted information for the work we did."
+      ]
+    ],
+    "seo_keywords": "fire alarm contractor, fire alarm subcontractor, construction fire alarm install UK"
+  },
+  "fire-alarm-contractors": {
+    "name": "Fire Alarm Contractors",
+    "service": "fire-alarms",
+    "related": "fire-alarm-contractor",
+    "hub_only": true,
+    "h1": "Fire alarm contractors",
+    "seo_title": "Fire Alarm Contractors | UK | iComply",
+    "intro": "Fire alarm contractors on a live site need a scope, a programme and a person who can sign the cause and effect. iComply supplies that contracting role across UK mainland projects from Stockport. Several operatives can attend. The commercial offer is still one quote, price on application.",
+    "body": "We attend pre-start meetings when the programme needs it. RAMS for the fire alarm work are issued for the site rules you send. Containment that belongs to the electrician is not silently taken into our price. If you want us to supply containment, it is a line in the quote. Commissioning is booked as its own day when the ceilings are closed.",
+    "meta_desc": "Fire alarm contractors for live UK mainland sites. Programme, RAMS and commissioning day. Price on application.",
+    "focus_points": [
+      "Pre-start meetings when the programme needs them",
+      "RAMS for the fire alarm work",
+      "Containment only if the quote includes it",
+      "Commissioning booked when ceilings are closed"
+    ],
+    "faq": [
+      [
+        "Can you provide more than one operative?",
+        "Yes. The quote states how many the programme needs."
+      ],
+      [
+        "Do you work nights on construction sites?",
+        "When the site is running nights and the quote includes that shift."
+      ],
+      [
+        "Will you certify the builder's cable?",
+        "Only cable we have tested. Untested containment is excluded in writing."
+      ]
+    ],
+    "seo_keywords": "fire alarm contractors, site fire alarm contractor, UK fire alarm installation contractor"
+  },
+  "fire-alarm-engineers": {
+    "name": "Fire Alarm Engineers",
+    "service": "fire-alarms",
+    "related": "fire-alarm-engineer",
+    "hub_only": true,
+    "h1": "Fire alarm engineers",
+    "seo_title": "Fire Alarm Engineers | UK | iComply",
+    "intro": "Fire alarm engineers diagnose panels, loops and devices, then either repair them or say what must be replaced. iComply arranges that engineering across the UK mainland from Stockport. This hub is the trade page. Town pages that name a place sit on the installer, installation and engineer guides.",
+    "body": "Engineers arrive with test equipment and the paperwork the visit has to update. They do not silence a panel and leave the cause unwritten. If the fault needs parts that are not on the van, the return visit is quoted before it is booked. Out-of-hours attendance is only offered when someone is actually free. It is not a retained 24-hour contract.",
+    "meta_desc": "Fire alarm engineers for UK mainland premises. Faults, service and installs to BS 5839. Price on application.",
+    "focus_points": [
+      "Panel, loop and device diagnosis",
+      "Cause written down, not only silenced",
+      "Parts and return visits quoted before booking",
+      "No retained 24-hour contract on this page"
+    ],
+    "faq": [
+      [
+        "Are you a 24-hour fire alarm company?",
+        "No retained overnight contract is sold here. Attendance is when an engineer is free."
+      ],
+      [
+        "Do engineers cover commercial and domestic sites?",
+        "Yes. The category and the paperwork follow the building type."
+      ],
+      [
+        "How is engineering priced?",
+        "Price on application after the panel, the fault text and the address are known."
+      ]
+    ],
+    "seo_keywords": "fire alarm engineers, UK fire alarm engineer, BS 5839 engineer, fire panel engineer"
+  },
+  "fire-alarm-fitter": {
+    "name": "Fire Alarm Fitter",
+    "service": "fire-alarms",
+    "related": "fire-alarm-fitters",
+    "hub_only": true,
+    "h1": "Fire alarm fitter",
+    "seo_title": "Fire Alarm Fitter | UK | iComply",
+    "intro": "A fire alarm fitter is the person on the tools: devices, cable and the panel terminations. iComply's fitters work to a design that has already been agreed for UK mainland sites. Fitting without a design is how zones get missed. The quote is price on application and includes the commissioning of what was fitted.",
+    "body": "First fix and second fix can be split on a construction programme. The fitter does not leave bases unlabelled. At handover the device that is on the ceiling matches the schedule. If a ceiling change moved a head, that is a variation, not a quiet extra. Domestic fitters and commercial fitters are scheduled against the right standard.",
+    "meta_desc": "Fire alarm fitter for agreed BS 5839 designs on the UK mainland. First and second fix. Commissioning included in the scope. POA.",
+    "focus_points": [
+      "Fitting follows an agreed design",
+      "First fix and second fix can be split",
+      "Devices labelled to the schedule",
+      "Ceiling changes treated as variations"
+    ],
+    "faq": [
+      [
+        "Can I hire a fitter by the day?",
+        "We do not publish a day rate. The quote is for the scope, which may be one day or several."
+      ],
+      [
+        "Do fitters commission as well?",
+        "The scope includes commissioning of the devices fitted. A fitter-only instruction with no test is declined."
+      ],
+      [
+        "Will a fitter work to our drawings?",
+        "Yes, and we will flag drawings that contradict BS 5839 before cable is pulled."
+      ]
+    ],
+    "seo_keywords": "fire alarm fitter, fire alarm first fix, fire alarm installation fitter UK"
+  },
+  "fire-alarm-fitters": {
+    "name": "Fire Alarm Fitters",
+    "service": "fire-alarms",
+    "related": "fire-alarm-fitter",
+    "hub_only": true,
+    "h1": "Fire alarm fitters",
+    "seo_title": "Fire Alarm Fitters | UK | iComply",
+    "intro": "Fire alarm fitters, plural, are what a multi-floor fit-out needs so containment and devices keep up with the ceiling contractor. iComply books that team for UK mainland projects. The number of fitters is in the quote. It is not a standing gang with a published weekly rate.",
+    "body": "We pair fitters with the programme you send: one floor a week, or a single weekend for a small unit. Materials are called off against the device schedule so the site is not storing the wrong heads. Snagging after the ceiling grid is closed is included when the quote says the ceilings were open at first fix and closed before test.",
+    "meta_desc": "Fire alarm fitters for UK mainland fit-outs. Team size in the quote. Device schedule and commissioning. Price on application.",
+    "focus_points": [
+      "Team size written in the quote",
+      "Programme matched to the ceiling contractor",
+      "Materials called off against the device schedule",
+      "Snagging after the grid is closed, when quoted"
+    ],
+    "faq": [
+      [
+        "Can fitters start before the design is finished?",
+        "Only containment that the design has already fixed. Devices wait for the schedule."
+      ],
+      [
+        "Do you supply the cable?",
+        "When the quote includes it. Electrician's fire cable already on site is used only if the specification matches."
+      ],
+      [
+        "How do you avoid idle fitters?",
+        "The start date is when the ceilings and power are actually ready. We will not mobilise onto a floor that is still a shell unless that is the agreed first fix."
+      ]
+    ],
+    "seo_keywords": "fire alarm fitters, fire alarm installation team, fit-out fire alarm UK"
+  },
+  "fire-alarm-installation-near-me": {
+    "name": "Fire Alarm Installation Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installation",
+    "h1": "Fire alarm installation near me",
+    "seo_title": "Fire Alarm Installation Near Me | UK | iComply",
+    "intro": "Fire alarm installation near me is a request for a new system or a major extension in a named place. iComply writes the BS 5839 scope first, then installs and commissions. Town pages cover the UK mainland list. The workshop is in Offerton, Stockport. The quote is price on application.",
+    "body": "Installation near a town is still installation: category, device schedule, cause and effect, certificates for the work we verified. We do not treat a near-me search as a different product with a lower spec. If you already have a panel and only need a repair, use the repair guide rather than this install page.",
+    "meta_desc": "Fire alarm installation near me for UK mainland towns. BS 5839 design and commissioning. Price on application.",
+    "focus_points": [
+      "New systems and major extensions",
+      "Category agreed before devices are ordered",
+      "Commissioning of the work we installed",
+      "Repairs directed to the repair guide"
+    ],
+    "faq": [
+      [
+        "Is near-me installation cheaper?",
+        "No price is published. Travel and scope are both in the quote."
+      ],
+      [
+        "Will you install a system specified by someone else?",
+        "Yes, when we can verify the design. If the design cannot be built as drawn, we say so before work starts."
+      ],
+      [
+        "Do you install Grade D alarms in houses?",
+        "Domestic categories are BS 5839-6. The domestic installation page is the right guide for houses and flats."
+      ]
+    ],
+    "seo_keywords": "fire alarm installation near me, local fire alarm installation, BS 5839 installation UK"
+  },
+  "fire-alarm-installations": {
+    "name": "Fire Alarm Installations",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installation",
+    "hub_only": true,
+    "h1": "Fire alarm installations",
+    "seo_title": "Fire Alarm Installations | UK | iComply",
+    "intro": "Fire alarm installations are complete systems: design, containment, devices, panel and commissioning. iComply carries out that sequence for commercial and residential buildings across the UK mainland. The price is on application because two buildings with the same floor area rarely need the same category.",
+    "body": "An installation record should say what was new, what was retained and how the cause and effect was proved. We leave that with the client. Conventional and addressable systems are both in scope. The choice follows the building, not a preferred panel brand. Servicing after handover is a separate instruction.",
+    "meta_desc": "Fire alarm installations across the UK mainland. Design, fit and commission to BS 5839. Price on application from Stockport.",
+    "focus_points": [
+      "Full installations, not device-only swaps",
+      "Conventional or addressable as the building needs",
+      "Commissioning record of what was proved",
+      "Servicing quoted separately from the install"
+    ],
+    "faq": [
+      [
+        "Is an installation the same as a service visit?",
+        "No. Installation is new work or a major alteration. A service visit maintains a system that already exists."
+      ],
+      [
+        "Can you install in an occupied building?",
+        "Often, if access and isolation are agreed. The programme is written into the quote."
+      ],
+      [
+        "Do you list equipment prices here?",
+        "No. Equipment and labour are price on application inside one scope."
+      ]
+    ],
+    "seo_keywords": "fire alarm installations, UK fire alarm installation, BS 5839 system install, new fire alarm system"
+  },
+  "fire-alarm-installer": {
+    "name": "Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installers",
+    "h1": "Fire alarm installer",
+    "seo_title": "Fire Alarm Installer | UK | iComply",
+    "intro": "A fire alarm installer designs the system, fits the devices and commissions it so the responsible person can take the logbook. iComply arranges that work for premises across England, Wales and mainland Scotland from the Stockport workshop. The quote is price on application after the building and the BS 5839 category are known.",
+    "body": "The installer visit is not a van with a box of detectors and a guessed layout. We read the fire strategy, walk the escape routes and agree detection, call points, sounders and any interfaces before cable is pulled. Commissioning proves the cause and effect that was written down. Paperwork stays with the person who booked. ",
+    "meta_desc": "Fire alarm installer for UK mainland premises. BS 5839 design, install and commissioning from Stockport. Price on application.",
+    "focus_points": [
+      "BS 5839 design agreed before installation",
+      "Panels, devices, call points and sounders fitted to that design",
+      "Commissioning and a logbook the dutyholder can keep",
+      "Price on application after the building is known"
+    ],
+    "faq": [
+      [
+        "Do you publish a price for a fire alarm installer?",
+        "No. The quote is price on application once the category, device count and access are clear."
+      ],
+      [
+        "Which standard do you install to?",
+        "Non-domestic work is planned against BS 5839-1. Dwellings are planned against BS 5839-6. The survey says which one applies."
+      ],
+      [
+        "Where is the workshop?",
+        "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE. Travel to the site is part of the quote."
+      ]
+    ],
+    "seo_keywords": "fire alarm installer, UK fire alarm installer, BS 5839 installer, fire alarm install Stockport"
+  },
+  "fire-alarm-installer-near-me": {
+    "name": "Fire Alarm Installer Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installer",
+    "h1": "Fire alarm installer near me",
+    "seo_title": "Fire Alarm Installer Near Me | UK | iComply",
+    "intro": "Searching for a fire alarm installer near you only helps if that installer will actually survey the building. iComply publishes a page for every UK mainland town over 10,000 people so the local page names the place. The engineer is scheduled from Stockport. The quote is price on application.",
+    "body": "Send the postcode, the panel make if you know it, and whether this is a new system or a fault on one that already exists. We say which town page matches the site and what the first visit has to prove. Near-me searches from places outside the mainland list are not given a town page. Ask and we will say whether the visit can be scheduled.",
+    "meta_desc": "Fire alarm installer near me, with a page for every UK mainland town over 10,000. BS 5839. Price on application.",
+    "focus_points": [
+      "Town pages for mainland places over 10,000 people",
+      "Postcode and panel details before a date is set",
+      "New installs and faults kept as different scopes",
+      "Price on application, including travel"
+    ],
+    "faq": [
+      [
+        "Why is there a town page if you are based in Stockport?",
+        "So the local search names the town you actually need, with travel written into the quote."
+      ],
+      [
+        "Do you cover my village?",
+        "Town pages are the mainland list over 10,000 people. Smaller places can still be quoted. They do not have their own page in this set."
+      ],
+      [
+        "How soon can an installer attend?",
+        "When the diary allows. "
+      ]
+    ],
+    "seo_keywords": "fire alarm installer near me, local fire alarm installer, fire alarm installer UK town"
+  },
+  "fire-alarm-installers": {
+    "name": "Fire Alarm Installers",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installer",
+    "h1": "Fire alarm installers",
+    "seo_title": "Fire Alarm Installers | UK | iComply",
+    "intro": "Fire alarm installers are the people who turn a written design into a working system. iComply sends competent engineers for new installs and extensions across the UK mainland, scheduled from Stockport. Each job is quoted price on application. ",
+    "body": "Installers need the panel type, the loop or zone plan and a building that can be accessed. We agree that before attendance. On site the work is device location, cable routes, cause and effect, and a handover the facilities lead can follow. Multi-site clients can book several premises on one instruction. Each building still gets its own scope.",
+    "meta_desc": "Fire alarm installers for mainland UK sites. Competent engineers, BS 5839 commissioning, price on application. Stockport base.",
+    "focus_points": [
+      "Competent installers for new systems and extensions",
+      "Scope written before anyone travels",
+      "Handover includes the logbook and zone information",
+      "Multi-site instructions quoted per building"
+    ],
+    "faq": [
+      [
+        "Can several installers attend one estate?",
+        "Yes, when the diary and the access plan allow. Each building is still scoped on its own."
+      ],
+      [
+        "Do installers cover Scotland and Wales?",
+        "Yes. England, Wales and mainland Scotland are on the town list. Islands and Northern Ireland are not."
+      ],
+      [
+        "Is there a fixed call-out price?",
+        "No. Attendance is price on application after the fault or the install scope is described."
+      ]
+    ],
+    "seo_keywords": "fire alarm installers, UK fire alarm installers, BS 5839 installers, commercial fire alarm installers"
+  },
+  "fire-alarm-installers-near-me": {
+    "name": "Fire Alarm Installers Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-installers",
+    "h1": "Fire alarm installers near me",
+    "seo_title": "Fire Alarm Installers Near Me | UK | iComply",
+    "intro": "Fire alarm installers near me means a team that will name your town and still tell you the job is scoped from a real survey. iComply covers the UK mainland town list from Stockport. Plural just means more than one engineer can be booked when the building needs it. Pricing stays price on application.",
+    "body": "A single fitter is enough for a small conventional panel. A larger addressable install may need two people for containment and commissioning on the same day. We say which one the survey supports. You do not pay a published pair-rate. The instruction names the headcount after the scope is clear.",
+    "meta_desc": "Fire alarm installers near me across UK mainland towns. Survey first, BS 5839 commissioning, price on application.",
+    "focus_points": [
+      "One engineer or a pair, decided in the scope",
+      "Mainland town pages, not a single national doorway",
+      "Addressable and conventional installs",
+      "No published pair-rate or day rate"
+    ],
+    "faq": [
+      [
+        "Do two installers cost double?",
+        "Not as a rule of thumb. The quote states the people the scope needs."
+      ],
+      [
+        "Can you attend outside England?",
+        "Wales and mainland Scotland are on the same town list. Northern Ireland is not."
+      ],
+      [
+        "Which page should I open for my town?",
+        "Use the town page under this guide. The hub explains the service. The town page names the place."
+      ]
+    ],
+    "seo_keywords": "fire alarm installers near me, local fire alarm company, fire alarm engineers near me"
+  },
+  "fire-alarm-maintenance-near-me": {
+    "name": "Fire Alarm Maintenance Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-service-near-me",
+    "hub_only": true,
+    "h1": "Fire alarm maintenance near me",
+    "seo_title": "Fire Alarm Maintenance Near Me | UK | iComply",
+    "intro": "Fire alarm maintenance near me is the ongoing plan: scheduled visits, defect close-out and a logbook that matches the panel. iComply agrees that plan for UK mainland buildings. Maintenance is price on application for the year or for a single visit. It is not a subscription with a hidden call-out table.",
+    "body": "We record false alarms, isolations and the devices tested. Repeat false alarms from one kitchen or one loading door are called out in the report so the cause can be designed out. A maintenance agreement does not make iComply the responsible person. The dutyholder keeps that role. We keep the system evidence up to date.",
+    "meta_desc": "Fire alarm maintenance near me for UK mainland sites. Scheduled BS 5839 visits and defect reports. Price on application.",
+    "focus_points": [
+      "Scheduled visits and a matching logbook",
+      "False alarm patterns written into the report",
+      "Single visits or a longer plan, both POA",
+      "Dutyholder remains the responsible person"
+    ],
+    "faq": [
+      [
+        "Do you take over legal responsibility?",
+        "No. Maintenance evidence is ours. The responsible person is still the dutyholder."
+      ],
+      [
+        "Can maintenance include emergency lighting?",
+        "Only if that is a separate instruction. It is not assumed on a fire alarm page."
+      ],
+      [
+        "What if we miss a visit?",
+        "The logbook should show the gap. We book the next one. We do not backdate a certificate."
+      ]
+    ],
+    "seo_keywords": "fire alarm maintenance near me, fire alarm service contract, BS 5839 maintenance UK"
+  },
+  "fire-alarm-repair-near-me": {
+    "name": "Fire Alarm Repair Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-service-near-me",
+    "hub_only": true,
+    "h1": "Fire alarm repair near me",
+    "seo_title": "Fire Alarm Repair Near Me | UK | iComply",
+    "intro": "Fire alarm repair near me is a fault on a system you already have: earth fault, open circuit, a dead sounder, a panel that will not reset. iComply diagnoses that across UK mainland towns. Repair is not a new installation. The quote is price on application after the fault text is known.",
+    "body": "Send a photo of the panel display and the postcode. We bring test gear for the likely cause and we do not replace a panel because a single device is dirty. If the repair needs a part on order, the building is left with a written note of what is isolated. A repair certificate covers the repair we made, not the whole historic system.",
+    "meta_desc": "Fire alarm repair near me on the UK mainland. Panel and device faults diagnosed. Price on application. Not a new-install page.",
+    "focus_points": [
+      "Faults on existing systems",
+      "Panel photo and postcode before attendance",
+      "Device repair before panel replacement",
+      "Written note of anything left isolated"
+    ],
+    "faq": [
+      [
+        "Can you repair any brand?",
+        "Most UK panels. If the panel is obsolete and parts do not exist, we say replacement is the repair."
+      ],
+      [
+        "Do you charge to look?",
+        "Attendance is quoted. "
+      ],
+      [
+        "Is repair the same as a service?",
+        "No. Repair fixes a fault. A service is the planned BS 5839 visit."
+      ]
+    ],
+    "seo_keywords": "fire alarm repair near me, fire panel repair, fire alarm fault UK"
+  },
+  "fire-alarm-service-near-me": {
+    "name": "Fire Alarm Service Near Me",
+    "service": "fire-alarms",
+    "related": "fire-alarm-maintenance-near-me",
+    "hub_only": true,
+    "h1": "Fire alarm service near me",
+    "seo_title": "Fire Alarm Service Near Me | UK | iComply",
+    "intro": "Fire alarm service near me is the planned BS 5839 maintenance visit, not a breakdown call. iComply carries out that service for UK mainland premises from Stockport. The period between visits follows the standard and the risk assessment, not a slogan. The quote is price on application.",
+    "body": "A service visit tests a portion of the devices, the panel, the batteries and the logbook, and records defects. It does not automatically include repairs. Defects are quoted before they are fixed, unless the instruction already allows minor parts. You get a service certificate for the visit, filed with the logbook.",
+    "meta_desc": "Fire alarm service near me. Planned BS 5839 maintenance for UK mainland sites. Defects quoted separately. Price on application.",
+    "focus_points": [
+      "Planned maintenance, not an emergency call",
+      "Devices, batteries, panel and logbook checked",
+      "Defects quoted before they are fixed",
+      "Service certificate for the visit itself"
+    ],
+    "faq": [
+      [
+        "How often is a fire alarm serviced?",
+        "BS 5839-1 sets the usual non-domestic pattern. "
+      ],
+      [
+        "Does the service include batteries?",
+        "Battery condition is checked. Replacement is in the quote when the test says they are due."
+      ],
+      [
+        "Can one visit cover several sites near each other?",
+        "Yes. Each site still gets its own certificate."
+      ]
+    ],
+    "seo_keywords": "fire alarm service near me, BS 5839 service, fire alarm maintenance visit UK"
+  },
+  "fire-alarm-specialist": {
+    "name": "Fire Alarm Specialist",
+    "service": "fire-alarms",
+    "related": "fire-alarm-specialists",
+    "hub_only": true,
+    "h1": "Fire alarm specialist",
+    "seo_title": "Fire Alarm Specialist | UK | iComply",
+    "intro": "A fire alarm specialist is the person you call when the system is awkward: cause and effect that nobody wrote down, a panel with no zone chart, or a design that no longer matches the building. iComply does that specialist work across the UK mainland. It is still BS 5839 work. The quote is price on application.",
+    "body": "Specialist does not mean a secret qualification we cannot name. It means time to investigate. We trace loops, rebuild zone text and say which devices are in the wrong room. If the honest outcome is a new system, we quote that instead of another year of fault-finding. Reports are written in plain language for the dutyholder.",
+    "meta_desc": "Fire alarm specialist for difficult UK mainland systems. Cause and effect, zone charts and honest replacement advice. POA.",
+    "focus_points": [
+      "Missing zone charts and undocumented cause and effect",
+      "Loop tracing and device location",
+      "Plain-language report for the dutyholder",
+      "Replacement quoted when repair is no longer honest"
+    ],
+    "faq": [
+      [
+        "Do you only do specialist investigations?",
+        "No. Installs and services are on their own pages. This page is the difficult-system work."
+      ],
+      [
+        "Can you decode an old panel program?",
+        "Often. If the software or the password is unavailable, we say the panel cannot be supported."
+      ],
+      [
+        "Is a specialist visit more expensive?",
+        "It takes longer. The quote says so. There is no specialist tariff printed here."
+      ]
+    ],
+    "seo_keywords": "fire alarm specialist, fire alarm cause and effect, fire panel investigation UK"
+  },
+  "fire-alarm-specialists": {
+    "name": "Fire Alarm Specialists",
+    "service": "fire-alarms",
+    "related": "fire-alarm-specialist",
+    "hub_only": true,
+    "h1": "Fire alarm specialists",
+    "seo_title": "Fire Alarm Specialists | UK | iComply",
+    "intro": "Fire alarm specialists, as a team, cover design questions, legacy panels and buildings where the fire strategy and the devices disagree. iComply fields that team from Stockport for UK mainland clients. You still get one point of contact. The quote is price on application.",
+    "body": "Use this page when more than one discipline is in the room: the assessor, the landlord and the contractor. We will attend a design meeting and then put the agreed category into an installation scope. We will not sit on a retained advisory fee with no visit. Advice that needs the building is a survey.",
+    "meta_desc": "Fire alarm specialists for design meetings and legacy systems. UK mainland. One point of contact. Price on application.",
+    "focus_points": [
+      "Design meetings with assessors, landlords and contractors",
+      "Legacy panels and mismatched strategies",
+      "One point of contact on the instruction",
+      "Advice that needs the building is a survey, not a retainer"
+    ],
+    "faq": [
+      [
+        "Can you review a specification before tender?",
+        "Yes. The review is quoted. We mark what cannot be built as drawn."
+      ],
+      [
+        "Do specialists also install?",
+        "Yes. The install is a separate line if you want us to build what we designed."
+      ],
+      [
+        "Are you independent of a panel manufacturer?",
+        "We are not tied to one factory. The panel is chosen for the protocol and the parts, and named in the quote."
+      ]
+    ],
+    "seo_keywords": "fire alarm specialists, fire alarm consultant installer, fire detection specialist UK"
+  },
+  "hmo-fire-alarm-installation": {
+    "name": "HMO Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "landlord-fire-alarm-installer",
+    "hub_only": true,
+    "h1": "HMO fire alarm installation",
+    "seo_title": "HMO Fire Alarm Installation | UK | iComply",
+    "intro": "HMO fire alarm installation follows the licence and BS 5839-6 for houses in multiple occupation: typically a higher grade than a single-family house, with coverage of bedrooms, the escape route and the kitchen. iComply installs that scope across UK mainland HMOs. The quote is price on application after the room count is known.",
+    "body": "We need the current licence conditions or the fire risk assessment actions before we specify. A mixed Grade A system in the common parts and Grade D in the flats is common and must not be muddled into one certificate. Testing includes the bedrooms the licence names, not only the hallway panel. Occupied rooms are booked with the manager so residents are not surprised.",
+    "meta_desc": "HMO fire alarm installation to the licence and BS 5839-6. UK mainland. Common parts and bedrooms scoped separately. POA.",
+    "focus_points": [
+      "Licence conditions read before the design",
+      "Bedrooms, escape route and kitchen covered as specified",
+      "Grade A common parts and Grade D dwellings kept distinct",
+      "Occupied rooms booked with the manager"
+    ],
+    "faq": [
+      [
+        "Is every HMO a Grade A system?",
+        "No. The licence and the building decide. We do not apply one grade to every HMO."
+      ],
+      [
+        "Can you install while tenants are in?",
+        "Yes, room by room, when the manager has told them."
+      ],
+      [
+        "Do you deal with the council?",
+        "We provide the installation evidence. Speaking for the licence is the landlord's role unless you instruct us to attend a meeting."
+      ]
+    ],
+    "seo_keywords": "HMO fire alarm installation, house in multiple occupation fire alarm, BS 5839-6 HMO UK"
+  },
+  "landlord-fire-alarm-installer": {
+    "name": "Landlord Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "hmo-fire-alarm-installation",
+    "hub_only": true,
+    "h1": "Landlord fire alarm installer",
+    "seo_title": "Landlord Fire Alarm Installer | UK | iComply",
+    "intro": "A landlord fire alarm installer fits and documents detection for rented houses, flats and small blocks. iComply works for landlords and agents across the UK mainland. The alarm grade follows BS 5839-6 and the licence or fire risk assessment, not a generic landlord pack. Price on application.",
+    "body": "We ask which storeys are let, whether there is a shared hallway, and what the local licence already requires. A single house and an HMO are not the same design. Paperwork is written so an agent can file it against the property address. We do not supply a one-page certificate that hides untested rooms.",
+    "meta_desc": "Landlord fire alarm installer for rented homes on the UK mainland. BS 5839-6. Agent-ready paperwork. Price on application.",
+    "focus_points": [
+      "Rented houses, flats and small blocks",
+      "Grade matched to the licence and BS 5839-6",
+      "Shared hallways treated differently from single houses",
+      "Paperwork filed against the property address"
+    ],
+    "faq": [
+      [
+        "Do all landlords need the same alarms?",
+        "No. Storeys, inner rooms and HMO status change the category."
+      ],
+      [
+        "Can you invoice the agent?",
+        "Yes, when the agent is the person who booked. The property address is still on the paperwork."
+      ],
+      [
+        "Do you also do the gas safety certificate?",
+        "Gas work, where it is instructed, is carried out by Gas Safe registered engineers. This page is the fire alarm install."
+      ]
+    ],
+    "seo_keywords": "landlord fire alarm installer, rental property fire alarms, BS 5839-6 landlord UK"
+  },
+  "same-day-fire-alarm-installer": {
+    "name": "Same Day Fire Alarm Installer",
+    "service": "fire-alarms",
+    "related": "emergency-fire-alarm-installer",
+    "hub_only": true,
+    "h1": "Same day fire alarm installer",
+    "seo_title": "Same Day Fire Alarm Installer | UK | iComply",
+    "intro": "A same-day fire alarm installer is a request for attendance today, not a promise that every part will be fitted today. iComply will say yes only when an engineer and the right materials are actually free for a UK mainland site. If they are not, we give the next window. The quote is price on application.",
+    "body": "Same-day work is usually a fault, a single device, or making a zone safe. A full addressable install is rarely a same-day product because the design and the cable take longer than a diary gap. We will not pretend otherwise. When same-day attendance happens, the notes still name the cause and the test result.",
+    "meta_desc": "Same day fire alarm installer when an engineer is free. UK mainland. Faults and make-safe, not a guaranteed full install. POA.",
+    "focus_points": [
+      "Attendance today only when someone is free",
+      "Faults and make-safe more often than full installs",
+      "Next window given when today is not possible",
+      "Test result still written down"
+    ],
+    "faq": [
+      [
+        "Can you guarantee same-day arrival?",
+        "No. The page describes the request. The diary decides."
+      ],
+      [
+        "Will you start a new install the day I call?",
+        "Only for a very small agreed scope. Larger installs are surveyed first."
+      ],
+      [
+        "Do you charge more for same-day?",
+        "There is no surcharge table. The quote says what the visit costs."
+      ]
+    ],
+    "seo_keywords": "same day fire alarm installer, fire alarm engineer today, urgent fire alarm UK"
+  },
+  "warehouse-fire-alarm-installation": {
+    "name": "Warehouse Fire Alarm Installation",
+    "service": "fire-alarms",
+    "related": "factory-fire-alarm-system",
+    "hub_only": true,
+    "h1": "Warehouse fire alarm installation",
+    "seo_title": "Warehouse Fire Alarm Installation | UK | iComply",
+    "intro": "Warehouse fire alarm installation has to cope with height, racking and dust. iComply surveys the shed before naming beams, aspirating pipe or heat detection. The work is commissioned to BS 5839 and quoted price on application for UK mainland warehouses.",
+    "body": "A point smoke detector under a 12 metre roof often does nothing useful. We say so. Cable routes stay out of forklift paths. Cause and effect can release shutters or signal the sprinkler interface only when the strategy includes that. Out-of-hours testing is available when the operation cannot stop a pick-face during the day. It is booked, not assumed.",
+    "meta_desc": "Warehouse fire alarm installation for high-bay and racked buildings. BS 5839 survey first. Price on application.",
+    "focus_points": [
+      "Height and racking surveyed before device choice",
+      "Beam, aspirating or heat detection when point smoke is wrong",
+      "Cable kept out of forklift routes",
+      "Shutters and sprinklers only if the strategy includes them"
+    ],
+    "faq": [
+      [
+        "Do you install in live warehouses?",
+        "Yes, with a traffic plan. We do not pull cable across an active aisle without an agreed window."
+      ],
+      [
+        "Can one system cover several units?",
+        "Sometimes. Party walls and landlord risers decide it. The survey says whether they are one system or several."
+      ],
+      [
+        "Is a warehouse quote the same as an office quote?",
+        "No. Volume and access change the labour. Both are price on application."
+      ]
+    ],
+    "seo_keywords": "warehouse fire alarm installation, high bay fire detection, industrial fire alarm UK"
+  },
+  "5-year-eicr-certificate": {
+    "name": "5-Year EICR Certificate",
+    "service": "electrical",
+    "related": "eicr",
+    "intro": "A five-year Electrical Installation Condition Report for rented homes and HMOs, with the circuits tested, observations coded C1, C2, C3 or FI and the certificate issued for your tenant and council file. Icomply Property Services cover Greater Manchester and the North West from Stockport. EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count.",
+    "body": "A five-year Electrical Installation Condition Report for rented homes and HMOs, with the circuits tested, observations coded C1, C2, C3 or FI and the certificate issued for your tenant and council file. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "5-Year EICR Certificate in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "5-year eicr certificate, 5-year eicr certificate manchester, 5-year eicr certificate stockport, 5-year eicr certificate north west, electrical",
+    "focus_points": [
+      "A visit and written quote for 5-year eicr certificate",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does 5-year eicr certificate include?",
+        "A five-year Electrical Installation Condition Report for rented homes and HMOs, with the circuits tested, observations coded C1, C2, C3 or FI and the certificate issued for your tenant and council file."
+      ],
+      [
+        "How much is 5-year eicr certificate?",
+        "EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count."
+      ],
+      [
+        "Do you cover my town for 5-year eicr certificate?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book 5-year eicr certificate?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "eicr-cost-near-me": {
+    "name": "EICR Cost Near Me",
+    "service": "electrical",
+    "related": "eicr",
+    "intro": "A local EICR priced from £160 for a typical property, with the final figure confirmed once we know the number of circuits and boards on site. Icomply Property Services cover Greater Manchester and the North West from Stockport. EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count.",
+    "body": "A local EICR priced from £160 for a typical property, with the final figure confirmed once we know the number of circuits and boards on site. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "EICR Cost Near Me in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "eicr cost near me, eicr cost near me manchester, eicr cost near me stockport, eicr cost near me north west, electrical",
+    "focus_points": [
+      "A visit and written quote for eicr cost near me",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does eicr cost near me include?",
+        "A local EICR priced from £160 for a typical property, with the final figure confirmed once we know the number of circuits and boards on site."
+      ],
+      [
+        "How much is eicr cost near me?",
+        "EICRs are from £160 for a typical property; larger installations are POA until we know the circuit count."
+      ],
+      [
+        "Do you cover my town for eicr cost near me?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book eicr cost near me?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "acrylic-render-cost": {
+    "name": "Acrylic Render Cost",
+    "service": "rendering",
+    "related": "external-rendering",
+    "intro": "Thin-coat acrylic render over a prepared base coat and mesh, with the price set by wall area, scaffold access and the repairs needed before the finish goes on. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Thin-coat acrylic render over a prepared base coat and mesh, with the price set by wall area, scaffold access and the repairs needed before the finish goes on. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Acrylic Render Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "acrylic render cost, acrylic render cost manchester, acrylic render cost stockport, acrylic render cost north west, rendering",
+    "focus_points": [
+      "A visit and written quote for acrylic render cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does acrylic render cost include?",
+        "Thin-coat acrylic render over a prepared base coat and mesh, with the price set by wall area, scaffold access and the repairs needed before the finish goes on."
+      ],
+      [
+        "How much is acrylic render cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for acrylic render cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book acrylic render cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "external-rendering-cost": {
+    "name": "External Rendering Cost",
+    "service": "rendering",
+    "related": "external-rendering",
+    "intro": "External render on houses and small blocks, from hacking off failed render to beads, base coat, mesh and the final silicone, acrylic or sand and cement finish. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "External render on houses and small blocks, from hacking off failed render to beads, base coat, mesh and the final silicone, acrylic or sand and cement finish. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "External Rendering Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "external rendering cost, external rendering cost manchester, external rendering cost stockport, external rendering cost north west, rendering",
+    "focus_points": [
+      "A visit and written quote for external rendering cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does external rendering cost include?",
+        "External render on houses and small blocks, from hacking off failed render to beads, base coat, mesh and the final silicone, acrylic or sand and cement finish."
+      ],
+      [
+        "How much is external rendering cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for external rendering cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book external rendering cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "rendering-prices": {
+    "name": "Rendering Prices",
+    "service": "rendering",
+    "related": "external-rendering",
+    "intro": "Clear rendering quotes broken down by wall area, access, preparation and finish, so you can compare silicone, acrylic, monocouche and sand and cement systems. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Clear rendering quotes broken down by wall area, access, preparation and finish, so you can compare silicone, acrylic, monocouche and sand and cement systems. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Rendering Prices in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "rendering prices, rendering prices manchester, rendering prices stockport, rendering prices north west, rendering",
+    "focus_points": [
+      "A visit and written quote for rendering prices",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does rendering prices include?",
+        "Clear rendering quotes broken down by wall area, access, preparation and finish, so you can compare silicone, acrylic, monocouche and sand and cement systems."
+      ],
+      [
+        "How much is rendering prices?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for rendering prices?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book rendering prices?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "render-and-paint-package-cost": {
+    "name": "Render and Paint Package Cost",
+    "service": "rendering",
+    "related": "external-rendering",
+    "intro": "A combined package to repair and re-render tired elevations and finish them with a breathable masonry paint in one visit under one scaffold. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A combined package to repair and re-render tired elevations and finish them with a breathable masonry paint in one visit under one scaffold. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Render and Paint Package Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "render and paint package cost, render and paint package cost manchester, render and paint package cost stockport, render and paint package cost north west, rendering",
+    "focus_points": [
+      "A visit and written quote for render and paint package cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does render and paint package cost include?",
+        "A combined package to repair and re-render tired elevations and finish them with a breathable masonry paint in one visit under one scaffold."
+      ],
+      [
+        "How much is render and paint package cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for render and paint package cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book render and paint package cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "air-source-heat-pumps-site-attendance": {
+    "name": "Air Source Heat Pumps Site Attendance",
+    "service": "heating",
+    "related": "air-source-heat-pumps-site-attendance",
+    "intro": "Site attendance for air source heat pump jobs, covering surveys, heat-loss checks, radiator sizing and the follow-up visits needed after the unit is fitted. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Site attendance for air source heat pump jobs, covering surveys, heat-loss checks, radiator sizing and the follow-up visits needed after the unit is fitted. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Air Source Heat Pumps Site Attendance across Greater Manchester and the North West from our local Stockport team. Free quote, call 07517 806082",
+    "seo_keywords": "air source heat pumps site attendance, air source heat pumps site attendance manchester, air source heat pumps site attendance stockport, air source heat pumps site attendance north west, heating installation",
+    "focus_points": [
+      "A visit and written quote for air source heat pumps site attendance",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does air source heat pumps site attendance include?",
+        "Site attendance for air source heat pump jobs, covering surveys, heat-loss checks, radiator sizing and the follow-up visits needed after the unit is fitted."
+      ],
+      [
+        "How much is air source heat pumps site attendance?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for air source heat pumps site attendance?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book air source heat pumps site attendance?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "radiator-balancing-service": {
+    "name": "Radiator Balancing Service",
+    "service": "heating",
+    "related": "radiator-balancing-service",
+    "intro": "Balancing the lockshield valves on every radiator so the whole system heats evenly, the boiler cycles less and cold rooms at the end of the run warm up. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Balancing the lockshield valves on every radiator so the whole system heats evenly, the boiler cycles less and cold rooms at the end of the run warm up. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Radiator Balancing Service in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "radiator balancing service, radiator balancing service manchester, radiator balancing service stockport, radiator balancing service north west, heating installation",
+    "focus_points": [
+      "A visit and written quote for radiator balancing service",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does radiator balancing service include?",
+        "Balancing the lockshield valves on every radiator so the whole system heats evenly, the boiler cycles less and cold rooms at the end of the run warm up."
+      ],
+      [
+        "How much is radiator balancing service?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for radiator balancing service?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book radiator balancing service?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "basement-tanking-cost": {
+    "name": "Basement Tanking Cost",
+    "service": "damp-proofing",
+    "related": "basement-tanking-support",
+    "intro": "Cementitious tanking or cavity drain membranes for cellars and basements, priced after a survey of the walls, floor, water ingress and how the space will be used. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Cementitious tanking or cavity drain membranes for cellars and basements, priced after a survey of the walls, floor, water ingress and how the space will be used. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Basement Tanking Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "basement tanking cost, basement tanking cost manchester, basement tanking cost stockport, basement tanking cost north west, damp proofing",
+    "focus_points": [
+      "A visit and written quote for basement tanking cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does basement tanking cost include?",
+        "Cementitious tanking or cavity drain membranes for cellars and basements, priced after a survey of the walls, floor, water ingress and how the space will be used."
+      ],
+      [
+        "How much is basement tanking cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for basement tanking cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book basement tanking cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "damp-proofing-prices": {
+    "name": "Damp Proofing Prices",
+    "service": "damp-proofing",
+    "related": "basement-tanking-support",
+    "intro": "Damp proofing quotes that separate rising damp, penetrating damp and condensation, so you only pay for the treatment the survey shows is needed. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Damp proofing quotes that separate rising damp, penetrating damp and condensation, so you only pay for the treatment the survey shows is needed. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Damp Proofing Prices in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "damp proofing prices, damp proofing prices manchester, damp proofing prices stockport, damp proofing prices north west, damp proofing",
+    "focus_points": [
+      "A visit and written quote for damp proofing prices",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does damp proofing prices include?",
+        "Damp proofing quotes that separate rising damp, penetrating damp and condensation, so you only pay for the treatment the survey shows is needed."
+      ],
+      [
+        "How much is damp proofing prices?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for damp proofing prices?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book damp proofing prices?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "damp-proofing-service-cost": {
+    "name": "Damp Proofing Service Cost",
+    "service": "damp-proofing",
+    "related": "basement-tanking-support",
+    "intro": "A damp proofing service from first survey to injected DPC, replastering and a written record of the works for your files. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A damp proofing service from first survey to injected DPC, replastering and a written record of the works for your files. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Damp Proofing Service Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "damp proofing service cost, damp proofing service cost manchester, damp proofing service cost stockport, damp proofing service cost north west, damp proofing",
+    "focus_points": [
+      "A visit and written quote for damp proofing service cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does damp proofing service cost include?",
+        "A damp proofing service from first survey to injected DPC, replastering and a written record of the works for your files."
+      ],
+      [
+        "How much is damp proofing service cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for damp proofing service cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book damp proofing service cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "damp-survey-cost": {
+    "name": "Damp Survey Cost",
+    "service": "damp-proofing",
+    "related": "basement-tanking-support",
+    "intro": "A damp survey with moisture readings, a look at ground levels, gutters and ventilation, and a written report that names the cause before any work is quoted. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A damp survey with moisture readings, a look at ground levels, gutters and ventilation, and a written report that names the cause before any work is quoted. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Damp Survey Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "damp survey cost, damp survey cost manchester, damp survey cost stockport, damp survey cost north west, damp proofing",
+    "focus_points": [
+      "A visit and written quote for damp survey cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does damp survey cost include?",
+        "A damp survey with moisture readings, a look at ground levels, gutters and ventilation, and a written report that names the cause before any work is quoted."
+      ],
+      [
+        "How much is damp survey cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for damp survey cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book damp survey cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "penetrating-damp-repair-cost": {
+    "name": "Penetrating Damp Repair Cost",
+    "service": "damp-proofing",
+    "related": "basement-tanking-support",
+    "intro": "Finding and fixing the route water takes through walls, from pointing and render cracks to failed gutters, sills and flashings, then making good inside. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Finding and fixing the route water takes through walls, from pointing and render cracks to failed gutters, sills and flashings, then making good inside. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Penetrating Damp Repair Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "penetrating damp repair cost, penetrating damp repair cost manchester, penetrating damp repair cost stockport, penetrating damp repair cost north west, damp proofing",
+    "focus_points": [
+      "A visit and written quote for penetrating damp repair cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does penetrating damp repair cost include?",
+        "Finding and fixing the route water takes through walls, from pointing and render cracks to failed gutters, sills and flashings, then making good inside."
+      ],
+      [
+        "How much is penetrating damp repair cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for penetrating damp repair cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book penetrating damp repair cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "building-surveys-near-me": {
+    "name": "Building Surveys Near Me",
+    "service": "building-surveys",
+    "related": "building-surveys-near-me",
+    "intro": "Local building surveys for buyers, owners and landlords, covering structure, roof, damp, services and the defects worth budgeting for. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Local building surveys for buyers, owners and landlords, covering structure, roof, damp, services and the defects worth budgeting for. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Building Surveys Near Me in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "building surveys near me, building surveys near me manchester, building surveys near me stockport, building surveys near me north west, building surveys",
+    "focus_points": [
+      "A visit and written quote for building surveys near me",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does building surveys near me include?",
+        "Local building surveys for buyers, owners and landlords, covering structure, roof, damp, services and the defects worth budgeting for."
+      ],
+      [
+        "How much is building surveys near me?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for building surveys near me?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book building surveys near me?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "dilapidations-support-survey-quote": {
+    "name": "Dilapidations Support Survey Quote",
+    "service": "building-surveys",
+    "related": "dilapidations-support-survey-quote",
+    "intro": "Dilapidations surveys at the end of a lease, with a schedule of the repairs, reinstatement and decoration needed and the works to close it out. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Dilapidations surveys at the end of a lease, with a schedule of the repairs, reinstatement and decoration needed and the works to close it out. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Dilapidations Support Survey Quote in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "dilapidations support survey quote, dilapidations support survey quote manchester, dilapidations support survey quote stockport, dilapidations support survey quote north west, building surveys",
+    "focus_points": [
+      "A visit and written quote for dilapidations support survey quote",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does dilapidations support survey quote include?",
+        "Dilapidations surveys at the end of a lease, with a schedule of the repairs, reinstatement and decoration needed and the works to close it out."
+      ],
+      [
+        "How much is dilapidations support survey quote?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for dilapidations support survey quote?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book dilapidations support survey quote?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "boiler-service-and-repair-package": {
+    "name": "Boiler Service and Repair Package",
+    "service": "gas-systems",
+    "related": "boiler-service-and-repair-package",
+    "intro": "An annual boiler service with a repair visit included in one package, carried out by Gas Safe registered engineers with flue and safety checks recorded. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "An annual boiler service with a repair visit included in one package, carried out by Gas Safe registered engineers with flue and safety checks recorded. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. All gas work is carried out by Gas Safe registered engineers. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Boiler Service and Repair Package in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "boiler service and repair package, boiler service and repair package manchester, boiler service and repair package stockport, boiler service and repair package north west, gas systems",
+    "focus_points": [
+      "A visit and written quote for boiler service and repair package",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does boiler service and repair package include?",
+        "An annual boiler service with a repair visit included in one package, carried out by Gas Safe registered engineers with flue and safety checks recorded."
+      ],
+      [
+        "How much is boiler service and repair package?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for boiler service and repair package?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book boiler service and repair package?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "boiler-service-gas-safe": {
+    "name": "Full Boiler Service",
+    "service": "gas-systems",
+    "related": "boiler-service-gas-safe",
+    "intro": "A full boiler service carried out by Gas Safe registered engineers, with combustion analysis, flue checks, seals and the service record left with you. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A full boiler service carried out by Gas Safe registered engineers, with combustion analysis, flue checks, seals and the service record left with you. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. All gas work is carried out by Gas Safe registered engineers. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Full boiler service carried out by Gas Safe registered engineers in Greater Manchester and the North West. Free written quote, call 07517 806082.",
+    "seo_keywords": "boiler service by gas safe registered engineers, boiler service by gas safe registered engineers manchester, boiler service by gas safe registered engineers stockport, boiler service by gas safe registered engineers north west, gas systems",
+    "focus_points": [
+      "A visit and written quote for boiler service by gas safe registered engineers",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does boiler service by gas safe registered engineers include?",
+        "A full boiler service carried out by Gas Safe registered engineers, with combustion analysis, flue checks, seals and the service record left with you."
+      ],
+      [
+        "How much is boiler service by gas safe registered engineers?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for boiler service by gas safe registered engineers?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book boiler service by gas safe registered engineers?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "commercial-kitchen-fire-safety-package": {
+    "name": "Commercial Kitchen Fire Safety Package",
+    "service": "kitchen-fire-suppression",
+    "related": "commercial-kitchen-fire-safety-package",
+    "intro": "Fire safety for commercial kitchens in one package, covering wet chemical suppression, extinguishers, the gas interlock and the paperwork your insurer asks for. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Fire safety for commercial kitchens in one package, covering wet chemical suppression, extinguishers, the gas interlock and the paperwork your insurer asks for. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Commercial Kitchen Fire Safety Package across Greater Manchester and the North West from our local Stockport team. Free quote, call 07517 806082",
+    "seo_keywords": "commercial kitchen fire safety package, commercial kitchen fire safety package manchester, commercial kitchen fire safety package stockport, commercial kitchen fire safety package north west, kitchen fire suppression",
+    "focus_points": [
+      "A visit and written quote for commercial kitchen fire safety package",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does commercial kitchen fire safety package include?",
+        "Fire safety for commercial kitchens in one package, covering wet chemical suppression, extinguishers, the gas interlock and the paperwork your insurer asks for."
+      ],
+      [
+        "How much is commercial kitchen fire safety package?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for commercial kitchen fire safety package?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book commercial kitchen fire safety package?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "commercial-plumbing-support": {
+    "name": "Commercial Plumbing Support",
+    "service": "plumbing",
+    "related": "plumbing-services",
+    "intro": "Planned and reactive plumbing for shops, offices and blocks, from leaks and blocked wastes to washroom repairs, water heaters and isolation valves. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Planned and reactive plumbing for shops, offices and blocks, from leaks and blocked wastes to washroom repairs, water heaters and isolation valves. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Commercial Plumbing Support in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "commercial plumbing support, commercial plumbing support manchester, commercial plumbing support stockport, commercial plumbing support north west, plumbing",
+    "focus_points": [
+      "A visit and written quote for commercial plumbing support",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does commercial plumbing support include?",
+        "Planned and reactive plumbing for shops, offices and blocks, from leaks and blocked wastes to washroom repairs, water heaters and isolation valves."
+      ],
+      [
+        "How much is commercial plumbing support?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for commercial plumbing support?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book commercial plumbing support?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "dishwasher-plumbing-install": {
+    "name": "Dishwasher Plumbing Install",
+    "service": "plumbing",
+    "related": "kitchen-plumbing",
+    "intro": "Plumbing in a dishwasher with a new valve, a correctly looped waste into the sink trap or standpipe and a leak check under load. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Plumbing in a dishwasher with a new valve, a correctly looped waste into the sink trap or standpipe and a leak check under load. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Dishwasher Plumbing Install in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "dishwasher plumbing install, dishwasher plumbing install manchester, dishwasher plumbing install stockport, dishwasher plumbing install north west, plumbing",
+    "focus_points": [
+      "A visit and written quote for dishwasher plumbing install",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does dishwasher plumbing install include?",
+        "Plumbing in a dishwasher with a new valve, a correctly looped waste into the sink trap or standpipe and a leak check under load."
+      ],
+      [
+        "How much is dishwasher plumbing install?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for dishwasher plumbing install?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book dishwasher plumbing install?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "soil-stack-repair": {
+    "name": "Soil Stack Repair",
+    "service": "plumbing",
+    "related": "plumbing-services",
+    "intro": "Repairing or replacing cracked, leaking or blocked soil stacks and their joints, internal or external, with access and making good included in the scope. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Repairing or replacing cracked, leaking or blocked soil stacks and their joints, internal or external, with access and making good included in the scope. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Soil Stack Repair in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "soil stack repair, soil stack repair manchester, soil stack repair stockport, soil stack repair north west, plumbing",
+    "focus_points": [
+      "A visit and written quote for soil stack repair",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does soil stack repair include?",
+        "Repairing or replacing cracked, leaking or blocked soil stacks and their joints, internal or external, with access and making good included in the scope."
+      ],
+      [
+        "How much is soil stack repair?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for soil stack repair?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book soil stack repair?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "commercial-washroom-fit-out-cost": {
+    "name": "Commercial Washroom Fit-Out Cost",
+    "service": "commercial-fit-out",
+    "related": "commercial-washroom-fit-out-cost",
+    "intro": "Washroom fit-outs for offices, shops and venues, including cubicles, sanitaryware, accessible facilities, wall finishes and the plumbing behind them. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Washroom fit-outs for offices, shops and venues, including cubicles, sanitaryware, accessible facilities, wall finishes and the plumbing behind them. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Commercial Washroom Fit-Out Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "commercial washroom fit-out cost, commercial washroom fit-out cost manchester, commercial washroom fit-out cost stockport, commercial washroom fit-out cost north west, commercial fit-out",
+    "focus_points": [
+      "A visit and written quote for commercial washroom fit-out cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does commercial washroom fit-out cost include?",
+        "Washroom fit-outs for offices, shops and venues, including cubicles, sanitaryware, accessible facilities, wall finishes and the plumbing behind them."
+      ],
+      [
+        "How much is commercial washroom fit-out cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for commercial washroom fit-out cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book commercial washroom fit-out cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "custom-storage-joinery-quote": {
+    "name": "Custom Storage Joinery Quote",
+    "service": "joinery",
+    "related": "custom-storage-joinery-quote",
+    "intro": "Made-to-measure alcove units, wardrobes, under-stair storage and shelving, built and fitted by joiners to suit your room and finish. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Made-to-measure alcove units, wardrobes, under-stair storage and shelving, built and fitted by joiners to suit your room and finish. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Custom Storage Joinery Quote in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "custom storage joinery quote, custom storage joinery quote manchester, custom storage joinery quote stockport, custom storage joinery quote north west, joinery",
+    "focus_points": [
+      "A visit and written quote for custom storage joinery quote",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does custom storage joinery quote include?",
+        "Made-to-measure alcove units, wardrobes, under-stair storage and shelving, built and fitted by joiners to suit your room and finish."
+      ],
+      [
+        "How much is custom storage joinery quote?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for custom storage joinery quote?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book custom storage joinery quote?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "joinery-stockport": {
+    "name": "Joinery Stockport",
+    "service": "joinery",
+    "related": "joinery-stockport",
+    "intro": "Joinery from our Stockport base, from doors, skirting and architrave to stairs, built-in storage and first and second fix on renovations. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Joinery from our Stockport base, from doors, skirting and architrave to stairs, built-in storage and first and second fix on renovations. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Joinery Stockport in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "joinery stockport, joinery stockport manchester, joinery stockport stockport, joinery stockport north west, joinery",
+    "focus_points": [
+      "A visit and written quote for joinery stockport",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does joinery stockport include?",
+        "Joinery from our Stockport base, from doors, skirting and architrave to stairs, built-in storage and first and second fix on renovations."
+      ],
+      [
+        "How much is joinery stockport?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for joinery stockport?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book joinery stockport?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "decking-installation-cost": {
+    "name": "Decking Installation Cost",
+    "service": "landscaping",
+    "related": "decking-installation-cost",
+    "intro": "Timber or composite decking on a level, ventilated frame with joist spacing, fixings and edge trims chosen for the boards you pick. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Timber or composite decking on a level, ventilated frame with joist spacing, fixings and edge trims chosen for the boards you pick. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Decking Installation Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "decking installation cost, decking installation cost manchester, decking installation cost stockport, decking installation cost north west, landscaping",
+    "focus_points": [
+      "A visit and written quote for decking installation cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does decking installation cost include?",
+        "Timber or composite decking on a level, ventilated frame with joist spacing, fixings and edge trims chosen for the boards you pick."
+      ],
+      [
+        "How much is decking installation cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for decking installation cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book decking installation cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "dry-and-wet-risers-prices": {
+    "name": "Dry and Wet Risers Prices",
+    "service": "dry-risers",
+    "related": "dry-and-wet-risers-prices",
+    "intro": "Dry and wet riser testing, servicing and repairs to BS 9990, with the annual pressure test and six-monthly visual checks recorded. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Dry and wet riser testing, servicing and repairs to BS 9990, with the annual pressure test and six-monthly visual checks recorded. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Dry and Wet Risers Prices in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "dry and wet risers prices, dry and wet risers prices manchester, dry and wet risers prices stockport, dry and wet risers prices north west, dry & wet risers",
+    "focus_points": [
+      "A visit and written quote for dry and wet risers prices",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does dry and wet risers prices include?",
+        "Dry and wet riser testing, servicing and repairs to BS 9990, with the annual pressure test and six-monthly visual checks recorded."
+      ],
+      [
+        "How much is dry and wet risers prices?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for dry and wet risers prices?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book dry and wet risers prices?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "emergency-lighting-survey-cost": {
+    "name": "Emergency Lighting Survey Cost",
+    "service": "emergency-lighting",
+    "related": "emergency-lighting-survey-cost",
+    "intro": "A survey of escape routes, fittings and durations against BS 5266, with a written list of the gaps and the work needed to put them right. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A survey of escape routes, fittings and durations against BS 5266, with a written list of the gaps and the work needed to put them right. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Emergency Lighting Survey Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "emergency lighting survey cost, emergency lighting survey cost manchester, emergency lighting survey cost stockport, emergency lighting survey cost north west, emergency lighting",
+    "focus_points": [
+      "A visit and written quote for emergency lighting survey cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does emergency lighting survey cost include?",
+        "A survey of escape routes, fittings and durations against BS 5266, with a written list of the gaps and the work needed to put them right."
+      ],
+      [
+        "How much is emergency lighting survey cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for emergency lighting survey cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book emergency lighting survey cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "evacuation-strategy-document": {
+    "name": "Evacuation Strategy Document",
+    "service": "fire-risk-assessments",
+    "related": "evacuation-strategy-document",
+    "intro": "A written evacuation strategy that sets out stay-put, simultaneous or phased evacuation, refuges and the plans for people who need help to leave. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A written evacuation strategy that sets out stay-put, simultaneous or phased evacuation, refuges and the plans for people who need help to leave. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Evacuation Strategy Document in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "evacuation strategy document, evacuation strategy document manchester, evacuation strategy document stockport, evacuation strategy document north west, fire risk assessments",
+    "focus_points": [
+      "A visit and written quote for evacuation strategy document",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does evacuation strategy document include?",
+        "A written evacuation strategy that sets out stay-put, simultaneous or phased evacuation, refuges and the plans for people who need help to leave."
+      ],
+      [
+        "How much is evacuation strategy document?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for evacuation strategy document?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book evacuation strategy document?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "fire-strategy-fit-out-coordination": {
+    "name": "Fire Strategy Fit-Out Coordination",
+    "service": "fire-compartmentation",
+    "related": "fire-strategy-fit-out-coordination",
+    "intro": "Keeping a fit-out in line with the building's fire strategy, from compartment lines and fire stopping to doors, alarms and the handover pack. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Keeping a fit-out in line with the building's fire strategy, from compartment lines and fire stopping to doors, alarms and the handover pack. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Fire Strategy Fit-Out Coordination in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "fire strategy fit-out coordination, fire strategy fit-out coordination manchester, fire strategy fit-out coordination stockport, fire strategy fit-out coordination north west, fire compartmentation",
+    "focus_points": [
+      "A visit and written quote for fire strategy fit-out coordination",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does fire strategy fit-out coordination include?",
+        "Keeping a fit-out in line with the building's fire strategy, from compartment lines and fire stopping to doors, alarms and the handover pack."
+      ],
+      [
+        "How much is fire strategy fit-out coordination?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for fire strategy fit-out coordination?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book fire strategy fit-out coordination?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "epc-insulation-works-cost": {
+    "name": "EPC Insulation Works Cost",
+    "service": "insulation",
+    "related": "epc-insulation-works-cost",
+    "intro": "Insulation works that lift an EPC rating, such as loft top-ups, cavity fill, internal wall insulation and draught-proofing, scoped against your current certificate. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Insulation works that lift an EPC rating, such as loft top-ups, cavity fill, internal wall insulation and draught-proofing, scoped against your current certificate. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "EPC Insulation Works Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "epc insulation works cost, epc insulation works cost manchester, epc insulation works cost stockport, epc insulation works cost north west, insulation",
+    "focus_points": [
+      "A visit and written quote for epc insulation works cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does epc insulation works cost include?",
+        "Insulation works that lift an EPC rating, such as loft top-ups, cavity fill, internal wall insulation and draught-proofing, scoped against your current certificate."
+      ],
+      [
+        "How much is epc insulation works cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for epc insulation works cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book epc insulation works cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "extension-building-package-quote": {
+    "name": "Extension Building Package Quote",
+    "service": "extensions",
+    "related": "extension-building-package-quote",
+    "intro": "A single quote for an extension covering groundworks, shell, roof, windows, first and second fix and finishes, with stages agreed up front. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "A single quote for an extension covering groundworks, shell, roof, windows, first and second fix and finishes, with stages agreed up front. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Extension Building Package Quote in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "extension building package quote, extension building package quote manchester, extension building package quote stockport, extension building package quote north west, home extensions",
+    "focus_points": [
+      "A visit and written quote for extension building package quote",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does extension building package quote include?",
+        "A single quote for an extension covering groundworks, shell, roof, windows, first and second fix and finishes, with stages agreed up front."
+      ],
+      [
+        "How much is extension building package quote?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for extension building package quote?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book extension building package quote?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "loft-conversion-project-management": {
+    "name": "Loft Conversion Project Management",
+    "service": "loft-conversions",
+    "related": "loft-conversion-project-management",
+    "intro": "Managing a loft conversion from drawings and building control to steels, dormer, stairs, insulation and the completion certificate. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Managing a loft conversion from drawings and building control to steels, dormer, stairs, insulation and the completion certificate. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Loft Conversion Project Management in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "loft conversion project management, loft conversion project management manchester, loft conversion project management stockport, loft conversion project management north west, loft conversions",
+    "focus_points": [
+      "A visit and written quote for loft conversion project management",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does loft conversion project management include?",
+        "Managing a loft conversion from drawings and building control to steels, dormer, stairs, insulation and the completion certificate."
+      ],
+      [
+        "How much is loft conversion project management?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for loft conversion project management?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book loft conversion project management?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "external-cctv-installers": {
+    "name": "External CCTV Installers",
+    "service": "cctv",
+    "related": "external-cctv-installers",
+    "intro": "External CCTV with weatherproof cameras placed to cover drives, doors and gardens, cabled neatly and set up for viewing on your phone. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "External CCTV with weatherproof cameras placed to cover drives, doors and gardens, cabled neatly and set up for viewing on your phone. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "External CCTV Installers in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "external cctv installers, external cctv installers manchester, external cctv installers stockport, external cctv installers north west, cctv systems",
+    "focus_points": [
+      "A visit and written quote for external cctv installers",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does external cctv installers include?",
+        "External CCTV with weatherproof cameras placed to cover drives, doors and gardens, cabled neatly and set up for viewing on your phone."
+      ],
+      [
+        "How much is external cctv installers?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for external cctv installers?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book external cctv installers?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "hmo-plastering-package": {
+    "name": "HMO Plastering Package",
+    "service": "plastering",
+    "related": "hmo-plastering-package",
+    "intro": "Plastering for HMOs between tenancies, from patch repairs and skimming to boarding, so rooms are ready to decorate and re-let. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Plastering for HMOs between tenancies, from patch repairs and skimming to boarding, so rooms are ready to decorate and re-let. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "HMO Plastering Package in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "hmo plastering package, hmo plastering package manchester, hmo plastering package stockport, hmo plastering package north west, plastering",
+    "focus_points": [
+      "A visit and written quote for hmo plastering package",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does hmo plastering package include?",
+        "Plastering for HMOs between tenancies, from patch repairs and skimming to boarding, so rooms are ready to decorate and re-let."
+      ],
+      [
+        "How much is hmo plastering package?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for hmo plastering package?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book hmo plastering package?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "patch-plastering-cost": {
+    "name": "Patch Plastering Cost",
+    "service": "plastering",
+    "related": "patch-plastering-cost",
+    "intro": "Patch plastering to fill holes, cracks and blown areas after electrical, plumbing or damp work, blended in ready for paint. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Patch plastering to fill holes, cracks and blown areas after electrical, plumbing or damp work, blended in ready for paint. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Patch Plastering Cost in Greater Manchester and the North West. Local team from Stockport, written scope and clear dates. Free quote, call 07517 806082",
+    "seo_keywords": "patch plastering cost, patch plastering cost manchester, patch plastering cost stockport, patch plastering cost north west, plastering",
+    "focus_points": [
+      "A visit and written quote for patch plastering cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does patch plastering cost include?",
+        "Patch plastering to fill holes, cracks and blown areas after electrical, plumbing or damp work, blended in ready for paint."
+      ],
+      [
+        "How much is patch plastering cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for patch plastering cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book patch plastering cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "reactive-maintenance-call-out-cost": {
+    "name": "Reactive Maintenance Call-Out Cost",
+    "service": "building-maintenance",
+    "related": "reactive-maintenance-call-out-cost",
+    "intro": "Reactive maintenance call-outs for leaks, broken doors and locks, damaged fittings and small repairs that cannot wait for a planned visit. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Reactive maintenance call-outs for leaks, broken doors and locks, damaged fittings and small repairs that cannot wait for a planned visit. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Reactive Maintenance Call-Out Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "reactive maintenance call-out cost, reactive maintenance call-out cost manchester, reactive maintenance call-out cost stockport, reactive maintenance call-out cost north west, building maintenance",
+    "focus_points": [
+      "A visit and written quote for reactive maintenance call-out cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does reactive maintenance call-out cost include?",
+        "Reactive maintenance call-outs for leaks, broken doors and locks, damaged fittings and small repairs that cannot wait for a planned visit."
+      ],
+      [
+        "How much is reactive maintenance call-out cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for reactive maintenance call-out cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book reactive maintenance call-out cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  },
+  "roof-tile-replacement-cost": {
+    "name": "Roof Tile Replacement Cost",
+    "service": "roofing",
+    "related": "roof-tile-replacement-cost",
+    "intro": "Replacing slipped, cracked or missing tiles and slates, with the battens, felt and ridge checked while the roof is open. Icomply Property Services cover Greater Manchester and the North West from Stockport. Pricing is POA: we quote in writing once we have seen the job.",
+    "body": "Replacing slipped, cracked or missing tiles and slates, with the battens, felt and ridge checked while the roof is open. We start by asking for your postcode, the property type and what you have noticed, then book a visit to see the job. Pricing is POA: we quote in writing once we have seen the job. You get a written scope that says what is included, what is not and how long it should take. Call 07517 806082 or email icomplypropertyservices@gmail.com to arrange a visit.",
+    "meta_desc": "Roof Tile Replacement Cost in Greater Manchester and the North West. Local team from Stockport and a written scope. Free quote, call 07517 806082",
+    "seo_keywords": "roof tile replacement cost, roof tile replacement cost manchester, roof tile replacement cost stockport, roof tile replacement cost north west, roofing",
+    "focus_points": [
+      "A visit and written quote for roof tile replacement cost",
+      "Local team from Stockport covering the North West",
+      "Clear scope with what is and is not included",
+      "Same/Next-Day where the diary allows"
+    ],
+    "faq": [
+      [
+        "What does roof tile replacement cost include?",
+        "Replacing slipped, cracked or missing tiles and slates, with the battens, felt and ridge checked while the roof is open."
+      ],
+      [
+        "How much is roof tile replacement cost?",
+        "Pricing is POA: we quote in writing once we have seen the job."
+      ],
+      [
+        "Do you cover my town for roof tile replacement cost?",
+        "We cover Greater Manchester, Lancashire, Cheshire, Merseyside and the wider North West from Stockport."
+      ],
+      [
+        "How do I book roof tile replacement cost?",
+        "Call 07517 806082 or email icomplypropertyservices@gmail.com with your postcode and a short description of the job."
+      ]
+    ]
+  }
 }

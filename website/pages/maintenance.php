@@ -150,7 +150,7 @@ require SITE_ROOT . '/includes/header.php';
                 </div>
                 <div class="mt-8 flex flex-wrap gap-6 text-sm text-white/70">
                     <div><span class="text-white font-semibold text-xl block">4</span> core systems</div>
-                    <div><span class="text-white font-semibold text-xl block"><?= count($areas) ?>+</span> towns covered</div>
+                    <div><span class="text-white font-semibold text-xl block"><?= icomplyCoverageTownCount() ?>+</span> towns covered</div>
                     <div><span class="text-white font-semibold text-xl block">From / POA</span> fixed after scope</div>
                 </div>
             </div>

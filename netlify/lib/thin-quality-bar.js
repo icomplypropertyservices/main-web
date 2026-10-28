@@ -70,7 +70,9 @@ function fill(template, ctx) {
     .replaceAll("{housing}", ctx.housing)
     .replaceAll("{industry}", ctx.industry)
     .replaceAll("{pop}", ctx.pop)
-    .replaceAll("{article}", articleFor(ctx.subject));
+    .replaceAll("{article}", articleFor(ctx.subject))
+    // A lowercase {service} label can open a sentence; capitalise sentence starts.
+    .replace(/(^|[.!?]\s+)([a-z])/g, (m, lead, ch) => lead + ch.toUpperCase());
   return softenHandTrade(text, ctx);
 }
 
@@ -241,7 +243,7 @@ export function thinFaqs(ctx) {
   const faqs = [
     [
       `How is ${ctx.subject} in ${ctx.place} quoted?`,
-      `We send a free written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160" : ""}. Nothing is added without your say-so.`,
+      `We send a free written quote for ${ctx.subject} in ${ctx.place} once we know the building and how we get in${/eicr|electrical inspection/i.test(ctx.subject) ? ". EICRs start from £160; larger and commercial jobs are price on application" : ", price on application"}. Nothing is added without your say-so.`,
     ],
     [
       `Where is the team that covers ${ctx.place} based?`,
