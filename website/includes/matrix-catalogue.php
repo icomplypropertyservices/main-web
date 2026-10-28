@@ -808,6 +808,29 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         // sitemap0.xml is one urlset. Protocol cap is 50,000 URLs per file.
         throw new RuntimeException('Hub sitemap has ' . count($hubEntries) . ' URLs (cap ' . ICOMPLY_MATRIX_SITEMAP_CHUNK . ' per file)');
     }
+    // Never-prune: every 22 Oct baseline URL stays listed. Paths that are NOT in that baseline
+    // and that 301 (exact _redirects 301 sources, or the 19 Oct removed-list 301s) are not
+    // added as new sitemap entries — the redirects themselves are unchanged.
+    $sitemapRedirectOnly = [];
+    foreach (file($dist . '/_redirects', FILE_IGNORE_NEW_LINES) ?: [] as $rLine) {
+        $rParts = preg_split('/\s+/', trim((string)$rLine));
+        if (count($rParts) >= 3 && ($rParts[0][0] ?? '#') === '/' && preg_match('/^30[12]!?$/', $rParts[2]) && !str_contains($rParts[0], '*') && !str_contains($rParts[0], ':')) {
+            $sitemapRedirectOnly[rtrim($rParts[0], '/') ?: '/'] = true;
+        }
+    }
+    foreach (file(SITE_ROOT . '/bin/fixtures/sitemap-exclusions-removed-2026-10-19.txt', FILE_IGNORE_NEW_LINES) ?: [] as $rLine) {
+        $rParts = preg_split('/\s+/', trim((string)$rLine));
+        if (($rParts[0][0] ?? '#') === '/' && ($rParts[1] ?? '') !== '200') {
+            $sitemapRedirectOnly[$rParts[0]] = true;
+        }
+    }
+    foreach ((gzfile(SITE_ROOT . '/bin/fixtures/sitemap-baseline-2026-10-22.txt.gz') ?: []) as $bLine) {
+        $bPath = trim((string)$bLine);
+        if (str_starts_with($bPath, $base)) {
+            $bPath = substr($bPath, strlen($base));
+        }
+        unset($sitemapRedirectOnly[$bPath === '' ? '/' : $bPath]);
+    }
     // Every loc is written once across sitemap0..N (hub priority wins over a matrix repeat).
     $sitemapSeen = [];
     $sitemapDuplicates = 0;
@@ -815,6 +838,9 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         $path = (string)($entry['path'] ?? '/');
         if (isset($sitemapSeen[$path])) {
             $sitemapDuplicates++;
+            continue;
+        }
+        if (isset($sitemapRedirectOnly[$path])) {
             continue;
         }
         $sitemapSeen[$path] = true;
@@ -851,11 +877,14 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
     // indexing per page family. Files stay sitemap1..N.xml.
     $chunkFamily = '';
     $chunkFamilies = [];
-    $writeLoc = static function (string $path, string $family = 'matrix') use (&$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, &$sitemapSeen, &$sitemapDuplicates, &$sitemapWritten, &$chunkFamily, &$chunkFamilies, &$chunkIndex): void {
+    $writeLoc = static function (string $path, string $family = 'matrix') use (&$sitemapRedirectOnly, &$chunkCount, &$chunkHandle, $openChunk, $urlList, $base, &$sitemapSeen, &$sitemapDuplicates, &$sitemapWritten, &$chunkFamily, &$chunkFamilies, &$chunkIndex): void {
         if (!function_exists('icomplySitemapOmitsNonGm')) {
             require_once __DIR__ . '/gm-crawl.php';
         }
         if (icomplySitemapOmitsNonGm($path)) {
+            return;
+        }
+        if (isset($sitemapRedirectOnly[$path])) {
             return;
         }
         if (isset($sitemapSeen[$path])) {
