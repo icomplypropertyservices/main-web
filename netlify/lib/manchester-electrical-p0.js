@@ -49,10 +49,11 @@ function metaDescription(name, where) {
   return text;
 }
 
-function pageTitle(name, where, isHub) {
+function pageTitle(name, where, isHub, surface = "keyword") {
   const brand = " | iComply Property Services";
   const short = " — iComply";
-  const base = isHub ? name : `${name} in ${where}`;
+  // Job pages lead with booking so they do not share a title with their keyword twin.
+  const base = isHub ? name : surface === "job" ? `Book ${name} in ${where}` : `${name} in ${where}`;
   if ((base + brand).length <= 70) return base + brand;
   return base + short;
 }
@@ -114,9 +115,9 @@ export function renderManchesterElectricalFromSpec(spec, input) {
     ? `/pages/${surface === "job" ? "jobs" : "keywords"}/${intent.slug}`
     : `/pages/${surface === "job" ? "jobs" : "keywords"}/${intent.slug}/${town.slug}`;
   const canonical = SITE + path;
-  const title = pageTitle(intent.name, where, isHub);
-  const description = metaDescription(intent.name, where);
-  const h1 = isHub ? `${intent.name} across Greater Manchester` : `${intent.name} in ${where}`;
+  const title = pageTitle(intent.name, where, isHub, surface);
+  const description = metaDescription(surface === "job" && !isHub ? `Book ${intent.name}` : intent.name, where);
+  const h1 = isHub ? `${intent.name} across Greater Manchester` : surface === "job" ? `Book ${intent.name} in ${where}` : `${intent.name} in ${where}`;
   const images = spec.images || [];
   const picked = [];
   for (let step = 0; step < images.length && picked.length < 3; step++) {

@@ -302,7 +302,7 @@ $schema = [
             <ul class="mt-6 space-y-2 text-sm text-zinc-700">
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> New installs &amp; system upgrades</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Servicing, repairs &amp; certification</li>
-                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Trade products &amp; engineer kits (Shopify-ready)</li>
+                <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Trade products &amp; engineer kits</li>
                 <li class="flex gap-2"><span class="text-[#ff6b00]">●</span> Multi-site &amp; landlord packages</li>
             </ul>
             <?php endif; ?>

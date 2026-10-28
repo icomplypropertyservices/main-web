@@ -1182,6 +1182,13 @@ TXT;
     if (!function_exists('securityDualRingRedirectLines')) {
         require_once SITE_ROOT . '/includes/security-dual-ring.php';
     }
+    // Restored (a merge dropped it): dead product and retired service URLs from GSC, one hop.
+    $upgradeRedirects = '';
+    $upgradeFile = SITE_ROOT . '/data/seo-upgrade/product-redirects.txt';
+    if (is_file($upgradeFile)) {
+        $upgradeRedirects = "\n# SEO upgrade: dead product and retired service URLs, one hop.\n"
+            . trim((string)file_get_contents($upgradeFile)) . "\n";
+    }
     // Exact place-alias 301s must come before /pages/barriers/:slug and /pages/aov 200! rules.
     // Security job twins 301 to their keyword equivalents (first match wins).
     return securityDualRingRedirectLines()

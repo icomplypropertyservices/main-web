@@ -86,9 +86,9 @@ function manchesterElectricalP0Meta(string $name, string $where): string
     return $text;
 }
 
-function manchesterElectricalP0Title(string $name, string $where, bool $isHub): string
+function manchesterElectricalP0Title(string $name, string $where, bool $isHub, string $surface = 'keyword'): string
 {
-    $base = $isHub ? $name : ($name . ' in ' . $where);
+    $base = $isHub ? $name : (($surface === 'job' ? 'Book ' : '') . $name . ' in ' . $where);
     $brand = ' | iComply Property Services';
     if (mb_strlen($base . $brand) <= 70) {
         return $base . $brand;
@@ -156,9 +156,9 @@ function manchesterElectricalP0Render(string $surface, string $slug, string $tow
     $prefix = $surface === 'job' ? '/pages/jobs/' : '/pages/keywords/';
     $path = $prefix . $intent['slug'] . ($isHub ? '' : '/' . $town['slug']);
     $canonical = MANCHESTER_ELECTRICAL_P0_SITE . $path;
-    $title = manchesterElectricalP0Title((string)$intent['name'], $where, $isHub);
-    $description = manchesterElectricalP0Meta((string)$intent['name'], $where);
-    $h1 = $isHub ? ($intent['name'] . ' across Greater Manchester') : ($intent['name'] . ' in ' . $where);
+    $title = manchesterElectricalP0Title((string)$intent['name'], $where, $isHub, $surface);
+    $description = manchesterElectricalP0Meta(($surface === 'job' && !$isHub ? 'Book ' : '') . (string)$intent['name'], $where);
+    $h1 = $isHub ? ($intent['name'] . ' across Greater Manchester') : (($surface === 'job' ? 'Book ' : '') . $intent['name'] . ' in ' . $where);
     $images = $spec['images'] ?? [];
     $picked = [];
     $imageCount = count($images);

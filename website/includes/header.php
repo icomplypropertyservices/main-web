@@ -110,6 +110,24 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
         $ogImage = 'https://' . substr($ogImage, 7);
     }
     $ogImageSafe = htmlspecialchars($ogImage, ENT_QUOTES, 'UTF-8');
+    // Declare the real type and size of the og:image file (was hard-coded 1200x630 JPEG).
+    $ogType = 'image/jpeg';
+    $ogW = 1200;
+    $ogH = 630;
+    $ogLocalPath = (string)parse_url($ogImage, PHP_URL_PATH);
+    $ogLocal = $ogLocalPath !== '' ? SITE_ROOT . $ogLocalPath : '';
+    if ($ogLocal !== '' && is_file($ogLocal)) {
+        $ogInfo = @getimagesize($ogLocal);
+        if (is_array($ogInfo)) {
+            $ogW = (int)$ogInfo[0];
+            $ogH = (int)$ogInfo[1];
+            $ogType = (string)($ogInfo['mime'] ?? $ogType);
+        }
+    } elseif (preg_match('#\.png$#i', $ogLocalPath)) {
+        $ogType = 'image/png';
+    } elseif (preg_match('#\.webp$#i', $ogLocalPath)) {
+        $ogType = 'image/webp';
+    }
     $ogAltRaw = html_entity_decode(
         (string)($ogImageAlt ?? ($rawPageTitle . ' — iComply Property Services, Stockport and the North West')),
         ENT_QUOTES | ENT_HTML5,
@@ -122,9 +140,9 @@ $phoneHref = 'tel:' . preg_replace('/\s+/', '', PHONE);
     ?>
     <meta property="og:image" content="<?= $ogImageSafe ?>">
     <meta property="og:image:secure_url" content="<?= $ogImageSafe ?>">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="<?= htmlspecialchars($ogType, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:image:width" content="<?= (int)$ogW ?>">
+    <meta property="og:image:height" content="<?= (int)$ogH ?>">
     <meta property="og:image:alt" content="<?= $ogAltSafe ?>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= $ogTitleSafe ?>">

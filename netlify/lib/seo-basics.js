@@ -92,6 +92,10 @@ export function applySeoBasics(html, { authored = false } = {}) {
       return all;
     }
   });
+  // Main landmark (SEO audit 22 Oct): pages without <main> mark the skip-link target as main.
+  if (!/<main\b/i.test(out) && !/role=["']main["']/i.test(out)) {
+    out = out.replace(/<(div|section)(\s[^>]*?)?\sid=(["'])main-content\3/i, (m, tag, pre = "") => `<${tag}${pre} role="main" id="main-content"`);
+  }
   if (authored) return out;
   const tm = out.match(/<title>([\s\S]*?)<\/title>/i);
   const title = tm ? fitTitle(tm[1]) : "";

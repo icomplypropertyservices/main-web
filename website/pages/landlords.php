@@ -327,7 +327,7 @@ echo icomplyComplianceBundleCrossSellHtml('landlords');
                        class="px-4 py-2 bg-white border rounded-full text-sm hover:border-[#ff6b00]"><?= htmlspecialchars($town, ENT_QUOTES, 'UTF-8') ?></a>
                 <?php endforeach; ?>
             </div>
-            <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all <?= count($areas) ?>+ areas →</a>
+            <a href="<?= url('/pages/areas/index.php') ?>" class="inline-block mt-6 text-sm font-semibold text-[#ff6b00]">View all <?= icomplyCoverageTownCount() ?>+ areas →</a>
 
             <div class="mt-10 bg-zinc-50 border rounded-3xl p-6">
                 <h3 class="font-semibold text-black">Related landlord guides</h3>
