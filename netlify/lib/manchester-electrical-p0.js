@@ -139,7 +139,7 @@ export function renderManchesterElectricalFromSpec(spec, input) {
   if (intent.slug === "eicr") {
     faqs.push([
       "Is there a published EICR price?",
-      "The published EICR list price is £249 for a typical North West 6-bed HMO. Other domestic sizes and commercial EICRs stay price on application.",
+      "EICRs are from £160. Larger, HMO and commercial EICRs are price on application.",
     ]);
   }
 
