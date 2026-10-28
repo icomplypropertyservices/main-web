@@ -7,7 +7,7 @@ import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "..
  * Keyword variants ({service}--{stem}--…) and /matrix-sitemap/{n}.xml are
  * decoded from assets/matrix/variants.json. Dual-ring towns (269) are
  * index,follow for keyword, service and job pages. Manufacturer×town stays
- * on the Greater Manchester core. Other places stay noindex.
+ * on the Greater Manchester core. Every real page is index,follow (never noindex).
  */
 import { renderVariantPage, renderVariantSitemap } from "../lib/variant-matrix.js";
 import { renderManchesterElectricalPage } from "../lib/manchester-electrical-p0.js";
@@ -18,6 +18,7 @@ import { withContactWidgets } from "../lib/contact-widgets.js";
 import { heroCta } from "../lib/hero-cta.js";
 import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
+import { withAnalytics } from "../lib/analytics.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -179,6 +180,7 @@ const FIRE_DUTY = "Design, installation and commissioning follow BS 5839, carrie
 const FIRE_NAP = "17 Woodlands Park Road, Offerton, Stockport, Cheshire SK2 5DE";
 
 const SERVICE_HUB_ALIAS = {
+  "battery-storage": "/pages/keywords/battery-storage-electrical",
   "eicr": "/pages/jobs/eicr",
   "eicr-certificate": "/pages/jobs/eicr",
   "eicrs": "/pages/jobs/eicr",
@@ -812,7 +814,7 @@ async function loadVariants(origin) {
 }
 
 function variantResponse(rendered) {
-  return new Response(withContactWidgets(scrubMeta(capH1Phrase(rendered.html))), {
+  return new Response(withAnalytics(withContactWidgets(scrubMeta(capH1Phrase(rendered.html)))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -992,7 +994,7 @@ export default async (request, context) => {
         town: (keywordMatch || jobMatch)[2],
       });
       if (rich) {
-        return new Response(withContactWidgets(scrubMeta(capH1Phrase(rich))), {
+        return new Response(withAnalytics(withContactWidgets(scrubMeta(capH1Phrase(rich)))), {
           status: 200,
           headers: {
             "content-type": "text/html; charset=utf-8",
@@ -1046,15 +1048,14 @@ export default async (request, context) => {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
-      // Unknown keyword (retired slug): 410 Gone, like a dead hub,
-      // instead of a 200 noindex soft 404. Lock slugs stay indexable.
+      // Unknown keyword (retired slug): one 301 to a live page. Never noindex.
       const hub = await fetch(new URL(`/pages/keywords/${keywordMatch[1]}`, url.origin), { redirect: "manual" });
       if ((hub.status === 301 || hub.status === 308) && hub.headers.get("location")) {
         return Response.redirect(new URL(hub.headers.get("location"), url.origin).toString(), 301);
       }
       if (hub.status === 404) {
-        const page = await fetch(new URL("/404.html", url.origin)).then((r) => (r.ok ? r.text() : "Not found")).catch(() => "Not found");
-        return new Response(page, { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } });
+        // Jack rule: never noindex. One hop to the live keyword index (GSC 21 Oct A3).
+        return Response.redirect(new URL("/pages/keywords", url.origin).toString(), 301);
       }
     }
     if (!rendered) {
@@ -1085,7 +1086,7 @@ export default async (request, context) => {
     if (serviceMatch && (serviceMatch[1] === "keywords" || serviceMatch[1] === "jobs") && tradesHas(serviceMatch[2])) {
       const hubHtml = renderTradesHub(serviceMatch[2]);
       if (hubHtml) {
-        return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml))), {
+        return new Response(withAnalytics(applyMoneyCtr(path, withContactWidgets(scrubMeta(hubHtml)))), {
           status: 200,
           headers: {
             "content-type": "text/html; charset=utf-8",
@@ -1118,7 +1119,7 @@ export default async (request, context) => {
     else if (serviceMatch && isLocalTown(serviceMatch[2])) to = `/pages/areas/${serviceMatch[2]}`;
     return Response.redirect(new URL(to, url.origin).toString(), 301);
   }
-  return new Response(applyMoneyCtr(path, withContactWidgets(scrubMeta(capH1Phrase(rendered.html)))), {
+  return new Response(withAnalytics(applyMoneyCtr(path, withContactWidgets(scrubMeta(capH1Phrase(rendered.html))))), {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",

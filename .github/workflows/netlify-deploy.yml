@@ -74,6 +74,9 @@ jobs:
       - name: Verify dist/ pretty URLs
         run: php website/bin/check-static-export.php
 
+      - name: Sitemap never shrinks (>= 22 Oct baseline 1,093,075 URLs, shards <= 50k)
+        run: php website/bin/check-sitemap-no-shrink.php --dist=dist && php website/bin/check-sitemap-no-prune.php --dist=dist
+
       # Do not use netlify/actions/cli (node:22-alpine). Edge bundling downloads
       # a glibc Deno binary, Alpine cannot run it, and the action ignores the
       # CLI exit code, so a green job can mean the upload never happened.

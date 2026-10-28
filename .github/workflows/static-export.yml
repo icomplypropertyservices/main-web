@@ -82,6 +82,9 @@ jobs:
       - name: Check pretty-URL HTML
         run: php website/bin/check-static-export.php
 
+      - name: Sitemap never shrinks (>= 22 Oct baseline 1,093,075 URLs, shards <= 50k)
+        run: php website/bin/check-sitemap-no-shrink.php --dist=dist && php website/bin/check-sitemap-no-prune.php --dist=dist
+
       - name: Thin x town internal links (CLOSE-Q8)
         run: node website/bin/check-town-interlinks.mjs dist
 
