@@ -239,7 +239,7 @@ const airFile = /\/(?:page-sets\/air-duct-pipes|services\/aov-air-handling-unit-
 say(airPicks.every((src) => airFile.test(src)), `air pool ${airPicks.join(" ")}`);
 say(!airPicks.some((src) => /smoke-vent|aov-release|aov-control|aov-roof-hatch|aov-damper|aov-smoke-damper/.test(src)), "air pool has no aov equipment");
 const aovFloor = applyQualityFloor(
-  `<html><head><meta property="og:image" content="/assets/images/services/aov-air-handling.jpg"><meta name="twitter:image" content="/assets/images/keywords/roof-aov.jpg"></head><body><main><h1>AOV in York</h1><img src="/assets/images/services/aov-air-handling.jpg" alt="AOV"><img src="/assets/images/services/electrical.jpg" alt="Board"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
+  `<html><head><meta property="og:image" content="/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg"><meta name="twitter:image" content="/assets/images/keywords/roof-aov.jpg"></head><body><main><h1>AOV in York</h1><img src="/assets/images/lanes/aov-barriers-deep/aov-smoke-vent-trigger-switch.jpg" alt="AOV"><img src="/assets/images/services/electrical.jpg" alt="Board"><img src="/assets/images/real-job/company.jpg" alt="Office"></main></body></html>`,
   { path: "/pages/aov/york", subject: "AOV", place: "York" },
 );
 say(!aovFloor.includes("a055da46974c") && !aovFloor.includes("/services/aov-air-handling.jpg") && !aovFloor.includes("real-job/company.jpg"), "aov floor drops collapsed and company photos");
