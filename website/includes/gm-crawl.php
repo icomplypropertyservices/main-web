@@ -207,6 +207,17 @@ function icomplyNonGmMatrixRedirect(string $path): ?string
         if (function_exists('icomplyBuildingDualCoversPath') && icomplyBuildingDualCoversPath($path)) {
             return null;
         }
+        foreach (['nationwide-3line.php', 'fire-alarm-installer.php', 'aov-barriers-deep.php'] as $inc) {
+            if (is_file(__DIR__ . '/' . $inc)) {
+                require_once __DIR__ . '/' . $inc;
+            }
+        }
+        // Jack 2026-10-28 superset-never-prune: nationwide fire / AOV / barrier town pages stay.
+        if ((function_exists('icomplyNationwide3lineNationwidePath') && icomplyNationwide3lineNationwidePath($path))
+            || (function_exists('icomplyFireAlarmInstallerNationwidePath') && icomplyFireAlarmInstallerNationwidePath($path))
+            || (function_exists('icomplyAovBarriersDeepKeepsTown') && icomplyAovBarriersDeepKeepsTown($m[1], $m[2]))) {
+            return null;
+        }
         return icomplyMatrixTownSlug($m[2]) ? null : '/pages/keywords/' . $m[1];
     }
     if (preg_match('#^/pages/manufacturers/([a-z0-9\-]+)/([a-z0-9\-]+)$#', $path, $m)) {

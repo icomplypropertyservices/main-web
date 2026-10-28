@@ -110,19 +110,6 @@ jobs:
             exit 1
           fi
 
-      # Queue a Netlify-side build of main as well. Does not rely on the
-      # GitHub↔Netlify webhook (the path that missed PR #1). That build
-      # also runs php website/bin/static-export.php (see netlify.toml).
-      - name: Queue Netlify production rebuild of main
-        continue-on-error: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          curl -fsS -X POST \
-            "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/builds" \
-            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '{"clear_cache":true}'
-          echo
-          echo "Queued Netlify build for site"
+      # Jack 2026-10-28: exactly ONE production deploy per release. The extra
+      # Netlify-side rebuild that used to be queued here made every main push
+      # deploy twice, so it is removed.

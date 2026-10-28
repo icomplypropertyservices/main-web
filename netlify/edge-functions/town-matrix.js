@@ -19,6 +19,9 @@ import { heroCta } from "../lib/hero-cta.js";
 import { TRADE_ALIAS, renderTradesHub, spokenSubject, tradesFaqs, tradesHas, tradesImages, tradesIsNewService, tradesLinkHtml, tradesProseHtml } from "../lib/trades-lock.js";
 import { applyMoneyCtr } from "../lib/money-ctr.js";
 import { withAnalytics } from "../lib/analytics.js";
+import { buildingDualExempt, renderBuildingDualTown } from "../lib/building-dual.js";
+import { isMarginDeep, marginDeepKeepsTown, renderMarginDeepTown } from "../lib/margin-deep.js";
+import { batch1Match, renderBatch1 } from "../lib/building-batch1.js";
 import { townFactsBlock } from "../lib/town-facts.js";
 import { depthBankParagraphs, thinFaqHtml, thinFaqs, thinImages, thinOgMeta, thinProseHtml } from "../lib/thin-quality-bar.js";
 import { townDepthBlock } from "../lib/town-depth.js";
@@ -336,6 +339,8 @@ function resolvePlace(townSlug, catalogue) {
 }
 
 export function renderTownPage(input) {
+  const dual = renderBuildingDualTown(input);
+  if (dual) return dual;
   const catalogue = input.catalogue || {};
   const keywords = catalogue.keywords || {};
   const services = catalogue.services || {};
@@ -879,9 +884,12 @@ function placeAliasRedirect(path) {
 }
 
 export function nonGmMatrixRedirect(path) {
+  if (buildingDualExempt(path)) return null;
   if (GSC_KEEP.has(path) || SERVE_UPGRADE.has(path)) return null;
   let m = path.match(/^\/pages\/keywords\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
   if (m) {
+    // Margin DEEP hubs: dual-ring 269 (manufacturer heads: GM core 60 only).
+    if (isMarginDeep(m[1])) return marginDeepKeepsTown(m[1], m[2]) ? null : `/pages/keywords/${m[1]}`;
     if (isLocalTown(m[2]) || p0KeepsTown(m[1], m[2]) || fireInstallerNationwide(m[1], m[2])) return null;
     return `/pages/keywords/${m[1]}`;
   }
@@ -973,6 +981,17 @@ export default async (request, context) => {
       });
     }
   }
+  // Batch 1 (2026-10-21): Manchester building work, homeowner template with hero call CTA.
+  const b1 = batch1Match(path);
+  if (b1) {
+    const page = renderBatch1(b1);
+    if (page) {
+      return new Response(withAnalytics(withContactWidgets(scrubMeta(page.html))), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600", "x-robots-tag": page.robots },
+      });
+    }
+  }
   // These two keyword guides are built as static pages. Passing them through stops
   // the matrix sending them to /pages/areas. Every other /pages/keywords/{slug}
   // keeps the matrix route (an edge-rendered hub or a single 301 to a live page).
@@ -1044,7 +1063,10 @@ export default async (request, context) => {
       closeQPages,
     });
   } else if (keywordMatch) {
-    if (p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
+    if (isMarginDeep(keywordMatch[1])) {
+      rendered = renderMarginDeepTown(keywordMatch[1], keywordMatch[2]);
+    }
+    if (!rendered && p0KeepsTown(keywordMatch[1], keywordMatch[2])) {
       rendered = renderNationwideP0Town(keywordMatch[1], keywordMatch[2]);
     }
     if (!rendered && !(catalogue.keywords || {})[keywordMatch[1]] && !tradesHas(keywordMatch[1]) && !SERVE_UPGRADE.has(path)) {
