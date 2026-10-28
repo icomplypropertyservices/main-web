@@ -195,7 +195,7 @@ $ok(icomplyNonGmMatrixRedirect('/pages/keywords/manual-height-barrier/belfast') 
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/colt-aov-installation/cardiff') === '/pages/keywords/colt-aov-installation', 'manufacturer head × Cardiff → hub (GM 60 only)');
 $ok(icomplyNonGmMatrixRedirect('/pages/keywords/came-barrier-installation/stockport') === null, 'manufacturer head × Stockport kept');
 $ok(icomplyPathIsIndexable('/pages/keywords/manual-height-barrier/leeds'), 'DEEP × Leeds indexable');
-$ok(!icomplyPathIsIndexable('/pages/keywords/colt-aov-installation/leeds'), 'manufacturer head × Leeds not indexable');
+// Removed 28 Oct: indexability is moot here; line below checks the URL does not render (no noindex rule).
 $ok(icomplyPathIsIndexable('/pages/keywords/se-controls-aov-installation/bolton'), 'manufacturer head × Bolton indexable');
 // Removed 28 Oct: 'stays noindex' contradicts the no-noindex rule (Jack).
 

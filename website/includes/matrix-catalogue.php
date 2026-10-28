@@ -962,7 +962,6 @@ function icomplyPublishTownMatrix(string $dist, array $hubEntries, callable $log
         $writeLoc('/pages/jobs/' . $legacySlug, 'job-town');
         foreach ($coreKeys as $placeSlug) {
             $writeLoc('/pages/jobs/' . $legacySlug . '/' . $placeSlug, 'job-town');
-            $jobTown++;
         }
     }
     if (!function_exists('manchesterElectricalP0JobTownPaths')) {

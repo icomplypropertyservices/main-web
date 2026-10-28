@@ -1,4 +1,5 @@
 import { scrubMeta } from "../lib/scrub-meta.js";
+import { aovBarriersDeepJobRedirect } from "../lib/aov-barriers-deep.js";
 import { capH1Phrase } from "../lib/phrase-cap.js";
 import { MATRIX_CSS, MATRIX_HEADER, MATRIX_FOOTER, MATRIX_SITE_FOOTER } from "../lib/page-shell.js";
 /**
@@ -907,6 +908,11 @@ export function nonGmMatrixRedirect(path) {
 export default async (request, context) => {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
+  // AOV + Barriers DEEP wins the canonical: overlapping job×town → keyword×town (or the hub), one hop.
+  const deepJobTo = aovBarriersDeepJobRedirect(path);
+  if (deepJobTo) {
+    return Response.redirect(new URL(deepJobTo, url.origin).toString(), 301);
+  }
   // One canonical form: strip trailing slashes (GSC 404s on /pages/areas/x/,
   // duplicates on /pages/keywords/x/). Exported files never use the slash form.
   if (path !== "/" && url.pathname !== path && !path.startsWith("/matrix-sitemap")) {
